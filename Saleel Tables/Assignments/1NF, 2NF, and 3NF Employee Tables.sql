@@ -117,8 +117,8 @@ create table N2CONTACT (
 create table N2ADDRESS (
 	ID int primary key,
 	EMPLOYEEID int,
-	LINE1 varchar(40),
-	LINE2 varchar(40),
+	LINE1 varchar(30),
+	LINE2 varchar(30),
 	city varchar(20),
 	pin int,
 	foreign key(EMPLOYEEID) references N2Employee(ID)
@@ -603,7 +603,7 @@ INSERT INTO `nf2`.`n2address` (`ID`, `EMPLOYEEID`, `LINE1`, `LINE2`, `city`, `pi
 INSERT INTO `nf2`.`n2address` (`ID`, `EMPLOYEEID`, `LINE1`, `LINE2`, `city`, `pin`) VALUES ('3', '3', '409 Berry St', 'Louisa, KY', 'San Jose', '41230');
 INSERT INTO `nf2`.`n2address` (`ID`, `EMPLOYEEID`, `LINE1`, `LINE2`, `city`, `pin`) VALUES ('4', '4', '7720 Covington Rd', 'Pink Stand, TN', 'San Francisco', '37188');
 INSERT INTO `nf2`.`n2address` (`ID`, `EMPLOYEEID`, `LINE1`, `LINE2`, `city`, `pin`) VALUES ('5', '5', '15 Hempstead', 'St, Saugus, MA', 'Las Vega', '1906');
-INSERT INTO `nf2`.`n2address` (`ID`, `EMPLOYEEID`, `LINE1`, `LINE2`, `city`, `pin`) VALUES ('6', '6', '165 Village Dr., P.O. Box 3700 Eureka', 'Oakland, TN', 'Oakland', '38060');
+INSERT INTO `nf2`.`n2address` (`ID`, `EMPLOYEEID`, `LINE1`, `LINE2`, `city`, `pin`) VALUES ('6', '6', '165 Village Dr., P.O. Box 3700', 'Oakland, TN', 'Oakland', '38060');
 INSERT INTO `nf2`.`n2address` (`ID`, `EMPLOYEEID`, `LINE1`, `LINE2`, `city`, `pin`) VALUES ('7', '7', 'Po Box 83', 'Faith, NC', 'New Jersey', '28041');
 INSERT INTO `nf2`.`n2address` (`ID`, `EMPLOYEEID`, `LINE1`, `LINE2`, `city`, `pin`) VALUES ('8', '8', '3402 Buccaneer Rose Ave', 'Bakersfield, CA', 'Boston', '93313');
 INSERT INTO `nf2`.`n2address` (`ID`, `EMPLOYEEID`, `LINE1`, `LINE2`, `city`, `pin`) VALUES ('9', '9', '1615 Town Hall   ', 'Oakland, TN', 'Oakland', '38060');
@@ -612,7 +612,7 @@ INSERT INTO `nf2`.`n2address` (`ID`, `EMPLOYEEID`, `LINE1`, `LINE2`, `city`, `pi
 INSERT INTO `nf2`.`n2address` (`ID`, `EMPLOYEEID`, `LINE1`, `LINE2`, `city`, `pin`) VALUES ('12', '12', '165 Ken city, P.O. Box 942873', '50 Higuera Street', 'Oakland', '38060');
 INSERT INTO `nf2`.`n2address` (`ID`, `EMPLOYEEID`, `LINE1`, `LINE2`, `city`, `pin`) VALUES ('13', '13', 'Po Box 83, Faith, NC', 'null', 'New York', '28041');
 INSERT INTO `nf2`.`n2address` (`ID`, `EMPLOYEEID`, `LINE1`, `LINE2`, `city`, `pin`) VALUES ('14', '14', '808 Rocky Hill Rd', 'Plymouth 1993 Cross lane', 'Boston', '32360');
-INSERT INTO `nf2`.`n2address` (`ID`, `EMPLOYEEID`, `LINE1`, `LINE2`, `city`, `pin`) VALUES ('15', '15', '118 Lippitt Ave Warwick, Rhode Island', '100 S. Main Street', 'Los Angeles', '12889');
+INSERT INTO `nf2`.`n2address` (`ID`, `EMPLOYEEID`, `LINE1`, `LINE2`, `city`, `pin`) VALUES ('15', '15', '118 Lippitt Ave Warwick', '100 S. Main Street', 'Los Angeles', '12889');
 INSERT INTO `nf2`.`n2address` (`ID`, `EMPLOYEEID`, `LINE1`, `LINE2`, `city`, `pin`) VALUES ('16', '16', '5973 Moon Shadow Dr. Herriman', 'null', 'Atlanta', '2345');
 INSERT INTO `nf2`.`n2address` (`ID`, `EMPLOYEEID`, `LINE1`, `LINE2`, `city`, `pin`) VALUES ('17', '17', '13758 Dogwood St, Trona', 'null', 'San Jose', '93562');
 INSERT INTO `nf2`.`n2address` (`ID`, `EMPLOYEEID`, `LINE1`, `LINE2`, `city`, `pin`) VALUES ('18', '18', '2263 Ga 17 Hwy N, Millen', 'null', 'Las Vega', '30442');
