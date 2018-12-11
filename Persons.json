@@ -1,3 +1,4 @@
+  db.person.insert([
   {
     "index": NumberInt(0),
     "name": "Aurelia Gonzales",
@@ -24554,3 +24555,4 @@
       "sunt"
     ]
   }
+ ])
