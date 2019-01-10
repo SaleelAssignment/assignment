@@ -12,49 +12,60 @@ DROP TABLE IF EXISTS  OLDBOOK;
 DROP TABLE IF EXISTS  NEWBOOK;
 
 create table oldbook (
-	id int primary key,
+	id int,
 	name varchar(20)
 );
 
 create table newbook (
-	id int primary key,
+	id int,
 	name varchar(20)
 );
 
-INSERT INTO `nf2`.`oldbook` (`id`, `name`) VALUES ('1', 'MySQL Edition-1');
-INSERT INTO `nf2`.`oldbook` (`id`, `name`) VALUES ('2', 'NoSql Edition-1');
-INSERT INTO `nf2`.`oldbook` (`id`, `name`) VALUES ('3', 'Node Edition-1');
-INSERT INTO `nf2`.`oldbook` (`id`, `name`) VALUES ('4', 'JavaScript Edition-1');
-INSERT INTO `nf2`.`oldbook` (`id`, `name`) VALUES ('5', 'Oracle Edition-1');
-INSERT INTO `nf2`.`oldbook` (`id`, `name`) VALUES ('6', 'Java Edition-1');
-INSERT INTO `nf2`.`oldbook` (`id`, `name`) VALUES ('7', 'C++ Edition-1');
-INSERT INTO `nf2`.`oldbook` (`id`, `name`) VALUES ('8', 'HTML Edition-1');
-INSERT INTO `nf2`.`oldbook` (`id`, `name`) VALUES ('9', 'PHP Edition-1');
-INSERT INTO `nf2`.`oldbook` (`id`, `name`) VALUES ('10', 'Python Edition-1');
-INSERT INTO `nf2`.`oldbook` (`id`, `name`) VALUES ('11', 'NoSql Edition-1');
-INSERT INTO `nf2`.`oldbook` (`id`, `name`) VALUES ('12', 'Oracle Edition-1');
-INSERT INTO `nf2`.`oldbook` (`id`, `name`) VALUES ('13', 'Python Edition-1');
-INSERT INTO `nf2`.`oldbook` (`id`, `name`) VALUES ('14', 'Oracle Edition-2');
-INSERT INTO `nf2`.`oldbook` (`id`, `name`) VALUES ('15', 'HTML Edition-2');
-INSERT INTO `nf2`.`oldbook` (`id`, `name`) VALUES ('16', 'Hive');
+insert into oldbook values(1, 'MySQL');
+insert into oldbook values(2, 'hBase');
+insert into oldbook values(3, 'Oracle');
+insert into oldbook values(4, 'C++');
+insert into oldbook values(4, 'C++');
+
+insert into newbook values(1, 'JavaScript');
+insert into newbook values(2, 'hBase');
+insert into newbook values(3, 'Redis');
 
 
-INSERT INTO `nf2`.`newbook` (`id`, `name`) VALUES ('1', 'MySQL Edition-2');
-INSERT INTO `nf2`.`newbook` (`id`, `name`) VALUES ('2', 'NoSql Edition-2');
-INSERT INTO `nf2`.`newbook` (`id`, `name`) VALUES ('3', 'Node Edition-2');
-INSERT INTO `nf2`.`newbook` (`id`, `name`) VALUES ('4', 'JavaScript Edition-2');
-INSERT INTO `nf2`.`newbook` (`id`, `name`) VALUES ('5', 'Oracle Edition-2');
-INSERT INTO `nf2`.`newbook` (`id`, `name`) VALUES ('6', 'Java Edition-2');
-INSERT INTO `nf2`.`newbook` (`id`, `name`) VALUES ('7', 'C++ Edition-2');
-INSERT INTO `nf2`.`newbook` (`id`, `name`) VALUES ('8', 'HTML Edition-2');
-INSERT INTO `nf2`.`newbook` (`id`, `name`) VALUES ('9', 'PHP Edition-2');
-INSERT INTO `nf2`.`newbook` (`id`, `name`) VALUES ('10', 'Python Edition-2');
-INSERT INTO `nf2`.`newbook` (`id`, `name`) VALUES ('11', 'Redis');
-INSERT INTO `nf2`.`newbook` (`id`, `name`) VALUES ('12', 'hBase');
-INSERT INTO `nf2`.`newbook` (`id`, `name`) VALUES ('13', 'NoSql Edition-1');
-INSERT INTO `nf2`.`newbook` (`id`, `name`) VALUES ('14', 'Oracle Edition-1');
-INSERT INTO `nf2`.`newbook` (`id`, `name`) VALUES ('15', 'Python Edition-1');
-INSERT INTO `nf2`.`newbook` (`id`, `name`) VALUES ('16', 'NoSql Edition-2');
+-- INSERT INTO `nf2`.`oldbook` (`id`, `name`) VALUES ('1', 'MySQL Edition-1');
+-- INSERT INTO `nf2`.`oldbook` (`id`, `name`) VALUES ('2', 'NoSql Edition-1');
+-- INSERT INTO `nf2`.`oldbook` (`id`, `name`) VALUES ('3', 'Node Edition-1');
+-- INSERT INTO `nf2`.`oldbook` (`id`, `name`) VALUES ('4', 'JavaScript Edition-1');
+-- INSERT INTO `nf2`.`oldbook` (`id`, `name`) VALUES ('5', 'Oracle Edition-1');
+-- INSERT INTO `nf2`.`oldbook` (`id`, `name`) VALUES ('6', 'Java Edition-1');
+-- INSERT INTO `nf2`.`oldbook` (`id`, `name`) VALUES ('7', 'C++ Edition-1');
+-- INSERT INTO `nf2`.`oldbook` (`id`, `name`) VALUES ('8', 'HTML Edition-1');
+-- INSERT INTO `nf2`.`oldbook` (`id`, `name`) VALUES ('9', 'PHP Edition-1');
+-- INSERT INTO `nf2`.`oldbook` (`id`, `name`) VALUES ('10', 'Python Edition-1');
+-- INSERT INTO `nf2`.`oldbook` (`id`, `name`) VALUES ('11', 'NoSql Edition-1');
+-- INSERT INTO `nf2`.`oldbook` (`id`, `name`) VALUES ('12', 'Oracle Edition-1');
+-- INSERT INTO `nf2`.`oldbook` (`id`, `name`) VALUES ('13', 'Python Edition-1');
+-- INSERT INTO `nf2`.`oldbook` (`id`, `name`) VALUES ('14', 'Oracle Edition-2');
+-- INSERT INTO `nf2`.`oldbook` (`id`, `name`) VALUES ('15', 'HTML Edition-2');
+-- INSERT INTO `nf2`.`oldbook` (`id`, `name`) VALUES ('16', 'Hive');
+
+
+-- INSERT INTO `nf2`.`newbook` (`id`, `name`) VALUES ('1', 'MySQL Edition-2');
+-- INSERT INTO `nf2`.`newbook` (`id`, `name`) VALUES ('2', 'NoSql Edition-2');
+-- INSERT INTO `nf2`.`newbook` (`id`, `name`) VALUES ('3', 'Node Edition-2');
+-- INSERT INTO `nf2`.`newbook` (`id`, `name`) VALUES ('4', 'JavaScript Edition-2');
+-- INSERT INTO `nf2`.`newbook` (`id`, `name`) VALUES ('5', 'Oracle Edition-2');
+-- INSERT INTO `nf2`.`newbook` (`id`, `name`) VALUES ('6', 'Java Edition-2');
+-- INSERT INTO `nf2`.`newbook` (`id`, `name`) VALUES ('7', 'C++ Edition-2');
+-- INSERT INTO `nf2`.`newbook` (`id`, `name`) VALUES ('8', 'HTML Edition-2');
+-- INSERT INTO `nf2`.`newbook` (`id`, `name`) VALUES ('9', 'PHP Edition-2');
+-- INSERT INTO `nf2`.`newbook` (`id`, `name`) VALUES ('10', 'Python Edition-2');
+-- INSERT INTO `nf2`.`newbook` (`id`, `name`) VALUES ('11', 'Redis');
+-- INSERT INTO `nf2`.`newbook` (`id`, `name`) VALUES ('12', 'hBase');
+-- INSERT INTO `nf2`.`newbook` (`id`, `name`) VALUES ('13', 'NoSql Edition-1');
+-- INSERT INTO `nf2`.`newbook` (`id`, `name`) VALUES ('14', 'Oracle Edition-1');
+-- INSERT INTO `nf2`.`newbook` (`id`, `name`) VALUES ('15', 'Python Edition-1');
+-- INSERT INTO `nf2`.`newbook` (`id`, `name`) VALUES ('16', 'NoSql Edition-2');
 
 
 -----------------------------------------------------------------------------------
