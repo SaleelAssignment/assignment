@@ -31,6 +31,12 @@ INSERT INTO `nf2`.`oldbook` (`id`, `name`) VALUES ('7', 'C++ Edition-1');
 INSERT INTO `nf2`.`oldbook` (`id`, `name`) VALUES ('8', 'HTML Edition-1');
 INSERT INTO `nf2`.`oldbook` (`id`, `name`) VALUES ('9', 'PHP Edition-1');
 INSERT INTO `nf2`.`oldbook` (`id`, `name`) VALUES ('10', 'Python Edition-1');
+INSERT INTO `nf2`.`oldbook` (`id`, `name`) VALUES ('11', 'NoSql Edition-1');
+INSERT INTO `nf2`.`oldbook` (`id`, `name`) VALUES ('12', 'Oracle Edition-1');
+INSERT INTO `nf2`.`oldbook` (`id`, `name`) VALUES ('13', 'Python Edition-1');
+INSERT INTO `nf2`.`oldbook` (`id`, `name`) VALUES ('14', 'Oracle Edition-2');
+INSERT INTO `nf2`.`oldbook` (`id`, `name`) VALUES ('15', 'HTML Edition-2');
+INSERT INTO `nf2`.`oldbook` (`id`, `name`) VALUES ('16', 'Hive');
 
 
 INSERT INTO `nf2`.`newbook` (`id`, `name`) VALUES ('1', 'MySQL Edition-2');
@@ -45,6 +51,10 @@ INSERT INTO `nf2`.`newbook` (`id`, `name`) VALUES ('9', 'PHP Edition-2');
 INSERT INTO `nf2`.`newbook` (`id`, `name`) VALUES ('10', 'Python Edition-2');
 INSERT INTO `nf2`.`newbook` (`id`, `name`) VALUES ('11', 'Redis');
 INSERT INTO `nf2`.`newbook` (`id`, `name`) VALUES ('12', 'hBase');
+INSERT INTO `nf2`.`newbook` (`id`, `name`) VALUES ('13', 'NoSql Edition-1');
+INSERT INTO `nf2`.`newbook` (`id`, `name`) VALUES ('14', 'Oracle Edition-1');
+INSERT INTO `nf2`.`newbook` (`id`, `name`) VALUES ('15', 'Python Edition-1');
+INSERT INTO `nf2`.`newbook` (`id`, `name`) VALUES ('16', 'NoSql Edition-2');
 
 
 -----------------------------------------------------------------------------------
