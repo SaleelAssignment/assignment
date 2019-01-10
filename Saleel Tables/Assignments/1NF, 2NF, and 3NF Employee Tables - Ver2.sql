@@ -8,6 +8,47 @@ DROP TABLE IF EXISTS  SOFTDRINK;
 DROP TABLE IF EXISTS  BOOK;
 DROP TABLE IF EXISTS  AvailableIN;
 
+DROP TABLE IF EXISTS  OLDBOOK;
+DROP TABLE IF EXISTS  NEWBOOK;
+
+create table oldbook (
+	id int primary key,
+	name varchar(20)
+);
+
+create table newbook (
+	id int primary key,
+	name varchar(20)
+);
+
+INSERT INTO `nf2`.`oldbook` (`id`, `name`) VALUES ('1', 'MySQL Edition-1');
+INSERT INTO `nf2`.`oldbook` (`id`, `name`) VALUES ('2', 'NoSql Edition-1');
+INSERT INTO `nf2`.`oldbook` (`id`, `name`) VALUES ('3', 'Node Edition-1');
+INSERT INTO `nf2`.`oldbook` (`id`, `name`) VALUES ('4', 'JavaScript Edition-1');
+INSERT INTO `nf2`.`oldbook` (`id`, `name`) VALUES ('5', 'Oracle Edition-1');
+INSERT INTO `nf2`.`oldbook` (`id`, `name`) VALUES ('6', 'Java Edition-1');
+INSERT INTO `nf2`.`oldbook` (`id`, `name`) VALUES ('7', 'C++ Edition-1');
+INSERT INTO `nf2`.`oldbook` (`id`, `name`) VALUES ('8', 'HTML Edition-1');
+INSERT INTO `nf2`.`oldbook` (`id`, `name`) VALUES ('9', 'PHP Edition-1');
+INSERT INTO `nf2`.`oldbook` (`id`, `name`) VALUES ('10', 'Python Edition-1');
+
+
+INSERT INTO `nf2`.`newbook` (`id`, `name`) VALUES ('1', 'MySQL Edition-2');
+INSERT INTO `nf2`.`newbook` (`id`, `name`) VALUES ('2', 'NoSql Edition-2');
+INSERT INTO `nf2`.`newbook` (`id`, `name`) VALUES ('3', 'Node Edition-2');
+INSERT INTO `nf2`.`newbook` (`id`, `name`) VALUES ('4', 'JavaScript Edition-2');
+INSERT INTO `nf2`.`newbook` (`id`, `name`) VALUES ('5', 'Oracle Edition-2');
+INSERT INTO `nf2`.`newbook` (`id`, `name`) VALUES ('6', 'Java Edition-2');
+INSERT INTO `nf2`.`newbook` (`id`, `name`) VALUES ('7', 'C++ Edition-2');
+INSERT INTO `nf2`.`newbook` (`id`, `name`) VALUES ('8', 'HTML Edition-2');
+INSERT INTO `nf2`.`newbook` (`id`, `name`) VALUES ('9', 'PHP Edition-2');
+INSERT INTO `nf2`.`newbook` (`id`, `name`) VALUES ('10', 'Python Edition-2');
+INSERT INTO `nf2`.`newbook` (`id`, `name`) VALUES ('11', 'Redis');
+INSERT INTO `nf2`.`newbook` (`id`, `name`) VALUES ('12', 'hBase');
+
+
+-----------------------------------------------------------------------------------
+
 create table products (
 	ProductID int(11) primary key auto_increment,
 	ProductName varchar(40),
@@ -792,6 +833,7 @@ create table N2HOBBIES (
 create table N2JOBHISTORY (
 	ID int primary key,
 	EMPLOYEEID int,
+	DEPARTMENTNAME varchar(20),
 	EMPLOYER varchar(20),
 	FROMDATE date,
 	TODATE date,
@@ -1592,152 +1634,150 @@ INSERT INTO `nf2`.`n2order` (`ID`, `EMPLOYEEID`, `ORDER_DATE`, `AMOUNT`) VALUES 
 
 
 
-INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('1', '1', 'Arjun', '1964-06-12', '1966-07-12', '');
-INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('2', '1', 'Sai', '1966-07-13', '1970-07-13', '');
-INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('3', '1', 'Dhruv', '1970-07-14', '1975-07-14', '');
-INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('4', '1', 'Saleel', '1975-07-15', '1979-08-12', '');
-INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('5', '1', 'Vrushali', '1979-08-13', '1983-08-12', '');
-INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('6', '2', 'Sharmin', '1964-10-25', '1969-12-02', '');
-INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('7', '2', 'Nitish', '1969-12-03', '1974-07-07', '');
-INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('8', '2', 'Neel', '1974-07-08', '1979-02-21', '');
-INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('9', '2', 'Deep', '1979-02-22', '1980-03-21', '');
-INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('10', '2', 'Kaushal', '1980-03-22', '1983-12-25', '');
-INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('11', '3', 'Natasha', '1964-10-25', '1969-12-02', '');
-INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('12', '3', 'Bandish', '1969-12-03', '1974-07-07', '');
-INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('13', '3', 'Sangita', '1974-07-08', '1979-02-21', '');
-INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('14', '3', 'Supriya', '1979-02-22', '1980-03-21', '');
-INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('15', '3', 'Ruhan', '1980-03-22', '1983-12-25', '');
-INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('16', '4', 'Gau', '1965-10-31', '1970-05-11', '');
-INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('17', '4', 'Bipin', '1970-05-12', '1975-07-17', '');
-INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('18', '4', 'Leena', '1975-07-18', '1978-11-02', '');
-INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('19', '4', 'Kabir', '1980-11-03', '1982-04-09', '');
-INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('20', '4', 'Om', '1982-04-10', '1983-04-27', '');
-INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('21', '4', 'Omkar', '1983-04-28', '1984-12-30', '');
-INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('22', '5', 'Manish', '1965-01-12', '1969-01-12', '');
-INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('23', '5', 'Manoj', '1969-01-13', '1972-09-05', '');
-INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('24', '5', 'Aditi', '1972-09-06', '1977-11-13', '');
-INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('25', '5', 'Varsha', '1977-11-14', '1981-12-31', '');
-INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('26', '5', 'Monika', '1982-01-01', '1983-03-23', '');
-INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('27', '5', 'Karishma', '1983-03-24', '1985-01-30', '');
-INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('28', '6', 'Vrushali', '1965-12-01', '1973-02-27', '');
-INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('29', '6', 'Sharmin', '1973-02-28', '1976-05-14', '');
-INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('30', '6', 'Nitish', '1976-05-15', '1978-05-16', '');
-INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('31', '6', 'Neel', '1978-04-17', '1982-01-27', '');
-INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('32', '6', 'Deep', '1982-02-28', '1985-01-30', '');
-INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('33', '7', 'Kaushal', '1960-12-14', '1963-07-13', '');
-INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('34', '7', 'Natasha', '1963-07-14', '1968-08-20', '');
-INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('35', '7', 'Nitish', '1968-08-21', '1972-11-27', '');
-INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('36', '7', 'Sharmin', '1972-12-28', '1974-11-14', '');
-INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('37', '7', 'Sharmin', '1974-11-15', '1980-02-13', '');
-INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('38', '8', 'Bandish', '1960-12-29', '1967-12-29', '');
-INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('39', '8', 'Bandish', '1968-01-01', '1970-04-02', '');
-INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('40', '8', 'Om', '1970-04-03', '1977-07-07', '');
-INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('41', '8', 'Omkar', '1977-07-08', '1979-07-19', '');
-INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('42', '8', 'Manish', '1979-07-20', '1980-12-25', '');
-INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('43', '9', 'Manoj', '1982-10-26', '1988-11-18', '');
-INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('44', '9', 'Aditi', '1988-11-19', '1992-01-17', '');
-INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('45', '9', 'Manoj', '1992-01-18', '1999-04-20', '');
-INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('46', '9', 'Aditi', '1999-04-21', '2000-08-11', '');
-INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('47', '9', 'Omkar', '2000-08-12', '2001-12-25', '');
-INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('48', '10', 'Monika', '1983-10-26', '1988-03-06', '');
-INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('49', '10', 'Monika', '1988-03-07', '1990-09-07', '');
-INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('50', '10', 'Karishma', '1990-09-08', '1991-06-04', '');
-INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('51', '10', 'Karishma', '1991-06-05', '2000-06-05', '');
-INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('52', '10', 'Karishma', '2000-06-06', '2002-08-08', '');
-INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('53', '10', 'Karishma', '2002-08-09', '2003-12-25', '');
-INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('54', '11', 'Sharmin', '1984-10-30', '1987-11-29', '');
-INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('55', '11', 'Sharmin', '1987-11-30', '1990-12-31', '');
-INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('56', '11', 'Sharmin', '1991-01-01', '1998-05-27', '');
-INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('57', '11', 'Nitish', '1998-05-28', '2001-05-28', '');
-INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('58', '11', 'Nitish', '2001-05-29', '2002-03-31', '');
-INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('59', '11', 'Sharmin', '2002-04-01', '2003-12-30', '');
-INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('60', '12', 'Neel', '1984-11-30', '1990-08-27', '');
-INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('61', '12', 'Neel', '1990-08-28', '1994-03-16', '');
-INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('62', '12', 'Neel', '1994-03-17', '2001-03-17', '');
-INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('63', '12', 'Deep', '2001-03-18', '2002-07-08', '');
-INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('64', '12', 'Deep', '2002-07-09', '2004-01-30', '');
-INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('65', '13', 'Divya', '1985-12-01', '1987-12-20', '');
-INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('66', '13', 'Divya', '1987-12-21', '1992-08-26', '');
-INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('67', '13', 'Divya', '1992-08-27', '2003-03-17', '');
-INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('68', '13', 'Divya', '2003-03-18', '2005-01-30', '');
-INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('69', '14', 'Ekta', '1986-12-15', '1989-02-23', '');
-INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('70', '14', 'Ekta', '1989-02-24', '1999-04-14', '');
-INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('71', '14', 'Ekta', '1999-04-15', '2004-03-16', '');
-INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('72', '14', 'Ekta', '2004-03-17', '2006-02-13', '');
-INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('73', '15', 'Falguni', '1987-12-30', '1994-06-26', '');
-INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('74', '15', 'Gini', '1994-06-27', '2001-06-27', '');
-INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('75', '15', 'Falguni', '2001-06-28', '2004-04-18', '');
-INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('76', '15', 'Gini', '2004-04-19', '2007-02-28', '');
-INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('77', '19', 'Sharmin', '1963-11-13', '1967-05-13', '');
-INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('78', '19', 'Sharmin', '1967-05-14', '1971-04-24', '');
-INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('79', '19', 'Bandish', '1971-04-25', '1979-07-15', '');
-INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('80', '19', 'Bandish', '1979-07-16', '1980-09-16', '');
-INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('81', '19', 'Sharmin', '1980-09-17', '1983-01-12', '');
-INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('82', '22', 'Om', '1962-04-10', '1963-08-10', '');
-INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('83', '22', 'Manish', '1963-08-11', '1967-01-15', '');
-INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('84', '22', 'Manoj', '1967-01-16', '1972-02-26', '');
-INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('85', '22', 'Aditi', '1972-02-27', '1974-10-23', '');
-INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('86', '22', 'Manoj', '1974-10-24', '1979-04-13', '');
-INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('87', '22', 'Aditi', '1979-05-14', '1981-06-09', '');
-INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('88', '27', 'Omkar', '1962-07-30', '1964-08-17', '');
-INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('89', '27', 'Monika', '1964-08-18', '1967-03-03', '');
-INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('90', '27', 'Monika', '1967-03-04', '1974-11-04', '');
-INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('91', '27', 'Karishma', '1974-11-05', '1980-12-24', '');
-INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('92', '27', 'Karishma', '1980-12-25', '1981-09-28', '');
-INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('93', '23', 'Sharmin', '1962-04-10', '1963-08-10', '');
-INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('94', '23', 'Sharmin', '1963-08-11', '1967-01-15', '');
-INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('95', '23', 'Bandish', '1967-01-16', '1972-02-26', '');
-INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('96', '23', 'Bandish', '1972-02-27', '1974-10-23', '');
-INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('97', '23', 'Om', '1974-10-24', '1979-04-13', '');
-INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('98', '23', 'Omkar', '1979-05-14', '1981-06-09', '');
-INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('99', '24', 'Manish', '1962-04-10', '1963-08-10', '');
-INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('100', '24', 'Manoj', '1963-08-11', '1967-01-15', '');
-INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('101', '24', 'Aditi', '1967-01-16', '1972-02-26', '');
-INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('102', '24', 'Manoj', '1972-02-27', '1974-10-23', '');
-INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('103', '24', 'Aditi', '1974-10-24', '1979-04-13', '');
-INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('104', '24', 'Omkar', '1979-05-14', '1981-06-09', '');
-INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('105', '20', 'Monika', '1962-07-30', '1964-08-17', '');
-INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('106', '20', 'Monika', '1964-08-18', '1967-03-03', '');
-INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('107', '20', 'Karishma', '1967-03-04', '1974-11-04', '');
-INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('108', '20', 'Karishma', '1974-11-05', '1980-12-24', '');
-INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('109', '20', 'Arjun', '1980-12-25', '1981-09-28', '');
-INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('110', '17', 'Sai', '1982-10-26', '1988-11-18', '');
-INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('111', '17', 'Dhruv', '1988-11-19', '1992-01-17', '');
-INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('112', '17', 'Saleel', '1992-01-18', '1999-04-20', '');
-INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('113', '17', 'Vrushali', '1999-04-21', '2000-08-11', '');
-INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('114', '17', 'Arjun', '2000-08-12', '2001-12-25', '');
-INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('115', '16', 'Sai', '1965-12-01', '1973-02-27', '');
-INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('116', '16', 'Dhruv', '1973-02-28', '1976-05-14', '');
-INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('117', '16', 'Saleel', '1976-05-15', '1978-05-16', '');
-INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('118', '16', 'Vrushali', '1978-04-17', '1982-01-27', '');
-INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('119', '16', 'Arjun', '1982-02-28', '1985-01-30', '');
-INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('120', '18', 'Sangita', '1964-06-12', '1966-07-12', '');
-INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('121', '18', 'Supriya', '1966-07-13', '1970-07-13', '');
-INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('122', '18', 'Ruhan', '1970-07-14', '1975-07-14', '');
-INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('123', '18', 'Gau', '1975-07-15', '1979-08-12', '');
-INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('124', '18', 'Bipin', '1979-08-13', '1983-08-12', '');
-INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('125', '25', 'Leena', '1983-10-26', '1988-03-06', '');
-INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('126', '25', 'Kabir', '1988-03-07', '1990-09-07', '');
-INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('127', '25', 'Sangita', '1990-09-08', '1991-06-04', '');
-INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('128', '25', 'Supriya', '1991-06-05', '2000-06-05', '');
-INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('129', '25', 'Ruhan', '2000-06-06', '2002-08-08', '');
-INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('130', '25', 'Gau', '2002-08-09', '2003-12-25', '');
-INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('131', '21', 'Bipin', '1984-11-30', '1990-08-27', '');
-INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('132', '21', 'Leena', '1990-08-28', '1994-03-16', '');
-INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('133', '21', 'Kabir', '1994-03-17', '2001-03-17', '');
-INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('134', '21', 'Dhruv', '2001-03-18', '2002-07-08', '');
-INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('135', '21', 'Saleel', '2002-07-09', '2004-01-30', '');
-INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('136', '27', 'Vrushali', '1990-09-08', '1991-06-04', '');
-INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('137', '27', 'Arjun', '1991-06-05', '2000-06-05', '');
-INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('138', '27', 'Sangita', '2000-06-06', '2002-08-08', '');
-INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('139', '27', 'Supriya', '2002-08-09', '2003-12-25', '');
-INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('140', '26', 'Bipin', '1962-07-30', '1964-08-17', '');
-INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('141', '26', 'Leena', '1964-08-18', '1967-03-03', '');
-INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('142', '26', 'Kabir', '1967-03-04', '1974-11-04', '');
-INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('143', '26', 'Dhruv', '1974-11-05', '1980-12-24', '');
-INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('144', '26', 'Saleel', '1980-12-25', '1981-09-28', '');
-
-
+INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `DEPARTMENTNAME`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('1', '1', 'ACCOUNTING', 'Arjun', '1964-06-12', '1966-07-12', '');
+INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `DEPARTMENTNAME`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('2', '1', 'RESEARCH', 'Sai', '1966-07-13', '1970-07-13', '');
+INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `DEPARTMENTNAME`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('3', '1', 'SALES', 'Dhruv', '1970-07-14', '1975-07-14', '');
+INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `DEPARTMENTNAME`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('4', '1', 'OPERATIONS', 'Saleel', '1975-07-15', '1979-08-12', '');
+INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `DEPARTMENTNAME`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('5', '1', 'PURCHASE', 'Vrushali', '1979-08-13', '1983-08-12', '');
+INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `DEPARTMENTNAME`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('6', '2', 'PRODUCTION', 'Sharmin', '1964-10-25', '1969-12-02', '');
+INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `DEPARTMENTNAME`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('7', '2', 'DEVELOPMENT', 'Nitish', '1969-12-03', '1974-07-07', '');
+INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `DEPARTMENTNAME`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('8', '2', 'R&D', 'Neel', '1974-07-08', '1979-02-21', '');
+INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `DEPARTMENTNAME`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('9', '2', 'FINANCE', 'Deep', '1979-02-22', '1980-03-21', '');
+INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `DEPARTMENTNAME`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('10', '2', 'TESTING', 'Kaushal', '1980-03-22', '1983-12-25', '');
+INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `DEPARTMENTNAME`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('11', '3', 'IT SUPPORT', 'Natasha', '1964-10-25', '1969-12-02', '');
+INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `DEPARTMENTNAME`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('12', '3', 'SHIPPING', 'Bandish', '1969-12-03', '1974-07-07', '');
+INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `DEPARTMENTNAME`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('13', '3', 'IT HELPDESK', 'Sangita', '1974-07-08', '1979-02-21', '');
+INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `DEPARTMENTNAME`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('14', '3', 'RETAIL SALES', 'Supriya', '1979-02-22', '1980-03-21', '');
+INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `DEPARTMENTNAME`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('15', '3', 'HRD', 'Ruhan', '1980-03-22', '1983-12-25', '');
+INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `DEPARTMENTNAME`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('16', '4', 'ACCOUNTING', 'Gau', '1965-10-31', '1970-05-11', '');
+INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `DEPARTMENTNAME`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('17', '4', 'RESEARCH', 'Bipin', '1970-05-12', '1975-07-17', '');
+INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `DEPARTMENTNAME`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('18', '4', 'SALES', 'Leena', '1975-07-18', '1978-11-02', '');
+INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `DEPARTMENTNAME`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('19', '4', 'OPERATIONS', 'Kabir', '1980-11-03', '1982-04-09', '');
+INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `DEPARTMENTNAME`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('20', '4', 'PURCHASE', 'Om', '1982-04-10', '1983-04-27', '');
+INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `DEPARTMENTNAME`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('21', '4', 'PRODUCTION', 'Omkar', '1983-04-28', '1984-12-30', '');
+INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `DEPARTMENTNAME`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('22', '5', 'DEVELOPMENT', 'Manish', '1965-01-12', '1969-01-12', '');
+INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `DEPARTMENTNAME`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('23', '5', 'R&D', 'Manoj', '1969-01-13', '1972-09-05', '');
+INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `DEPARTMENTNAME`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('24', '5', 'FINANCE', 'Aditi', '1972-09-06', '1977-11-13', '');
+INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `DEPARTMENTNAME`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('25', '5', 'TESTING', 'Varsha', '1977-11-14', '1981-12-31', '');
+INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `DEPARTMENTNAME`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('26', '5', 'IT SUPPORT', 'Monika', '1982-01-01', '1983-03-23', '');
+INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `DEPARTMENTNAME`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('27', '5', 'SHIPPING', 'Karishma', '1983-03-24', '1985-01-30', '');
+INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `DEPARTMENTNAME`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('28', '6', 'IT HELPDESK', 'Vrushali', '1965-12-01', '1973-02-27', '');
+INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `DEPARTMENTNAME`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('29', '6', 'RETAIL SALES', 'Sharmin', '1973-02-28', '1976-05-14', '');
+INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `DEPARTMENTNAME`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('30', '6', 'HRD', 'Nitish', '1976-05-15', '1978-05-16', '');
+INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `DEPARTMENTNAME`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('31', '6', 'DEVELOPMENT', 'Neel', '1978-04-17', '1982-01-27', '');
+INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `DEPARTMENTNAME`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('32', '6', 'R&D', 'Deep', '1982-02-28', '1985-01-30', '');
+INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `DEPARTMENTNAME`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('33', '7', 'FINANCE', 'Kaushal', '1960-12-14', '1963-07-13', '');
+INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `DEPARTMENTNAME`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('34', '7', 'TESTING', 'Natasha', '1963-07-14', '1968-08-20', '');
+INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `DEPARTMENTNAME`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('35', '7', 'IT SUPPORT', 'Nitish', '1968-08-21', '1972-11-27', '');
+INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `DEPARTMENTNAME`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('36', '7', 'SHIPPING', 'Sharmin', '1972-12-28', '1974-11-14', '');
+INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `DEPARTMENTNAME`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('37', '7', 'IT HELPDESK', 'Sharmin', '1974-11-15', '1980-02-13', '');
+INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `DEPARTMENTNAME`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('38', '8', 'RETAIL SALES', 'Bandish', '1960-12-29', '1967-12-29', '');
+INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `DEPARTMENTNAME`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('39', '8', 'HRD', 'Bandish', '1968-01-01', '1970-04-02', '');
+INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `DEPARTMENTNAME`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('40', '8', 'ACCOUNTING', 'Om', '1970-04-03', '1977-07-07', '');
+INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `DEPARTMENTNAME`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('41', '8', 'RESEARCH', 'Omkar', '1977-07-08', '1979-07-19', '');
+INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `DEPARTMENTNAME`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('42', '8', 'SALES', 'Manish', '1979-07-20', '1980-12-25', '');
+INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `DEPARTMENTNAME`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('43', '9', 'OPERATIONS', 'Manoj', '1982-10-26', '1988-11-18', '');
+INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `DEPARTMENTNAME`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('44', '9', 'PURCHASE', 'Aditi', '1988-11-19', '1992-01-17', '');
+INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `DEPARTMENTNAME`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('45', '9', 'PRODUCTION', 'Manoj', '1992-01-18', '1999-04-20', '');
+INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `DEPARTMENTNAME`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('46', '9', 'DEVELOPMENT', 'Aditi', '1999-04-21', '2000-08-11', '');
+INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `DEPARTMENTNAME`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('47', '9', 'R&D', 'Omkar', '2000-08-12', '2001-12-25', '');
+INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `DEPARTMENTNAME`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('48', '10', 'FINANCE', 'Monika', '1983-10-26', '1988-03-06', '');
+INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `DEPARTMENTNAME`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('49', '10', 'IT HELPDESK', 'Monika', '1988-03-07', '1990-09-07', '');
+INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `DEPARTMENTNAME`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('50', '10', 'RETAIL SALES', 'Karishma', '1990-09-08', '1991-06-04', '');
+INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `DEPARTMENTNAME`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('51', '10', 'HRD', 'Karishma', '1991-06-05', '2000-06-05', '');
+INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `DEPARTMENTNAME`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('52', '10', 'ACCOUNTING', 'Karishma', '2000-06-06', '2002-08-08', '');
+INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `DEPARTMENTNAME`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('53', '10', 'RESEARCH', 'Karishma', '2002-08-09', '2003-12-25', '');
+INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `DEPARTMENTNAME`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('54', '11', 'SALES', 'Sharmin', '1984-10-30', '1987-11-29', '');
+INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `DEPARTMENTNAME`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('55', '11', 'OPERATIONS', 'Sharmin', '1987-11-30', '1990-12-31', '');
+INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `DEPARTMENTNAME`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('56', '11', 'PURCHASE', 'Sharmin', '1991-01-01', '1998-05-27', '');
+INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `DEPARTMENTNAME`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('57', '11', 'PRODUCTION', 'Nitish', '1998-05-28', '2001-05-28', '');
+INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `DEPARTMENTNAME`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('58', '11', 'DEVELOPMENT', 'Nitish', '2001-05-29', '2002-03-31', '');
+INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `DEPARTMENTNAME`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('59', '11', 'R&D', 'Sharmin', '2002-04-01', '2003-12-30', '');
+INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `DEPARTMENTNAME`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('60', '12', 'DEVELOPMENT', 'Neel', '1984-11-30', '1990-08-27', '');
+INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `DEPARTMENTNAME`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('61', '12', 'R&D', 'Neel', '1990-08-28', '1994-03-16', '');
+INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `DEPARTMENTNAME`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('62', '12', 'FINANCE', 'Neel', '1994-03-17', '2001-03-17', '');
+INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `DEPARTMENTNAME`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('63', '12', 'TESTING', 'Deep', '2001-03-18', '2002-07-08', '');
+INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `DEPARTMENTNAME`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('64', '12', 'IT SUPPORT', 'Deep', '2002-07-09', '2004-01-30', '');
+INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `DEPARTMENTNAME`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('65', '13', 'SHIPPING', 'Divya', '1985-12-01', '1987-12-20', '');
+INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `DEPARTMENTNAME`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('66', '13', 'IT HELPDESK', 'Divya', '1987-12-21', '1992-08-26', '');
+INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `DEPARTMENTNAME`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('67', '13', 'RETAIL SALES', 'Divya', '1992-08-27', '2003-03-17', '');
+INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `DEPARTMENTNAME`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('68', '13', 'HRD', 'Divya', '2003-03-18', '2005-01-30', '');
+INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `DEPARTMENTNAME`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('69', '14', 'ACCOUNTING', 'Ekta', '1986-12-15', '1989-02-23', '');
+INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `DEPARTMENTNAME`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('70', '14', 'RESEARCH', 'Ekta', '1989-02-24', '1999-04-14', '');
+INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `DEPARTMENTNAME`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('71', '14', 'SALES', 'Ekta', '1999-04-15', '2004-03-16', '');
+INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `DEPARTMENTNAME`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('72', '14', 'OPERATIONS', 'Ekta', '2004-03-17', '2006-02-13', '');
+INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `DEPARTMENTNAME`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('73', '15', 'PURCHASE', 'Falguni', '1987-12-30', '1994-06-26', '');
+INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `DEPARTMENTNAME`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('74', '15', 'PRODUCTION', 'Gini', '1994-06-27', '2001-06-27', '');
+INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `DEPARTMENTNAME`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('75', '15', 'DEVELOPMENT', 'Falguni', '2001-06-28', '2004-04-18', '');
+INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `DEPARTMENTNAME`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('76', '15', 'R&D', 'Gini', '2004-04-19', '2007-02-28', '');
+INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `DEPARTMENTNAME`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('77', '19', 'FINANCE', 'Sharmin', '1963-11-13', '1967-05-13', '');
+INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `DEPARTMENTNAME`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('78', '19', 'TESTING', 'Sharmin', '1967-05-14', '1971-04-24', '');
+INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `DEPARTMENTNAME`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('79', '19', 'IT SUPPORT', 'Bandish', '1971-04-25', '1979-07-15', '');
+INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `DEPARTMENTNAME`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('80', '19', 'SHIPPING', 'Bandish', '1979-07-16', '1980-09-16', '');
+INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `DEPARTMENTNAME`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('81', '19', 'IT HELPDESK', 'Sharmin', '1980-09-17', '1983-01-12', '');
+INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `DEPARTMENTNAME`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('82', '22', 'DEVELOPMENT', 'Om', '1962-04-10', '1963-08-10', '');
+INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `DEPARTMENTNAME`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('83', '22', 'R&D', 'Manish', '1963-08-11', '1967-01-15', '');
+INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `DEPARTMENTNAME`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('84', '22', 'FINANCE', 'Manoj', '1967-01-16', '1972-02-26', '');
+INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `DEPARTMENTNAME`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('85', '22', 'TESTING', 'Aditi', '1972-02-27', '1974-10-23', '');
+INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `DEPARTMENTNAME`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('86', '22', 'IT SUPPORT', 'Manoj', '1974-10-24', '1979-04-13', '');
+INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `DEPARTMENTNAME`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('87', '22', 'SHIPPING', 'Aditi', '1979-05-14', '1981-06-09', '');
+INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `DEPARTMENTNAME`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('88', '27', 'IT HELPDESK', 'Omkar', '1962-07-30', '1964-08-17', '');
+INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `DEPARTMENTNAME`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('89', '27', 'RETAIL SALES', 'Monika', '1964-08-18', '1967-03-03', '');
+INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `DEPARTMENTNAME`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('90', '27', 'HRD', 'Monika', '1967-03-04', '1974-11-04', '');
+INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `DEPARTMENTNAME`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('91', '27', 'ACCOUNTING', 'Karishma', '1974-11-05', '1980-12-24', '');
+INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `DEPARTMENTNAME`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('92', '27', 'RESEARCH', 'Karishma', '1980-12-25', '1981-09-28', '');
+INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `DEPARTMENTNAME`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('93', '23', 'SALES', 'Sharmin', '1962-04-10', '1963-08-10', '');
+INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `DEPARTMENTNAME`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('94', '23', 'OPERATIONS', 'Sharmin', '1963-08-11', '1967-01-15', '');
+INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `DEPARTMENTNAME`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('95', '23', 'PURCHASE', 'Bandish', '1967-01-16', '1972-02-26', '');
+INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `DEPARTMENTNAME`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('96', '23', 'PRODUCTION', 'Bandish', '1972-02-27', '1974-10-23', '');
+INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `DEPARTMENTNAME`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('97', '23', 'DEVELOPMENT', 'Om', '1974-10-24', '1979-04-13', '');
+INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `DEPARTMENTNAME`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('98', '23', 'R&D', 'Omkar', '1979-05-14', '1981-06-09', '');
+INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `DEPARTMENTNAME`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('99', '24', 'FINANCE', 'Manish', '1962-04-10', '1963-08-10', '');
+INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `DEPARTMENTNAME`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('100', '24', 'TESTING', 'Manoj', '1963-08-11', '1967-01-15', '');
+INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `DEPARTMENTNAME`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('101', '24', 'IT SUPPORT', 'Aditi', '1967-01-16', '1972-02-26', '');
+INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `DEPARTMENTNAME`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('102', '24', 'SHIPPING', 'Manoj', '1972-02-27', '1974-10-23', '');
+INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `DEPARTMENTNAME`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('103', '24', 'IT HELPDESK', 'Aditi', '1974-10-24', '1979-04-13', '');
+INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `DEPARTMENTNAME`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('104', '24', 'RETAIL SALES', 'Omkar', '1979-05-14', '1981-06-09', '');
+INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `DEPARTMENTNAME`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('105', '20', 'HRD', 'Monika', '1962-07-30', '1964-08-17', '');
+INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `DEPARTMENTNAME`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('106', '20', 'ACCOUNTING', 'Monika', '1964-08-18', '1967-03-03', '');
+INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `DEPARTMENTNAME`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('107', '20', 'RESEARCH', 'Karishma', '1967-03-04', '1974-11-04', '');
+INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `DEPARTMENTNAME`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('108', '20', 'SALES', 'Karishma', '1974-11-05', '1980-12-24', '');
+INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `DEPARTMENTNAME`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('109', '20', 'OPERATIONS', 'Arjun', '1980-12-25', '1981-09-28', '');
+INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `DEPARTMENTNAME`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('110', '17', 'PURCHASE', 'Sai', '1982-10-26', '1988-11-18', '');
+INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `DEPARTMENTNAME`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('111', '17', 'PRODUCTION', 'Dhruv', '1988-11-19', '1992-01-17', '');
+INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `DEPARTMENTNAME`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('112', '17', 'DEVELOPMENT', 'Saleel', '1992-01-18', '1999-04-20', '');
+INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `DEPARTMENTNAME`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('113', '17', 'R&D', 'Vrushali', '1999-04-21', '2000-08-11', '');
+INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `DEPARTMENTNAME`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('114', '17', 'FINANCE', 'Arjun', '2000-08-12', '2001-12-25', '');
+INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `DEPARTMENTNAME`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('115', '16', 'IT HELPDESK', 'Sai', '1965-12-01', '1973-02-27', '');
+INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `DEPARTMENTNAME`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('116', '16', 'RETAIL SALES', 'Dhruv', '1973-02-28', '1976-05-14', '');
+INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `DEPARTMENTNAME`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('117', '16', 'HRD', 'Saleel', '1976-05-15', '1978-05-16', '');
+INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `DEPARTMENTNAME`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('118', '16', 'ACCOUNTING', 'Vrushali', '1978-04-17', '1982-01-27', '');
+INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `DEPARTMENTNAME`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('119', '16', 'RESEARCH', 'Arjun', '1982-02-28', '1985-01-30', '');
+INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `DEPARTMENTNAME`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('120', '18', 'SALES', 'Sangita', '1964-06-12', '1966-07-12', '');
+INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `DEPARTMENTNAME`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('121', '18', 'OPERATIONS', 'Supriya', '1966-07-13', '1970-07-13', '');
+INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `DEPARTMENTNAME`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('122', '18', 'PURCHASE', 'Ruhan', '1970-07-14', '1975-07-14', '');
+INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `DEPARTMENTNAME`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('123', '18', 'PRODUCTION', 'Gau', '1975-07-15', '1979-08-12', '');
+INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `DEPARTMENTNAME`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('124', '18', 'DEVELOPMENT', 'Bipin', '1979-08-13', '1983-08-12', '');
+INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `DEPARTMENTNAME`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('125', '25', 'R&D', 'Leena', '1983-10-26', '1988-03-06', '');
+INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `DEPARTMENTNAME`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('126', '25', 'DEVELOPMENT', 'Kabir', '1988-03-07', '1990-09-07', '');
+INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `DEPARTMENTNAME`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('127', '25', 'R&D', 'Sangita', '1990-09-08', '1991-06-04', '');
+INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `DEPARTMENTNAME`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('128', '25', 'FINANCE', 'Supriya', '1991-06-05', '2000-06-05', '');
+INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `DEPARTMENTNAME`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('129', '25', 'ACCOUNTING', 'Ruhan', '2000-06-06', '2002-08-08', '');
+INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `DEPARTMENTNAME`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('130', '25', 'RESEARCH', 'Gau', '2002-08-09', '2003-12-25', '');
+INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `DEPARTMENTNAME`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('131', '21', 'SALES', 'Bipin', '1984-11-30', '1990-08-27', '');
+INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `DEPARTMENTNAME`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('132', '21', 'OPERATIONS', 'Leena', '1990-08-28', '1994-03-16', '');
+INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `DEPARTMENTNAME`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('133', '21', 'PURCHASE', 'Kabir', '1994-03-17', '2001-03-17', '');
+INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `DEPARTMENTNAME`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('134', '21', 'PRODUCTION', 'Dhruv', '2001-03-18', '2002-07-08', '');
+INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `DEPARTMENTNAME`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('135', '21', 'DEVELOPMENT', 'Saleel', '2002-07-09', '2004-01-30', '');
+INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `DEPARTMENTNAME`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('136', '27', 'R&D', 'Vrushali', '1990-09-08', '1991-06-04', '');
+INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `DEPARTMENTNAME`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('137', '27', 'DEVELOPMENT', 'Arjun', '1991-06-05', '2000-06-05', '');
+INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `DEPARTMENTNAME`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('138', '27', 'R&D', 'Sangita', '2000-06-06', '2002-08-08', '');
+INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `DEPARTMENTNAME`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('139', '27', 'FINANCE', 'Supriya', '2002-08-09', '2003-12-25', '');
+INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `DEPARTMENTNAME`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('140', '26', 'DEVELOPMENT', 'Bipin', '1962-07-30', '1964-08-17', '');
+INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `DEPARTMENTNAME`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('141', '26', 'R&D', 'Leena', '1964-08-18', '1967-03-03', '');
+INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `DEPARTMENTNAME`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('142', '26', 'DEVELOPMENT', 'Kabir', '1967-03-04', '1974-11-04', '');
+INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `DEPARTMENTNAME`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('143', '26', 'R&D', 'Dhruv', '1974-11-05', '1980-12-24', '');
+INSERT INTO `nf2`.`n2jobhistory` (`ID`, `EMPLOYEEID`, `DEPARTMENTNAME`, `EMPLOYER`, `FROMDATE`, `TODATE`, `NATURE`) VALUES ('144', '26', 'FINANCE', 'Saleel', '1980-12-25', '1981-09-28', '');
 
 
 
