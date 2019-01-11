@@ -3,13 +3,89 @@ DROP TABLE IF EXISTS  PRICE;
 DROP TABLE IF EXISTS  PRODUCT;
 DROP TABLE IF EXISTS  ORD;
 DROP TABLE IF EXISTS  CUSTOMER;
+
 DROP TABLE IF EXISTS  MENUCARD;
 DROP TABLE IF EXISTS  SOFTDRINK;
+
 DROP TABLE IF EXISTS  BOOK;
 DROP TABLE IF EXISTS  AvailableIN;
 
 DROP TABLE IF EXISTS  OLDBOOK;
 DROP TABLE IF EXISTS  NEWBOOK;
+
+DROP TABLE IF EXISTS  ACTOR;
+DROP TABLE IF EXISTS  MOVIE;
+DROP TABLE IF EXISTS  ACTOR_MOVIE;
+
+create table actor (
+	actorid int primary key, 
+	name varchar(20),
+	gender char(1),
+	rating int
+);
+
+INSERT INTO `db3`.`actor` (`actorid`, `name`, `gender`, `rating`) VALUES ('1', 'Amitabh Bachchan','M',1);
+INSERT INTO `db3`.`actor` (`actorid`, `name`, `gender`, `rating`) VALUES ('2', 'Akshay Kumar','M',2);
+INSERT INTO `db3`.`actor` (`actorid`, `name`, `gender`, `rating`) VALUES ('3', 'Salman Khan','M',4);
+INSERT INTO `db3`.`actor` (`actorid`, `name`, `gender`, `rating`) VALUES ('4', 'Ajay Devgn','M',3);
+INSERT INTO `db3`.`actor` (`actorid`, `name`, `gender`, `rating`) VALUES ('5', 'Deepika Padukone','F',3);
+INSERT INTO `db3`.`actor` (`actorid`, `name`, `gender`, `rating`) VALUES ('6', 'Kajol','F',2);
+INSERT INTO `db3`.`actor` (`actorid`, `name`, `gender`, `rating`) VALUES ('7', 'Madhuri Dixit','F',1);
+
+
+create table movie (
+	movieid int primary key, 
+	name varchar(20), 
+	release_date date
+);
+
+INSERT INTO `db3`.`movie` (`movieid`, `name`, `release_date`) VALUES ('10', 'Movie1', '1980-07-15');
+INSERT INTO `db3`.`movie` (`movieid`, `name`, `release_date`) VALUES ('20', 'Movie2', '1981-04-20');
+INSERT INTO `db3`.`movie` (`movieid`, `name`, `release_date`) VALUES ('30', 'Movie3', '1981-05-05');
+INSERT INTO `db3`.`movie` (`movieid`, `name`, `release_date`) VALUES ('40', 'Movie4', '1982-09-22');
+INSERT INTO `db3`.`movie` (`movieid`, `name`, `release_date`) VALUES ('50', 'Movie5', '1982-02-28');
+INSERT INTO `db3`.`movie` (`movieid`, `name`, `release_date`) VALUES ('60', 'Movie6', '1981-07-15');
+INSERT INTO `db3`.`movie` (`movieid`, `name`, `release_date`) VALUES ('70', 'Movie7', '1982-09-22');
+INSERT INTO `db3`.`movie` (`movieid`, `name`, `release_date`) VALUES ('80', 'Movie8', '1982-02-28');
+INSERT INTO `db3`.`movie` (`movieid`, `name`, `release_date`) VALUES ('90', 'Movie9', '1980-07-23');
+INSERT INTO `db3`.`movie` (`movieid`, `name`, `release_date`) VALUES ('100', 'Movie10', '1980-07-15');
+
+
+
+create table actor_movie (
+	actorid int, 
+	movieid int
+);
+
+insert into actor_movie values(1,10);
+insert into actor_movie values(2,10);
+insert into actor_movie values(5,10);
+insert into actor_movie values(6,10);
+insert into actor_movie values(3,20);
+insert into actor_movie values(7,20);
+insert into actor_movie values(2,20);
+insert into actor_movie values(6,20);
+insert into actor_movie values(1,30);
+insert into actor_movie values(7,30);
+insert into actor_movie values(4,40);
+insert into actor_movie values(6,40);
+insert into actor_movie values(1,50);
+insert into actor_movie values(2,50);
+insert into actor_movie values(7,50);
+insert into actor_movie values(2,60);
+insert into actor_movie values(3,60);
+insert into actor_movie values(4,60);
+insert into actor_movie values(5,60);
+insert into actor_movie values(7,60);
+insert into actor_movie values(2,70);
+insert into actor_movie values(5,70);
+insert into actor_movie values(3,80);
+insert into actor_movie values(5,80);
+insert into actor_movie values(3,90);
+insert into actor_movie values(6,90);
+insert into actor_movie values(3,100);
+insert into actor_movie values(7,100);
+
 
 create table oldbook (
 	id int,
