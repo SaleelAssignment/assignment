@@ -9,12 +9,12 @@ begin
 		select vehicleid into x1 from onduty where vehicleid = _vehicleID;
 		if x1 is null then
 			insert into onduty values(default, _vehicleID, now());
-			select "logged in successfully!";
+			select "Logged in successfully!" as Message;
 		else
-			select "Login failed! driver is alredy logged in...";
+			select "Login failed! driver is alredy logged in..." as Message;
 		end if;
 	else
-		select "Vehicle not found";
+		select "Vehicle not found" as Message;
 	end if;
 end$$
 delimiter ;
