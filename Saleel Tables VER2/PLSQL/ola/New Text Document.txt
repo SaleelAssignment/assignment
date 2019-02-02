@@ -1,0 +1,8 @@
+	/*declare x int;
+	select id into x from driver where driverId = _driverID;
+	if (x is not null or x<>0) then
+		select "Driver Found";
+	else
+		insert into driver values (default,_driverID, _driverName, _gender, _drivinglicence);
+		select "New driver inserted...";
+	end if;*/
