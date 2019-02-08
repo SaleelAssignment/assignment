@@ -1,0 +1,154 @@
+create employee tables with  erp schema
+
+CREATE TABLE `group001_erp`.`employee` (
+  `ID` INT NULL,
+  `namefirst` VARCHAR(45) NULL,
+  `namelast` VARCHAR(45) NULL,
+  `DOB` DATE NULL,
+  `address` VARCHAR(100) NULL,
+  `mobile` VARCHAR(10) NULL,
+  `emailID` VARCHAR(128) NULL);
+
+CREATE TABLE `group001_erp`.`department` (
+  `ID` INT NULL,
+  `name` VARCHAR(45) NULL,
+  `phone` VARCHAR(45) NULL);
+
+
+CREATE TABLE `group001_erp`.`products` (
+  `ID` INT NULL,
+  `name` VARCHAR(45) NULL,
+  `manufacturer` VARCHAR(45) NULL);
+
+
+CREATE TABLE `group001_erp`.`region` (
+  `ID` INT NULL,
+  `name` VARCHAR(45) NULL);
+
+
+Add the following records in each tables using the insert statement.
+
+
+----------------------------------------------
+
+
+CREATE SCHEMA `group1_campus` ;
+
+CREATE TABLE `group001_campus`.`course` (
+  `ID` INT NULL,
+  `name` VARCHAR(45) NULL,
+  `duration` INT NULL,
+  `summery` VARCHAR(1024) NULL);
+
+
+
+CREATE TABLE `group001_campus`.`student` (
+  `ID` INT NULL,
+  `namefirst` VARCHAR(45) NULL,
+  `namelast` VARCHAR(45) NULL,
+  `DOB` DATE NULL,
+  `mobile` VARCHAR(10) NULL,
+  `address` VARCHAR(100) NULL);
+
+
+CREATE TABLE `group001_campus`.`faculty` (
+  `ID` INT NULL,
+  `namefirst` VARCHAR(45) NULL,
+  `namelast` VARCHAR(45) NULL,
+  `DOB` DATE NULL,
+  `emailID` VARCHAR(128) NULL,
+  `mobile` VARCHAR(10) NULL,
+  `address` VARCHAR(128) NULL);
+
+CREATE TABLE `group001_campus`.`module` (
+  `ID` INT NOT NULL,
+  `name` VARCHAR(128) NULL,
+  `duration` INT NULL,
+  PRIMARY KEY (`ID`));
+
+
+
+CREATE TABLE `group001_campus`.`course_modules` (
+  `ID` INT NOT NULL,
+  `courseID` INT NULL,
+  `moduleID` INT NULL,
+  INDEX `courseID_idx` (`courseID` ASC),
+  INDEX `moduleID_idx` (`moduleID` ASC),
+  CONSTRAINT `courseID`
+    FOREIGN KEY (`courseID`)
+    REFERENCES `group001_campus`.`course` (`ID`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `moduleID`
+    FOREIGN KEY (`moduleID`)
+    REFERENCES `group001_campus`.`modules` (`ID`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION);
+
+
+CREATE TABLE `group001_campus`.`student_qualifications` (
+  `ID` INT NOT NULL,
+  `studentID` INT NULL,
+  `name` VARCHAR(128) NULL,
+  `college` VARCHAR(128) NULL,
+  `university` VARCHAR(128) NULL,
+  `marks` VARCHAR(45) NULL,
+  `year` DATE NULL,
+  PRIMARY KEY (`ID`));
+
+
+CREATE TABLE `group001_campus`.`course_batches` (
+  `ID` INT NOT NULL,
+  `name` VARCHAR(45) NULL,
+  `courseID` INT NULL,
+  `starton` DATE NULL,
+  `endson` DATE NULL,
+  `capicity` INT NULL,
+  PRIMARY KEY (`ID`),
+  INDEX `course_batches_idx` (`courseID` ASC),
+  CONSTRAINT `course_batchesID`
+    FOREIGN KEY (`courseID`)
+    REFERENCES `group001_campus`.`course` (`ID`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION);
+
+
+CREATE TABLE `group001_campus`.`batch_students` (
+  `batchID` INT NULL,
+  `studentID` INT NULL,
+  INDEX `studentID_idx` (`studentID` ASC),
+  INDEX `bathchID_idx` (`batchID` ASC),
+  CONSTRAINT `bathchID`
+    FOREIGN KEY (`batchID`)
+    REFERENCES `group001_campus`.`course_batches` (`ID`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `studentID`
+    FOREIGN KEY (`studentID`)
+    REFERENCES `group001_campus`.`student` (`ID`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION);
+
+-------------------------------------------------------------
+
+CREATE SCHEMA `group001_cab` ;
+
+
+CREATE TABLE `group001_cab`.`driver` (
+  `ID` INT NULL,
+  `namefirst` VARCHAR(45) NULL,
+  `namelast` VARCHAR(45) NULL,
+  `address` VARCHAR(128) NULL,
+  `emailID` VARCHAR(45) NULL,
+  `mobile` VARCHAR(10) NULL,
+  `licenseno` VARCHAR(45) NULL);
+
+CREATE TABLE `group001_cab`.`vehicle` (
+  `ID` INT NULL,
+  `number` VARCHAR(45) NULL,
+  `model` VARCHAR(45) NULL,
+  `type` VARCHAR(45) NULL,
+  `capicity` VARCHAR(45) NULL);
+
+
+
