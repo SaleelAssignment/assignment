@@ -19,7 +19,9 @@ CREATE TABLE `infoway_cab`.`driver` (
 CREATE TABLE `infoway_cab`.`driver_licence` (
   `ID` INT primary key,
   `driverID` INT,
-  `licenceno` VARCHAR(45),
+  `code` VARCHAR(45),
+  `DOI` date,
+  `DOE` date,
   FOREIGN KEY(`driverID`) REFERENCES `driver`(`id`));
   
   
@@ -80,11 +82,12 @@ INSERT INTO `infoway_cab`.`vehicle` (`ID`, `number`, `model`, `type`, `capacity`
 
 
 
-INSERT INTO `infoway_cab`.`driver_licence` (`ID`, `driverID`, `licenceno`) VALUES ('1', '1', 'LI10NN2023');
-INSERT INTO `infoway_cab`.`driver_licence` (`ID`, `driverID`, `licenceno`) VALUES ('2', '2', 'LK192NP199');
-INSERT INTO `infoway_cab`.`driver_licence` (`ID`, `driverID`, `licenceno`) VALUES ('3', '3', 'LM983KC189');
-INSERT INTO `infoway_cab`.`driver_licence` (`ID`, `driverID`, `licenceno`) VALUES ('4', '4', 'LK763KHH182');
-INSERT INTO `infoway_cab`.`driver_licence` (`ID`, `driverID`, `licenceno`) VALUES ('5', '5', 'LJ101ABC123');
+INSERT INTO `infoway_cab`.`driver_licence` (`ID`, `driverID`, `code`, `DOI`, `DOE`) VALUES ('1', '1', 'LI10NN2023', '1964-05-08', '2073-11-12');
+INSERT INTO `infoway_cab`.`driver_licence` (`ID`, `driverID`, `code`, `DOI`, `DOE`) VALUES ('2', '2', 'LK192NP199', '1964-05-08', '2073-11-12');
+INSERT INTO `infoway_cab`.`driver_licence` (`ID`, `driverID`, `code`, `DOI`, `DOE`) VALUES ('3', '3', 'LM983KC189', '1964-05-08', '2073-11-12');
+INSERT INTO `infoway_cab`.`driver_licence` (`ID`, `driverID`, `code`, `DOI`, `DOE`) VALUES ('4', '4', 'LK763KHH182', '1964-05-08', '2073-11-12');
+INSERT INTO `infoway_cab`.`driver_licence` (`ID`, `driverID`, `code`, `DOI`, `DOE`) VALUES ('5', '5', 'LJ101ABC123', '1964-05-08', '2073-11-12');
+
 
 
 INSERT INTO `infoway_cab`.`driver_address` (`ID`, `driverID`, `address`) VALUES ('1', '1', 'Padu Road, Pune');
