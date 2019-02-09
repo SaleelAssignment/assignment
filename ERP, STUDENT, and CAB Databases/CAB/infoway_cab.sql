@@ -82,11 +82,11 @@ INSERT INTO `infoway_cab`.`vehicle` (`ID`, `number`, `model`, `type`, `capacity`
 
 
 
-INSERT INTO `infoway_cab`.`driver_licence` (`ID`, `driverID`, `code`, `DOI`, `DOE`) VALUES ('1', '1', 'LI10NN2023', '1964-05-08', '2073-11-12');
-INSERT INTO `infoway_cab`.`driver_licence` (`ID`, `driverID`, `code`, `DOI`, `DOE`) VALUES ('2', '2', 'LK192NP199', '1964-05-08', '2073-11-12');
-INSERT INTO `infoway_cab`.`driver_licence` (`ID`, `driverID`, `code`, `DOI`, `DOE`) VALUES ('3', '3', 'LM983KC189', '1964-05-08', '2073-11-12');
-INSERT INTO `infoway_cab`.`driver_licence` (`ID`, `driverID`, `code`, `DOI`, `DOE`) VALUES ('4', '4', 'LK763KHH182', '1964-05-08', '2073-11-12');
-INSERT INTO `infoway_cab`.`driver_licence` (`ID`, `driverID`, `code`, `DOI`, `DOE`) VALUES ('5', '5', 'LJ101ABC123', '1964-05-08', '2073-11-12');
+INSERT INTO `infoway_cab`.`driver_licence` (`ID`, `driverID`, `code`, `DOI`, `DOE`) VALUES ('1', '1', 'LI10NN2023', '1980-01-01', '2015-11-12');
+INSERT INTO `infoway_cab`.`driver_licence` (`ID`, `driverID`, `code`, `DOI`, `DOE`) VALUES ('2', '2', 'LK192NP199', '1980-01-02', '2015-11-13');
+INSERT INTO `infoway_cab`.`driver_licence` (`ID`, `driverID`, `code`, `DOI`, `DOE`) VALUES ('3', '3', 'LM983KC189', '1980-01-03', '2015-11-14');
+INSERT INTO `infoway_cab`.`driver_licence` (`ID`, `driverID`, `code`, `DOI`, `DOE`) VALUES ('4', '4', 'LK763KHH182', '1980-01-04', '2015-11-15');
+INSERT INTO `infoway_cab`.`driver_licence` (`ID`, `driverID`, `code`, `DOI`, `DOE`) VALUES ('5', '5', 'LJ101ABC123', '1980-01-05', '2015-11-16');
 
 
 
