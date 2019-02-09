@@ -34,6 +34,8 @@ CREATE TABLE `infoway_campus`.`student_phone` (
   number varchar(10),
   FOREIGN KEY(`studentID`) REFERENCES `student`(`id`));
  
+ 
+ 
  CREATE TABLE `infoway_campus`.`student_address` (
   `ID` INT primary key ,
   `studentID` INT,

@@ -55,6 +55,7 @@ CREATE TABLE `infoway_erp`.`phone` (
   `year` int NULL,
   FOREIGN KEY(`employeeID`) REFERENCES `employee`(`id`));
   
+  
   CREATE TABLE `infoway_erp`.`spouse` (
   `ID` INT primary key,
   `employeeID` INT,
