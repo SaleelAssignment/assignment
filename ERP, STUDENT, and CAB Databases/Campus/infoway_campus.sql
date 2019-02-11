@@ -169,6 +169,22 @@ INSERT INTO `infoway_campus`.`student_phone` (`ID`, `studentID`, `number`) VALUE
 INSERT INTO `infoway_campus`.`student_phone` (`ID`, `studentID`, `number`) VALUES ('18', '18', '7032300011');
 INSERT INTO `infoway_campus`.`student_phone` (`ID`, `studentID`, `number`) VALUES ('19', '19', '7032300066');
 INSERT INTO `infoway_campus`.`student_phone` (`ID`, `studentID`, `number`) VALUES ('20', '20', '7032300096');
+INSERT INTO `infoway_campus`.`student_phone` (`ID`, `studentID`, `number`) VALUES ('21', '1', '7132300034');
+INSERT INTO `infoway_campus`.`student_phone` (`ID`, `studentID`, `number`) VALUES ('22', '2', '7132300039');
+INSERT INTO `infoway_campus`.`student_phone` (`ID`, `studentID`, `number`) VALUES ('23', '3', '7132300050');
+INSERT INTO `infoway_campus`.`student_phone` (`ID`, `studentID`, `number`) VALUES ('24', '4', '7132300027');
+INSERT INTO `infoway_campus`.`student_phone` (`ID`, `studentID`, `number`) VALUES ('25', '5', '7032300001');
+INSERT INTO `infoway_campus`.`student_phone` (`ID`, `studentID`, `number`) VALUES ('26', '6', '7132300079');
+INSERT INTO `infoway_campus`.`student_phone` (`ID`, `studentID`, `number`) VALUES ('27', '7', '7132300081');
+INSERT INTO `infoway_campus`.`student_phone` (`ID`, `studentID`, `number`) VALUES ('28', '8', '7132300054');
+INSERT INTO `infoway_campus`.`student_phone` (`ID`, `studentID`, `number`) VALUES ('29', '9', '7132300059');
+INSERT INTO `infoway_campus`.`student_phone` (`ID`, `studentID`, `number`) VALUES ('30', '10', '7132300086');
+INSERT INTO `infoway_campus`.`student_phone` (`ID`, `studentID`, `number`) VALUES ('31', '11', '7132300082');
+INSERT INTO `infoway_campus`.`student_phone` (`ID`, `studentID`, `number`) VALUES ('32', '12', '7132300042');
+INSERT INTO `infoway_campus`.`student_phone` (`ID`, `studentID`, `number`) VALUES ('33', '13', '7132300055');
+INSERT INTO `infoway_campus`.`student_phone` (`ID`, `studentID`, `number`) VALUES ('34', '13', '7132300055');
+INSERT INTO `infoway_campus`.`student_phone` (`ID`, `studentID`, `number`) VALUES ('35', '13', '7132300055');
+
 
 
 INSERT INTO `infoway_campus`.`student_address` (`ID`, `studentID`, `address`) VALUES ('1', '1', '13758 Dogwood, St, Trona, CA, Los Angeles, 93562');
