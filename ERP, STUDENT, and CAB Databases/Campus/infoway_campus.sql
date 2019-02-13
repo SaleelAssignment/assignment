@@ -125,6 +125,11 @@ INSERT INTO `infoway_campus`.`course` (`ID`, `name`, `duration`, `summery`) VALU
 INSERT INTO `infoway_campus`.`course` (`ID`, `name`, `duration`, `summery`) VALUES ('3', 'Pre-DAC', '2', 'This course is designed by CDAC');
 INSERT INTO `infoway_campus`.`course` (`ID`, `name`, `duration`, `summery`) VALUES ('4', 'JAVA', '3', 'This course is designed by Infoway');
 INSERT INTO `infoway_campus`.`course` (`ID`, `name`, `duration`, `summery`) VALUES ('5', '.NET', '3', 'This course is designed by Infoway');
+INSERT INTO `infoway_campus`.`course` (`ID`, `name`, `duration`, `summery`) VALUES ('6', 'DMC', '6', 'This course is designed by CDAC');
+INSERT INTO `infoway_campus`.`course` (`ID`, `name`, `duration`, `summery`) VALUES ('7', 'DSSD', '6', 'This course is designed by CDAC');
+
+
+
 
 
 INSERT INTO `infoway_campus`.`student` (`ID`, `namefirst`, `namelast`, `DOB`, `emailID`) VALUES ('1', 'saleel', 'bagde', '1984-06-12', 'saleel.bagde@gmail.com');
@@ -245,6 +250,14 @@ INSERT INTO `infoway_campus`.`modules` (`ID`, `name`, `duration`) VALUES ('10', 
 INSERT INTO `infoway_campus`.`modules` (`ID`, `name`, `duration`) VALUES ('11', 'Hive', '1');
 INSERT INTO `infoway_campus`.`modules` (`ID`, `name`, `duration`) VALUES ('12', 'Python', '1');
 INSERT INTO `infoway_campus`.`modules` (`ID`, `name`, `duration`) VALUES ('13', 'Aptitude', '1');
+INSERT INTO `infoway_campus`.`modules` (`ID`, `name`, `duration`) VALUES ('14', 'OOPs with C++ Programming', '6');
+INSERT INTO `infoway_campus`.`modules` (`ID`, `name`, `duration`) VALUES ('15', 'Data Structures', '6');
+INSERT INTO `infoway_campus`.`modules` (`ID`, `name`, `duration`) VALUES ('16', 'OS Concepts', '6');
+INSERT INTO `infoway_campus`.`modules` (`ID`, `name`, `duration`) VALUES ('17', 'iOS Programming', '6');
+
+
+
+
 
 INSERT INTO `infoway_campus`.`course_modules` (`ID`, `courseID`, `moduleID`) VALUES ('1', '1', '1');
 INSERT INTO `infoway_campus`.`course_modules` (`ID`, `courseID`, `moduleID`) VALUES ('2', '1', '2');
@@ -270,6 +283,13 @@ INSERT INTO `infoway_campus`.`course_modules` (`ID`, `courseID`, `moduleID`) VAL
 INSERT INTO `infoway_campus`.`course_modules` (`ID`, `courseID`, `moduleID`) VALUES ('22', '5', '1');
 INSERT INTO `infoway_campus`.`course_modules` (`ID`, `courseID`, `moduleID`) VALUES ('23', '5', '7');
 INSERT INTO `infoway_campus`.`course_modules` (`ID`, `courseID`, `moduleID`) VALUES ('24', '5', '8');
+INSERT INTO `infoway_campus`.`course_modules` (`ID`, `courseID`, `moduleID`) VALUES ('25', '6', '14');
+INSERT INTO `infoway_campus`.`course_modules` (`ID`, `courseID`, `moduleID`) VALUES ('26', '6', '15');
+INSERT INTO `infoway_campus`.`course_modules` (`ID`, `courseID`, `moduleID`) VALUES ('27', '6', '16');
+INSERT INTO `infoway_campus`.`course_modules` (`ID`, `courseID`, `moduleID`) VALUES ('28', '6', '17');
+
+
+
 
 
 INSERT INTO `infoway_campus`.`course_batches` (`ID`, `name`, `courseID`, `starton`, `endson`, `capicity`) VALUES ('1', 'Batch1', '1', '2016-02-01', '2016-08-31', '80');
@@ -323,6 +343,12 @@ INSERT INTO `infoway_campus`.`batch_students` (`ID`, `batchID`, `studentID`) VAL
 INSERT INTO `infoway_campus`.`batch_students` (`ID`, `batchID`, `studentID`) VALUES ('22', '15', '18');
 INSERT INTO `infoway_campus`.`batch_students` (`ID`, `batchID`, `studentID`) VALUES ('23', '16', '18');
 INSERT INTO `infoway_campus`.`batch_students` (`ID`, `batchID`, `studentID`) VALUES ('24', '17', '12');
+INSERT INTO `infoway_campus`.`batch_students` (`ID`, `batchID`, `studentID`) VALUES ('25', '3', '20');
+INSERT INTO `infoway_campus`.`batch_students` (`ID`, `batchID`, `studentID`) VALUES ('26', '4', '17');
+
+
+
+
 
 
 
