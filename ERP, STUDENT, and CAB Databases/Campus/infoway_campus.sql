@@ -228,6 +228,9 @@ INSERT INTO `infoway_campus`.`faculty_phone` (`ID`, `facultyID`, `number`) VALUE
 INSERT INTO `infoway_campus`.`faculty_phone` (`ID`, `facultyID`, `number`) VALUES ('6', '2', '7032303479');
 INSERT INTO `infoway_campus`.`faculty_phone` (`ID`, `facultyID`, `number`) VALUES ('7', '3', '7032306781');
 INSERT INTO `infoway_campus`.`faculty_phone` (`ID`, `facultyID`, `number`) VALUES ('8', '4', '7032390234');
+INSERT INTO `infoway_campus`.`student_phone` (`ID`, `studentID`, `number`) VALUES ('36', '6', '7134567123');
+
+
 
 
 INSERT INTO `infoway_campus`.`faculty_address` (`ID`, `facultyID`, `address`) VALUES ('1', '1', '165 Village Dr., P.O. Box 3700, Oakland, TN, Oakland, 38060');
@@ -316,6 +319,9 @@ INSERT INTO `infoway_campus`.`course_batches` (`ID`, `name`, `courseID`, `starto
 INSERT INTO `infoway_campus`.`course_batches` (`ID`, `name`, `courseID`, `starton`, `endson`, `capicity`) VALUES ('22', 'Batch22', '2', '2015-08-01', '2016-02-28', '30');
 INSERT INTO `infoway_campus`.`course_batches` (`ID`, `name`, `courseID`, `starton`, `endson`, `capicity`) VALUES ('23', 'Batch23', '3', '2019-03-01', '2019-04-30', '40');
 INSERT INTO `infoway_campus`.`course_batches` (`ID`, `name`, `courseID`, `starton`, `endson`, `capicity`) VALUES ('24', 'Batch24', '4', '2019-01-01', '2019-03-30', '30');
+INSERT INTO `infoway_campus`.`course_batches` (`ID`, `name`, `courseID`, `starton`, `endson`, `capicity`) VALUES ('25', 'Batch25', '6', '2019-01-01', '2019-03-30', '30');
+
+
 
 
 
