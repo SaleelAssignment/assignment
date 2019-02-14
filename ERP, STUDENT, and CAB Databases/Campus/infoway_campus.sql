@@ -152,6 +152,15 @@ INSERT INTO `infoway_campus`.`student` (`ID`, `namefirst`, `namelast`, `DOB`, `e
 INSERT INTO `infoway_campus`.`student` (`ID`, `namefirst`, `namelast`, `DOB`, `emailID`) VALUES ('18', 'rahul', 'shah', '1982-06-12', 'rahul.shah@gmail.com');
 INSERT INTO `infoway_campus`.`student` (`ID`, `namefirst`, `namelast`, `DOB`, `emailID`) VALUES ('19', 'bhavin', 'patel', '1983-11-13', 'bhavin.patel@gmail.com');
 INSERT INTO `infoway_campus`.`student` (`ID`, `namefirst`, `namelast`, `DOB`, `emailID`) VALUES ('20', 'kaushal', 'patil', '1982-07-30', 'kaushal.patil@gmail.com');
+INSERT INTO `infoway_campus`.`student` (`ID`, `namefirst`, `namelast`, `DOB`, `emailID`) VALUES ('21', 'pankaj', 'gandhi', '1982-07-30', 'pankaj.gandhi@gmail.com');
+INSERT INTO `infoway_campus`.`student` (`ID`, `namefirst`, `namelast`, `DOB`, `emailID`) VALUES ('22', 'rajan', 'patel', '1982-07-30', 'rajan.patel@gmail.com');
+INSERT INTO `infoway_campus`.`student` (`ID`, `namefirst`, `namelast`, `DOB`, `emailID`) VALUES ('23', 'bhavin', 'patel', '1982-07-30', 'bhavin.patel@gmail.com');
+INSERT INTO `infoway_campus`.`student` (`ID`, `namefirst`, `namelast`, `DOB`, `emailID`) VALUES ('24', 'mukesh', 'bhavsar', '1982-07-30', 'mukesh.bhavsar@gmail.com');
+INSERT INTO `infoway_campus`.`student` (`ID`, `namefirst`, `namelast`, `DOB`, `emailID`) VALUES ('25', 'dilu', 'khande', '1982-07-30', 'dilu.khande@gmail.com');
+
+
+
+
 
 
 INSERT INTO `infoway_campus`.`student_phone` (`ID`, `studentID`, `number`) VALUES ('1', '1', '7032300034');
@@ -189,6 +198,15 @@ INSERT INTO `infoway_campus`.`student_phone` (`ID`, `studentID`, `number`) VALUE
 INSERT INTO `infoway_campus`.`student_phone` (`ID`, `studentID`, `number`) VALUES ('33', '13', '7132300055');
 INSERT INTO `infoway_campus`.`student_phone` (`ID`, `studentID`, `number`) VALUES ('34', '13', '7132300055');
 INSERT INTO `infoway_campus`.`student_phone` (`ID`, `studentID`, `number`) VALUES ('35', '13', '7132300055');
+INSERT INTO `infoway_campus`.`student_phone` (`ID`, `studentID`, `number`) VALUES ('37', '21', '7156567123');
+INSERT INTO `infoway_campus`.`student_phone` (`ID`, `studentID`, `number`) VALUES ('38', '22', '7156567134');
+INSERT INTO `infoway_campus`.`student_phone` (`ID`, `studentID`, `number`) VALUES ('39', '23', '7156563423');
+INSERT INTO `infoway_campus`.`student_phone` (`ID`, `studentID`, `number`) VALUES ('40', '24', '7156567183');
+INSERT INTO `infoway_campus`.`student_phone` (`ID`, `studentID`, `number`) VALUES ('41', '25', '7146566412');
+
+
+
+
 
 
 
@@ -212,6 +230,16 @@ INSERT INTO `infoway_campus`.`student_address` (`ID`, `studentID`, `address`) VA
 INSERT INTO `infoway_campus`.`student_address` (`ID`, `studentID`, `address`) VALUES ('18', '18', '2263 Ga 17 Hwy N, Millen, null, Las Vega, 30442');
 INSERT INTO `infoway_campus`.`student_address` (`ID`, `studentID`, `address`) VALUES ('19', '19', '321/vimal park, karve road, pune, 411038');
 INSERT INTO `infoway_campus`.`student_address` (`ID`, `studentID`, `address`) VALUES ('20', '20', 'Prashant Society, Kothrud, pune, 411038');
+INSERT INTO `infoway_campus`.`student_address` (`ID`, `studentID`, `address`) VALUES ('21', '21', '8 vaibhav, Ishadan soc, paud roea, Pune');
+INSERT INTO `infoway_campus`.`student_address` (`ID`, `studentID`, `address`) VALUES ('22', '22', '9 vaibhav, Ishadan soc, paud roea, Pune');
+INSERT INTO `infoway_campus`.`student_address` (`ID`, `studentID`, `address`) VALUES ('23', '23', '10  vaibhav, Ishadan soc, paud roea, Pune');
+INSERT INTO `infoway_campus`.`student_address` (`ID`, `studentID`, `address`) VALUES ('24', '24', '4 vaibhav, Ishadan soc, paud roea, Pune');
+INSERT INTO `infoway_campus`.`student_address` (`ID`, `studentID`, `address`) VALUES ('25', '25', '7 vaibhav, Ishadan soc, paud roea, Pune');
+
+
+
+
+
 
 
 INSERT INTO `infoway_campus`.`faculty` (`ID`, `namefirst`, `namelast`, `DOB`, `emailID`) VALUES ('1', 'prachi', 'gupta', '1974-06-12', 'prachi.gupta@gmail.com');
@@ -418,6 +446,26 @@ INSERT INTO `infoway_campus`.`student_qualifications` (`ID`, `studentID`, `name`
 INSERT INTO `infoway_campus`.`student_qualifications` (`ID`, `studentID`, `name`, `college`, `university`, `marks`, `year`) VALUES ('58', '20', '10', 'Vermont', 'Pennsylvania University', '72', '2013');
 INSERT INTO `infoway_campus`.`student_qualifications` (`ID`, `studentID`, `name`, `college`, `university`, `marks`, `year`) VALUES ('59', '20', '12', 'Iowa', 'Yale University', '83', '2015');
 INSERT INTO `infoway_campus`.`student_qualifications` (`ID`, `studentID`, `name`, `college`, `university`, `marks`, `year`) VALUES ('60', '20', 'BE', 'Maryland', 'Columbia University', '72', '2019');
+INSERT INTO `infoway_campus`.`student_qualifications` (`ID`, `studentID`, `name`, `college`, `university`, `marks`, `year`) VALUES ('61', '21', '10', 'Alabama', 'Stanford University', '67', '2012');
+INSERT INTO `infoway_campus`.`student_qualifications` (`ID`, `studentID`, `name`, `college`, `university`, `marks`, `year`) VALUES ('62', '21', '12', 'Alaska', 'Harvard University', '74', '2014');
+INSERT INTO `infoway_campus`.`student_qualifications` (`ID`, `studentID`, `name`, `college`, `university`, `marks`, `year`) VALUES ('63', '21', 'BE', 'Arizona', 'Harvard University', '68', '2018');
+INSERT INTO `infoway_campus`.`student_qualifications` (`ID`, `studentID`, `name`, `college`, `university`, `marks`, `year`) VALUES ('64', '22', '10', 'Alabama', 'Stanford University', '67', '2012');
+INSERT INTO `infoway_campus`.`student_qualifications` (`ID`, `studentID`, `name`, `college`, `university`, `marks`, `year`) VALUES ('65', '22', '12', 'Alaska', 'Harvard University', '74', '2014');
+INSERT INTO `infoway_campus`.`student_qualifications` (`ID`, `studentID`, `name`, `college`, `university`, `marks`, `year`) VALUES ('66', '22', 'BE', 'Arizona', 'Harvard University', '68', '2018');
+INSERT INTO `infoway_campus`.`student_qualifications` (`ID`, `studentID`, `name`, `college`, `university`, `marks`, `year`) VALUES ('67', '23', '10', 'Alabama', 'Stanford University', '67', '2012');
+INSERT INTO `infoway_campus`.`student_qualifications` (`ID`, `studentID`, `name`, `college`, `university`, `marks`, `year`) VALUES ('68', '23', '12', 'Alaska', 'Harvard University', '74', '2014');
+INSERT INTO `infoway_campus`.`student_qualifications` (`ID`, `studentID`, `name`, `college`, `university`, `marks`, `year`) VALUES ('69', '23', 'BE', 'Arizona', 'Harvard University', '68', '2018');
+INSERT INTO `infoway_campus`.`student_qualifications` (`ID`, `studentID`, `name`, `college`, `university`, `marks`, `year`) VALUES ('70', '24', '10', 'Ohio', 'University of Ohio', '87', '2011');
+INSERT INTO `infoway_campus`.`student_qualifications` (`ID`, `studentID`, `name`, `college`, `university`, `marks`, `year`) VALUES ('71', '24', '12', 'Iowa', 'Stanford University', '78', '2013');
+INSERT INTO `infoway_campus`.`student_qualifications` (`ID`, `studentID`, `name`, `college`, `university`, `marks`, `year`) VALUES ('72', '24', 'BE', 'Kentucky', 'Harvard University', '97', '2017');
+INSERT INTO `infoway_campus`.`student_qualifications` (`ID`, `studentID`, `name`, `college`, `university`, `marks`, `year`) VALUES ('73', '25', '10', 'Ohio', 'University of Ohio', '87', '2011');
+INSERT INTO `infoway_campus`.`student_qualifications` (`ID`, `studentID`, `name`, `college`, `university`, `marks`, `year`) VALUES ('74', '25', '12', 'Iowa', 'Stanford University', '78', '2013');
+INSERT INTO `infoway_campus`.`student_qualifications` (`ID`, `studentID`, `name`, `college`, `university`, `marks`, `year`) VALUES ('75', '25', 'BE', 'Kentucky', 'Harvard University', '97', '2017');
+
+
+
+
+
 
 
 
