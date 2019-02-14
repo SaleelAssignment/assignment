@@ -38,7 +38,7 @@ CREATE TABLE `infoway_campus`.`student_phone` (
  
  CREATE TABLE `infoway_campus`.`student_address` (
   `ID` INT primary key ,
-  `studentID` INT,
+  `studentID` INT unique not null,
   `address` varchar(128),
   FOREIGN KEY(`studentID`) REFERENCES `student`(`id`));
   
@@ -61,7 +61,7 @@ CREATE TABLE `infoway_campus`.`faculty_phone` (
  
  CREATE TABLE `infoway_campus`.`faculty_address` (
   `ID` INT primary key not NULL,
-  `facultyID` INT,
+  `facultyID` INT unique not null,
   `address` varchar(128),
   FOREIGN KEY(`facultyID`) REFERENCES `faculty`(`id`));
   
