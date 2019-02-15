@@ -408,7 +408,7 @@ INSERT INTO `student_qualifications` (`ID`, `studentID`, `name`, `college`, `uni
 INSERT INTO `student_qualifications` (`ID`, `studentID`, `name`, `college`, `university`, `marks`, `year`) VALUES ('20', '7', '12', 'Iowa', 'Stanford University', '78', '2013');
 INSERT INTO `student_qualifications` (`ID`, `studentID`, `name`, `college`, `university`, `marks`, `year`) VALUES ('21', '7', 'BE', 'Kentucky', 'Harvard University', '97', '2017');
 INSERT INTO `student_qualifications` (`ID`, `studentID`, `name`, `college`, `university`, `marks`, `year`) VALUES ('22', '8', '10', 'Maryland', 'University Maryland', '56', '2010');
-INSERT INTO `student_qualifications` (`ID`, `studentID`, `name`, `college`, `university`, `marks`, `year`) VALUES ('23', '8', '12', 'Alabama', 'California University', '467', '2012');
+INSERT INTO `student_qualifications` (`ID`, `studentID`, `name`, `college`, `university`, `marks`, `year`) VALUES ('23', '8', '12', 'Alabama', 'California University', '60', '2012');
 INSERT INTO `student_qualifications` (`ID`, `studentID`, `name`, `college`, `university`, `marks`, `year`) VALUES ('24', '8', 'M.Com.', 'Virginia', 'University of Florida', '87', '2016');
 INSERT INTO `student_qualifications` (`ID`, `studentID`, `name`, `college`, `university`, `marks`, `year`) VALUES ('25', '9', '10', 'Maine', 'Pennsylvania University', '98', '2012');
 INSERT INTO `student_qualifications` (`ID`, `studentID`, `name`, `college`, `university`, `marks`, `year`) VALUES ('26', '9', '12', 'Vermont', 'Yale University', '67', '2014');
