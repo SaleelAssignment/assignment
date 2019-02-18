@@ -53,14 +53,14 @@ CREATE TABLE `faculty` (
 
   
 CREATE TABLE `faculty_phone` (
-  `ID` INT primary key not NULL,
+  `ID` INT primary key,
   `facultyID` INT,
   number varchar(10),
   FOREIGN KEY(`facultyID`) REFERENCES `faculty`(`id`));
   
  
  CREATE TABLE `faculty_address` (
-  `ID` INT primary key not NULL,
+  `ID` INT primary key,
   `facultyID` INT unique not null,
   `address` varchar(128),
   FOREIGN KEY(`facultyID`) REFERENCES `faculty`(`id`));
