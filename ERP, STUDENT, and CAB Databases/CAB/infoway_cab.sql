@@ -28,7 +28,7 @@ CREATE TABLE `driver_licence` (
   
 CREATE TABLE `driver_address` (
   `ID` INT primary key auto_increment,
-  `driverID` INT,
+  `driverID` INT unique not null,
   `address` VARCHAR(128),
   FOREIGN KEY(`driverID`) REFERENCES `driver`(`id`));
   

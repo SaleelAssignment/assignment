@@ -40,7 +40,7 @@ CREATE TABLE `phone` (
  
  CREATE TABLE `address` (
   `ID` INT primary key not NULL,
-  `employeeID` INT,
+  `employeeID` INT unique not null,
   `address` varchar(128),
   FOREIGN KEY(`employeeID`) REFERENCES `employee`(`id`));
 
@@ -58,7 +58,7 @@ CREATE TABLE `phone` (
   
   CREATE TABLE `spouse` (
   `ID` INT primary key,
-  `employeeID` INT,
+  `employeeID` INT unique not null,
   `name` varchar(45),
   FOREIGN KEY(`employeeID`) REFERENCES `employee`(`id`));
   

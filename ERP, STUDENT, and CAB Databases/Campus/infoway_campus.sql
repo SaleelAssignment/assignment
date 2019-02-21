@@ -39,7 +39,7 @@ CREATE TABLE `student_phone` (
  CREATE TABLE `student_address` (
   `ID` INT primary key ,
   `studentID` INT unique not null,
-  `address` varchar(128),
+  `address` varchar(128) unique not null,
   FOREIGN KEY(`studentID`) REFERENCES `student`(`id`));
   
   
