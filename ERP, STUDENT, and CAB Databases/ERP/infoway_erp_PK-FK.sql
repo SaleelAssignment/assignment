@@ -1,3 +1,4 @@
+drop table if exists orders;
 drop table if exists phone;
 drop table if exists qualifications;
 drop table if exists address;
@@ -61,6 +62,20 @@ CREATE TABLE `phone` (
   `employeeID` INT unique not null,
   `name` varchar(45),
   FOREIGN KEY(`employeeID`) REFERENCES `employee`(`id`));
+  
+  
+    CREATE TABLE `orders` (
+  `ID` INT NOT NULL,
+  `employeeID` INT NULL,
+  `date` DATE NULL,
+  `amount` INT NULL,
+  PRIMARY KEY (`ID`),
+  INDEX `fk_orders_employeeid_idx` (`employeeID` ASC),
+  CONSTRAINT `fk_orders_employeeid`
+    FOREIGN KEY (`employeeID`)
+    REFERENCES `infoway_erp`.`employee` (`ID`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION);
   
   
   
@@ -231,4 +246,48 @@ INSERT INTO `spouse` (`ID`, `employeeID`, `name`) VALUES ('17', '17', 'ali');
 INSERT INTO `spouse` (`ID`, `employeeID`, `name`) VALUES ('18', '18', 'philip');
 INSERT INTO `spouse` (`ID`, `employeeID`, `name`) VALUES ('19', '19', 'rajesh');
 INSERT INTO `spouse` (`ID`, `employeeID`, `name`) VALUES ('20', '20', 'rahul');
+
+
+
+
+INSERT INTO `orders` (`ID`, `employeeID`, `date`, `amount`) VALUES ('1', '4', '2019-01-12', '2000');
+INSERT INTO `orders` (`ID`, `employeeID`, `date`, `amount`) VALUES ('2', '1', '2019-01-12', '2500');
+INSERT INTO `orders` (`ID`, `employeeID`, `date`, `amount`) VALUES ('3', '6', '2019-08-17', '150');
+INSERT INTO `orders` (`ID`, `employeeID`, `date`, `amount`) VALUES ('4', '2', '2019-05-02', '340');
+INSERT INTO `orders` (`ID`, `employeeID`, `date`, `amount`) VALUES ('5', '12', '2019-05-03', '655');
+INSERT INTO `orders` (`ID`, `employeeID`, `date`, `amount`) VALUES ('6', '12', '2019-05-04', '1000');
+INSERT INTO `orders` (`ID`, `employeeID`, `date`, `amount`) VALUES ('7', '6', '2019-11-11', '4000');
+INSERT INTO `orders` (`ID`, `employeeID`, `date`, `amount`) VALUES ('8', '1', '2019-07-19', '1270');
+INSERT INTO `orders` (`ID`, `employeeID`, `date`, `amount`) VALUES ('9', '5', '2019-04-07', '2000');
+INSERT INTO `orders` (`ID`, `employeeID`, `date`, `amount`) VALUES ('10', '7', '2019-10-10', '2500');
+INSERT INTO `orders` (`ID`, `employeeID`, `date`, `amount`) VALUES ('11', '10', '2019-11-11', '150');
+INSERT INTO `orders` (`ID`, `employeeID`, `date`, `amount`) VALUES ('12', '14', '2019-07-21', '340');
+INSERT INTO `orders` (`ID`, `employeeID`, `date`, `amount`) VALUES ('13', '13', '2019-11-02', '655');
+INSERT INTO `orders` (`ID`, `employeeID`, `date`, `amount`) VALUES ('14', '4', '2019-01-12', '1000');
+INSERT INTO `orders` (`ID`, `date`, `amount`) VALUES ('15', '2019-04-07', '4000');
+INSERT INTO `orders` (`ID`, `date`, `amount`) VALUES ('16', '2019-10-10', '1270');
+INSERT INTO `orders` (`ID`, `date`, `amount`) VALUES ('17', '2019-11-11', '4588');
+INSERT INTO `orders` (`ID`, `date`, `amount`) VALUES ('18', '2019-07-21', '1200');
+INSERT INTO `orders` (`ID`, `date`, `amount`) VALUES ('19', '2019-11-02', '125');
+INSERT INTO `orders` (`ID`, `date`, `amount`) VALUES ('20', '2019-01-12', '350');
+INSERT INTO `orders` (`ID`, `employeeID`, `date`, `amount`) VALUES ('21', '8', '2019-01-12', '4500');
+INSERT INTO `orders` (`ID`, `employeeID`, `date`, `amount`) VALUES ('22', '10', '2019-11-02', '650');
+INSERT INTO `orders` (`ID`, `employeeID`, `date`, `amount`) VALUES ('23', '4', '2019-10-19', '700');
+INSERT INTO `orders` (`ID`, `employeeID`, `date`, `amount`) VALUES ('24', '4', '2019-08-08', '1400');
+INSERT INTO `orders` (`ID`, `employeeID`, `date`, `amount`) VALUES ('25', '1', '2019-06-15', '1999');
+INSERT INTO `orders` (`ID`, `employeeID`, `date`, `amount`) VALUES ('26', '6', '2019-02-02', '280');
+INSERT INTO `orders` (`ID`, `employeeID`, `date`, `amount`) VALUES ('27', '2', '2019-08-21', '175');
+INSERT INTO `orders` (`ID`, `employeeID`, `date`, `amount`) VALUES ('28', '12', '2019-02-02', '45');
+INSERT INTO `orders` (`ID`, `employeeID`, `date`, `amount`) VALUES ('29', '12', '2019-01-12', '190');
+INSERT INTO `orders` (`ID`, `employeeID`, `date`, `amount`) VALUES ('30', '6', '2019-07-10', '750');
+INSERT INTO `orders` (`ID`, `employeeID`, `date`, `amount`) VALUES ('31', '1', '2019-11-12', '575');
+INSERT INTO `orders` (`ID`, `employeeID`, `date`, `amount`) VALUES ('32', '5', '2019-03-03', '635');
+INSERT INTO `orders` (`ID`, `employeeID`, `date`, `amount`) VALUES ('33', '7', '2019-06-23', '945');
+INSERT INTO `orders` (`ID`, `employeeID`, `date`, `amount`) VALUES ('34', '10', '2019-01-19', '225');
+INSERT INTO `orders` (`ID`, `employeeID`, `date`, `amount`) VALUES ('35', '14', '2019-10-10', '325');
+INSERT INTO `orders` (`ID`, `employeeID`, `date`, `amount`) VALUES ('36', '13', '2019-01-12', '180');
+INSERT INTO `orders` (`ID`, `employeeID`, `date`, `amount`) VALUES ('37', '4', '2019-06-23', '500');
+INSERT INTO `orders` (`ID`, `employeeID`, `date`, `amount`) VALUES ('38', '2', '2019-01-19', '400');
+INSERT INTO `orders` (`ID`, `employeeID`, `date`, `amount`) VALUES ('39', '5', '2019-10-10', '320');
+INSERT INTO `orders` (`ID`, `employeeID`, `date`, `amount`) VALUES ('40', '8', '2019-01-12', '650');
 
