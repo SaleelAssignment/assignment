@@ -1,3 +1,6 @@
+create database ola;
+use ola;
+
 drop table if exists driver_address;
 drop table if exists driver_licence;
 drop table if exists driver_phone;
@@ -9,7 +12,7 @@ drop table if exists vehicle;
 
 
 CREATE TABLE `driver` (
-  `ID` INT primary key auto_increment,
+  `ID` INT primary key,
   `namefirst` VARCHAR(45) ,
   `namelast` VARCHAR(45) ,
   `emailID` VARCHAR(45));
@@ -51,27 +54,27 @@ CREATE TABLE `vehicle` (
   
 CREATE TABLE `onduty` (
   `ID` INT primary key auto_increment,
-  `vehicleID` int,
+  `driverID` int,
   `date` date,
   `status` varchar(45),
-  FOREIGN KEY(`vehicleID`) REFERENCES `vehicle`(`id`));
+  FOREIGN KEY(`driverID`) REFERENCES `driver`(`id`));
   
  
 CREATE TABLE `dutyhistory` (
   `ID` INT primary key auto_increment,
-  `vehicleID` int,
+  `driverID` int,
   `date` date,
   `loginon` date,
   `logouton` date,
-  FOREIGN KEY(`vehicleID`) REFERENCES `vehicle`(`id`));
+  FOREIGN KEY(`driverID`) REFERENCES `driver`(`id`));
 
   
 
-INSERT INTO `driver` (`ID`, `namefirst`, `namelast`, `emailID`) VALUES (default, 'sanjay', 'patil', 'sanjay.patil@gmail.com');
-INSERT INTO `driver` (`ID`, `namefirst`, `namelast`, `emailID`) VALUES (default, 'sanju', 'das', 'sanju.das@gmail.com');
-INSERT INTO `driver` (`ID`, `namefirst`, `namelast`, `emailID`) VALUES (default, 'ravi', 'kumar', 'ravi.kumar@gmail.com');
-INSERT INTO `driver` (`ID`, `namefirst`, `namelast`, `emailID`) VALUES (default, 'raj', 'gandhi', 'raj.gandhi@gmail.com');
-INSERT INTO `driver` (`ID`, `namefirst`, `namelast`, `emailID`) VALUES (default, 'raj', 'kumar', 'raj.kumar@gmail.com');
+INSERT INTO `driver` (`ID`, `namefirst`, `namelast`, `emailID`) VALUES (1, 'sanjay', 'patil', 'sanjay.patil@gmail.com');
+INSERT INTO `driver` (`ID`, `namefirst`, `namelast`, `emailID`) VALUES (2, 'sanju', 'das', 'sanju.das@gmail.com');
+INSERT INTO `driver` (`ID`, `namefirst`, `namelast`, `emailID`) VALUES (3, 'ravi', 'kumar', 'ravi.kumar@gmail.com');
+INSERT INTO `driver` (`ID`, `namefirst`, `namelast`, `emailID`) VALUES (4, 'raj', 'gandhi', 'raj.gandhi@gmail.com');
+INSERT INTO `driver` (`ID`, `namefirst`, `namelast`, `emailID`) VALUES (5, 'raj', 'kumar', 'raj.kumar@gmail.com');
 
 
 INSERT INTO `vehicle` (`ID`, `number`, `model`, `type`, `capacity`) VALUES (default, 'GJ-06 1745', 'Toyota Etios - J (Petrol)', 'car', '4');

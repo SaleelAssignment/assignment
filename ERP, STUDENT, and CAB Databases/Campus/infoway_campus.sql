@@ -1,3 +1,6 @@
+create database if not exists campus;
+use campus;
+
 drop table if exists student_phone;
 drop table if exists student_address;
 drop table if exists faculty_phone;
@@ -157,83 +160,89 @@ INSERT INTO `student` (`ID`, `namefirst`, `namelast`, `DOB`, `emailID`) VALUES (
 INSERT INTO `student` (`ID`, `namefirst`, `namelast`, `DOB`, `emailID`) VALUES ('23', 'bhavin', 'patel', '1982-07-30', 'bhavin.patel@gmail.com');
 INSERT INTO `student` (`ID`, `namefirst`, `namelast`, `DOB`, `emailID`) VALUES ('24', 'mukesh', 'bhavsar', '1982-07-30', 'mukesh.bhavsar@gmail.com');
 INSERT INTO `student` (`ID`, `namefirst`, `namelast`, `DOB`, `emailID`) VALUES ('25', 'dilu', 'khande', '1982-07-30', 'dilu.khande@gmail.com');
+INSERT INTO `campus`.`student` (`ID`, `namefirst`, `namelast`, `DOB`, `emailID`) VALUES ('26', 'sonam', 'khan', '1972-05-13', 'sonam.khan@gmail.com');
+INSERT INTO `campus`.`student` (`ID`, `namefirst`, `namelast`, `DOB`, `emailID`) VALUES ('27', 'rohit', 'patil', '1976-12-31', 'rohit.patil@gmail.com');
+INSERT INTO `campus`.`student` (`ID`, `namefirst`, `namelast`, `DOB`, `emailID`) VALUES ('28', 'raj', 'bubber', '1982-02-28', 'raj.bubber@gmail.com');
 
 
 
 
 
 
-INSERT INTO `infoway_campus`.`student_phone` (`ID`, `studentID`, `number`) VALUES ('1', '1', '7032300034');
-INSERT INTO `infoway_campus`.`student_phone` (`ID`, `studentID`, `number`) VALUES ('2', '2', '7032300039');
-INSERT INTO `infoway_campus`.`student_phone` (`ID`, `studentID`, `number`) VALUES ('3', '3', '7032300050');
-INSERT INTO `infoway_campus`.`student_phone` (`ID`, `studentID`, `number`) VALUES ('4', '4', '7032300027');
-INSERT INTO `infoway_campus`.`student_phone` (`ID`, `studentID`, `number`) VALUES ('5', '5', '7032300801');
-INSERT INTO `infoway_campus`.`student_phone` (`ID`, `studentID`, `number`) VALUES ('6', '6', '7032300079');
-INSERT INTO `infoway_campus`.`student_phone` (`ID`, `studentID`, `number`) VALUES ('7', '7', '7032300081');
-INSERT INTO `infoway_campus`.`student_phone` (`ID`, `studentID`, `number`) VALUES ('8', '8', '7032300054');
-INSERT INTO `infoway_campus`.`student_phone` (`ID`, `studentID`, `number`) VALUES ('9', '9', '7032300059');
-INSERT INTO `infoway_campus`.`student_phone` (`ID`, `studentID`, `number`) VALUES ('10', '10', '7032300086');
-INSERT INTO `infoway_campus`.`student_phone` (`ID`, `studentID`, `number`) VALUES ('11', '11', '7032300082');
-INSERT INTO `infoway_campus`.`student_phone` (`ID`, `studentID`, `number`) VALUES ('12', '12', '7032300042');
-INSERT INTO `infoway_campus`.`student_phone` (`ID`, `studentID`, `number`) VALUES ('13', '13', '7032300055');
-INSERT INTO `infoway_campus`.`student_phone` (`ID`, `studentID`, `number`) VALUES ('14', '14', '7032300013');
-INSERT INTO `infoway_campus`.`student_phone` (`ID`, `studentID`, `number`) VALUES ('15', '15', '7032300099');
-INSERT INTO `infoway_campus`.`student_phone` (`ID`, `studentID`, `number`) VALUES ('16', '16', '7032300023');
-INSERT INTO `infoway_campus`.`student_phone` (`ID`, `studentID`, `number`) VALUES ('17', '17', '7032300084');
-INSERT INTO `infoway_campus`.`student_phone` (`ID`, `studentID`, `number`) VALUES ('18', '18', '7032300011');
-INSERT INTO `infoway_campus`.`student_phone` (`ID`, `studentID`, `number`) VALUES ('19', '19', '7032300066');
-INSERT INTO `infoway_campus`.`student_phone` (`ID`, `studentID`, `number`) VALUES ('20', '20', '7032300096');
-INSERT INTO `infoway_campus`.`student_phone` (`ID`, `studentID`, `number`) VALUES ('21', '1', '7132300034');
-INSERT INTO `infoway_campus`.`student_phone` (`ID`, `studentID`, `number`) VALUES ('22', '2', '7132300039');
-INSERT INTO `infoway_campus`.`student_phone` (`ID`, `studentID`, `number`) VALUES ('23', '3', '7132300050');
-INSERT INTO `infoway_campus`.`student_phone` (`ID`, `studentID`, `number`) VALUES ('24', '4', '7132300027');
-INSERT INTO `infoway_campus`.`student_phone` (`ID`, `studentID`, `number`) VALUES ('25', '5', '7032300001');
-INSERT INTO `infoway_campus`.`student_phone` (`ID`, `studentID`, `number`) VALUES ('26', '6', '7132300079');
-INSERT INTO `infoway_campus`.`student_phone` (`ID`, `studentID`, `number`) VALUES ('27', '7', '7132300081');
-INSERT INTO `infoway_campus`.`student_phone` (`ID`, `studentID`, `number`) VALUES ('28', '8', '7132300054');
-INSERT INTO `infoway_campus`.`student_phone` (`ID`, `studentID`, `number`) VALUES ('29', '9', '7132300059');
-INSERT INTO `infoway_campus`.`student_phone` (`ID`, `studentID`, `number`) VALUES ('30', '10', '7132300086');
-INSERT INTO `infoway_campus`.`student_phone` (`ID`, `studentID`, `number`) VALUES ('31', '11', '7132300082');
-INSERT INTO `infoway_campus`.`student_phone` (`ID`, `studentID`, `number`) VALUES ('32', '12', '7132300042');
-INSERT INTO `infoway_campus`.`student_phone` (`ID`, `studentID`, `number`) VALUES ('33', '13', '7132300055');
-INSERT INTO `infoway_campus`.`student_phone` (`ID`, `studentID`, `number`) VALUES ('34', '13', '7132376055');
-INSERT INTO `infoway_campus`.`student_phone` (`ID`, `studentID`, `number`) VALUES ('35', '13', '7132307055');
-INSERT INTO `infoway_campus`.`student_phone` (`ID`, `studentID`, `number`) VALUES ('36', '6', '7134567123');
-INSERT INTO `infoway_campus`.`student_phone` (`ID`, `studentID`, `number`) VALUES ('37', '21', '7156567123');
-INSERT INTO `infoway_campus`.`student_phone` (`ID`, `studentID`, `number`) VALUES ('38', '22', '7156567134');
-INSERT INTO `infoway_campus`.`student_phone` (`ID`, `studentID`, `number`) VALUES ('39', '23', '7156563423');
-INSERT INTO `infoway_campus`.`student_phone` (`ID`, `studentID`, `number`) VALUES ('40', '24', '7156567183');
-INSERT INTO `infoway_campus`.`student_phone` (`ID`, `studentID`, `number`) VALUES ('41', '25', '7146566412');
+INSERT INTO `student_phone` (`ID`, `studentID`, `number`) VALUES ('1', '1', '7032300034');
+INSERT INTO `student_phone` (`ID`, `studentID`, `number`) VALUES ('2', '2', '7032300039');
+INSERT INTO `student_phone` (`ID`, `studentID`, `number`) VALUES ('3', '3', '7032300050');
+INSERT INTO `student_phone` (`ID`, `studentID`, `number`) VALUES ('4', '4', '7032300027');
+INSERT INTO `student_phone` (`ID`, `studentID`, `number`) VALUES ('5', '5', '7032300801');
+INSERT INTO `student_phone` (`ID`, `studentID`, `number`) VALUES ('6', '6', '7032300079');
+INSERT INTO `student_phone` (`ID`, `studentID`, `number`) VALUES ('7', '7', '7032300081');
+INSERT INTO `student_phone` (`ID`, `studentID`, `number`) VALUES ('8', '8', '7032300054');
+INSERT INTO `student_phone` (`ID`, `studentID`, `number`) VALUES ('9', '9', '7032300059');
+INSERT INTO `student_phone` (`ID`, `studentID`, `number`) VALUES ('10', '10', '7032300086');
+INSERT INTO `student_phone` (`ID`, `studentID`, `number`) VALUES ('11', '11', '7032300082');
+INSERT INTO `student_phone` (`ID`, `studentID`, `number`) VALUES ('12', '12', '7032300042');
+INSERT INTO `student_phone` (`ID`, `studentID`, `number`) VALUES ('13', '13', '7032300055');
+INSERT INTO `student_phone` (`ID`, `studentID`, `number`) VALUES ('14', '14', '7032300013');
+INSERT INTO `student_phone` (`ID`, `studentID`, `number`) VALUES ('15', '15', '7032300099');
+INSERT INTO `student_phone` (`ID`, `studentID`, `number`) VALUES ('16', '16', '7032300023');
+INSERT INTO `student_phone` (`ID`, `studentID`, `number`) VALUES ('17', '17', '7032300084');
+INSERT INTO `student_phone` (`ID`, `studentID`, `number`) VALUES ('18', '18', '7032300011');
+INSERT INTO `student_phone` (`ID`, `studentID`, `number`) VALUES ('19', '19', '7032300066');
+INSERT INTO `student_phone` (`ID`, `studentID`, `number`) VALUES ('20', '20', '7032300096');
+INSERT INTO `student_phone` (`ID`, `studentID`, `number`) VALUES ('21', '1', '7132300034');
+INSERT INTO `student_phone` (`ID`, `studentID`, `number`) VALUES ('22', '2', '7132300039');
+INSERT INTO `student_phone` (`ID`, `studentID`, `number`) VALUES ('23', '3', '7132300050');
+INSERT INTO `student_phone` (`ID`, `studentID`, `number`) VALUES ('24', '4', '7132300027');
+INSERT INTO `student_phone` (`ID`, `studentID`, `number`) VALUES ('25', '5', '7032300001');
+INSERT INTO `student_phone` (`ID`, `studentID`, `number`) VALUES ('26', '6', '7132300079');
+INSERT INTO `student_phone` (`ID`, `studentID`, `number`) VALUES ('27', '7', '7132300081');
+INSERT INTO `student_phone` (`ID`, `studentID`, `number`) VALUES ('28', '8', '7132300054');
+INSERT INTO `student_phone` (`ID`, `studentID`, `number`) VALUES ('29', '9', '7132300059');
+INSERT INTO `student_phone` (`ID`, `studentID`, `number`) VALUES ('30', '10', '7132300086');
+INSERT INTO `student_phone` (`ID`, `studentID`, `number`) VALUES ('31', '11', '7132300082');
+INSERT INTO `student_phone` (`ID`, `studentID`, `number`) VALUES ('32', '12', '7132300042');
+INSERT INTO `student_phone` (`ID`, `studentID`, `number`) VALUES ('33', '13', '7132300055');
+INSERT INTO `student_phone` (`ID`, `studentID`, `number`) VALUES ('34', '13', '7132376055');
+INSERT INTO `student_phone` (`ID`, `studentID`, `number`) VALUES ('35', '13', '7132307055');
+INSERT INTO `student_phone` (`ID`, `studentID`, `number`) VALUES ('36', '6', '7134567123');
+INSERT INTO `student_phone` (`ID`, `studentID`, `number`) VALUES ('37', '21', '7156567123');
+INSERT INTO `student_phone` (`ID`, `studentID`, `number`) VALUES ('38', '22', '7156567134');
+INSERT INTO `student_phone` (`ID`, `studentID`, `number`) VALUES ('39', '23', '7156563423');
+INSERT INTO `student_phone` (`ID`, `studentID`, `number`) VALUES ('40', '24', '7156567183');
+INSERT INTO `student_phone` (`ID`, `studentID`, `number`) VALUES ('41', '25', '7146566412');
 
 
 
 
 
-INSERT INTO `infoway_campus`.`student_address` (`ID`, `studentID`, `address`) VALUES ('1', '1', '13758 Dogwood, St, Trona, CA, Los Angeles, 93562');
-INSERT INTO `infoway_campus`.`student_address` (`ID`, `studentID`, `address`) VALUES ('2', '2', '2263 Ga 17 Hwy N, Millen, GA, Atlanta, 30442');
-INSERT INTO `infoway_campus`.`student_address` (`ID`, `studentID`, `address`) VALUES ('3', '3', '409 Berry St, Louisa, KY, San Jose, 41230');
-INSERT INTO `infoway_campus`.`student_address` (`ID`, `studentID`, `address`) VALUES ('4', '4', '7720 Covington Rd, Pink Stand, TN, San Francisco, 37188');
-INSERT INTO `infoway_campus`.`student_address` (`ID`, `studentID`, `address`) VALUES ('5', '5', '15 Hempstead, St, Saugus, MA, Las Vega, 1906');
-INSERT INTO `infoway_campus`.`student_address` (`ID`, `studentID`, `address`) VALUES ('6', '6', '165 Village Dr., P.O. Box 3700, Oakland, TN, Oakland, 38060');
-INSERT INTO `infoway_campus`.`student_address` (`ID`, `studentID`, `address`) VALUES ('7', '7', 'Po Box 83, Faith, NC, New Jersey, 28041');
-INSERT INTO `infoway_campus`.`student_address` (`ID`, `studentID`, `address`) VALUES ('8', '8', '3402 Buccaneer Rose Ave, Bakersfield, CA, Boston, 93313');
-INSERT INTO `infoway_campus`.`student_address` (`ID`, `studentID`, `address`) VALUES ('9', '9', 'Po Box 77, Linking Road, UK');
-INSERT INTO `infoway_campus`.`student_address` (`ID`, `studentID`, `address`) VALUES ('10', '10', '7710 Covington Rd , New State Road, New York, 37188');
-INSERT INTO `infoway_campus`.`student_address` (`ID`, `studentID`, `address`) VALUES ('11', '11', '15 Hempstead St, Saugus, MA, Boston, 1906');
-INSERT INTO `infoway_campus`.`student_address` (`ID`, `studentID`, `address`) VALUES ('12', '12', '165 Ken city, P.O. Box 942873, 50 Higuera Street, Oakland, 38060');
-INSERT INTO `infoway_campus`.`student_address` (`ID`, `studentID`, `address`) VALUES ('13', '13', 'Po Box 83, Faith, NC, null, New York, 28041');
-INSERT INTO `infoway_campus`.`student_address` (`ID`, `studentID`, `address`) VALUES ('14', '14', '808 Rocky Hill Rd, Plymouth 1993 Cross lane, Boston, 32360');
-INSERT INTO `infoway_campus`.`student_address` (`ID`, `studentID`, `address`) VALUES ('15', '15', '118 Lippitt Ave Warwick, 100 S. Main Street, Los Angeles, 12889');
-INSERT INTO `infoway_campus`.`student_address` (`ID`, `studentID`, `address`) VALUES ('16', '16', '5973 Moon Shadow Dr. Herriman, null, Atlanta, 2345');
-INSERT INTO `infoway_campus`.`student_address` (`ID`, `studentID`, `address`) VALUES ('17', '17', '13758 Dogwood St, Trona, null, San Jose, 93562');
-INSERT INTO `infoway_campus`.`student_address` (`ID`, `studentID`, `address`) VALUES ('18', '18', '2263 Ga 17 Hwy N, Millen, null, Las Vega, 30442');
-INSERT INTO `infoway_campus`.`student_address` (`ID`, `studentID`, `address`) VALUES ('19', '19', '321/vimal park, karve road, pune, 411038');
-INSERT INTO `infoway_campus`.`student_address` (`ID`, `studentID`, `address`) VALUES ('20', '20', 'Prashant Society, Kothrud, pune, 411038');
-INSERT INTO `infoway_campus`.`student_address` (`ID`, `studentID`, `address`) VALUES ('21', '21', '8 vaibhav, Ishadan soc, paud road, Pune');
-INSERT INTO `infoway_campus`.`student_address` (`ID`, `studentID`, `address`) VALUES ('22', '22', '9 vaibhav, Ishadan soc, paud road, Pune');
-INSERT INTO `infoway_campus`.`student_address` (`ID`, `studentID`, `address`) VALUES ('23', '23', '10  vaibhav, Ishadan soc, paud road, Pune');
-INSERT INTO `infoway_campus`.`student_address` (`ID`, `studentID`, `address`) VALUES ('24', '24', '4 vaibhav, Ishadan soc, paud road, Pune');
-INSERT INTO `infoway_campus`.`student_address` (`ID`, `studentID`, `address`) VALUES ('25', '25', '7 vaibhav, Ishadan soc, paud road, Pune');
+INSERT INTO `student_address` (`ID`, `studentID`, `address`) VALUES ('1', '1', '13758 Dogwood, St, Trona, CA, Los Angeles, 93562');
+INSERT INTO `student_address` (`ID`, `studentID`, `address`) VALUES ('2', '2', '2263 Ga 17 Hwy N, Millen, GA, Atlanta, 30442');
+INSERT INTO `student_address` (`ID`, `studentID`, `address`) VALUES ('3', '3', '409 Berry St, Louisa, KY, San Jose, 41230');
+INSERT INTO `student_address` (`ID`, `studentID`, `address`) VALUES ('4', '4', '7720 Covington Rd, Pink Stand, TN, San Francisco, 37188');
+INSERT INTO `student_address` (`ID`, `studentID`, `address`) VALUES ('5', '5', '15 Hempstead, St, Saugus, MA, Las Vega, 1906');
+INSERT INTO `student_address` (`ID`, `studentID`, `address`) VALUES ('6', '6', '165 Village Dr., P.O. Box 3700, Oakland, TN, Oakland, 38060');
+INSERT INTO `student_address` (`ID`, `studentID`, `address`) VALUES ('7', '7', 'Po Box 83, Faith, NC, New Jersey, 28041');
+INSERT INTO `student_address` (`ID`, `studentID`, `address`) VALUES ('8', '8', '3402 Buccaneer Rose Ave, Bakersfield, CA, Boston, 93313');
+INSERT INTO `student_address` (`ID`, `studentID`, `address`) VALUES ('9', '9', 'Po Box 77, Linking Road, UK');
+INSERT INTO `student_address` (`ID`, `studentID`, `address`) VALUES ('10', '10', '7710 Covington Rd , New State Road, New York, 37188');
+INSERT INTO `student_address` (`ID`, `studentID`, `address`) VALUES ('11', '11', '15 Hempstead St, Saugus, MA, Boston, 1906');
+INSERT INTO `student_address` (`ID`, `studentID`, `address`) VALUES ('12', '12', '165 Ken city, P.O. Box 942873, 50 Higuera Street, Oakland, 38060');
+INSERT INTO `student_address` (`ID`, `studentID`, `address`) VALUES ('13', '13', 'Po Box 83, Faith, NC, null, New York, 28041');
+INSERT INTO `student_address` (`ID`, `studentID`, `address`) VALUES ('14', '14', '808 Rocky Hill Rd, Plymouth 1993 Cross lane, Boston, 32360');
+INSERT INTO `student_address` (`ID`, `studentID`, `address`) VALUES ('15', '15', '118 Lippitt Ave Warwick, 100 S. Main Street, Los Angeles, 12889');
+INSERT INTO `student_address` (`ID`, `studentID`, `address`) VALUES ('16', '16', '5973 Moon Shadow Dr. Herriman, null, Atlanta, 2345');
+INSERT INTO `student_address` (`ID`, `studentID`, `address`) VALUES ('17', '17', '13758 Dogwood St, Trona, null, San Jose, 93562');
+INSERT INTO `student_address` (`ID`, `studentID`, `address`) VALUES ('18', '18', '2263 Ga 17 Hwy N, Millen, null, Las Vega, 30442');
+INSERT INTO `student_address` (`ID`, `studentID`, `address`) VALUES ('19', '19', '321/vimal park, karve road, pune, 411038');
+INSERT INTO `student_address` (`ID`, `studentID`, `address`) VALUES ('20', '20', 'Prashant Society, Kothrud, pune, 411038');
+INSERT INTO `student_address` (`ID`, `studentID`, `address`) VALUES ('21', '21', '8 vaibhav, Ishadan soc, paud road, Pune');
+INSERT INTO `student_address` (`ID`, `studentID`, `address`) VALUES ('22', '22', '9 vaibhav, Ishadan soc, paud road, Pune');
+INSERT INTO `student_address` (`ID`, `studentID`, `address`) VALUES ('23', '23', '10  vaibhav, Ishadan soc, paud road, Pune');
+INSERT INTO `student_address` (`ID`, `studentID`, `address`) VALUES ('24', '24', '4 vaibhav, Ishadan soc, paud road, Pune');
+INSERT INTO `student_address` (`ID`, `studentID`, `address`) VALUES ('25', '25', '7 vaibhav, Ishadan soc, paud road, Pune');
+INSERT INTO `campus`.`student_address` (`ID`, `studentID`, `address`) VALUES ('26', '26', '19 Hempstead St, go streat, MG, Boston, 19077');
+INSERT INTO `campus`.`student_address` (`ID`, `studentID`, `address`) VALUES ('27', '27', '1699 Ken city, P.O. Box 942873, 50 Higuera Street, Oakland, 38060');
+INSERT INTO `campus`.`student_address` (`ID`, `studentID`, `address`) VALUES ('28', '28', 'Po Box 87, Faith, NC, New York, 28045');
 
 
 
@@ -254,7 +263,7 @@ INSERT INTO `faculty_phone` (`ID`, `facultyID`, `number`) VALUES ('5', '1', '703
 INSERT INTO `faculty_phone` (`ID`, `facultyID`, `number`) VALUES ('6', '2', '7032303479');
 INSERT INTO `faculty_phone` (`ID`, `facultyID`, `number`) VALUES ('7', '3', '7032306781');
 INSERT INTO `faculty_phone` (`ID`, `facultyID`, `number`) VALUES ('8', '4', '7032390234');
-INSERT INTO `student_phone` (`ID`, `studentID`, `number`) VALUES ('36', '6', '7134567123');
+INSERT INTO `faculty_phone` (`ID`, `facultyID`, `number`) VALUES ('9', '3', '7134567123');
 
 
 
@@ -364,7 +373,7 @@ INSERT INTO `batch_students` (`ID`, `batchID`, `studentID`) VALUES ('10', '4', '
 INSERT INTO `batch_students` (`ID`, `batchID`, `studentID`) VALUES ('11', '5', '20');
 INSERT INTO `batch_students` (`ID`, `batchID`, `studentID`) VALUES ('12', '6', '5');
 INSERT INTO `batch_students` (`ID`, `batchID`, `studentID`) VALUES ('13', '7', '3');
-INSERT INTO `batch_students` (`ID`, `batchID`, `studentID`) VALUES ('14', '1', '7');
+INSERT INTO `batch_students` (`ID`, `batchID`, `studentID`) VALUES ('14', '1', '20');
 INSERT INTO `batch_students` (`ID`, `batchID`, `studentID`) VALUES ('15', '2', '10');
 INSERT INTO `batch_students` (`ID`, `batchID`, `studentID`) VALUES ('16', '3', '5');
 INSERT INTO `batch_students` (`ID`, `batchID`, `studentID`) VALUES ('17', '4', '6');
@@ -459,6 +468,16 @@ INSERT INTO `student_qualifications` (`ID`, `studentID`, `name`, `college`, `uni
 INSERT INTO `student_qualifications` (`ID`, `studentID`, `name`, `college`, `university`, `marks`, `year`) VALUES ('73', '25', '10', 'Ohio', 'University of Ohio', '87', '2011');
 INSERT INTO `student_qualifications` (`ID`, `studentID`, `name`, `college`, `university`, `marks`, `year`) VALUES ('74', '25', '12', 'Iowa', 'Stanford University', '78', '2013');
 INSERT INTO `student_qualifications` (`ID`, `studentID`, `name`, `college`, `university`, `marks`, `year`) VALUES ('75', '25', 'BE', 'Kentucky', 'Harvard University', '97', '2017');
+INSERT INTO `campus`.`student_qualifications` (`ID`, `studentID`, `name`, `college`, `university`, `marks`, `year`) VALUES ('76', '26', '10', 'Iowa', 'Stanford University', '56', '1994');
+INSERT INTO `campus`.`student_qualifications` (`ID`, `studentID`, `name`, `college`, `university`, `marks`, `year`) VALUES ('77', '26', 'DIP', 'Kentucky', 'Harvard University', '67', '1996');
+INSERT INTO `campus`.`student_qualifications` (`ID`, `studentID`, `name`, `college`, `university`, `marks`, `year`) VALUES ('78', '26', 'BE', 'Maryland', 'Harvard University', '68', '2000');
+INSERT INTO `campus`.`student_qualifications` (`ID`, `studentID`, `name`, `college`, `university`, `marks`, `year`) VALUES ('79', '27', '10', 'Alabama', 'University of Chicago', '50', '1997');
+INSERT INTO `campus`.`student_qualifications` (`ID`, `studentID`, `name`, `college`, `university`, `marks`, `year`) VALUES ('80', '27', '12', 'Virginia', 'California University', '55', '1999');
+INSERT INTO `campus`.`student_qualifications` (`ID`, `studentID`, `name`, `college`, `university`, `marks`, `year`) VALUES ('81', '27', 'DIP', 'Maine', 'University of Florida', '60', '2003');
+INSERT INTO `campus`.`student_qualifications` (`ID`, `studentID`, `name`, `college`, `university`, `marks`, `year`) VALUES ('82', '27', 'BE', 'Vermont', 'Pennsylvania University', '62', '2006');
+INSERT INTO `campus`.`student_qualifications` (`ID`, `studentID`, `name`, `college`, `university`, `marks`, `year`) VALUES ('83', '28', '10', 'Iowa', 'Yale University', '65', '2004');
+INSERT INTO `campus`.`student_qualifications` (`ID`, `studentID`, `name`, `college`, `university`, `marks`, `year`) VALUES ('84', '28', '12', 'Maryland', 'Columbia University', '68', '2006');
+INSERT INTO `campus`.`student_qualifications` (`ID`, `studentID`, `name`, `college`, `university`, `marks`, `year`) VALUES ('85', '28', 'MCA', 'Alaska', 'Harvard University', '64', '2009');
 
 
 

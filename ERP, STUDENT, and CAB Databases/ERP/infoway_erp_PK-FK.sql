@@ -73,13 +73,13 @@ CREATE TABLE `phone` (
   INDEX `fk_orders_employeeid_idx` (`employeeID` ASC),
   CONSTRAINT `fk_orders_employeeid`
     FOREIGN KEY (`employeeID`)
-    REFERENCES `infoway_erp`.`employee` (`ID`)
+    REFERENCES `employee` (`ID`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION);
   
   
   
-  INSERT INTO `employee` (`ID`, `namefirst`, `namelast`, `DOB`, `emailID`) VALUES ('1', 'Denis', 'Murphy', '1964-06-12', 'denis@gmail.com');
+INSERT INTO `employee` (`ID`, `namefirst`, `namelast`, `DOB`, `emailID`) VALUES ('1', 'Denis', 'Murphy', '1964-06-12', 'denis@gmail.com');
 INSERT INTO `employee` (`ID`, `namefirst`, `namelast`, `DOB`, `emailID`) VALUES ('2', 'Jenny', 'Ross', '1964-10-25', 'jenny@gmail.com');
 INSERT INTO `employee` (`ID`, `namefirst`, `namelast`, `DOB`, `emailID`) VALUES ('3', 'David', 'Ross', '1964-10-25', 'david@gmail.com');
 INSERT INTO `employee` (`ID`, `namefirst`, `DOB`, `emailID`) VALUES ('4', 'Fred', '1965-10-31', 'fred@gmail.com');

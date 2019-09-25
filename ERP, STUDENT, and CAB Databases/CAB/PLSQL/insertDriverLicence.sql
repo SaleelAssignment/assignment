@@ -5,9 +5,9 @@ begin
 	declare x int;
 	select driver.id into x from driver where driver.ID = _driverID;
 	if x is not null then
-		insert into driver_Licence values (default,_driverID, _code, _DOI, _DOE );
+		insert into driver_Licence values (default, _driverID, _code, _DOI, _DOE );
 
-		select concat("New driver licence inserted... and  your ID is: ", id) as Message from driver_licence order by id desc limit 1;
+		select concat("New driver licence inserted... for driverID is: ", _driverID) as Message from driver_licence order by id desc limit 1;
 	else
 		select "Driver not found..." as Message;
 	end if;
