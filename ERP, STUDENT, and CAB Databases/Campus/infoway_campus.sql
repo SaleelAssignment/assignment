@@ -14,7 +14,7 @@ drop table if exists modules;
 drop table if exists faculty;
 drop table if exists student;
 drop table if exists course;
-
+drop table if exists student_Cards;
 
 CREATE TABLE `course` (
   `ID` INT PRIMARY KEY,
@@ -34,10 +34,18 @@ CREATE TABLE `student` (
 CREATE TABLE `student_phone` (
   `ID` INT primary key,
   `studentID` INT,
-  number varchar(10),
+  number varchar(45),
+  isActive bool,
   FOREIGN KEY(`studentID`) REFERENCES `student`(`id`));
  
  
+CREATE TABLE `student_Cards` (
+  `ID` INT primary key,
+  `studentID` INT,
+  name varchar(45),
+  isActive bool,
+  FOREIGN KEY(`studentID`) REFERENCES `student`(`id`));
+  
  
  CREATE TABLE `student_address` (
   `ID` INT primary key ,
@@ -111,7 +119,7 @@ CREATE TABLE `course_batches` (
   `courseID` INT NULL,
   `starton` DATE NULL,
   `endson` DATE NULL,
-  `capicity` INT NULL,
+  `capacity` INT NULL,
   FOREIGN KEY (`courseID`) REFERENCES `course` (`ID`));
 
 
@@ -169,47 +177,136 @@ INSERT INTO `campus`.`student` (`ID`, `namefirst`, `namelast`, `DOB`, `emailID`)
 
 
 
-INSERT INTO `student_phone` (`ID`, `studentID`, `number`) VALUES ('1', '1', '7032300034');
-INSERT INTO `student_phone` (`ID`, `studentID`, `number`) VALUES ('2', '2', '7032300039');
-INSERT INTO `student_phone` (`ID`, `studentID`, `number`) VALUES ('3', '3', '7032300050');
-INSERT INTO `student_phone` (`ID`, `studentID`, `number`) VALUES ('4', '4', '7032300027');
-INSERT INTO `student_phone` (`ID`, `studentID`, `number`) VALUES ('5', '5', '7032300801');
-INSERT INTO `student_phone` (`ID`, `studentID`, `number`) VALUES ('6', '6', '7032300079');
-INSERT INTO `student_phone` (`ID`, `studentID`, `number`) VALUES ('7', '7', '7032300081');
-INSERT INTO `student_phone` (`ID`, `studentID`, `number`) VALUES ('8', '8', '7032300054');
-INSERT INTO `student_phone` (`ID`, `studentID`, `number`) VALUES ('9', '9', '7032300059');
-INSERT INTO `student_phone` (`ID`, `studentID`, `number`) VALUES ('10', '10', '7032300086');
-INSERT INTO `student_phone` (`ID`, `studentID`, `number`) VALUES ('11', '11', '7032300082');
-INSERT INTO `student_phone` (`ID`, `studentID`, `number`) VALUES ('12', '12', '7032300042');
-INSERT INTO `student_phone` (`ID`, `studentID`, `number`) VALUES ('13', '13', '7032300055');
-INSERT INTO `student_phone` (`ID`, `studentID`, `number`) VALUES ('14', '14', '7032300013');
-INSERT INTO `student_phone` (`ID`, `studentID`, `number`) VALUES ('15', '15', '7032300099');
-INSERT INTO `student_phone` (`ID`, `studentID`, `number`) VALUES ('16', '16', '7032300023');
-INSERT INTO `student_phone` (`ID`, `studentID`, `number`) VALUES ('17', '17', '7032300084');
-INSERT INTO `student_phone` (`ID`, `studentID`, `number`) VALUES ('18', '18', '7032300011');
-INSERT INTO `student_phone` (`ID`, `studentID`, `number`) VALUES ('19', '19', '7032300066');
-INSERT INTO `student_phone` (`ID`, `studentID`, `number`) VALUES ('20', '20', '7032300096');
-INSERT INTO `student_phone` (`ID`, `studentID`, `number`) VALUES ('21', '1', '7132300034');
-INSERT INTO `student_phone` (`ID`, `studentID`, `number`) VALUES ('22', '2', '7132300039');
-INSERT INTO `student_phone` (`ID`, `studentID`, `number`) VALUES ('23', '3', '7132300050');
-INSERT INTO `student_phone` (`ID`, `studentID`, `number`) VALUES ('24', '4', '7132300027');
-INSERT INTO `student_phone` (`ID`, `studentID`, `number`) VALUES ('25', '5', '7032300001');
-INSERT INTO `student_phone` (`ID`, `studentID`, `number`) VALUES ('26', '6', '7132300079');
-INSERT INTO `student_phone` (`ID`, `studentID`, `number`) VALUES ('27', '7', '7132300081');
-INSERT INTO `student_phone` (`ID`, `studentID`, `number`) VALUES ('28', '8', '7132300054');
-INSERT INTO `student_phone` (`ID`, `studentID`, `number`) VALUES ('29', '9', '7132300059');
-INSERT INTO `student_phone` (`ID`, `studentID`, `number`) VALUES ('30', '10', '7132300086');
-INSERT INTO `student_phone` (`ID`, `studentID`, `number`) VALUES ('31', '11', '7132300082');
-INSERT INTO `student_phone` (`ID`, `studentID`, `number`) VALUES ('32', '12', '7132300042');
-INSERT INTO `student_phone` (`ID`, `studentID`, `number`) VALUES ('33', '13', '7132300055');
-INSERT INTO `student_phone` (`ID`, `studentID`, `number`) VALUES ('34', '13', '7132376055');
-INSERT INTO `student_phone` (`ID`, `studentID`, `number`) VALUES ('35', '13', '7132307055');
-INSERT INTO `student_phone` (`ID`, `studentID`, `number`) VALUES ('36', '6', '7134567123');
-INSERT INTO `student_phone` (`ID`, `studentID`, `number`) VALUES ('37', '21', '7156567123');
-INSERT INTO `student_phone` (`ID`, `studentID`, `number`) VALUES ('38', '22', '7156567134');
-INSERT INTO `student_phone` (`ID`, `studentID`, `number`) VALUES ('39', '23', '7156563423');
-INSERT INTO `student_phone` (`ID`, `studentID`, `number`) VALUES ('40', '24', '7156567183');
-INSERT INTO `student_phone` (`ID`, `studentID`, `number`) VALUES ('41', '25', '7146566412');
+INSERT INTO `student_phone` (`ID`, `studentID`, `number`, `isActive`) VALUES ('1', '1', '7032300034', '1');
+INSERT INTO `student_phone` (`ID`, `studentID`, `number`, `isActive`) VALUES ('2', '2', '7032300039', '1');
+INSERT INTO `student_phone` (`ID`, `studentID`, `number`, `isActive`) VALUES ('3', '3', '7032300050', '1');
+INSERT INTO `student_phone` (`ID`, `studentID`, `number`, `isActive`) VALUES ('4', '4', '7032300027', '1');
+INSERT INTO `student_phone` (`ID`, `studentID`, `number`, `isActive`) VALUES ('5', '5', '7032300001', '1');
+INSERT INTO `student_phone` (`ID`, `studentID`, `number`, `isActive`) VALUES ('6', '6', '7032300079', '1');
+INSERT INTO `student_phone` (`ID`, `studentID`, `number`, `isActive`) VALUES ('7', '7', '7032300081', '1');
+INSERT INTO `student_phone` (`ID`, `studentID`, `number`, `isActive`) VALUES ('8', '8', '7032300054', '1');
+INSERT INTO `student_phone` (`ID`, `studentID`, `number`, `isActive`) VALUES ('9', '9', '7032300059', '1');
+INSERT INTO `student_phone` (`ID`, `studentID`, `number`, `isActive`) VALUES ('10', '10', '7032300086', '1');
+INSERT INTO `student_phone` (`ID`, `studentID`, `number`, `isActive`) VALUES ('11', '11', '7032300082', '1');
+INSERT INTO `student_phone` (`ID`, `studentID`, `number`, `isActive`) VALUES ('12', '12', '7032300042', '1');
+INSERT INTO `student_phone` (`ID`, `studentID`, `number`, `isActive`) VALUES ('13', '13', '7032300055', '1');
+INSERT INTO `student_phone` (`ID`, `studentID`, `number`, `isActive`) VALUES ('14', '14', '7032300013', '1');
+INSERT INTO `student_phone` (`ID`, `studentID`, `number`, `isActive`) VALUES ('15', '15', '7032300099', '1');
+INSERT INTO `student_phone` (`ID`, `studentID`, `number`, `isActive`) VALUES ('16', '16', '7032300023', '1');
+INSERT INTO `student_phone` (`ID`, `studentID`, `number`, `isActive`) VALUES ('17', '17', '7032300084', '1');
+INSERT INTO `student_phone` (`ID`, `studentID`, `number`, `isActive`) VALUES ('18', '18', '7032300011', '1');
+INSERT INTO `student_phone` (`ID`, `studentID`, `number`, `isActive`) VALUES ('19', '19', '7032300066', '1');
+INSERT INTO `student_phone` (`ID`, `studentID`, `number`, `isActive`) VALUES ('20', '20', '7032300096', '1');
+INSERT INTO `student_phone` (`ID`, `studentID`, `number`, `isActive`) VALUES ('21', '1', '7132300034', '1');
+INSERT INTO `student_phone` (`ID`, `studentID`, `number`, `isActive`) VALUES ('22', '2', '7132300039', '1');
+INSERT INTO `student_phone` (`ID`, `studentID`, `number`, `isActive`) VALUES ('23', '3', '7132300050', '1');
+INSERT INTO `student_phone` (`ID`, `studentID`, `number`, `isActive`) VALUES ('24', '4', '7132300027', '1');
+INSERT INTO `student_phone` (`ID`, `studentID`, `number`, `isActive`) VALUES ('25', '5', '7032300001', '1');
+INSERT INTO `student_phone` (`ID`, `studentID`, `number`, `isActive`) VALUES ('26', '6', '7132300079', '1');
+INSERT INTO `student_phone` (`ID`, `studentID`, `number`, `isActive`) VALUES ('27', '7', '7132300081', '0');
+INSERT INTO `student_phone` (`ID`, `studentID`, `number`, `isActive`) VALUES ('28', '8', '7132300054', '0');
+INSERT INTO `student_phone` (`ID`, `studentID`, `number`, `isActive`) VALUES ('29', '9', '7132300059', '0');
+INSERT INTO `student_phone` (`ID`, `studentID`, `number`, `isActive`) VALUES ('30', '10', '7132300086', '0');
+INSERT INTO `student_phone` (`ID`, `studentID`, `number`, `isActive`) VALUES ('31', '11', '7132300082', '0');
+INSERT INTO `student_phone` (`ID`, `studentID`, `number`, `isActive`) VALUES ('32', '12', '7132300042', '0');
+INSERT INTO `student_phone` (`ID`, `studentID`, `number`, `isActive`) VALUES ('33', '13', '7132300055', '0');
+INSERT INTO `student_phone` (`ID`, `studentID`, `number`, `isActive`) VALUES ('34', '13', '7132300055', '0');
+INSERT INTO `student_phone` (`ID`, `studentID`, `number`, `isActive`) VALUES ('35', '13', '7132300055', '1');
+INSERT INTO `student_phone` (`ID`, `studentID`, `number`, `isActive`) VALUES ('36', '6', '7134567123', '0');
+INSERT INTO `student_phone` (`ID`, `studentID`, `number`, `isActive`) VALUES ('37', '21', '7156567123', '1');
+INSERT INTO `student_phone` (`ID`, `studentID`, `number`, `isActive`) VALUES ('38', '22', '7156567134', '1');
+INSERT INTO `student_phone` (`ID`, `studentID`, `number`, `isActive`) VALUES ('39', '23', '7156563423', '0');
+INSERT INTO `student_phone` (`ID`, `studentID`, `number`, `isActive`) VALUES ('40', '24', '7156567183', '0');
+INSERT INTO `student_phone` (`ID`, `studentID`, `number`, `isActive`) VALUES ('41', '25', '7146566412', '1');
+
+
+
+INSERT INTO `student_cards` (`ID`, `studentID`, `name`, `isActive`) VALUES ('1', '1', 'Aadhaar', '1');
+INSERT INTO `student_cards` (`ID`, `studentID`, `name`, `isActive`) VALUES ('2', '1', 'Driving Licence', '1');
+INSERT INTO `student_cards` (`ID`, `studentID`, `name`, `isActive`) VALUES ('3', '1', 'PAN', '1');
+INSERT INTO `student_cards` (`ID`, `studentID`, `name`, `isActive`) VALUES ('4', '1', 'Voter ID', '1');
+INSERT INTO `student_cards` (`ID`, `studentID`, `name`, `isActive`) VALUES ('5', '1', 'Passport', '1');
+INSERT INTO `student_cards` (`ID`, `studentID`, `name`, `isActive`) VALUES ('6', '1', 'Debit', '1');
+INSERT INTO `student_cards` (`ID`, `studentID`, `name`, `isActive`) VALUES ('7', '1', 'Credit', '1');
+INSERT INTO `student_cards` (`ID`, `studentID`, `name`, `isActive`) VALUES ('8', '2', 'Aadhaar', '1');
+INSERT INTO `student_cards` (`ID`, `studentID`, `name`, `isActive`) VALUES ('9', '2', 'Driving Licence', '1');
+INSERT INTO `student_cards` (`ID`, `studentID`, `name`, `isActive`) VALUES ('10', '2', 'PAN', '1');
+INSERT INTO `student_cards` (`ID`, `studentID`, `name`, `isActive`) VALUES ('11', '2', 'Voter ID', '1');
+INSERT INTO `student_cards` (`ID`, `studentID`, `name`, `isActive`) VALUES ('12', '2', 'Debit', '1');
+INSERT INTO `student_cards` (`ID`, `studentID`, `name`, `isActive`) VALUES ('13', '3', 'Aadhaar', '1');
+INSERT INTO `student_cards` (`ID`, `studentID`, `name`, `isActive`) VALUES ('14', '3', 'Driving Licence', '1');
+INSERT INTO `student_cards` (`ID`, `studentID`, `name`, `isActive`) VALUES ('15', '3', 'PAN', '1');
+INSERT INTO `student_cards` (`ID`, `studentID`, `name`, `isActive`) VALUES ('16', '3', 'Passport', '1');
+INSERT INTO `student_cards` (`ID`, `studentID`, `name`, `isActive`) VALUES ('17', '3', 'Debit', '1');
+INSERT INTO `student_cards` (`ID`, `studentID`, `name`, `isActive`) VALUES ('18', '4', 'Aadhaar', '1');
+INSERT INTO `student_cards` (`ID`, `studentID`, `name`, `isActive`) VALUES ('19', '4', 'Driving Licence', '1');
+INSERT INTO `student_cards` (`ID`, `studentID`, `name`, `isActive`) VALUES ('20', '4', 'PAN', '1');
+INSERT INTO `student_cards` (`ID`, `studentID`, `name`, `isActive`) VALUES ('21', '4', 'Passport', '1');
+INSERT INTO `student_cards` (`ID`, `studentID`, `name`, `isActive`) VALUES ('22', '4', 'Debit', '1');
+INSERT INTO `student_cards` (`ID`, `studentID`, `name`, `isActive`) VALUES ('23', '4', 'Credit', '1');
+INSERT INTO `student_cards` (`ID`, `studentID`, `name`, `isActive`) VALUES ('24', '5', 'Aadhaar', '1');
+INSERT INTO `student_cards` (`ID`, `studentID`, `name`, `isActive`) VALUES ('25', '5', 'Driving Licence', '1');
+INSERT INTO `student_cards` (`ID`, `studentID`, `name`, `isActive`) VALUES ('26', '5', 'PAN', '1');
+INSERT INTO `student_cards` (`ID`, `studentID`, `name`, `isActive`) VALUES ('27', '5', 'Voter ID', '1');
+INSERT INTO `student_cards` (`ID`, `studentID`, `name`, `isActive`) VALUES ('28', '5', 'Passport', '1');
+INSERT INTO `student_cards` (`ID`, `studentID`, `name`, `isActive`) VALUES ('29', '5', 'Debit', '1');
+INSERT INTO `student_cards` (`ID`, `studentID`, `name`, `isActive`) VALUES ('30', '5', 'Credit', '1');
+INSERT INTO `student_cards` (`ID`, `studentID`, `name`, `isActive`) VALUES ('31', '6', 'PAN', '1');
+INSERT INTO `student_cards` (`ID`, `studentID`, `name`, `isActive`) VALUES ('32', '6', 'Driving Licence', '1');
+INSERT INTO `student_cards` (`ID`, `studentID`, `name`, `isActive`) VALUES ('33', '7', 'Aadhaar', '1');
+INSERT INTO `student_cards` (`ID`, `studentID`, `name`, `isActive`) VALUES ('34', '7', 'Driving Licence', '1');
+INSERT INTO `student_cards` (`ID`, `studentID`, `name`, `isActive`) VALUES ('35', '8', 'Aadhaar', '1');
+INSERT INTO `student_cards` (`ID`, `studentID`, `name`, `isActive`) VALUES ('36', '8', 'Driving Licence', '1');
+INSERT INTO `student_cards` (`ID`, `studentID`, `name`, `isActive`) VALUES ('37', '8', 'PAN', '1');
+INSERT INTO `student_cards` (`ID`, `studentID`, `name`, `isActive`) VALUES ('38', '8', 'Voter ID', '1');
+INSERT INTO `student_cards` (`ID`, `studentID`, `name`, `isActive`) VALUES ('39', '9', 'Driving Licence', '1');
+INSERT INTO `student_cards` (`ID`, `studentID`, `name`, `isActive`) VALUES ('40', '9', 'PAN', '1');
+INSERT INTO `student_cards` (`ID`, `studentID`, `name`, `isActive`) VALUES ('41', '9', 'Debit', '1');
+INSERT INTO `student_cards` (`ID`, `studentID`, `name`, `isActive`) VALUES ('42', '9', 'Credit', '1');
+INSERT INTO `student_cards` (`ID`, `studentID`, `name`, `isActive`) VALUES ('43', '10', 'Aadhaar', '1');
+INSERT INTO `student_cards` (`ID`, `studentID`, `name`, `isActive`) VALUES ('44', '10', 'PAN', '1');
+INSERT INTO `student_cards` (`ID`, `studentID`, `name`, `isActive`) VALUES ('45', '10', 'Passport', '1');
+INSERT INTO `student_cards` (`ID`, `studentID`, `name`, `isActive`) VALUES ('46', '10', 'Voter ID', '1');
+INSERT INTO `student_cards` (`ID`, `studentID`, `name`, `isActive`) VALUES ('47', '11', 'Aadhaar', '1');
+INSERT INTO `student_cards` (`ID`, `studentID`, `name`, `isActive`) VALUES ('48', '12', 'Aadhaar', '1');
+INSERT INTO `student_cards` (`ID`, `studentID`, `name`, `isActive`) VALUES ('49', '12', 'Driving Licence', '1');
+INSERT INTO `student_cards` (`ID`, `studentID`, `name`, `isActive`) VALUES ('50', '12', 'PAN', '1');
+INSERT INTO `student_cards` (`ID`, `studentID`, `name`, `isActive`) VALUES ('51', '13', 'Aadhaar', '1');
+INSERT INTO `student_cards` (`ID`, `studentID`, `name`, `isActive`) VALUES ('52', '13', 'Driving Licence', '1');
+INSERT INTO `student_cards` (`ID`, `studentID`, `name`, `isActive`) VALUES ('53', '13', 'PAN', '1');
+INSERT INTO `student_cards` (`ID`, `studentID`, `name`, `isActive`) VALUES ('54', '13', 'Voter ID', '1');
+INSERT INTO `student_cards` (`ID`, `studentID`, `name`, `isActive`) VALUES ('55', '17', 'Aadhaar', '1');
+INSERT INTO `student_cards` (`ID`, `studentID`, `name`, `isActive`) VALUES ('56', '17', 'Driving Licence', '1');
+INSERT INTO `student_cards` (`ID`, `studentID`, `name`, `isActive`) VALUES ('57', '17', 'PAN', '1');
+INSERT INTO `student_cards` (`ID`, `studentID`, `name`, `isActive`) VALUES ('58', '17', 'Voter ID', '1');
+INSERT INTO `student_cards` (`ID`, `studentID`, `name`, `isActive`) VALUES ('59', '17', 'Passport', '1');
+INSERT INTO `student_cards` (`ID`, `studentID`, `name`, `isActive`) VALUES ('60', '17', 'Debit', '1');
+INSERT INTO `student_cards` (`ID`, `studentID`, `name`, `isActive`) VALUES ('61', '17', 'Credit', '1');
+INSERT INTO `student_cards` (`ID`, `studentID`, `name`, `isActive`) VALUES ('62', '18', 'Aadhaar', '1');
+INSERT INTO `student_cards` (`ID`, `studentID`, `name`, `isActive`) VALUES ('63', '18', 'PAN', '1');
+INSERT INTO `student_cards` (`ID`, `studentID`, `name`, `isActive`) VALUES ('64', '19', 'Aadhaar', '1');
+INSERT INTO `student_cards` (`ID`, `studentID`, `name`, `isActive`) VALUES ('65', '19', 'PAN', '1');
+INSERT INTO `student_cards` (`ID`, `studentID`, `name`, `isActive`) VALUES ('66', '19', 'Passport', '1');
+INSERT INTO `student_cards` (`ID`, `studentID`, `name`, `isActive`) VALUES ('67', '20', 'Aadhaar', '1');
+INSERT INTO `student_cards` (`ID`, `studentID`, `name`, `isActive`) VALUES ('68', '20', 'PAN', '1');
+INSERT INTO `student_cards` (`ID`, `studentID`, `name`, `isActive`) VALUES ('69', '20', 'Passport', '1');
+INSERT INTO `student_cards` (`ID`, `studentID`, `name`, `isActive`) VALUES ('70', '23', 'Driving Licence', '1');
+INSERT INTO `student_cards` (`ID`, `studentID`, `name`, `isActive`) VALUES ('71', '23', 'PAN', '1');
+INSERT INTO `student_cards` (`ID`, `studentID`, `name`, `isActive`) VALUES ('72', '23', 'Credit', '1');
+INSERT INTO `student_cards` (`ID`, `studentID`, `name`, `isActive`) VALUES ('73', '24', 'Aadhaar', '1');
+INSERT INTO `student_cards` (`ID`, `studentID`, `name`, `isActive`) VALUES ('74', '24', 'Driving Licence', '1');
+INSERT INTO `student_cards` (`ID`, `studentID`, `name`, `isActive`) VALUES ('75', '24', 'PAN', '1');
+INSERT INTO `student_cards` (`ID`, `studentID`, `name`, `isActive`) VALUES ('76', '24', 'Voter ID', '1');
+INSERT INTO `student_cards` (`ID`, `studentID`, `name`, `isActive`) VALUES ('77', '24', 'Passport', '1');
+INSERT INTO `student_cards` (`ID`, `studentID`, `name`, `isActive`) VALUES ('78', '24', 'Credit', '1');
+INSERT INTO `student_cards` (`ID`, `studentID`, `name`, `isActive`) VALUES ('79', '25', 'Aadhaar', '1');
+INSERT INTO `student_cards` (`ID`, `studentID`, `name`, `isActive`) VALUES ('80', '14', 'Driving Licence', '1');
+INSERT INTO `student_cards` (`ID`, `studentID`, `name`, `isActive`) VALUES ('81', '15', 'PAN', '1');
+INSERT INTO `student_cards` (`ID`, `studentID`, `name`, `isActive`) VALUES ('82', '16', 'Voter ID', '1');
+INSERT INTO `student_cards` (`ID`, `studentID`, `name`, `isActive`) VALUES ('83', '25', 'Driving Licence', '1');
+INSERT INTO `student_cards` (`ID`, `studentID`, `name`, `isActive`) VALUES ('84', '25', 'PAN', '1');
+INSERT INTO `student_cards` (`ID`, `studentID`, `name`, `isActive`) VALUES ('85', '25', 'Voter ID', '1');
+
 
 
 
@@ -330,31 +427,31 @@ INSERT INTO `course_modules` (`ID`, `courseID`, `moduleID`) VALUES ('28', '6', '
 
 
 
-INSERT INTO `course_batches` (`ID`, `name`, `courseID`, `starton`, `endson`, `capicity`) VALUES ('1', 'Batch1', '1', '2016-02-01', '2016-08-31', '80');
-INSERT INTO `course_batches` (`ID`, `name`, `courseID`, `starton`, `endson`, `capicity`) VALUES ('2', 'Batch2', '2', '2016-02-01', '2016-08-31', '30');
-INSERT INTO `course_batches` (`ID`, `name`, `courseID`, `starton`, `endson`, `capicity`) VALUES ('3', 'Batch3', '3', '2016-02-01', '2016-03-31', '35');
-INSERT INTO `course_batches` (`ID`, `name`, `courseID`, `starton`, `endson`, `capicity`) VALUES ('4', 'Batch4', '4', '2016-07-01', '2016-09-30', '25');
-INSERT INTO `course_batches` (`ID`, `name`, `courseID`, `starton`, `endson`, `capicity`) VALUES ('5', 'Batch5', '5', '2016-07-01', '2016-09-30', '25');
-INSERT INTO `course_batches` (`ID`, `name`, `courseID`, `starton`, `endson`, `capicity`) VALUES ('6', 'Batch6', '1', '2015-02-01', '2015-08-31', '80');
-INSERT INTO `course_batches` (`ID`, `name`, `courseID`, `starton`, `endson`, `capicity`) VALUES ('7', 'Batch7', '2', '2015-02-01', '2015-08-31', '30');
-INSERT INTO `course_batches` (`ID`, `name`, `courseID`, `starton`, `endson`, `capicity`) VALUES ('8', 'Batch8', '3', '2017-04-01', '2017-05-31', '30');
-INSERT INTO `course_batches` (`ID`, `name`, `courseID`, `starton`, `endson`, `capicity`) VALUES ('9', 'Batch9', '4', '2018-07-01', '2018-09-30', '25');
-INSERT INTO `course_batches` (`ID`, `name`, `courseID`, `starton`, `endson`, `capicity`) VALUES ('10', 'Batch10', '5', '2018-09-01', '2018-11-30', '25');
-INSERT INTO `course_batches` (`ID`, `name`, `courseID`, `starton`, `endson`, `capicity`) VALUES ('11', 'Batch11', '1', '2017-08-01', '2018-02-28', '80');
-INSERT INTO `course_batches` (`ID`, `name`, `courseID`, `starton`, `endson`, `capicity`) VALUES ('12', 'Batch12', '2', '2017-08-01', '2018-02-28', '30');
-INSERT INTO `course_batches` (`ID`, `name`, `courseID`, `starton`, `endson`, `capicity`) VALUES ('13', 'Batch13', '3', '2017-07-01', '2017-08-31', '30');
-INSERT INTO `course_batches` (`ID`, `name`, `courseID`, `starton`, `endson`, `capicity`) VALUES ('14', 'Batch14', '4', '2018-05-01', '2018-07-31', '25');
-INSERT INTO `course_batches` (`ID`, `name`, `courseID`, `starton`, `endson`, `capicity`) VALUES ('15', 'Batch15', '5', '2018-06-01', '2018-08-30', '25');
-INSERT INTO `course_batches` (`ID`, `name`, `courseID`, `starton`, `endson`, `capicity`) VALUES ('16', 'Batch16', '1', '2014-08-01', '2015-02-28', '80');
-INSERT INTO `course_batches` (`ID`, `name`, `courseID`, `starton`, `endson`, `capicity`) VALUES ('17', 'Batch17', '2', '2014-08-01', '2015-02-28', '30');
-INSERT INTO `course_batches` (`ID`, `name`, `courseID`, `starton`, `endson`, `capicity`) VALUES ('18', 'Batch18', '3', '2018-03-01', '2018-04-30', '35');
-INSERT INTO `course_batches` (`ID`, `name`, `courseID`, `starton`, `endson`, `capicity`) VALUES ('19', 'Batch19', '4', '2019-01-01', '2019-03-30', '25');
-INSERT INTO `course_batches` (`ID`, `name`, `courseID`, `starton`, `endson`, `capicity`) VALUES ('20', 'Batch20', '5', '2018-12-01', '2019-02-28', '25');
-INSERT INTO `course_batches` (`ID`, `name`, `courseID`, `starton`, `endson`, `capicity`) VALUES ('21', 'Batch21', '1', '2015-08-01', '2016-02-28', '80');
-INSERT INTO `course_batches` (`ID`, `name`, `courseID`, `starton`, `endson`, `capicity`) VALUES ('22', 'Batch22', '2', '2015-08-01', '2016-02-28', '30');
-INSERT INTO `course_batches` (`ID`, `name`, `courseID`, `starton`, `endson`, `capicity`) VALUES ('23', 'Batch23', '3', '2019-03-01', '2019-04-30', '40');
-INSERT INTO `course_batches` (`ID`, `name`, `courseID`, `starton`, `endson`, `capicity`) VALUES ('24', 'Batch24', '4', '2019-01-01', '2019-03-30', '30');
-INSERT INTO `course_batches` (`ID`, `name`, `courseID`, `starton`, `endson`, `capicity`) VALUES ('25', 'Batch25', '6', '2019-01-01', '2019-03-30', '30');
+INSERT INTO `course_batches` (`ID`, `name`, `courseID`, `starton`, `endson`, `capacity`) VALUES ('1', 'Batch1', '1', '2016-02-01', '2016-08-31', '80');
+INSERT INTO `course_batches` (`ID`, `name`, `courseID`, `starton`, `endson`, `capacity`) VALUES ('2', 'Batch2', '2', '2016-02-01', '2016-08-31', '30');
+INSERT INTO `course_batches` (`ID`, `name`, `courseID`, `starton`, `endson`, `capacity`) VALUES ('3', 'Batch3', '3', '2016-02-01', '2016-03-31', '35');
+INSERT INTO `course_batches` (`ID`, `name`, `courseID`, `starton`, `endson`, `capacity`) VALUES ('4', 'Batch4', '4', '2016-07-01', '2016-09-30', '25');
+INSERT INTO `course_batches` (`ID`, `name`, `courseID`, `starton`, `endson`, `capacity`) VALUES ('5', 'Batch5', '5', '2016-07-01', '2016-09-30', '25');
+INSERT INTO `course_batches` (`ID`, `name`, `courseID`, `starton`, `endson`, `capacity`) VALUES ('6', 'Batch6', '1', '2015-02-01', '2015-08-31', '80');
+INSERT INTO `course_batches` (`ID`, `name`, `courseID`, `starton`, `endson`, `capacity`) VALUES ('7', 'Batch7', '2', '2015-02-01', '2015-08-31', '30');
+INSERT INTO `course_batches` (`ID`, `name`, `courseID`, `starton`, `endson`, `capacity`) VALUES ('8', 'Batch8', '3', '2017-04-01', '2017-05-31', '30');
+INSERT INTO `course_batches` (`ID`, `name`, `courseID`, `starton`, `endson`, `capacity`) VALUES ('9', 'Batch9', '4', '2018-07-01', '2018-09-30', '25');
+INSERT INTO `course_batches` (`ID`, `name`, `courseID`, `starton`, `endson`, `capacity`) VALUES ('10', 'Batch10', '5', '2018-09-01', '2018-11-30', '25');
+INSERT INTO `course_batches` (`ID`, `name`, `courseID`, `starton`, `endson`, `capacity`) VALUES ('11', 'Batch11', '1', '2017-08-01', '2018-02-28', '80');
+INSERT INTO `course_batches` (`ID`, `name`, `courseID`, `starton`, `endson`, `capacity`) VALUES ('12', 'Batch12', '2', '2017-08-01', '2018-02-28', '30');
+INSERT INTO `course_batches` (`ID`, `name`, `courseID`, `starton`, `endson`, `capacity`) VALUES ('13', 'Batch13', '3', '2017-07-01', '2017-08-31', '30');
+INSERT INTO `course_batches` (`ID`, `name`, `courseID`, `starton`, `endson`, `capacity`) VALUES ('14', 'Batch14', '4', '2018-05-01', '2018-07-31', '25');
+INSERT INTO `course_batches` (`ID`, `name`, `courseID`, `starton`, `endson`, `capacity`) VALUES ('15', 'Batch15', '5', '2018-06-01', '2018-08-30', '25');
+INSERT INTO `course_batches` (`ID`, `name`, `courseID`, `starton`, `endson`, `capacity`) VALUES ('16', 'Batch16', '1', '2014-08-01', '2015-02-28', '80');
+INSERT INTO `course_batches` (`ID`, `name`, `courseID`, `starton`, `endson`, `capacity`) VALUES ('17', 'Batch17', '2', '2014-08-01', '2015-02-28', '30');
+INSERT INTO `course_batches` (`ID`, `name`, `courseID`, `starton`, `endson`, `capacity`) VALUES ('18', 'Batch18', '3', '2018-03-01', '2018-04-30', '35');
+INSERT INTO `course_batches` (`ID`, `name`, `courseID`, `starton`, `endson`, `capacity`) VALUES ('19', 'Batch19', '4', '2019-01-01', '2019-03-30', '25');
+INSERT INTO `course_batches` (`ID`, `name`, `courseID`, `starton`, `endson`, `capacity`) VALUES ('20', 'Batch20', '5', '2018-12-01', '2019-02-28', '25');
+INSERT INTO `course_batches` (`ID`, `name`, `courseID`, `starton`, `endson`, `capacity`) VALUES ('21', 'Batch21', '1', '2015-08-01', '2016-02-28', '80');
+INSERT INTO `course_batches` (`ID`, `name`, `courseID`, `starton`, `endson`, `capacity`) VALUES ('22', 'Batch22', '2', '2015-08-01', '2016-02-28', '30');
+INSERT INTO `course_batches` (`ID`, `name`, `courseID`, `starton`, `endson`, `capacity`) VALUES ('23', 'Batch23', '3', '2019-03-01', '2019-04-30', '40');
+INSERT INTO `course_batches` (`ID`, `name`, `courseID`, `starton`, `endson`, `capacity`) VALUES ('24', 'Batch24', '4', '2019-01-01', '2019-03-30', '30');
+INSERT INTO `course_batches` (`ID`, `name`, `courseID`, `starton`, `endson`, `capacity`) VALUES ('25', 'Batch25', '6', '2019-01-01', '2019-03-30', '30');
 
 
 

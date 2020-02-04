@@ -107,7 +107,7 @@ CREATE TABLE course_batches (
   courseID INT NULL,
   starton DATE NULL,
   endson DATE NULL,
-  capicity INT NULL,
+  capacity INT NULL,
   FOREIGN KEY (courseID) REFERENCES course (ID));
 
 
@@ -320,31 +320,31 @@ INSERT INTO course_modules (ID, courseID, moduleID) VALUES ('28', '6', '17');
 
 
 
-INSERT INTO course_batches (ID, name, courseID, starton, endson, capicity) VALUES ('1', 'Batch1', '1', '01-Feb-2016', '31-Aug-2016', '80');
-INSERT INTO course_batches (ID, name, courseID, starton, endson, capicity) VALUES ('2', 'Batch2', '2', '01-Feb-2016', '31-Aug-2016', '30');
-INSERT INTO course_batches (ID, name, courseID, starton, endson, capicity) VALUES ('3', 'Batch3', '3', '01-Feb-2016', '31-Mar-2016', '35');
-INSERT INTO course_batches (ID, name, courseID, starton, endson, capicity) VALUES ('4', 'Batch4', '4', '01-Jul-2016', '30-Sep-2016', '25');
-INSERT INTO course_batches (ID, name, courseID, starton, endson, capicity) VALUES ('5', 'Batch5', '5', '01-Jul-2016', '30-Sep-2016', '25');
-INSERT INTO course_batches (ID, name, courseID, starton, endson, capicity) VALUES ('6', 'Batch6', '1', '01-Feb-2015', '31-Aug-2015', '80');
-INSERT INTO course_batches (ID, name, courseID, starton, endson, capicity) VALUES ('7', 'Batch7', '2', '01-Feb-2015', '31-Aug-2015', '30');
-INSERT INTO course_batches (ID, name, courseID, starton, endson, capicity) VALUES ('8', 'Batch8', '3', '01-Apr-2017', '31-May-2017', '30');
-INSERT INTO course_batches (ID, name, courseID, starton, endson, capicity) VALUES ('9', 'Batch9', '4', '01-Jul-2018', '30-Sep-2018', '25');
-INSERT INTO course_batches (ID, name, courseID, starton, endson, capicity) VALUES ('10', 'Batch10', '5', '01-Sep-2018', '30-Nov-2018', '25');
-INSERT INTO course_batches (ID, name, courseID, starton, endson, capicity) VALUES ('11', 'Batch11', '1', '01-Aug-2017', '28-Feb-2018', '80');
-INSERT INTO course_batches (ID, name, courseID, starton, endson, capicity) VALUES ('12', 'Batch12', '2', '01-Aug-2017', '28-Feb-2018', '30');
-INSERT INTO course_batches (ID, name, courseID, starton, endson, capicity) VALUES ('13', 'Batch13', '3', '01-Jul-2017', '31-Aug-2017', '30');
-INSERT INTO course_batches (ID, name, courseID, starton, endson, capicity) VALUES ('14', 'Batch14', '4', '01-May-2018', '31-Jul-2018', '25');
-INSERT INTO course_batches (ID, name, courseID, starton, endson, capicity) VALUES ('15', 'Batch15', '5', '01-Jun-2018', '30-Aug-2018', '25');
-INSERT INTO course_batches (ID, name, courseID, starton, endson, capicity) VALUES ('16', 'Batch16', '1', '01-Aug-2014', '28-Feb-2015', '80');
-INSERT INTO course_batches (ID, name, courseID, starton, endson, capicity) VALUES ('17', 'Batch17', '2', '01-Aug-2014', '28-Feb-2015', '30');
-INSERT INTO course_batches (ID, name, courseID, starton, endson, capicity) VALUES ('18', 'Batch18', '3', '01-Mar-2018', '30-Apr-2018', '35');
-INSERT INTO course_batches (ID, name, courseID, starton, endson, capicity) VALUES ('19', 'Batch19', '4', '01-Jan-2019', '30-Mar-2019', '25');
-INSERT INTO course_batches (ID, name, courseID, starton, endson, capicity) VALUES ('20', 'Batch20', '5', '01-Dec-2018', '28-Feb-2019', '25');
-INSERT INTO course_batches (ID, name, courseID, starton, endson, capicity) VALUES ('21', 'Batch21', '1', '01-Aug-2015', '28-Feb-2016', '80');
-INSERT INTO course_batches (ID, name, courseID, starton, endson, capicity) VALUES ('22', 'Batch22', '2', '01-Aug-2015', '28-Feb-2016', '30');
-INSERT INTO course_batches (ID, name, courseID, starton, endson, capicity) VALUES ('23', 'Batch23', '3', '01-Mar-2019', '30-Apr-2019', '40');
-INSERT INTO course_batches (ID, name, courseID, starton, endson, capicity) VALUES ('24', 'Batch24', '4', '01-Jan-2019', '30-Mar-2019', '30');
-INSERT INTO course_batches (ID, name, courseID, starton, endson, capicity) VALUES ('25', 'Batch25', '6', '01-Jan-2019', '30-Mar-2019', '30');
+INSERT INTO course_batches (ID, name, courseID, starton, endson, capacity) VALUES ('1', 'Batch1', '1', '01-Feb-2016', '31-Aug-2016', '80');
+INSERT INTO course_batches (ID, name, courseID, starton, endson, capacity) VALUES ('2', 'Batch2', '2', '01-Feb-2016', '31-Aug-2016', '30');
+INSERT INTO course_batches (ID, name, courseID, starton, endson, capacity) VALUES ('3', 'Batch3', '3', '01-Feb-2016', '31-Mar-2016', '35');
+INSERT INTO course_batches (ID, name, courseID, starton, endson, capacity) VALUES ('4', 'Batch4', '4', '01-Jul-2016', '30-Sep-2016', '25');
+INSERT INTO course_batches (ID, name, courseID, starton, endson, capacity) VALUES ('5', 'Batch5', '5', '01-Jul-2016', '30-Sep-2016', '25');
+INSERT INTO course_batches (ID, name, courseID, starton, endson, capacity) VALUES ('6', 'Batch6', '1', '01-Feb-2015', '31-Aug-2015', '80');
+INSERT INTO course_batches (ID, name, courseID, starton, endson, capacity) VALUES ('7', 'Batch7', '2', '01-Feb-2015', '31-Aug-2015', '30');
+INSERT INTO course_batches (ID, name, courseID, starton, endson, capacity) VALUES ('8', 'Batch8', '3', '01-Apr-2017', '31-May-2017', '30');
+INSERT INTO course_batches (ID, name, courseID, starton, endson, capacity) VALUES ('9', 'Batch9', '4', '01-Jul-2018', '30-Sep-2018', '25');
+INSERT INTO course_batches (ID, name, courseID, starton, endson, capacity) VALUES ('10', 'Batch10', '5', '01-Sep-2018', '30-Nov-2018', '25');
+INSERT INTO course_batches (ID, name, courseID, starton, endson, capacity) VALUES ('11', 'Batch11', '1', '01-Aug-2017', '28-Feb-2018', '80');
+INSERT INTO course_batches (ID, name, courseID, starton, endson, capacity) VALUES ('12', 'Batch12', '2', '01-Aug-2017', '28-Feb-2018', '30');
+INSERT INTO course_batches (ID, name, courseID, starton, endson, capacity) VALUES ('13', 'Batch13', '3', '01-Jul-2017', '31-Aug-2017', '30');
+INSERT INTO course_batches (ID, name, courseID, starton, endson, capacity) VALUES ('14', 'Batch14', '4', '01-May-2018', '31-Jul-2018', '25');
+INSERT INTO course_batches (ID, name, courseID, starton, endson, capacity) VALUES ('15', 'Batch15', '5', '01-Jun-2018', '30-Aug-2018', '25');
+INSERT INTO course_batches (ID, name, courseID, starton, endson, capacity) VALUES ('16', 'Batch16', '1', '01-Aug-2014', '28-Feb-2015', '80');
+INSERT INTO course_batches (ID, name, courseID, starton, endson, capacity) VALUES ('17', 'Batch17', '2', '01-Aug-2014', '28-Feb-2015', '30');
+INSERT INTO course_batches (ID, name, courseID, starton, endson, capacity) VALUES ('18', 'Batch18', '3', '01-Mar-2018', '30-Apr-2018', '35');
+INSERT INTO course_batches (ID, name, courseID, starton, endson, capacity) VALUES ('19', 'Batch19', '4', '01-Jan-2019', '30-Mar-2019', '25');
+INSERT INTO course_batches (ID, name, courseID, starton, endson, capacity) VALUES ('20', 'Batch20', '5', '01-Dec-2018', '28-Feb-2019', '25');
+INSERT INTO course_batches (ID, name, courseID, starton, endson, capacity) VALUES ('21', 'Batch21', '1', '01-Aug-2015', '28-Feb-2016', '80');
+INSERT INTO course_batches (ID, name, courseID, starton, endson, capacity) VALUES ('22', 'Batch22', '2', '01-Aug-2015', '28-Feb-2016', '30');
+INSERT INTO course_batches (ID, name, courseID, starton, endson, capacity) VALUES ('23', 'Batch23', '3', '01-Mar-2019', '30-Apr-2019', '40');
+INSERT INTO course_batches (ID, name, courseID, starton, endson, capacity) VALUES ('24', 'Batch24', '4', '01-Jan-2019', '30-Mar-2019', '30');
+INSERT INTO course_batches (ID, name, courseID, starton, endson, capacity) VALUES ('25', 'Batch25', '6', '01-Jan-2019', '30-Mar-2019', '30');
 
 
 
