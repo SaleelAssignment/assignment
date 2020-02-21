@@ -51,6 +51,21 @@ drop VIEW IF EXISTS SALES;
 
 CREATE TABLE IF NOT EXISTS TASKS (id INT PRIMARY KEY AUTO_INCREMENT, title VARCHAR(255) NOT NULL,  completed BOOLEAN);
 
+INSERT INTO TASKS VALUE(default, 'Task1', 0);
+INSERT INTO TASKS VALUE(default, 'Task2', 1);
+INSERT INTO TASKS VALUE(default, 'Task3', False);
+INSERT INTO TASKS VALUE(default, 'Task4', True);
+INSERT INTO TASKS VALUE(default, 'Task5', null);
+INSERT INTO TASKS VALUE(default, 'Task6', default);
+INSERT INTO TASKS VALUE(default, 'Task7', 1>2);
+INSERT INTO TASKS VALUE(default, 'Task8', 1<2);
+INSERT INTO TASKS VALUE(default, 'Task9', 12);
+INSERT INTO TASKS VALUE(default, 'Task10', 58);
+INSERT INTO TASKS VALUE(default, 'Task11',.75);
+INSERT INTO TASKS VALUE(default, 'Task12',.15);
+INSERT INTO TASKS VALUE(default, 'Task13', 'a' = 'a');
+
+
 
 CREATE TABLE IF NOT EXISTS revenue (
     id INT PRIMARY KEY,
