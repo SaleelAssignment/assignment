@@ -1,9 +1,7 @@
-create database if not exists campus;
-use campus;
-
 drop table if exists student_phone;
 drop table if exists student_address;
 drop table if exists faculty_phone;
+drop table if exists student_Cards;
 drop table if exists faculty_address;
 drop table if exists batch_students;
 drop table if exists course_batches;
@@ -14,7 +12,7 @@ drop table if exists modules;
 drop table if exists faculty;
 drop table if exists student;
 drop table if exists course;
-drop table if exists student_Cards;
+
 
 CREATE TABLE `course` (
   `ID` INT PRIMARY KEY,
@@ -168,9 +166,9 @@ INSERT INTO `student` (`ID`, `namefirst`, `namelast`, `DOB`, `emailID`) VALUES (
 INSERT INTO `student` (`ID`, `namefirst`, `namelast`, `DOB`, `emailID`) VALUES ('23', 'bhavin', 'patel', '1982-07-30', 'bhavin.patel@gmail.com');
 INSERT INTO `student` (`ID`, `namefirst`, `namelast`, `DOB`, `emailID`) VALUES ('24', 'mukesh', 'bhavsar', '1982-07-30', 'mukesh.bhavsar@gmail.com');
 INSERT INTO `student` (`ID`, `namefirst`, `namelast`, `DOB`, `emailID`) VALUES ('25', 'dilu', 'khande', '1982-07-30', 'dilu.khande@gmail.com');
-INSERT INTO `campus`.`student` (`ID`, `namefirst`, `namelast`, `DOB`, `emailID`) VALUES ('26', 'sonam', 'khan', '1972-05-13', 'sonam.khan@gmail.com');
-INSERT INTO `campus`.`student` (`ID`, `namefirst`, `namelast`, `DOB`, `emailID`) VALUES ('27', 'rohit', 'patil', '1976-12-31', 'rohit.patil@gmail.com');
-INSERT INTO `campus`.`student` (`ID`, `namefirst`, `namelast`, `DOB`, `emailID`) VALUES ('28', 'raj', 'bubber', '1982-02-28', 'raj.bubber@gmail.com');
+INSERT INTO `student` (`ID`, `namefirst`, `namelast`, `DOB`, `emailID`) VALUES ('26', 'sonam', 'khan', '1972-05-13', 'sonam.khan@gmail.com');
+INSERT INTO `student` (`ID`, `namefirst`, `namelast`, `DOB`, `emailID`) VALUES ('27', 'rohit', 'patil', '1976-12-31', 'rohit.patil@gmail.com');
+INSERT INTO `student` (`ID`, `namefirst`, `namelast`, `DOB`, `emailID`) VALUES ('28', 'raj', 'bubber', '1982-02-28', 'raj.bubber@gmail.com');
 
 
 
@@ -337,9 +335,9 @@ INSERT INTO `student_address` (`ID`, `studentID`, `address`) VALUES ('22', '22',
 INSERT INTO `student_address` (`ID`, `studentID`, `address`) VALUES ('23', '23', '10  vaibhav, Ishadan soc, paud road, Pune');
 INSERT INTO `student_address` (`ID`, `studentID`, `address`) VALUES ('24', '24', '4 vaibhav, Ishadan soc, paud road, Pune');
 INSERT INTO `student_address` (`ID`, `studentID`, `address`) VALUES ('25', '25', '7 vaibhav, Ishadan soc, paud road, Pune');
-INSERT INTO `campus`.`student_address` (`ID`, `studentID`, `address`) VALUES ('26', '26', '19 Hempstead St, go streat, MG, Boston, 19077');
-INSERT INTO `campus`.`student_address` (`ID`, `studentID`, `address`) VALUES ('27', '27', '1699 Ken city, P.O. Box 942873, 50 Higuera Street, Oakland, 38060');
-INSERT INTO `campus`.`student_address` (`ID`, `studentID`, `address`) VALUES ('28', '28', 'Po Box 87, Faith, NC, New York, 28045');
+INSERT INTO `student_address` (`ID`, `studentID`, `address`) VALUES ('26', '26', '19 Hempstead St, go streat, MG, Boston, 19077');
+INSERT INTO `student_address` (`ID`, `studentID`, `address`) VALUES ('27', '27', '1699 Ken city, P.O. Box 942873, 50 Higuera Street, Oakland, 38060');
+INSERT INTO `student_address` (`ID`, `studentID`, `address`) VALUES ('28', '28', 'Po Box 87, Faith, NC, New York, 28045');
 
 
 
@@ -565,16 +563,16 @@ INSERT INTO `student_qualifications` (`ID`, `studentID`, `name`, `college`, `uni
 INSERT INTO `student_qualifications` (`ID`, `studentID`, `name`, `college`, `university`, `marks`, `year`) VALUES ('73', '25', '10', 'Ohio', 'University of Ohio', '87', '2011');
 INSERT INTO `student_qualifications` (`ID`, `studentID`, `name`, `college`, `university`, `marks`, `year`) VALUES ('74', '25', '12', 'Iowa', 'Stanford University', '78', '2013');
 INSERT INTO `student_qualifications` (`ID`, `studentID`, `name`, `college`, `university`, `marks`, `year`) VALUES ('75', '25', 'BE', 'Kentucky', 'Harvard University', '97', '2017');
-INSERT INTO `campus`.`student_qualifications` (`ID`, `studentID`, `name`, `college`, `university`, `marks`, `year`) VALUES ('76', '26', '10', 'Iowa', 'Stanford University', '56', '1994');
-INSERT INTO `campus`.`student_qualifications` (`ID`, `studentID`, `name`, `college`, `university`, `marks`, `year`) VALUES ('77', '26', 'DIP', 'Kentucky', 'Harvard University', '67', '1996');
-INSERT INTO `campus`.`student_qualifications` (`ID`, `studentID`, `name`, `college`, `university`, `marks`, `year`) VALUES ('78', '26', 'BE', 'Maryland', 'Harvard University', '68', '2000');
-INSERT INTO `campus`.`student_qualifications` (`ID`, `studentID`, `name`, `college`, `university`, `marks`, `year`) VALUES ('79', '27', '10', 'Alabama', 'University of Chicago', '50', '1997');
-INSERT INTO `campus`.`student_qualifications` (`ID`, `studentID`, `name`, `college`, `university`, `marks`, `year`) VALUES ('80', '27', '12', 'Virginia', 'California University', '55', '1999');
-INSERT INTO `campus`.`student_qualifications` (`ID`, `studentID`, `name`, `college`, `university`, `marks`, `year`) VALUES ('81', '27', 'DIP', 'Maine', 'University of Florida', '60', '2003');
-INSERT INTO `campus`.`student_qualifications` (`ID`, `studentID`, `name`, `college`, `university`, `marks`, `year`) VALUES ('82', '27', 'BE', 'Vermont', 'Pennsylvania University', '62', '2006');
-INSERT INTO `campus`.`student_qualifications` (`ID`, `studentID`, `name`, `college`, `university`, `marks`, `year`) VALUES ('83', '28', '10', 'Iowa', 'Yale University', '65', '2004');
-INSERT INTO `campus`.`student_qualifications` (`ID`, `studentID`, `name`, `college`, `university`, `marks`, `year`) VALUES ('84', '28', '12', 'Maryland', 'Columbia University', '68', '2006');
-INSERT INTO `campus`.`student_qualifications` (`ID`, `studentID`, `name`, `college`, `university`, `marks`, `year`) VALUES ('85', '28', 'MCA', 'Alaska', 'Harvard University', '64', '2009');
+INSERT INTO `student_qualifications` (`ID`, `studentID`, `name`, `college`, `university`, `marks`, `year`) VALUES ('76', '26', '10', 'Iowa', 'Stanford University', '56', '1994');
+INSERT INTO `student_qualifications` (`ID`, `studentID`, `name`, `college`, `university`, `marks`, `year`) VALUES ('77', '26', 'DIP', 'Kentucky', 'Harvard University', '67', '1996');
+INSERT INTO `student_qualifications` (`ID`, `studentID`, `name`, `college`, `university`, `marks`, `year`) VALUES ('78', '26', 'BE', 'Maryland', 'Harvard University', '68', '2000');
+INSERT INTO `student_qualifications` (`ID`, `studentID`, `name`, `college`, `university`, `marks`, `year`) VALUES ('79', '27', '10', 'Alabama', 'University of Chicago', '50', '1997');
+INSERT INTO `student_qualifications` (`ID`, `studentID`, `name`, `college`, `university`, `marks`, `year`) VALUES ('80', '27', '12', 'Virginia', 'California University', '55', '1999');
+INSERT INTO `student_qualifications` (`ID`, `studentID`, `name`, `college`, `university`, `marks`, `year`) VALUES ('81', '27', 'DIP', 'Maine', 'University of Florida', '60', '2003');
+INSERT INTO `student_qualifications` (`ID`, `studentID`, `name`, `college`, `university`, `marks`, `year`) VALUES ('82', '27', 'BE', 'Vermont', 'Pennsylvania University', '62', '2006');
+INSERT INTO `student_qualifications` (`ID`, `studentID`, `name`, `college`, `university`, `marks`, `year`) VALUES ('83', '28', '10', 'Iowa', 'Yale University', '65', '2004');
+INSERT INTO `student_qualifications` (`ID`, `studentID`, `name`, `college`, `university`, `marks`, `year`) VALUES ('84', '28', '12', 'Maryland', 'Columbia University', '68', '2006');
+INSERT INTO `student_qualifications` (`ID`, `studentID`, `name`, `college`, `university`, `marks`, `year`) VALUES ('85', '28', 'MCA', 'Alaska', 'Harvard University', '64', '2009');
 
 
 
