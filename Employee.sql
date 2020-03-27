@@ -1,7 +1,13 @@
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
-
+drop table if exists countries;
+drop table if exists departments;
+drop table if exists employees;
+drop table if exists job_history;
+drop table if exists jobs;
+drop table if exists locations;
+drop table if exists regions;
 
 CREATE TABLE IF NOT EXISTS `countries` (
   `COUNTRY_ID` varchar(2) NOT NULL,
@@ -424,13 +430,13 @@ INSERT INTO `regions` (`REGION_ID`, `REGION_NAME`) VALUES
 41. Write a query to get the total salary, maximum, minimum, average salary of employees (job ID wise), for department ID 90  only.
 42. Write a query to get the job ID and maximum salary of the employees where maximum salary is greater than or equal to $4000. 
 43. Write a query to get the average salary for all departments employing more than 10 employees.
-44. 
-45. 
-46. 
-47. 
-48. 
-49. 
-50. 
+44. Write a query to find the name (first_name, last_name) and the salary of the employees who have a higher salary than the employee whose last_name='Bull'.
+45. Write a query to find the name (first_name, last_name) of all employees who works in the IT department. 
+46. Write a query to find the name (first_name, last_name) of the employees who are working in a USA based department.
+47. Write a query to find the name (first_name, last_name) of the employees who are managers.
+48. Write a query to find the name (first_name, last_name), and salary of the employees whose salary is greater than the average salary.
+49.  Write a query to find the name (first_name, last_name), and salary of the employees who earns more than the average salary and works in any of the IT departments.
+50. Write a query to find the name (first_name, last_name), and salary of the employees who earns more than the earning of Mr. Bell. 
 
 
 
@@ -481,13 +487,14 @@ INSERT INTO `regions` (`REGION_ID`, `REGION_NAME`) VALUES
 41. SELECT job_id, SUM(salary), AVG(salary), MAX(salary), MIN(salary) FROM employees WHERE department_id = '90' GROUP BY   job_id;
 42. SELECT job_id, MAX(salary) FROM employees GROUP BY job_id HAVING MAX(salary) >=4000;
 43. SELECT department_id, AVG(salary), COUNT(*) FROM employees GROUP BY department_idHAV ING COUNT(*) > 10;
-44. 
-45. 
-46. 
-47. 
-48. 
-49. 
-50.
+44. SELECT FIRST_NAME, LAST_NAME, SALARY FROM employees WHERE SALARY > (SELECT salary FROM employees WHERE last_name = 'Bull');
+45. SELECT first_name, last_name FROM employees WHERE department_id IN (SELECT department_id FROM departments WHERE department_name='IT');
+46. select count(*) from employees, departments, locations where employees.DEPARTMENT_ID = departments.DEPARTMENT_ID
+and departments.LOCATION_ID = locations.LOCATION_ID and locations.COUNTRY_ID = 'US';
+47. SELECT first_name, last_name FROM employees WHERE (employee_id IN (SELECT manager_id FROM employees));
+48. SELECT first_name, last_name, salary FROM employees WHERE salary > (SELECT AVG(salary) FROM employees);
+49. select * from employees where salary > (select avg(salary) from employees where DEPARTMENT_ID in (SELECT DEPARTMENT_ID FROM db1.departments where DEPARTMENT_NAME like 'it%'));
+50. SELECT first_name, last_name, salary FROM employees WHERE salary > (SELECT salary FROM employees WHERE last_name = 'Bell') ORDER BY first_name;
 
 
 
