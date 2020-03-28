@@ -465,19 +465,19 @@ INSERT INTO `regions` (`REGION_ID`, `REGION_NAME`) VALUES
     FI_ACCOUNT	  110,113,111,109,112
 	
 67. Write a query to update the portion of the phone_number in the employees table, within the phone number the substring '124' will be replaced by '999'.
-68. 
-69. 
-70. 
-71. 
-72. 
-73. 
-74. 
-75. 
-76. 
-77. 
-78. 
-79. 
-80. 
+68. Write a query to get the details of the employees where the length of the first name greater than or equal to 8.
+69. Write a query to display leading zeros before maximum and minimum salary.
+70. Write a query to append '@gmail.com' to email field.
+71. Write a query to get the employee id, first name and hire month.
+72. Write a query to get the employee id, email id (discard the last four characters).
+73. Write a query to extract the last 4 character of phone numbers.
+74. Write a query to get the locations that have minimum street length.
+75. Write a query to display the length of first name for employees where last name contain character 'c' after 2nd position.
+76. Write a query that displays the first name and the length of the first name for all employees whose name starts with the letters 'A', 'J' or 'M'. Give each column an appropriate label. Sort the results by the employees first names.
+77. Write a query to display the first name and salary for all employees. Format the salary to be 10 characters long, left-padded with the $ symbol. Label the column SALARY. 
+78. Write a query to display the employees details who are hired seventh month in any year.
+79. Write a query to display the employees details who are hired on seventh day of any month.
+80. Write a query to display the employees details who is getting minimum salary.
 
 
 
@@ -558,19 +558,19 @@ INSERT INTO `regions` (`REGION_ID`, `REGION_NAME`) VALUES
 65. SELECT DEPARTMENT_ID, year(HIRE_DATE), COUNT(EMPLOYEE_ID) FROM employees GROUP BY DEPARTMENT_ID ORDER BY DEPARTMENT_ID;
 66. SELECT job_id, GROUP_CONCAT(employee_id) 'Employees ID' FROM employees GROUP BY job_id;
 67. UPDATE employees SET phone_number = REPLACE(phone_number, '124', '999') WHERE phone_number LIKE '%124%';
-68. 
-69. 
-70. 
-71. 
-72. 
-73. 
-74. 
-75. 
-76. 
-77. 
-78. 
-79. 
-80. 
+68. SELECT * FROM employees WHERE LENGTH(first_name) >= 8;
+69. SELECT job_id,  LPAD( max_salary, 7, '0') ' Max Salary', LPAD( min_salary, 7, '0') ' Min Salary' FROM jobs;
+70. UPDATE employees SET email = CONCAT(email, '@gmail.com');
+71. SELECT employee_id, first_name, MID(hire_date, 6, 2) as hire_month FROM employees;
+72. SELECT email, substr(email,1, length(email) - 4) FROM db1.employees ;
+73. SELECT RIGHT(phone_number, 4) as 'Ph.No.' FROM employees;
+74. SELECT * FROM locations WHERE LENGTH(street_address) <= (SELECT  MIN(LENGTH(street_address)) FROM locations);
+75. SELECT first_name, last_name FROM employees WHERE INSTR(last_name,'C') > 2;
+76. SELECT first_name "Name", LENGTH(first_name) "Length" FROM employees WHERE first_name LIKE 'J%' OR first_name LIKE 'M%' OR first_name LIKE 'A%' ORDER BY first_name ;
+77. SELECT first_name, LPAD(salary, 10, '$') SALARY FROM employees;
+78. SELECT * FROM employees where month(hire_date) = 7;
+79. SELECT * FROM employees where day(hire_date) = 7;
+80. select * from employees where salary = (select min(salary) from employees);
 
 
 
