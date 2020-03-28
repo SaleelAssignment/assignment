@@ -437,6 +437,53 @@ INSERT INTO `regions` (`REGION_ID`, `REGION_NAME`) VALUES
 48. Write a query to find the name (first_name, last_name), and salary of the employees whose salary is greater than the average salary.
 49.  Write a query to find the name (first_name, last_name), and salary of the employees who earns more than the average salary and works in any of the IT departments.
 50. Write a query to find the name (first_name, last_name), and salary of the employees who earns more than the earning of Mr. Bell. 
+51. Write a query to find the addresses (location_id, street_address, city, state_province, country_name) of all the departments. (Use NATURAL JOIN.)
+52. Write a query to find the name (first_name, last name), department ID and name of all the employees. 
+53. Write a query to find the name (first_name, last_name), job, department ID and name of the employees who works in London. 
+54. Write a query to find the employee id, employee name (last_name) along with their manager_id and managers name (last_name). 
+55. Write a query to find the name (first_name, last_name) and hire date of the employees who was hired after 'Jones'.
+56. Write a query to get the department name and number of employees in the department.
+57. Write a query to find the employee ID, job title, number of days between ending date and starting date for all jobs in department 90. (hnt: use jobs and job_history tables)
+58. Write a query to display the department name, manager name, and city.
+59. Write a query to display the job title and average salary of employees.
+60. Write a query to display job title, employee name, and the difference between salary of the employee and minimum salary for the job (hint: use employees and job tables).
+61. Write a query to get the first name and hire date from employees table where hire date between '1987-06-01' and '1987-07-30'
+62. Write a query to get the firstname, lastname who joined in the month of June.
+63. Write a query to get the years in which more than 10 employees joined.
+64. Write a query to get first name of employees who joined in 1987.
+65. Write a query to get the department ID, year, and number of employees joined.
+66. Write a query to get the job_id and related employees id.
+	
+	output must be as follows
+	
+	job_id	      Employees ID
+	AC_ACCOUNT	  206
+	AC_MGR	      205
+	AD_ASST	      200
+    AD_PRES	      100
+    AD_VP	      101,102
+    FI_ACCOUNT	  110,113,111,109,112
+	
+67. Write a query to update the portion of the phone_number in the employees table, within the phone number the substring '124' will be replaced by '999'.
+68. 
+69. 
+70. 
+71. 
+72. 
+73. 
+74. 
+75. 
+76. 
+77. 
+78. 
+79. 
+80. 
+
+
+
+
+
+
 
 
 
@@ -485,17 +532,45 @@ INSERT INTO `regions` (`REGION_ID`, `REGION_NAME`) VALUES
 39. SELECT department_id, SUM(salary) FROM employees GROUP BY department_id;
 40. SELECT job_id, AVG(salary) FROM employees WHERE job_id <> 'IT_PROG' GROUP BY job_id;
 41. SELECT job_id, SUM(salary), AVG(salary), MAX(salary), MIN(salary) FROM employees WHERE department_id = '90' GROUP BY   job_id;
-42. SELECT job_id, MAX(salary) FROM employees GROUP BY job_id HAVING MAX(salary) >=4000;
+42. SELECT job_id, MAX(salary) FROM employees GROUP BY job_id HAVING MAX(salary) >= 4000;
 43. SELECT department_id, AVG(salary), COUNT(*) FROM employees GROUP BY department_idHAV ING COUNT(*) > 10;
 44. SELECT FIRST_NAME, LAST_NAME, SALARY FROM employees WHERE SALARY > (SELECT salary FROM employees WHERE last_name = 'Bull');
 45. SELECT first_name, last_name FROM employees WHERE department_id IN (SELECT department_id FROM departments WHERE department_name='IT');
-46. select count(*) from employees, departments, locations where employees.DEPARTMENT_ID = departments.DEPARTMENT_ID
-and departments.LOCATION_ID = locations.LOCATION_ID and locations.COUNTRY_ID = 'US';
+46. select count(*) from employees, departments, locations where employees.DEPARTMENT_ID = departments.DEPARTMENT_ID and departments.LOCATION_ID = locations.LOCATION_ID and locations.COUNTRY_ID = 'US';
 47. SELECT first_name, last_name FROM employees WHERE (employee_id IN (SELECT manager_id FROM employees));
 48. SELECT first_name, last_name, salary FROM employees WHERE salary > (SELECT AVG(salary) FROM employees);
 49. select * from employees where salary > (select avg(salary) from employees where DEPARTMENT_ID in (SELECT DEPARTMENT_ID FROM db1.departments where DEPARTMENT_NAME like 'it%'));
 50. SELECT first_name, last_name, salary FROM employees WHERE salary > (SELECT salary FROM employees WHERE last_name = 'Bell') ORDER BY first_name;
-
+51. SELECT location_id, street_address, city, state_province, country_name FROM locations NATURAL JOIN countries;
+52. SELECT first_name, last_name, department_id, department_name FROM employees JOIN departments USING (department_id);
+53. select employees.* from employees, departments, locations where employees.DEPARTMENT_ID = departments.DEPARTMENT_ID and departments.LOCATION_ID = locations.LOCATION_ID and city = 'London';
+54. SELECT e.employee_id 'Emp_Id', e.last_name 'Employee', m.employee_id 'Mgr_Id', m.last_name 'Manager' FROM employees e, employees m where e.manager_id = m.employee_id;
+55. select * from employees where hire_date > (select hire_date from employees where last_name = 'Jones')
+56. SELECT department_name AS 'Department Name', COUNT(*) AS 'No of Employees' FROM departments, employees where employees.department_id = departments.department_id GROUP BY department_name ORDER BY department_name;
+57. SELECT employee_id, job_title, end_date-start_date Days FROM jobs, job_history where  jobs.JOB_ID=job_history.JOB_ID and department_id=90;
+58. SELECT d.department_id, d.department_name, d.manager_id, e.first_name FROM departments d, employees e where d.manager_id = e.employee_id;
+59. SELECT job_title, AVG(salary) FROM employees NATURAL JOIN jobs GROUP BY job_title;
+60. SELECT job_title, first_name, salary-min_salary 'Salary - Min_Salary' FROM employees NATURAL JOIN jobs;
+61. SELECT FIRST_NAME, HIRE_DATE FROM employees WHERE HIRE_DATE BETWEEN '1987-06-01' AND '1987-07-30';
+62. SELECT first_name, last_name FROM employees WHERE monthname(HIRE_DATE) =  'June';
+63. SELECT year(HIRE_DATE) FROM employees GROUP BY year(HIRE_DATE) HAVING COUNT(EMPLOYEE_ID) > 10;
+64. SELECT FIRST_NAME, HIRE_DATE FROM employees WHERE YEAR(HIRE_DATE)=1987;
+65. SELECT DEPARTMENT_ID, year(HIRE_DATE), COUNT(EMPLOYEE_ID) FROM employees GROUP BY DEPARTMENT_ID ORDER BY DEPARTMENT_ID;
+66. SELECT job_id, GROUP_CONCAT(employee_id) 'Employees ID' FROM employees GROUP BY job_id;
+67. UPDATE employees SET phone_number = REPLACE(phone_number, '124', '999') WHERE phone_number LIKE '%124%';
+68. 
+69. 
+70. 
+71. 
+72. 
+73. 
+74. 
+75. 
+76. 
+77. 
+78. 
+79. 
+80. 
 
 
 
