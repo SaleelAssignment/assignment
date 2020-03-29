@@ -9,6 +9,11 @@ drop table if exists jobs;
 drop table if exists locations;
 drop table if exists regions;
 
+
+--
+-- Table structure for table `countries`
+-- 
+
 CREATE TABLE IF NOT EXISTS `countries` (
   `COUNTRY_ID` varchar(2) NOT NULL,
   `COUNTRY_NAME` varchar(40) DEFAULT NULL,
@@ -386,6 +391,8 @@ INSERT INTO `regions` (`REGION_ID`, `REGION_NAME`) VALUES
 --
 -- Assignment
 -- 
+
+
 1. Write a query to display the names (first_name, last_name) using alias name "First Name", "Last Name".
 2. Write a query to get unique department ID from employee table.
 3. Write a query to get all employee details from the employee table order by first name, descending.
@@ -490,6 +497,8 @@ INSERT INTO `regions` (`REGION_ID`, `REGION_NAME`) VALUES
 --
 -- Assignment Solution
 -- 
+
+
 1. SELECT first_name "First Name",  last_name "Last Name" FROM employees;
 2. SELECT DISTINCT department_id FROM employees;
 3. SELECT * FROM employees ORDER BY first_name DESC;
