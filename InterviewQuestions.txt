@@ -179,30 +179,92 @@ Example:
 
 ANS: SELECT col1, if(ascii(col1)>=97 and ascii(col1)<=122 or ascii(col1)>=65 and ascii(col1)<=90, "Buzz", "Fizz")  FROM TBL;
 ---------------------------------------------------------------------------------------------------------------------------
+Q13) Given the following tables:
 
+sql> SELECT * FROM emp;
++----+--------------+------------+
+| id | name         | salary     |
++----+--------------+------------+
+|  1 | John Doe     | 3500       |
+|  2 | Jane Doe     | 2000       |
+|  3 | Alice Jones  | 3200       |
+|  4 | Bobby Louis  | 1200       |
+|  5 | Lisa Romero  | 2000       |
+|  6 | Bobby Deol   | 3500       |
+|  7 | Lisa Smith   | 2000       |
++----+--------------+------------+
+
+Write a query to get the list of employees with same salary.
+
+ANS: SELECT  distinct a.* FROM emp a, emp b WHERE a.salary = b.salary and a.id <> b.id;
 ---------------------------------------------------------------------------------------------------------------------------
+Q14) Given the following tables:
 
+sql> SELECT * FROM emp;
++----+--------------+------------+
+| id | name         | salary     |
++----+--------------+------------+
+|  1 | John Doe     | 3500       |
+|  2 | Jane Doe     | 2000       |
+|  3 | Alice Jones  | 3200       |
+|  4 | Bobby Louis  | 1200       |
+|  5 | Lisa Romero  | 2000       |
+|  6 | Bobby Deol   | 3500       |
+|  7 | Lisa Smith   | 2000       |
+|  1 | John Doe     | 3500       |
+|  2 | Jane Doe     | 2000       |
+|  3 | Alice Jones  | 3200       |
+|  1 | John Doe     | 3500       |
+|  2 | Jane Doe     | 2000       |
+|  3 | Alice Jones  | 3200       |
+|  4 | Bobby Louis  | 1200       |
++----+--------------+------------+
+
+Write a query to find duplicate records in EMP table.
+
+ANS: SELECT id, name, salary FROM emp GROUP BY id, name, salary HAVING count(*)>=2;
 ---------------------------------------------------------------------------------------------------------------------------
+Q15) Given the following tables:
 
+sql> SELECT * FROM emp;
++----+--------------+------------+
+| id | name         | salary     |
++----+--------------+------------+
+|  1 | John Doe     | 3500       |
+|  2 | Jane Doe     | 2000       |
+|  3 | Alice Jones  | 3200       |
+|  4 | Bobby Louis  | 1200       |
+|  5 | Lisa Romero  | 2000       |
+|  6 | Bobby Deol   | 3500       |
+|  7 | Lisa Smith   | 2000       |
++----+--------------+------------+
+
+Write a query to show one row twice in results from a table.
+
+ANS: (SELECT * FROM emp LIMIT 1) UNION ALL (SELECT * FROM emp LIMIT 1);
 ---------------------------------------------------------------------------------------------------------------------------
+Q16) Given the following tables:
 
+sql> SELECT * FROM runners;
++----+--------------+
+| id | name         |
++----+--------------+
+|  1 | John Doe     |
+|  2 | Jane Doe     |
+|  3 | Alice Jones  |
+|  4 | Bobby Louis  |
+|  5 | Lisa Romero  |
++----+--------------+
+Write a query to get random runners record from the table.
+
+ANS: SELECT * FROM runners ORDER BY rand() LIMIT 1;
 ---------------------------------------------------------------------------------------------------------------------------
-
+Q17)
 ---------------------------------------------------------------------------------------------------------------------------
-
+Q18)
 ---------------------------------------------------------------------------------------------------------------------------
-
+Q19)
 ---------------------------------------------------------------------------------------------------------------------------
+Q20)
 
-INSERT INTO `db1`.`a` (`c1`) VALUES ('d');
-INSERT INTO `db1`.`a` (`c1`) VALUES ('x');
-INSERT INTO `db1`.`a` (`c1`) VALUES ('T');
-INSERT INTO `db1`.`a` (`c1`) VALUES ('8');
-INSERT INTO `db1`.`a` (`c1`) VALUES ('a');
-INSERT INTO `db1`.`a` (`c1`) VALUES ('9');
-INSERT INTO `db1`.`a` (`c1`) VALUES ('6');
-INSERT INTO `db1`.`a` (`c1`) VALUES ('2');
-INSERT INTO `db1`.`a` (`c1`) VALUES ('V');
-INSERT INTO `db1`.`a` (`c1`) VALUES ('7');
-INSERT INTO `db1`.`a` (`c1`) VALUES ('S');
-INSERT INTO `db1`.`a` (`c1`) VALUES ('0');
+
