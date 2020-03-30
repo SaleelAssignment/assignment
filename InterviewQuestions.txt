@@ -148,7 +148,36 @@ Print the rows which have ‘Yellow’ in one of the columns C1, C2, or C3, but 
 
 ANS: SELECT * FROM table WHERE 'Yellow' IN (C1, C2, C3);
 ---------------------------------------------------------------------------------------------------------------------------
+Q11) Write a query to update Col2’s values to look exactly opposite to Col1’s values. 
+i.e if Col1’s value is 1 then replace it with 0, Col1’s value is 0 then replace it with 1.
 
++------+------+
+| col1 | col2 |
++------+------+
+| 1    |      |
+| 0    |      |
+| 0    |      |
+| 1    |      |
+| 0    |      |
+| 0    |      |
+| 0    |      |
+| 1    |      |
+| 0    |      |
++------+------+
+
+ANS: UPDATE TBL SET col2 = CASE WHEN col1 = 0 THEN 1 WHEN col1=1 THEN 0 END;
+---------------------------------------------------------------------------------------------------------------------------
+Q12) Imagine a single column in a table that is populated with either a single digit (0-9) or a single character (a-z, A-Z). Write a SQL query to print ‘Fizz’ for a numeric value or ‘Buzz’ for alphabetical value for all values in that column.
+
+Example:
+
+['d', 'x', 'T', 8, 'a', 9, 6, 2, 'V']
+
+…should output:
+
+['Buzz', 'Buzz', 'Buzz', 'Fizz', 'Buzz','Fizz', 'Fizz', 'Fizz', 'Buzz']
+
+ANS: SELECT col1, if(ascii(col1)>=97 and ascii(col1)<=122 or ascii(col1)>=65 and ascii(col1)<=90, "Buzz", "Fizz")  FROM TBL;
 ---------------------------------------------------------------------------------------------------------------------------
 
 ---------------------------------------------------------------------------------------------------------------------------
@@ -165,5 +194,15 @@ ANS: SELECT * FROM table WHERE 'Yellow' IN (C1, C2, C3);
 
 ---------------------------------------------------------------------------------------------------------------------------
 
----------------------------------------------------------------------------------------------------------------------------
-
+INSERT INTO `db1`.`a` (`c1`) VALUES ('d');
+INSERT INTO `db1`.`a` (`c1`) VALUES ('x');
+INSERT INTO `db1`.`a` (`c1`) VALUES ('T');
+INSERT INTO `db1`.`a` (`c1`) VALUES ('8');
+INSERT INTO `db1`.`a` (`c1`) VALUES ('a');
+INSERT INTO `db1`.`a` (`c1`) VALUES ('9');
+INSERT INTO `db1`.`a` (`c1`) VALUES ('6');
+INSERT INTO `db1`.`a` (`c1`) VALUES ('2');
+INSERT INTO `db1`.`a` (`c1`) VALUES ('V');
+INSERT INTO `db1`.`a` (`c1`) VALUES ('7');
+INSERT INTO `db1`.`a` (`c1`) VALUES ('S');
+INSERT INTO `db1`.`a` (`c1`) VALUES ('0');
