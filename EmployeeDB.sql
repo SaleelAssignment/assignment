@@ -1,3 +1,4 @@
+drop schema if exists employee;
 create schema if not exists employee;
 use employee;
 
@@ -20,7 +21,7 @@ CREATE TABLE IF NOT EXISTS `countries` (
   `REGION_ID` decimal(10,0) DEFAULT NULL,
   PRIMARY KEY (`COUNTRY_ID`),
   KEY `COUNTR_REG_FK` (`REGION_ID`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+);
 
 --
 -- Dummy data for table `countries`
@@ -67,7 +68,7 @@ CREATE TABLE IF NOT EXISTS `departments` (
   PRIMARY KEY (`DEPARTMENT_ID`),
   KEY `DEPT_MGR_FK` (`MANAGER_ID`),
   KEY `DEPT_LOCATION_IX` (`LOCATION_ID`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+);
 
 --
 -- Dummy data for table `departments`
@@ -126,7 +127,7 @@ CREATE TABLE IF NOT EXISTS `employees` (
   KEY `EMP_JOB_IX` (`JOB_ID`),
   KEY `EMP_MANAGER_IX` (`MANAGER_ID`),
   KEY `EMP_NAME_IX` (`LAST_NAME`,`FIRST_NAME`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+);
 
 --
 -- Dummy data for table `employees`
@@ -257,7 +258,7 @@ CREATE TABLE IF NOT EXISTS `job_history` (
   KEY `JHIST_DEPARTMENT_IX` (`DEPARTMENT_ID`),
   KEY `JHIST_EMPLOYEE_IX` (`EMPLOYEE_ID`),
   KEY `JHIST_JOB_IX` (`JOB_ID`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+);
 
 --
 -- Dummy data for table `job_history`
@@ -288,7 +289,7 @@ CREATE TABLE IF NOT EXISTS `jobs` (
   `MIN_SALARY` decimal(6,0) DEFAULT NULL,
   `MAX_SALARY` decimal(6,0) DEFAULT NULL,
   PRIMARY KEY (`JOB_ID`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+);
 
 --
 -- Dummy data for table `jobs`
@@ -332,7 +333,7 @@ CREATE TABLE IF NOT EXISTS `locations` (
   KEY `LOC_CITY_IX` (`CITY`),
   KEY `LOC_COUNTRY_IX` (`COUNTRY_ID`),
   KEY `LOC_STATE_PROVINCE_IX` (`STATE_PROVINCE`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+);
 
 --
 -- Dummy data for table `locations`
@@ -374,17 +375,17 @@ CREATE TABLE IF NOT EXISTS `regions` (
   `REGION_NAME` varchar(25) DEFAULT NULL,
   PRIMARY KEY (`REGION_ID`),
   UNIQUE KEY `sss` (`REGION_NAME`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+);
 
 --
 -- Dummy data for table `regions`
 --
 
 INSERT INTO `regions` (`REGION_ID`, `REGION_NAME`) VALUES
-('1', 'Europe\r'),
-('2', 'Americas\r'),
-('3', 'Asia\r'),
-('4', 'Middle East and Africa\r');
+('1', 'Europe'),
+('2', 'Americas'),
+('3', 'Asia'),
+('4', 'Middle East and Africa');
 
 
 
