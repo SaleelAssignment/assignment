@@ -1,6 +1,6 @@
 Q1) Given the following tables:
 
-sql> SELECT * FROM runners;
+mysql> SELECT * FROM runners;
 +----+--------------+
 | id | name         |
 +----+--------------+
@@ -11,7 +11,7 @@ sql> SELECT * FROM runners;
 |  5 | Lisa Romero  |
 +----+--------------+
 
-sql> SELECT * FROM races;
+mysql> SELECT * FROM races;
 +----+----------------+-----------+
 | id | event          | winner_id |
 +----+----------------+-----------+
@@ -23,13 +23,13 @@ sql> SELECT * FROM races;
 
 What will be the output of the following statement?
 
-SQL> SELECT * FROM runners WHERE id NOT IN (SELECT winner_id FROM races);
+mysql> SELECT * FROM runners WHERE id NOT IN (SELECT winner_id FROM races);
 
 ANS: No Rows
 ---------------------------------------------------------------------------------------------------------------------------
 Q2) Given the following tables:
 
-sql> SELECT * FROM runners;
+mysql> SELECT * FROM runners;
 +----+--------------+
 | id | name         |
 +----+--------------+
@@ -40,7 +40,7 @@ sql> SELECT * FROM runners;
 |  5 | Lisa Romero  |
 +----+--------------+
 
-sql> SELECT * FROM races;
+mysql> SELECT * FROM races;
 +----+----------------+-----------+
 | id | event          | winner_id |
 +----+----------------+-----------+
@@ -52,13 +52,13 @@ sql> SELECT * FROM races;
 
 What will be the output of the following statement?
 
-SQL> SELECT * FROM runners WHERE id NOT IN (SELECT id FROM races);
+mysql> SELECT * FROM runners WHERE id NOT IN (SELECT id FROM races);
 
 ANS: 5, 'Lisa Romero'
 ---------------------------------------------------------------------------------------------------------------------------
 Q3) Given the following tables:
 
-SELECT * FROM races;
+mysql> SELECT * FROM races;
 +----+----------------+-----------+
 | id | event          | winner_id |
 +----+----------------+-----------+
@@ -70,13 +70,13 @@ SELECT * FROM races;
 
 What will be the output of the following statement?
 
-SQL> SELECT COUNT(WINNER_ID) FROM races;
+mysql> SELECT COUNT(WINNER_ID) FROM races;
 
 ANS: 3
 ---------------------------------------------------------------------------------------------------------------------------
 Q4) Given the following tables:
 
-SELECT * FROM races;
+mysql> SELECT * FROM races;
 +----+----------------+-----------+
 | id | event          | winner_id |
 +----+----------------+-----------+
@@ -88,13 +88,13 @@ SELECT * FROM races;
 
 What will be the output of the following statement?
 
-SQL> SELECT COUNT(winner_id), SUM(1) FROM races;
+mysql> SELECT COUNT(winner_id), SUM(1) FROM races;
 
 ANS: 3,	4
 ---------------------------------------------------------------------------------------------------------------------------
 Q5) Given the following tables:
 
-sql> SELECT * FROM emp;
+mysql> SELECT * FROM emp;
 +----+--------------+------------+
 | id | name         | salary     |
 +----+--------------+------------+
@@ -113,7 +113,7 @@ Q6) Assume a schema of Emp( Id, Name, DeptId ) , Dept( Id, Name).
 
 If there are 10 records in the Emp table and 5 records in the Dept table, how many rows will be displayed in the result of the following SQL query:
 
-Select * From Emp, Dept
+mysql> Select * From Emp, Dept
 
 ANS: 50 rows
 ---------------------------------------------------------------------------------------------------------------------------
@@ -151,6 +151,7 @@ ANS: SELECT * FROM table WHERE 'Yellow' IN (C1, C2, C3);
 Q11) Write a query to update Col2’s values to look exactly opposite to Col1’s values. 
 i.e if Col1’s value is 1 then replace it with 0, Col1’s value is 0 then replace it with 1.
 
+mysql> SELECT * FROM tbl;
 +------+------+
 | col1 | col2 |
 +------+------+
@@ -181,7 +182,7 @@ ANS: SELECT col1, if(ascii(col1)>=97 and ascii(col1)<=122 or ascii(col1)>=65 and
 ---------------------------------------------------------------------------------------------------------------------------
 Q13) Given the following tables:
 
-sql> SELECT * FROM emp;
+mysql> SELECT * FROM emp;
 +----+--------------+------------+
 | id | name         | salary     |
 +----+--------------+------------+
@@ -200,7 +201,7 @@ ANS: SELECT  distinct a.* FROM emp a, emp b WHERE a.salary = b.salary and a.id <
 ---------------------------------------------------------------------------------------------------------------------------
 Q14) Given the following tables:
 
-sql> SELECT * FROM emp;
+mysql> SELECT * FROM emp;
 +----+--------------+------------+
 | id | name         | salary     |
 +----+--------------+------------+
@@ -226,7 +227,7 @@ ANS: SELECT id, name, salary FROM emp GROUP BY id, name, salary HAVING count(*)>
 ---------------------------------------------------------------------------------------------------------------------------
 Q15) Given the following tables:
 
-sql> SELECT * FROM emp;
+mysql> SELECT * FROM emp;
 +----+--------------+------------+
 | id | name         | salary     |
 +----+--------------+------------+
@@ -245,7 +246,7 @@ ANS: (SELECT * FROM emp LIMIT 1) UNION ALL (SELECT * FROM emp LIMIT 1);
 ---------------------------------------------------------------------------------------------------------------------------
 Q16) Given the following tables:
 
-sql> SELECT * FROM runners;
+mysql> SELECT * FROM runners;
 +----+--------------+
 | id | name         |
 +----+--------------+
@@ -259,12 +260,96 @@ Write a query to get random runners record from the table.
 
 ANS: SELECT * FROM runners ORDER BY rand() LIMIT 1;
 ---------------------------------------------------------------------------------------------------------------------------
-Q17)
+Q17) Given these contents of the Customers table:
+
+mysql> SELECT * FROM Customers;
++----+---------------+------------+
+| id | name          | ReferredBy |
++----+---------------+------------+
+|  1 | John Doe      |       NULL |
+|  2 | Jane Smith    |       NULL |
+|  3 | Anne Jenkins  |          2 |
+|  4 | Eric Branford |       NULL |
+|  5 | Pat Richards  |          1 |
+|  6 | Alice Barnes  |          2 |
++----+---------------+------------+
+
+What will be the result of the following query?
+
+mysql> SELECT Name FROM Customers WHERE ReferredBy <> 2;
+
+ANS: 'Pat Richards'
 ---------------------------------------------------------------------------------------------------------------------------
-Q18)
+Q18) Given the following tables:
+
+mysql> SELECT * FROM test_a;
++------+
+| id   |
++------+
+|   10 |
+|   20 |
+|   30 |
+|   40 |
+|   50 |
++------+
+
+mysql> SELECT * FROM test_b;
++------+
+| id   |
++------+
+|   10 |
+|   30 |
+|   50 |
++------+
+
+Write a query to fetch values in table test_a that are and not in test_b.
+
+ANS: SELECT * FROM test_a a WHERE not exists (SELECT * FROM test_b b WHERE a.id = b.id);
+
 ---------------------------------------------------------------------------------------------------------------------------
-Q19)
----------------------------------------------------------------------------------------------------------------------------
-Q20)
+Q19) Given these contents of the Customers table:
+
+mysql> SELECT * FROM Customers;
++----+---------------+------------+
+| id | name          | ReferredBy |
++----+---------------+------------+
+|  1 | John Doe      |       NULL |
+|  2 | Jane Smith    |       NULL |
+|  3 | Anne Jenkins  |          2 |
+|  4 | Eric Branford |       NULL |
+|  5 | Pat Richards  |          1 |
+|  6 | Alice Barnes  |          2 |
++----+---------------+------------+
+
+Write a SQL statement to concatenate all the customer names into the following single comma string:
+e.g. 'John Doe,Jane Smith,Anne Jenkins,Eric Branford,Pat Richards,Alice Barnes'
 
 
+ANS: SELECT group_concat(name) FROM Customers;
+
+---------------------------------------------------------------------------------------------------------------------------
+Q20) Given the following tables:
+
+mysql> SELECT * FROM mass_table;
++---------+
+| weight  |
++---------+
+|    5.67 |
+|      34 |
+|  34.567 |
+| 365.253 |
++---------+
+
+Write a query to show the following output.
+
++---------+-----+------+
+| weight  | kg  | gms  |
++---------+-----+------+
+|    5.67 |   5 | 67   |
+|      34 |  34 | 34   |
+|  34.567 |  34 | 567  |
+| 365.253 | 365 | 253  |
++---------+-----+------+
+
+
+ANS: SELECT weight, truncate(weight,0) as kg, mid(weight, instr(weight,".") + 1) as gms FROM mass_table;
