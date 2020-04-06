@@ -1,0 +1,75 @@
+DBT Assignment 
+
+--
+-- Assignment
+-- 
+
+
+1. Write a query in SQL to find the name and year of the movies.
+2. Write a query in SQL to find the year when the movie American Beauty released.
+3. Write a query in SQL to find the movie which was released in the year 1999.
+4. Write a query in SQL to find the movies which was released before 1998.
+5. Write a query in SQL to find the name of all reviewers who have rated 7 or more stars to their rating. 
+6. Write a query in SQL to find the titles of all movies that have no ratings.
+7. Write a query in SQL to find the titles of the movies with ID 905, 907, 917.
+8. Write a query in SQL to find the list of all those movies with year which include the words Boogie Nights.
+9. Write a query in SQL to find the ID number for the actor whose first name is 'Woody' and the last name is 'Allen'. 
+10.  Write a query in SQL to list all the information of the actors who played a role in the movie 'Annie Hall'.
+11. Write a query in SQL to find the name of the director (first and last names) who directed a movie that casted a role for 'Eyes Wide Shut'.
+12. Write a query in SQL to list all the movies which released in the country other than UK.
+13. Write a query in SQL to find the movie title, year, date of release, directors(firstname, lastName) and actor (firstname, lastName, and gender) for those movies which reviewer is unknown (means NULL).
+14. Write a query in SQL to find the titles of all movies directed by the director whose first and last name are Woody Allen.
+15. Write a query in SQL to find all the years which produced at least one movie and that received a rating of more than 3 stars(rev_stars). Show the results in increasing order.
+16. Write a query in SQL to find the titles of all movies that have no ratings(rev_stars) .
+17. Write a query in SQL to find the names of all reviewers who have ratings(rev_stars) with a NULL value.
+18. Write a query in SQL to return the reviewer name, movie title, and stars for those movies which reviewed by a reviewer and must be rated(rev_stars). Sort the result by reviewer name, movie title, and number of stars.
+19. Write a query in SQL to find the reviewers name and the title of the movie for those reviewers who rated more than one movies.
+20. Write a query in SQL to find the names of all reviewers who rated the movie American Beauty.
+21. Write a query in SQL to find the titles of all movies which have been reviewed by anybody except by Paul Monks.
+22. Write a query in SQL to return the reviewer name, movie title, and number of stars for those movies which rating is the lowest one.
+23. Write a query in SQL to find the titles of all movies directed by James Cameron. 
+24. Write a query in SQL to find the name of those movies where one or more actors acted in two or more movies.
+25. Write a query in SQL to list the first and last names of all the actors who were cast in the movie 'Annie Hall', and the roles they played in that production.
+26. Write a query in SQL to find the name of movie and director (first and last names) who directed a movie that casted a role for 'Eyes Wide Shut'.
+27. Write a query in SQL to find the name of movie and director (first and last names) who directed a movie that casted a role as Sean Maguire.
+28. Write a query in SQL to list all the actors who have not acted in any movie between 1990 and 2000.
+29. Write a query in SQL to list all the movies with year and genres.
+30. Write a query in SQL to list all the movies with year, genres, and name of the director.
+
+
+
+--
+-- Assignment Solution
+-- 
+
+
+1. SELECT mov_title, mov_year FROM movie;
+2. SELECT mov_year FROM movie WHERE mov_title = 'American Beauty';
+3. SELECT mov_title FROM movie WHERE mov_year = 1999;
+4. SELECT mov_title FROM movie WHERE mov_year < 1998;
+5. SELECT reviewer.rev_name FROM reviewer, rating WHERE rating.rev_id = reviewer.rev_id AND rating.rev_stars > =7 
+6. select * from movie where not exists (select * from rating where movie.mov_id = rating.mov_id);
+7. SELECT mov_title FROM movie WHERE mov_id in (905, 907, 917);
+8. SELECT mov_id, mov_title, mov_year FROM movie WHERE mov_title LIKE '%Boogie%Nights%' ORDER BY mov_year ASC;
+9. SELECT act_id FROM actor WHERE act_fname = 'Woody' AND act_lname = 'Allen';
+10. select * from movie, movie_cast, actor where actor.act_id = movie_cast.act_id and  movie_cast.mov_id = movie.mov_id and mov_title= 'annie hall';
+11. select dir_fname, dir_lname from director, movie_direction, movie where director.dir_id =  movie_direction.dir_id and movie.mov_id  = movie_direction.mov_id and movie.mov_title ='Eyes Wide Shut';
+12. SELECT mov_title, mov_year, mov_time, mov_dt_rel, mov_rel_country FROM movie WHERE mov_rel_country <> 'UK';
+13. SELECT mov_title, mov_year, mov_dt_rel, dir_fname, dir_lname, act_fname, act_lname FROM movie a, movie_direction b, director c, rating d, reviewer e, actor f, movie_cast g WHERE a.mov_id = b.mov_id AND  b.dir_id = c.dir_id AND a.mov_id = d.mov_id  AND  d.rev_id = e.rev_id AND  a.mov_id = g.mov_id AND g.act_id = f.act_id AND e.rev_name IS NULL;
+14. select * from movie, movie_direction, director where movie.mov_id = movie_direction.mov_id and movie_direction.dir_id = director.dir_id and dir_fname = 'Woody' and dir_lname ='Allen';
+15. SELECT distinct mov_year FROM movie, rating WHERE movie. mov_id = rating.mov_id and rev_stars > 3 ORDER BY mov_year;
+16. select * from movie where mov_id not in (select mov_id from rating);
+17. select * from reviewer, rating where reviewer.rev_id = rating.rev_id and rev_stars is null;
+18. SELECT rev_name, mov_title, rev_stars FROM reviewer, rating, movie WHERE reviewer.rev_id=rating.rev_id AND movie.mov_id=rating.mov_id AND reviewer.rev_name IS NOT NULL AND rating.rev_stars IS NOT NULL ORDER BY rev_name, mov_title, rev_stars;
+19. SELECT rev_name, mov_title FROM reviewer, movie, rating, rating r2 WHERE rating.mov_id=movie.mov_id AND reviewer.rev_id=rating.rev_ID  AND rating.rev_id = r2.rev_id GROUP BY rev_name, mov_title HAVING count(*) > 1;
+20. SELECT reviewer.rev_name FROM reviewer, rating, movie WHERE reviewer.rev_id = rating.rev_id AND movie.mov_id = rating.mov_id AND movie.mov_title = 'American Beauty';
+21. SELECT movie.mov_title FROM movie, rating WHERE movie.mov_id = rating.mov_id and rating.rev_id NOT IN (SELECT rev_id FROM reviewer WHERE rev_name='Paul Monks');
+22. select rev_name, mov_title, rev_stars from movie, rating, reviewer where movie.mov_id = rating.mov_id and rating.rev_id = reviewer.rev_id and rating.rev_stars = (select min(rev_stars) from rating);
+23. SELECT mov_title FROM movie,  movie_direction, director where  movie.mov_id = movie_direction.mov_id and movie_direction.dir_id=director.dir_id and dir_fname = 'James' AND dir_lname='Cameron';
+24. select mov_title from movie, movie_cast, actor where movie.mov_id = movie_cast.mov_id and movie_cast.act_id = actor.act_id and actor.act_id = ( select act_id from movie_cast group by act_id having count(*) >= 2);
+25. SELECT act_fname,act_lname,role   FROM actor , movie_cast, movie where actor.act_id=movie_cast.act_id and   movie_cast.mov_id=movie.mov_id AND movie.mov_title='Annie Hall';
+26. SELECT dir_fname, dir_lname, mov_title FROM  director,  movie_direction, movie, movie_cast WHERE movie.mov_id = movie_direction.mov_id and movie_direction.dir_id = director.dir_id and  movie.mov_id = movie_cast.mov_id AND mov_title =   'Eyes Wide Shut';
+27. SELECT dir_fname, dir_lname, mov_title FROM  director, movie_direction, movie, movie_cast WHERE director.dir_id =movie_direction.dir_id AND movie_direction.mov_id=movie.mov_id AND movie.mov_id=movie_cast.mov_id AND movie_cast.role='Sean Maguire';
+28. SELECT act_fname, act_lname, mov_title, mov_year FROM actor, movie_cast, movie WHERE actor.act_id = movie_cast.act_id AND movie_cast.mov_id= movie.mov_id AND movie.mov_year NOT BETWEEN 1990 and 2000;
+29. SELECT mov_title, mov_year, gen_title FROM movie, movie_genres, genres where movie.mov_id  = movie_genres.mov_id and movie_genres.gen_id =  genres.gen_id;
+30. SELECT mov_title, mov_year, gen_title, dir_fname, dir_lname FROM movie, movie_genres, genres, movie_direction, director where movie.mov_id = movie_direction.mov_id and movie_direction.dir_id = director.dir_id and movie.mov_id = movie_genres.mov_id and movie_genres.gen_id = genres.gen_id;
