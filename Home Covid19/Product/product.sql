@@ -139,6 +139,8 @@ insert  into `offices`(`officeCode`,`city`,`phone`,`addressLine1`,`addressLine2`
 
 ('7','London','+44 20 7877 2041','25 Old Broad Street','Level 7',NULL,'UK','EC2N 1HN','EMEA');
 
+INSERT INTO `offices` (`officeCode`, `city`, `phone`, `addressLine1`, `addressLine2`, `state`, `country`, `postalCode`, `territory`) VALUES ('8', 'Pune', '+19 022 2544 3926', 'Paud Road', 'Ground floor', 'Maharashtra', 'India', '390 038', 'Asia');
+
 
 /*Data for the table `employees` */
 
@@ -4514,7 +4516,133 @@ insert  into `payments`(`customerNumber`,`checkNumber`,`paymentDate`,`amount`) v
 
 
 
+--
+-- Assignment
+--
+
+1. Write a query to diaplay all offices which are located other than in 'NY' state. 
+2. Write a query to diaplay all offices whose phone number starts with '+1'. 
+3. Write a query to that prints all employees emailID from "@classicmodelcars.com" to "@gmail.com" (i.e. "dmurphy@classicmodelcars.com --> dmurphy@gmail.com")
+4. Write a query to print the 5th employee.
+5. Write a query to count how many employees are working in the organization.
+6. Write a query to that prints all employees for the territory 'Japan'.
+7. Write a query to display the employees name and to whome they are reportsTo.
+8. Write a query to print all employees who are managers.
+9. Write a query to arint all the customers from "Canada".
+10. Write a query to print all the employees who are reporting to "Sales Manager (APAC)".
+11. Write a query to find the office details where not employees are working.
+12. Write a query to display customersName and the name of the employee who is serving them. Note: Employees firstName and lastName must be printed together. i.e 'Gerard Hernandez'.
+13. Write a query to display all the customer details who are living in "UAS" and state other than "NY".
+14. 
+15. Write a query to find the number of employees whose jobTitle is 'Sales Rep'.
+16. Write a query to find the number of employees whose officeCode is 1.
+17. 
+18. 
+19. 
+20.
+21. 
+22. 
+23. 
+24. 
+25. 
+26. Write a query to display the employees details who are reportsTo 1143.
+27. 
+28. 
+29. 
+30.
+31. 
+32. 
+33. 
+34. 
+35. 
+36. 
+37. 
+38. Write a query to print all employees who are not managers.
+39. 
+40.
+41. 
+42. 
+43. 
+44. 
+45. 
+46. 
+47. 
+48. 
+49. 
+50.
+51. 
+52. 
+53. 
+54. 
+55. 
+56. 
+57. 
+58. 
+59. 
+60.
 
 
+--
+-- Assignment Solution
+--
 
-
+1. SELECT * FROM offices where state<>'NY' or state is null;
+2. select * from offices where phone like '+1 %';
+3. select email, concat(left(email,instr(email, '@')-1),"@gmail.com")  from employees;
+4. select * from employees limit 4,1;
+5. SELECT count(*) as "Total Employees" FROM employees;
+6. SELECT employees.* FROM offices natural join employees where  territory='Japan';
+7. select e.firstName, m.firstName from employees e, employees m  where e.reportsTo = m.employeeNumber ;
+8. select * from employees e where exists (select * from employees m  where e.employeeNumber = m.reportsTo);
+9. SELECT * FROM customers where country ="canada";
+10. SELECT * FROM employees where reportsTo = (select employeeNumber from employees where jobTitle='Sales Manager (APAC)');
+11. SELECT * FROM offices where officeCode not in (select officeCode from employees);
+12. select customers.customerName,  concat(employees.firstName, " ", employees.lastName) as "salesPersonName" from employees, customers where employees.employeeNumber = customers.salesRepEmployeeNumber;
+13. select * from customers where country='USA' and state <>'NY';
+14. 
+15. select count(*) from employees where jobTitle='Sales Rep';
+16. select offices.officeCode, count(*) from offices, employees where offices.officeCode = employees.officeCode and offices.officeCode=1;
+17. 
+18. 
+19. 
+20.
+21. 
+22. 
+23. 
+24. 
+25. 
+26. select * from employees where reportsTo=1143;
+27. 
+28. 
+29. 
+30.
+31. 
+32. 
+33. 
+34. 
+35. 
+36. 
+37. 
+38. select * from employees e where not exists (select * from employees m  where e.employeeNumber = m.reportsTo);
+39. 
+40.
+41. 
+42. 
+43. 
+44. 
+45. 
+46. 
+47. 
+48. 
+49. 
+50.
+51. 
+52. 
+53. 
+54. 
+55. 
+56. 
+57. 
+58. 
+59. 
+60.
