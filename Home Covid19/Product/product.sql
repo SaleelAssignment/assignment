@@ -7930,7 +7930,7 @@ insert  into `payments`(`customerNumber`,`checkNumber`,`paymentDate`,`amount`) v
 17. Write a query to display all customerName who are living in same city.
 18. Write a query to print customer details who have "Cancelled" the order.
 19. Write a query to print the customerName who have placed the order before '2003-03-26'.
-20.
+20. Write a query to print the total number of each products that has been ordered.
 21. 
 22. 
 23. 
@@ -7998,7 +7998,7 @@ insert  into `payments`(`customerNumber`,`checkNumber`,`paymentDate`,`amount`) v
 where c1.customerNumber<> c2.customerNumber and c1.city=c2.city order by c1.city;
 18. select customers.* from customers, orders where customers.customerNumber = orders.customerNumber and status = 'Cancelled';
 19. select customers.customerName, orders.orderDate from customers, orders where customers.customerNumber = orders.customerNumber and orders.orderDate < '2003-03-26';
-20.
+20.select productName, count(*) 'Total' from products, orderdetails where products.productCode=orderdetails.productCode group  by productName;
 21. 
 22. 
 23. 
