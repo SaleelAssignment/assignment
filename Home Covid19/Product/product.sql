@@ -7928,8 +7928,8 @@ insert  into `payments`(`customerNumber`,`checkNumber`,`paymentDate`,`amount`) v
 15. Write a query to find the number of employees whose jobTitle is 'Sales Rep'.
 16. Write a query to find the number of employees whose officeCode is 1.
 17. Write a query to display all customerName who are living in same city.
-18. 
-19. 
+18. Write a query to print customer details who have "Cancelled" the order.
+19. Write a query to print the customerName who have placed the order before '2003-03-26'.
 20.
 21. 
 22. 
@@ -7940,7 +7940,7 @@ insert  into `payments`(`customerNumber`,`checkNumber`,`paymentDate`,`amount`) v
 27. Write a query to dsplay all the customerNames who are livin in the same city.
     output: 'Brickhaven', 'Online Mini Collectables, Collectables For Less Inc., Auto-Moto Classics Inc. '
 28. Write a query to print orderNumber, customerName, productName, productVendor,  productDescription for the customerNumber is 103.
-29. 
+29. Write a query to print the customers details to whome 'Patterson' is givin the services.
 30.
 31. 
 32. 
@@ -7996,8 +7996,8 @@ insert  into `payments`(`customerNumber`,`checkNumber`,`paymentDate`,`amount`) v
 16. select offices.officeCode, count(*) from offices, employees where offices.officeCode = employees.officeCode and offices.officeCode=1;
 17. select c1.customerName,c1.city, c2.customerName, c2.city from customers c1, customers c2
 where c1.customerNumber<> c2.customerNumber and c1.city=c2.city order by c1.city;
-18. 
-19. 
+18. select customers.* from customers, orders where customers.customerNumber = orders.customerNumber and status = 'Cancelled';
+19. select customers.customerName, orders.orderDate from customers, orders where customers.customerNumber = orders.customerNumber and orders.orderDate < '2003-03-26';
 20.
 21. 
 22. 
@@ -8008,7 +8008,7 @@ where c1.customerNumber<> c2.customerNumber and c1.city=c2.city order by c1.city
 27. select city, group_concat(customerName," ") from customers group by city;
 28. select orders.orderNumber, customers.customerName, productName, productVendor,  productDescription from customers, orders, orderdetails, products where customers.customerNumber = orders.customerNumber and orders.orderNumber = orderdetails.orderNumber 
 and orderdetails.productCode = products.productCode and customers.customerNumber = 103;
-29. 
+29. select customers.* from customers, employees where employees.employeeNumber = customers.salesRepEmployeeNumber and employees.lastName = 'Patterson';
 30.
 31. 
 32. 
