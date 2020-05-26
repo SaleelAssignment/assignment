@@ -13,6 +13,8 @@ drop table if exists modules;
 drop table if exists faculty;
 drop table if exists student;
 drop table if exists course;
+drop table if exists books;
+drop table if exists newbooks;
 
 
 CREATE TABLE course (
@@ -137,7 +139,24 @@ CREATE TABLE batch_students (
    FOREIGN KEY (batchID) REFERENCES course_batches (ID),
    FOREIGN KEY (studentID) REFERENCES student (ID));
 
-   
+CREATE TABLE books ( 
+   bookID int NOT NULL, 
+   bookName varchar(45),
+   Type varchar(45), 
+   Cost int,
+   PRIMARY KEY (bookID)
+ );
+
+CREATE TABLE newbooks ( 
+  bookID int NOT NULL, 
+  bookName varchar(45),
+  Type varchar(45), 
+  Cost int,
+  PRIMARY KEY (bookID)
+);
+
+
+
 INSERT INTO course (ID, name, duration, summery) VALUES ('1', 'PG-DAC', '6', 'This course is designed by CDAC');
 INSERT INTO course (ID, name, duration, summery) VALUES ('2', 'DBDA', '6', 'This course is designed by CDAC');
 INSERT INTO course (ID, name, duration, summery) VALUES ('3', 'Pre-DAC', '2', 'This course is designed by CDAC');
@@ -630,9 +649,6 @@ INSERT INTO student_qualifications (ID, studentID, name, college, university, ma
 
 
 
-
-
-
 INSERT INTO faculty_qualifications (ID, facultyID, name, college, university, marks, year) VALUES ('1', '1', '10', 'Alabama', 'Stanford University', '67', '2012');
 INSERT INTO faculty_qualifications (ID, facultyID, name, college, university, marks, year) VALUES ('2', '1', '12', 'Alaska', 'Harvard University', '74', '2014');
 INSERT INTO faculty_qualifications (ID, facultyID, name, college, university, marks, year) VALUES ('3', '1', 'BE', 'Arizona', 'Harvard University', '68', '2018');
@@ -648,3 +664,29 @@ INSERT INTO faculty_qualifications (ID, facultyID, name, college, university, ma
 
 
 
+
+INSERT INTO books (bookID, bookName, Type, Cost) VALUES (1, 'C', 'PDF File', 1200);
+INSERT INTO books (bookID, bookName, Type, Cost) VALUES (2, 'C++', 'Word File', 1000);
+INSERT INTO books (bookID, bookName, Type, Cost) VALUES (3, 'DS', 'Hardcover', 950);
+INSERT INTO books (bookID, bookName, Type, Cost) VALUES (4, 'MySQL', 'Paperback', 1400);
+INSERT INTO books (bookID, bookName, Type, Cost) VALUES (5, 'OSC', 'Paperback', 1225);
+INSERT INTO books (bookID, bookName, Type, Cost) VALUES (6, 'HTML', 'PDF File', 650);
+INSERT INTO books (bookID, bookName, Type, Cost) VALUES (7, 'JavaScript', 'Paperback', 700);
+INSERT INTO books (bookID, bookName, Type, Cost) VALUES (8, 'ASDM', 'PDF File', 500);
+INSERT INTO books (bookID, bookName, Type, Cost) VALUES (9, '.NET', 'Hardcover', 2500);
+INSERT INTO books (bookID, bookName, Type, Cost) VALUES (10, 'Core Java', 'PDF File', 1500);
+INSERT INTO books (bookID, bookName, Type, Cost) VALUES (11, 'Adv. Java', 'Hardcover', 1800);
+
+
+
+INSERT INTO newbooks (bookID, bookName, Type, Cost) VALUES (1, 'Oracle', 'PDF File', 1200);
+INSERT INTO newbooks (bookID, bookName, Type, Cost) VALUES (2, 'hBase', 'Word File', 1000);
+INSERT INTO newbooks (bookID, bookName, Type, Cost) VALUES (3, 'Node', 'Hardcover', 950);
+INSERT INTO newbooks (bookID, bookName, Type, Cost) VALUES (4, 'Pig', 'Paperback', 1400);
+INSERT INTO newbooks (bookID, bookName, Type, Cost) VALUES (5, 'Python', 'Paperback', 1225);
+INSERT INTO newbooks (bookID, bookName, Type, Cost) VALUES (6, 'Hadoop', 'PDF File', 650);
+INSERT INTO newbooks (bookID, bookName, Type, Cost) VALUES (7, 'JavaScript', 'Paperback', 700);
+INSERT INTO newbooks (bookID, bookName, Type, Cost) VALUES (8, 'ASDM', 'PDF File', 500);
+INSERT INTO newbooks (bookID, bookName, Type, Cost) VALUES (9, '.NET', 'Hardcover', 2500);
+INSERT INTO newbooks (bookID, bookName, Type, Cost) VALUES (10, 'Core Java', 'PDF File', 1500);
+INSERT INTO newbooks (bookID, bookName, Type, Cost) VALUES (11, 'Adv. Java', 'Hardcover', 1800);
