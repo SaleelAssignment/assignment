@@ -12,6 +12,7 @@ DROP TABLE IF EXISTS  PRICE;
 DROP TABLE IF EXISTS  PRODUCT;
 DROP TABLE IF EXISTS  ORD;
 DROP TABLE IF EXISTS  CUSTOMER;
+DROP TABLE IF EXISTS  EMP_Cards;
 DROP TABLE IF EXISTS  EMP1;
 DROP TABLE IF EXISTS  EMP2;
 DROP TABLE IF EXISTS  DEPT1;
@@ -23,6 +24,8 @@ DROP TABLE IF EXISTS  SORT;
 DROP TABLE IF EXISTS  Location;
 DROP TABLE IF EXISTS  TableA;
 DROP TABLE IF EXISTS  TableB;
+DROP TABLE IF EXISTS  TableAA;
+DROP TABLE IF EXISTS  TableBB;
 DROP TABLE IF EXISTS  HOBBY;
 DROP TABLE IF EXISTS  NEW;
 DROP TABLE IF EXISTS  BLANKTABLEA;
@@ -112,15 +115,15 @@ VALUES (1,100,120,110,130),
 
 
  create table products (
-	ProductID int(11) primary key auto_increment,
+	ProductID int primary key auto_increment,
 	ProductName varchar(40),
-	SupplierID int(11),
-	CategoryID int(11),
+	SupplierID int,
+	CategoryID int,
 	QuantityPerUnit varchar(20),
 	UnitPrice decimal(10,4) Default 0.0000,
-	UnitsInStock int(2) Default 0,
-	UnitsOnOrder int(2) Default 0,
-	ReorderLevel int(2) Default 0,
+	UnitsInStock int Default 0,
+	UnitsOnOrder int Default 0,
+	ReorderLevel int Default 0,
 	Discontinued boolean
 );
 
@@ -286,7 +289,7 @@ insert into nullif values(null,5);
 
 
 CREATE TABLE DUPLICATE
- (    DEPTNO INT(2) NOT NULL,
+ (    DEPTNO INT NOT NULL,
       DNAME varchar(10),
       LOC varchar(10),
       WALLETID INT
@@ -392,12 +395,12 @@ INSERT INTO HOBBY VALUES (7,'Dancing',7);
 INSERT INTO HOBBY VALUES (8,'Traveling',8);
 INSERT INTO HOBBY VALUES (9,'Bungee Jumping',9);
 INSERT INTO HOBBY VALUES (10,'Horse Riding',10);
-INSERT INTO HOBBY VALUES (11,'Bowling',11);
+INSERT INTO HOBBY VALUES (11,'Running',11);
 INSERT INTO HOBBY VALUES (12,'Astrology',12);
 INSERT INTO HOBBY VALUES (13,'Hang Gliding',13);
 
 CREATE TABLE DEPT (
- DEPTNO              INT (2),
+ DEPTNO              INT,
  DNAME               varchar(12),
  LOC                 varchar(10),
  PWD				 varchar(20),
@@ -410,7 +413,7 @@ INSERT INTO DEPT VALUES (40,'OPERATIONS','BOSTON','opr@123');
 
 
 CREATE TABLE REPLACEDEPT (
- DEPTNO              INT (2),
+ DEPTNO              INT,
  DNAME               varchar(12),
  LOC                 varchar(10),
  CONSTRAINT REPLACEDEPT_PRIMARY_KEY PRIMARY KEY (DEPTNO));
@@ -443,14 +446,14 @@ INSERT INTO DEMODEPT2 VALUES (115,'F1','F1',null);
 
 
 CREATE TABLE EMP (
- EMPNO               INT(4) NOT NULL,
+ EMPNO               INT NOT NULL,
  ENAME               varchar(12),
  JOB                 varchar(20),
- MGR                 INT(4) ,
+ MGR                 INT,
  HIREDATE            date,
- SAL                 FLOAT(7,2),
- COMM                FLOAT(7,2),
- DEPTNO              INT(2) NOT NULL,
+ SAL                 INT,
+ COMM                INT,
+ DEPTNO              INT NOT NULL,
  BONUSID	         INT,
  `USER NAME`		 varchar(20),
  PWD				 varchar(20), 
@@ -520,48 +523,49 @@ CREATE TABLE DUMMY (
 INSERT INTO DUMMY VALUES (0);
 
 CREATE TABLE CUSTOMER (
- CUSTID              INT (6) NOT NULL,
+ CUSTID              INT NOT NULL,
  NAME                varchar(45),
  ADDRESS             varchar(40),
  CITY                varchar(30),
  STATE               varchar(2),
  ZIP                 varchar(9),
- AREA                INT (3),
+ AREA                INT,
  PHONE               varchar(9),
- REPID               INT (4) NOT NULL,
+ REPID               INT NOT NULL,
  CREDITLIMIT         float (9,2),
  COMMENTS            text,
  CONSTRAINT CUSTOMER_PRIMARY_KEY PRIMARY KEY (CUSTID),
  CONSTRAINT CUSTID_ZERO CHECK (CUSTID > 0));
 
 CREATE TABLE ORD  (
- ORDID               INT (4) NOT NULL,
+ ORDID               INT NOT NULL,
  ORDERDATE           datetime,
  COMMPLAN            varchar(1),
- CUSTID              INT (6) NOT NULL,
+ CUSTID              INT NOT NULL,
  SHIPDATE            datetime,
+ STATUS 			 VARCHAR(45),
  TOTAL               float (8,2),
  CONSTRAINT TOTAL_ZERO CHECK (TOTAL >= 0),
  CONSTRAINT ORD_FOREIGN_KEY FOREIGN KEY (CUSTID) REFERENCES CUSTOMER (CUSTID),
  CONSTRAINT ORD_PRIMARY_KEY PRIMARY KEY (ORDID));
 
 CREATE TABLE ITEM  (
- ORDID               INT (4) NOT NULL,
- ITEMID              INT (4) NOT NULL,
- PRODID              INT (6),
+ ORDID               INT NOT NULL,
+ ITEMID              INT NOT NULL,
+ PRODID              INT,
  ACTUALPRICE         float (8,2),
- QTY                 INT (8),
+ QTY                 INT,
  ITEMTOT             float (8,2),
  CONSTRAINT ITEM_FOREIGN_KEY FOREIGN KEY (ORDID) REFERENCES ORD (ORDID),
  CONSTRAINT ITEM_PRIMARY_KEY PRIMARY KEY (ORDID,ITEMID));
 
 CREATE TABLE PRODUCT (
- PRODID              INT (6),
+ PRODID              INT,
  DESCRIP             varchar(30),
  CONSTRAINT PRODUCT_PRIMARY_KEY PRIMARY KEY (PRODID));
 
 CREATE TABLE PRICE (
- PRODID              INT (6) NOT NULL,
+ PRODID              INT NOT NULL,
  STDPRICE            float (8,2),
  MINPRICE            float (8,2),
  STARTDATE           datetime,
@@ -983,7 +987,7 @@ AND ITEM.PRODID = PRODUCT.PRODID
 GROUP BY REPID, ORD.CUSTID, NAME, PRODUCT.PRODID, DESCRIP;
 
 CREATE TABLE LOCATION(
-LOCATIONID INT(4),
+LOCATIONID INT,
 LOCATIONNAME varchar(10),
 CONSTRAINT LOCATIONID_PRIMARY_KEY PRIMARY KEY (LOCATIONID));
 
@@ -1011,9 +1015,9 @@ INSERT INTO LOCATION VALUES (20,upper('mumbai'));
 
 
  CREATE TABLE DEPT1 (
- DEPTNO        INT(4) NOT NULL,
- DNAME           varchar(20),
- LOCATIONID INT(3),
+ DEPTNO        INT NOT NULL,
+ DNAME         varchar(20),
+ LOCATIONID    INT,
  CONSTRAINT DEPT1_PRIMARY_KEY1 PRIMARY KEY (DEPTNO));
 
 INSERT INTO DEPT1 VALUES (10,'ACCOUNTING','1');
@@ -1039,100 +1043,248 @@ INSERT INTO DEPT1 VALUES (200,upper('Economics'),'6');
 insert into dept1 values(201,'HRD',5);
 
 CREATE TABLE EMP1 (
- EMPNO          INT(4) NOT NULL,
+ EMPNO          INT NOT NULL,
  ENAME          varchar(12),
  JOB            varchar(20),
- MGR            INT(4),
- HIREDATE      datetime,
+ MGR            INT,
+ HIREDATE       datetime,
  SAL            float(7,2),
  COMM           float(7,2),
- DEPTNO         INT(4) NOT NULL,
- HOBBYID 		char(20),
+ DEPTNO         INT NOT NULL,
+ HOBBYID 		INT,
  BONUSID		INT,
  CONSTRAINT EMP1_FOREIGN_KEY1 FOREIGN KEY (DEPTNO) REFERENCES DEPT1 (DEPTNO),
  CONSTRAINT EMP1_PRIMARY_KEY1 PRIMARY KEY (EMPNO),
  CONSTRAINT EMP1_SELF_KEY1 FOREIGN KEY (MGR) REFERENCES EMP1 (EMPNO));
 
 
-INSERT INTO EMP1 VALUES (7839,'KING','PRESIDENT',NULL,'1981-11-17 04:20:24',5000,NULL,10,'Windsurfing',1);
-INSERT INTO EMP1 VALUES (7698,'BLAKE','MANAGER',7839,'1981-05-01 05:54:43',2850,NULL,30,'Fishing',3);
-INSERT INTO EMP1 VALUES (7782,'CLARK','MANAGER',7839,'1981-06-09 02:12:12',2450,NULL,10,'Swimming',5);
-INSERT INTO EMP1 VALUES (7566,'JONES','MANAGER',7839,'1981-04-02 12:45:19',2975,NULL,20,'Shopping',7);
-INSERT INTO EMP1 VALUES (7654,'MARTIN','SALESMAN',7698,'1981-09-28 14:26:00',1250,1400,30,'Fishing',4);
-INSERT INTO EMP1 VALUES (7499,'ALLEN','SALESMAN',7698,'1981-02-20 07:30:00',1600,300,30,'Bowling',8);
+INSERT INTO EMP1 VALUES (7839,'KING','PRESIDENT',NULL,'1981-11-17 04:20:24',5000,NULL,10,1,1);
+INSERT INTO EMP1 VALUES (7698,'BLAKE','MANAGER',7839,'1981-05-01 05:54:43',2850,NULL,30,'2',3);
+INSERT INTO EMP1 VALUES (7782,'CLARK','MANAGER',7839,'1981-06-09 02:12:12',2450,NULL,10,'3',5);
+INSERT INTO EMP1 VALUES (7566,'JONES','MANAGER',7839,'1981-04-02 12:45:19',2975,NULL,20,'4',7);
+INSERT INTO EMP1 VALUES (7654,'MARTIN','SALESMAN',7698,'1981-09-28 14:26:00',1250,1400,30,'2',4);
+INSERT INTO EMP1 VALUES (7499,'ALLEN','SALESMAN',7698,'1981-02-20 07:30:00',1600,300,30,'5',8);
 INSERT INTO EMP1 VALUES (7844,'TURNER','SALESMAN',7698,'1981-09-08 08:45:00',1500,0,30,NULL,10);
-INSERT INTO EMP1 VALUES (7900,'JAMES','CLERK',7698,'1981-12-03 09:25:00',950,NULL,30,'Swimming',8);
-INSERT INTO EMP1 VALUES (7521,'WARD','SALESMAN',7698,'1981-02-22 10:15:00',1250,500,30,'Windsurfing',3);
+INSERT INTO EMP1 VALUES (7900,'JAMES','CLERK',7698,'1981-12-03 09:25:00',950,NULL,30,'3',8);
+INSERT INTO EMP1 VALUES (7521,'WARD','SALESMAN',7698,'1981-02-22 10:15:00',1250,500,30,1,3);
 INSERT INTO EMP1 VALUES (7902,'FORD','ANALYST',7566,'1981-12-03 11:00:00',3000,NULL,20,NULL,2);
 INSERT INTO EMP1 VALUES (7369,'SMITH','CLERK',7902,'1980-12-17 17:36:00',800,NULL,20,NULL,1);
-INSERT INTO EMP1 VALUES (7788,'SCOTT','ANALYST',7566,'1982-12-09 16:12:00',3000,NULL,20,'Fishing',1);
-INSERT INTO EMP1 VALUES (7876,'ADAMS','CLERK',7788,'1983-01-12 18:33:00',1100,NULL,20,'Swimming',4);
-INSERT INTO EMP1 VALUES (7934,'MILLER','CLERK',7782,'1982-01-23 20:20:00',1300,NULL,10,'Shopping',3);
-INSERT INTO EMP1 VALUES (5001,'AARON','SALESMAN',7902,'1981-11-17 04:29:24',4500,1200,60,'Reading',9);
-INSERT INTO EMP1 VALUES (5002,upper('Alexander'),'MANAGER',7369,'1981-05-01 05:12:43',2950,NULL,70,'Dancing',10);
-INSERT INTO EMP1 VALUES (5003,upper('Brooke'),'CLERK',5002,'1981-06-09 02:17:12',2222,NULL,100,'Traveling',10);
-INSERT INTO EMP1 VALUES (6001,upper('Bruce'),upper('Personal assistant'),5002,'1981-04-02 12:35:19',4975,NULL,80,'Bungee Jumping',6);
-INSERT INTO EMP1 VALUES (6002,upper('Christopher'),upper('Personal assistant'),7844,'1981-09-28 14:26:00',4250,NULL,180,'Horse Riding',3);
-INSERT INTO EMP1 VALUES (6003,upper('Clive'),upper('Assistant'),7698,'1981-02-20 07:40:00',3600,NULL,120,'Windsurfing',1);
-INSERT INTO EMP1 VALUES (7005,upper('Dirk'),upper('Assistant'),7698,'1981-09-08 08:15:00',1500,NULL,60,'Horse Riding',6);
-INSERT INTO EMP1 VALUES (7006,upper('Eli'),upper('Personal assistant'),7521,'1981-12-03 09:35:00',5400,NULL,70,'Fishing',7);
-INSERT INTO EMP1 VALUES (7007,upper('Ely'),upper('Assistant'),7788,'1981-02-22 10:10:00',5250,NULL,140,'Fishing',7);
+INSERT INTO EMP1 VALUES (7788,'SCOTT','ANALYST',7566,'1982-12-09 16:12:00',3000,NULL,20,'2',1);
+INSERT INTO EMP1 VALUES (7876,'ADAMS','CLERK',7788,'1983-01-12 18:33:00',1100,NULL,20,'3',4);
+INSERT INTO EMP1 VALUES (7934,'MILLER','CLERK',7782,'1982-01-23 20:20:00',1300,NULL,10,'4',3);
+INSERT INTO EMP1 VALUES (5001,'AARON','SALESMAN',7902,'1981-11-17 04:29:24',4500,1200,60,'6',9);
+INSERT INTO EMP1 VALUES (5002,upper('Alexander'),'MANAGER',7369,'1981-05-01 05:12:43',2950,NULL,70,'7',10);
+INSERT INTO EMP1 VALUES (5003,upper('Brooke'),'CLERK',5002,'1981-06-09 02:17:12',2222,NULL,100,'8',10);
+INSERT INTO EMP1 VALUES (6001,upper('Bruce'),upper('Personal assistant'),5002,'1981-04-02 12:35:19',4975,NULL,80,'9',6);
+INSERT INTO EMP1 VALUES (6002,upper('Christopher'),upper('Personal assistant'),7844,'1981-09-28 14:26:00',4250,NULL,180,'10',3);
+INSERT INTO EMP1 VALUES (6003,upper('Clive'),upper('Assistant'),7698,'1981-02-20 07:40:00',3600,NULL,120,1,1);
+INSERT INTO EMP1 VALUES (7005,upper('Dirk'),upper('Assistant'),7698,'1981-09-08 08:15:00',1500,NULL,60,'10',6);
+INSERT INTO EMP1 VALUES (7006,upper('Eli'),upper('Personal assistant'),7521,'1981-12-03 09:35:00',5400,NULL,70,'2',7);
+INSERT INTO EMP1 VALUES (7007,upper('Ely'),upper('Assistant'),7788,'1981-02-22 10:10:00',5250,NULL,140,'2',7);
 INSERT INTO EMP1 VALUES (8009,upper('Shelley'),'MANAGER',7839,'1981-12-03 11:00:00',6000,NULL,180,NULL,1);
 INSERT INTO EMP1 VALUES (8003,upper('Thomas'),upper('Personal assistant'),8009,'1980-12-17 17:36:00',4900,NULL,50,NULL,2);
-INSERT INTO EMP1 VALUES (7388,upper('Troy'),'ANALYST',8009,'1982-12-09 16:12:00',4100,NULL,160,'Bowling',5);
-INSERT INTO EMP1 VALUES (7877,upper('Stephen'),upper('Assistant'),7788,'1983-01-12 18:33:00',1100,NULL,130,'Bowling',9);
-INSERT INTO EMP1 VALUES (4934,upper('Sherlock'),'CLERK',8009,'1982-01-23 20:20:00',1600,NULL,40,'Fishing',1);
-INSERT INTO EMP1 VALUES (2099,upper('Sherlock'),'CLERK',8009,'1982-01-23 20:22:00',1600,NULL,40,'Bowling',6);
-INSERT INTO EMP1 VALUES (2877,upper('Stephen'),upper('Assistant'),7788,'1983-01-12 18:35:00',1100,NULL,40,'Bowling',3);
-INSERT INTO EMP1 VALUES (3000,'Aaron','Salesman',7877,'1981-11-17 04:29:24',4500,1200,60,'Bowling',4);
-INSERT INTO EMP1 VALUES (3001,('Alexander'),'Manager',7369,'1981-05-01 05:12:43',2950,NULL,90,'Bungee Jumping',1);
-INSERT INTO EMP1 VALUES (3002,('Brooke'),'Clerk',5002,'1981-06-09 02:17:12',2222,NULL,50,'Reading',3);
-INSERT INTO EMP1 VALUES (3003,('Bruce'),('Personal Assistant'),5002,'1981-04-02 12:35:19',4975,NULL,120,'Fishing',5);
-INSERT INTO EMP1 VALUES (3467,('Christopher'),('Personal Assistant'),7844,'1981-09-28 14:26:00',4250,NULL,190,'Reading',7);
-INSERT INTO EMP1 VALUES (3267,('Clive'),('Assistant'),5002,'1981-02-20 07:40:00',3600,NULL,50,'Bungee Jumping',8);
+INSERT INTO EMP1 VALUES (7388,upper('Troy'),'ANALYST',8009,'1982-12-09 16:12:00',4100,NULL,160,'5',5);
+INSERT INTO EMP1 VALUES (7877,upper('Stephen'),upper('Assistant'),7788,'1983-01-12 18:33:00',1100,NULL,130,'5',9);
+INSERT INTO EMP1 VALUES (4934,upper('Sherlock'),'CLERK',8009,'1982-01-23 20:20:00',1600,NULL,40,'2',1);
+INSERT INTO EMP1 VALUES (2099,upper('Sherlock'),'CLERK',8009,'1982-01-23 20:22:00',1600,NULL,40,'5',6);
+INSERT INTO EMP1 VALUES (2877,upper('Stephen'),upper('Assistant'),7788,'1983-01-12 18:35:00',1100,NULL,40,'5',3);
+INSERT INTO EMP1 VALUES (3000,'Aaron','Salesman',7877,'1981-11-17 04:29:24',4500,1200,60,'5',4);
+INSERT INTO EMP1 VALUES (3001,('Alexander'),'Manager',7369,'1981-05-01 05:12:43',2950,NULL,90,'9',1);
+INSERT INTO EMP1 VALUES (3002,('Brooke'),'Clerk',5002,'1981-06-09 02:17:12',2222,NULL,50,'6',3);
+INSERT INTO EMP1 VALUES (3003,('Bruce'),('Personal Assistant'),5002,'1981-04-02 12:35:19',4975,NULL,120,'2',5);
+INSERT INTO EMP1 VALUES (3467,('Christopher'),('Personal Assistant'),7844,'1981-09-28 14:26:00',4250,NULL,190,'6',7);
+INSERT INTO EMP1 VALUES (3267,('Clive'),('Assistant'),5002,'1981-02-20 07:40:00',3600,NULL,50,'9',8);
 INSERT INTO EMP1 VALUES (3598,('Dirk'),('Assistant'),7698,'1981-09-08 08:15:00',1500,NULL,60,NULL,6);
-INSERT INTO EMP1 VALUES (3189,('Eli'),('Personal Assistant'),3001,'1981-12-03 09:35:00',5400,NULL,30,'Fishing',1);
-INSERT INTO EMP1 VALUES (3745,lower('Ely'),lower('Assistant'),7788,'1981-02-22 10:10:00',5250,NULL,150,'Astrology',2);
-INSERT INTO EMP1 VALUES (3244,lower('Shelley'),'manager',7839,'1981-12-03 11:00:00',6000,NULL,170,'Fishing',4);
-INSERT INTO EMP1 VALUES (9822,lower('Troy'),'analyst',3000,'1982-12-09 16:12:00',3100,NULL,40,'Bungee Jumping',6);
+INSERT INTO EMP1 VALUES (3189,('Eli'),('Personal Assistant'),3001,'1981-12-03 09:35:00',5400,NULL,30,'2',1);
+INSERT INTO EMP1 VALUES (3745,lower('Ely'),lower('Assistant'),7788,'1981-02-22 10:10:00',5250,NULL,150,'12',2);
+INSERT INTO EMP1 VALUES (3244,lower('Shelley'),'manager',7839,'1981-12-03 11:00:00',6000,NULL,170,'2',4);
+INSERT INTO EMP1 VALUES (9822,lower('Troy'),'analyst',3000,'1982-12-09 16:12:00',3100,NULL,40,'9',6);
 INSERT INTO EMP1 VALUES (9341,lower('Thomas'),lower('Personal assistant'),9822,'1980-12-17 17:36:00',4900,NULL,200,NULL,1);
 INSERT INTO EMP1 VALUES (9874,lower('Stephen'),lower('Assistant'),3001,'1983-01-12 18:33:00',1100,NULL,170,NULL,9);
 INSERT INTO EMP1 VALUES (9452,lower('Sherlock'),'clerk',9822,'1982-01-23 20:20:00',1600,NULL,130,NULL,4);
 INSERT INTO EMP1 VALUES (9434,lower('Sherlock'),'clerk',9874,'1982-01-23 20:22:00',1600,NULL,40,NULL,5);
 INSERT INTO EMP1 VALUES (9277,lower('Stephen'),lower('Assistant'),3467,'1983-01-12 18:35:00',1100,NULL,110,NULL,4);
 INSERT INTO EMP1 VALUES (6345,lower('Jay'),'analyst',8009,'1982-12-09 17:12:00',-3100,NULL,50,NULL,null);
-INSERT INTO EMP1 VALUES (6774,lower('Joe'),lower('Assistant'),7788,'1983-01-13 18:33:00',-1100,NULL,190,'Astrology',null);
+INSERT INTO EMP1 VALUES (6774,lower('Joe'),lower('Assistant'),7788,'1983-01-13 18:33:00',-1100,NULL,190,'12',null);
 INSERT INTO EMP1 VALUES (6342,lower('Joel'),'clerk',8009,'1982-01-23 22:20:00',-1600,NULL,50,NULL,null);
 INSERT INTO EMP1 VALUES (6980,lower('Louis'),'clerk',8009,'1982-01-23 21:22:00',-1600,NULL,30,NULL,null);
 INSERT INTO EMP1 VALUES (6843,lower('Matthew'),lower('Assistant'),7788,'1983-01-12 19:35:00',-1100,NULL,100,NULL,null);
-INSERT INTO EMP1 VALUES (1000,'Alice','Manager',7839,'1983-08-12 19:35:00',9000,NULL,150,'Hang Gliding',1);
-INSERT INTO EMP1 VALUES (1001,'Victor','Assistant Manager',1000,'1983-12-25 11:35:00',8000,NULL,150,'Hang Gliding',4);
+INSERT INTO EMP1 VALUES (1000,'Alice','Manager',7839,'1983-08-12 19:35:00',9000,NULL,150,'13',1);
+INSERT INTO EMP1 VALUES (1001,'Victor','Assistant Manager',1000,'1983-12-25 11:35:00',8000,NULL,150,'13',4);
 INSERT INTO EMP1 VALUES (1002,'Jack','Assistant',1001,'1983-12-25 11:35:00',7000,NULL,150,NULL,4);
-INSERT INTO EMP1 VALUES (1003,'William','Assistant',1001,'1984-12-30 12:00:00',7000,NULL,150,'Hang Gliding',1);
+INSERT INTO EMP1 VALUES (1003,'William','Assistant',1001,'1984-12-30 12:00:00',7000,NULL,150,'13',1);
 INSERT INTO EMP1 VALUES (1004,'Rose','Assistant Manager',1000,'1985-01-30 12:24:00',8000,NULL,150,NULL,7);
 INSERT INTO EMP1 VALUES (1005,'Kate','Assistant Analyst',7388,'1985-01-30 12:24:00',3000,NULL,160,NULL,9);
 INSERT INTO EMP1 VALUES (1006,'William','Salesman',7388,'1980-02-13 21:00:00',23700,1200,160,NULL,8);
-INSERT INTO EMP1 VALUES (1007,'Matthew','Salesman',1005,'1980-02-28 21:00:00',4700,1200,160,'Hang Gliding',3);
-INSERT INTO EMP1 VALUES (1008,'MAI','SALESGIRL',1000,'2001-12-25 11:35:00',8000,111,150,'Traveling',2);
-INSERT INTO EMP1 VALUES (1009,'ZARIA','SALESGIRL',1001,'2002-12-25 11:35:00',7000,555,150,'Traveling',6);
-INSERT INTO EMP1 VALUES (1010,'MAYA','SALESGIRL',1001,'2003-12-30 12:00:00',7000,120,150,'Traveling',7);
-INSERT INTO EMP1 VALUES (1011,'ROSE','SALESGIRL',1000,'2004-01-30 12:24:00',18000,250,150,'Traveling',3);
-INSERT INTO EMP1 VALUES (1012,'KATE','SALESGIRL',7388,'2005-01-30 12:24:00',3000,900,160,'Traveling',9);
-INSERT INTO EMP1 VALUES (1013,'TINA','SALESGIRL',7388,'2006-02-13 21:00:00',13700,2400,160,'Traveling',10);
-INSERT INTO EMP1 VALUES (1014,'MARY','SALESGIRL',1005,'2007-02-28 21:00:00',20000,1550,160,'Traveling',1);
-INSERT INTO EMP1 VALUES (1015,'TESSA','SALESGIRL',1005,'2008-02-28 21:00:00',14700,1100,160,'Traveling',5);
+INSERT INTO EMP1 VALUES (1007,'Matthew','Salesman',1005,'1980-02-28 21:00:00',4700,1200,160,'13',3);
+INSERT INTO EMP1 VALUES (1008,'MAI','SALESGIRL',1000,'2001-12-25 11:35:00',8000,111,150,'8',2);
+INSERT INTO EMP1 VALUES (1009,'ZARIA','SALESGIRL',1001,'2002-12-25 11:35:00',7000,555,150,'8',6);
+INSERT INTO EMP1 VALUES (1010,'MAYA','SALESGIRL',1001,'2003-12-30 12:00:00',7000,120,150,'8',7);
+INSERT INTO EMP1 VALUES (1011,'ROSE','SALESGIRL',1000,'2004-01-30 12:24:00',18000,250,150,'8',3);
+INSERT INTO EMP1 VALUES (1012,'KATE','SALESGIRL',7388,'2005-01-30 12:24:00',3000,900,160,'8',9);
+INSERT INTO EMP1 VALUES (1013,'TINA','SALESGIRL',7388,'2006-02-13 21:00:00',13700,2400,160,'8',10);
+INSERT INTO EMP1 VALUES (1014,'MARY','SALESGIRL',1005,'2007-02-28 21:00:00',20000,1550,160,'8',1);
+INSERT INTO EMP1 VALUES (1015,'TESSA','SALESGIRL',1005,'2008-02-28 21:00:00',14700,1100,160,'8',5);
 INSERT INTO EMP1 VALUES (1016,'STEVEN','Assistant',1004,'1983-01-12 18:35:00',-9500,NULL,40,NULL,null);
+
+UPDATE EMP1 SET SAL = '8000.48' WHERE (EMPNO = '1004');
+UPDATE EMP1 SET SAL = '7000.79' WHERE (EMPNO = '1003');
+UPDATE EMP1 SET SAL = '7000.15', COMM = '120.79' WHERE (EMPNO = '1010');
+UPDATE EMP1 SET SAL = '6000.99' WHERE (EMPNO = '3244');
+UPDATE EMP1 SET SAL = '4250.98' WHERE (EMPNO = '3467');
+UPDATE EMP1 SET SAL = '4975.30' WHERE (EMPNO = '3003');
+UPDATE EMP1 SET SAL = '5250.70' WHERE (EMPNO = '7007');
+UPDATE EMP1 SET COMM = '1200.40' WHERE (EMPNO = '5001');
+UPDATE EMP1 SET COMM = '1200.73' WHERE (EMPNO = '3000');
+
+CREATE TABLE EMP_Cards (
+  ID INT primary key auto_increment,
+  empID INT,
+  name varchar(45),
+  isActive bool,
+  FOREIGN KEY(empID) REFERENCES emp1(empno));
+
+
+INSERT INTO emp_cards (empID, name, isActive) VALUES (7839, 'Aadhaar', '1');
+INSERT INTO emp_cards (empID, name, isActive) VALUES (7839, 'Driving Licence', '1');
+INSERT INTO emp_cards (empID, name, isActive) VALUES (7839, 'PAN', '1');
+INSERT INTO emp_cards (empID, name, isActive) VALUES (7839, 'Voter ID', '1');
+INSERT INTO emp_cards (empID, name, isActive) VALUES (7839, 'Passport', '1');
+INSERT INTO emp_cards (empID, name, isActive) VALUES (7839, 'Debit', '1');
+INSERT INTO emp_cards (empID, name, isActive) VALUES (7839, 'Credit', '1');
+INSERT INTO emp_cards (empID, name, isActive) VALUES (7698, 'Aadhaar', '1');
+INSERT INTO emp_cards (empID, name, isActive) VALUES (7698, 'Driving Licence', '0');
+INSERT INTO emp_cards (empID, name, isActive) VALUES (7698, 'PAN', '1');
+INSERT INTO emp_cards (empID, name, isActive) VALUES (7698, 'Voter ID', '1');
+INSERT INTO emp_cards (empID, name, isActive) VALUES (7698, 'Debit', '1');
+INSERT INTO emp_cards (empID, name, isActive) VALUES (7782, 'Aadhaar', '1');
+INSERT INTO emp_cards (empID, name, isActive) VALUES (7782, 'Driving Licence', '1');
+INSERT INTO emp_cards (empID, name, isActive) VALUES (7782, 'PAN', '1');
+INSERT INTO emp_cards (empID, name, isActive) VALUES (7782, 'Passport', '1');
+INSERT INTO emp_cards (empID, name, isActive) VALUES (7782, 'Debit', '1');
+INSERT INTO emp_cards (empID, name, isActive) VALUES (7566, 'Aadhaar', '1');
+INSERT INTO emp_cards (empID, name, isActive) VALUES (7566, 'Driving Licence', '1');
+INSERT INTO emp_cards (empID, name, isActive) VALUES (7566, 'PAN', '1');
+INSERT INTO emp_cards (empID, name, isActive) VALUES (7566, 'Passport', '1');
+INSERT INTO emp_cards (empID, name, isActive) VALUES (7566, 'Debit', '1');
+INSERT INTO emp_cards (empID, name, isActive) VALUES (7566, 'Credit', '1');
+INSERT INTO emp_cards (empID, name, isActive) VALUES (7654, 'Aadhaar', '1');
+INSERT INTO emp_cards (empID, name, isActive) VALUES (7654, 'Driving Licence', '0');
+INSERT INTO emp_cards (empID, name, isActive) VALUES (7654, 'PAN', '1');
+INSERT INTO emp_cards (empID, name, isActive) VALUES (7654, 'Voter ID', '1');
+INSERT INTO emp_cards (empID, name, isActive) VALUES (7654, 'Passport', '1');
+INSERT INTO emp_cards (empID, name, isActive) VALUES (7654, 'Debit', '1');
+INSERT INTO emp_cards (empID, name, isActive) VALUES (7654, 'Credit', '1');
+INSERT INTO emp_cards (empID, name, isActive) VALUES (7499, 'PAN', '1');
+INSERT INTO emp_cards (empID, name, isActive) VALUES (7499, 'Driving Licence', '1');
+INSERT INTO emp_cards (empID, name, isActive) VALUES (7844, 'Aadhaar', '1');
+INSERT INTO emp_cards (empID, name, isActive) VALUES (7844, 'Driving Licence', '1');
+INSERT INTO emp_cards (empID, name, isActive) VALUES (7900, 'Aadhaar', '1');
+INSERT INTO emp_cards (empID, name, isActive) VALUES (7900, 'Driving Licence', '1');
+INSERT INTO emp_cards (empID, name, isActive) VALUES (7900, 'PAN', '1');
+INSERT INTO emp_cards (empID, name, isActive) VALUES (7900, 'Voter ID', '1');
+INSERT INTO emp_cards (empID, name, isActive) VALUES (7521, 'Driving Licence', '0');
+INSERT INTO emp_cards (empID, name, isActive) VALUES (7521, 'PAN', '1');
+INSERT INTO emp_cards (empID, name, isActive) VALUES (7521, 'Debit', '1');
+INSERT INTO emp_cards (empID, name, isActive) VALUES (7521, 'Credit', '1');
+INSERT INTO emp_cards (empID, name, isActive) VALUES (7902, 'Aadhaar', '1');
+INSERT INTO emp_cards (empID, name, isActive) VALUES (7902, 'PAN', '1');
+INSERT INTO emp_cards (empID, name, isActive) VALUES (7902, 'Passport', '1');
+INSERT INTO emp_cards (empID, name, isActive) VALUES (7902, 'Voter ID', '1');
+INSERT INTO emp_cards (empID, name, isActive) VALUES (7369, 'Aadhaar', '1');
+INSERT INTO emp_cards (empID, name, isActive) VALUES (7788, 'Aadhaar', '1');
+INSERT INTO emp_cards (empID, name, isActive) VALUES (7788, 'Driving Licence', '1');
+INSERT INTO emp_cards (empID, name, isActive) VALUES (7788, 'PAN', '1');
+INSERT INTO emp_cards (empID, name, isActive) VALUES (7876, 'Aadhaar', '1');
+INSERT INTO emp_cards (empID, name, isActive) VALUES (7876, 'Driving Licence', '1');
+INSERT INTO emp_cards (empID, name, isActive) VALUES (7876, 'PAN', '1');
+INSERT INTO emp_cards (empID, name, isActive) VALUES (7876, 'Voter ID', '1');
+INSERT INTO emp_cards (empID, name, isActive) VALUES (5003, 'Aadhaar', '1');
+INSERT INTO emp_cards (empID, name, isActive) VALUES (5003, 'Driving Licence', '1');
+INSERT INTO emp_cards (empID, name, isActive) VALUES (5003, 'PAN', '1');
+INSERT INTO emp_cards (empID, name, isActive) VALUES (5003, 'Voter ID', '1');
+INSERT INTO emp_cards (empID, name, isActive) VALUES (5003, 'Passport', '1');
+INSERT INTO emp_cards (empID, name, isActive) VALUES (5003, 'Debit', '1');
+INSERT INTO emp_cards (empID, name, isActive) VALUES (5003, 'Credit', '1');
+INSERT INTO emp_cards (empID, name, isActive) VALUES (7005, 'Aadhaar', '0');
+INSERT INTO emp_cards (empID, name, isActive) VALUES (7005, 'PAN', '1');
+INSERT INTO emp_cards (empID, name, isActive) VALUES (7006, 'Aadhaar', '1');
+INSERT INTO emp_cards (empID, name, isActive) VALUES (7006, 'PAN', '1');
+INSERT INTO emp_cards (empID, name, isActive) VALUES (7006, 'Passport', '1');
+INSERT INTO emp_cards (empID, name, isActive) VALUES (8009, 'Aadhaar', '1');
+INSERT INTO emp_cards (empID, name, isActive) VALUES (8009, 'PAN', '1');
+INSERT INTO emp_cards (empID, name, isActive) VALUES (8009, 'Passport', '1');
+INSERT INTO emp_cards (empID, name, isActive) VALUES (8003, 'Driving Licence', '1');
+INSERT INTO emp_cards (empID, name, isActive) VALUES (8003, 'PAN', '1');
+INSERT INTO emp_cards (empID, name, isActive) VALUES (8003, 'Credit', '1');
+INSERT INTO emp_cards (empID, name, isActive) VALUES (7388, 'Aadhaar', '1');
+INSERT INTO emp_cards (empID, name, isActive) VALUES (7388, 'Driving Licence', '1');
+INSERT INTO emp_cards (empID, name, isActive) VALUES (7388, 'PAN', '1');
+INSERT INTO emp_cards (empID, name, isActive) VALUES (7388, 'Voter ID', '1');
+INSERT INTO emp_cards (empID, name, isActive) VALUES (7388, 'Passport', '0');
+INSERT INTO emp_cards (empID, name, isActive) VALUES (7388, 'Credit', '1');
+INSERT INTO emp_cards (empID, name, isActive) VALUES (7388, 'Aadhaar', '1');
+INSERT INTO emp_cards (empID, name, isActive) VALUES (3267, 'Driving Licence', '1');
+INSERT INTO emp_cards (empID, name, isActive) VALUES (3267, 'PAN', '1');
+INSERT INTO emp_cards (empID, name, isActive) VALUES (3267, 'Voter ID', '1');
+INSERT INTO emp_cards (empID, name, isActive) VALUES (7388, 'Driving Licence', '1');
+INSERT INTO emp_cards (empID, name, isActive) VALUES (7388, 'PAN', '1');
+INSERT INTO emp_cards (empID, name, isActive) VALUES (7388, 'Voter ID', '0');
+INSERT INTO emp_cards (empID, name, isActive) VALUES (3001, 'Credit', '1');
+INSERT INTO emp_cards (empID, name, isActive) VALUES (3001, 'Aadhaar', '1');
+INSERT INTO emp_cards (empID, name, isActive) VALUES (3001, 'PAN', '1');
+INSERT INTO emp_cards (empID, name, isActive) VALUES (3002, 'Passport', '1');
+INSERT INTO emp_cards (empID, name, isActive) VALUES (3002, 'Voter ID', '1');
+INSERT INTO emp_cards (empID, name, isActive) VALUES (3002, 'Aadhaar', '1');
+INSERT INTO emp_cards (empID, name, isActive) VALUES (3002, 'Debit', '1');
+INSERT INTO emp_cards (empID, name, isActive) VALUES (3002, 'Driving Licence', '1');
+INSERT INTO emp_cards (empID, name, isActive) VALUES (3003, 'PAN', '1');
+INSERT INTO emp_cards (empID, name, isActive) VALUES (3003, 'Aadhaar', '1');
+INSERT INTO emp_cards (empID, name, isActive) VALUES (3003, 'Driving Licence', '1');
+INSERT INTO emp_cards (empID, name, isActive) VALUES (3244, 'PAN', '1');
+INSERT INTO emp_cards (empID, name, isActive) VALUES (3244, 'Voter ID', '1');
+INSERT INTO emp_cards (empID, name, isActive) VALUES (3244, 'Aadhaar', '1');
+INSERT INTO emp_cards (empID, name, isActive) VALUES (3244, 'Driving Licence', '1');
+INSERT INTO emp_cards (empID, name, isActive) VALUES (9434, 'PAN', '1');
+INSERT INTO emp_cards (empID, name, isActive) VALUES (9434, 'Voter ID', '1');
+INSERT INTO emp_cards (empID, name, isActive) VALUES (9434, 'Passport', '1');
+INSERT INTO emp_cards (empID, name, isActive) VALUES (9434, 'Debit', '1');
+INSERT INTO emp_cards (empID, name, isActive) VALUES (6980, 'Credit', '0');
+INSERT INTO emp_cards (empID, name, isActive) VALUES (6980, 'Aadhaar', '1');
+INSERT INTO emp_cards (empID, name, isActive) VALUES (6980, 'PAN', '0');
+INSERT INTO emp_cards (empID, name, isActive) VALUES (6843, 'Aadhaar', '1');
+INSERT INTO emp_cards (empID, name, isActive) VALUES (6843, 'PAN', '1');
+INSERT INTO emp_cards (empID, name, isActive) VALUES (6843, 'Passport', '1');
+INSERT INTO emp_cards (empID, name, isActive) VALUES (1003, 'Aadhaar', '1');
+INSERT INTO emp_cards (empID, name, isActive) VALUES (1003, 'PAN', '1');
+INSERT INTO emp_cards (empID, name, isActive) VALUES (1003, 'Passport', '1');
+INSERT INTO emp_cards (empID, name, isActive) VALUES (1009, 'Driving Licence', '1');
+INSERT INTO emp_cards (empID, name, isActive) VALUES (1009, 'PAN', '1');
+INSERT INTO emp_cards (empID, name, isActive) VALUES (1009, 'Credit', '0');
+INSERT INTO emp_cards (empID, name, isActive) VALUES (1010, 'Aadhaar', '1');
+INSERT INTO emp_cards (empID, name, isActive) VALUES (1010, 'Driving Licence', '1');
+INSERT INTO emp_cards (empID, name, isActive) VALUES (1010, 'PAN', '1');
+INSERT INTO emp_cards (empID, name, isActive) VALUES (1010, 'Voter ID', '1');
+INSERT INTO emp_cards (empID, name, isActive) VALUES (1011, 'Passport', '1');
+INSERT INTO emp_cards (empID, name, isActive) VALUES (1011, 'Credit', '1');
+INSERT INTO emp_cards (empID, name, isActive) VALUES (1011, 'Aadhaar', '0');
+INSERT INTO emp_cards (empID, name, isActive) VALUES (1011, 'Driving Licence', '1');
+INSERT INTO emp_cards (empID, name, isActive) VALUES (1011, 'PAN', '1');
+INSERT INTO emp_cards (empID, name, isActive) VALUES (1014, 'Voter ID', '1');
+INSERT INTO emp_cards (empID, name, isActive) VALUES (1014, 'Driving Licence', '1');
+INSERT INTO emp_cards (empID, name, isActive) VALUES (1014, 'PAN', '1');
+INSERT INTO emp_cards (empID, name, isActive) VALUES (1016, 'Voter ID', '1');
 
 
 CREATE TABLE EMP2(
- EMPNO          INT(4) NOT NULL,
+ EMPNO          INT NOT NULL,
  ENAME          varchar(12),
  JOB            varchar(20),
- HIREDATE      datetime,
+ HIREDATE       datetime,
  SAL            float(7,2),
  COMM           float(7,2),
- DEPTNO         INT(4) NOT NULL,
- HOBBYID		char(20),
+ DEPTNO         INT NOT NULL,
+ HOBBYID		INT,
  BONUSID		INT,
  CONSTRAINT EMP2_FOREIGN_KEY2 FOREIGN KEY (DEPTNO) REFERENCES DEPT1 (DEPTNO),
  CONSTRAINT EMP2_PRIMARY_KEY2 PRIMARY KEY (EMPNO));
@@ -1174,7 +1326,7 @@ INSERT INTO regexpr VALUES ('Sa/1001 Sa/1002 Sa/1003 Sa/1004 Sa/1005');
 	
 
 create table temp1
-(col1 INT(2),
+(col1 INT,
  col2 varchar(25)
 );
 
@@ -1218,18 +1370,18 @@ create table sort
 insert into sort values ('1','1'), ('2','2'), ('3','3'), ('4','4'), ('5','5'), ('6','6'), ('7','7'), ('8','8'), ('9','9'), ('10','10'), ('11','11'), ('12','12'), ('19','19'), ('18','18'), ('13','13'), ('14','14'), ('20','20'), ('27','27'), ('29','29'), ('21','21'), ('22','22'), ('23','23'), ('31','31'), ('45','45'), ('39','39'), ('40','40'), ('400','400'), ('300','300'), ('200','200'), ('100','100'), ('-1','-1'), ('-2','-2'), ('-3','-3'), ('01','01'), ('03','03'), ('02','02');	
 
 
-create table tableA
+create table tableAA
 (col1 INT,
  col2 INT);
 
-insert into tablea values (1,2), (3,4), (5,6), (7,8), (9,10), (11,12), (13,14);
+insert into tableaa values (1,2), (3,4), (5,6), (7,8), (9,10), (11,12), (13,14);
 
 
-create table tableB
+create table tableBB
 (col3 INT,
  col4 INT);
 
-insert into tableb values (5,7), (3,8), (1,4), (8,7), (Null,10), (11,12);
+insert into tablebb values (5,7), (3,8), (1,4), (8,7), (Null,10), (11,12);
 
 
 CREATE TABLE SALESPEOPLE (SNUM INT PRIMARY KEY, SNAME VARCHAR(10), CITY VARCHAR(10), COMM FLOAT);
@@ -1283,7 +1435,31 @@ INSERT into ORDERS(ONUM, AMT, ODATE, CNUM, SNUM) values (3029,3721.53,'1996-10-0
 INSERT into ORDERS(ONUM, AMT, ODATE, CNUM, SNUM) values (3030,734.50,'1996-10-06 13:16',2004,1002);
 INSERT into ORDERS(ONUM, AMT, ODATE, CNUM, SNUM) values (3031,1729.67,'1996-10-06 13:07',2006,1007);
 
+
+UPDATE ord SET STATUS = 'In Process' WHERE (ORDID = '601');
+UPDATE ord SET STATUS = 'On Hold' WHERE (ORDID = '602');
+UPDATE ord SET STATUS = 'Cancelled' WHERE (ORDID = '603');
+UPDATE ord SET STATUS = 'Resolved' WHERE (ORDID = '604');
+UPDATE ord SET STATUS = 'Disputed' WHERE (ORDID = '605');
+UPDATE ord SET STATUS = 'Shipped' WHERE (ORDID = '606');
+UPDATE ord SET STATUS = 'Shipped' WHERE (ORDID = '608');
+UPDATE ord SET STATUS = 'Shipped' WHERE (ORDID = '611');
+UPDATE ord SET STATUS = 'Shipped' WHERE (ORDID = '613');
+UPDATE ord SET STATUS = 'Shipped' WHERE (ORDID = '617');
+UPDATE ord SET STATUS = 'Shipped' WHERE (ORDID = '621');
+UPDATE ord SET STATUS = 'In Process' WHERE (ORDID = '607');
+UPDATE ord SET STATUS = 'In Process' WHERE (ORDID = '610');
+UPDATE ord SET STATUS = 'In Process' WHERE (ORDID = '615');
+UPDATE ord SET STATUS = 'In Process' WHERE (ORDID = '619');
+UPDATE ord SET STATUS = 'On Hold' WHERE (ORDID = '609');
+UPDATE ord SET STATUS = 'On Hold' WHERE (ORDID = '618');
+UPDATE ord SET STATUS = 'Cancelled' WHERE (ORDID = '612');
+UPDATE ord SET STATUS = 'Cancelled' WHERE (ORDID = '620');
+UPDATE ord SET STATUS = 'In Process' WHERE (ORDID = '614');
+UPDATE ord SET STATUS = 'Resolved' WHERE (ORDID = '616');
+
+
 update EMP set `user name` = ename;
 update EMP set pwd = (select dept.pwd from dept where emp.deptno = dept.deptno);
 UPDATE EMP SET PWD=NULL WHERE EMPNO=7415;
-UPDATE EMP SET PWD='ABC' WHERE EMPNO=7945;
+UPDATE EMP SET PWD='ABCDEF' WHERE EMPNO=7945;
