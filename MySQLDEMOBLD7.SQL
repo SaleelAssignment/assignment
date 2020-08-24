@@ -61,7 +61,38 @@ drop table IF EXISTS sales_channel;
 DROP table IF EXISTS blog;
 DROP table IF EXISTS comments;
 DROP table IF EXISTS fifa;
+drop table IF EXISTS license;
 drop VIEW IF EXISTS SALES;
+
+
+CREATE TABLE licence (
+  ID INT PRIMARY KEY,
+  customerID INT,
+  licenceClass VARCHAR(45),
+  licenceType VARCHAR(128),
+  licenceNumber VARCHAR(45),
+  ValidFrom VARCHAR(45),
+  ValidTo VARCHAR(45),
+  agentID INT );
+
+INSERT INTO licence VALUES ('1', '1', 'LMV', 'Light motor vehicles including motorcars, jeeps, taxis, delivery vans', 'RQFY8GZNDF9E', '********', '********', '1');
+INSERT INTO licence VALUES ('2', '2', 'LMV', 'Light motor vehicles including motorcars, jeeps, taxis, delivery vans', 'ZFVHYH4OAHGS', '********', '********', '2');
+INSERT INTO licence VALUES ('3', '1', 'HMV', 'Heavy Motor Vehicles', '20CMZQ6ERXJ4', '********', '********', '3');
+INSERT INTO licence VALUES ('4', '2', 'HMV', 'Heavy Motor Vehicles', 'DNIE1K9R5BG6', '********', '********', '1');
+INSERT INTO licence VALUES ('5', '3', 'LMV', 'Light motor vehicles including motorcars, jeeps, taxis, delivery vans', 'Y3CNWQ6MKPCG', '********', '********', '2');
+INSERT INTO licence VALUES ('6', '3', 'HMV', 'Heavy Motor Vehicles', 'Y6DC2IRD2EWZ', '********', '********', '1');
+INSERT INTO licence VALUES ('7', '4', 'HGMV', 'Heavy Goods Motor Vehicle', '2EFFSXY04OAW', '********', '********', '3');
+INSERT INTO licence VALUES ('8', '5', 'HMV', 'Heavy Motor Vehicles', 'GC1BMWKCTVQ4', '********', '********', '2');
+INSERT INTO licence VALUES ('9', '6', 'LMV', 'Light motor vehicles including motorcars, jeeps, taxis, delivery vans', '2148PC50IR3P', '********', '********', '1');
+INSERT INTO licence VALUES ('10', '7', 'HPMV', 'Heavy passenger motor vehicle/Heavy transport vehicle', 'N4NODNCFJENP', '********', '********', '2');
+INSERT INTO licence VALUES ('11', '8', 'HGMV', 'Heavy Goods Motor Vehicle', 'EBPW9M34FKOI', '********', '********', '2');
+INSERT INTO licence VALUES ('12', '9', 'HPMV', 'Heavy passenger motor vehicle/Heavy transport vehicle', '940MGEL4HO00', '********', '********', '3');
+INSERT INTO licence VALUES ('13', '10', 'LMV', 'Light motor vehicles including motorcars, jeeps, taxis, delivery vans', 'JWRDAETHDU5Z', '********', '********', '1');
+INSERT INTO licence VALUES ('14', '11', 'HGMV', 'Heavy Goods Motor Vehicle', 'Z95XCS7W9NAU', '********', '********', '2');
+INSERT INTO licence VALUES ('15', '12', 'HGMV', 'Heavy Goods Motor Vehicle', '1YJ12NQX8HAJ', '********', '********', '1');
+INSERT INTO licence VALUES ('16', '13', 'LMV', 'Light motor vehicles including motorcars, jeeps, taxis, delivery vans', '1XMTETH8E6JS', '********', '********', '1');
+INSERT INTO licence VALUES ('17', '14', 'HPMV', 'Heavy passenger motor vehicle/Heavy transport vehicle', '0WEMMTPVTBPM', '********', '********', '2');
+
 
 CREATE TABLE fifa (
 ID int  PRIMARY KEY,
