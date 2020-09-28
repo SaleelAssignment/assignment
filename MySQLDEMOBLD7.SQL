@@ -58,10 +58,10 @@ DROP TABLE IF EXISTS tableA;
 DROP TABLE IF EXISTS tableB;
 drop table IF EXISTS warehouse;
 drop table IF EXISTS sales_channel;
-DROP table IF EXISTS blog;
 DROP table IF EXISTS comments;
+DROP table IF EXISTS blog;
 DROP table IF EXISTS fifa;
-drop table IF EXISTS license;
+drop table IF EXISTS licence;
 drop VIEW IF EXISTS SALES;
 
 
@@ -99,7 +99,8 @@ ID int  PRIMARY KEY,
 RNK int,
 Team varchar(45),
 TotalPoints int,
-PreviousPoint int
+PreviousPoint int,
+re int
 );
 
 INSERT INTO fifa (ID, RNK, Team, TotalPoints, PreviousPoint, re) VALUES ('1', '1', 'Belgium', '1765', '1765', '0');
@@ -221,7 +222,7 @@ INSERT INTO blog (ID, blog, blogDate) VALUES ('8', 'Weebly.com: Weebly is anothe
 INSERT INTO blog (ID, blog, blogDate) VALUES ('9', 'Blogger.com: This free blog hosting service has been around for a long time. It was founded in 1999 and acquired by Google in 2003. As a consequence, you can sign up easily with your existing Google account.', '2019-08-14');
 INSERT INTO blog (ID, blog, blogDate) VALUES ('10', 'Tumblr.com: The final entry for the best blog sites is Tumblr. The service is a micro-blogging platform optimized for short-form content. It also has a community behind it and social network features. Think of it as a middle ground between WordPress and Twitter.', '2019-12-30');
 
-CEATE TABLE comments (
+CREATE TABLE comments (
    ID INT PRIMARY KEY, 
    comment TEXT, 
    commentDate DATETIME,
@@ -271,7 +272,8 @@ insert into sales_channel values('4', 'eCommerce');
 
 CREATE TABLE warehouse (
 warehouse_id int,
-warehouse_name varchar(255));
+warehouse_name varchar(255),
+channel_id int);
 
 insert into warehouse values ('143', 'AC Warehouse', '1');
 insert into warehouse values ('156', 'National', '2');
@@ -682,7 +684,7 @@ CREATE TABLE EMP (
  COMM                INT,
  DEPTNO              INT NOT NULL,
  BONUSID	         INT,
- USER NAME		 varchar(20),
+ `USER NAME`		 varchar(20),
  PWD				 varchar(20),
  phone 				 varchar(45),
  isActive			 boolean,
@@ -1764,8 +1766,23 @@ UPDATE ord SET STATUS = 'Cancelled' WHERE (ORDID = '620');
 UPDATE ord SET STATUS = 'In Process' WHERE (ORDID = '614');
 UPDATE ord SET STATUS = 'Resolved' WHERE (ORDID = '616');
 
+update EMP set `user name` = ename;
+update EMP set `user name` = upper("Always Teste") where empno = 7499;
+update EMP set `user name` = upper("Big Ben") where empno = 7698;
+update EMP set `user name` = upper("Crazy Anyone") where empno = 7876;
+update EMP set `user name` = upper("Crazy Leader") where empno = 7900;
+update EMP set `user name` = upper("ConBrio") where empno = 7902;
+update EMP set `user name` = upper("Interval") where empno = 7919;
+update EMP set `user name` = upper("QuarterNote") where empno = 7934;
+update EMP set `user name` = upper("QuarterRest") where empno = 7949;
+update EMP set `user name` = upper("Tritone") where empno = 7369;
+update EMP set `user name` = upper("Honeycomb") where empno = 7566;
+update EMP set `user name` = upper("Life Racer") where empno = 7654;
+update EMP set `user name` = upper("White Sand") where empno = 7788;
+update EMP set `user name` = upper("Sand Dust") where empno = 7844;
 
-update EMP set user name = ename;
+
+
 update EMP set pwd = (select dept.pwd from dept where emp.deptno = dept.deptno);
 UPDATE EMP SET PWD=NULL WHERE EMPNO=7415;
 UPDATE EMP SET PWD='ABCDEF' WHERE EMPNO=7945;
