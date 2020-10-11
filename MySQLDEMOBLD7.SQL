@@ -56,14 +56,34 @@ DROP TABLE IF EXISTS envelope;
 DROP TABLE IF EXISTS docs;
 DROP TABLE IF EXISTS tableA;
 DROP TABLE IF EXISTS tableB;
-drop table IF EXISTS warehouse;
-drop table IF EXISTS sales_channel;
-DROP table IF EXISTS comments;
-DROP table IF EXISTS blog;
-DROP table IF EXISTS fifa;
-drop table IF EXISTS licence;
-drop VIEW IF EXISTS SALES;
+DROP TABLE IF EXISTS warehouse;
+DROP TABLE IF EXISTS sales_channel;
+DROP TABLE IF EXISTS comments;
+DROP TABLE IF EXISTS blog;
+DROP TABLE IF EXISTS fifa;
+DROP TABLE IF EXISTS licence;
+DROP TABLE If EXISTS mass_table;
+DROP TABLE If EXISTS runners;
+DROP TABLE If EXISTS races;
 
+DROP VIEW IF EXISTS SALES;
+
+CREATE TABLE runners (id int, name varchar(20));
+INSERT INTO runners values(1, 'John Doe');
+INSERT INTO runners values2, 'Jane Doe');
+INSERT INTO runners values3, 'Alice Jones');
+INSERT INTO runners values4, 'Bobby Louis');
+INSERT INTO runners values5, 'Lisa Romero');
+
+CREATE TABLE races(id int, event varchar(45), winner_id int);
+insert int races values(1, '100 meter dash', 2);
+insert int races values(2, '500 meter dash', 3);
+insert int races values(3, 'cross-country', 2);
+insert int races values(4, 'triathalon', NULL);
+
+CREATE TABLE mass_table (weight float(4,2));
+
+insert into mass_table values(26.43), (54.65), (34.463), (60.223), (62.73), (35.63), (47.43), (63.47);
 
 CREATE TABLE licence (
   ID INT PRIMARY KEY,
