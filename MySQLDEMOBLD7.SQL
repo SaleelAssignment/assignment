@@ -70,16 +70,16 @@ DROP VIEW IF EXISTS SALES;
 
 CREATE TABLE runners (id int, name varchar(20));
 INSERT INTO runners values(1, 'John Doe');
-INSERT INTO runners values2, 'Jane Doe');
-INSERT INTO runners values3, 'Alice Jones');
-INSERT INTO runners values4, 'Bobby Louis');
-INSERT INTO runners values5, 'Lisa Romero');
+INSERT INTO runners values(2, 'Jane Doe');
+INSERT INTO runners values(3, 'Alice Jones');
+INSERT INTO runners values(4, 'Bobby Louis');
+INSERT INTO runners values(5, 'Lisa Romero');
 
 CREATE TABLE races(id int, event varchar(45), winner_id int);
-insert int races values(1, '100 meter dash', 2);
-insert int races values(2, '500 meter dash', 3);
-insert int races values(3, 'cross-country', 2);
-insert int races values(4, 'triathalon', NULL);
+insert INTO races values(1, '100 meter dash', 2);
+insert INTO races values(2, '500 meter dash', 3);
+insert INTO races values(3, 'cross-country', 2);
+insert INTO races values(4, 'triathalon', NULL);
 
 CREATE TABLE mass_table (weight float(4,2));
 
