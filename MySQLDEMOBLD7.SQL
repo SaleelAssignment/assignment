@@ -61,6 +61,7 @@ DROP TABLE IF EXISTS sales_channel;
 DROP TABLE IF EXISTS comments;
 DROP TABLE IF EXISTS blog;
 DROP TABLE IF EXISTS fifa;
+DROP TABLE IF EXISTS agent;
 DROP TABLE IF EXISTS licence;
 DROP TABLE If EXISTS mass_table;
 DROP TABLE If EXISTS runners;
@@ -84,6 +85,21 @@ insert INTO races values(4, 'triathalon', NULL);
 CREATE TABLE mass_table (weight float(4,2));
 
 insert into mass_table values(26.43), (54.65), (34.463), (60.223), (62.73), (35.63), (47.43), (63.47);
+
+CREATE TABLE agent (
+agentID int PRIMARY KEY AUTO_INCREMENT,
+agentName varchar(20),
+phone varchar(10)
+);
+
+
+INSERT INTO agent(agentName, phone) VALUES ('Sai Travels', '9850883667');
+INSERT INTO agent(agentName, phone) VALUES ('Raj Travels', '9922295489');
+INSERT INTO agent(agentName, phone) VALUES ('Prime Travels', '9867889227');
+INSERT INTO agent(agentName) VALUES ('4 Star Travles');
+INSERT INTO agent(agentName, phone) VALUES ('7 Seas Travels', '9869884778');
+INSERT INTO agent(agentName) VALUES ('Abhinav Travels');
+
 
 CREATE TABLE licence (
   ID INT PRIMARY KEY,
