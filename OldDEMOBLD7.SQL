@@ -44,6 +44,7 @@ DROP TABLE STATION cascade constraints purge;
 DROP TABLE Z cascade constraints purge;
 DROP TABLE r1 cascade constraints purge;
 DROP TABLE r2 cascade constraints purge;
+DROP TABLE agent cascade constraints purge;
 DROP TABLE licence cascade constraints purge;
 DROP TABLE fifa cascade constraints purge;
 
@@ -53,6 +54,15 @@ DROP SEQUENCE ORDID;
 DROP SEQUENCE CUSTID;
 DROP SEQUENCE PRODID;
 --alter session set nls_date_format='dd-Mon-rrrr hh24:mi:ss';
+
+CREATE TABLE agent (agentID number GENERATED ALWAYS as IDENTITY, agentName varchar2(20), phone varchar2(10));
+
+													INSERT INTO agent(agentName, phone) VALUES ('Sai Travels', '9850883667');
+INSERT INTO agent(agentName, phone) VALUES ('Raj Travels', '9922295489');
+INSERT INTO agent(agentName, phone) VALUES ('Prime Travels', '9867889227');
+INSERT INTO agent(agentName) VALUES ('4 Star Travles');
+INSERT INTO agent(agentName, phone) VALUES ('7 Seas Travels', '9869884778');
+INSERT INTO agent(agentName) VALUES ('Abhinav Travels');
 
 CREATE TABLE licence (
   ID NUMBER PRIMARY KEY,
