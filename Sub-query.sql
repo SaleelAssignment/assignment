@@ -42,8 +42,11 @@ select * from emp where job in (select job from emp group by job having count(*)
  
 
  ---------------------- EXISTS------------------------------------------------
--- Display deptno where not employee are working.
+-- Display deptno where no employee are working.
 select * from dept where not exists (select True from emp where dept.deptno = emp.deptno);
+
+-- Display the agent who have issued the licence.
+select * from agent where exists (select True from licence where agent.agentid = licence.agentID);
 
 -- Display all employees who are having any type of cards.
 select * from emp where exists (select * from emp_cards where emp.empno = emp_cards.empno);

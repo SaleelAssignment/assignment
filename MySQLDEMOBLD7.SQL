@@ -63,6 +63,8 @@ DROP TABLE IF EXISTS blog;
 DROP TABLE IF EXISTS fifa;
 DROP TABLE IF EXISTS agent;
 DROP TABLE IF EXISTS licence;
+DROP TABLE IF EXISTS client;
+
 DROP TABLE If EXISTS mass_table;
 DROP TABLE If EXISTS runners;
 DROP TABLE If EXISTS races;
@@ -1832,3 +1834,11 @@ UPDATE emp_phone SET number = '7132300235' WHERE (ID = '21');
 UPDATE emp_phone SET number = '7132387250' WHERE (ID = '23');
 UPDATE emp_phone SET number = '7132398039' WHERE (ID = '22');
 UPDATE emp_phone SET number = '7032306752' WHERE (ID = '5');
+
+
+create table client (clientID int, clientName varchar(10), city varchar(10)) as select cnum clientID, cname clientName, city from customers;
+
+set @cnt :=0;
+update client set clientId = @cnt := @cnt + 1;
+
+insert into client values (10, 'Omkar','Pune'),  (11, 'Sumit', 'Baroda'), (12, 'Martin', 'Rome'), (13, 'Smith', 'Rome'), (14, 'Vasant', 'Pune'), (15, 'ABC','Pune'),  (16, 'PQR', 'Baroda'), (17, 'XYZ', 'Rome');
