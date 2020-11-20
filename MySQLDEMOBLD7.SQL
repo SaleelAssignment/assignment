@@ -64,12 +64,51 @@ DROP TABLE IF EXISTS fifa;
 DROP TABLE IF EXISTS agent;
 DROP TABLE IF EXISTS licence;
 DROP TABLE IF EXISTS client;
+DROP TABLE IF EXISTS books;
+DROP TABLE IF EXISTS newbooks;
 
 DROP TABLE If EXISTS mass_table;
 DROP TABLE If EXISTS runners;
 DROP TABLE If EXISTS races;
 DROP TABLE If EXISTS revenue;
 DROP VIEW IF EXISTS SALES;
+
+
+CREATE TABLE books (bookID int PRIMARY KEY, 
+bookName varchar(45), 
+Type varchar(45), 
+Cost int);
+
+INSERT INTO books VALUES(1, 'C', 'PDF File', '1200');
+INSERT INTO books VALUES(2, 'C++', 'Word File', '1000');
+INSERT INTO books VALUES(3, 'DS', 'Hardcover', '950');
+INSERT INTO books VALUES(4, 'MySQL', 'Paperback', '1400');
+INSERT INTO books VALUES(5, 'OSC', 'Paperback', '1225');
+INSERT INTO books VALUES(6, 'HTML', 'PDF File', '650');
+INSERT INTO books VALUES(7, 'JavaScript', 'Paperback', '700');
+INSERT INTO books VALUES(8, 'ASDM', 'PDF File', '500');
+INSERT INTO books VALUES(9, '.NET', 'Hardcover', '2500');
+INSERT INTO books VALUES(10, 'Core Java', 'PDF File', '1500');
+INSERT INTO books VALUES(11, 'Adv. Java', 'Hardcover', '1800');
+
+CREATE TABLE newbooks (bookID int PRIMARY KEY, 
+bookName varchar(45), 
+Type varchar(45), 
+Cost int);
+
+INSERT INTO newbooks VALUES (1, 'JavaScript', 'Paperback', '700');
+INSERT INTO newbooks VALUES (2, 'ASDM', 'PDF File', '500');
+INSERT INTO newbooks VALUES (3, '.NET', 'Hardcover', '2500');
+INSERT INTO newbooks VALUES (4, 'Core Java', 'PDF File', '1500');
+INSERT INTO newbooks VALUES (5, 'Adv. Java', 'Hardcover', '1800');
+INSERT INTO newbooks VALUES (6, 'Oracle', 'PDF File', '1200');
+INSERT INTO newbooks VALUES (7, 'hBase', 'Word File', '1000');
+INSERT INTO newbooks VALUES (8, 'Node', 'Hardcover', '950');
+INSERT INTO newbooks VALUES (9, 'Pig', 'Paperback', '1400');
+INSERT INTO newbooks VALUES (10,'Python', 'Paperback', '1225');
+INSERT INTO newbooks VALUES (11,'Hadoop', 'PDF File', '650');
+
+
 
 CREATE TABLE runners (id int, name varchar(20));
 INSERT INTO runners values(1, 'John Doe');
