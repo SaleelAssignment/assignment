@@ -609,7 +609,7 @@ insert into DUPLICATE values (10, 'SALES', 'PUNE', 1), (20, 'PURCHASE','BARODA',
 
 
  CREATE TABLE COALESCE
-  (    PID INT,
+  (    PID INT primary key,
        PNAME varchar(45),
        APRICE INT,
        SPRICE INT,
@@ -618,9 +618,10 @@ insert into DUPLICATE values (10, 'SALES', 'PUNE', 1), (20, 'PURCHASE','BARODA',
        SOUTH varchar(5),
        EAST varchar(5),
        WEST varchar(5),
-       BPHONE INT,
-       CPHONE INT,
-       HPHONE INT
+	   primaryPhone int,
+       BPHONE BIGINT(12),
+       CPHONE BIGINT(12),
+       HPHONE BIGINT(12)
   );
 
 INSERT INTO COALESCE (PID, PNAME, SPRICE, NORTH, BPHONE) VALUES ('1001', 'Samsung Galaxy On7 (Gold, 8 GB)', '10975', 'Y', '111');
@@ -642,6 +643,43 @@ INSERT INTO COALESCE (PID, PNAME, DPRICE, BPHONE, CPHONE) VALUES ('1016', 'Letv 
 INSERT INTO COALESCE (PID, PNAME, SPRICE, SOUTH, WEST, HPHONE) VALUES ('1017', 'Letv Le 1S (Gold, 32 GB)', '16000', 'Y', 'Y', '55667');
 INSERT INTO COALESCE (PID, PNAME, APRICE, EAST, WEST, HPHONE) VALUES ('1018', 'Letv Le 1S (Black, 16 GB)', '13450', 'Y', 'Y', '7763');
 INSERT INTO COALESCE (PID, PNAME, SPRICE, EAST) VALUES ('1019', 'Letv Le 1S (White, 32 GB)', '12342', 'Y');
+
+
+UPDATE coalesce SET `BPHONE` = '9922059378' WHERE (`PID` = '1001');
+UPDATE coalesce SET `CPHONE` = '9850883662' WHERE (`PID` = '1002');
+UPDATE coalesce SET `HPHONE` = '9750993114' WHERE (`PID` = '1003');
+UPDATE coalesce SET `BPHONE` = '9799471220', `HPHONE` = '9860123442' WHERE (`PID` = '1004');
+UPDATE coalesce SET `CPHONE` = '7700754312' WHERE (`PID` = '1005');
+UPDATE coalesce SET `HPHONE` = '9850990887' WHERE (`PID` = '1006');
+UPDATE coalesce SET `BPHONE` = '9850990889', `HPHONE` = '9850112331' WHERE (`PID` = '1007');
+UPDATE coalesce SET `BPHONE` = '9850008776' WHERE (`PID` = '1009');
+UPDATE coalesce SET `HPHONE` = '9850001001' WHERE (`PID` = '1010');
+UPDATE coalesce SET `BPHONE` = '9850000111', `CPHONE` = '9850000112', `HPHONE` = '9850000113' WHERE (`PID` = '1011');
+UPDATE coalesce SET `CPHONE` = '9850000113' WHERE (`PID` = '1014');
+UPDATE coalesce SET `BPHONE` = '9850000114', `CPHONE` = '9850000115' WHERE (`PID` = '1016');
+UPDATE coalesce SET `HPHONE` = '9850000116' WHERE (`PID` = '1017');
+UPDATE coalesce SET `HPHONE` = '9850000117' WHERE (`PID` = '1018');
+
+UPDATE coalesce SET `primaryPhone` = '1' WHERE (`PID` = '1001');
+UPDATE coalesce SET `primaryPhone` = '2' WHERE (`PID` = '1002');
+UPDATE coalesce SET `primaryPhone` = '1' WHERE (`PID` = '1003');
+UPDATE coalesce SET `primaryPhone` = '3' WHERE (`PID` = '1004');
+UPDATE coalesce SET `primaryPhone` = '2' WHERE (`PID` = '1005');
+UPDATE coalesce SET `primaryPhone` = '3' WHERE (`PID` = '1006');
+UPDATE coalesce SET `primaryPhone` = '1' WHERE (`PID` = '1007');
+UPDATE coalesce SET `primaryPhone` = '1' WHERE (`PID` = '1008');
+UPDATE coalesce SET `primaryPhone` = '2' WHERE (`PID` = '1009');
+UPDATE coalesce SET `primaryPhone` = '1' WHERE (`PID` = '1010');
+UPDATE coalesce SET `primaryPhone` = '2' WHERE (`PID` = '1011');
+UPDATE coalesce SET `primaryPhone` = '3' WHERE (`PID` = '1012');
+UPDATE coalesce SET `primaryPhone` = '2' WHERE (`PID` = '1013');
+UPDATE coalesce SET `primaryPhone` = '2' WHERE (`PID` = '1014');
+UPDATE coalesce SET `primaryPhone` = '1' WHERE (`PID` = '1015');
+UPDATE coalesce SET `primaryPhone` = '2' WHERE (`PID` = '1016');
+UPDATE coalesce SET `primaryPhone` = '3' WHERE (`PID` = '1017');
+UPDATE coalesce SET `primaryPhone` = '2' WHERE (`PID` = '1018');
+UPDATE coalesce SET `primaryPhone` = '1' WHERE (`PID` = '1019');
+
 
 create table NEAREST (c1 INT, c2 varchar(10), c3 INT);
 
