@@ -1,0 +1,82 @@
+Q1. Execute the following sql statements.
+
+drop table if exists item;
+drop table if exists item_ordered;
+
+create table item (itemID int, itemName varchar(10));
+
+insert into item values(1, 'NoteBook');
+insert into item values(2, 'Mouse');
+insert into item values(3, 'Sugar');
+insert into item values(4, 'Coffee');
+
+create table item_ordered(orderID int, itemID int, orderDate date, orderTime time, qty int);
+
+Insert data in item_ordered(orderID, itemID, and qty) table, write a trigget to check weather the entered itemID is presend in item table, if itemID is not present in the item table then display message "Item not found in item table!" or else the record must be inseerted in item_ordered table.
+
+Note:- orderDate and orderTime must be systemDate and systemTime.
+
+Solution  - 
+
+drop trigger if exists insert_in_item_ordered;
+delimiter $$
+
+create trigger insert_in_item_ordered before insert on item_ordered for each row
+begin
+	declare x int;
+	set new.orderDate := current_date();
+	set new.orderTime := current_time();
+	
+	select itemID into x from item where itemID = new.itemID;
+	if x is null then
+	   signal sqlstate '42000' set message_text = "Item not found in item table!";
+	end if;
+end $$
+
+delimiter ;
+
+-------------------------------------------------------------------------------------
+
+Q2. Execute the following sql statements.
+
+drop table if exists customer_Account;
+create table customer_Account(accountID varchar(20), customerName varchar(20), account_Type varchar(20));
+
+
+Insert data in customer_Account(customerName, and account_Type) table, write a trigget to autoIncrement accountID, if account_Type is "saving' then accountID must be 'S/A-1' and if account_Type is "current" then accountID must be 'C/A-1', if the account_Type is other than "saving" and "current" then print message "Invalid Account Type!"
+
+
+Solution  - 
+
+drop trigger if exists customer_AccountID;
+delimiter $$
+
+create trigger customer_AccountID before insert on customer_account for each row
+begin
+	declare x int;
+	
+	select max(cast(substr(accountID, 5) AS UNSIGNED)) + 1 into x from customer_account where account_Type = new.account_Type;
+	
+	if x is null then
+		if new.account_Type = 'saving' then
+			set new.accountID = concat('S/A-', 1);
+		ELSEIF new.account_Type = 'current' then
+			set new.accountID = concat('C/A-', 1);
+		else
+			signal sqlstate '42000' set message_text = "Invalid Account Type!";
+		end if;
+	else
+		if new.account_Type = 'saving' then
+			set new.accountID = concat('S/A-', x);
+		else
+			set new.accountID = concat('C/A-', x);
+			end if;
+	end if;
+end $$
+
+delimiter ;
+
+
+
+
+
