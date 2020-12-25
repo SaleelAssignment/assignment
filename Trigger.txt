@@ -35,15 +35,15 @@ end $$
 
 delimiter ;
 
--------------------------------------------------------------------------------------
+------------------------------------------ BANK ----------------------------------------------------------------------
 
 Q2. Execute the following sql statements.
 
 drop table if exists customer_Account;
-create table customer_Account(accountID varchar(20), customerName varchar(20), account_Type varchar(20));
+create table customer_Account(accountID varchar(20), customerName varchar(20), account_Type varchar(20), openDate date, phone_number varchar(12));
 
 
-Insert data in customer_Account(customerName, and account_Type) table, write a trigget to autoIncrement accountID, if account_Type is "saving' then accountID must be 'S/A-1' and if account_Type is "current" then accountID must be 'C/A-1', if the account_Type is other than "saving" and "current" then print message "Invalid Account Type!"
+Insert data in customer_Account(customerName, account_Type, openDate, and phone_number) table, write a trigget to autoIncrement accountID, if account_Type is "saving' then accountID must be 'S/A-1' and if account_Type is "current" then accountID must be 'C/A-1', if the account_Type is other than "saving" and "current" then raise an error and print message "Invalid Account Type!" or else increment accountID by 1 and save.
 
 
 Solution  - 
@@ -76,7 +76,63 @@ end $$
 
 delimiter ;
 
+----------------------------------------------------------------------------------------------------------------
 
+Q3. Write a trigger, if we insert phone_number of the customer (for e.g. 9850884228) then is should store as 9850xxxxxx in the customer_account table. 
+
+Solution  - 
+
+drop trigger if exists customer_phone;
+delimiter $$
+
+create trigger customer_phone before insert on customer_account for each row
+begin
+	SET new.phone_number := rpad(left(new.phone_number, 4), 10, 'x');
+	
+end $$
+
+delimiter ;
+----------------------------------------------------------------------------------------------------------------
+
+Q4.  Execute the following sql statements.
+
+drop table if exists credit_card;
+create table credit_card(accountID varchar(20), issueDate date, pin int, isactive bool);
+
+insert data in credit_card table, writer a trigger to validate accountID, if accountID is not presend in customer_Account table then raise an error and print 'Invalid Account Number, card cannot be issued! "Contact customer care!"' or else insert data in credit_card table.
+
+
+Solution  - 
+
+drop trigger if exists issue_card;
+delimiter $$
+
+create trigger issue_card before insert on credit_card for each row
+begin
+	declare x varchar(20);
+	select  accountID into x from customer_Account where accountID = new.accountID;
+	if x is null then
+		signal sqlstate '42000' set message_text = 'Invalid Account Number, card cannot be issued! "Contact customer care!"';
+	end if;
+end $$
+
+delimiter ;
+
+----------------------------------------------------------------------------------------------------------------
+
+Q5. Write a stored procedure (named showCustomerAccount) than piints all customer customer_account details.
+
+Solution  - 
+
+drop procedure if exists showCustomerAccount;
+delimiter $$
+
+create procedure showCustomerAccount()
+begin
+	select * from customer_Account;
+end $$
+
+delimiter ;
 
 
 
