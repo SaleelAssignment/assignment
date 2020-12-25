@@ -92,9 +92,29 @@ begin
 end $$
 
 delimiter ;
+
 ----------------------------------------------------------------------------------------------------------------
 
-Q4.  Execute the following sql statements.
+Q4. Write a trigger, if we insert future date it should raise an exception and print  'Invalid Opening Date!' message.
+
+Note:- openDate must be till today only.
+
+Solution  - 
+
+drop trigger if exists open_date;
+delimiter $$
+
+create trigger open_date before insert on customer_account for each row
+begin
+	if new.opendate > curDate() then
+		signal sqlstate '42000' SET message_text = 'Invalid Opening Date!';
+	end if;
+end $$
+
+delimiter ;
+----------------------------------------------------------------------------------------------------------------
+
+Q5.  Execute the following sql statements.
 
 drop table if exists credit_card;
 create table credit_card(accountID varchar(20), issueDate date, pin int, isactive bool);
@@ -120,7 +140,7 @@ delimiter ;
 
 ----------------------------------------------------------------------------------------------------------------
 
-Q5. Write a stored procedure (named showCustomerAccount) than piints all customer customer_account details.
+Q6. Write a stored procedure (named showCustomerAccount) than piints all customer customer_account details.
 
 Solution  - 
 
@@ -134,5 +154,5 @@ end $$
 
 delimiter ;
 
-
+----------------------------------------------------------------------------------------------------------------
 

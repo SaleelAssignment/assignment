@@ -49,7 +49,6 @@ end $$
 delimiter ;
 
 ------------------------------------------------------------------------------------------------------
-*/
 
 drop trigger if exists customer_phone;
 delimiter $$
@@ -57,26 +56,25 @@ delimiter $$
 create trigger customer_phone before insert on customer_account for each row
 begin
 	SET new.phone_number := rpad(left(new.phone_number, 4), 10, 'x');
-	
 end $$
 
 delimiter ;
 
+------------------------------------------------------------------------------------------------------
 
-/*
-drop trigger if exists issue_card;
+drop trigger if exists open_date;
 delimiter $$
 
-create trigger issue_card before insert on credit_card for each row
+create trigger open_date before insert on customer_account for each row
 begin
-	declare x varchar(20);
-	select  accountID into x from customer_Account where accountID = new.accountID;
-	if x is null then
-		signal sqlstate '42000' set message_text = 'Invalid Account Number, card cannot be issued! "Contact customer care!"';
+	if new.opendate > curDate() then
+		signal sqlstate '42000' SET message_text = 'Invalid Opening Date!';
 	end if;
 end $$
 
 delimiter ;
+
+/*
 
 ------------------------------------------------------------------------------------------------------
 
@@ -89,4 +87,180 @@ begin
 end $$
 
 delimiter ;
+
+------------------------------------------------------------------------------------------------------
 */ 
+
+drop trigger if exists lock_issue_card;
+delimiter $$
+
+create trigger lock_issue_card before insert on credit_card for each row
+begin
+	if @TRIGGER_DISABLED is False or cast(@TRIGGER_DISABLED as char) is null then
+		set @TRIGGER_DISABLED := True;
+		signal sqlstate '42000' set message_text = 'You cannot insert data in issue_card table';
+	end if;
+end $$
+delimiter ;
+
+
+drop trigger if exists issue_card;
+delimiter $$
+
+create trigger issue_card before insert on credit_card for each row
+begin
+	declare x varchar(20);
+	if @TRIGGER_DISABLED is True then
+		set @TRIGGER_DISABLED := False;
+		select  accountID into x from customer_Account where accountID = new.accountID;
+		if x is null then
+		   signal sqlstate '42000' set message_text = 'Invalid Account Number, card cannot be issued! "Contact customer care!"';
+		end if;
+	end if;
+end $$   
+delimiter ;
+
+
+drop procedure if exists issueCard;
+delimiter $$
+
+create procedure issueCard(in _accountID varchar(20), _issueDate date, _pin int, _isactive bool)
+begin
+	if @TRIGGER_DISABLED is True then 
+		insert into credit_card values(_accountID, _issueDate, _pin, _isactive);
+	end if;
+end $$
+
+delimiter ;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
