@@ -3,12 +3,15 @@ Q1. Execute the following sql statements.
 drop table if exists item;
 drop table if exists item_ordered;
 
-create table item (itemID int, itemName varchar(10));
+create table item (itemID int, itemName varchar(20));
 
-insert into item values(1, 'NoteBook');
-insert into item values(2, 'Mouse');
-insert into item values(3, 'Sugar');
-insert into item values(4, 'Coffee');
+insert into item values(1, 'Sports Shoes');
+insert into item values(2, 'Casual Shoes');
+insert into item values(3, 'T-shirts');
+insert into item values(4, 'Jeans');
+insert into item values(5, 'Jackets');
+insert into item values(6, 'Sweaters');
+insert into item values(7, 'Watches');
 
 create table item_ordered(orderID int, itemID int, orderDate date, orderTime time, qty int);
 
@@ -35,9 +38,77 @@ end $$
 
 delimiter ;
 
------------------------------------------- BANK ----------------------------------------------------------------------
 
-Q2. Execute the following sql statements.
+----------------------------------------------------------------------------------------------------------------
+
+Q2. Write a trigger, to check itemID present or not, if the itemId is present raise an error "itemID already present, cannot insert duplicate itemID."
+
+
+Solution  - 
+
+drop trigger if exists itemID_primaryKey;
+delimiter $$
+
+create trigger itemID_primaryKey after insert on item for each row
+begin
+	declare x int;
+	select itemId into x from item where itemId = new.itemID;
+	if x is null then
+		signal sqlstate '42000' set message_text = 'itemID already present, cannot insert duplicate itemID.';
+	end if;
+end $$   
+delimiter ;
+----------------------------------------------------------------------------------------------------------------
+
+Q3. Write a trigget, if anyone tries to change item name, it should raise an error and print a message "Product name is read-only and it can not be changed."
+
+Solution  - 
+
+drop trigger if exists readOnlyItemName;
+delimiter $$
+
+create trigger readOnlyItemName after update on item for each row
+begin
+	signal sqlstate '42000' set message_text = 'Product name is read-only and it can not be changed.';
+end $$   
+delimiter ;
+
+----------------------------------------------------------------------------------------------------------------
+
+Q4. Execute the following sql statements.
+
+drop table if exists warehouse;
+CREATE TABLE warehouse (warehouse_id int, warehouse_name varchar(255), channel_id int);
+
+insert into warehouse values (143, 'AC Warehouse', 1);
+insert into warehouse values (156, 'National', 2);
+insert into warehouse values (231, 'Global', 3);
+insert into warehouse values (254, 'NON-STOP', 2);
+insert into warehouse values (321, 'Migrant System', 2);
+insert into warehouse values (464, 'Blaze', 1);
+
+Solution  - 
+
+drop trigger if exists warehouse;
+
+----------------------------------------------------------------------------------------------------------------
+
+Q5. Execute the following sql statements.
+
+DROP TABLE IF EXISTS item_in_warehouse;
+CREATE TABLE item_in_warehouse(id INT PRIMARY KEY AUTO_INCREMENT, item_id INT, warhouse_id INT, minimum_stock INT, ROL INT, total_stock INT);
+
+Insert data only in (item_id, warhouse_id, and total_stock ) Write a trigger to calculate minimum_stock, and ROL. But berofe you Insert data in item_in_warehouse table, you must check for valid (item_id, and warhouse_id )columns in (item, and warehouse) tablse.
+
+a) minimum_stock must be 50% of total_stock, and
+b) ROL must be 25% of minimum_stock
+
+drop trigger if exists insert_item_in_warehouse;
+
+
+********************************************* BANK ****************************************************************
+
+Q1. Execute the following sql statements.
 
 drop table if exists customer_Account;
 create table customer_Account(accountID varchar(20), customerName varchar(20), account_Type varchar(20), openDate date, phone_number varchar(12));
@@ -78,7 +149,7 @@ delimiter ;
 
 ----------------------------------------------------------------------------------------------------------------
 
-Q3. Write a trigger, if we insert phone_number of the customer (for e.g. 9850884228) then is should store as 9850xxxxxx in the customer_account table. 
+Q2. Write a trigger, if we insert phone_number of the customer (for e.g. 9850884228) then is should store as 9850xxxxxx in the customer_account table. 
 
 Solution  - 
 
@@ -95,7 +166,7 @@ delimiter ;
 
 ----------------------------------------------------------------------------------------------------------------
 
-Q4. Write a trigger, if we insert future date it should raise an exception and print  'Invalid Opening Date!' message.
+Q3. Write a trigger, if we insert future date it should raise an exception and print  'Invalid Opening Date!' message.
 
 Note:- openDate must be till today only.
 
@@ -114,7 +185,7 @@ end $$
 delimiter ;
 ----------------------------------------------------------------------------------------------------------------
 
-Q5.  Execute the following sql statements.
+Q4.  Execute the following sql statements.
 
 drop table if exists credit_card;
 create table credit_card(accountID varchar(20), issueDate date, pin int, isactive bool);
@@ -140,7 +211,7 @@ delimiter ;
 
 ----------------------------------------------------------------------------------------------------------------
 
-Q6. Write a stored procedure (named showCustomerAccount) than piints all customer customer_account details.
+Q5. Write a stored procedure (named showCustomerAccount) than piints all customer customer_account details.
 
 Solution  - 
 

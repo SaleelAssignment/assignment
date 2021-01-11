@@ -17,8 +17,32 @@ end $$
 
 delimiter ;
 
+------------------------------------------------------------------------------------------------------
+
+drop trigger if exists readOnlyItemName;
+delimiter $$
+
+create trigger readOnlyItemName after update on item for each row
+begin
+	signal sqlstate '42000' set message_text = 'Product name is read-only and it can not be changed.';
+end $$   
+delimiter ;
 
 ------------------------------------------------------------------------------------------------------
+
+drop trigger if exists itemID_primaryKey;
+delimiter $$
+
+create trigger itemID_primaryKey after insert on item for each row
+begin
+	declare x int;
+	select itemId into x from item where itemId = new.itemID;
+	if x is null then
+		signal sqlstate '42000' set message_text = 'itemID already present, cannot insert duplicate itemID.';
+	end if;
+end $$   
+delimiter ;
+
 
 drop trigger if exists customer_AccountID;
 delimiter $$
@@ -89,7 +113,6 @@ end $$
 delimiter ;
 
 ------------------------------------------------------------------------------------------------------
-*/ 
 
 drop trigger if exists lock_issue_card;
 delimiter $$
@@ -133,8 +156,9 @@ end $$
 
 delimiter ;
 
-
-
+------------------------------------------------------------------------------------------------------
+  
+ */
 
 
 
