@@ -93,17 +93,55 @@ drop trigger if exists warehouse;
 
 ----------------------------------------------------------------------------------------------------------------
 
+
 Q5. Execute the following sql statements.
 
 DROP TABLE IF EXISTS item_in_warehouse;
-CREATE TABLE item_in_warehouse(id INT PRIMARY KEY AUTO_INCREMENT, item_id INT, warhouse_id INT, minimum_stock INT, ROL INT, total_stock INT);
 
-Insert data only in (item_id, warhouse_id, and total_stock ) Write a trigger to calculate minimum_stock, and ROL. But berofe you Insert data in item_in_warehouse table, you must check for valid (item_id, and warhouse_id )columns in (item, and warehouse) tablse.
+CREATE TABLE item_in_warehouse(id INT PRIMARY KEY AUTO_INCREMENT, item_id INT, warehouse_id INT, minimum_stock INT, ROL INT, total_stock INT);
+
+Insert data only in (item_id, warhouse_id, and total_stock ) Write a trigger to check weather item_id and warehouse_id is present in item and warehouse table, if not give appropriate message.
+
+
+Solution  - 
+
+drop trigger if exists insert_item_in_warehouse;
+delimiter $$
+
+create trigger insert_item_in_warehouse before insert on item_in_warehouse for each row
+begin
+	declare itemFound bool default True;
+	declare warehouseFound bool default True;
+	
+	select False into itemFound from item where itemid = new.item_id;
+	select False into warehouseFound from warehouse where warehouse_id = new.warehouse_id;
+
+	if itemFound then
+		signal sqlstate '42000' set message_text = 'Item not found!';
+	end if;
+	
+	if warehouseFound then
+		signal sqlstate '42000' set message_text = 'Warehouse not found! ';
+	end if;
+	
+end $$   
+delimiter ;
+
+----------------------------------------------------------------------------------------------------------------
+
+Q6. Execute the following sql statements.
+
+DROP TABLE IF EXISTS item_in_warehouse;
+CREATE TABLE item_in_warehouse(id INT PRIMARY KEY AUTO_INCREMENT, item_id INT, warehouse_id INT, minimum_stock INT, ROL INT, total_stock INT);
+
+Insert data only in (item_id, warhouse_id, and total_stock ) Write a trigger to calculate minimum_stock, and ROL. But berofe you Insert data in item_in_warehouse table, you must check for valid (item_id, and warehouse_id )columns in (item, and warehouse) tablse.
 
 a) minimum_stock must be 50% of total_stock, and
 b) ROL must be 25% of minimum_stock
 
-drop trigger if exists insert_item_in_warehouse;
+Solution  - 
+
+
 
 
 ********************************************* BANK ****************************************************************

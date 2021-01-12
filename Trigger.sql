@@ -30,6 +30,44 @@ delimiter ;
 
 ------------------------------------------------------------------------------------------------------
 
+drop trigger if exists insert_item_in_warehouse;
+delimiter $$
+
+create trigger insert_item_in_warehouse before insert on item_in_warehouse for each row
+begin
+	declare itemFound bool default True;
+	declare warehouseFound bool default True;
+	
+	select False into itemFound from item where itemid = new.item_id;
+	select False into warehouseFound from warehouse where warehouse_id = new.warehouse_id;
+
+	if itemFound then
+		signal sqlstate '42000' set message_text = 'Item not found!';
+	end if;
+	
+	if warehouseFound then
+		signal sqlstate '42000' set message_text = 'Warehouse not found! ';
+	end if;
+	
+end $$   
+delimiter ;
+
+------------------------------------------------------------------------------------------------------
+*/
+
+drop trigger if exists calculate_minimum_stock_ROL;
+
+delimiter $$
+
+create trigger calculate_minimum_stock_ROL before insert on item_in_warehouse for each row
+begin
+	
+	
+end $$   
+delimiter ;
+/*
+********************************************* BANK ****************************************************************
+
 drop trigger if exists itemID_primaryKey;
 delimiter $$
 

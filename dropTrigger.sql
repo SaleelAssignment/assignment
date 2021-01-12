@@ -3,6 +3,7 @@ drop trigger if exists itemID_primaryKey;
 drop trigger if exists readOnlyItemName;
 drop trigger if exists warehouse;
 drop trigger if exists insert_item_in_warehouse;
+drop trigger if exists calculate_minimum_stock_ROL;
 
 drop trigger if exists customer_AccountID;
 drop trigger if exists customer_phone;
