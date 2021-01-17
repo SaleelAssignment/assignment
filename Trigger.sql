@@ -35,17 +35,17 @@ delimiter $$
 
 create trigger insert_item_in_warehouse before insert on item_in_warehouse for each row
 begin
-	declare itemFound bool default True;
-	declare warehouseFound bool default True;
+	declare itemNotFound bool default True;
+	declare warehouseNotFound bool default True;
 	
-	select False into itemFound from item where itemid = new.item_id;
-	select False into warehouseFound from warehouse where warehouse_id = new.warehouse_id;
+	select False into itemNotFound from item where itemid = new.item_id;
+	select False into warehouseNotFound from warehouse where warehouse_id = new.warehouse_id;
 
-	if itemFound then
+	if itemNotFound then
 		signal sqlstate '42000' set message_text = 'Item not found!';
 	end if;
 	
-	if warehouseFound then
+	if warehouseNotFound then
 		signal sqlstate '42000' set message_text = 'Warehouse not found! ';
 	end if;
 	
@@ -53,7 +53,6 @@ end $$
 delimiter ;
 
 ------------------------------------------------------------------------------------------------------
-*/
 
 drop trigger if exists calculate_minimum_stock_ROL;
 
@@ -61,11 +60,18 @@ delimiter $$
 
 create trigger calculate_minimum_stock_ROL before insert on item_in_warehouse for each row
 begin
+	declare _minimum_stock int;
+	declare _ROL int;
 	
+	set _minimum_stock := NEW.stock / 2;
+	set _ROL := _minimum_stock * .25;
+	set NEW.minimum_stock := _minimum_stock;
+	set NEW.ROL := _ROL;
 	
 end $$   
 delimiter ;
-/*
+
+
 ********************************************* BANK ****************************************************************
 
 drop trigger if exists itemID_primaryKey;

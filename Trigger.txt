@@ -110,17 +110,17 @@ delimiter $$
 
 create trigger insert_item_in_warehouse before insert on item_in_warehouse for each row
 begin
-	declare itemFound bool default True;
-	declare warehouseFound bool default True;
+	declare itemNotFound bool default True;
+	declare warehouseNotFound bool default True;
 	
-	select False into itemFound from item where itemid = new.item_id;
-	select False into warehouseFound from warehouse where warehouse_id = new.warehouse_id;
+	select False into itemNotFound from item where itemid = new.item_id;
+	select False into warehouseNotFound from warehouse where warehouse_id = new.warehouse_id;
 
-	if itemFound then
+	if itemNotFound then
 		signal sqlstate '42000' set message_text = 'Item not found!';
 	end if;
 	
-	if warehouseFound then
+	if warehouseNotFound then
 		signal sqlstate '42000' set message_text = 'Warehouse not found! ';
 	end if;
 	
@@ -134,14 +134,28 @@ Q6. Execute the following sql statements.
 DROP TABLE IF EXISTS item_in_warehouse;
 CREATE TABLE item_in_warehouse(id INT PRIMARY KEY AUTO_INCREMENT, item_id INT, warehouse_id INT, minimum_stock INT, ROL INT, total_stock INT);
 
-Insert data only in (item_id, warhouse_id, and total_stock ) Write a trigger to calculate minimum_stock, and ROL. But berofe you Insert data in item_in_warehouse table, you must check for valid (item_id, and warehouse_id )columns in (item, and warehouse) tablse.
-
+Insert data only in (item_id, warhouse_id, and total_stock ) Write a trigger to calculate minimum_stock, and ROL.
 a) minimum_stock must be 50% of total_stock, and
 b) ROL must be 25% of minimum_stock
 
 Solution  - 
 
+drop trigger if exists calculate_minimum_stock_ROL;
 
+delimiter $$
+
+create trigger calculate_minimum_stock_ROL before insert on item_in_warehouse for each row
+begin
+	declare _minimum_stock int;
+	declare _ROL int;
+	
+	set _minimum_stock := NEW.stock / 2;
+	set _ROL := _minimum_stock * .25;
+	set NEW.minimum_stock := _minimum_stock;
+	set NEW.ROL := _ROL;
+	
+end $$   
+delimiter ;
 
 
 ********************************************* BANK ****************************************************************
