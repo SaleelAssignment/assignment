@@ -74,14 +74,73 @@ DROP TABLE If EXISTS races;
 DROP TABLE If EXISTS revenue;
 DROP TABLE If EXISTS food;
 DROP TABLE If EXISTS company;
+DROP TABLE If EXISTS candidate;
+DROP TABLE If EXISTS votes;
+DROP TABLE If EXISTS points;
+
+
 DROP VIEW IF EXISTS SALES;
 
+create table points (
+  c1 INT
+);
 
+INSERT INTO points VALUES(1),(2),(-1),(3),(-2),(1);
+
+
+CREATE TABLE candidate (
+  id INT PRIMARY KEY,
+  name VARCHAR(45) NULL,
+  totalVotes INT NULL
+);
+
+INSERT INTO candidate (id, name) VALUES (1, 'Sanjay');
+INSERT INTO candidate (id, name) VALUES (2, 'Sumeet');
+INSERT INTO candidate (id, name) VALUES (3, 'Saleel');
+INSERT INTO candidate (id, name) VALUES (4, 'Sagar');
+
+CREATE TABLE votes (
+  id INT PRIMARY KEY AUTO_INCREMENT,
+  candidateID INT NULL
+);
+  
+  
+INSERT INTO votes VALUES ('1', '4');
+INSERT INTO votes VALUES ('2', '3');
+INSERT INTO votes VALUES ('3', '1');
+INSERT INTO votes VALUES ('4', '2');
+INSERT INTO votes VALUES ('5', '2');
+INSERT INTO votes VALUES ('6', '1');
+INSERT INTO votes VALUES ('7', '2');
+INSERT INTO votes VALUES ('8', '3');
+INSERT INTO votes VALUES ('9', '1');
+INSERT INTO votes VALUES ('10', '2');
+INSERT INTO votes VALUES ('11', '1');
+INSERT INTO votes VALUES ('12', '2');
+INSERT INTO votes VALUES ('13', '3');
+INSERT INTO votes VALUES ('14', '1');
+INSERT INTO votes VALUES ('15', '1');
+INSERT INTO votes VALUES ('16', '4');
+INSERT INTO votes VALUES ('17', '2');
+INSERT INTO votes VALUES ('18', '4');
+INSERT INTO votes VALUES ('19', '2');
+INSERT INTO votes VALUES ('20', '1');
+INSERT INTO votes VALUES ('21', '2');
+INSERT INTO votes VALUES ('22', '1');
+INSERT INTO votes VALUES ('23', '3');
+INSERT INTO votes VALUES ('24', '3');
+INSERT INTO votes VALUES ('25', '1');
+INSERT INTO votes VALUES ('26', '1');
+INSERT INTO votes VALUES ('27', '3');
+  
+  
+  
 CREATE TABLE food (
     item_id INT,
     item_name VARCHAR(45),
     item_unit VARCHAR(45),
-    company_id INT  );
+    company_id INT  
+);
 
 CREATE TABLE company (
     company_id INT,
