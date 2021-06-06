@@ -898,7 +898,7 @@ CREATE TABLE EMP (
  HIREDATE            datetime,
  SAL                 INT,
  COMM                INT,
- DEPTNO              INT NOT NULL,
+ DEPTNO              INT,
  BONUSID	         INT,
  `USER NAME`		 varchar(15),
  PWD				 varchar(12),
@@ -946,8 +946,6 @@ UPDATE emp SET phone = '7132300086' WHERE (EMPNO = '7876');
 UPDATE emp SET phone = '7132300042' WHERE (EMPNO = '7900');
 UPDATE emp SET phone = '7132300055' WHERE (EMPNO = '7934');
 UPDATE emp SET phone = '7156567183' WHERE (EMPNO = '7949');
-
-
 
 CREATE TABLE BONUS (
  ID INT PRIMARY KEY,
@@ -2023,3 +2021,11 @@ set @cnt :=0;
 update client set clientId = @cnt := @cnt + 1;
 
 insert into client values (10, 'Omkar','Pune'),  (11, 'Sumit', 'Baroda'), (12, 'Martin', 'Rome'), (13, 'Smith', 'Rome'), (14, 'Vasant', 'Pune'), (15, 'ABC','Pune'),  (16, 'PQR', 'Baroda'), (17, 'XYZ', 'Rome');
+
+
+INSERT INTO emp (EMPNO, ENAME, Job, HIREDATE, SAL, `USER NAME`, PWD, phone, emailID, isActive) VALUES (2001, 'JACK', 'SALESMAN', '1983-02-12 10:45:00', 2378, "Jack and Jill", "jack@2767", '9850884338', 'jack.jill@gmail.com', false);
+INSERT INTO emp (EMPNO, ENAME, Job, HIREDATE, SAL, `USER NAME`, PWD, phone, emailID, isActive) VALUES (2002, 'David', 'SALESMAN', '1983-02-12 10:45:00', 1090, "David kooper", "knight", '9850675438', 'kooper@gmail.com', false);
+INSERT INTO emp (EMPNO, ENAME, Job, HIREDATE, SAL, `USER NAME`, PWD, phone, emailID, isActive) VALUES (2003, 'LEO', 'SALESMAN', '1983-02-12 10:45:00', 1250, "Leo ", "leo165", '9850389870', 'leo.color@gmail.com', false);
+INSERT INTO emp (EMPNO, ENAME, Job, HIREDATE, SAL, `USER NAME`, PWD, phone, emailID, isActive) VALUES (2004, 'MAX', 'SALESMAN', '1983-02-12 10:45:00', 2100, "Max-conn", "max_90_19", '9850556612', 'max.+vt@gmail.com', false);
+INSERT INTO emp (EMPNO, ENAME, Job, HIREDATE, SAL, `USER NAME`, PWD, phone, emailID, isActive) VALUES (2005, 'Roman',  'SALESMAN','1983-02-12 10:45:00', 1700, "Roman-User", "tiger.co.in", '9850223323', 'roman.bolt@gmail.com', false);
+INSERT INTO emp (EMPNO, ENAME, Job, HIREDATE, SAL, `USER NAME`, PWD, phone, emailID, isActive) VALUES (2006, 'JACK', 'SALESMAN', '1983-02-12 10:45:00', 1850, "Jack and Jill", "jack@2767", '9850445578', 'jack.jill@gmail.com', false);
