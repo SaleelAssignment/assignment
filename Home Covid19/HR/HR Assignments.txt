@@ -1,3 +1,9 @@
+DBT Assignment 
+
+--
+-- Assignment
+--
+
 1. Write a query to display the names (first_name, last_name) using alias name “First Name", "Last Name".
 2. Write a query to get unique department ID from employee table..
 3. Write a query to get all employee details from the employee table order by first name, descending.
@@ -30,18 +36,20 @@
 30. Write a query to select all record from employees where last name in 'BLAKE', 'SCOTT', 'KING' and 'FORD'.
 31. Write a query to get the details of the employees where the length of the first name greater than or equal to 8.
 32. Write a query to display leading zeros before maximum and minimum salary.
-33. 
-34. 
-35. 
-36. 
-37. 
-38. 
-39. 
+33. Write a query to get the employee id, email id (discard the last four characters from emailID).
+34. Write a query to find all employees where first names are in upper case.
+35. Write a query to extract the last 4 character of phone numbers.
+36. Write a query to display the first word from those job titles which contains more than one words.
+37. Write a query to display the length of first name for employees where last name contain character 'c' after 2nd position.
+38. Write a query that displays the first name and the length of the first name for all employees whose name starts with the letters 'A', 'J' or 'M'. Give each column an appropriate label. Sort the results by the employees' first names.
+39. Write a query to display the first name and salary for all employees. Format the salary to be 10 characters long, left-padded with the $ symbol. Label the column SALARY.
 40. 
 
- ---------------------------------------------------------------------------------
-  
- -- Solution
+---------------------------------------------------------------------------------
+--
+-- Assignment Solution
+-- 
+
 1. SELECT first_name "First Name",  last_name "Last Name" FROM employees;
 2. SELECT DISTINCT department_id FROM employees;
 3. SELECT * FROM employees ORDER BY first_name DESC;
@@ -73,14 +81,14 @@
 29. SELECT first_name, last_name, salary, salary*.15 PF from employees;
 30. SELECT * FROM employees WHERE last_name IN('JONES', 'BLAKE', 'SCOTT', 'KING', 'FORD');
 31. SELECT * FROM employees WHERE LENGTH(first_name) >= 8;
-32. SELECT job_id,  LPAD( max_salary, 7, '0') ' Max Salary', LPAD( min_salary, 7, '0') ' Min Salary' FROM jobs;
-33. 
-34. 
-35. 
-36. 
-37. 
-38. 
-39. 
+32. SELECT job_id, LPAD( max_salary, 7, '0') ' Max Salary', LPAD( min_salary, 7, '0') ' Min Salary' FROM jobs;
+33. SELECT email, reverse(substr(reverse(email), 5)) from employees;
+34. SELECT * FROM employees WHERE first_name = BINARY UPPER(first_name);
+35. SELECT RIGHT(phone_number, 4) as 'Ph.No.' FROM employees;
+36. SELECT job_title, SUBSTR(job_title,1, INSTR(job_title, ' ')-1) FROM jobs;
+37. SELECT first_name, last_name FROM employees WHERE INSTR(last_name,'C') > 2;
+38. SELECT first_name "Name",LENGTH(first_name) "Length" FROM employees WHERE first_name LIKE 'J%' OR first_name LIKE 'M%' OR first_name LIKE 'A%' ORDER BY first_name ;
+39. SELECT first_name, LPAD(salary, 10, '$') SALARY FROM employees;
 40. 
  
  
