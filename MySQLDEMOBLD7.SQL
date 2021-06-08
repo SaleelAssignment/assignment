@@ -77,9 +77,27 @@ DROP TABLE If EXISTS company;
 DROP TABLE If EXISTS candidate;
 DROP TABLE If EXISTS votes;
 DROP TABLE If EXISTS points;
-
+DROP TABLE If EXISTS jsontable;
 
 DROP VIEW IF EXISTS SALES;
+
+ create table jsontable (id int primary key auto_increment, document json);
+ 
+ insert into jsontable values(default, '{"empid":1020,"ename":"king","address": {"building": "1007", "coord": [-73.856077, 40.848447], "street": "Morris Park Ave", "zipcode": "10462"},"isDocActive": false,"gender": "male","canVote": true, "canDrive":true,"color": ["blue","black"], "fruit": [],"cards": [ { "aadhar":{"aadhar_No" :"93478", "isActive":true}}, {"PAN":{"PAN_No" :"Kinj093", "isActive":false}},{"voter":{"voterID":"Ind03o3", "isActive":true}},{"licence":{"licence-No":"LMV9478","issueDate":"2020-01-01","expireDate":"2040-01-01", "isActive":true}}], "job":"president","mgr":null,"hiredate":{"$date":"1981-11-17T00:00:00.000Z"},"sal":5000,"comm":null,"deptno":10}');
+ 
+ insert into jsontable values(default, '{"empid":1021,"ename":"smith","address": {"building": "469", "coord": [-73.961704, 40.662942], "street": "Flatbush Avenue", "zipcode": "11225"},"isDocActive": false,"gender": "male","canVote": true, "canDrive":true,"color": ["red", "cyan", "gray"], "fruit": ["grapes", "Orange"],"cards": [ { "aadhar":{"aadhar_No" :"43564", "isActive":true}}, {"PAN":{"PAN_No" :"smh838", "isActive":false}},{"voter":{"voterID":"Ind03o3", "isActive":true}},{"licence":{"licence-No":"LMV9478","issueDate":"2020-01-01","expireDate":"2040-01-01", "isActive":true}}],"job":"manager","mgr":1020,"hiredate":{"$date":"1981-05-01T00:00:00.000Z"},"sal":3400,"comm":null,"deptno":10}');
+ 
+ insert into jsontable values(default, '{"empid":1022,"ename":"james","address": {"building": "351", "coord": [-73.98513559999999, 40.7676919], "street": "West   57 Street", "zipcode": "10019"},"isDocActive": true,"gender": "male","canVote": true, "canDrive":true,"color": ["Red","Blue","Green","Yellow"], "fruit": ["Indian Fig"],"cards": [ { "aadhar":{"aadhar_No" :"73826", "isActive":true}}, {"PAN":{"PAN_No" :"Kinj093", "isActive":false}},{"voter":{"voterID":"Ind03o3", "isActive":true}},{"licence":{"licence-No":"LMV9478","issueDate":"2020-01-01","expireDate":"2040-01-01", "isActive":true}}],"job":"manager","mgr":1020,"hiredate":{"$date":"1981-07-09T00:00:00.000Z"},"sal":4700,"comm":null,"deptno":20}');
+ 
+ insert into jsontable values(default, '{"empid":1023,"ename":"jack","address": {"building": "2780", "coord": [-73.98241999999999, 40.579505], "street": "Stillwell Avenue", "zipcode": "11224"},"isDocActive": false,"gender": "male","canVote": true, "canDrive":true,"color": ["Air Force Blue","Apple Green"], "fruit": ["Orange"],"cards": [ { "aadhar":{"aadhar_No" :"12321", "isActive":true}}, {"PAN":{"PAN_No" :"Kinj093", "isActive":false}},{"voter":{"voterID":"Ind03o3", "isActive":true}},{"licence":{"licence-No":"LMV9478","issueDate":"2020-01-01","expireDate":"2040-01-01", "isActive":true}}],"job":"accountant","mgr":1022,"hiredate":{"$date":"1981-04-02T00:00:00.000Z"},"sal":2700,"comm":null,"deptno":30}');
+ 
+ insert into jsontable values(default, '{"empid":1023,"ename":"scott","address": {"building": "97-22", "coord": [-73.8601152, 40.7311739], "street": "63 Road", "zipcode": "11374"},"isDocActive": false,"gender": "male","canVote": true, "canDrive":true,"color": ["Ash Grey", "White"], "fruit": [],"cards": [ { "aadhar":{"aadhar_No" :"93872", "isActive":true}}, {"PAN":{"PAN_No" :"Kinj093", "isActive":false}},{"voter":{"voterID":"Ind03o3", "isActive":true}},{"licence":{"licence-No":"LMV9478","issueDate":"2020-01-01","expireDate":"2040-01-01", "isActive":true}}],"job":"salesman","mgr":1023,"hiredate":{"$date":"1981-09-28T00:00:00.000Z"},"sal":2500,"comm":350,"deptno":30}');
+ 
+ insert into jsontable values(default, '{"empid":1024,"ename":"martin","address": {"building": "8825", "coord": [-73.8803827, 40.7643124], "street": "Astoria Boulevard", "zipcode": "11369"},"isDocActive": true,"gender": "male","canVote": true, "canDrive":true,"color": ["Banana Yellow"], "fruit": [],"cards": [ { "aadhar":{"aadhar_No" :"72877", "isActive":true}}, {"PAN":{"PAN_No" :"Kinj093", "isActive":false}},{"voter":{"voterID":"Ind03o3", "isActive":true}},{"licence":{"licence-No":"LMV9478","issueDate":"2020-01-01","expireDate":"2040-01-01", "isActive":true}}],"job":"salesman","mgr":1023,"hiredate":{"$date":"1981-02-20T00:00:00.000Z"},"sal":2900,"comm":735,"deptno":30}');
+ 
+ insert into jsontable values(default, '{"empid":1025,"ename":"crow","address": {"building": "2206", "coord": [-74.1377286, 40.6119572], "street": "Victory Boulevard", "zipcode": "10314"},"isDocActive": false,"gender": "male","canVote": true, "canDrive":true,"color": ["Apple Green","Ash Grey"], "fruit": [],"cards": [ { "aadhar":{"aadhar_No" :"77876", "isActive":true}}, {"PAN":{"PAN_No" :"Kinj093", "isActive":false}},{"voter":{"voterID":"Ind03o3", "isActive":true}},{"licence":{"licence-No":"LMV9478","issueDate":"2020-01-01","expireDate":"2040-01-01", "isActive":true}}],"job":"salesman","mgr":1023,"hiredate":{"$date":"1981-09-08T00:00:00.000Z"},"sal":3200,"comm":null,"deptno":20}');
+ 
+ insert into jsontable values(default, '{"empid":1026,"ename":"blake","address": {"building": "7114", "coord": [-73.9068506, 40.6199034], "street": "Avenue U", "zipcode": "11234"},"isDocActive": false,"gender": "male","canVote": true, "canDrive":true,"color": ["Brass","Bright Green"], "fruit": [],"cards": [ { "aadhar":{"aadhar_No" :"12321", "isActive":true}}, {"PAN":{"PAN_No" :"Kinj093", "isActive":false}},{"voter":{"voterID":"Ind03o3", "isActive":true}},{"licence":{"licence-No":"LMV9478","issueDate":"2020-01-01","expireDate":"2040-01-01", "isActive":true}}],"job":"clerk","mgr":1024,"hiredate":{"$date":"1981-12-03T00:00:00.000Z"},"sal":1200,"comm":null,"deptno":30}');
 
 create table points (
   c1 INT
@@ -103,8 +121,7 @@ CREATE TABLE votes (
   id INT PRIMARY KEY AUTO_INCREMENT,
   candidateID INT NULL
 );
-  
-  
+    
 INSERT INTO votes VALUES ('1', '4');
 INSERT INTO votes VALUES ('2', '3');
 INSERT INTO votes VALUES ('3', '1');
@@ -132,7 +149,106 @@ INSERT INTO votes VALUES ('24', '3');
 INSERT INTO votes VALUES ('25', '1');
 INSERT INTO votes VALUES ('26', '1');
 INSERT INTO votes VALUES ('27', '3');
-  
+INSERT INTO votes VALUES (default,2);
+INSERT INTO votes VALUES (default,2);
+INSERT INTO votes VALUES (default,1);
+INSERT INTO votes VALUES (default,3);
+INSERT INTO votes VALUES (default,4);
+INSERT INTO votes VALUES (default,1);
+INSERT INTO votes VALUES (default,2);
+INSERT INTO votes VALUES (default,2);
+INSERT INTO votes VALUES (default,1);
+INSERT INTO votes VALUES (default,4);
+INSERT INTO votes VALUES (default,4);
+INSERT INTO votes VALUES (default,2);
+INSERT INTO votes VALUES (default,3);
+INSERT INTO votes VALUES (default,2);
+INSERT INTO votes VALUES (default,2);
+INSERT INTO votes VALUES (default,4);
+INSERT INTO votes VALUES (default,4);
+INSERT INTO votes VALUES (default,2);
+INSERT INTO votes VALUES (default,3);
+INSERT INTO votes VALUES (default,1);
+INSERT INTO votes VALUES (default,4);
+INSERT INTO votes VALUES (default,3);
+INSERT INTO votes VALUES (default,1);
+INSERT INTO votes VALUES (default,1);
+INSERT INTO votes VALUES (default,2);
+INSERT INTO votes VALUES (default,1);
+INSERT INTO votes VALUES (default,4);
+INSERT INTO votes VALUES (default,3);
+INSERT INTO votes VALUES (default,3);
+INSERT INTO votes VALUES (default,1);
+INSERT INTO votes VALUES (default,1);
+INSERT INTO votes VALUES (default,4);
+INSERT INTO votes VALUES (default,1);
+INSERT INTO votes VALUES (default,4);
+INSERT INTO votes VALUES (default,2);
+INSERT INTO votes VALUES (default,1);
+INSERT INTO votes VALUES (default,3);
+INSERT INTO votes VALUES (default,4);
+INSERT INTO votes VALUES (default,4);
+INSERT INTO votes VALUES (default,1);
+INSERT INTO votes VALUES (default,4);
+INSERT INTO votes VALUES (default,3);
+INSERT INTO votes VALUES (default,2);
+INSERT INTO votes VALUES (default,2);
+INSERT INTO votes VALUES (default,2);
+INSERT INTO votes VALUES (default,4);
+INSERT INTO votes VALUES (default,2);
+INSERT INTO votes VALUES (default,3);
+INSERT INTO votes VALUES (default,3);
+INSERT INTO votes VALUES (default,2);
+INSERT INTO votes VALUES (default,2);
+INSERT INTO votes VALUES (default,1);
+INSERT INTO votes VALUES (default,4);
+INSERT INTO votes VALUES (default,2);
+INSERT INTO votes VALUES (default,1);
+INSERT INTO votes VALUES (default,4);
+INSERT INTO votes VALUES (default,2);
+INSERT INTO votes VALUES (default,2);
+INSERT INTO votes VALUES (default,2);
+INSERT INTO votes VALUES (default,1);
+INSERT INTO votes VALUES (default,4);
+INSERT INTO votes VALUES (default,1);
+INSERT INTO votes VALUES (default,2);
+INSERT INTO votes VALUES (default,4);
+INSERT INTO votes VALUES (default,2);
+INSERT INTO votes VALUES (default,1);
+INSERT INTO votes VALUES (default,1);
+INSERT INTO votes VALUES (default,1);
+INSERT INTO votes VALUES (default,2);
+INSERT INTO votes VALUES (default,1);
+INSERT INTO votes VALUES (default,1);
+INSERT INTO votes VALUES (default,3);
+INSERT INTO votes VALUES (default,4);
+INSERT INTO votes VALUES (default,2);
+INSERT INTO votes VALUES (default,2);
+INSERT INTO votes VALUES (default,1);
+INSERT INTO votes VALUES (default,3);
+INSERT INTO votes VALUES (default,2);
+INSERT INTO votes VALUES (default,3);
+INSERT INTO votes VALUES (default,3);
+INSERT INTO votes VALUES (default,4);
+INSERT INTO votes VALUES (default,3);
+INSERT INTO votes VALUES (default,2);
+INSERT INTO votes VALUES (default,4);
+INSERT INTO votes VALUES (default,3);
+INSERT INTO votes VALUES (default,2);
+INSERT INTO votes VALUES (default,1);
+INSERT INTO votes VALUES (default,1);
+INSERT INTO votes VALUES (default,4);
+INSERT INTO votes VALUES (default,3);
+INSERT INTO votes VALUES (default,1);
+INSERT INTO votes VALUES (default,1);
+INSERT INTO votes VALUES (default,2);
+INSERT INTO votes VALUES (default,4);
+INSERT INTO votes VALUES (default,3);
+INSERT INTO votes VALUES (default,2);
+INSERT INTO votes VALUES (default,2);
+INSERT INTO votes VALUES (default,3);
+INSERT INTO votes VALUES (default,2);
+INSERT INTO votes VALUES (default,4);
   
   
 CREATE TABLE food (
@@ -2026,6 +2142,5 @@ insert into client values (10, 'Omkar','Pune'),  (11, 'Sumit', 'Baroda'), (12, '
 INSERT INTO emp (EMPNO, ENAME, Job, HIREDATE, SAL, `USER NAME`, PWD, phone, emailID, isActive) VALUES (2001, 'JACK', 'SALESMAN', '1983-02-12 10:45:00', 2378, "Jack and Jill", "jack@2767", '9850884338', 'jack.jill@gmail.com', false);
 INSERT INTO emp (EMPNO, ENAME, Job, HIREDATE, SAL, `USER NAME`, PWD, phone, emailID, isActive) VALUES (2002, 'David', 'SALESMAN', '1983-02-12 10:45:00', 1090, "David kooper", "knight", '9850675438', 'kooper@gmail.com', false);
 INSERT INTO emp (EMPNO, ENAME, Job, HIREDATE, SAL, `USER NAME`, PWD, phone, emailID, isActive) VALUES (2003, 'LEO', 'SALESMAN', '1983-02-12 10:45:00', 1250, "Leo ", "leo165", '9850389870', 'leo.color@gmail.com', false);
-INSERT INTO emp (EMPNO, ENAME, Job, HIREDATE, SAL, `USER NAME`, PWD, phone, emailID, isActive) VALUES (2004, 'MAX', 'SALESMAN', '1983-02-12 10:45:00', 2100, "Max-conn", "max_90_19", '9850556612', 'max.+vt@gmail.com', false);
+INSERT INTO emp (EMPNO, ENAME, Job, HIREDATE, SAL, `USER NAME`, PWD, phone, emailID, isActive) VALUES (2004, 'MAX', 'SALESMAN', '1983-02-12 10:45:00', 2100, "Max-Connection", "max_90_19", '9850556612', 'max.+vt@gmail.com', false);
 INSERT INTO emp (EMPNO, ENAME, Job, HIREDATE, SAL, `USER NAME`, PWD, phone, emailID, isActive) VALUES (2005, 'Roman',  'SALESMAN','1983-02-12 10:45:00', 1700, "Roman-User", "tiger.co.in", '9850223323', 'roman.bolt@gmail.com', false);
-INSERT INTO emp (EMPNO, ENAME, Job, HIREDATE, SAL, `USER NAME`, PWD, phone, emailID, isActive) VALUES (2006, 'JACK', 'SALESMAN', '1983-02-12 10:45:00', 1850, "Jack and Jill", "jack@2767", '9850445578', 'jack.jill@gmail.com', false);
