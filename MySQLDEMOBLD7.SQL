@@ -77,11 +77,55 @@ DROP TABLE If EXISTS company;
 DROP TABLE If EXISTS candidate;
 DROP TABLE If EXISTS votes;
 DROP TABLE If EXISTS points;
-
+DROP TABLE If EXISTS transactions;
+DROP TABLE If EXISTS relation1;
 
 DROP VIEW IF EXISTS SALES;
 
 DROP TABLE If EXISTS empJ;
+
+
+create table transactions (_id int auto_increment primary key, custId int, transactionDate DATETIME, type char, amount int);
+
+insert into transactions values(default, 1002, '2021-01-01 10:24:34', 'd', 7000);
+insert into transactions values(default, 1001, '2021-01-01 12:45:13', 'd', 7500);
+insert into transactions values(default, 1003, '2021-01-01 14:00:04', 'd', 7000);
+insert into transactions values(default, 1001, '2021-01-01 11:20:10', 'd', 2000);
+insert into transactions values(default, 1002, '2021-02-12 12:00:42', 'd', 4000);
+insert into transactions values(default, 1001, '2021-02-23 10:24:34', 'd', 1500);
+insert into transactions values(default, 1003, '2021-01-12 09:23:09', 'd', 1000);
+insert into transactions values(default, 1001, '2021-02-28 11:43:13', 'c', 500);
+insert into transactions values(default, 1002, '2021-03-13 12:23:31', 'd', 500);
+insert into transactions values(default, 1002, '2021-03-01 11:20:43', 'c', 1500);
+insert into transactions values(default, 1003, '2021-02-24 11:34:32', 'c', 200);
+insert into transactions values(default, 1002, '2021-04-30 14:20:32', 'd', 6000);
+insert into transactions values(default, 1001, '2021-02-27 11:43:10', 'd', 2000);
+insert into transactions values(default, 1001, '2021-03-17 09:15:23', 'c', 1200);
+insert into transactions values(default, 1003, '2021-04-06 09:13:22', 'd', 4500);
+insert into transactions values(default, 1003, '2021-02-04 11:32:43', 'd', 4200);
+insert into transactions values(default, 1001, '2021-05-14 10:17:10', 'c', 600);
+insert into transactions values(default, 1003, '2021-02-07 14:45:33', 'c', 400);
+insert into transactions values(default, 1002, '2021-04-29 15:53:23', 'c', 1200);
+insert into transactions values(default, 1002, '2021-06-23 09:53:54', 'c', 1600);
+insert into transactions values(default, 1003, '2021-03-06 11:50:34', 'd', 3000);
+insert into transactions values(default, 1002, '2021-04-30 14:20:33', 'd', 3000);
+insert into transactions values(default, 1001, '2021-05-14 10:17:13', 'c', 600);
+insert into transactions values(default, 1003, '2021-01-01 14:00:05', 'd', 7000);
+insert into transactions values(default, 1002, '2021-06-23 09:53:57', 'c', 250);
+insert into transactions values(default, 1001, '2021-05-14 10:17:18', 'd', 5600);
+insert into transactions values(default, 1003, '2021-03-06 11:50:37', 'c', 200);
+
+create table relation1 (_id int auto_increment primary key, c1 int);
+
+insert into relation1 values(default, 1);
+insert into relation1 values(default, 2);
+insert into relation1 values(default, -1);
+insert into relation1 values(default, 3);
+insert into relation1 values(default, -2);
+insert into relation1 values(default, 1);
+insert into relation1 values(default, 2);
+insert into relation1 values(default, 1);
+
 
  create table empJ (id int primary key auto_increment, document json);
  
