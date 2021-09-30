@@ -79,11 +79,14 @@ DROP TABLE If EXISTS votes;
 DROP TABLE If EXISTS points;
 DROP TABLE If EXISTS transactions;
 DROP TABLE If EXISTS relation1;
+DROP TABLE If EXISTS g;
 
 DROP VIEW IF EXISTS SALES;
 
 DROP TABLE If EXISTS empJ;
 
+create table g(c1 float);
+insert into g values(-1), (-1.01);
 
 create table transactions (_id int auto_increment primary key, custId int, transactionDate DATETIME, type char, amount int);
 
