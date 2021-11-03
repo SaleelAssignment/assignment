@@ -1,0 +1,211 @@
+     author(name,location,emailid): ------> (a1)saleel,(a2)sharmin,(a3)ruhan,(a4)vrushali,(a5)nitish,(a6)sangita
+ 
+ authorAddress(name,state,country): ------>  
+		
+                          category: ------> object oriented programming
+                                  : ------> data science
+			         			  : ------> relational database
+			         			  : ------> no-sql
+			         			  : ------> script
+		
+      books(isbn,name,cover,pages): ------> (b1)redis,(b2)mongodb,(b3)hbase,(b4)neo4j,(b5)hive,(b6)c++,(b7)java
+                                  : ------> (b8)python,(b9)R,b10)oracle,(b11)mysql,(b12)big table,(b13)javascript,(b14)React
+								
+                   *(R)author_book: ------> saleel(redis,mongodb)
+                                  : ------> sharmin(redis,neo4j)
+                                  : ------> ruhan(hive,c++,mongodb)
+                                  : ------> vrushali(hbase,neo4j,redis)
+                                  : ------> nitish(python,R,hive)
+                                  : ------> sangita(oracle,mysql,big table)
+                                  : ------> suraj(javascript,React,neo4j)
+					
+                 *(R)book_category: ------> object oriented programming(c++,java)
+                                  : ------> data science(python,R)
+                                  : ------> relational database(oracle,mysql)
+                                  : ------> no-sql(redis,mongodb,hbase,neo4j,hive,big table)					
+			 
+     cost(currency,price,discount): ------> "indian Rs.",1200,75
+                                  : ------> "indian Rs.",980,27
+                                  : ------> "indian Rs.",975,35
+                                  : ------> "indian Rs.",1600,115
+							      : ------> "indian Rs.",2200,175
+							      : ------> "indian Rs.",1260,130
+							  
+                     *(R)book_cost: ------> redis(1200)
+                                  : ------> mongodb(1260)
+                                  : ------> hbase(1600)
+                                  : ------> neo4j(1200)
+                                  : ------> node(975)
+                                  : ------> c++(975)
+                                  : ------> java(1200)
+                                  : ------> python(1600)
+                                  : ------> R(2200)
+                                  : ------> oracle(1260)
+                                  : ------> mysql(1260)
+                                  : ------> big table(2200)
+		   
+    publisher(name,location,phone): ------> golden print, techmedia publisher, raj publisher, red gate books, simple talk, inTech
+ 
+                (R)publisher_books: ------> golden print (redis,hbase,node)
+                                  : ------> techmedia publisher (mongodb,neo4j,node,redis,hbase)
+                                  : ------> raj publisher (redis,c++,java,hbase)
+                                  : ------> red gate books (neo4j,python,hbase)
+                                  : ------> simple talk (python,R,oracle)
+                                  : ------> inTech (big table,hbase,neo4j,redis)
+---------------------------------------------------------------------------------------------------------------	
+	
+create(author1:author{name:'saleel', location:'baroda', emailid:'saleel@gmail.com'}), 
+	  (author2:author{name:'sharmin', location:'pune', emailid:'sharmin@gmail.com'}),
+	  (author3:author{name:'ruhan', location:'pune', emailid:'ruhan@gmail.com'}),
+	  (author4:author{name:'vrushali', location:'mumbai', emailid:'vrushali@gmail.com'}),
+	  (author5:author{name:'nitish', location:'mumbai', emailid:'nitish@hotmail.com'}),
+	  (author6:author{name:'sangita', location:'baroda', emailid:'sangita@hotmail.com'}),
+	  (author7:author{name:'suraj', location:'pune', emailid:'suraj@hotmail.com'})
+		
+create(authorAddress1:authorAddress{name:'pune',state:'MH', country:"IN"}),
+	  (authorAddress2:authorAddress{name:'baroda',state:'MH', country:"IN"}),
+	  (authorAddress3:authorAddress{name:'pune',state:'MH', country:"IN"}),
+	  (authorAddress4:authorAddress{name:'pune',state:'MH', country:"IN"}),
+	  (authorAddress5:authorAddress{name:'pune',state:'MH', country:"IN"}),
+	  (authorAddress6:authorAddress{name:'baroda',state:'MH', country:"IN"}),
+	  (authorAddress7:authorAddress{name:'mumbai',state:'MH', country:"IN"})
+
+create(category1:category{name:'object oriented programming'}),
+	  (category2:category{name:'data science'}),
+	  (category3:category{name:'relational database'}),
+	  (category4:category{name:'no-sql'})
+
+create(book1:book{isbn:'redis-001', name:'redis', cover:'paperback', pages:1000}),
+	  (book2:book{isbn:'mongodb-001', name:'mongodb', cover:'hardcover', pages:1250}),
+	  (book3:book{isbn:'hbase-001', name:'hbase', cover:'ebook', pages:1200}),
+	  (book4:book{isbn:'neo4j-001', name:'neo4j', cover:'paperback', pages:1000}),
+	  (book5:book{isbn:'hive-001', name:'hive', cover:'hardcover', pages:1250}),
+	  (book6:book{isbn:'c++-001', name:'c++', cover:'ebook', pages:890}),
+	  (book7:book{isbn:'java-001', name:'java', cover:'paperback', pages:890}),
+	  (book8:book{isbn:'python-001', name:'python', cover:'ebook', pages:700}), 
+	  (book9:book{isbn:'R-001', name:'R', cover:'ebook', pages:1200}),
+	  (book10:book{isbn:'oracle-001', name:'oracle', cover:'ebook', pages:790}),
+	  (book11:book{isbn:'mysql-001', name:'mysql', cover:'ebook', pages:800}),
+	  (book12:book{isbn:'big table-001', name:'big table', cover:'ebook', pages:890})
+	  (book13:book{isbn:'javascript-001', name:'javascript', cover:'ebook', pages:750}),
+	  (book14:book{isbn:'react-001', name:'React', cover:'ebook', pages:9890})
+		
+create(co1:cost{name:'indian Rs.', price:1200, discount:75}),
+	  (co2:cost{name:'indian Rs.', price:980, discount:27}),
+	  (co3:cost{name:'indian Rs.', price:975, discount:35}),
+	  (co4:cost{name:'indian Rs.', price:1600, discount:115}),
+	  (co5:cost{name:'indian Rs.', price:2200, discount:175}),
+	  (co6:cost{name:'indian Rs.', price:1260, discount:130})
+		
+
+
+
+
+-------------------------------------- EMPLOYEE -------------------------------------------------------------------
+
+
+create(d1:Person:Employee:CEO{name:"bipin bhai", YoB:1962, MoB:"may", PoB:"pune"})
+
+create(h1:Person:Employee:IThead{name:"gopal", YoB:1968, MoB:"july", PoB:"pune"}) 
+
+create(md:Person:Employee:Manager:Systems{name:"lena", YoB:1970, MoB:"august",PoB:"mumbai"})
+
+create(m1:Person:Employee:Manager:Developement:java{name:"sharmin", YoB:1999, MoB:"november",PoB:"pune"}),
+      (m2:Person:Employee:Manager:Developement:dotNET{name:"rakesh", YoB:1981, MoB:"november",PoB:"baroda"}),
+      (m3:Person:Employee:Manager:Developement:ml{name:"gaurav", YoB:1980, MoB:"july",PoB:"surat"}),
+      (m4:Person:Employee:Manager:Accounts{name:"nilesh", YoB:1969, MoB:"december",PoB:"pune"}),
+      (m5:Person:Employee:Manager:Marketing{name:"anand", YoB:1970, MoB:"december",PoB:"anand"})
+
+create(p1:Person:Employee:Programmer:java{name:"saleel", YoB:1968, MoB:"januaary", PoB:"baroda"}),
+      (p2:Person:Employee:Programmer:java{name:"vrushali", YoB:1970, MoB:"septembert",PoB:"mumbai"}),
+      (p3:Person:Employee:Programmer:java{name:"neel", YoB:1973, MoB:"januaary", PoB:"nashik"}),
+      (p4:Person:Employee:Programmer:java{name:"omkar", YoB:1972, MoB:"april",PoB:"surat"}),
+      (p5:Person:Employee:Programmer:dotNET{name:"ruhan", YoB:1979, MoB:"januaary", PoB:"baroda"}), 
+      (p6:Person:Employee:Programmer:dotNET{name:"riya", YoB:1973, MoB:"septembert",PoB:"surat"}),
+      (p7:Person:Employee:Programmer:dotNET{name:"deep", YoB:1974, MoB:"januaary", PoB:"nashik"}), 
+      (p8:Person:Employee:Programmer:dotNET{name:"nitish", YoB:1972, MoB:"april",PoB:"surat"}),
+      (p9:Person:Employee:Programmer:ml{name:"ram", YoB:1979, MoB:"may", PoB:"anand"}),
+      (p10:Person:Employee:Programmer:ml{name:"ramesh", YoB:1973, MoB:"septembert",PoB:"surat"}),
+      (p11:Person:Employee:Programmer:ml{name:"rajan", YoB:1972, MoB:"october", PoB:"nashik"}), 
+      (p12:Person:Employee:Programmer:ml{name:"bhavin", YoB:1970, MoB:"april",PoB:"baroda"})
+
+create(sys1:Person:Employee:Sysadmin{name:"omkar", YoB:1996, MoB:"decamber", PoB:"pune"}), 
+      (sys2:Person:Employee:Sysadmin{name:"vasaant", YoB:1970, MoB:"november",PoB:"pune"}),
+      (sys3:Person:Employee:Sysadmin{name:"nilesh", YoB:1970, MoB:"november",PoB:"pune"})
+
+create(s1:Person:Salesman{name:"amit", YoB:1996, MoB:"decamber", PoB:"pune"}), 
+      (s2:Person:Salesman{name:"sanjay", YoB:1970, MoB:"november",PoB:"rachi"}),
+      (s3:Person:Salesman{name:"jassu", YoB:1970, MoB:"november",PoB:"pune"}),
+      (s4:Person:Salesman{name:"sanjay", YoB:1996, MoB:"july", PoB:"beed"}), 
+      (s5:Person:Salesman{name:"boy", YoB:1970, MoB:"november",PoB:"banglore"}),
+      (s6:Person:Salesman{name:"nilesh", YoB:1970, MoB:"november",PoB:"pune"}),
+      (s7:Person:Salesman{name:"pankaj", YoB:1996, MoB:"decamber", PoB:"jaipur"}), 
+      (s8:Person:Salesman{name:"dilu", YoB:1970, MoB:"october",PoB:"jaipur"}),
+      (s9:Person:Salesman{name:"jay", YoB:1967, MoB:"november",PoB:"nagpur"}),
+      (s10:Person:Salesman{name:"rudhra", YoB:1996, MoB:"decamber", PoB:"pune"}), 
+      (s11:Person:Salesman{name:"bhuru", YoB:1970, MoB:"march",PoB:"indore"}),
+      (s12:Person:Salesman{name:"bhavin", YoB:1971, MoB:"february",PoB:"baroda"}),
+      (s13:Person:Salesman{name:"ramakant", YoB:1996, MoB:"decamber", PoB:"pune"}), 
+      (s14:Person:Salesman{name:"vishnu", YoB:1969, MoB:"may",PoB:"pune"}),
+      (s15:Person:Salesman{name:"nilesh", YoB:1972, MoB:"november",PoB:"thane"}),
+      (s16:Person:Salesman{name:"anoop", YoB:1996, MoB:"decamber", PoB:"pune"}), 
+      (s17:Person:Salesman{name:"darshan", YoB:1974, MoB:"may",PoB:"nagpur"}),
+      (s18:Person:Salesman{name:"niranjan", YoB:1973, MoB:"july",PoB:"indore"}),
+      (s19:Person:Salesman{name:"amit", YoB:1986, MoB:"decamber", PoB:"pune"}), 
+      (s20:Person:Salesman{name:"niraj", YoB:1984, MoB:"may",PoB:"nagpur"}),
+      (s21:Person:Salesman{name:"ninad", YoB:1983, MoB:"july",PoB:"indore"})
+
+
+
+-------------------------------------- ITEM -----------------------------------------------------------------------
+
+
+create(i1:item{name:'cake', rate:45, MoM:12, YoM:2021, expire:"best before 5 days" }),
+      (i2:item{name:'cheese', rate:145, MoM:04, YoM:2021, expire:"best before 6 months" }),
+      (i3:item{name:'butter', rate:75, MoM:05, YoM:2021, expire:"best before 6 months" }),
+      (i4:item{name:'biscuit', rate:35, MoM:09, YoM:2021, expire:"best before 25 days" }),
+      (i5:item{name:'jam', rate:125, MoM:08, YoM:2021, expire:"best before 1 year" }),
+      (i6:item{name:'bread', rate:35, MoM:05, YoM:2021, expire:"best before 3 days" }),
+      (i7:item{name:'coffee', rate:75, MoM:07, YoM:2021, expire:"best before 1 year" }),
+      (i8:item{name:'tea', rate:125, MoM:11, YoM:2021, expire:"best before 3 months" }),
+      (i9:item{name:'coke', rate:25, MoM:10, YoM:2021, expire:"best before 7 days" }),
+      (i10:item{name:'fanta', rate:25, MoM:11, YoM:2021, expire:"best before 7 days" }),
+      (i11:item{name:'ice-cream', rate:100, MoM:02, YoM:2021, expire:"best before 3 days" }),
+      (i12:item{name:'maggi', rate:40, MoM:04, YoM:2021, expire:"best before 7 months" }),
+      (i13:item{name:'milk', rate:39, MoM:04, YoM:2021, expire:"best before 2 days" }),
+      (i14:item{name:'pizza', rate:545, MoM:06, YoM:2021, expire:"best before 14 days" }),
+      (i15:item{name:'pasta', rate:115, MoM:11, YoM:2021, expire:"best before 12 days" }),
+      (i16:item{name:'burger', rate:122, MoM:10, YoM:2021, expire:"best before 2 days" }),
+      (i17:item{name:'suger-cubes', rate:15, MoM:06, YoM:2021, expire:"best before 11 months" }),
+      (i18:item{name:'curd', rate:50, MoM:07, YoM:2021, expire:"best before 4 days" }),
+      (i19:item{name:'juice', rate:65, MoM:08, YoM:2021, expire:"best before 3 days" }),
+      (i20:item{name:'milkshake', rate:87, MoM:06, YoM:2021, expire:"best before 2 days" }),
+      (i21:item{name:'fries', rate:78, MoM:05, YoM:2021, expire:"best before 2 days" }),
+      (i22:item{name:'chocolate', rate:15, MoM:07, YoM:2021, expire:"best before 12 days" }),
+      (i23:item{name:'chips', rate:10, MoM:04, YoM:2021, expire:"best before 14 days" }),
+      (i24:item{name:'popcorn', rate:55, MoM:04, YoM:2021, expire:"best before 1 days" }),
+      (i25:item{name:'nuts', rate:45, MoM:08, YoM:2021, expire:"best before 12 days" }),
+      (i26:item{name:'chikki', rate:225, MoM:09, YoM:2021, expire:"best before 15 days" }),
+      (i27:item{name:'papad', rate:65, MoM:06, YoM:2021, expire:"best before 3 months" }),
+      (i28:item{name:'sauce', rate:135, MoM:07, YoM:2021, expire:"best before 6 months" })
+
+
+create(b1:brand{name:'amul', votes:[1,1,1,1,1,0,0,1,1,0,1,2,1,1,1,1,1,1] }),
+      (b2:brand{name:'bru', votes:[1,0,1,1,1,0,0,1,1,0,1,0,1,1,1] }),
+      (b3:brand{name:'kwality', votes:[1,0,1,0,0,0,0,1,0,1,1,1] }),
+      (b4:brand{name:'haldiram', votes:[1,0,1,1,1,0,0,1,1,0,1,0,1,1,1] }),
+      (b5:brand{name:'lijjat', votes:[1,0,1,1,1,0,0,1,1,0,1,0,1,1,1] }),
+      (b6:brand{name:'nestle', votes:[1,0,1,1,1,0,0,1,1,0,1,0,0,1,0] }),
+      (b7:brand{name:'McDonalds', votes:[1,0,1,1,1,0,0,1,1,0,1,0,1,1,1,1,1,1,0,1] }),
+      (b8:brand{name:'kissan', votes:[1,0,1,1,1,0,0,1,1,0,1,0,1,1,1,0,1,1,0,1] })
+
+
+create(c1:customer{name:'saleel', mob:9850884228, location:'pune', latitude:'18.5204° N', longitude: '73.8567° E' }),
+      (c2:customer{name:'sharmin', mob:9850884229, location:'goa', latitude:'15.2993° N', longitude:'74.1240° E' }),
+      (c3:customer{name:'ruhan', mob:9850884230, location:'pune', latitude:'18.5204° N', longitude: '73.8567° E' }),
+      (c4:customer{name:'neel', mob:9850884231, location:'nashik', latitude:'19.9975° N', longitude:'73.7898° E' }),
+      (c5:customer{name:'nitish', mob:9850884232, location:'pune', latitude:'18.5204° N', longitude: '73.8567° E' }),
+      (c6:customer{name:'deep', mob:9850884233, location:'nashik', latitude:'19.9975° N', longitude:'73.7898° E' }),
+      (c7:customer{name:'gau', mob:9850884234, location:'pune', latitude:'18.5204° N', longitude: '73.8567° E' })
+                  
+            
