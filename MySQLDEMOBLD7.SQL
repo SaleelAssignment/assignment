@@ -12,7 +12,7 @@ DROP TABLE IF EXISTS PRICE;
 DROP TABLE IF EXISTS PRODUCT;
 DROP TABLE IF EXISTS ORD;
 DROP TABLE IF EXISTS CUSTOMER;
-DROP TABLE IF EXISTS EMP_CARDS;
+DROP TABLE IF EXISTS EMP_Cards;
 DROP TABLE IF EXISTS emp_phone;
 DROP TABLE IF EXISTS EMP1;
 DROP TABLE IF EXISTS EMP2;
@@ -77,139 +77,15 @@ DROP TABLE If EXISTS company;
 DROP TABLE If EXISTS candidate;
 DROP TABLE If EXISTS votes;
 DROP TABLE If EXISTS points;
-DROP TABLE If EXISTS transactions;
-DROP TABLE If EXISTS relation1;
-DROP TABLE If EXISTS g;
+DROP TABLE If EXISTS andor;
 
 DROP VIEW IF EXISTS SALES;
 
-DROP TABLE If EXISTS empJ;
-
-create table g(c1 float);
-insert into g values(-1), (-1.01);
-
-create table transactions (_id int auto_increment primary key, custId int, transactionDate DATETIME, type char, amount int);
-
-insert into transactions values(default, 1002, '2021-01-01 10:24:34', 'd', 7000);
-insert into transactions values(default, 1001, '2021-01-01 12:45:13', 'd', 7500);
-insert into transactions values(default, 1003, '2021-01-01 14:00:04', 'd', 7000);
-insert into transactions values(default, 1001, '2021-01-01 11:20:10', 'd', 2000);
-insert into transactions values(default, 1002, '2021-02-12 12:00:42', 'd', 4000);
-insert into transactions values(default, 1001, '2021-02-23 10:24:34', 'd', 1500);
-insert into transactions values(default, 1003, '2021-01-12 09:23:09', 'd', 1000);
-insert into transactions values(default, 1001, '2021-02-28 11:43:13', 'c', 500);
-insert into transactions values(default, 1002, '2021-03-13 12:23:31', 'd', 500);
-insert into transactions values(default, 1002, '2021-03-01 11:20:43', 'c', 1500);
-insert into transactions values(default, 1003, '2021-02-24 11:34:32', 'c', 200);
-insert into transactions values(default, 1002, '2021-04-30 14:20:32', 'd', 6000);
-insert into transactions values(default, 1001, '2021-02-27 11:43:10', 'd', 2000);
-insert into transactions values(default, 1001, '2021-03-17 09:15:23', 'c', 1200);
-insert into transactions values(default, 1003, '2021-04-06 09:13:22', 'd', 4500);
-insert into transactions values(default, 1003, '2021-02-04 11:32:43', 'd', 4200);
-insert into transactions values(default, 1001, '2021-05-14 10:17:10', 'c', 600);
-insert into transactions values(default, 1003, '2021-02-07 14:45:33', 'c', 400);
-insert into transactions values(default, 1002, '2021-04-29 15:53:23', 'c', 1200);
-insert into transactions values(default, 1002, '2021-06-23 09:53:54', 'c', 1600);
-insert into transactions values(default, 1003, '2021-03-06 11:50:34', 'd', 3000);
-insert into transactions values(default, 1002, '2021-04-30 14:20:33', 'd', 3000);
-insert into transactions values(default, 1001, '2021-05-14 10:17:13', 'c', 600);
-insert into transactions values(default, 1003, '2021-01-01 14:00:05', 'd', 7000);
-insert into transactions values(default, 1002, '2021-06-23 09:53:57', 'c', 250);
-insert into transactions values(default, 1001, '2021-05-14 10:17:18', 'd', 5600);
-insert into transactions values(default, 1003, '2021-03-06 11:50:37', 'c', 200);
-
-create table relation1 (_id int auto_increment primary key, c1 int);
-
-insert into relation1 values(default, 1);
-insert into relation1 values(default, 2);
-insert into relation1 values(default, -1);
-insert into relation1 values(default, 3);
-insert into relation1 values(default, -2);
-insert into relation1 values(default, 1);
-insert into relation1 values(default, 2);
-insert into relation1 values(default, 1);
-
-
- create table empJ (id int primary key auto_increment, document json);
- 
- insert into empJ values(default, '{"empid":1020,"ename":"king","address": {"building": "1007", "coord": [-73.856077, 40.848447], "street": "Morris Park Ave", "zipcode": "10462"},"isDocActive": false,"gender": "male","canVote": true, "canDrive":true,"color": ["blue","black"], "fruit": [],"cards": [ { "aadhar":{"aadhar_No" :"93478", "isActive":true}}, {"PAN":{"PAN_No" :"Kinj093", "isActive":false}},{"voter":{"voterID":"Ind03o3", "isActive":true}}, {"licence":{"licence-No":"LMV9478","issueDate":"2020-01-01","expireDate":"2040-01-01", "isActive":true}}], "job":"president", "mgr":null, "hiredate":{"$date":"1981-11-17T00:00:00.000Z"}, "sal":5000,"comm":null,"deptno":10, "phone":"9850884228"}');
- 
- insert into empJ values(default, '{"empid":1021,"ename":"smith","address": {"building": "469", "coord": [-73.961704, 40.662942], "street": "Flatbush Avenue", "zipcode": "11225"},"isDocActive": false,"gender": "male","canVote": true, "canDrive":true,"color": ["red", "cyan", "gray"], "fruit": ["grapes", "Orange"],"cards": [ { "aadhar":{"aadhar_No" :"43564", "isActive":true}}, {"PAN":{"PAN_No" :"smh838", "isActive":false}},{"voter":{"voterID":"Ind03o3", "isActive":true}},{"licence":{"licence-No":"LMV9478","issueDate":"2020-01-01","expireDate":"2040-01-01", "isActive":true}}],"job":"manager", "mgr":1020, "hiredate":{"$date":"1981-05-01T00:00:00.000Z"}, "sal":3400, "comm":null,"deptno":10, "phone":"9988672647"}');
- 
- insert into empJ values(default, '{"empid":1022,"ename":"james","address": {"building": "351", "coord": [-73.98513559999999, 40.7676919], "street": "West   57 Street", "zipcode": "10019"},"isDocActive": true,"gender": "male","canVote": true, "canDrive":true,"color": ["Red","Blue","Green","Yellow"], "fruit": ["Indian Fig"],"cards": [ { "aadhar":{"aadhar_No" :"73826", "isActive":true}}, {"PAN":{"PAN_No" :"Kinj093", "isActive":false}},{"voter":{"voterID":"Ind03o3", "isActive":true}},{"licence":{"licence-No":"LMV9478","issueDate":"2020-01-01","expireDate":"2040-01-01", "isActive":true}}],"job":"manager", "mgr":1020, "hiredate":{"$date":"1981-07-09T00:00:00.000Z"}, "sal":4700, "comm":null, "deptno":20, "phone":"7788672647"}');
- 
- insert into empJ values(default, '{"empid":1023,"ename":"jack","address": {"building": "2780", "coord": [-73.98241999999999, 40.579505], "street": "Stillwell Avenue", "zipcode": "11224"},"isDocActive": false,"gender": "male","canVote": true, "canDrive":true,"color": ["Air Force Blue","Apple Green"], "fruit": ["Orange"],"cards": [ { "aadhar":{"aadhar_No" :"12321", "isActive":true}}, {"PAN":{"PAN_No" :"Kinj093", "isActive":false}},{"voter":{"voterID":"Ind03o3", "isActive":true}},{"licence":{"licence-No":"LMV9478","issueDate":"2020-01-01","expireDate":"2040-01-01", "isActive":true}}], "job":"accountant", "mgr":1022,"hiredate":{"$date":"1981-04-02T00:00:00.000Z"}, "sal":2700, "comm":null, "deptno":30, "phone":["9988672647", "022-25449018"]}');
- 
- insert into empJ values(default, '{"empid":1023,"ename":"scott","address": {"building": "97-22", "coord": [-73.8601152, 40.7311739], "street": "63 Road", "zipcode": "11374"},"isDocActive": false,"gender": "male","canVote": true, "canDrive":true,"color": ["Ash Grey", "White"], "fruit": [],"cards": [ { "aadhar":{"aadhar_No" :"93872", "isActive":true}}, {"PAN":{"PAN_No" :"Kinj093", "isActive":false}},{"voter":{"voterID":"Ind03o3", "isActive":true}}, {"licence":{"licence-No":"LMV9478","issueDate":"2020-01-01","expireDate":"2040-01-01", "isActive":true}}], "job":"salesman","mgr":1023,  "hiredate":{"$date":"1981-09-28T00:00:00.000Z"}, "sal":2500, "comm":350, "deptno":30, "phone":"9950998773"}');
- 
- insert into empJ values(default, '{"empid":1024,"ename":"martin","address": {"building": "8825", "coord": [-73.8803827, 40.7643124], "street": "Astoria Boulevard", "zipcode": "11369"},"isDocActive": true,"gender": "male","canVote": true, "canDrive":true,"color": ["Banana Yellow"], "fruit": [],"cards": [ { "aadhar":{"aadhar_No" :"72877", "isActive":true}}, {"PAN":{"PAN_No" :"Kinj093", "isActive":false}},{"voter":{"voterID":"Ind03o3", "isActive":true}},{"licence":{"licence-No":"LMV9478","issueDate":"2020-01-01","expireDate":"2040-01-01", "isActive":true}}], "job":"salesman","mgr":1023, "hiredate":{"$date":"1981-02-20T00:00:00.000Z"},"sal":2900,"comm":735,"deptno":30, "phone":"7722889988"}');
- 
- insert into empJ values(default, '{"empid":1025,"ename":"crow","address": {"building": "2206", "coord": [-74.1377286, 40.6119572], "street": "Victory Boulevard", "zipcode": "10314"},"isDocActive": false,"gender": "male","canVote": true, "canDrive":true,"color": ["Apple Green","Ash Grey"], "fruit": [],"cards": [ { "aadhar":{"aadhar_No" :"77876", "isActive":true}}, {"PAN":{"PAN_No" :"Kinj093", "isActive":false}},{"voter":{"voterID":"Ind03o3", "isActive":true}}, {"licence":{"licence-No":"LMV9478","issueDate":"2020-01-01","expireDate":"2040-01-01", "isActive":true}}], "job":"salesman", "mgr":1023, "hiredate":{"$date":"1981-09-08T00:00:00.000Z"}, "sal":3200, "comm":null,"deptno":20, "phone":"7722990890"}');
- 
- insert into empJ values(default, '{"empid":1026,"ename":"blake","address": {"building": "7114", "coord": [-73.9068506, 40.6199034], "street": "Avenue U", "zipcode": "11234"},"isDocActive": false,"gender": "male","canVote": true, "canDrive":true,"color": ["Brass","Bright Green"], "fruit": [],"cards": [ { "aadhar":{"aadhar_No" :"12321", "isActive":true}}, {"PAN":{"PAN_No" :"Kinj093", "isActive":false}},{"voter":{"voterID":"Ind03o3", "isActive":true}}, {"licence":{"licence-No":"LMV9478","issueDate":"2020-01-01","expireDate":"2040-01-01", "isActive":true}}], "job":"clerk", "mgr":1024, "hiredate":{"$date":"1981-12-03T00:00:00.000Z"}, "sal":1200, "comm":null, "deptno":30, "phone":["020-25448972", "020-25447836"]}');
-
-insert into empJ values(default, '{"empid":1027,"ename":"richards","address": {"building": "6409", "coord": [-74.00528899999999, 40.628886], "street": "11 Avenue", "zipcode": "11219"},"isDocActive": false,"gender": "male","canVote": true, "canDrive":true,"color": ["Charcoal","Cherry"], "fruit": [],"cards": [ { "aadhar":{"aadhar-No" :"83972", "isActive":true}}, {"PAN":{"PAN-No" :"Kinj093", "isActive":false}},{"voter":{"voterID":"Ind03o3", "isActive":true}},{"licence":{"licence-No":"LMV9478","issueDate":"2020-01-01", "expireDate":"2040-01-01", "isActive":true}}], "job":"clerk", "mgr":1024, "hiredate":{"$date":"1981-02-22T00:00:00.000Z"}, "sal":1500,"comm":null,"deptno":10 , "phone":"9988672647", "phone":["9988672647", "020-25448398"]}');
-
-
-insert into empJ values(default, '{"empid":1028,"ename":"peter","address": {"building": "1839", "coord": [-73.9482609, 40.6408271], "street": "Nostrand Avenue", "zipcode": "11226"},"isDocActive": true,"gender": "male","canVote": true, "canDrive":true,"color": ["Brown"], "fruit": ["banana","Jackfruit"],"cards": [ { "aadhar":{"aadhar-No" :"92783", "isActive":true}}, {"PAN":{"PAN-No" :"Kinj093", "isActive":false}}, {"voter":{"voterID":"Ind03o3", "isActive":true}}, {"licence":{"licence-No":"LMV9478", "issueDate":"2020-01-01","expireDate":"2040-01-01", "isActive":true}}], "job":"analyst", "mgr":1025, "hiredate":{"$date":"1981-12-03T00:00:00.000Z"}, "sal":3500,"comm":null,"deptno":30}');
-
-
-insert into empJ values(default, '{"empid":1029,"ename":"bob","address": {"building": "2300", "coord": [-73.8786113, 40.8502883], "street": "Southern Boulevard", "zipcode": "10460"},"isDocActive": false,"gender": "male","canVote": true, "canDrive":true,"color": ["Copper"], "fruit": [],"cards": [ { "aadhar":{"aadhar-No" :"73122", "isActive":true}}, {"PAN":{"PAN-No" :"Kinj093", "isActive":false}}, {"voter":{"voterID":"Ind03o3", "isActive":true}}, {"licence":{"licence-No":"LMV9478", "issueDate":"2020-01-01","expireDate":"2040-01-01", "isActive":true}}], "job":"manager","mgr":1020,"hiredate":{"$date":"1980-12-17T00:00:00.000Z"},"sal":4900,"comm":null,"deptno":30}');
-
-
-insert into empJ values(default, '{"empid":1030,"ename":"saleel","address": {"building": "7715", "coord": [-73.9973325, 40.61174889999999], "street": "18 Avenue", "zipcode": "11214"},"isDocActive": false,"gender": "male","canVote": true, "canDrive":true,"color": ["Coral"], "fruit": ["Dates","Orange"],"cards": [ { "aadhar":{"aadhar-No" :"73822", "isActive":true}}, {"PAN":{"PAN-No" :"Kinj093", "isActive":false}},{"voter":{"voterID":"Ind03o3", "isActive":true}}, {"licence":{"licence-No":"LMV9478","issueDate":"2020-01-01","expireDate":"2040-01-01", "isActive":true}}],"job":"programmer","mgr":1020,"hiredate":{"$date":"1982-12-09T00:00:00.000Z"},"sal":2900,"comm":null,"deptno":10}');
-
-insert into empJ values(default, '{"empid":1031,"ename":"sharmin","address": {"building": "1269", "coord": [-73.871194, 40.6730975], "street": "Sutter Avenue", "zipcode": "11208"},"isDocActive": false,"gender": "female","canVote": true, "canDrive":true,"color": ["Cream"], "fruit": ["Indian Fig"],"cards": [ { "aadhar":{"aadhar-No" :"16523", "isActive":true}}, {"PAN":{"PAN-No" :"Kinj093", "isActive":false}},{"voter":{"voterID":"Ind03o3", "isActive":true}}, {"licence":{"licence-No":"LMV9478","issueDate":"2020-01-01","expireDate":"2040-01-01", "isActive":true}}], "job":"programmer", "mgr":1020, "hiredate":{"$date":"1983-01-12T00:00:00.000Z"}, "sal":4999,"comm":null,"deptno":40}');
-
-
-insert into empJ values(default, '{"empid":1032,"ename":"vrushali","address": {"building": "1", "coord": [-73.96926909999999, 40.7685235], "street": "East   66 Street", "zipcode": "10065"},"isDocActive": true,"gender": "female","canVote": true, "canDrive":true,"color": ["Iceberg"], "fruit": ["Orange","Papaya", "Kiwi"],"cards": [ { "aadhar":{"aadhar-No" :"22343", "isActive":true}}, {"PAN":{"PAN-No" :"Kinj093", "isActive":false}},{"voter":{"voterID":"Ind03o3", "isActive":true}}, {"licence":{"licence-No":"LMV9478","issueDate":"2020-01-01","expireDate":"2040-01-01", "isActive":true}}], "job":"analyst","mgr":1030, "hiredate":{"$date":"1982-02-23T00:00:00.000Z"}, "sal":4999,"comm":null,"deptno":20}');
-
-insert into empJ values(default, '{"empid":1033,"ename":"vasant","address": {"building": "705", "coord": [-73.9653967, 40.6064339], "street": "Kings Highway", "zipcode": "11223"},"isDocActive": false,"gender": "male","canVote": true, "canDrive":true,"color": ["Bright Green"], "fruit": [],"cards": [ { "aadhar":{"aadhar-No" :"93824", "isActive":true}}, {"PAN":{"PAN-No" :"Kinj093", "isActive":false}},{"voter":{"voterID":"Ind03o3", "isActive":true}},{"licence":{"licence-No":"LMV9478","issueDate":"2020-01-01","expireDate":"2040-01-01", "isActive":true}}], "job":"salesman","mgr":1029, "hiredate":{"$date":"1982-02-24T00:00:00.000Z"},"sal":2200,"comm":0,"deptno":40}');
-
-
-insert into empJ values(default, '{"empid":1034,"ename":"vasu","address": {"building": "203", "coord": [-73.97822040000001, 40.6435254], "street": "Church Avenue", "zipcode": "11218"},"isDocActive": false,"gender": "male","canVote": true, "canDrive":true,"color": ["India Green"], "fruit": ["Dates"],"cards": [ { "aadhar":{"aadhar-No" :"19826", "isActive":true}}, {"PAN":{"PAN-No" :"Kinj093", "isActive":false}},{"voter":{"voterID":"Ind03o3", "isActive":true}},{"licence":{"licence-No":"LMV9478","issueDate":"2020-01-01","expireDate":"2040-01-01", "isActive":true}}], "job":"salesman","mgr":1029, "hiredate":{"$date":"1980-02-14T00:00:00.000Z"},"sal":2200,"comm":250,"deptno":40}');
-
-
-insert into empJ values(default, '{"empid":1035,"ename":"rahul","address": {"building": "265-15", "coord": [-73.7032601, 40.7386417], "street": "Hillside Avenue", "zipcode": "11004"},"isDocActive": false,"gender": "male","canVote": true, "canDrive":true,"color": ["Indian Red"], "fruit": ["Lychee","Indian Fig"],"cards": [ { "aadhar":{"aadhar-No" :"00998", "isActive":true}}, {"PAN":{"PAN-No" :"Kinj093", "isActive":false}},{"voter":{"voterID":"Ind03o3", "isActive":true}},{"licence":{"licence-No":"LMV9478","issueDate":"2020-01-01","expireDate":"2040-01-01", "isActive":true}}], "job":"clerk", "mgr":1029, "hiredate":{"$date":"1981-12-31T00:00:00.000Z"}, "sal":1200,"comm":null,"deptno":40}');
-
-
-insert into empJ values(default, '{"empid":1036,"ename":"raju","address": {"building": "6909", "coord": [-74.0259567, 40.6353674], "street": "3 Avenue", "zipcode": "11209"},"isDocActive": true,"gender": "male","canVote": true, "canDrive":true,"color": ["Indian Yellow"], "fruit": ["Crab apples"],"cards": [ { "aadhar":{"aadhar-No" :"55622", "isActive":true}}, {"PAN":{"PAN-No" :"Kinj093", "isActive":false}}, {"voter":{"voterID":"Ind03o3", "isActive":true}}, {"licence":{"licence-No":"LMV9478", "issueDate":"2020-01-01","expireDate":"2040-01-01", "isActive":true}}], "job":"administrator","mgr":1031,"hiredate":{"$date":"1983-06-15T00:00:00.000Z"},"sal":3400,"comm":null,"deptno":50}');
-
-
-insert into empJ values(default, '{"empid":1037,"ename":"ramu","address": {"building": "522", "coord": [-73.95171, 40.767461], "street": "East   74 Street", "zipcode": "10021"},"isDocActive": false,"gender": "male","canVote": true, "canDrive":true,"color": ["Lemon"], "fruit": ["Jackfruit","banana", "Apple"],"cards": [ { "aadhar":{"aadhar-No" :"00983", "isActive":true}}, {"PAN":{"PAN-No" :"Kinj093", "isActive":false}},{"voter":{"voterID":"Ind03o3", "isActive":true}}, {"licence":{"licence-No":"LMV9478","issueDate":"2020-01-01","expireDate":"2040-01-01", "isActive":true}}],"job":"clerk","mgr":1031,"hiredate":{"$date":"1983-07-12T00:00:00.000Z"},"sal":1400,"comm":null,"deptno":50}');
-
-
-insert into empJ values(default, '{"empid":1038,"ename":"neel","address": {"building": "284", "coord": [-73.9829239, 40.6580753], "street": "Prospect Park West", "zipcode": "11215"},"isDocActive": true,"gender": "male","canVote": true, "canDrive":true,"color": ["Apple Green"], "fruit": [],"cards": [ { "aadhar":{"aadhar-No" :"00098", "isActive":true}}, {"PAN":{"PAN-No" :"Kinj093", "isActive":false}}, {"voter":{"voterID":"Ind03o3", "isActive":true}}, {"licence":{"licence-No":"LMV9478", "issueDate":"2020-01-01","expireDate":"2040-01-01", "isActive":true}}], "job":"administrator","mgr":1030,"hiredate":{"$date":"1983-03-14T00:00:00.000Z"},"sal":4200,"comm":null,"deptno":10}');
-
-
-insert into empJ values(default, '{"empid":1039,"ename":"saleel","address": {"building": "129-08", "coord": [-73.839297, 40.78147], "street": "20 Avenue", "zipcode": "11356"},"isDocActive": false,"gender": "male","canVote": true, "canDrive":true,"color": ["Cherry","Charcoal"], "fruit": [],"cards": [ { "aadhar":{"aadhar-No" :"66675", "isActive":true}}, {"PAN":{"PAN-No" :"Kinj093", "isActive":false}},{"voter":{"voterID":"Ind03o3", "isActive":true}}, {"licence":{"licence-No":"LMV9478","issueDate":"2020-01-01","expireDate":"2040-01-01", "isActive":true}}],"job":"analyst","mgr":1022,"hiredate":{"$date":"1982-12-09T00:00:00.000Z"},"sal":3700,"comm":null,"deptno":50}');
-
-
-insert into empJ values(default, '{"empid":1040,"ename":"amit","address": {"building": "759", "coord": [-73.9925306, 40.7309346], "street": "Broadway", "zipcode": "10003"},"isDocActive": false,"gender": "male","canVote": true, "canDrive":true,"color": ["Indian Red"], "fruit": ["Crab apples"],"cards": [ { "aadhar":{"aadhar-No" :"66623", "isActive":true}}, {"PAN":{"PAN-No" :"Kinj093", "isActive":false}},{"voter":{"voterID":"Ind03o3", "isActive":true}},{"licence":{"licence-No":"LMV9478","issueDate":"2020-01-01","expireDate":"2040-01-01", "isActive":true}}], "job":"administrator", "mgr":1029,"hiredate":{"$date":"1982-12-08T00:00:00.000Z"},"sal":3500,"comm":null,"deptno":50,"phone":["9850849329", "9822884228"]}');
-
-
-insert into empJ values(default, '{"empid":1041,"ename":"dinesh","address": {"building": "3406", "coord": [-73.94024739999999, 40.7623288], "street": "10 Street", "zipcode": "11106"},"isDocActive": true,"gender": "male","canVote": true, "canDrive":true,"color": ["Air Force Blue"], "fruit": [],"cards": [ { "aadhar":{"aadhar-No" :"77767", "isActive":true}}, {"PAN":{"PAN-No" :"Kinj093", "isActive":false}},{"voter":{"voterID":"Ind03o3", "isActive":true}}, {"licence":{"licence-No":"LMV9478","issueDate":"2020-01-01","expireDate":"2040-01-01", "isActive":true}}], "job":"programmer", "mgr":1021, "hiredate":{"$date":"1982-12-09T00:00:00.000Z"}, "sal":3500,"comm":null, "deptno":50,"phone":["9822884238", "9822884837"], "skills":{"languages":["C++","JAVA"], "web":["php","java","jquery"]}}');
-
-
-insert into empJ values(default, '{"empid":1040,"ename":"amit","address": {"building": "502", "coord": [-73.976112, 40.786714], "street": "Amsterdam Avenue", "zipcode": "10024"},"isDocActive": false,"gender": "male","canVote": true, "canDrive":true,"color": ["Orange"], "fruit": [],"cards": [ { "aadhar":{"aadhar-No" :"77787", "isActive":true}}, {"PAN":{"PAN-No" :"Kinj093", "isActive":false}},{"voter":{"voterID":"Ind03o3", "isActive":true}}, {"licence":{"licence-No":"LMV9478","issueDate":"2020-01-01","expireDate":"2040-01-01", "isActive":true}}], "job":"administrator", "mgr":1029, "hiredate":{"$date":"1981-11-03T00:00:00.000Z"}, "sal":3500, "comm":null, "deptno":50,"phone":["9850884228","9822434228"]}');
-
-
-insert into empJ values(default, '{"empid":1041,"ename":"dinesh","address": {"building": "730", "coord": [-73.96805719999999, 40.7925587], "street": "Columbus Avenue", "zipcode": "10025"},"isDocActive": false,"gender": "male","canVote": true, "canDrive":true,"color": ["Navy Blue"], "fruit": [],"cards": [ { "aadhar":{"aadhar-No" :"77789", "isActive":true}}, {"PAN":{"PAN-No" :"Kinj093", "isActive":false}},{"voter":{"voterID":"Ind03o3", "isActive":true}},{"licence":{"licence-No":"LMV9478","issueDate":"2020-01-01","expireDate":"2040-01-01", "isActive":true}}], "job":"programmer","mgr":1021, "hiredate":{"$date":"1981-11-04T00:00:00.000Z"},"sal":3500,"comm":null,"deptno":50,"phone":["020-25420200","9822336644"],"skills":{"languages":["C++","JAVA"],"web":["php","java","jquery"]}}');
-
-
-insert into empJ values(default, '{"empid":1042,"ename":"rudra","address": {"building": "18", "coord": [-73.996984, 40.72589], "street": "West Houston Street", "zipcode": "10012"},"isDocActive": false,"gender": "male","canVote": true, "canDrive":true,"color": ["Lime"], "fruit": ["Indian Fig"],"cards": [ { "aadhar":{"aadhar-No" :"55543", "isActive":true}}, {"PAN":{"PAN-No" :"Kinj093", "isActive":false}},{"voter":{"voterID":"Ind03o3", "isActive":true}}, {"licence":{"licence-No":"LMV9478","issueDate":"2020-01-01","expireDate":"2040-01-01", "isActive":true}}], "job":"programmer", "mgr":1021, "hiredate":{"$date":"1981-11-04T00:00:00.000Z"}, "sal":2400, "comm":null,"deptno":50,"phone":"020-25420212","skills":{"web":["php","java","jquery"], "database":["oracle","ms-sql server","mongodb"]}}');
-
-
-insert into empJ values(default, '{"empid":1043,"ename":"pankaj","address": {"building": "531", "coord": [-73.9634876, 40.6940001], "street": "Myrtle Avenue", "zipcode": "11205"},"isDocActive": false,"gender": "male","canVote": true, "canDrive":true,"color": ["White"], "fruit": ["Peach"],"cards": [ { "aadhar":{"aadhar-No" :"55565", "isActive":true}}, {"PAN":{"PAN-No" :"Kinj093", "isActive":false}},{"voter":{"voterID":"Ind03o3", "isActive":true}}, {"licence":{"licence-No":"LMV9478","issueDate":"2020-01-01","expireDate":"2040-01-01", "isActive":true}}], "job":"programmer", "mgr":1023, "hiredate":{"$date":"1980-02-17T00:00:00.000Z"}, "sal":3600, "comm":null, "deptno":40, "phone":"022-2548345", "skills":{"language":".NET", "database":"ms-sql server"}}');
-
-
-insert into empJ values(default, '{"empid":1044,"ename":"anoop","address": {"building": "103-05", "coord": [-73.8642349, 40.75356], "street": "37 Avenue", "zipcode": "11368"},"isDocActive": false,"gender": "male","canVote": true, "canDrive":true,"color": ["Navy Blue"], "fruit": [],"cards": [ { "aadhar":{"aadhar-No" :"83722", "isActive":true}}, {"PAN":{"PAN-No" :"Kinj093", "isActive":false}}, {"voter":{"voterID":"Ind03o3", "isActive":true}}, {"licence":{"licence-No":"LMV9478","issueDate":"2020-01-01", "expireDate":"2040-01-01", "isActive":true}}],"job":"programmer","mgr":1029,"hiredate":{"$date":"1980-02-17T00:00:00.000Z"},"sal":2300,"comm":1200,"deptno":50,"phone":"022-2548345","skills":{"language":[".NET","java"],"database":"oracle","web":["json","jquery","javascript"]}}');
-
-
-insert into empJ values(default, '{"empid":1045,"ename":"nitish","address": {"building": "60", "coord": [-74.0085357, 40.70620539999999], "street": "Wall Street", "zipcode": "10005"},"isDocActive": true,"gender": "male","canVote": true, "canDrive":true,"color": ["Coral","Cream"], "fruit": [],"cards": [ { "aadhar":{"aadhar-No" :"99890", "isActive":true}}, {"PAN":{"PAN-No" :"Kinj093", "isActive":false}}, {"voter":{"voterID":"Ind03o3", "isActive":true}}, {"licence":{"licence-No":"LMV9478","issueDate":"2020-01-01","expireDate":"2040-01-01", "isActive":true}}],"job":"programmer","mgr":1039,"hiredate":{"$date":"1980-03-14T00:00:00.000Z"},"sal":1300,"comm":1200,"deptno":50,"phone":"022-2548345","skills":{"language":[".NET","java"],"database":{"rdbms":["oracle","db2"],"nosql":["mongodb","hive"]},"web":["json","jquery","javascript","php"]}}');
-
-
-
+create table andor (id int, c1 varchar(10), city varchar(10));
+insert into andor values(1,'saleel','pune');
+insert into andor values(2,'sharmin','pune');
+insert into andor values(3,'ruhan','baroda');
+insert into andor values(4,'saleel','baroda');
 
 create table points (
   c1 INT
@@ -233,7 +109,8 @@ CREATE TABLE votes (
   id INT PRIMARY KEY AUTO_INCREMENT,
   candidateID INT NULL
 );
-    
+  
+  
 INSERT INTO votes VALUES ('1', '4');
 INSERT INTO votes VALUES ('2', '3');
 INSERT INTO votes VALUES ('3', '1');
@@ -261,106 +138,7 @@ INSERT INTO votes VALUES ('24', '3');
 INSERT INTO votes VALUES ('25', '1');
 INSERT INTO votes VALUES ('26', '1');
 INSERT INTO votes VALUES ('27', '3');
-INSERT INTO votes VALUES (default,2);
-INSERT INTO votes VALUES (default,2);
-INSERT INTO votes VALUES (default,1);
-INSERT INTO votes VALUES (default,3);
-INSERT INTO votes VALUES (default,4);
-INSERT INTO votes VALUES (default,1);
-INSERT INTO votes VALUES (default,2);
-INSERT INTO votes VALUES (default,2);
-INSERT INTO votes VALUES (default,1);
-INSERT INTO votes VALUES (default,4);
-INSERT INTO votes VALUES (default,4);
-INSERT INTO votes VALUES (default,2);
-INSERT INTO votes VALUES (default,3);
-INSERT INTO votes VALUES (default,2);
-INSERT INTO votes VALUES (default,2);
-INSERT INTO votes VALUES (default,4);
-INSERT INTO votes VALUES (default,4);
-INSERT INTO votes VALUES (default,2);
-INSERT INTO votes VALUES (default,3);
-INSERT INTO votes VALUES (default,1);
-INSERT INTO votes VALUES (default,4);
-INSERT INTO votes VALUES (default,3);
-INSERT INTO votes VALUES (default,1);
-INSERT INTO votes VALUES (default,1);
-INSERT INTO votes VALUES (default,2);
-INSERT INTO votes VALUES (default,1);
-INSERT INTO votes VALUES (default,4);
-INSERT INTO votes VALUES (default,3);
-INSERT INTO votes VALUES (default,3);
-INSERT INTO votes VALUES (default,1);
-INSERT INTO votes VALUES (default,1);
-INSERT INTO votes VALUES (default,4);
-INSERT INTO votes VALUES (default,1);
-INSERT INTO votes VALUES (default,4);
-INSERT INTO votes VALUES (default,2);
-INSERT INTO votes VALUES (default,1);
-INSERT INTO votes VALUES (default,3);
-INSERT INTO votes VALUES (default,4);
-INSERT INTO votes VALUES (default,4);
-INSERT INTO votes VALUES (default,1);
-INSERT INTO votes VALUES (default,4);
-INSERT INTO votes VALUES (default,3);
-INSERT INTO votes VALUES (default,2);
-INSERT INTO votes VALUES (default,2);
-INSERT INTO votes VALUES (default,2);
-INSERT INTO votes VALUES (default,4);
-INSERT INTO votes VALUES (default,2);
-INSERT INTO votes VALUES (default,3);
-INSERT INTO votes VALUES (default,3);
-INSERT INTO votes VALUES (default,2);
-INSERT INTO votes VALUES (default,2);
-INSERT INTO votes VALUES (default,1);
-INSERT INTO votes VALUES (default,4);
-INSERT INTO votes VALUES (default,2);
-INSERT INTO votes VALUES (default,1);
-INSERT INTO votes VALUES (default,4);
-INSERT INTO votes VALUES (default,2);
-INSERT INTO votes VALUES (default,2);
-INSERT INTO votes VALUES (default,2);
-INSERT INTO votes VALUES (default,1);
-INSERT INTO votes VALUES (default,4);
-INSERT INTO votes VALUES (default,1);
-INSERT INTO votes VALUES (default,2);
-INSERT INTO votes VALUES (default,4);
-INSERT INTO votes VALUES (default,2);
-INSERT INTO votes VALUES (default,1);
-INSERT INTO votes VALUES (default,1);
-INSERT INTO votes VALUES (default,1);
-INSERT INTO votes VALUES (default,2);
-INSERT INTO votes VALUES (default,1);
-INSERT INTO votes VALUES (default,1);
-INSERT INTO votes VALUES (default,3);
-INSERT INTO votes VALUES (default,4);
-INSERT INTO votes VALUES (default,2);
-INSERT INTO votes VALUES (default,2);
-INSERT INTO votes VALUES (default,1);
-INSERT INTO votes VALUES (default,3);
-INSERT INTO votes VALUES (default,2);
-INSERT INTO votes VALUES (default,3);
-INSERT INTO votes VALUES (default,3);
-INSERT INTO votes VALUES (default,4);
-INSERT INTO votes VALUES (default,3);
-INSERT INTO votes VALUES (default,2);
-INSERT INTO votes VALUES (default,4);
-INSERT INTO votes VALUES (default,3);
-INSERT INTO votes VALUES (default,2);
-INSERT INTO votes VALUES (default,1);
-INSERT INTO votes VALUES (default,1);
-INSERT INTO votes VALUES (default,4);
-INSERT INTO votes VALUES (default,3);
-INSERT INTO votes VALUES (default,1);
-INSERT INTO votes VALUES (default,1);
-INSERT INTO votes VALUES (default,2);
-INSERT INTO votes VALUES (default,4);
-INSERT INTO votes VALUES (default,3);
-INSERT INTO votes VALUES (default,2);
-INSERT INTO votes VALUES (default,2);
-INSERT INTO votes VALUES (default,3);
-INSERT INTO votes VALUES (default,2);
-INSERT INTO votes VALUES (default,4);
+  
   
   
 CREATE TABLE food (
@@ -453,9 +231,9 @@ insert INTO races values(2, '500 meter dash', 3);
 insert INTO races values(3, 'cross-country', 2);
 insert INTO races values(4, 'triathalon', NULL);
 
-CREATE TABLE mass_table (weight float(8,2));
+CREATE TABLE mass_table (weight float(4,2));
 
-insert into mass_table values (5.79),(26.43), (54.65), (34.463), (60.223), (62.73), (35.63), (47.43), (63.47),(121.5),(2421.99);
+insert into mass_table values(26.43), (54.65), (34.463), (60.223), (62.73), (35.63), (47.43), (63.47);
 
 CREATE TABLE agent (
 agentID int PRIMARY KEY auto_increment,
@@ -971,40 +749,40 @@ INSERT INTO COALESCE (PID, PNAME, APRICE, EAST, WEST, HPHONE) VALUES ('1018', 'L
 INSERT INTO COALESCE (PID, PNAME, SPRICE, EAST) VALUES ('1019', 'Letv Le 1S (White, 32 GB)', '12342', 'Y');
 
 
-UPDATE COALESCE SET `BPHONE` = '9922059378' WHERE (`PID` = '1001');
-UPDATE COALESCE SET `CPHONE` = '9850883662' WHERE (`PID` = '1002');
-UPDATE COALESCE SET `HPHONE` = '9750993114' WHERE (`PID` = '1003');
-UPDATE COALESCE SET `BPHONE` = '9799471220', `HPHONE` = '9860123442' WHERE (`PID` = '1004');
-UPDATE COALESCE SET `CPHONE` = '7700754312' WHERE (`PID` = '1005');
-UPDATE COALESCE SET `HPHONE` = '9850990887' WHERE (`PID` = '1006');
-UPDATE COALESCE SET `BPHONE` = '9850990889', `HPHONE` = '9850112331' WHERE (`PID` = '1007');
-UPDATE COALESCE SET `BPHONE` = '9850008776' WHERE (`PID` = '1009');
-UPDATE COALESCE SET `HPHONE` = '9850001001' WHERE (`PID` = '1010');
-UPDATE COALESCE SET `BPHONE` = '9850000111', `CPHONE` = '9850000112', `HPHONE` = '9850000113' WHERE (`PID` = '1011');
-UPDATE COALESCE SET `CPHONE` = '9850000113' WHERE (`PID` = '1014');
-UPDATE COALESCE SET `BPHONE` = '9850000114', `CPHONE` = '9850000115' WHERE (`PID` = '1016');
-UPDATE COALESCE SET `HPHONE` = '9850000116' WHERE (`PID` = '1017');
-UPDATE COALESCE SET `HPHONE` = '9850000117' WHERE (`PID` = '1018');
+UPDATE coalesce SET `BPHONE` = '9922059378' WHERE (`PID` = '1001');
+UPDATE coalesce SET `CPHONE` = '9850883662' WHERE (`PID` = '1002');
+UPDATE coalesce SET `HPHONE` = '9750993114' WHERE (`PID` = '1003');
+UPDATE coalesce SET `BPHONE` = '9799471220', `HPHONE` = '9860123442' WHERE (`PID` = '1004');
+UPDATE coalesce SET `CPHONE` = '7700754312' WHERE (`PID` = '1005');
+UPDATE coalesce SET `HPHONE` = '9850990887' WHERE (`PID` = '1006');
+UPDATE coalesce SET `BPHONE` = '9850990889', `HPHONE` = '9850112331' WHERE (`PID` = '1007');
+UPDATE coalesce SET `BPHONE` = '9850008776' WHERE (`PID` = '1009');
+UPDATE coalesce SET `HPHONE` = '9850001001' WHERE (`PID` = '1010');
+UPDATE coalesce SET `BPHONE` = '9850000111', `CPHONE` = '9850000112', `HPHONE` = '9850000113' WHERE (`PID` = '1011');
+UPDATE coalesce SET `CPHONE` = '9850000113' WHERE (`PID` = '1014');
+UPDATE coalesce SET `BPHONE` = '9850000114', `CPHONE` = '9850000115' WHERE (`PID` = '1016');
+UPDATE coalesce SET `HPHONE` = '9850000116' WHERE (`PID` = '1017');
+UPDATE coalesce SET `HPHONE` = '9850000117' WHERE (`PID` = '1018');
 
-UPDATE COALESCE SET `primaryPhone` = '1' WHERE (`PID` = '1001');
-UPDATE COALESCE SET `primaryPhone` = '2' WHERE (`PID` = '1002');
-UPDATE COALESCE SET `primaryPhone` = '1' WHERE (`PID` = '1003');
-UPDATE COALESCE SET `primaryPhone` = '3' WHERE (`PID` = '1004');
-UPDATE COALESCE SET `primaryPhone` = '2' WHERE (`PID` = '1005');
-UPDATE COALESCE SET `primaryPhone` = '3' WHERE (`PID` = '1006');
-UPDATE COALESCE SET `primaryPhone` = '1' WHERE (`PID` = '1007');
-UPDATE COALESCE SET `primaryPhone` = '1' WHERE (`PID` = '1008');
-UPDATE COALESCE SET `primaryPhone` = '2' WHERE (`PID` = '1009');
-UPDATE COALESCE SET `primaryPhone` = '1' WHERE (`PID` = '1010');
-UPDATE COALESCE SET `primaryPhone` = '2' WHERE (`PID` = '1011');
-UPDATE COALESCE SET `primaryPhone` = '3' WHERE (`PID` = '1012');
-UPDATE COALESCE SET `primaryPhone` = '2' WHERE (`PID` = '1013');
-UPDATE COALESCE SET `primaryPhone` = '2' WHERE (`PID` = '1014');
-UPDATE COALESCE SET `primaryPhone` = '1' WHERE (`PID` = '1015');
-UPDATE COALESCE SET `primaryPhone` = '2' WHERE (`PID` = '1016');
-UPDATE COALESCE SET `primaryPhone` = '3' WHERE (`PID` = '1017');
-UPDATE COALESCE SET `primaryPhone` = '2' WHERE (`PID` = '1018');
-UPDATE COALESCE SET `primaryPhone` = '1' WHERE (`PID` = '1019');
+UPDATE coalesce SET `primaryPhone` = '1' WHERE (`PID` = '1001');
+UPDATE coalesce SET `primaryPhone` = '2' WHERE (`PID` = '1002');
+UPDATE coalesce SET `primaryPhone` = '1' WHERE (`PID` = '1003');
+UPDATE coalesce SET `primaryPhone` = '3' WHERE (`PID` = '1004');
+UPDATE coalesce SET `primaryPhone` = '2' WHERE (`PID` = '1005');
+UPDATE coalesce SET `primaryPhone` = '3' WHERE (`PID` = '1006');
+UPDATE coalesce SET `primaryPhone` = '1' WHERE (`PID` = '1007');
+UPDATE coalesce SET `primaryPhone` = '1' WHERE (`PID` = '1008');
+UPDATE coalesce SET `primaryPhone` = '2' WHERE (`PID` = '1009');
+UPDATE coalesce SET `primaryPhone` = '1' WHERE (`PID` = '1010');
+UPDATE coalesce SET `primaryPhone` = '2' WHERE (`PID` = '1011');
+UPDATE coalesce SET `primaryPhone` = '3' WHERE (`PID` = '1012');
+UPDATE coalesce SET `primaryPhone` = '2' WHERE (`PID` = '1013');
+UPDATE coalesce SET `primaryPhone` = '2' WHERE (`PID` = '1014');
+UPDATE coalesce SET `primaryPhone` = '1' WHERE (`PID` = '1015');
+UPDATE coalesce SET `primaryPhone` = '2' WHERE (`PID` = '1016');
+UPDATE coalesce SET `primaryPhone` = '3' WHERE (`PID` = '1017');
+UPDATE coalesce SET `primaryPhone` = '2' WHERE (`PID` = '1018');
+UPDATE coalesce SET `primaryPhone` = '1' WHERE (`PID` = '1019');
 
 
 create table NEAREST (c1 INT, c2 varchar(10), c3 INT);
@@ -1027,7 +805,7 @@ insert into NEAREST VALUES (2, 'z',175);
 insert into NEAREST VALUES (2, 'z',177);
 insert into NEAREST VALUES (2, 'z',179);
 
-create table NEW (c1 INT, c2 INT, c3 INT, old varchar(10), new varchar(10));
+create table new (c1 INT, c2 INT, c3 INT, old varchar(10), new varchar(10));
 
 create table blankTableA (c1 INT, c2 INT);
 
@@ -1118,62 +896,64 @@ INSERT INTO DEMODEPT2 VALUES (113,'D1','D1',null);
 INSERT INTO DEMODEPT2 VALUES (114,'E1','E1',null);
 INSERT INTO DEMODEPT2 VALUES (115,'F1','F1',null);
 
+
 CREATE TABLE EMP (
  EMPNO               INT NOT NULL,
- ENAME               varchar(10),
- JOB                 varchar(10),
+ ENAME               varchar(12),
+ JOB                 varchar(20),
  MGR                 INT,
- HIREDATE            datetime,
+ HIREDATE            date,
  SAL                 INT,
  COMM                INT,
- DEPTNO              INT,
+ DEPTNO              INT NOT NULL,
  BONUSID	         INT,
- `USER NAME`		 varchar(15),
- PWD				 varchar(12),
- phone 				 varchar(20),
- emailID 			 varchar(25),
+ `USER NAME`		 varchar(20),
+ PWD				 varchar(20),
+ phone 				 varchar(45),
  isActive			 boolean,
  CONSTRAINT EMP_FOREIGN_KEY_deptno FOREIGN KEY (DEPTNO) REFERENCES DEPT (DEPTNO),
  CONSTRAINT EMP_PRIMARY_KEY_empno PRIMARY KEY (EMPNO),
  CONSTRAINT EMP_FOREIGN_KEY_mgr FOREIGN KEY (MGR) REFERENCES EMP (EMPNO),
  CONSTRAINT CHK_PWD CHECK (length(PWD)>= 5));
 
-INSERT INTO EMP (EMPNO, ENAME, JOB, MGR, HIREDATE, SAL, COMM, DEPTNO, BONUSID, emailID, isActive) VALUES (7839,'KING','PRESIDENT',NULL,'1981-11-17 13:06:27',5000,NULL,10,1, "king&queen@gmail.com", true);
-INSERT INTO EMP (EMPNO, ENAME, JOB, MGR, HIREDATE, SAL, COMM, DEPTNO, BONUSID, emailID, isActive) VALUES (7698,'BLAKE','MANAGER',7839,'1981-05-01 01:49:12',2850,NULL,30,1, "hostom_div@yahoomail.com", true);
-INSERT INTO EMP (EMPNO, ENAME, JOB, MGR, HIREDATE, SAL, COMM, DEPTNO, BONUSID, emailID, isActive) VALUES (7782,'CLARK','MANAGER',7839,'1981-06-09 21:00:45',2450,NULL,10,3, "fineOne@gmail.com", true);
-INSERT INTO EMP (EMPNO, ENAME, JOB, MGR, HIREDATE, SAL, COMM, DEPTNO, BONUSID, emailID, isActive) VALUES (7566,'JONES','MANAGER',7839,'1981-04-02 18:25:15',2975,NULL,20,4, "mypet@rediffmail.com", true);
-INSERT INTO EMP (EMPNO, ENAME, JOB, MGR, HIREDATE, SAL, COMM, DEPTNO, BONUSID, emailID, isActive) VALUES (7654,'MARTIN','SALESMAN',7698,'1981-09-28 00:00:00',1250,1400,30,6, "tiger@gmail.com", true);
-INSERT INTO EMP (EMPNO, ENAME, JOB, MGR, HIREDATE, SAL, COMM, DEPTNO, BONUSID, emailID, isActive) VALUES (7499,'ALLEN','SALESMAN',7698,'1981-02-20 00:40:00',1600,300,30,4, "godfather@gmail.com", true);
-INSERT INTO EMP (EMPNO, ENAME, JOB, MGR, HIREDATE, SAL, COMM, DEPTNO, BONUSID, emailID, isActive) VALUES (7844,'TURNER','SALESMAN',7698,'1981-09-08 06:00:00',1500,0,30,5, "peter_son@yahoomail.com", true);
-INSERT INTO EMP (EMPNO, ENAME, JOB, MGR, HIREDATE, SAL, COMM, DEPTNO, BONUSID, emailID, isActive) VALUES (7900,'JAMES','CLERK',7698,'1981-12-03 18:9:00',950,NULL,30,2, "bond007@gmail.com", true);
-INSERT INTO EMP (EMPNO, ENAME, JOB, MGR, HIREDATE, SAL, COMM, DEPTNO, BONUSID, emailID, isActive) VALUES (7521,'WARD','SALESMAN',7698,'1981-02-22 12:00:00',1250,500,30,1, "redbull@rediffmail.com", true);
-INSERT INTO EMP (EMPNO, ENAME, JOB, MGR, HIREDATE, SAL, COMM, DEPTNO, BONUSID, emailID, isActive) VALUES (7902,'FORD','ANALYST',7566,'1981-12-03 04:30:00',3000,NULL,20,4, NULL, false);
-INSERT INTO EMP (EMPNO, ENAME, JOB, MGR, HIREDATE, SAL, COMM, DEPTNO, BONUSID, emailID, isActive) VALUES (7369,'SMITH','CLERK',7902,'1980-12-17 06:06:03',800,NULL,20,2, "simple75@hotmail.com", false);
-INSERT INTO EMP (EMPNO, ENAME, JOB, MGR, HIREDATE, SAL, COMM, DEPTNO, BONUSID, emailID, isActive) VALUES (7788,'SCOTT','ANALYST',7566,'1982-12-09',3000,NULL,20,3, "startmail@gmail.com", true);
-INSERT INTO EMP (EMPNO, ENAME, JOB, MGR, HIREDATE, SAL, COMM, DEPTNO, BONUSID, emailID, isActive) VALUES (7876,'ADAMS','CLERK',7788,'1983-01-12 10:45:00',1300,NULL,20,1, "adams.tree@gmail.com", true);
-INSERT INTO EMP (EMPNO, ENAME, JOB, MGR, HIREDATE, SAL, COMM, DEPTNO, BONUSID, emailID, isActive) VALUES (7934,'MILLER','CLERK',7782,'1982-01-23',1300,NULL,10,2, NULL, false);
-INSERT INTO EMP (EMPNO, ENAME, JOB, MGR, HIREDATE, SAL, COMM, DEPTNO, BONUSID, emailID, isActive) VALUES (7949,'ALEX','MANAGER',7698,'1982-01-24 06:20:00',3000,500,30,5, NULL, true);
-INSERT INTO EMP (EMPNO, ENAME, JOB, MGR, HIREDATE, SAL, COMM, DEPTNO, BONUSID, emailID, isActive) VALUES (7945,'AARUSH','SALESMAN',7902,'1980-02-14',1350,2700,30,NULL, "blankSpace@gmail.com", false);
-INSERT INTO EMP (EMPNO, ENAME, JOB, MGR, HIREDATE, SAL, COMM, DEPTNO, BONUSID, emailID, isActive) VALUES (7415,'AARAV','CLERK',7902,'1981-12-31 06:05:07',3350,NULL,10,null, NULL, false);
-INSERT INTO EMP (EMPNO, ENAME, JOB, MGR, HIREDATE, SAL, COMM, DEPTNO, BONUSID, emailID, isActive) VALUES (7919,'HOFFMAN','MANAGER',7566,'1982-03-24',4150,NULL,30,3, "tree.House@hatmail.com", true);
-INSERT INTO EMP (EMPNO, ENAME, JOB, MGR, HIREDATE, SAL, COMM, DEPTNO, BONUSID, emailID, isActive) VALUES (7920,'GRASS','SALESMAN',7919,'1980-02-14 06:03:00',2575,2700,30,5, "ranibow@rediffmail.com", true);
-INSERT INTO EMP (EMPNO, ENAME, JOB, MGR, HIREDATE, SAL, COMM, DEPTNO, BONUSID, emailID, isActive) VALUES (7421,'THOMAS','CLERK',7920,'1981-07-19',1750,NULL,10,1, NULL, false);
+INSERT INTO EMP (EMPNO, ENAME, JOB, MGR, HIREDATE, SAL, COMM, DEPTNO, BONUSID, isActive) VALUES (7839,'KING','PRESIDENT',NULL,'1981-11-17',5000,NULL,10,1, true);
+INSERT INTO EMP (EMPNO, ENAME, JOB, MGR, HIREDATE, SAL, COMM, DEPTNO, BONUSID, isActive) VALUES (7698,'BLAKE','MANAGER',7839,'1981-05-01',2850,NULL,30,1, true);
+INSERT INTO EMP (EMPNO, ENAME, JOB, MGR, HIREDATE, SAL, COMM, DEPTNO, BONUSID, isActive) VALUES (7782,'CLARK','MANAGER',7839,'1981-06-09',2450,NULL,10,3, true);
+INSERT INTO EMP (EMPNO, ENAME, JOB, MGR, HIREDATE, SAL, COMM, DEPTNO, BONUSID, isActive) VALUES (7566,'JONES','MANAGER',7839,'1981-04-02',2975,NULL,20,4, true);
+INSERT INTO EMP (EMPNO, ENAME, JOB, MGR, HIREDATE, SAL, COMM, DEPTNO, BONUSID, isActive) VALUES (7654,'MARTIN','SALESMAN',7698,'1981-09-28',1250,1400,30,6, true);
+INSERT INTO EMP (EMPNO, ENAME, JOB, MGR, HIREDATE, SAL, COMM, DEPTNO, BONUSID, isActive) VALUES (7499,'ALLEN','SALESMAN',7698,'1981-02-20',1600,300,30,4, true);
+INSERT INTO EMP (EMPNO, ENAME, JOB, MGR, HIREDATE, SAL, COMM, DEPTNO, BONUSID, isActive) VALUES (7844,'TURNER','SALESMAN',7698,'1981-09-08',1500,0,30,5, true);
+INSERT INTO EMP (EMPNO, ENAME, JOB, MGR, HIREDATE, SAL, COMM, DEPTNO, BONUSID, isActive) VALUES (7900,'JAMES','CLERK',7698,'1981-12-03',950,NULL,30,2, true);
+INSERT INTO EMP (EMPNO, ENAME, JOB, MGR, HIREDATE, SAL, COMM, DEPTNO, BONUSID, isActive) VALUES (7521,'WARD','SALESMAN',7698,'1981-02-22',1250,500,30,1, true);
+INSERT INTO EMP (EMPNO, ENAME, JOB, MGR, HIREDATE, SAL, COMM, DEPTNO, BONUSID, isActive) VALUES (7902,'FORD','ANALYST',7566,'1981-12-03',3000,NULL,20,4, false);
+INSERT INTO EMP (EMPNO, ENAME, JOB, MGR, HIREDATE, SAL, COMM, DEPTNO, BONUSID, isActive) VALUES (7369,'SMITH','CLERK',7902,'1980-12-17',800,NULL,20,2, false);
+INSERT INTO EMP (EMPNO, ENAME, JOB, MGR, HIREDATE, SAL, COMM, DEPTNO, BONUSID, isActive) VALUES (7788,'SCOTT','ANALYST',7566,'1982-12-09',3000,NULL,20,3,true);
+INSERT INTO EMP (EMPNO, ENAME, JOB, MGR, HIREDATE, SAL, COMM, DEPTNO, BONUSID, isActive) VALUES (7876,'ADAMS','CLERK',7788,'1983-01-12',1100,NULL,20,1, true);
+INSERT INTO EMP (EMPNO, ENAME, JOB, MGR, HIREDATE, SAL, COMM, DEPTNO, BONUSID, isActive) VALUES (7934,'MILLER','CLERK',7782,'1982-01-23',1300,NULL,10,2, false);
+INSERT INTO EMP (EMPNO, ENAME, JOB, MGR, HIREDATE, SAL, COMM, DEPTNO, BONUSID, isActive) VALUES (7949,'ALEX','MANAGER',7698,'1982-01-24',1250,500,30,5, true);
+INSERT INTO EMP (EMPNO, ENAME, JOB, MGR, HIREDATE, SAL, COMM, DEPTNO, BONUSID, isActive) VALUES (7945,'AARUSH','SALESMAN',7902,'1980-02-14',1350,2700,30,NULL,false);
+INSERT INTO EMP (EMPNO, ENAME, JOB, MGR, HIREDATE, SAL, COMM, DEPTNO, BONUSID, isActive) VALUES (7415,'AARAV','CLERK',7902,'1981-12-31',3350,NULL,10,null,false);
+INSERT INTO EMP (EMPNO, ENAME, JOB, MGR, HIREDATE, SAL, COMM, DEPTNO, BONUSID, isActive) VALUES (7919,'HOFFMAN','MANAGER',7566,'1982-03-24',4150,NULL,30,3,true);
+INSERT INTO EMP (EMPNO, ENAME, JOB, MGR, HIREDATE, SAL, COMM, DEPTNO, BONUSID, isActive) VALUES (7920,'GRASS','SALESMAN',7919,'1980-02-14',2575,2700,30,5,true);
+INSERT INTO EMP (EMPNO, ENAME, JOB, MGR, HIREDATE, SAL, COMM, DEPTNO, BONUSID, isActive) VALUES (7421,'THOMAS','CLERK',7920,'1981-07-19',1750,NULL,10,1,false);
 
 
-UPDATE EMP SET phone = '7032300023' WHERE (EMPNO = '7369');
-UPDATE EMP SET phone = '7032300084' WHERE (EMPNO = '7415');
-UPDATE EMP SET phone = '7032300011' WHERE (EMPNO = '7421');
-UPDATE EMP SET phone = '7032300096' WHERE (EMPNO = '7499');
-UPDATE EMP SET phone = '7132300034' WHERE (EMPNO = '7521');
-UPDATE EMP SET phone = '7132300039' WHERE (EMPNO = '7566');
-UPDATE EMP SET phone = '7132300050' WHERE (EMPNO = '7654');
-UPDATE EMP SET phone = '7132300027' WHERE (EMPNO = '7698');
-UPDATE EMP SET phone = '7032300001' WHERE (EMPNO = '7782');
-UPDATE EMP SET phone = '7132300081' WHERE (EMPNO = '7839');
-UPDATE EMP SET phone = '7132300086' WHERE (EMPNO = '7876');
-UPDATE EMP SET phone = '7132300042' WHERE (EMPNO = '7900');
-UPDATE EMP SET phone = '7132300055' WHERE (EMPNO = '7934');
-UPDATE EMP SET phone = '7156567183' WHERE (EMPNO = '7949');
+UPDATE emp SET phone = '7032300023' WHERE (EMPNO = '7369');
+UPDATE emp SET phone = '7032300084' WHERE (EMPNO = '7415');
+UPDATE emp SET phone = '7032300011' WHERE (EMPNO = '7421');
+UPDATE emp SET phone = '7032300096' WHERE (EMPNO = '7499');
+UPDATE emp SET phone = '7132300034' WHERE (EMPNO = '7521');
+UPDATE emp SET phone = '7132300039' WHERE (EMPNO = '7566');
+UPDATE emp SET phone = '7132300050' WHERE (EMPNO = '7654');
+UPDATE emp SET phone = '7132300027' WHERE (EMPNO = '7698');
+UPDATE emp SET phone = '7032300001' WHERE (EMPNO = '7782');
+UPDATE emp SET phone = '7132300081' WHERE (EMPNO = '7839');
+UPDATE emp SET phone = '7132300086' WHERE (EMPNO = '7876');
+UPDATE emp SET phone = '7132300042' WHERE (EMPNO = '7900');
+UPDATE emp SET phone = '7132300055' WHERE (EMPNO = '7934');
+UPDATE emp SET phone = '7156567183' WHERE (EMPNO = '7949');
+
+
 
 CREATE TABLE BONUS (
  ID INT PRIMARY KEY,
@@ -1388,82 +1168,6 @@ INSERT INTO ORD (TOTAL, SHIPDATE, ORDID, ORDERDATE, CUSTID, COMMPLAN)
 INSERT INTO ORD (TOTAL, SHIPDATE, ORDID, ORDERDATE, CUSTID, COMMPLAN)
  VALUES ('730', '1987-01-01', '621', '1987-03-15', '100', 'A');
 
-INSERT INTO ord (`ORDID`, `ORDERDATE`, `CUSTID`, `SHIPDATE`, `STATUS`, `TOTAL`) VALUES ('622', '1987-03-11 00:00:00', '102', '1987-03-12 00:00:00', 'Cancelled', '465');
-INSERT INTO ord (`ORDID`, `ORDERDATE`, `COMMPLAN`, `CUSTID`, `SHIPDATE`, `STATUS`, `TOTAL`) VALUES ('623', '1987-03-15 00:00:00', 'A', '104', '1987-03-15 00:00:00', 'Shipped', '120');
-INSERT INTO ord (`ORDID`, `ORDERDATE`, `CUSTID`, `SHIPDATE`, `STATUS`, `TOTAL`) VALUES ('624', '1987-07-15 00:00:00', '108', '1987-07-15 00:00:00', 'Resolved', '275');
-INSERT INTO ord (`ORDID`, `ORDERDATE`, `CUSTID`, `SHIPDATE`, `STATUS`, `TOTAL`) VALUES ('625', '1987-03-16 00:00:00', '102', '1987-03-21 00:00:00', 'Cancelled', '900');
-INSERT INTO ord (`ORDID`, `ORDERDATE`, `COMMPLAN`, `CUSTID`, `SHIPDATE`, `STATUS`, `TOTAL`) VALUES ('626', '1987-03-25 00:00:00', 'B', '103', '1987-03-27 00:00:00', 'In Process', '810');
-INSERT INTO ord (`ORDID`, `ORDERDATE`, `CUSTID`, `SHIPDATE`, `STATUS`, `TOTAL`) VALUES ('627', '1987-03-15 00:00:00', '101', '1987-03-15 00:00:00', 'Shipped', '927');
-INSERT INTO ord (`ORDID`, `ORDERDATE`, `COMMPLAN`, `CUSTID`, `SHIPDATE`, `STATUS`, `TOTAL`) VALUES ('628', '1987-04-05 00:00:00', 'D', '105', '1987-04-10 00:00:00', 'In Process', '678');
-INSERT INTO ord (`ORDID`, `ORDERDATE`, `COMMPLAN`, `CUSTID`, `SHIPDATE`, `STATUS`, `TOTAL`) VALUES ('629', '1987-03-12 00:00:00', 'C', '106', '1987-03-13 00:00:00', 'Cancelled', '629');
-INSERT INTO ord (`ORDID`, `ORDERDATE`, `COMMPLAN`, `CUSTID`, `SHIPDATE`, `STATUS`, `TOTAL`) VALUES ('630', '1987-07-15 00:00:00', 'D', '101', '1987-07-15 00:00:00', 'Shipped', '488');
-INSERT INTO ord (`ORDID`, `ORDERDATE`, `COMMPLAN`, `CUSTID`, `SHIPDATE`, `STATUS`, `TOTAL`) VALUES ('631', '1987-09-15 00:00:00', 'C', '103', '1987-09-16 00:00:00', 'Resolved', '100');
-INSERT INTO ORD (`ORDID`, `ORDERDATE`, `COMMPLAN`, `CUSTID`, `SHIPDATE`, `STATUS`, `TOTAL`) VALUES ('632', '1986-08-16', 'A', '102', '1986-08-18', 'On Hold', '606');
-INSERT INTO ORD (`ORDID`, `ORDERDATE`, `COMMPLAN`, `CUSTID`, `SHIPDATE`, `STATUS`, `TOTAL`) VALUES ('633', '1986-07-23', 'B', '105', '1986-07-26', 'Cancelled', '577');
-INSERT INTO ORD (`ORDID`, `ORDERDATE`, `COMMPLAN`, `CUSTID`, `SHIPDATE`, `STATUS`, `TOTAL`) VALUES ('634', '1986-04-23', 'C', '103', '1986-04-27', 'Resolved', '460');
-INSERT INTO ORD (`ORDID`, `ORDERDATE`, `COMMPLAN`, `CUSTID`, `SHIPDATE`, `STATUS`, `TOTAL`) VALUES ('635', '1986-02-16', 'D', '106', '1986-02-21', 'Disputed', '372');
-INSERT INTO ORD (`ORDID`, `ORDERDATE`, `COMMPLAN`, `CUSTID`, `SHIPDATE`, `STATUS`, `TOTAL`) VALUES ('636', '1986-01-10', 'A', '101', '1986-01-14', 'Shipped', '330');
-INSERT INTO ORD (`ORDID`, `ORDERDATE`, `COMMPLAN`, `CUSTID`, `SHIPDATE`, `STATUS`, `TOTAL`) VALUES ('637', '1986-01-25', 'D', '107', '1986-01-30', 'In Process', '273');
-INSERT INTO ORD (`ORDID`, `ORDERDATE`, `COMMPLAN`, `CUSTID`, `SHIPDATE`, `STATUS`, `TOTAL`) VALUES ('638', '1986-08-12', 'A', '106', '1986-08-14', 'Shipped', '695');
-INSERT INTO ORD (`ORDID`, `ORDERDATE`, `COMMPLAN`, `CUSTID`, `SHIPDATE`, `STATUS`, `TOTAL`) VALUES ('639', '1986-06-20', 'D', '101', '1986-06-22', 'On Hold', '610');
-INSERT INTO ORD (`ORDID`, `ORDERDATE`, `COMMPLAN`, `CUSTID`, `SHIPDATE`, `STATUS`, `TOTAL`) VALUES ('640', '1986-06-21', 'B', '102', '1986-06-23', 'In Process', '670');
-INSERT INTO ORD (`ORDID`, `ORDERDATE`, `COMMPLAN`, `CUSTID`, `SHIPDATE`, `STATUS`, `TOTAL`) VALUES ('641', '1986-11-30', 'C', '102', '1986-12-01', 'Shipped', '623');
-INSERT INTO ORD (`ORDID`, `ORDERDATE`, `COMMPLAN`, `CUSTID`, `SHIPDATE`, `STATUS`, `TOTAL`) VALUES ('642', '1986-05-11', 'B', '105', '1986-05-15', 'Cancelled', '294');
-INSERT INTO ORD (`ORDID`, `ORDERDATE`, `COMMPLAN`, `CUSTID`, `SHIPDATE`, `STATUS`, `TOTAL`) VALUES ('643', '1986-05-08', 'D', '102', '1986-05-11', 'Shipped', '463');
-INSERT INTO ORD (`ORDID`, `ORDERDATE`, `COMMPLAN`, `CUSTID`, `SHIPDATE`, `STATUS`, `TOTAL`) VALUES ('644', '1986-07-04', 'A', '101', '1986-07-09', 'In Process', '245');
-INSERT INTO ORD (`ORDID`, `ORDERDATE`, `COMMPLAN`, `CUSTID`, `SHIPDATE`, `STATUS`, `TOTAL`) VALUES ('645', '1986-09-06', 'B', '105', '1986-09-08', 'In Process', '675');
-INSERT INTO ORD (`ORDID`, `ORDERDATE`, `COMMPLAN`, `CUSTID`, `SHIPDATE`, `STATUS`, `TOTAL`) VALUES ('646', '1986-06-28', 'C', '103', '1986-07-01', 'Resolved', '482');
-INSERT INTO ORD (`ORDID`, `ORDERDATE`, `COMMPLAN`, `CUSTID`, `SHIPDATE`, `STATUS`, `TOTAL`) VALUES ('647', '1986-05-26', 'D', '101', '1986-05-30', 'Shipped', '567');
-INSERT INTO ORD (`ORDID`, `ORDERDATE`, `COMMPLAN`, `CUSTID`, `SHIPDATE`, `STATUS`, `TOTAL`) VALUES ('648', '1986-04-14', 'A', '108', '1986-04-19', 'On Hold', '561');
-INSERT INTO ORD (`ORDID`, `ORDERDATE`, `COMMPLAN`, `CUSTID`, `SHIPDATE`, `STATUS`, `TOTAL`) VALUES ('649', '1986-07-01', 'D', '105', '1986-07-05', 'In Process', '268');
-INSERT INTO ORD (`ORDID`, `ORDERDATE`, `COMMPLAN`, `CUSTID`, `SHIPDATE`, `STATUS`, `TOTAL`) VALUES ('650', '1986-08-08', 'C', '100', '1986-08-11', 'Cancelled', '649');
-INSERT INTO ORD (`ORDID`, `ORDERDATE`, `COMMPLAN`, `CUSTID`, `SHIPDATE`, `STATUS`, `TOTAL`) VALUES ('651', '1986-09-19', 'C', '101', '1986-09-21', 'Shipped', '679');
-INSERT INTO ORD (`ORDID`, `ORDERDATE`, `COMMPLAN`, `CUSTID`, `SHIPDATE`, `STATUS`, `TOTAL`) VALUES ('652', '1986-02-12', 'B', '103', '1986-02-13', 'Cancelled', '349');
-INSERT INTO ORD (`ORDID`, `ORDERDATE`, `COMMPLAN`, `CUSTID`, `SHIPDATE`, `STATUS`, `TOTAL`) VALUES ('653', '1986-08-25', 'B', '104', '1986-08-28', 'Shipped', '265');
-INSERT INTO ORD (`ORDID`, `ORDERDATE`, `COMMPLAN`, `CUSTID`, `SHIPDATE`, `STATUS`, `TOTAL`) VALUES ('654', '1986-09-21', 'A', '103', '1986-09-22', 'Resolved', '626');
-INSERT INTO ORD (`ORDID`, `ORDERDATE`, `COMMPLAN`, `CUSTID`, `SHIPDATE`, `STATUS`, `TOTAL`) VALUES ('655', '1986-09-17', 'B', '108', '1986-09-18', 'Cancelled', '412');
-INSERT INTO ORD (`ORDID`, `ORDERDATE`, `COMMPLAN`, `CUSTID`, `SHIPDATE`, `STATUS`, `TOTAL`) VALUES ('656', '1986-08-07', 'C', '101', '1986-08-12', 'In Process', '573');
-INSERT INTO ORD (`ORDID`, `ORDERDATE`, `COMMPLAN`, `CUSTID`, `SHIPDATE`, `STATUS`, `TOTAL`) VALUES ('657', '1986-03-23', 'B', '107', '1986-03-27', 'Shipped', '352');
-INSERT INTO ORD (`ORDID`, `ORDERDATE`, `COMMPLAN`, `CUSTID`, `SHIPDATE`, `STATUS`, `TOTAL`) VALUES ('658', '1986-05-12', 'C', '104', '1986-05-15', 'In Process', '678');
-INSERT INTO ORD (`ORDID`, `ORDERDATE`, `COMMPLAN`, `CUSTID`, `SHIPDATE`, `STATUS`, `TOTAL`) VALUES ('659', '1986-03-06', 'A', '108', '1986-03-11', 'Cancelled', '259');
-INSERT INTO ORD (`ORDID`, `ORDERDATE`, `COMMPLAN`, `CUSTID`, `SHIPDATE`, `STATUS`, `TOTAL`) VALUES ('660', '1986-10-15', 'A', '108', '1986-10-17', 'Shipped', '650');
-INSERT INTO ORD (`ORDID`, `ORDERDATE`, `COMMPLAN`, `CUSTID`, `SHIPDATE`, `STATUS`, `TOTAL`) VALUES ('661', '1986-12-10', 'D', '104', '1986-12-14', 'Resolved', '555');
-INSERT INTO ORD (`ORDID`, `ORDERDATE`, `COMMPLAN`, `CUSTID`, `SHIPDATE`, `STATUS`, `TOTAL`) VALUES ('662', '1986-11-19', 'B', '106', '1986-11-24', 'On Hold', '358');
-INSERT INTO ORD (`ORDID`, `ORDERDATE`, `COMMPLAN`, `CUSTID`, `SHIPDATE`, `STATUS`, `TOTAL`) VALUES ('663', '1986-09-29', 'D', '105', '1986-10-03', 'Cancelled', '351');
-INSERT INTO ORD (`ORDID`, `ORDERDATE`, `COMMPLAN`, `CUSTID`, `SHIPDATE`, `STATUS`, `TOTAL`) VALUES ('664', '1986-06-04', 'B', '106', '1986-06-08', 'Resolved', '561');
-INSERT INTO ORD (`ORDID`, `ORDERDATE`, `COMMPLAN`, `CUSTID`, `SHIPDATE`, `STATUS`, `TOTAL`) VALUES ('665', '1986-07-30', 'D', '100', '1986-08-01', 'Disputed', '682');
-INSERT INTO ORD (`ORDID`, `ORDERDATE`, `COMMPLAN`, `CUSTID`, `SHIPDATE`, `STATUS`, `TOTAL`) VALUES ('666', '1986-07-17', 'B', '104', '1986-07-19', 'Shipped', '619');
-INSERT INTO ORD (`ORDID`, `ORDERDATE`, `COMMPLAN`, `CUSTID`, `SHIPDATE`, `STATUS`, `TOTAL`) VALUES ('667', '1986-12-09', 'D', '105', '1986-12-10', 'In Process', '638');
-INSERT INTO ORD (`ORDID`, `ORDERDATE`, `COMMPLAN`, `CUSTID`, `SHIPDATE`, `STATUS`, `TOTAL`) VALUES ('668', '1986-11-11', 'B', '102', '1986-11-16', 'Shipped', '372');
-INSERT INTO ORD (`ORDID`, `ORDERDATE`, `COMMPLAN`, `CUSTID`, `SHIPDATE`, `STATUS`, `TOTAL`) VALUES ('669', '1986-10-15', 'B', '103', '1986-10-17', 'On Hold', '657');
-INSERT INTO ORD (`ORDID`, `ORDERDATE`, `COMMPLAN`, `CUSTID`, `SHIPDATE`, `STATUS`, `TOTAL`) VALUES ('670', '1986-07-28', 'A', '108', '1986-08-01', 'In Process', '589');
-INSERT INTO ORD (`ORDID`, `ORDERDATE`, `COMMPLAN`, `CUSTID`, `SHIPDATE`, `STATUS`, `TOTAL`) VALUES ('671', '1986-07-14', 'B', '104', '1986-07-17', 'Shipped', '344');
-INSERT INTO ORD (`ORDID`, `ORDERDATE`, `COMMPLAN`, `CUSTID`, `SHIPDATE`, `STATUS`, `TOTAL`) VALUES ('672', '1986-05-26', 'C', '101', '1986-05-30', 'Cancelled', '588');
-INSERT INTO ORD (`ORDID`, `ORDERDATE`, `COMMPLAN`, `CUSTID`, `SHIPDATE`, `STATUS`, `TOTAL`) VALUES ('673', '1986-04-14', 'B', '108', '1986-04-19', 'Shipped', '598');
-INSERT INTO ORD (`ORDID`, `ORDERDATE`, `COMMPLAN`, `CUSTID`, `SHIPDATE`, `STATUS`, `TOTAL`) VALUES ('674', '1986-07-01', 'C', '105', '1986-07-05', 'In Process', '534');
-INSERT INTO ORD (`ORDID`, `ORDERDATE`, `COMMPLAN`, `CUSTID`, `SHIPDATE`, `STATUS`, `TOTAL`) VALUES ('675', '1986-08-08', 'A', '100', '1986-08-11', 'In Process', '346');
-INSERT INTO ORD (`ORDID`, `ORDERDATE`, `COMMPLAN`, `CUSTID`, `SHIPDATE`, `STATUS`, `TOTAL`) VALUES ('676', '1986-09-19', 'A', '101', '1986-09-21', 'Resolved', '385');
-INSERT INTO ORD (`ORDID`, `ORDERDATE`, `COMMPLAN`, `CUSTID`, `SHIPDATE`, `STATUS`, `TOTAL`) VALUES ('677', '1986-02-12', 'D', '103', '1986-02-13', 'Shipped', '538');
-INSERT INTO ORD (`ORDID`, `ORDERDATE`, `COMMPLAN`, `CUSTID`, `SHIPDATE`, `STATUS`, `TOTAL`) VALUES ('678', '1986-08-25', 'B', '104', '1986-08-28', 'On Hold', '387');
-INSERT INTO ORD (`ORDID`, `ORDERDATE`, `COMMPLAN`, `CUSTID`, `SHIPDATE`, `STATUS`, `TOTAL`) VALUES ('679', '1986-09-21', 'D', '103', '1986-09-22', 'In Process', '275');
-INSERT INTO ORD (`ORDID`, `ORDERDATE`, `COMMPLAN`, `CUSTID`, `SHIPDATE`, `STATUS`, `TOTAL`) VALUES ('680', '1986-09-17', 'B', '108', '1986-09-18', 'Cancelled', '400');
-INSERT INTO ORD (`ORDID`, `ORDERDATE`, `COMMPLAN`, `CUSTID`, `SHIPDATE`, `STATUS`, `TOTAL`) VALUES ('681', '1986-08-07', 'D', '101', '1986-08-12', 'Shipped', '487');
-INSERT INTO ORD (`ORDID`, `ORDERDATE`, `COMMPLAN`, `CUSTID`, `SHIPDATE`, `STATUS`, `TOTAL`) VALUES ('682', '1986-03-23', 'B', '107', '1986-03-27', 'Cancelled', '536');
-INSERT INTO ORD (`ORDID`, `ORDERDATE`, `COMMPLAN`, `CUSTID`, `SHIPDATE`, `STATUS`, `TOTAL`) VALUES ('683', '1986-05-12', 'D', '104', '1986-05-15', 'Shipped', '427');
-INSERT INTO ORD (`ORDID`, `ORDERDATE`, `COMMPLAN`, `CUSTID`, `SHIPDATE`, `STATUS`, `TOTAL`) VALUES ('684', '1986-03-06', 'C', '108', '1986-03-11', 'Resolved', '330');
-INSERT INTO ORD (`ORDID`, `ORDERDATE`, `COMMPLAN`, `CUSTID`, `SHIPDATE`, `STATUS`, `TOTAL`) VALUES ('685', '1986-10-15', 'A', '108', '1986-10-17', 'Cancelled', '356');
-INSERT INTO ORD (`ORDID`, `ORDERDATE`, `COMMPLAN`, `CUSTID`, `SHIPDATE`, `STATUS`, `TOTAL`) VALUES ('686', '1986-12-10', 'A', '104', '1986-12-14', 'In Process', '654');
-INSERT INTO ORD (`ORDID`, `ORDERDATE`, `COMMPLAN`, `CUSTID`, `SHIPDATE`, `STATUS`, `TOTAL`) VALUES ('687', '1986-11-19', 'D', '106', '1986-11-24', 'Shipped', '529');
-INSERT INTO ORD (`ORDID`, `ORDERDATE`, `COMMPLAN`, `CUSTID`, `SHIPDATE`, `STATUS`, `TOTAL`) VALUES ('688', '1986-09-29', 'B', '105', '1986-10-03', 'In Process', '656');
-INSERT INTO ORD (`ORDID`, `ORDERDATE`, `COMMPLAN`, `CUSTID`, `SHIPDATE`, `STATUS`, `TOTAL`) VALUES ('689', '1986-06-04', 'D', '106', '1986-06-08', 'Cancelled', '635');
-INSERT INTO ORD (`ORDID`, `ORDERDATE`, `COMMPLAN`, `CUSTID`, `SHIPDATE`, `STATUS`, `TOTAL`) VALUES ('690', '1986-07-30', 'B', '100', '1986-08-01', 'Shipped', '504');
-INSERT INTO ORD (`ORDID`, `ORDERDATE`, `COMMPLAN`, `CUSTID`, `SHIPDATE`, `STATUS`, `TOTAL`) VALUES ('691', '1986-10-15', 'D', '104', '1986-10-17', 'Resolved', '667');
-
-UPDATE ord SET `SHIPDATE` = '1987-03-19 00:00:00' WHERE (`ORDID` = '621');
-UPDATE ord SET `COMMPLAN` = 'A' WHERE (`ORDID` = '615');
-
-
-
 
 INSERT INTO ITEM (QTY, PRODID, ORDID, ITEMTOT, ITEMID, ACTUALPRICE)
  VALUES ('1', '100890', '610', '58', '3', '58');
@@ -1658,39 +1362,56 @@ INSERT INTO ITEM ( QTY , PRODID , ORDID , ITEMTOT , ITEMID , ACTUALPRICE)
  VALUES ('50', '100871', '619', '280', '4', '5.6');
 
 
-INSERT INTO PRICE (STDPRICE, STARTDATE, PRODID, MINPRICE, ENDDATE)  VALUES ('4.8', '1985-01-01', '100871', '3.27', '1985-12-01');
+INSERT INTO PRICE (STDPRICE, STARTDATE, PRODID, MINPRICE, ENDDATE)
+ VALUES ('4.8', '1985-01-01', '100871', '3.2', '1985-12-01');
 
-INSERT INTO PRICE (STDPRICE, STARTDATE, PRODID, MINPRICE, ENDDATE) VALUES ('58', '1985-01-01', '100890', '46.74', null);
+INSERT INTO PRICE (STDPRICE, STARTDATE, PRODID, MINPRICE, ENDDATE)
+ VALUES ('58', '1985-01-01', '100890', '46.4', null);
 
-INSERT INTO PRICE (STDPRICE, STARTDATE, PRODID, MINPRICE, ENDDATE) VALUES ('54', '1984-06-01', '100890', '40.50', '1984-06-30');
+INSERT INTO PRICE (STDPRICE, STARTDATE, PRODID, MINPRICE, ENDDATE)
+ VALUES ('54', '1984-06-01', '100890', '40.5', '1984-05-31');
 
-INSERT INTO PRICE (STDPRICE, STARTDATE, PRODID, MINPRICE, ENDDATE) VALUES ('35', '1986-06-01', '100860', '28.47', null);
+INSERT INTO PRICE (STDPRICE, STARTDATE, PRODID, MINPRICE, ENDDATE)
+ VALUES ('35', '1986-06-01', '100860', '28', null);
 
-INSERT INTO PRICE (STDPRICE, STARTDATE, PRODID, MINPRICE, ENDDATE) VALUES ('32', '1986-01-01', '100860', '25.69', '1986-05-31');
+INSERT INTO PRICE (STDPRICE, STARTDATE, PRODID, MINPRICE, ENDDATE)
+ VALUES ('32', '1986-01-01', '100860', '25.6', '1986-05-31');
 
-INSERT INTO PRICE (STDPRICE, STARTDATE, PRODID, MINPRICE, ENDDATE) VALUES ('30', '1985-01-01', '100860', '24.99', '1985-12-31');
+INSERT INTO PRICE (STDPRICE, STARTDATE, PRODID, MINPRICE, ENDDATE)
+ VALUES ('30', '1985-01-01', '100860', '24', '1985-12-31');
 
-INSERT INTO PRICE (STDPRICE, STARTDATE, PRODID, MINPRICE, ENDDATE) VALUES ('45', '1986-06-01', '100861', '36.75', null);
+INSERT INTO PRICE (STDPRICE, STARTDATE, PRODID, MINPRICE, ENDDATE)
+ VALUES ('45', '1986-06-01', '100861', '36', null);
 
-INSERT INTO PRICE (STDPRICE, STARTDATE, PRODID, MINPRICE, ENDDATE) VALUES ('42', '1986-01-01', '100861', '33.46', '1986-05-31');
+INSERT INTO PRICE (STDPRICE, STARTDATE, PRODID, MINPRICE, ENDDATE)
+ VALUES ('42', '1986-01-01', '100861', '33.6', '1986-05-31');
 
-INSERT INTO PRICE (STDPRICE, STARTDATE, PRODID, MINPRICE, ENDDATE) VALUES ('39', '1985-01-01', '100861', '31.2', '1985-12-31');
+INSERT INTO PRICE (STDPRICE, STARTDATE, PRODID, MINPRICE, ENDDATE)
+ VALUES ('39', '1985-01-01', '100861', '31.2', '1985-12-31');
 
-INSERT INTO PRICE (STDPRICE, STARTDATE, PRODID, MINPRICE, ENDDATE) VALUES ('2.8', '1986-01-01', '100870', '2.07', null);
+INSERT INTO PRICE (STDPRICE, STARTDATE, PRODID, MINPRICE, ENDDATE)
+ VALUES ('2.8', '1986-01-01', '100870', '2.4', null);
 
-INSERT INTO PRICE (STDPRICE, STARTDATE, PRODID, MINPRICE, ENDDATE) VALUES ('2.4', '1985-01-01', '100870', '1.09', '1985-12-01');
+INSERT INTO PRICE (STDPRICE, STARTDATE, PRODID, MINPRICE, ENDDATE)
+ VALUES ('2.4', '1985-01-01', '100870', '1.9', '1985-12-01');
 
-INSERT INTO PRICE (STDPRICE, STARTDATE, PRODID, MINPRICE, ENDDATE) VALUES ('5.6', '1986-01-01', '100871', '4.8', null);
+INSERT INTO PRICE (STDPRICE, STARTDATE, PRODID, MINPRICE, ENDDATE)
+ VALUES ('5.6', '1986-01-01', '100871', '4.8', null);
 
-INSERT INTO PRICE (STDPRICE, STARTDATE, PRODID, MINPRICE, ENDDATE) VALUES ('24', '1985-02-15', '101860', '18', '1985-03-16');
+INSERT INTO PRICE (STDPRICE, STARTDATE, PRODID, MINPRICE, ENDDATE)
+ VALUES ('24', '1985-02-15', '101860', '18', null);
 
-INSERT INTO PRICE (STDPRICE, STARTDATE, PRODID, MINPRICE, ENDDATE) VALUES ('12.5', '1985-02-15', '101863', '9.4', '1985-02-17');
+INSERT INTO PRICE (STDPRICE, STARTDATE, PRODID, MINPRICE, ENDDATE)
+ VALUES ('12.5', '1985-02-15', '101863', '9.4', null);
 
-INSERT INTO PRICE (STDPRICE, STARTDATE, PRODID, MINPRICE, ENDDATE) VALUES ('3.4', '1985-08-18', '102130', '2.8', '1985-10-18');
+INSERT INTO PRICE (STDPRICE, STARTDATE, PRODID, MINPRICE, ENDDATE)
+ VALUES ('3.4', '1985-08-18', '102130', '2.8', null);
 
-INSERT INTO PRICE (STDPRICE, STARTDATE, PRODID, MINPRICE, ENDDATE) VALUES ('2.4', '1986-10-15', '200376', '1.75', '1986-11-15');
+INSERT INTO PRICE (STDPRICE, STARTDATE, PRODID, MINPRICE, ENDDATE)
+ VALUES ('2.4', '1986-10-15', '200376', '1.75', null);
 
-INSERT INTO PRICE (STDPRICE, STARTDATE, PRODID, MINPRICE, ENDDATE) VALUES ('4', '1986-10-15', '200380', '3.2', null);
+INSERT INTO PRICE (STDPRICE, STARTDATE, PRODID, MINPRICE, ENDDATE)
+ VALUES ('4', '1986-10-15', '200380', '3.2', null);
 
 CREATE INDEX PRICE_INDEX ON PRICE(PRODID, STARTDATE);
 
@@ -1893,135 +1614,135 @@ CREATE TABLE EMP_Cards (
   FOREIGN KEY(empID) REFERENCES emp1(empno));
 
 
-INSERT INTO EMP_Cards (empID, name, isActive) VALUES (7839, 'Aadhaar', '1');
-INSERT INTO EMP_Cards (empID, name, isActive) VALUES (7839, 'Driving Licence', '1');
-INSERT INTO EMP_Cards (empID, name, isActive) VALUES (7839, 'PAN', '1');
-INSERT INTO EMP_Cards (empID, name, isActive) VALUES (7839, 'Voter ID', '1');
-INSERT INTO EMP_Cards (empID, name, isActive) VALUES (7839, 'Passport', '1');
-INSERT INTO EMP_Cards (empID, name, isActive) VALUES (7839, 'Debit', '1');
-INSERT INTO EMP_Cards (empID, name, isActive) VALUES (7839, 'Credit', '1');
-INSERT INTO EMP_Cards (empID, name, isActive) VALUES (7698, 'Aadhaar', '1');
-INSERT INTO EMP_Cards (empID, name, isActive) VALUES (7698, 'Driving Licence', '0');
-INSERT INTO EMP_Cards (empID, name, isActive) VALUES (7698, 'PAN', '1');
-INSERT INTO EMP_Cards (empID, name, isActive) VALUES (7698, 'Voter ID', '1');
-INSERT INTO EMP_Cards (empID, name, isActive) VALUES (7698, 'Debit', '1');
-INSERT INTO EMP_Cards (empID, name, isActive) VALUES (7782, 'Aadhaar', '1');
-INSERT INTO EMP_Cards (empID, name, isActive) VALUES (7782, 'Driving Licence', '1');
-INSERT INTO EMP_Cards (empID, name, isActive) VALUES (7782, 'PAN', '1');
-INSERT INTO EMP_Cards (empID, name, isActive) VALUES (7782, 'Passport', '1');
-INSERT INTO EMP_Cards (empID, name, isActive) VALUES (7782, 'Debit', '1');
-INSERT INTO EMP_Cards (empID, name, isActive) VALUES (7566, 'Aadhaar', '1');
-INSERT INTO EMP_Cards (empID, name, isActive) VALUES (7566, 'Driving Licence', '1');
-INSERT INTO EMP_Cards (empID, name, isActive) VALUES (7566, 'PAN', '1');
-INSERT INTO EMP_Cards (empID, name, isActive) VALUES (7566, 'Passport', '1');
-INSERT INTO EMP_Cards (empID, name, isActive) VALUES (7566, 'Debit', '1');
-INSERT INTO EMP_Cards (empID, name, isActive) VALUES (7566, 'Credit', '1');
-INSERT INTO EMP_Cards (empID, name, isActive) VALUES (7654, 'Aadhaar', '1');
-INSERT INTO EMP_Cards (empID, name, isActive) VALUES (7654, 'Driving Licence', '0');
-INSERT INTO EMP_Cards (empID, name, isActive) VALUES (7654, 'PAN', '1');
-INSERT INTO EMP_Cards (empID, name, isActive) VALUES (7654, 'Voter ID', '1');
-INSERT INTO EMP_Cards (empID, name, isActive) VALUES (7654, 'Passport', '1');
-INSERT INTO EMP_Cards (empID, name, isActive) VALUES (7654, 'Debit', '1');
-INSERT INTO EMP_Cards (empID, name, isActive) VALUES (7654, 'Credit', '1');
-INSERT INTO EMP_Cards (empID, name, isActive) VALUES (7499, 'PAN', '1');
-INSERT INTO EMP_Cards (empID, name, isActive) VALUES (7499, 'Driving Licence', '1');
-INSERT INTO EMP_Cards (empID, name, isActive) VALUES (7844, 'Aadhaar', '1');
-INSERT INTO EMP_Cards (empID, name, isActive) VALUES (7844, 'Driving Licence', '1');
-INSERT INTO EMP_Cards (empID, name, isActive) VALUES (7900, 'Aadhaar', '1');
-INSERT INTO EMP_Cards (empID, name, isActive) VALUES (7900, 'Driving Licence', '1');
-INSERT INTO EMP_Cards (empID, name, isActive) VALUES (7900, 'PAN', '1');
-INSERT INTO EMP_Cards (empID, name, isActive) VALUES (7900, 'Voter ID', '1');
-INSERT INTO EMP_Cards (empID, name, isActive) VALUES (7521, 'Driving Licence', '0');
-INSERT INTO EMP_Cards (empID, name, isActive) VALUES (7521, 'PAN', '1');
-INSERT INTO EMP_Cards (empID, name, isActive) VALUES (7521, 'Debit', '1');
-INSERT INTO EMP_Cards (empID, name, isActive) VALUES (7521, 'Credit', '1');
-INSERT INTO EMP_Cards (empID, name, isActive) VALUES (7902, 'Aadhaar', '1');
-INSERT INTO EMP_Cards (empID, name, isActive) VALUES (7902, 'PAN', '1');
-INSERT INTO EMP_Cards (empID, name, isActive) VALUES (7902, 'Passport', '1');
-INSERT INTO EMP_Cards (empID, name, isActive) VALUES (7902, 'Voter ID', '1');
-INSERT INTO EMP_Cards (empID, name, isActive) VALUES (7369, 'Aadhaar', '1');
-INSERT INTO EMP_Cards (empID, name, isActive) VALUES (7788, 'Aadhaar', '1');
-INSERT INTO EMP_Cards (empID, name, isActive) VALUES (7788, 'Driving Licence', '1');
-INSERT INTO EMP_Cards (empID, name, isActive) VALUES (7788, 'PAN', '1');
-INSERT INTO EMP_Cards (empID, name, isActive) VALUES (7876, 'Aadhaar', '1');
-INSERT INTO EMP_Cards (empID, name, isActive) VALUES (7876, 'Driving Licence', '1');
-INSERT INTO EMP_Cards (empID, name, isActive) VALUES (7876, 'PAN', '1');
-INSERT INTO EMP_Cards (empID, name, isActive) VALUES (7876, 'Voter ID', '1');
-INSERT INTO EMP_Cards (empID, name, isActive) VALUES (5003, 'Aadhaar', '1');
-INSERT INTO EMP_Cards (empID, name, isActive) VALUES (5003, 'Driving Licence', '1');
-INSERT INTO EMP_Cards (empID, name, isActive) VALUES (5003, 'PAN', '1');
-INSERT INTO EMP_Cards (empID, name, isActive) VALUES (5003, 'Voter ID', '1');
-INSERT INTO EMP_Cards (empID, name, isActive) VALUES (5003, 'Passport', '1');
-INSERT INTO EMP_Cards (empID, name, isActive) VALUES (5003, 'Debit', '1');
-INSERT INTO EMP_Cards (empID, name, isActive) VALUES (5003, 'Credit', '1');
-INSERT INTO EMP_Cards (empID, name, isActive) VALUES (7005, 'Aadhaar', '0');
-INSERT INTO EMP_Cards (empID, name, isActive) VALUES (7005, 'PAN', '1');
-INSERT INTO EMP_Cards (empID, name, isActive) VALUES (7006, 'Aadhaar', '1');
-INSERT INTO EMP_Cards (empID, name, isActive) VALUES (7006, 'PAN', '1');
-INSERT INTO EMP_Cards (empID, name, isActive) VALUES (7006, 'Passport', '1');
-INSERT INTO EMP_Cards (empID, name, isActive) VALUES (8009, 'Aadhaar', '1');
-INSERT INTO EMP_Cards (empID, name, isActive) VALUES (8009, 'PAN', '1');
-INSERT INTO EMP_Cards (empID, name, isActive) VALUES (8009, 'Passport', '1');
-INSERT INTO EMP_Cards (empID, name, isActive) VALUES (8003, 'Driving Licence', '1');
-INSERT INTO EMP_Cards (empID, name, isActive) VALUES (8003, 'PAN', '1');
-INSERT INTO EMP_Cards (empID, name, isActive) VALUES (8003, 'Credit', '1');
-INSERT INTO EMP_Cards (empID, name, isActive) VALUES (7388, 'Aadhaar', '1');
-INSERT INTO EMP_Cards (empID, name, isActive) VALUES (7388, 'Driving Licence', '1');
-INSERT INTO EMP_Cards (empID, name, isActive) VALUES (7388, 'PAN', '1');
-INSERT INTO EMP_Cards (empID, name, isActive) VALUES (7388, 'Voter ID', '1');
-INSERT INTO EMP_Cards (empID, name, isActive) VALUES (7388, 'Passport', '0');
-INSERT INTO EMP_Cards (empID, name, isActive) VALUES (7388, 'Credit', '1');
-INSERT INTO EMP_Cards (empID, name, isActive) VALUES (7388, 'Aadhaar', '1');
-INSERT INTO EMP_Cards (empID, name, isActive) VALUES (3267, 'Driving Licence', '1');
-INSERT INTO EMP_Cards (empID, name, isActive) VALUES (3267, 'PAN', '1');
-INSERT INTO EMP_Cards (empID, name, isActive) VALUES (3267, 'Voter ID', '1');
-INSERT INTO EMP_Cards (empID, name, isActive) VALUES (7388, 'Driving Licence', '1');
-INSERT INTO EMP_Cards (empID, name, isActive) VALUES (7388, 'PAN', '1');
-INSERT INTO EMP_Cards (empID, name, isActive) VALUES (7388, 'Voter ID', '0');
-INSERT INTO EMP_Cards (empID, name, isActive) VALUES (3001, 'Credit', '1');
-INSERT INTO EMP_Cards (empID, name, isActive) VALUES (3001, 'Aadhaar', '1');
-INSERT INTO EMP_Cards (empID, name, isActive) VALUES (3001, 'PAN', '1');
-INSERT INTO EMP_Cards (empID, name, isActive) VALUES (3002, 'Passport', '1');
-INSERT INTO EMP_Cards (empID, name, isActive) VALUES (3002, 'Voter ID', '1');
-INSERT INTO EMP_Cards (empID, name, isActive) VALUES (3002, 'Aadhaar', '1');
-INSERT INTO EMP_Cards (empID, name, isActive) VALUES (3002, 'Debit', '1');
-INSERT INTO EMP_Cards (empID, name, isActive) VALUES (3002, 'Driving Licence', '1');
-INSERT INTO EMP_Cards (empID, name, isActive) VALUES (3003, 'PAN', '1');
-INSERT INTO EMP_Cards (empID, name, isActive) VALUES (3003, 'Aadhaar', '1');
-INSERT INTO EMP_Cards (empID, name, isActive) VALUES (3003, 'Driving Licence', '1');
-INSERT INTO EMP_Cards (empID, name, isActive) VALUES (3244, 'PAN', '1');
-INSERT INTO EMP_Cards (empID, name, isActive) VALUES (3244, 'Voter ID', '1');
-INSERT INTO EMP_Cards (empID, name, isActive) VALUES (3244, 'Aadhaar', '1');
-INSERT INTO EMP_Cards (empID, name, isActive) VALUES (3244, 'Driving Licence', '1');
-INSERT INTO EMP_Cards (empID, name, isActive) VALUES (9434, 'PAN', '1');
-INSERT INTO EMP_Cards (empID, name, isActive) VALUES (9434, 'Voter ID', '1');
-INSERT INTO EMP_Cards (empID, name, isActive) VALUES (9434, 'Passport', '1');
-INSERT INTO EMP_Cards (empID, name, isActive) VALUES (9434, 'Debit', '1');
-INSERT INTO EMP_Cards (empID, name, isActive) VALUES (6980, 'Credit', '0');
-INSERT INTO EMP_Cards (empID, name, isActive) VALUES (6980, 'Aadhaar', '1');
-INSERT INTO EMP_Cards (empID, name, isActive) VALUES (6980, 'PAN', '0');
-INSERT INTO EMP_Cards (empID, name, isActive) VALUES (6843, 'Aadhaar', '1');
-INSERT INTO EMP_Cards (empID, name, isActive) VALUES (6843, 'PAN', '1');
-INSERT INTO EMP_Cards (empID, name, isActive) VALUES (6843, 'Passport', '1');
-INSERT INTO EMP_Cards (empID, name, isActive) VALUES (1003, 'Aadhaar', '1');
-INSERT INTO EMP_Cards (empID, name, isActive) VALUES (1003, 'PAN', '1');
-INSERT INTO EMP_Cards (empID, name, isActive) VALUES (1003, 'Passport', '1');
-INSERT INTO EMP_Cards (empID, name, isActive) VALUES (1009, 'Driving Licence', '1');
-INSERT INTO EMP_Cards (empID, name, isActive) VALUES (1009, 'PAN', '1');
-INSERT INTO EMP_Cards (empID, name, isActive) VALUES (1009, 'Credit', '0');
-INSERT INTO EMP_Cards (empID, name, isActive) VALUES (1010, 'Aadhaar', '1');
-INSERT INTO EMP_Cards (empID, name, isActive) VALUES (1010, 'Driving Licence', '1');
-INSERT INTO EMP_Cards (empID, name, isActive) VALUES (1010, 'PAN', '1');
-INSERT INTO EMP_Cards (empID, name, isActive) VALUES (1010, 'Voter ID', '1');
-INSERT INTO EMP_Cards (empID, name, isActive) VALUES (1011, 'Passport', '1');
-INSERT INTO EMP_Cards (empID, name, isActive) VALUES (1011, 'Credit', '1');
-INSERT INTO EMP_Cards (empID, name, isActive) VALUES (1011, 'Aadhaar', '0');
-INSERT INTO EMP_Cards (empID, name, isActive) VALUES (1011, 'Driving Licence', '1');
-INSERT INTO EMP_Cards (empID, name, isActive) VALUES (1011, 'PAN', '1');
-INSERT INTO EMP_Cards (empID, name, isActive) VALUES (1014, 'Voter ID', '1');
-INSERT INTO EMP_Cards (empID, name, isActive) VALUES (1014, 'Driving Licence', '1');
-INSERT INTO EMP_Cards (empID, name, isActive) VALUES (1014, 'PAN', '1');
-INSERT INTO EMP_Cards (empID, name, isActive) VALUES (1016, 'Voter ID', '1');
+INSERT INTO emp_cards (empID, name, isActive) VALUES (7839, 'Aadhaar', '1');
+INSERT INTO emp_cards (empID, name, isActive) VALUES (7839, 'Driving Licence', '1');
+INSERT INTO emp_cards (empID, name, isActive) VALUES (7839, 'PAN', '1');
+INSERT INTO emp_cards (empID, name, isActive) VALUES (7839, 'Voter ID', '1');
+INSERT INTO emp_cards (empID, name, isActive) VALUES (7839, 'Passport', '1');
+INSERT INTO emp_cards (empID, name, isActive) VALUES (7839, 'Debit', '1');
+INSERT INTO emp_cards (empID, name, isActive) VALUES (7839, 'Credit', '1');
+INSERT INTO emp_cards (empID, name, isActive) VALUES (7698, 'Aadhaar', '1');
+INSERT INTO emp_cards (empID, name, isActive) VALUES (7698, 'Driving Licence', '0');
+INSERT INTO emp_cards (empID, name, isActive) VALUES (7698, 'PAN', '1');
+INSERT INTO emp_cards (empID, name, isActive) VALUES (7698, 'Voter ID', '1');
+INSERT INTO emp_cards (empID, name, isActive) VALUES (7698, 'Debit', '1');
+INSERT INTO emp_cards (empID, name, isActive) VALUES (7782, 'Aadhaar', '1');
+INSERT INTO emp_cards (empID, name, isActive) VALUES (7782, 'Driving Licence', '1');
+INSERT INTO emp_cards (empID, name, isActive) VALUES (7782, 'PAN', '1');
+INSERT INTO emp_cards (empID, name, isActive) VALUES (7782, 'Passport', '1');
+INSERT INTO emp_cards (empID, name, isActive) VALUES (7782, 'Debit', '1');
+INSERT INTO emp_cards (empID, name, isActive) VALUES (7566, 'Aadhaar', '1');
+INSERT INTO emp_cards (empID, name, isActive) VALUES (7566, 'Driving Licence', '1');
+INSERT INTO emp_cards (empID, name, isActive) VALUES (7566, 'PAN', '1');
+INSERT INTO emp_cards (empID, name, isActive) VALUES (7566, 'Passport', '1');
+INSERT INTO emp_cards (empID, name, isActive) VALUES (7566, 'Debit', '1');
+INSERT INTO emp_cards (empID, name, isActive) VALUES (7566, 'Credit', '1');
+INSERT INTO emp_cards (empID, name, isActive) VALUES (7654, 'Aadhaar', '1');
+INSERT INTO emp_cards (empID, name, isActive) VALUES (7654, 'Driving Licence', '0');
+INSERT INTO emp_cards (empID, name, isActive) VALUES (7654, 'PAN', '1');
+INSERT INTO emp_cards (empID, name, isActive) VALUES (7654, 'Voter ID', '1');
+INSERT INTO emp_cards (empID, name, isActive) VALUES (7654, 'Passport', '1');
+INSERT INTO emp_cards (empID, name, isActive) VALUES (7654, 'Debit', '1');
+INSERT INTO emp_cards (empID, name, isActive) VALUES (7654, 'Credit', '1');
+INSERT INTO emp_cards (empID, name, isActive) VALUES (7499, 'PAN', '1');
+INSERT INTO emp_cards (empID, name, isActive) VALUES (7499, 'Driving Licence', '1');
+INSERT INTO emp_cards (empID, name, isActive) VALUES (7844, 'Aadhaar', '1');
+INSERT INTO emp_cards (empID, name, isActive) VALUES (7844, 'Driving Licence', '1');
+INSERT INTO emp_cards (empID, name, isActive) VALUES (7900, 'Aadhaar', '1');
+INSERT INTO emp_cards (empID, name, isActive) VALUES (7900, 'Driving Licence', '1');
+INSERT INTO emp_cards (empID, name, isActive) VALUES (7900, 'PAN', '1');
+INSERT INTO emp_cards (empID, name, isActive) VALUES (7900, 'Voter ID', '1');
+INSERT INTO emp_cards (empID, name, isActive) VALUES (7521, 'Driving Licence', '0');
+INSERT INTO emp_cards (empID, name, isActive) VALUES (7521, 'PAN', '1');
+INSERT INTO emp_cards (empID, name, isActive) VALUES (7521, 'Debit', '1');
+INSERT INTO emp_cards (empID, name, isActive) VALUES (7521, 'Credit', '1');
+INSERT INTO emp_cards (empID, name, isActive) VALUES (7902, 'Aadhaar', '1');
+INSERT INTO emp_cards (empID, name, isActive) VALUES (7902, 'PAN', '1');
+INSERT INTO emp_cards (empID, name, isActive) VALUES (7902, 'Passport', '1');
+INSERT INTO emp_cards (empID, name, isActive) VALUES (7902, 'Voter ID', '1');
+INSERT INTO emp_cards (empID, name, isActive) VALUES (7369, 'Aadhaar', '1');
+INSERT INTO emp_cards (empID, name, isActive) VALUES (7788, 'Aadhaar', '1');
+INSERT INTO emp_cards (empID, name, isActive) VALUES (7788, 'Driving Licence', '1');
+INSERT INTO emp_cards (empID, name, isActive) VALUES (7788, 'PAN', '1');
+INSERT INTO emp_cards (empID, name, isActive) VALUES (7876, 'Aadhaar', '1');
+INSERT INTO emp_cards (empID, name, isActive) VALUES (7876, 'Driving Licence', '1');
+INSERT INTO emp_cards (empID, name, isActive) VALUES (7876, 'PAN', '1');
+INSERT INTO emp_cards (empID, name, isActive) VALUES (7876, 'Voter ID', '1');
+INSERT INTO emp_cards (empID, name, isActive) VALUES (5003, 'Aadhaar', '1');
+INSERT INTO emp_cards (empID, name, isActive) VALUES (5003, 'Driving Licence', '1');
+INSERT INTO emp_cards (empID, name, isActive) VALUES (5003, 'PAN', '1');
+INSERT INTO emp_cards (empID, name, isActive) VALUES (5003, 'Voter ID', '1');
+INSERT INTO emp_cards (empID, name, isActive) VALUES (5003, 'Passport', '1');
+INSERT INTO emp_cards (empID, name, isActive) VALUES (5003, 'Debit', '1');
+INSERT INTO emp_cards (empID, name, isActive) VALUES (5003, 'Credit', '1');
+INSERT INTO emp_cards (empID, name, isActive) VALUES (7005, 'Aadhaar', '0');
+INSERT INTO emp_cards (empID, name, isActive) VALUES (7005, 'PAN', '1');
+INSERT INTO emp_cards (empID, name, isActive) VALUES (7006, 'Aadhaar', '1');
+INSERT INTO emp_cards (empID, name, isActive) VALUES (7006, 'PAN', '1');
+INSERT INTO emp_cards (empID, name, isActive) VALUES (7006, 'Passport', '1');
+INSERT INTO emp_cards (empID, name, isActive) VALUES (8009, 'Aadhaar', '1');
+INSERT INTO emp_cards (empID, name, isActive) VALUES (8009, 'PAN', '1');
+INSERT INTO emp_cards (empID, name, isActive) VALUES (8009, 'Passport', '1');
+INSERT INTO emp_cards (empID, name, isActive) VALUES (8003, 'Driving Licence', '1');
+INSERT INTO emp_cards (empID, name, isActive) VALUES (8003, 'PAN', '1');
+INSERT INTO emp_cards (empID, name, isActive) VALUES (8003, 'Credit', '1');
+INSERT INTO emp_cards (empID, name, isActive) VALUES (7388, 'Aadhaar', '1');
+INSERT INTO emp_cards (empID, name, isActive) VALUES (7388, 'Driving Licence', '1');
+INSERT INTO emp_cards (empID, name, isActive) VALUES (7388, 'PAN', '1');
+INSERT INTO emp_cards (empID, name, isActive) VALUES (7388, 'Voter ID', '1');
+INSERT INTO emp_cards (empID, name, isActive) VALUES (7388, 'Passport', '0');
+INSERT INTO emp_cards (empID, name, isActive) VALUES (7388, 'Credit', '1');
+INSERT INTO emp_cards (empID, name, isActive) VALUES (7388, 'Aadhaar', '1');
+INSERT INTO emp_cards (empID, name, isActive) VALUES (3267, 'Driving Licence', '1');
+INSERT INTO emp_cards (empID, name, isActive) VALUES (3267, 'PAN', '1');
+INSERT INTO emp_cards (empID, name, isActive) VALUES (3267, 'Voter ID', '1');
+INSERT INTO emp_cards (empID, name, isActive) VALUES (7388, 'Driving Licence', '1');
+INSERT INTO emp_cards (empID, name, isActive) VALUES (7388, 'PAN', '1');
+INSERT INTO emp_cards (empID, name, isActive) VALUES (7388, 'Voter ID', '0');
+INSERT INTO emp_cards (empID, name, isActive) VALUES (3001, 'Credit', '1');
+INSERT INTO emp_cards (empID, name, isActive) VALUES (3001, 'Aadhaar', '1');
+INSERT INTO emp_cards (empID, name, isActive) VALUES (3001, 'PAN', '1');
+INSERT INTO emp_cards (empID, name, isActive) VALUES (3002, 'Passport', '1');
+INSERT INTO emp_cards (empID, name, isActive) VALUES (3002, 'Voter ID', '1');
+INSERT INTO emp_cards (empID, name, isActive) VALUES (3002, 'Aadhaar', '1');
+INSERT INTO emp_cards (empID, name, isActive) VALUES (3002, 'Debit', '1');
+INSERT INTO emp_cards (empID, name, isActive) VALUES (3002, 'Driving Licence', '1');
+INSERT INTO emp_cards (empID, name, isActive) VALUES (3003, 'PAN', '1');
+INSERT INTO emp_cards (empID, name, isActive) VALUES (3003, 'Aadhaar', '1');
+INSERT INTO emp_cards (empID, name, isActive) VALUES (3003, 'Driving Licence', '1');
+INSERT INTO emp_cards (empID, name, isActive) VALUES (3244, 'PAN', '1');
+INSERT INTO emp_cards (empID, name, isActive) VALUES (3244, 'Voter ID', '1');
+INSERT INTO emp_cards (empID, name, isActive) VALUES (3244, 'Aadhaar', '1');
+INSERT INTO emp_cards (empID, name, isActive) VALUES (3244, 'Driving Licence', '1');
+INSERT INTO emp_cards (empID, name, isActive) VALUES (9434, 'PAN', '1');
+INSERT INTO emp_cards (empID, name, isActive) VALUES (9434, 'Voter ID', '1');
+INSERT INTO emp_cards (empID, name, isActive) VALUES (9434, 'Passport', '1');
+INSERT INTO emp_cards (empID, name, isActive) VALUES (9434, 'Debit', '1');
+INSERT INTO emp_cards (empID, name, isActive) VALUES (6980, 'Credit', '0');
+INSERT INTO emp_cards (empID, name, isActive) VALUES (6980, 'Aadhaar', '1');
+INSERT INTO emp_cards (empID, name, isActive) VALUES (6980, 'PAN', '0');
+INSERT INTO emp_cards (empID, name, isActive) VALUES (6843, 'Aadhaar', '1');
+INSERT INTO emp_cards (empID, name, isActive) VALUES (6843, 'PAN', '1');
+INSERT INTO emp_cards (empID, name, isActive) VALUES (6843, 'Passport', '1');
+INSERT INTO emp_cards (empID, name, isActive) VALUES (1003, 'Aadhaar', '1');
+INSERT INTO emp_cards (empID, name, isActive) VALUES (1003, 'PAN', '1');
+INSERT INTO emp_cards (empID, name, isActive) VALUES (1003, 'Passport', '1');
+INSERT INTO emp_cards (empID, name, isActive) VALUES (1009, 'Driving Licence', '1');
+INSERT INTO emp_cards (empID, name, isActive) VALUES (1009, 'PAN', '1');
+INSERT INTO emp_cards (empID, name, isActive) VALUES (1009, 'Credit', '0');
+INSERT INTO emp_cards (empID, name, isActive) VALUES (1010, 'Aadhaar', '1');
+INSERT INTO emp_cards (empID, name, isActive) VALUES (1010, 'Driving Licence', '1');
+INSERT INTO emp_cards (empID, name, isActive) VALUES (1010, 'PAN', '1');
+INSERT INTO emp_cards (empID, name, isActive) VALUES (1010, 'Voter ID', '1');
+INSERT INTO emp_cards (empID, name, isActive) VALUES (1011, 'Passport', '1');
+INSERT INTO emp_cards (empID, name, isActive) VALUES (1011, 'Credit', '1');
+INSERT INTO emp_cards (empID, name, isActive) VALUES (1011, 'Aadhaar', '0');
+INSERT INTO emp_cards (empID, name, isActive) VALUES (1011, 'Driving Licence', '1');
+INSERT INTO emp_cards (empID, name, isActive) VALUES (1011, 'PAN', '1');
+INSERT INTO emp_cards (empID, name, isActive) VALUES (1014, 'Voter ID', '1');
+INSERT INTO emp_cards (empID, name, isActive) VALUES (1014, 'Driving Licence', '1');
+INSERT INTO emp_cards (empID, name, isActive) VALUES (1014, 'PAN', '1');
+INSERT INTO emp_cards (empID, name, isActive) VALUES (1016, 'Voter ID', '1');
 
 
 CREATE TABLE emp_phone (
@@ -2257,13 +1978,12 @@ INSERT INTO orders(ONUM, AMT, ODATE, CNUM, SNUM) VALUES (5015, 2133, '1996-06-23
 INSERT INTO orders(ONUM, AMT, ODATE, CNUM, SNUM) VALUES (5053, 1500, '1996-01-01 13:07:00',2006,1007);
 INSERT INTO orders(ONUM, AMT, ODATE, CNUM, SNUM) VALUES (5099, 790, '1996-04-24 13:07:00', 2002,1007);
 INSERT INTO orders(ONUM, AMT, ODATE, CNUM, SNUM) VALUES (5014, 980, '1996-08-23 13:07:00', 2002,1007);
-INSERT INTO orders(ONUM, AMT, ODATE, CNUM, SNUM) VALUES (7015, 1000, '1996-03-12 13:07:00',2002,1007);
+INSERT INTO orders(ONUM, AMT, ODATE, CNUM, SNUM) VALUES (5015, 1000, '1996-03-12 13:07:00',2002,1007);
 INSERT INTO orders(ONUM, AMT, ODATE, CNUM, SNUM) VALUES (6501, 125, '1996-06-13 13:07:00', 2001,1001);
 INSERT INTO orders(ONUM, AMT, ODATE, CNUM, SNUM) VALUES (5011, 138, '1996-09-14 13:07:00', 2001,1007);
 INSERT INTO orders(ONUM, AMT, ODATE, CNUM, SNUM) VALUES (6502, 535, '1996-08-24 13:07:00', 2006,1004);
 INSERT INTO orders(ONUM, AMT, ODATE, CNUM, SNUM) VALUES (6503, 1100, '1996-07-26 13:07:00',2006,1007);
 INSERT INTO orders(ONUM, AMT, ODATE, CNUM, SNUM) VALUES (6504, 1350, '1996-07-21 13:07:00',2008,1007);
-
 
 
 UPDATE ord SET STATUS = 'In Process' WHERE (ORDID = '601');
@@ -2305,11 +2025,11 @@ update EMP set `user name` = upper("Sand Dust") where empno = 7844;
 
 
 
-update EMP set pwd = (select dept.pwd from dept where EMP.deptno = DEPT.DEPTno);
+update EMP set pwd = (select dept.pwd from dept where emp.deptno = dept.deptno);
 UPDATE EMP SET PWD=NULL WHERE EMPNO=7415;
 UPDATE EMP SET PWD='ABCDEF' WHERE EMPNO=7945;
-delete from EMP_Cards where  not exists (select True from EMP where EMP_Cards.empid = EMP.empno);
-delete from emp_phone where not exists (select True from EMP where emp_phone.empid = EMP.empno);
+delete from emp_cards where  not exists (select True from emp where emp_cards.empid = emp.empno);
+delete from emp_phone where not exists (select True from emp where emp_phone.empid = emp.empno);
 
 
 UPDATE emp_phone SET number = '7132300253' WHERE (ID = '33');
@@ -2326,11 +2046,3 @@ set @cnt :=0;
 update client set clientId = @cnt := @cnt + 1;
 
 insert into client values (10, 'Omkar','Pune'),  (11, 'Sumit', 'Baroda'), (12, 'Martin', 'Rome'), (13, 'Smith', 'Rome'), (14, 'Vasant', 'Pune'), (15, 'ABC','Pune'),  (16, 'PQR', 'Baroda'), (17, 'XYZ', 'Rome');
-
-
-INSERT INTO EMP (EMPNO, ENAME, Job, HIREDATE, SAL, `USER NAME`, PWD, phone, emailID, isActive) VALUES (2001, 'JACK', 'SALESMAN', '1983-02-12 10:45:00', 2378, "Jack and Jill", "jack@2767", '9850884338', 'jack.jill@gmail.com', false);
-INSERT INTO EMP (EMPNO, ENAME, Job, HIREDATE, SAL, `USER NAME`, PWD, phone, emailID, isActive) VALUES (2002, 'David', 'SALESMAN', '1983-02-12 10:45:00', 1090, "David kooper", "knight", '9850675438', 'kooper@gmail.com', false);
-INSERT INTO EMP (EMPNO, ENAME, Job, HIREDATE, SAL, `USER NAME`, PWD, phone, emailID, isActive) VALUES (2003, 'LEO', 'SALESMAN', '1983-02-12 10:45:00', 1250, "Leo ", "leo165", '9850389870', 'leo.color@gmail.com', false);
-INSERT INTO EMP (EMPNO, ENAME, Job, HIREDATE, SAL, `USER NAME`, PWD, phone, emailID, isActive) VALUES (2004, 'MAX', 'SALESMAN', '1983-02-12 10:45:00', 2100, "Max-Connection", "max_90_19", '9850556612', 'max.+vt@gmail.com', false);
-INSERT INTO EMP (EMPNO, ENAME, Job, HIREDATE, SAL, `USER NAME`, PWD, phone, emailID, isActive) VALUES (2005, 'Roman',  'SALESMAN','1983-02-12 10:45:00', 1700, "Roman-User", "tiger.co.in", '9850223323', 'roman.bolt@gmail.com', false);
-INSERT INTO EMP (EMPNO, ENAME, Job, HIREDATE, SAL, DEPTNO, `USER NAME`, PWD, phone, emailID, isActive) VALUES (2006, 'LISA',  'ACCOUNTING','1983-02-12 10:45:00', 950, 20,"Lisa-User", "cat.co.in", '9850223323', 'lisa@gmail.com', false);
