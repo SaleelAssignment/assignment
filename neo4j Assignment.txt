@@ -203,7 +203,16 @@ create(i1:item{name:'cake', rate:45, MoM:12, YoM:2021, expire:"best before 5 day
       (i30:item{name:'hamburgers', rate:375, MoM:"09", YoM:2021, expire:"best before 3 days",isAvailable:true}),
       (i31:item{name:'fried chicken', rate:475, MoM:06, YoM:2021, expire:"best before 12 days",isAvailable:true}),
       (i32:item{name:'chicken nuggets', rate:550, MoM:07, YoM:2021, expire:"best before 3 months",isAvailable:true}),
-      (i33:item{name:'hot dogs', rate:135, MoM:07, YoM:2021, expire:"best before 7 days",isAvailable:true})
+      (i33:item{name:'hot dogs', rate:135, MoM:07, YoM:2021, expire:"best before 7 days",isAvailable:true}),
+      (i34:item{name:'Cham Cham', rate:45.80, MoM:06, YoM:2021, expire:"best before 3 months",isAvailable:true}),
+      (i35:item{name:'Lahsun Sev', rate:35, MoM:07, YoM:2021, expire:"best before 6 months",isAvailable:true}),
+      (i36:item{name:'Lemon Bhel', rate:45, MoM:"08", YoM:2021, expire:"best before 2 days",isAvailable:true}),
+      (i37:item{name:'Moong Daal', rate:75, MoM:"09", YoM:2021, expire:"best before 3 days",isAvailable:true}),
+      (i38:item{name:'Mini Samosa', rate:15, MoM:06, YoM:2021, expire:"best before 12 days",isAvailable:true}),
+      (i39:item{name:'Rasgulla', rate:150, MoM:07, YoM:2021, expire:"best before 3 months",isAvailable:true}),
+      (i40:item{name:'Rajbhog', rate:535, MoM:07, YoM:2021, expire:"best before 7 days",isAvailable:true})
+
+
 
 create(b1:brand{name:'amul', votes:[1,1,1,1,1,0,0,1,1,0,1,2,1,1,1,1,1,1] }),
       (b2:brand{name:'bru', votes:[1,0,1,1,1,0,0,1,1,0,1,0,1,1,1] }),
