@@ -4,9 +4,9 @@
 		
                category(name,type): ------> object oriented programming
                                   : ------> data science
-			         			  : ------> relational database
-			         			  : ------> no-sql
-			         			  : ------> script
+			         : ------> relational database
+			         : ------> no-sql
+			         : ------> script
 		
 books(isbn,name,cover,pages,isAvailable): ------> redis,mongodb,hbase,neo4j,hive,c++,java
                                         : ------> python,R,oracle,mysql,big table,javascript,react,pig
@@ -18,20 +18,20 @@ books(isbn,name,cover,pages,isAvailable): ------> redis,mongodb,hbase,neo4j,hive
                                   : ------> nitish(python,R,hive)
                                   : ------> sangita(oracle,mysql,big table)
                                   : ------> suraj(javascript,react,neo4j)
-								  : ------> supriya(pig)
+				 : ------> supriya(pig)
 					
                  *(r)book_category: ------> object oriented programming(c++,java)
                                   : ------> data science(python,R)
                                   : ------> relational database(oracle,mysql)
                                   : ------> no-sql(redis,mongodb,hbase,neo4j,hive,big table,pig)
-								  : ------>	script(javascript)							  
+				 : ------>	script(javascript)							  
 			 
      cost(currency,price,discount): ------> "INR",1200,75
                                   : ------> "INR",980,27
                                   : ------> "INR",975,35
                                   : ------> "INR",1600,115
-							      : ------> "INR",2200,175
-							      : ------> "INR",1260,130
+				 : ------> "INR",2200,175
+				 : ------> "INR",1260,130
 							  
                      *(r)book_cost: ------> redis(1200)
                                   : ------> mongodb(1260)
@@ -45,12 +45,11 @@ books(isbn,name,cover,pages,isAvailable): ------> redis,mongodb,hbase,neo4j,hive
                                   : ------> oracle(1260)
                                   : ------> mysql(1260)
                                   : ------> big table(2200)
-								  : ------> javascript(1400)
-								  : ------> react(1200)
-								  : ------> pig(1200)
+				 : ------> javascript(1400)
+				 : ------> react(1200)
+				 : ------> pig(1200)
 		   
-    publisher(name,location,phone): ------> golden print,techmedia publisher,raj publisher,red gate books,simple   
-	                                        talk,inTech publisher
+    publisher(name,location,phone): ------> golden print,techmedia publisher,raj publisher,red gate books,simpleTalk,inTech publisher
  
                 (r)publisher_books: ------> golden print (redis,hbase,node)
                                   : ------> techmedia publisher (mongodb,neo4j,node,redis,hbase)
@@ -140,27 +139,32 @@ create(sys1:Person:Employee:Sysadmin{name:"omkar", YoB:1996, MoB:"decamber", PoB
       (sys2:Person:Employee:Sysadmin{name:"vasaant", YoB:1970, MoB:"november",PoB:"pune"}),
       (sys3:Person:Employee:Sysadmin{name:"nilesh", YoB:1970, MoB:"november",PoB:"pune"})
 
-create(s1:Person:Salesman{name:"amit", YoB:1996, MoB:"decamber", PoB:"pune"}), 
-      (s2:Person:Salesman{name:"sanjay", YoB:1970, MoB:"november",PoB:"rachi"}),
-      (s3:Person:Salesman{name:"jassu", YoB:1970, MoB:"november",PoB:"pune"}),
-      (s4:Person:Salesman{name:"sanjay", YoB:1996, MoB:"july", PoB:"beed"}), 
-      (s5:Person:Salesman{name:"boy", YoB:1970, MoB:"november",PoB:"banglore"}),
-      (s6:Person:Salesman{name:"nilesh", YoB:1970, MoB:"november",PoB:"pune"}),
-      (s7:Person:Salesman{name:"pankaj", YoB:1996, MoB:"decamber", PoB:"jaipur"}), 
-      (s8:Person:Salesman{name:"dilu", YoB:1970, MoB:"october",PoB:"jaipur"}),
-      (s9:Person:Salesman{name:"jay", YoB:1967, MoB:"november",PoB:"nagpur"}),
-      (s10:Person:Salesman{name:"rudhra", YoB:1996, MoB:"decamber", PoB:"pune"}), 
-      (s11:Person:Salesman{name:"bhuru", YoB:1970, MoB:"march",PoB:"indore"}),
-      (s12:Person:Salesman{name:"bhavin", YoB:1971, MoB:"february",PoB:"baroda"}),
-      (s13:Person:Salesman{name:"ramakant", YoB:1996, MoB:"decamber", PoB:"pune"}), 
-      (s14:Person:Salesman{name:"vishnu", YoB:1969, MoB:"may",PoB:"pune"}),
-      (s15:Person:Salesman{name:"nilesh", YoB:1972, MoB:"november",PoB:"thane"}),
-      (s16:Person:Salesman{name:"anoop", YoB:1996, MoB:"decamber", PoB:"pune"}), 
-      (s17:Person:Salesman{name:"darshan", YoB:1974, MoB:"may",PoB:"nagpur"}),
-      (s18:Person:Salesman{name:"niranjan", YoB:1973, MoB:"july",PoB:"indore"}),
-      (s19:Person:Salesman{name:"amit", YoB:1986, MoB:"decamber", PoB:"pune"}), 
+create(s1:Person:Employee:Salesman{name:"amit", YoB:1996, MoB:"decamber", PoB:"pune"}), 
+      (s2:Person:Employee:Salesman{name:"sanjay", YoB:1970, MoB:"november",PoB:"rachi"}),
+      (s3:Person:Employee:Salesman{name:"jassu", YoB:1970, MoB:"november",PoB:"pune"}),
+      (s4:Person:Employee:Salesman{name:"sanjay", YoB:1996, MoB:"july", PoB:"beed"}), 
+      (s5:Person:Employee:Salesman{name:"boy", YoB:1970, MoB:"november",PoB:"banglore"}),
+      (s6:Person:Employee:Salesman{name:"nilesh", YoB:1970, MoB:"november",PoB:"pune"}),
+      (s7:Person:Employee:Salesman{name:"pankaj", YoB:1996, MoB:"decamber", PoB:"jaipur"}), 
+      (s8:Person:Employee:Salesman{name:"dilu", YoB:1970, MoB:"october",PoB:"jaipur"}),
+      (s9:Person:Employee:Salesman{name:"jay", YoB:1967, MoB:"november",PoB:"nagpur"}),
+      (s10:Person:Employee:Salesman{name:"rudhra", YoB:1996, MoB:"decamber", PoB:"pune"}), 
+      (s11:Person:Employee:Salesman{name:"bhuru", YoB:1970, MoB:"march",PoB:"indore"}),
+      (s12:Person:Employee:Salesman{name:"bhavin", YoB:1971, MoB:"february",PoB:"baroda"}),
+      (s13:Person:Salesman{name:"ramakant", YoB:1996, MoB:"july", PoB:"surat"}), 
+      (s14:Person:Salesman{name:"vishnu", YoB:1969, MoB:"april",PoB:"thane"}),
+      (s15:Person:Salesman{name:"nilesh", YoB:1972, MoB:"november",PoB:"mumbai"}),
+      (s16:Person:Salesman{name:"anoop", YoB:1996, MoB:"decamber", PoB:"nashik"}), 
+      (s17:Person:Salesman{name:"darshan", YoB:1976, MoB:"december",PoB:"nagpur"}),
+      (s18:Person:Salesman{name:"niranjan", YoB:1975, MoB:"july",PoB:"indore"}),
+      (s19:Person:Salesman{name:"amit", YoB:1986, MoB:"decamber", PoB:"baroda"}), 
       (s20:Person:Salesman{name:"niraj", YoB:1984, MoB:"may",PoB:"nagpur"}),
-      (s21:Person:Salesman{name:"ninad", YoB:1983, MoB:"july",PoB:"indore"})
+      (s21:Person:Salesman{name:"ninad", YoB:1983, MoB:"july",PoB:"indore"}),
+      (s22:Person:Salesman{name:"boy", YoB:19766, MoB:"november",PoB:"baroda"}),
+      (s23:Person:Salesman{name:"amit", YoB:1986, MoB:"decamber", PoB:"baroda"}), 
+      (s24:Person:Salesman{name:"niraj", YoB:1989, MoB:"may",PoB:"nagpur"}),
+      (s25:Person:Salesman{name:"ninad", YoB:1985, MoB:"july",PoB:"pune"}),
+      (s26:Person:Salesman{name:"boy", YoB:1969, MoB:"february",PoB:"anand"})
 
 
 
@@ -199,7 +203,7 @@ create(i1:item{name:'cake', rate:45, MoM:12, YoM:2021, expire:"best before 5 day
       (i30:item{name:'hamburgers', rate:375, MoM:"09", YoM:2021, expire:"best before 3 days",isAvailable:true}),
       (i31:item{name:'fried chicken', rate:475, MoM:06, YoM:2021, expire:"best before 12 days",isAvailable:true}),
       (i32:item{name:'chicken nuggets', rate:550, MoM:07, YoM:2021, expire:"best before 3 months",isAvailable:true}),
-	  (i33:item{name:'hot dogs', rate:135, MoM:07, YoM:2021, expire:"best before 7 days",isAvailable:true})
+      (i33:item{name:'hot dogs', rate:135, MoM:07, YoM:2021, expire:"best before 7 days",isAvailable:true})
 
 create(b1:brand{name:'amul', votes:[1,1,1,1,1,0,0,1,1,0,1,2,1,1,1,1,1,1] }),
       (b2:brand{name:'bru', votes:[1,0,1,1,1,0,0,1,1,0,1,0,1,1,1] }),
