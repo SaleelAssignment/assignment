@@ -221,7 +221,8 @@ create(b1:brand{name:'amul', votes:[1,1,1,1,1,0,0,1,1,0,1,2,1,1,1,1,1,1] }),
       (b5:brand{name:'lijjat', votes:[1,0,1,1,1,0,0,1,1,0,1,0,1,1,1] }),
       (b6:brand{name:'nestle', votes:[1,0,1,1,1,0,0,1,1,0,1,0,0,1,0] }),
       (b7:brand{name:'McDonalds', votes:[1,0,1,1,1,0,0,1,1,0,1,0,1,1,1,1,1,1,0,1] }),
-      (b8:brand{name:'kissan', votes:[1,0,1,1,1,0,0,1,1,0,1,0,1,1,1,0,1,1,0,1] })
+      (b8:brand{name:'kissan', votes:[1,0,1,1,1,0,0,1,1,0,1,0,1,1,1,0,1,1,0,1] }),
+      (b9:brand{name:'balaji', votes:[1,0,1,1,1,0,0,1,1,0,1,0,1,1,1,0,1,1,0,1] })
 
 create(c1:person:customer{name:'saleel', mob:9850884228, location:'pune', latitude:'18.5204° N', longitude: '73.8567° E' }),
       (c2:person:customer{name:'sharmin', mob:9850884229, location:'goa', latitude:'15.2993° N', longitude:'74.1240° E' }),
@@ -240,3 +241,52 @@ create(s1:person:person:salesman{name:"amit", YoB:1996, MoB:"decamber", PoB:"pun
       (s7:person:salesman{name:"pankaj", YoB:1996, MoB:"decamber", PoB:"jaipur"}), 
       (s8:person:salesman{name:"dilu", YoB:1970, MoB:"october",PoB:"jaipur"}),
       (s9:person:salesman{name:"jay", YoB:1967, MoB:"november",PoB:"nagpur"})
+      
+      
+--------------------------------------------------Flight -----------------------------------------------------------------------------------
+
+create(a0:airport {name:'Mopa Airport'}),
+      (a1:airport {name:'Bhuj Airport'}),
+      (a2:airport {name:'Jamnagar Airport'}),
+      (a3:airport {name:'Surat Airport'}),
+      (a4:airport {name:'Vadodara Airport'}),
+      (a5:airport {name:'Indore Airport'}),
+      (a6:airport {name:'Pune Airport'}),
+      (a7:airport {name:'Nashik Airport'}),
+      (a8:airport {name:'Imphal Airport'}),
+      (a9:airport {name:'Amritsar Airport'}),
+      (a10:airport {name:'Jalandhar Airport'}),
+      (a11:airport {name:'Pathankot Airport'}),
+      (a12:airport {name:'Jaipur Airport'}),
+      (a13:airport {name:'Goa Airport'}),
+      (a14:airport {name:'Agra Airport'}),
+      (a15:airport {name:'Mumbai Airport'}),
+      (a16:airport {name:'Kanpur Airport'})
+
+
+create(c0:city {name:'Mopa'}),
+      (c1:city {name:'Bhuj'}),
+      (c2:city {name:'Jamnagar'}),
+      (c3:city {name:'Surat'}),
+      (c4:city {name:'Vadodara'}),
+      (c5:city {name:'Indore'}),
+      (c6:city {name:'Pune'}),
+      (c7:city {name:'Nashik'}),
+      (c8:city {name:'Imphal'}),
+      (c9:city {name:'Amritsar'}),
+      (c10:city {name:'Jalandhar'}),
+      (c11:city {name:'Pathankot'}),
+      (c12:city {name:'Jaipur'}),
+      (c13:city {name:'Goa'}),
+      (c14:city {name:'Agra'}),
+      (c15:city {name:'Mumbai'}),
+      (c16:city {name:'Kanpur'})
+
+
+
+
+
+
+
+
+
