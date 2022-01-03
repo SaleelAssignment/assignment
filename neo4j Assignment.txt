@@ -302,6 +302,51 @@ create(a0:airport:india {name:'mopa airport'}),
       (a22:airport:usa {name:'garden city airport'})
       
 
+create(ali0:airlines:india {name:'airasia india', type:'low cost'}),
+      (ali1:airlines:india {name:'air india', type:'full service'}),
+      (ali2:airlines:india {name:'indigo', type:'low cost'}),
+      (ali3:airlines:india {name:'spicejet', type:'low cost'}),
+      (ali4:airlines:india {name:'indian airlines', type:'full service'})
+
+create(alu0:airlines:usa {name:'delta', type:'full service'}),
+      (alu1:airlines:usa {name:'jetblue', type:'low cost'}),
+      (alu2:airlines:usa {name:'united airlines', type:'full service'}),
+      (alu3:airlines:usa {name:'spirit airlines', type:'low cost'})
+
+create(alf0:airlines:france {name:'air france', type:'full service'}),
+      (alf1:airlines:france {name:'hop', type:'low cost'}),
+      (alf2:airlines:france {name:'delta', type:'full service'}),
+      (alf3:airlines:france {name:'jetblue', type:'low cost'})
+
+create(alit0:airlines:italy {name:'neos', type:'full service'}),
+      (alit1:airlines:italy {name:'ego airways', type:'low cost'}),
+      (alit2:airlines:italy {name:'air italy', type:'full service'}),
+      (alit3:airlines:italy {name:'indigo', type:''}),
+      (alit4:airlines:italy {name:'spicejet', type:''})
+
+create(auk0:airlines:uk {name:'spicejet', type:'full service'}),
+      (aluk1:airlines:uk {name:'indigo', type:'full service'}),
+      (aluk2:airlines:uk {name:'air uk', type:'low cost'}),
+      (aluk3:airlines:uk {name:'british airways', type:'full service'})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
