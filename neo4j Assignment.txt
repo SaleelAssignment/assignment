@@ -321,8 +321,8 @@ create(alf0:airlines:france {name:'air france', type:'full service'}),
 create(alit0:airlines:italy {name:'neos', type:'full service'}),
       (alit1:airlines:italy {name:'ego airways', type:'low cost'}),
       (alit2:airlines:italy {name:'air italy', type:'full service'}),
-      (alit3:airlines:italy {name:'indigo', type:''}),
-      (alit4:airlines:italy {name:'spicejet', type:''})
+      (alit3:airlines:italy {name:'indigo', type:'low cost'}),
+      (alit4:airlines:italy {name:'spicejet', type:'low cost'})
 
 create(auk0:airlines:uk {name:'spicejet', type:'full service'}),
       (aluk1:airlines:uk {name:'indigo', type:'full service'}),
