@@ -301,7 +301,6 @@ create(a0:airport:india {name:'mopa airport'}),
       (a21:airport:usa {name:'atlanta international airport'}),
       (a22:airport:usa {name:'garden city airport'})
       
-
 create(ali0:airlines:india {name:'airasia india', type:'low cost'}),
       (ali1:airlines:india {name:'air india', type:'full service'}),
       (ali2:airlines:india {name:'indigo', type:'low cost'}),
@@ -324,19 +323,15 @@ create(alit0:airlines:italy {name:'neos', type:'full service'}),
       (alit3:airlines:italy {name:'indigo', type:'low cost'}),
       (alit4:airlines:italy {name:'spicejet', type:'low cost'})
 
-create(auk0:airlines:uk {name:'spicejet', type:'full service'}),
+create(aluk0:airlines:uk {name:'spicejet', type:'full service'}),
       (aluk1:airlines:uk {name:'indigo', type:'full service'}),
       (aluk2:airlines:uk {name:'air uk', type:'low cost'}),
       (aluk3:airlines:uk {name:'british airways', type:'full service'})
 
 
 
-
-
-
-
-
-
+create(filght0:flight:india:air_india {name:"ai-6676", cabin_bag:"7 kgs", check_in:'25 kgs', cancellation:'Cancellation Fee starting ₹ 3,500', date_change:'Date Change Fee startig ₹ 3,000', currency:'₹', base_fare:6750,surcharges: 760, other_services: 14 }), 
+(filght1:flight:india:air_india {name:"ai-6677", cabin_bag:"7 kgs", check_in:'25 kgs', cancellation:'Cancellation Fee starting ₹ 3,500', date_change:'Date Change Fee startig ₹ 3,000', currency:'₹', base_fare:6500,surcharges: 800, other_services: 10 })
 
 
 
