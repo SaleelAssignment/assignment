@@ -60,7 +60,6 @@ DROP TABLE IF EXISTS warehouse;
 DROP TABLE IF EXISTS sales_channel;
 DROP TABLE IF EXISTS comments;
 DROP TABLE IF EXISTS blog;
-DROP TABLE IF EXISTS fifa;
 DROP TABLE IF EXISTS agent;
 DROP TABLE IF EXISTS licence;
 DROP TABLE IF EXISTS client;
@@ -372,117 +371,6 @@ INSERT INTO licence VALUES ('14', '11', 'HGMV', 'Heavy Goods Motor Vehicle', 'Z9
 INSERT INTO licence VALUES ('15', '12', 'HGMV', 'Heavy Goods Motor Vehicle', '1YJ12NQX8HAJ', '********', '********', '1');
 INSERT INTO licence VALUES ('16', '13', 'LMV', 'Light motor vehicles including motorcars, jeeps, taxis, delivery vans', '1XMTETH8E6JS', '********', '********', '1');
 INSERT INTO licence VALUES ('17', '14', 'HPMV', 'Heavy passenger motor vehicle/Heavy transport vehicle', '0WEMMTPVTBPM', '********', '********', '2');
-
-
-CREATE TABLE fifa (
-ID int  PRIMARY KEY,
-RNK int,
-Team varchar(45),
-TotalPoints int,
-PreviousPoint int,
-re int
-);
-
-INSERT INTO fifa (ID, RNK, Team, TotalPoints, PreviousPoint, re) VALUES ('1', '1', 'Belgium', '1765', '1765', '0');
-INSERT INTO fifa (ID, RNK, Team, TotalPoints, PreviousPoint, re) VALUES ('2', '2', 'France', '1733', '1733', '0');
-INSERT INTO fifa (ID, RNK, Team, TotalPoints, PreviousPoint, re) VALUES ('3', '3', 'Brazil', '1712', '1712', '0');
-INSERT INTO fifa (ID, RNK, Team, TotalPoints, PreviousPoint, re) VALUES ('4', '4', 'England', '1661', '1661', '0');
-INSERT INTO fifa (ID, RNK, Team, TotalPoints, PreviousPoint, re) VALUES ('5', '5', 'Uruguay', '1645', '1645', '0');
-INSERT INTO fifa (ID, RNK, Team, TotalPoints, PreviousPoint, re) VALUES ('6', '6', 'Croatia', '1642', '1642', '0');
-INSERT INTO fifa (ID, RNK, Team, TotalPoints, PreviousPoint, re) VALUES ('7', '7', 'Portugal', '1639', '1639', '0');
-INSERT INTO fifa (ID, RNK, Team, TotalPoints, PreviousPoint, re) VALUES ('8', '8', 'Spain', '1636', '1636', '0');
-INSERT INTO fifa (ID, RNK, Team, TotalPoints, PreviousPoint, re) VALUES ('9', '9', 'Argentina', '1623', '1623', '0');
-INSERT INTO fifa (ID, RNK, Team, TotalPoints, PreviousPoint, re) VALUES ('10', '10', 'Colombia', '1622', '1622', '0');
-INSERT INTO fifa (ID, RNK, Team, TotalPoints, PreviousPoint, re) VALUES ('11', '11', 'Mexico', '1621', '1621', '0');
-INSERT INTO fifa (ID, RNK, Team, TotalPoints, PreviousPoint, re) VALUES ('12', '12', 'Switzerland', '1608', '1608', '0');
-INSERT INTO fifa (ID, RNK, Team, TotalPoints, PreviousPoint, re) VALUES ('13', '13', 'Italy', '1607', '1607', '0');
-INSERT INTO fifa (ID, RNK, Team, TotalPoints, PreviousPoint, re) VALUES ('14', '14', 'Netherlands', '1604', '1604', '0');
-INSERT INTO fifa (ID, RNK, Team, TotalPoints, PreviousPoint, re) VALUES ('15', '15', 'Germany', '1602', '1602', '0');
-INSERT INTO fifa (ID, RNK, Team, TotalPoints, PreviousPoint, re) VALUES ('16', '16', 'Denmark', '1598', '1598', '0');
-INSERT INTO fifa (ID, RNK, Team, TotalPoints, PreviousPoint, re) VALUES ('17', '17', 'Chile', '1579', '1579', '0');
-INSERT INTO fifa (ID, RNK, Team, TotalPoints, PreviousPoint, re) VALUES ('18', '17', 'Sweden', '1579', '1579', '0');
-INSERT INTO fifa (ID, RNK, Team, TotalPoints, PreviousPoint, re) VALUES ('19', '19', 'Poland', '1559', '1559', '0');
-INSERT INTO fifa (ID, RNK, Team, TotalPoints, PreviousPoint, re) VALUES ('20', '20', 'Senegal', '1555', '1555', '0');
-INSERT INTO fifa (ID, RNK, Team, TotalPoints, PreviousPoint, re) VALUES ('21', '21', 'Peru', '1544', '1544', '0');
-INSERT INTO fifa (ID, RNK, Team, TotalPoints, PreviousPoint, re) VALUES ('22', '22', 'USA', '1542', '1542', '0');
-INSERT INTO fifa (ID, RNK, Team, TotalPoints, PreviousPoint, re) VALUES ('23', '23', 'Wales', '1540', '1540', '0');
-INSERT INTO fifa (ID, RNK, Team, TotalPoints, PreviousPoint, re) VALUES ('24', '24', 'Ukraine', '1537', '1537', '0');
-INSERT INTO fifa (ID, RNK, Team, TotalPoints, PreviousPoint, re) VALUES ('25', '25', 'Venezuela', '1517', '1517', '0');
-INSERT INTO fifa (ID, RNK, Team, TotalPoints, PreviousPoint, re) VALUES ('26', '26', 'Austria', '1507', '1507', '0');
-INSERT INTO fifa (ID, RNK, Team, TotalPoints, PreviousPoint, re) VALUES ('27', '27', 'Tunisia', '1506', '1506', '0');
-INSERT INTO fifa (ID, RNK, Team, TotalPoints, PreviousPoint, re) VALUES ('28', '28', 'Japan', '1500', '1500', '0');
-INSERT INTO fifa (ID, RNK, Team, TotalPoints, PreviousPoint, re) VALUES ('29', '29', 'Serbia', '1494', '1494', '0');
-INSERT INTO fifa (ID, RNK, Team, TotalPoints, PreviousPoint, re) VALUES ('30', '29', 'Turkey', '1494', '1494', '0');
-INSERT INTO fifa (ID, RNK, Team, TotalPoints, PreviousPoint, re) VALUES ('31', '31', 'Nigeria', '1493', '1493', '0');
-INSERT INTO fifa (ID, RNK, Team, TotalPoints, PreviousPoint, re) VALUES ('32', '32', 'Slovakia', '1490', '1490', '0');
-INSERT INTO fifa (ID, RNK, Team, TotalPoints, PreviousPoint, re) VALUES ('33', '33', 'IR Iran', '1489', '1489', '0');
-INSERT INTO fifa (ID, RNK, Team, TotalPoints, PreviousPoint, re) VALUES ('34', '34', 'Republic of Ireland', '1486', '1486', '0');
-INSERT INTO fifa (ID, RNK, Team, TotalPoints, PreviousPoint, re) VALUES ('35', '35', 'Algeria', '1482', '1482', '0');
-INSERT INTO fifa (ID, RNK, Team, TotalPoints, PreviousPoint, re) VALUES ('36', '36', 'Northern Ireland', '1476', '1476', '0');
-INSERT INTO fifa (ID, RNK, Team, TotalPoints, PreviousPoint, re) VALUES ('37', '37', 'Romania', '1475', '1475', '0');
-INSERT INTO fifa (ID, RNK, Team, TotalPoints, PreviousPoint, re) VALUES ('38', '38', 'Russia', '1470', '1470', '0');
-INSERT INTO fifa (ID, RNK, Team, TotalPoints, PreviousPoint, re) VALUES ('39', '39', 'Iceland', '1465', '1465', '0');
-INSERT INTO fifa (ID, RNK, Team, TotalPoints, PreviousPoint, re) VALUES ('40', '40', 'Korea Republic', '1464', '1464', '0');
-INSERT INTO fifa (ID, RNK, Team, TotalPoints, PreviousPoint, re) VALUES ('41', '41', 'Paraguay', '1461', '1461', '0');
-INSERT INTO fifa (ID, RNK, Team, TotalPoints, PreviousPoint, re) VALUES ('42', '42', 'Australia', '1457', '1457', '0');
-INSERT INTO fifa (ID, RNK, Team, TotalPoints, PreviousPoint, re) VALUES ('43', '43', 'Morocco', '1456', '1456', '0');
-INSERT INTO fifa (ID, RNK, Team, TotalPoints, PreviousPoint, re) VALUES ('44', '44', 'Norway', '1451', '1451', '0');
-INSERT INTO fifa (ID, RNK, Team, TotalPoints, PreviousPoint, re) VALUES ('45', '45', 'Czech Republic', '1446', '1446', '0');
-INSERT INTO fifa (ID, RNK, Team, TotalPoints, PreviousPoint, re) VALUES ('46', '46', 'Costa Rica', '1439', '1439', '0');
-INSERT INTO fifa (ID, RNK, Team, TotalPoints, PreviousPoint, re) VALUES ('47', '46', 'Ghana', '1439', '1439', '0');
-INSERT INTO fifa (ID, RNK, Team, TotalPoints, PreviousPoint, re) VALUES ('48', '48', 'Jamaica', '1438', '1437', '0');
-INSERT INTO fifa (ID, RNK, Team, TotalPoints, PreviousPoint, re) VALUES ('49', '49', 'Bosnia and Herzegovina', '1430', '1430', '0');
-INSERT INTO fifa (ID, RNK, Team, TotalPoints, PreviousPoint, re) VALUES ('50', '50', 'Scotland', '1422', '1422', '0');
-INSERT INTO fifa (ID, RNK, Team, TotalPoints, PreviousPoint, re) VALUES ('51', '51', 'Egypt', '1420', '1420', '0');
-INSERT INTO fifa (ID, RNK, Team, TotalPoints, PreviousPoint, re) VALUES ('52', '52', 'Hungary', '1416', '1416', '0');
-INSERT INTO fifa (ID, RNK, Team, TotalPoints, PreviousPoint, re) VALUES ('53', '53', 'Cameroon', '1413', '1413', '0');
-INSERT INTO fifa (ID, RNK, Team, TotalPoints, PreviousPoint, re) VALUES ('54', '54', 'Greece', '1409', '1409', '0');
-INSERT INTO fifa (ID, RNK, Team, TotalPoints, PreviousPoint, re) VALUES ('55', '55', 'Qatar', '1396', '1396', '0');
-INSERT INTO fifa (ID, RNK, Team, TotalPoints, PreviousPoint, re) VALUES ('56', '56', 'Congo DR', '1389', '1389', '0');
-INSERT INTO fifa (ID, RNK, Team, TotalPoints, PreviousPoint, re) VALUES ('57', '56', 'Mali', '1389', '1389', '0');
-INSERT INTO fifa (ID, RNK, Team, TotalPoints, PreviousPoint, re) VALUES ('58', '58', 'Finland', '1386', '1386', '0');
-INSERT INTO fifa (ID, RNK, Team, TotalPoints, PreviousPoint, re) VALUES ('59', '59', 'Bulgaria', '1381', '1381', '0');
-INSERT INTO fifa (ID, RNK, Team, TotalPoints, PreviousPoint, re) VALUES ('60', '59', 'Burkina Faso', '1381', '1381', '0');
-INSERT INTO fifa (ID, RNK, Team, TotalPoints, PreviousPoint, re) VALUES ('61', '61', 'Côte d\'Ivoire', '1378', '1378', '0');
-INSERT INTO fifa (ID, RNK, Team, TotalPoints, PreviousPoint, re) VALUES ('62', '62', 'Honduras', '1377', '1377', '0');
-INSERT INTO fifa (ID, RNK, Team, TotalPoints, PreviousPoint, re) VALUES ('63', '63', 'Ecuador', '1368', '1368', '0');
-INSERT INTO fifa (ID, RNK, Team, TotalPoints, PreviousPoint, re) VALUES ('64', '64', 'Montenegro', '1365', '1365', '0');
-INSERT INTO fifa (ID, RNK, Team, TotalPoints, PreviousPoint, re) VALUES ('65', '64', 'Slovenia', '1365', '1365', '0');
-INSERT INTO fifa (ID, RNK, Team, TotalPoints, PreviousPoint, re) VALUES ('66', '66', 'Albania', '1356', '1356', '0');
-INSERT INTO fifa (ID, RNK, Team, TotalPoints, PreviousPoint, re) VALUES ('67', '67', 'Saudi Arabia', '1351', '1351', '0');
-INSERT INTO fifa (ID, RNK, Team, TotalPoints, PreviousPoint, re) VALUES ('68', '68', 'North Macedonia', '1347', '1347', '0');
-INSERT INTO fifa (ID, RNK, Team, TotalPoints, PreviousPoint, re) VALUES ('69', '69', 'El Salvador', '1346', '1346', '0');
-INSERT INTO fifa (ID, RNK, Team, TotalPoints, PreviousPoint, re) VALUES ('70', '70', 'Iraq', '1344', '1344', '0');
-INSERT INTO fifa (ID, RNK, Team, TotalPoints, PreviousPoint, re) VALUES ('71', '71', 'South Africa', '1334', '1334', '0');
-INSERT INTO fifa (ID, RNK, Team, TotalPoints, PreviousPoint, re) VALUES ('72', '71', 'United Arab Emirates', '1334', '1334', '0');
-INSERT INTO fifa (ID, RNK, Team, TotalPoints, PreviousPoint, re) VALUES ('73', '73', 'Canada', '1332', '1332', '0');
-INSERT INTO fifa (ID, RNK, Team, TotalPoints, PreviousPoint, re) VALUES ('74', '74', 'Guinea', '1328', '1328', '0');
-INSERT INTO fifa (ID, RNK, Team, TotalPoints, PreviousPoint, re) VALUES ('75', '75', 'Bolivia', '1324', '1324', '0');
-INSERT INTO fifa (ID, RNK, Team, TotalPoints, PreviousPoint, re) VALUES ('76', '76', 'China PR', '1323', '1323', '0');
-INSERT INTO fifa (ID, RNK, Team, TotalPoints, PreviousPoint, re) VALUES ('77', '77', 'Uganda', '1321', '1321', '0');
-INSERT INTO fifa (ID, RNK, Team, TotalPoints, PreviousPoint, re) VALUES ('78', '78', 'Cabo Verde', '1318', '1318', '0');
-INSERT INTO fifa (ID, RNK, Team, TotalPoints, PreviousPoint, re) VALUES ('79', '79', 'Syria', '1314', '1314', '0');
-INSERT INTO fifa (ID, RNK, Team, TotalPoints, PreviousPoint, re) VALUES ('80', '80', 'Curaçao', '1313', '1313', '0');
-INSERT INTO fifa (ID, RNK, Team, TotalPoints, PreviousPoint, re) VALUES ('81', '81', 'Panama', '1305', '1304', '0');
-INSERT INTO fifa (ID, RNK, Team, TotalPoints, PreviousPoint, re) VALUES ('82', '82', 'Oman', '1303', '1303', '0');
-INSERT INTO fifa (ID, RNK, Team, TotalPoints, PreviousPoint, re) VALUES ('83', '83', 'Gabon', '1297', '1297', '0');
-INSERT INTO fifa (ID, RNK, Team, TotalPoints, PreviousPoint, re) VALUES ('84', '84', 'Benin', '1295', '1295', '0');
-INSERT INTO fifa (ID, RNK, Team, TotalPoints, PreviousPoint, re) VALUES ('85', '85', 'Uzbekistan', '1286', '1289', '0');
-INSERT INTO fifa (ID, RNK, Team, TotalPoints, PreviousPoint, re) VALUES ('86', '86', 'Haiti', '1285', '1285', '0');
-INSERT INTO fifa (ID, RNK, Team, TotalPoints, PreviousPoint, re) VALUES ('87', '87', 'Belarus', '1283', '1280', '0');
-INSERT INTO fifa (ID, RNK, Team, TotalPoints, PreviousPoint, re) VALUES ('88', '88', 'Zambia', '1279', '1279', '0');
-INSERT INTO fifa (ID, RNK, Team, TotalPoints, PreviousPoint, re) VALUES ('89', '89', 'Congo', '1269', '1269', '0');
-INSERT INTO fifa (ID, RNK, Team, TotalPoints, PreviousPoint, re) VALUES ('90', '89', 'Lebanon', '1269', '1269', '0');
-INSERT INTO fifa (ID, RNK, Team, TotalPoints, PreviousPoint, re) VALUES ('91', '91', 'Georgia', '1267', '1267', '0');
-INSERT INTO fifa (ID, RNK, Team, TotalPoints, PreviousPoint, re) VALUES ('92', '91', 'Madagascar', '1267', '1267', '0');
-INSERT INTO fifa (ID, RNK, Team, TotalPoints, PreviousPoint, re) VALUES ('93', '93', 'Israel', '1260', '1260', '0');
-INSERT INTO fifa (ID, RNK, Team, TotalPoints, PreviousPoint, re) VALUES ('94', '94', 'Vietnam', '1258', '1258', '0');
-INSERT INTO fifa (ID, RNK, Team, TotalPoints, PreviousPoint, re) VALUES ('95', '95', 'Cyprus', '1251', '1251', '0');
-INSERT INTO fifa (ID, RNK, Team, TotalPoints, PreviousPoint, re) VALUES ('96', '96', 'Kyrgyz Republic', '1240', '1240', '0');
-INSERT INTO fifa (ID, RNK, Team, TotalPoints, PreviousPoint, re) VALUES ('97', '97', 'Jordan', '1238', '1238', '0');
-INSERT INTO fifa (ID, RNK, Team, TotalPoints, PreviousPoint, re) VALUES ('98', '98', 'Luxembourg', '1236', '1236', '0');
-INSERT INTO fifa (ID, RNK, Team, TotalPoints, PreviousPoint, re) VALUES ('99', '99', 'Bahrain', '1225', '1225', '0');
-INSERT INTO fifa (ID, RNK, Team, TotalPoints, PreviousPoint, re) VALUES ('100', '100', 'Mauritania', '1223', '1223', '0');
 
 
 CREATE TABLE blog (
@@ -951,12 +839,14 @@ CREATE TABLE DEPT (
  DNAME               varchar(12),
  LOC                 varchar(10),
  PWD				 varchar(20),
+ STARTEDON			 varchar(10),
  CONSTRAINT DEPT_PRIMARY_KEY PRIMARY KEY (DEPTNO));
 
-INSERT INTO DEPT VALUES (10,'ACCOUNTING','NEW YORK','r50mpm');
-INSERT INTO DEPT VALUES (20,'RESEARCH','DALLAS','a12recmpm');
-INSERT INTO DEPT VALUES (30,'SALES','CHICAGO','sales@2017');
-INSERT INTO DEPT VALUES (40,'OPERATIONS','BOSTON','opr@123');
+INSERT INTO DEPT VALUES (10,'ACCOUNTING','NEW YORK','r50mpm', '24/03/1989');
+INSERT INTO DEPT VALUES (20,'RESEARCH','DALLAS','a12recmpm', '12/04/1989');
+INSERT INTO DEPT VALUES (30,'SALES','CHICAGO','sales@2017', '13/04/1989');
+INSERT INTO DEPT VALUES (40,'OPERATIONS','BOSTON','opr@123', '12/07/1989');
+INSERT INTO DEPT VALUES (50,'HR','PUNE','PUN@8877', '22/12/1989');
 
 
 CREATE TABLE REPLACEDEPT (
@@ -995,6 +885,7 @@ INSERT INTO DEMODEPT2 VALUES (115,'F1','F1',null);
 CREATE TABLE EMP (
  EMPNO               INT NOT NULL,
  ENAME               varchar(12),
+ GENDER				 char,
  JOB                 varchar(20),
  MGR                 INT,
  HIREDATE            date,
@@ -1004,33 +895,42 @@ CREATE TABLE EMP (
  BONUSID	         INT,
  `USER NAME`		 varchar(20),
  PWD				 varchar(20),
- phone 				 varchar(45),
+ PHONE 				 varchar(45),
  isActive			 boolean,
  CONSTRAINT EMP_FOREIGN_KEY_deptno FOREIGN KEY (DEPTNO) REFERENCES DEPT (DEPTNO),
  CONSTRAINT EMP_PRIMARY_KEY_empno PRIMARY KEY (EMPNO),
  CONSTRAINT EMP_FOREIGN_KEY_mgr FOREIGN KEY (MGR) REFERENCES EMP (EMPNO),
  CONSTRAINT CHK_PWD CHECK (length(PWD)>= 5));
 
-INSERT INTO EMP (EMPNO, ENAME, JOB, MGR, HIREDATE, SAL, COMM, DEPTNO, BONUSID, isActive) VALUES (7839,'KING','PRESIDENT',NULL,'1981-11-17',5000,NULL,10,1, true);
-INSERT INTO EMP (EMPNO, ENAME, JOB, MGR, HIREDATE, SAL, COMM, DEPTNO, BONUSID, isActive) VALUES (7698,'BLAKE','MANAGER',7839,'1981-05-01',2850,NULL,30,1, true);
-INSERT INTO EMP (EMPNO, ENAME, JOB, MGR, HIREDATE, SAL, COMM, DEPTNO, BONUSID, isActive) VALUES (7782,'CLARK','MANAGER',7839,'1981-06-09',2450,NULL,10,3, true);
-INSERT INTO EMP (EMPNO, ENAME, JOB, MGR, HIREDATE, SAL, COMM, DEPTNO, BONUSID, isActive) VALUES (7566,'JONES','MANAGER',7839,'1981-04-02',2975,NULL,20,4, true);
-INSERT INTO EMP (EMPNO, ENAME, JOB, MGR, HIREDATE, SAL, COMM, DEPTNO, BONUSID, isActive) VALUES (7654,'MARTIN','SALESMAN',7698,'1981-09-28',1250,1400,30,6, true);
-INSERT INTO EMP (EMPNO, ENAME, JOB, MGR, HIREDATE, SAL, COMM, DEPTNO, BONUSID, isActive) VALUES (7499,'ALLEN','SALESMAN',7698,'1981-02-20',1600,300,30,4, true);
-INSERT INTO EMP (EMPNO, ENAME, JOB, MGR, HIREDATE, SAL, COMM, DEPTNO, BONUSID, isActive) VALUES (7844,'TURNER','SALESMAN',7698,'1981-09-08',1500,0,30,5, true);
-INSERT INTO EMP (EMPNO, ENAME, JOB, MGR, HIREDATE, SAL, COMM, DEPTNO, BONUSID, isActive) VALUES (7900,'JAMES','CLERK',7698,'1981-12-03',950,NULL,30,2, true);
-INSERT INTO EMP (EMPNO, ENAME, JOB, MGR, HIREDATE, SAL, COMM, DEPTNO, BONUSID, isActive) VALUES (7521,'WARD','SALESMAN',7698,'1981-02-22',1250,500,30,1, true);
-INSERT INTO EMP (EMPNO, ENAME, JOB, MGR, HIREDATE, SAL, COMM, DEPTNO, BONUSID, isActive) VALUES (7902,'FORD','ANALYST',7566,'1981-12-03',3000,NULL,20,4, false);
-INSERT INTO EMP (EMPNO, ENAME, JOB, MGR, HIREDATE, SAL, COMM, DEPTNO, BONUSID, isActive) VALUES (7369,'SMITH','CLERK',7902,'1980-12-17',800,NULL,20,2, false);
-INSERT INTO EMP (EMPNO, ENAME, JOB, MGR, HIREDATE, SAL, COMM, DEPTNO, BONUSID, isActive) VALUES (7788,'SCOTT','ANALYST',7566,'1982-12-09',3000,NULL,20,3,true);
-INSERT INTO EMP (EMPNO, ENAME, JOB, MGR, HIREDATE, SAL, COMM, DEPTNO, BONUSID, isActive) VALUES (7876,'ADAMS','CLERK',7788,'1983-01-12',1100,NULL,20,1, true);
-INSERT INTO EMP (EMPNO, ENAME, JOB, MGR, HIREDATE, SAL, COMM, DEPTNO, BONUSID, isActive) VALUES (7934,'MILLER','CLERK',7782,'1982-01-23',1300,NULL,10,2, false);
-INSERT INTO EMP (EMPNO, ENAME, JOB, MGR, HIREDATE, SAL, COMM, DEPTNO, BONUSID, isActive) VALUES (7949,'ALEX','MANAGER',7698,'1982-01-24',1250,500,30,5, true);
-INSERT INTO EMP (EMPNO, ENAME, JOB, MGR, HIREDATE, SAL, COMM, DEPTNO, BONUSID, isActive) VALUES (7945,'AARUSH','SALESMAN',7902,'1980-02-14',1350,2700,30,NULL,false);
-INSERT INTO EMP (EMPNO, ENAME, JOB, MGR, HIREDATE, SAL, COMM, DEPTNO, BONUSID, isActive) VALUES (7415,'AARAV','CLERK',7902,'1981-12-31',3350,NULL,10,null,false);
-INSERT INTO EMP (EMPNO, ENAME, JOB, MGR, HIREDATE, SAL, COMM, DEPTNO, BONUSID, isActive) VALUES (7919,'HOFFMAN','MANAGER',7566,'1982-03-24',4150,NULL,30,3,true);
-INSERT INTO EMP (EMPNO, ENAME, JOB, MGR, HIREDATE, SAL, COMM, DEPTNO, BONUSID, isActive) VALUES (7920,'GRASS','SALESMAN',7919,'1980-02-14',2575,2700,30,5,true);
-INSERT INTO EMP (EMPNO, ENAME, JOB, MGR, HIREDATE, SAL, COMM, DEPTNO, BONUSID, isActive) VALUES (7421,'THOMAS','CLERK',7920,'1981-07-19',1750,NULL,10,1,false);
+INSERT INTO EMP (EMPNO, ENAME, GENDER, JOB, MGR, HIREDATE, SAL, COMM, DEPTNO, BONUSID, isActive) VALUES (7839,'KING','M','PRESIDENT',NULL,'1981-11-17',5000,NULL,10,1, true);
+INSERT INTO EMP (EMPNO, ENAME, GENDER, JOB, MGR, HIREDATE, SAL, COMM, DEPTNO, BONUSID, isActive) VALUES (7698,'BLAKE','M','MANAGER',7839,'1981-05-01',2850,NULL,30,1, true);
+INSERT INTO EMP (EMPNO, ENAME, GENDER, JOB, MGR, HIREDATE, SAL, COMM, DEPTNO, BONUSID, isActive) VALUES (7782,'CLARK','M','MANAGER',7839,'1981-06-09',2450,NULL,10,3, true);
+INSERT INTO EMP (EMPNO, ENAME, GENDER, JOB, MGR, HIREDATE, SAL, COMM, DEPTNO, BONUSID, isActive) VALUES (7566,'JONES','M','MANAGER',7839,'1981-04-02',2975,NULL,20,4, true);
+INSERT INTO EMP (EMPNO, ENAME, GENDER, JOB, MGR, HIREDATE, SAL, COMM, DEPTNO, BONUSID, isActive) VALUES (7654,'MARTIN','M','SALESMAN',7698,'1981-09-28',1250,1400,30,6, true);
+INSERT INTO EMP (EMPNO, ENAME, GENDER, JOB, MGR, HIREDATE, SAL, COMM, DEPTNO, BONUSID, isActive) VALUES (7499,'ALLEN','M','SALESMAN',7698,'1981-02-20',1600,300,30,4, true);
+INSERT INTO EMP (EMPNO, ENAME, GENDER, JOB, MGR, HIREDATE, SAL, COMM, DEPTNO, BONUSID, isActive) VALUES (7844,'TURNER','M','SALESMAN',7698,'1981-09-08',1500,0,30,5, true);
+INSERT INTO EMP (EMPNO, ENAME, GENDER, JOB, MGR, HIREDATE, SAL, COMM, DEPTNO, BONUSID, isActive) VALUES (7900,'JAMES','M','CLERK',7698,'1981-12-03',950,NULL,30,2, true);
+INSERT INTO EMP (EMPNO, ENAME, GENDER, JOB, MGR, HIREDATE, SAL, COMM, DEPTNO, BONUSID, isActive) VALUES (7521,'WARD','M','SALESMAN',7698,'1981-02-22',1250,500,30,1, true);
+INSERT INTO EMP (EMPNO, ENAME, GENDER, JOB, MGR, HIREDATE, SAL, COMM, DEPTNO, BONUSID, isActive) VALUES (7902,'FORD','M','ANALYST',7566,'1981-12-03',3000,NULL,20,4, false);
+INSERT INTO EMP (EMPNO, ENAME, GENDER, JOB, MGR, HIREDATE, SAL, COMM, DEPTNO, BONUSID, isActive) VALUES (7369,'SMITH','M','CLERK',7902,'1980-12-17',800,NULL,20,2, false);
+INSERT INTO EMP (EMPNO, ENAME, GENDER, JOB, MGR, HIREDATE, SAL, COMM, DEPTNO, BONUSID, isActive) VALUES (7788,'SCOTT','M','ANALYST',7566,'1982-12-09',3000,NULL,20,3,true);
+INSERT INTO EMP (EMPNO, ENAME, GENDER, JOB, MGR, HIREDATE, SAL, COMM, DEPTNO, BONUSID, isActive) VALUES (7876,'ADAMS','M','CLERK',7788,'1983-01-12',1100,NULL,20,1, true);
+INSERT INTO EMP (EMPNO, ENAME, GENDER, JOB, MGR, HIREDATE, SAL, COMM, DEPTNO, BONUSID, isActive) VALUES (7934,'MILLER','M','CLERK',7782,'1982-01-23',1300,NULL,10,2, false);
+INSERT INTO EMP (EMPNO, ENAME, GENDER, JOB, MGR, HIREDATE, SAL, COMM, DEPTNO, BONUSID, isActive) VALUES (7949,'ALEX','M','MANAGER',7698,'1982-01-24',1250,500,30,5, true);
+INSERT INTO EMP (EMPNO, ENAME, GENDER, JOB, MGR, HIREDATE, SAL, COMM, DEPTNO, BONUSID, isActive) VALUES (7945,'AARUSH','M','SALESMAN',7902,'1980-02-14',1350,2700,30,NULL,false);
+INSERT INTO EMP (EMPNO, ENAME, GENDER, JOB, MGR, HIREDATE, SAL, COMM, DEPTNO, BONUSID, isActive) VALUES (7415,'AARAV','M','CLERK',7902,'1981-12-31',3350,NULL,10,null,false);
+INSERT INTO EMP (EMPNO, ENAME, GENDER, JOB, MGR, HIREDATE, SAL, COMM, DEPTNO, BONUSID, isActive) VALUES (7919,'HOFFMAN','M','MANAGER',7566,'1982-03-24',4150,NULL,30,3,true);
+INSERT INTO EMP (EMPNO, ENAME, GENDER, JOB, MGR, HIREDATE, SAL, COMM, DEPTNO, BONUSID, isActive) VALUES (7920,'GRASS','M','SALESMAN',7919,'1980-02-14',2575,2700,30,5,true);
+INSERT INTO EMP (EMPNO, ENAME, GENDER, JOB, MGR, HIREDATE, SAL, COMM, DEPTNO, BONUSID, isActive) VALUES (7421,'THOMAS','M','CLERK',7920,'1981-07-19',1750,NULL,10,1,false);
+
+
+INSERT INTO EMP (EMPNO, ENAME, GENDER, JOB, MGR, HIREDATE, SAL, COMM, DEPTNO, BONUSID, isActive) VALUES (6001,'GITA','F','Compliance officers',7920,'1981-07-19',1750,NULL,30,1,true);
+INSERT INTO EMP (EMPNO, ENAME, GENDER, JOB, MGR, HIREDATE, SAL, COMM, DEPTNO, BONUSID, isActive) VALUES (6473,'SHARMIN','F','Public Relation',7920,'1981-07-19',1750,NULL,20,1,true);
+INSERT INTO EMP (EMPNO, ENAME, GENDER, JOB, MGR, HIREDATE, SAL, COMM, DEPTNO, BONUSID, isActive) VALUES (6129,'VRUSHALI','F','Compliance officers',7920,'1981-07-19',1750,NULL,10,1,true);
+INSERT INTO EMP (EMPNO, ENAME, GENDER, JOB, MGR, HIREDATE, SAL, COMM, DEPTNO, BONUSID, isActive) VALUES (6781,'BANDISH','F','Public Relation',7920,'1981-07-19',1750,NULL,20,1,true);
+INSERT INTO EMP (EMPNO, ENAME, GENDER, JOB, MGR, HIREDATE, SAL, COMM, DEPTNO, BONUSID, isActive) VALUES (9473,'SUPRIYA','F','ANALYST',7920,'1981-07-19',1750,NULL,10,1,true);
+INSERT INTO EMP (EMPNO, ENAME, GENDER, JOB, MGR, HIREDATE, SAL, COMM, DEPTNO, BONUSID, isActive) VALUES (8433,'NATASHA','F','CLERK',7920,'1981-07-19',1750,NULL,30,1,true);
+INSERT INTO EMP (EMPNO, ENAME, GENDER, JOB, MGR, HIREDATE, SAL, COMM, DEPTNO, BONUSID, isActive) VALUES (9400,'SANGITA','F','Compliance officers',7920,'1981-07-19',1750,NULL,50,1,true);
 
 
 UPDATE emp SET phone = '7032300023' WHERE (EMPNO = '7369');
@@ -2135,6 +2035,9 @@ update EMP set `user name` = upper("Sand Dust") where empno = 7844;
 update EMP set pwd = (select dept.pwd from dept where emp.deptno = dept.deptno);
 UPDATE EMP SET PWD=NULL WHERE EMPNO=7415;
 UPDATE EMP SET PWD='ABCDEF' WHERE EMPNO=7945;
+UPDATE EMP SET PWD=NULL WHERE EMPNO=9400;
+UPDATE EMP SET PWD='XYZ' WHERE EMPNO=9473;
+
 delete from emp_cards where  not exists (select True from emp where emp_cards.empid = emp.empno);
 delete from emp_phone where not exists (select True from emp where emp_phone.empid = emp.empno);
 
