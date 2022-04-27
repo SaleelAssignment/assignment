@@ -81,7 +81,18 @@ DROP TABLE If EXISTS stadium;
 DROP TABLE IF EXISTS transactions;
 DROP TABLE IF EXISTS empj;
 drop table if EXISTS emp_attendance;
+drop table if EXISTS vote_response;
 DROP VIEW IF EXISTS SALES;
+
+
+create table vote_response(candidateID int, response varchar(180));
+
+insert into vote_response values(3, 'y,n,n,y,y,y,y,n,y,n,y,y,n,n,y,n,n,n,n,n,n,n,n,y,y,y,y,y,y,y,n,y,n,y,y,y,n,n,n,y,y,y,y,n,n,n,n,n,y');
+insert into vote_response values(1, 'y,n,n,y,y,y,y,n,y,n,y,y,n,n,y,n,n,y,n,y,n,y,n,y,y,y,y,y,y,y,n,y,n,y,y,y,n,n,n,y,y,y,yy,y,y,n,y,n,y,n,y,n,n,n,y,y,y,n');
+insert into vote_response values(2, 'y,n,n,y,y,y,y,n,y,n,y,y,n,n,y,y,y,y,n,y,n,y,n,y,y,y,y,y,y,y,n,y,y,y,y,y,n,n,n,y,y,y,y,y,n,y,n');
+insert into vote_response values(4, 'y,n,n,y,y,n,n,n,y,n,y,y,n,n,y,n,y,n,n,y,n,y,n,y,y,n,y,n,y,y,n,y,n,y,n,y,n,n,n,y,y,n,n');
+
+
 
 CREATE TABLE `empj` (
   `id` int NOT NULL AUTO_INCREMENT,
