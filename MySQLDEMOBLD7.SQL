@@ -82,10 +82,13 @@ DROP TABLE IF EXISTS transactions;
 DROP TABLE IF EXISTS empj;
 drop table if EXISTS emp_attendance;
 drop table if EXISTS vote_response;
-drop table if EXISTSquarter_revenue;
+drop table if EXISTS quarter_revenue;
+drop table if EXISTS numberString;
 
 DROP VIEW IF EXISTS SALES;
 
+create table numberString (c1 varchar(40));
+insert into numberString select concat(empno,ename) from emp;
 
 create table quarter_revenue(id int, year year, quarter varchar(10), amount float(8,2));
 
