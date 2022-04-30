@@ -87,9 +87,6 @@ drop table if EXISTS numberString;
 
 DROP VIEW IF EXISTS SALES;
 
-create table numberString (c1 varchar(40));
-insert into numberString select concat(empno,ename) from emp;
-
 create table quarter_revenue(id int, year year, quarter varchar(10), amount float(8,2));
 
 insert into quarter_revenue values(1, 2020, 'Q1', 45000.57);
@@ -684,9 +681,6 @@ CREATE TABLE MENUCARD (ID INT, NAME varchar(35), RATE INT);
 insert into MENUCARD values (14, 'Onion Hamburger', 115), (6 , 'Extra Long Cheeseburger' , 100), (2 , 'Double Stacker' , 125), (8 , 'Double Cheeseburger' , 100),(13, 'Cheese Hamburger', 125), (4 , 'Hamburger' , 85 ), (11 , 'Classic Grilled Dog' , 95 ), (1 , 'Chili Cheese Grilled Dog' , 115 ), (7 , 'Flame Grilled Chicken Burger' , 135 ), (3 , 'Original Chicken Sandwich' , 55), (9 , 'McALLO TIKKI' , 45), (12 , 'Veg Maharaja Mac' , 75 ), (5 , 'Big Spicy Chicken Wrap' , 100 ), (15, 'Cheese Onion Hamburger', 145), (10 , 'McVeggie Schezwan' , 85 );
 
 
-
-
-
 CREATE TABLE SOFTDRINK
 (ID INT,
 NAME varchar(25),
@@ -901,22 +895,22 @@ INSERT INTO REPLACEDEPT VALUES (60,'Planning','Mumbai');
 CREATE TABLE DEMODEPT1 as select * from DEPT;
 ALTER TABLE DEMODEPT1 MODIFY COLUMN DEPTNO INT;
   
-INSERT INTO DEMODEPT1 VALUES (50,'A','A',null);
-INSERT INTO DEMODEPT1 VALUES (60,'B','B',null);
-INSERT INTO DEMODEPT1 VALUES (70,'C','C',null);
-INSERT INTO DEMODEPT1 VALUES (80,'D','D',null);
-INSERT INTO DEMODEPT1 VALUES (90,'E','E',null);
-INSERT INTO DEMODEPT1 VALUES (100,'F','F',null);
+INSERT INTO DEMODEPT1 VALUES (50,'A','A',null,null);
+INSERT INTO DEMODEPT1 VALUES (60,'B','B',null,null);
+INSERT INTO DEMODEPT1 VALUES (70,'C','C',null,null);
+INSERT INTO DEMODEPT1 VALUES (80,'D','D',null,null);
+INSERT INTO DEMODEPT1 VALUES (90,'E','E',null,null);
+INSERT INTO DEMODEPT1 VALUES (100,'F','F',null,null);
 
 CREATE TABLE DEMODEPT2 as select * from DEPT;
 ALTER TABLE DEMODEPT2 MODIFY COLUMN DEPTNO INT;
 
-INSERT INTO DEMODEPT2 VALUES (110,'A1','A1',null);
-INSERT INTO DEMODEPT2 VALUES (111,'B1','B1',null);
-INSERT INTO DEMODEPT2 VALUES (112,'C1','C1',null);
-INSERT INTO DEMODEPT2 VALUES (113,'D1','D1',null);
-INSERT INTO DEMODEPT2 VALUES (114,'E1','E1',null);
-INSERT INTO DEMODEPT2 VALUES (115,'F1','F1',null);
+INSERT INTO DEMODEPT2 VALUES (110,'A1','A1',null,null);
+INSERT INTO DEMODEPT2 VALUES (111,'B1','B1',null,null);
+INSERT INTO DEMODEPT2 VALUES (112,'C1','C1',null,null);
+INSERT INTO DEMODEPT2 VALUES (113,'D1','D1',null,null);
+INSERT INTO DEMODEPT2 VALUES (114,'E1','E1',null,null);
+INSERT INTO DEMODEPT2 VALUES (115,'F1','F1',null,null);
 
 
 CREATE TABLE EMP (
@@ -2129,7 +2123,8 @@ update emp_attendance set datepresent= '1,2,3,4,5,6,7,8,9,10,12,15,16,17,18,19,2
 update emp_attendance set datepresent= '1,2,3,4,5,6,7,8,9,10,12,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30' where empno=9473;
 
 
-
+create table numberString (c1 varchar(40));
+insert into numberString select concat(empno,ename) from emp;
 
 
 
