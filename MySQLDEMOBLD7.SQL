@@ -84,6 +84,7 @@ drop table if EXISTS emp_attendance;
 drop table if EXISTS vote_response;
 drop table if EXISTS quarter_revenue;
 drop table if EXISTS numberString;
+drop table if EXISTS stringNumber;
 
 DROP VIEW IF EXISTS SALES;
 
@@ -2133,6 +2134,15 @@ insert into numberString values('56731vrushali');
 insert into numberString values('836379bandish');
 insert into numberString values('7657822ajay');
 
+create table stringNumber as select * from numberString where 1=2;
+insert into stringNumber select concat(ename,empno) from emp;
+	
+insert into stringNumber values('saleel1');
+insert into stringNumber values('sharmin34');
+insert into stringNumber values('ruhan743');
+insert into stringNumber values('vrushali56731');
+insert into stringNumber values('bandish836379');
+insert into stringNumber values('ajay7657822');
 
 commit;
 
