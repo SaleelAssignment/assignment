@@ -2123,11 +2123,18 @@ update emp_attendance set datepresent= '1,2,3,4,5,6,7,8,9,10,12,15,16,17,18,19,2
 update emp_attendance set datepresent= '1,2,3,4,5,6,7,8,9,10,12,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30' where empno=9473;
 
 
-create table numberString (c1 varchar(40));
+create table numberString (c1 varchar(45) primary key);
 insert into numberString select concat(empno,ename) from emp;
 
+insert into numberString values('1saleel');
+insert into numberString values('34sharmin');
+insert into numberString values('743ruhan');
+insert into numberString values('56731vrushali');
+insert into numberString values('836379bandish');
+insert into numberString values('7657822ajay');
 
 
+commit;
 
 
 
