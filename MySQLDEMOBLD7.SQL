@@ -86,7 +86,116 @@ drop table if EXISTS quarter_revenue;
 drop table if EXISTS numberString;
 drop table if EXISTS stringNumber;
 
+drop table if EXISTS plumber;
+drop table if EXISTS service;
+drop table if EXISTS plumber_service_map;
+
+
 DROP VIEW IF EXISTS SALES;
+
+create table plumber(pid int, name varchar(20));
+create table service(sid int, name varchar(20));
+create table plumber_service_map(plumberID int, serviceID int);
+
+insert into plumber values(1,'ramesh');
+insert into plumber values(2,'keyur');
+insert into plumber values(3,'rajesh');
+insert into plumber values(4,'rajat');
+insert into plumber values(5,'babu');
+insert into plumber values(6,'bhavin');
+insert into plumber values(7,'vasant');
+insert into plumber values(8,'omkar');
+insert into plumber values(9,'ninda');
+insert into plumber values(10,'kapil');
+insert into plumber values(11,'suraj');
+insert into plumber values(12,'lalu');
+insert into plumber values(13,'neeraj');
+insert into plumber values(14,'vrajesh');
+insert into plumber values(15,'anoop');
+insert into plumber values(16,'jay');
+insert into plumber values(17,'bhavin');
+insert into plumber values(18,'jayesh');
+insert into plumber values(19,'mangesh');
+
+insert into service values(1,'s1');
+insert into service values(2,'s2');
+insert into service values(3,'s3');
+insert into service values(4,'s3');
+insert into service values(5,'s5');
+insert into service values(6,'s6');
+insert into service values(7,'s7');
+insert into service values(8,'s8');
+insert into service values(9,'s9');
+insert into service values(10,'s10');
+insert into service values(11,'s11');
+insert into service values(12,'s12');
+insert into service values(13,'s13');
+insert into service values(14,'s14');
+insert into service values(15,'s15');
+insert into service values(16,'s16');
+insert into service values(17,'s17');
+insert into service values(18,'s18');
+insert into service values(19,'s19');
+insert into service values(20,'s20');
+insert into service values(21,'s21');
+
+
+insert into plumber_service_map values(1,1);
+insert into plumber_service_map values(1,2);
+insert into plumber_service_map values(1,3);
+insert into plumber_service_map values(1,7);
+insert into plumber_service_map values(1,10);
+insert into plumber_service_map values(2,3);
+insert into plumber_service_map values(2,6);
+insert into plumber_service_map values(2,5);
+insert into plumber_service_map values(2,3);
+insert into plumber_service_map values(3,7);
+insert into plumber_service_map values(4,9);
+insert into plumber_service_map values(5,10);
+insert into plumber_service_map values(6,4);
+insert into plumber_service_map values(6,7);
+insert into plumber_service_map values(6,2);
+insert into plumber_service_map values(6,1);
+insert into plumber_service_map values(6,10);
+insert into plumber_service_map values(7,10);
+insert into plumber_service_map values(7,11);
+insert into plumber_service_map values(7,12);
+insert into plumber_service_map values(8,6);
+insert into plumber_service_map values(8,20);
+insert into plumber_service_map values(9,16);
+insert into plumber_service_map values(9,21);
+insert into plumber_service_map values(10,21);
+insert into plumber_service_map values(11,4);
+insert into plumber_service_map values(11,5);
+insert into plumber_service_map values(11,6);
+insert into plumber_service_map values(12,9);
+insert into plumber_service_map values(12,10);
+insert into plumber_service_map values(13,1);
+insert into plumber_service_map values(13,9);
+insert into plumber_service_map values(13,10);
+insert into plumber_service_map values(14,3);
+insert into plumber_service_map values(14,4);
+insert into plumber_service_map values(14,6);
+insert into plumber_service_map values(15,7);
+insert into plumber_service_map values(15,8);
+insert into plumber_service_map values(15,19);
+insert into plumber_service_map values(16,17);
+insert into plumber_service_map values(16,18);
+insert into plumber_service_map values(16,6);
+insert into plumber_service_map values(17,13);
+insert into plumber_service_map values(17,14);
+insert into plumber_service_map values(17,15);
+
+insert into plumber_service_map values(18,3);
+insert into plumber_service_map values(18,2);
+insert into plumber_service_map values(18,7);
+insert into plumber_service_map values(18,8);
+
+insert into plumber_service_map values(19,1);
+insert into plumber_service_map values(19,2);
+insert into plumber_service_map values(19,7);
+insert into plumber_service_map values(19,9);
+insert into plumber_service_map values(19,19);
 
 create table quarter_revenue(id int, year year, quarter varchar(10), amount float(8,2));
 
@@ -963,6 +1072,8 @@ INSERT INTO EMP (EMPNO, ENAME, GENDER, JOB, MGR, HIREDATE, SAL, COMM, DEPTNO, BO
 INSERT INTO EMP (EMPNO, ENAME, GENDER, JOB, MGR, HIREDATE, SAL, COMM, DEPTNO, BONUSID, isActive) VALUES (9473,'SUPRIYA','F','ANALYST',7920,'1981-07-19',1750,NULL,50,1,true);
 INSERT INTO EMP (EMPNO, ENAME, GENDER, JOB, MGR, HIREDATE, SAL, COMM, DEPTNO, BONUSID, isActive) VALUES (8433,'NATASHA','F','CLERK',7920,'1981-07-19',1750,NULL,30,1,true);
 INSERT INTO EMP (EMPNO, ENAME, GENDER, JOB, MGR, HIREDATE, SAL, COMM, DEPTNO, BONUSID, isActive) VALUES (9400,'SANGITA','F','Compliance officers',7920,'1981-07-19',1750,NULL,50,1,true);
+
+INSERT INTO EMP (EMPNO, ENAME, GENDER, JOB, MGR, HIREDATE, SAL, COMM, DEPTNO, BONUSID, isActive) VALUES (7840,'FRED','M','vice PRESIDENT',7839,'1983-08-09',5000,NULL,20,1, true);
 
 
 UPDATE emp SET phone = '7032300023' WHERE (EMPNO = '7369');
@@ -2061,14 +2172,14 @@ update EMP set `user name` = upper("Honeycomb") where empno = 7566;
 update EMP set `user name` = upper("Life Racer") where empno = 7654;
 update EMP set `user name` = upper("White Sand") where empno = 7788;
 update EMP set `user name` = upper("Sand Dust") where empno = 7844;
-
+update EMP set `user name` = upper("Sand Stone") where empno = 7840;
 
 
 update EMP set pwd = (select dept.pwd from dept where emp.deptno = dept.deptno);
 UPDATE EMP SET PWD=NULL WHERE EMPNO=7415;
 UPDATE EMP SET PWD='ABCDEF' WHERE EMPNO=7945;
 UPDATE EMP SET PWD=NULL WHERE EMPNO=9400;
-UPDATE EMP SET PWD='XYZ' WHERE EMPNO=9473;
+UPDATE EMP SET PWD='XYZ@1234' WHERE EMPNO=9473;
 
 delete from emp_cards where  not exists (select True from emp where emp_cards.empid = emp.empno);
 delete from emp_phone where not exists (select True from emp where emp_phone.empid = emp.empno);
