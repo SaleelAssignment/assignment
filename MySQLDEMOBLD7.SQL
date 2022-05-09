@@ -89,9 +89,14 @@ drop table if EXISTS stringNumber;
 drop table if EXISTS plumber;
 drop table if EXISTS service;
 drop table if EXISTS plumber_service_map;
-
+drop table if EXISTS r;
 
 DROP VIEW IF EXISTS SALES;
+
+
+create table r(c1 int); 
+insert into r values(-2), (1),(2),(-1),(3),(-2), (1), (2), (1);
+
 
 create table plumber(pid int, name varchar(20));
 create table service(sid int, name varchar(20));
