@@ -4,9 +4,9 @@
 		
                category(name,type): ------> object oriented programming
                                   : ------> data science
-			         : ------> relational database
-			         : ------> no-sql
-			         : ------> script
+			         			  : ------> relational database
+			         			  : ------> no-sql
+			         			  : ------> script
 		
 books(isbn,name,cover,pages,isAvailable): ------> redis,mongodb,hbase,neo4j,hive,c++,java
                                         : ------> python,R,oracle,mysql,big table,javascript,react,pig
@@ -18,20 +18,20 @@ books(isbn,name,cover,pages,isAvailable): ------> redis,mongodb,hbase,neo4j,hive
                                   : ------> nitish(python,R,hive)
                                   : ------> sangita(oracle,mysql,big table)
                                   : ------> suraj(javascript,react,neo4j)
-				 : ------> supriya(pig)
+								  : ------> supriya(pig)
 					
                  *(r)book_category: ------> object oriented programming(c++,java)
                                   : ------> data science(python,R)
                                   : ------> relational database(oracle,mysql)
                                   : ------> no-sql(redis,mongodb,hbase,neo4j,hive,big table,pig)
-				 : ------>	script(javascript)							  
+								  : ------>	script(javascript)							  
 			 
      cost(currency,price,discount): ------> "INR",1200,75
                                   : ------> "INR",980,27
                                   : ------> "INR",975,35
                                   : ------> "INR",1600,115
-				 : ------> "INR",2200,175
-				 : ------> "INR",1260,130
+							      : ------> "INR",2200,175
+							      : ------> "INR",1260,130
 							  
                      *(r)book_cost: ------> redis(1200)
                                   : ------> mongodb(1260)
@@ -45,11 +45,12 @@ books(isbn,name,cover,pages,isAvailable): ------> redis,mongodb,hbase,neo4j,hive
                                   : ------> oracle(1260)
                                   : ------> mysql(1260)
                                   : ------> big table(2200)
-				 : ------> javascript(1400)
-				 : ------> react(1200)
-				 : ------> pig(1200)
+								  : ------> javascript(1400)
+								  : ------> react(1200)
+								  : ------> pig(1200)
 		   
-    publisher(name,location,phone): ------> golden print,techmedia publisher,raj publisher,red gate books,simpleTalk,inTech publisher
+    publisher(name,location,phone): ------> golden print,techmedia publisher,raj publisher,red gate books,simple   
+	                                        talk,inTech publisher
  
                 (r)publisher_books: ------> golden print (redis,hbase,node)
                                   : ------> techmedia publisher (mongodb,neo4j,node,redis,hbase)
@@ -139,32 +140,27 @@ create(sys1:Person:Employee:Sysadmin{name:"omkar", YoB:1996, MoB:"decamber", PoB
       (sys2:Person:Employee:Sysadmin{name:"vasaant", YoB:1970, MoB:"november",PoB:"pune"}),
       (sys3:Person:Employee:Sysadmin{name:"nilesh", YoB:1970, MoB:"november",PoB:"pune"})
 
-create(s1:Person:Employee:Salesman{name:"amit", YoB:1996, MoB:"decamber", PoB:"pune"}), 
-      (s2:Person:Employee:Salesman{name:"sanjay", YoB:1970, MoB:"november",PoB:"rachi"}),
-      (s3:Person:Employee:Salesman{name:"jassu", YoB:1970, MoB:"november",PoB:"pune"}),
-      (s4:Person:Employee:Salesman{name:"sanjay", YoB:1996, MoB:"july", PoB:"beed"}), 
-      (s5:Person:Employee:Salesman{name:"boy", YoB:1970, MoB:"november",PoB:"banglore"}),
-      (s6:Person:Employee:Salesman{name:"nilesh", YoB:1970, MoB:"november",PoB:"pune"}),
-      (s7:Person:Employee:Salesman{name:"pankaj", YoB:1996, MoB:"decamber", PoB:"jaipur"}), 
-      (s8:Person:Employee:Salesman{name:"dilu", YoB:1970, MoB:"october",PoB:"jaipur"}),
-      (s9:Person:Employee:Salesman{name:"jay", YoB:1967, MoB:"november",PoB:"nagpur"}),
-      (s10:Person:Employee:Salesman{name:"rudhra", YoB:1996, MoB:"decamber", PoB:"pune"}), 
-      (s11:Person:Employee:Salesman{name:"bhuru", YoB:1970, MoB:"march",PoB:"indore"}),
-      (s12:Person:Employee:Salesman{name:"bhavin", YoB:1971, MoB:"february",PoB:"baroda"}),
-      (s13:Person:Salesman{name:"ramakant", YoB:1996, MoB:"july", PoB:"surat"}), 
-      (s14:Person:Salesman{name:"vishnu", YoB:1969, MoB:"april",PoB:"thane"}),
-      (s15:Person:Salesman{name:"nilesh", YoB:1972, MoB:"november",PoB:"mumbai"}),
-      (s16:Person:Salesman{name:"anoop", YoB:1996, MoB:"decamber", PoB:"nashik"}), 
-      (s17:Person:Salesman{name:"darshan", YoB:1976, MoB:"december",PoB:"nagpur"}),
-      (s18:Person:Salesman{name:"niranjan", YoB:1975, MoB:"july",PoB:"indore"}),
-      (s19:Person:Salesman{name:"amit", YoB:1986, MoB:"decamber", PoB:"baroda"}), 
+create(s1:Person:Salesman{name:"amit", YoB:1996, MoB:"decamber", PoB:"pune"}), 
+      (s2:Person:Salesman{name:"sanjay", YoB:1970, MoB:"november",PoB:"rachi"}),
+      (s3:Person:Salesman{name:"jassu", YoB:1970, MoB:"november",PoB:"pune"}),
+      (s4:Person:Salesman{name:"sanjay", YoB:1996, MoB:"july", PoB:"beed"}), 
+      (s5:Person:Salesman{name:"boy", YoB:1970, MoB:"november",PoB:"banglore"}),
+      (s6:Person:Salesman{name:"nilesh", YoB:1970, MoB:"november",PoB:"pune"}),
+      (s7:Person:Salesman{name:"pankaj", YoB:1996, MoB:"decamber", PoB:"jaipur"}), 
+      (s8:Person:Salesman{name:"dilu", YoB:1970, MoB:"october",PoB:"jaipur"}),
+      (s9:Person:Salesman{name:"jay", YoB:1967, MoB:"november",PoB:"nagpur"}),
+      (s10:Person:Salesman{name:"rudhra", YoB:1996, MoB:"decamber", PoB:"pune"}), 
+      (s11:Person:Salesman{name:"bhuru", YoB:1970, MoB:"march",PoB:"indore"}),
+      (s12:Person:Salesman{name:"bhavin", YoB:1971, MoB:"february",PoB:"baroda"}),
+      (s13:Person:Salesman{name:"ramakant", YoB:1996, MoB:"decamber", PoB:"pune"}), 
+      (s14:Person:Salesman{name:"vishnu", YoB:1969, MoB:"may",PoB:"pune"}),
+      (s15:Person:Salesman{name:"nilesh", YoB:1972, MoB:"november",PoB:"thane"}),
+      (s16:Person:Salesman{name:"anoop", YoB:1996, MoB:"decamber", PoB:"pune"}), 
+      (s17:Person:Salesman{name:"darshan", YoB:1974, MoB:"may",PoB:"nagpur"}),
+      (s18:Person:Salesman{name:"niranjan", YoB:1973, MoB:"july",PoB:"indore"}),
+      (s19:Person:Salesman{name:"amit", YoB:1986, MoB:"decamber", PoB:"pune"}), 
       (s20:Person:Salesman{name:"niraj", YoB:1984, MoB:"may",PoB:"nagpur"}),
-      (s21:Person:Salesman{name:"ninad", YoB:1983, MoB:"july",PoB:"indore"}),
-      (s22:Person:Salesman{name:"boy", YoB:19766, MoB:"november",PoB:"baroda"}),
-      (s23:Person:Salesman{name:"amit", YoB:1986, MoB:"decamber", PoB:"baroda"}), 
-      (s24:Person:Salesman{name:"niraj", YoB:1989, MoB:"may",PoB:"nagpur"}),
-      (s25:Person:Salesman{name:"ninad", YoB:1985, MoB:"july",PoB:"pune"}),
-      (s26:Person:Salesman{name:"boy", YoB:1969, MoB:"february",PoB:"anand"})
+      (s21:Person:Salesman{name:"ninad", YoB:1983, MoB:"july",PoB:"indore"})
 
 
 
@@ -203,16 +199,7 @@ create(i1:item{name:'cake', rate:45, MoM:12, YoM:2021, expire:"best before 5 day
       (i30:item{name:'hamburgers', rate:375, MoM:"09", YoM:2021, expire:"best before 3 days",isAvailable:true}),
       (i31:item{name:'fried chicken', rate:475, MoM:06, YoM:2021, expire:"best before 12 days",isAvailable:true}),
       (i32:item{name:'chicken nuggets', rate:550, MoM:07, YoM:2021, expire:"best before 3 months",isAvailable:true}),
-      (i33:item{name:'hot dogs', rate:135, MoM:07, YoM:2021, expire:"best before 7 days",isAvailable:true}),
-      (i34:item{name:'Cham Cham', rate:45.80, MoM:06, YoM:2021, expire:"best before 3 months",isAvailable:true}),
-      (i35:item{name:'Lahsun Sev', rate:35, MoM:07, YoM:2021, expire:"best before 6 months",isAvailable:true}),
-      (i36:item{name:'Lemon Bhel', rate:45, MoM:"08", YoM:2021, expire:"best before 2 days",isAvailable:true}),
-      (i37:item{name:'Moong Daal', rate:75, MoM:"09", YoM:2021, expire:"best before 3 days",isAvailable:true}),
-      (i38:item{name:'Mini Samosa', rate:15, MoM:06, YoM:2021, expire:"best before 12 days",isAvailable:true}),
-      (i39:item{name:'Rasgulla', rate:150, MoM:07, YoM:2021, expire:"best before 3 months",isAvailable:true}),
-      (i40:item{name:'Rajbhog', rate:535, MoM:07, YoM:2021, expire:"best before 7 days",isAvailable:true})
-
-
+	  (i33:item{name:'hot dogs', rate:135, MoM:07, YoM:2021, expire:"best before 7 days",isAvailable:true})
 
 create(b1:brand{name:'amul', votes:[1,1,1,1,1,0,0,1,1,0,1,2,1,1,1,1,1,1] }),
       (b2:brand{name:'bru', votes:[1,0,1,1,1,0,0,1,1,0,1,0,1,1,1] }),
@@ -221,8 +208,7 @@ create(b1:brand{name:'amul', votes:[1,1,1,1,1,0,0,1,1,0,1,2,1,1,1,1,1,1] }),
       (b5:brand{name:'lijjat', votes:[1,0,1,1,1,0,0,1,1,0,1,0,1,1,1] }),
       (b6:brand{name:'nestle', votes:[1,0,1,1,1,0,0,1,1,0,1,0,0,1,0] }),
       (b7:brand{name:'McDonalds', votes:[1,0,1,1,1,0,0,1,1,0,1,0,1,1,1,1,1,1,0,1] }),
-      (b8:brand{name:'kissan', votes:[1,0,1,1,1,0,0,1,1,0,1,0,1,1,1,0,1,1,0,1] }),
-      (b9:brand{name:'balaji', votes:[1,0,1,1,1,0,0,1,1,0,1,0,1,1,1,0,1,1,0,1] })
+      (b8:brand{name:'kissan', votes:[1,0,1,1,1,0,0,1,1,0,1,0,1,1,1,0,1,1,0,1] })
 
 create(c1:person:customer{name:'saleel', mob:9850884228, location:'pune', latitude:'18.5204° N', longitude: '73.8567° E' }),
       (c2:person:customer{name:'sharmin', mob:9850884229, location:'goa', latitude:'15.2993° N', longitude:'74.1240° E' }),
@@ -241,109 +227,51 @@ create(s1:person:person:salesman{name:"amit", YoB:1996, MoB:"decamber", PoB:"pun
       (s7:person:salesman{name:"pankaj", YoB:1996, MoB:"decamber", PoB:"jaipur"}), 
       (s8:person:salesman{name:"dilu", YoB:1970, MoB:"october",PoB:"jaipur"}),
       (s9:person:salesman{name:"jay", YoB:1967, MoB:"november",PoB:"nagpur"})
-      
-      
--------------------------------------------------- Airlines ---------------------------------------------------------------------------
-
-create(cn0:country {name:'india', code:'IN'}),
-      (cn1:country {name:'usa', code:'US'}),
-      (cn2:country {name:'france', code:'FR'}),
-      (cn3:country {name:'italy', code:'IT'}),
-      (cn4:country {name:'germany', code:'DE'}),
-      (cn5:country {name:'norway', code:'NO'}),
-      (cn6:country {name:'uk', code:'GB'})
-     
-create(c0:city:india {name:'mopa',latitude:'15.7516° N', longitude:'73.8595° E'}),
-      (c1:city:india {name:'bhuj',latitude:'23.2420° N', longitude:'69.6669° E'}),
-      (c2:city:india {name:'jamnagar',latitude:'22.4707° N', longitude:'70.0577° E'}),
-      (c3:city:india {name:'surat',latitude:'21.1702° N', longitude:'72.8311° E'}),
-      (c4:city:india {name:'vadodara',latitude:'22.3072° N', longitude:'73.1812° E'}),
-      (c5:city:india {name:'indore',latitude:'22.7196° N', longitude:'75.8577° E'}),
-      (c6:city:india {name:'pune',latitude:'18.5204° N', longitude:'73.8567° E'}),
-      (c7:city:india {name:'nashik',latitude:'19.9975° N', longitude:'73.7898° E'}),
-      (c8:city:india {name:'imphal',latitude:'24.8170° N', longitude:'93.9368° E'}),
-      (c9:city:india {name:'amritsar',latitude:'31.6340° N', longitude:'74.8723° E'}),
-      (c10:city:india {name:'jalandhar',latitude:'31.3260° N', longitude:'75.5762° E'}),
-      (c11:city:india {name:'pathankot',latitude:'32.2733° N', longitude:'75.6522° E'}),
-      (c12:city:india {name:'jaipur',latitude:'26.9124° N', longitude:'75.7873° E'}),
-      (c13:city:india {name:'goa',latitude:'15.2993° N', longitude:'74.1240° '}),
-      (c14:city:india {name:'agra',latitude:'27.1767° N', longitude:'78.0081° E'}),
-      (c15:city:india {name:'mumbai',latitude:'19.0760° N', longitude:'72.8777° E'}),
-      (c16:city:india {name:'kanpur',latitude:'26.4499° N', longitude:'80.3319° E'}),
-      (c17:city:usa {name:'los angeles',latitude:'34.0522° N', longitude:'118.2437° W'}),
-      (c18:city:usa {name:'ontario',latitude:'51.2538° N', longitude:'85.3232° W'}),
-      (c19:city:usa {name:'san diego',latitude:'32.7157° N', longitude:'117.1611° W'}),
-      (c20:city:usa {name:'sanford',latitude:'28.8029° N', longitude:'81.2695° W'}),
-      (c21:city:usa {name:'atlanta',latitude:'33.7490° N', longitude:'84.3880° W'}),
-      (c22:city:usa {name:'garden city',latitude:'40.7268° N', longitude:'73.6343° W'})
-
-create(a0:airport:india {name:'mopa airport'}),
-      (a1:airport:india {name:'bhuj airport'}),
-      (a2:airport:india {name:'jamnagar airport'}),
-      (a3:airport:india {name:'surat airport'}),
-      (a4:airport:india {name:'vadodara airport'}),
-      (a5:airport:india {name:'indore airport'}),
-      (a6:airport:india {name:'pune airport'}),
-      (a7:airport:india {name:'nashik airport'}),
-      (a8:airport:india {name:'imphal airport'}),
-      (a9:airport:india {name:'amritsar airport'}),
-      (a10:airport:india {name:'jalandhar airport'}),
-      (a11:airport:india {name:'pathankot airport'}),
-      (a12:airport:india {name:'jaipur airport'}),
-      (a13:airport:india {name:'goa airport'}),
-      (a14:airport:india {name:'agra airport'}),
-      (a15:airport:india {name:'mumbai airport'}),
-      (a16:airport:india {name:'kanpur airport'}),
-      (a17:airport:usa {name:'los angeles international airport'}),
-      (a18:airport:usa {name:'ontario international airport'}),
-      (a19:airport:usa {name:'san diego international airport'}),
-      (a20:airport:usa {name:'sanford international airport'}),
-      (a21:airport:usa {name:'atlanta international airport'}),
-      (a22:airport:usa {name:'garden city airport'})
-      
-create(ali0:airlines:india {name:'airasia india', type:'low cost'}),
-      (ali1:airlines:india {name:'air india', type:'full service'}),
-      (ali2:airlines:india {name:'indigo', type:'low cost'}),
-      (ali3:airlines:india {name:'spicejet', type:'low cost'}),
-      (ali4:airlines:india {name:'indian airlines', type:'full service'})
-
-create(alu0:airlines:usa {name:'delta', type:'full service'}),
-      (alu1:airlines:usa {name:'jetblue', type:'low cost'}),
-      (alu2:airlines:usa {name:'united airlines', type:'full service'}),
-      (alu3:airlines:usa {name:'spirit airlines', type:'low cost'})
-
-create(alf0:airlines:france {name:'air france', type:'full service'}),
-      (alf1:airlines:france {name:'hop', type:'low cost'}),
-      (alf2:airlines:france {name:'delta', type:'full service'}),
-      (alf3:airlines:france {name:'jetblue', type:'low cost'})
-
-create(alit0:airlines:italy {name:'neos', type:'full service'}),
-      (alit1:airlines:italy {name:'ego airways', type:'low cost'}),
-      (alit2:airlines:italy {name:'air italy', type:'full service'}),
-      (alit3:airlines:italy {name:'indigo', type:'low cost'}),
-      (alit4:airlines:italy {name:'spicejet', type:'low cost'})
-
-create(aluk0:airlines:uk {name:'spicejet', type:'full service'}),
-      (aluk1:airlines:uk {name:'indigo', type:'full service'}),
-      (aluk2:airlines:uk {name:'air uk', type:'low cost'}),
-      (aluk3:airlines:uk {name:'british airways', type:'full service'})
-
-
-
-create(filght0:flight:india:air_india {name:"ai-6676", cabin_bag:"7 kgs", check_in:'25 kgs', cancellation:'Cancellation Fee starting ₹ 3,500', date_change:'Date Change Fee startig ₹ 3,000', currency:'₹', base_fare:6750,surcharges: 760, other_services: 14 }), 
-(filght1:flight:india:air_india {name:"ai-6677", cabin_bag:"7 kgs", check_in:'25 kgs', cancellation:'Cancellation Fee starting ₹ 3,500', date_change:'Date Change Fee startig ₹ 3,000', currency:'₹', base_fare:6500,surcharges: 800, other_services: 10 })
 
 
 
 
+-----------------------------------------------------------------------------------------------------------------------------
 
-
-
-
-
-
-
-
-
-
-
+movieID:row.movieID,
+relese:row.relese,
+color:row.color,
+director:row.director,
+critic:row.critic,
+duration:row.duration,
+director_facebook:row.director_facebook,
+actor_3_facebook:row.actor_3_facebook,
+actor_2_name:row.actor_2_name,
+actor_1_facebook_likes:row.actor_1_facebook_likes,
+gross:row.gross,
+genres:row.genres,
+actor_1_name:row.actor_1_name,
+name:row.movie_title,
+num_voted_users:row.num_voted_users,
+cast_total_facebook_likes:row.cast_total_facebook_likes,
+actor_3_name:row.actor_3_name,
+facenumber_in_poster:row.facenumber_in_poster,
+plot_keywords:row.plot_keywords,
+movie_imdb_link:row.movie_imdb_link,
+num_user_for_reviews:row.num_user_for_reviews,
+language:row.language,
+country:row.country,
+content_rating:row.content_rating,
+budget:row.budget,
+title_year:row.title_year,
+actor_2_facebook_likes:row.actor_2_facebook_likes,
+imdb_score:row.imdb_score,
+aspect_ratio:row.aspect_ratio,
+movie_facebook_likes:row.movie_facebook_likes,
+'production houses':row.'production houses',
+week1:row.week1,
+week2:row.week2,
+week3:row.week3,
+week4:row.week4,
+isActive:row.isActive,
+music:row.music,
+`stars.0`:row.`stars.0`,
+`stars.1`:row.`stars.1`,
+`stars.2`:row.`stars.2`,
+`stars.3`:row.`stars.3`,
+`stars.4`:row.`stars.4`
