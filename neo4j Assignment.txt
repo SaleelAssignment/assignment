@@ -162,7 +162,7 @@ create(s1:Person:Salesman{name:"amit", YoB:1996, MoB:"decamber", PoB:"pune"}),
 
 
 
--------------------------------------- ITEM -----------------------------------------------------------------------
+-------------------------------------------- ITEM ----------------------------------------------------------------
 match(n) detach delete n
 
 create(i1:item{name:'cake', rate:45, MoM:12, YoM:2021, expire:"best before 5 days",isAvailable:true}),
@@ -207,6 +207,22 @@ create(i1:item{name:'cake', rate:45, MoM:12, YoM:2021, expire:"best before 5 day
 	  (i40:item{name:'peanut cake', rate:287, MoM:07, YoM:2021, expire:"best before 7 days",isAvailable:true}),
 	  (i41:item{name:'red velvet cake', rate:635, MoM:07, YoM:2021, expire:"best before 12 days",isAvailable:true})
 
+----------------------------------------------------------------------------------------------------------------------------------
+ 
+{name:'amul' }      -> name: [ 'cheese', 'butter', 'milk', 'curd', 'nuts', 'milkshake', 'juice', 'biscuit ', 'red velvet cake', 'soft cake' ]
+{name:'bru' }       -> name: [ 'coffee', 'tea', 'juice', 'milkshake', 'cake', '', '', ' ', '', '' ]
+{name:'kwality' }   -> name: [ 'milk', 'peanut cake', 'chocolate cake', 'ice-cream', 'red velvet cake', '', '', ' ', '', '' ]
+{name:'haldiram' }  -> name: [ 'nuts', 'sandwiches', 'popcorn', 'bread', '', '', '', ' ', '', '' ]
+{name:'lijjat' }    -> name: [ 'papad', 'chikki', 'nuts', 'popcorn', 'cake', '', '', ' ', '', '' ]
+{name:'nestle' }    -> name: [ 'biscuit', 'nuts', 'chips', '', 'chocolate cake', 'suger-cubes', 'maggi', 'rice', 'wheat', 'soft cake' ]
+{name:'McDonalds' } -> name: [ 'hot dogs', 'chicken sauce', 'hot dogs sauce', 'pizza', 'pasta', 'burger', 'hamburgers', 'fries', 'bread', '' ]
+{name:'kissan' }    -> name: [ 'sauce', 'chicken sauce', 'hot dogs sauce', 'jam', '', '', '', ' ', '', '' ]
+{name:'venkys' }    -> name: [ 'chicken nuggets', 'chicken sauce', 'hot dogs sauce', 'fried chicken', 'hot dogs', 'burger', 'hamburgers', 'sandwiches', 'bread', '' ]
+{name:'Coca-Cola' } -> name: [ 'coke', 'fanta', 'fries', 'soft cake', 'red velvet cake' ]
+----------------------------------------------------------------------------------------------------------------------------------
+
+
+
 create(b1:brand{name:'amul', votes:[1,1,1,1,1,0,0,1,1,0,1,2,1,1,1,1,1,1] }),
       (b2:brand{name:'bru', votes:[1,0,1,1,1,0,0,1,1,0,1,0,1,1,1] }),
       (b3:brand{name:'kwality', votes:[1,0,1,0,0,0,0,1,0,1,1,1] }),
@@ -214,7 +230,9 @@ create(b1:brand{name:'amul', votes:[1,1,1,1,1,0,0,1,1,0,1,2,1,1,1,1,1,1] }),
       (b5:brand{name:'lijjat', votes:[1,0,1,1,1,0,0,1,1,0,1,0,1,1,1] }),
       (b6:brand{name:'nestle', votes:[1,0,1,1,1,0,0,1,1,0,1,0,0,1,0] }),
       (b7:brand{name:'McDonalds', votes:[1,0,1,1,1,0,0,1,1,0,1,0,1,1,1,1,1,1,0,1] }),
-      (b8:brand{name:'kissan', votes:[1,0,1,1,1,0,0,1,1,0,1,0,1,1,1,0,1,1,0,1] })
+      (b8:brand{name:'kissan', votes:[1,0,1,1,1,0,0,1,1,0,1,0,1,1,1,0,1,1,0,1] }),
+	  (b9:brand{name:'venkys', votes:[1,0,1,1,1,0,0,1,1,1,1,0,1,1,1,1,1,1,1,1] }),
+	  (b10:brand{name:'Coca-Cola', votes:[1,0,1,1,1,0,0,1,1,1,1,0,1,1,1,1,1,1,1,1] })
 
 create(c1:person:customer{name:'saleel', mob:9850884228, location:'pune', latitude:'18.5204° N', longitude: '73.8567° E' }),
       (c2:person:customer{name:'sharmin', mob:9850884229, location:'goa', latitude:'15.2993° N', longitude:'74.1240° E' }),
@@ -273,14 +291,7 @@ relations
 
 1. Brand and Items
 
-{brandID:1, name:'amul' } ->
-{brandID:2, name:'bru' } ->
-{brandID:3, name:'kwality' } ->
-{brandID:4, name:'haldiram' } ->
-{brandID:5, name:'lijjat' } ->
-{brandID:6, name:'nestle' } ->
-{brandID:7, name:'McDonalds' } ->
-{brandID:8, name:'kissan' } ->
+
 
 
 
