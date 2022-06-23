@@ -207,21 +207,6 @@ create(i1:item{name:'cake', rate:45, MoM:12, YoM:2021, expire:"best before 5 day
 	  (i40:item{name:'peanut cake', rate:287, MoM:07, YoM:2021, expire:"best before 7 days",isAvailable:true}),
 	  (i41:item{name:'red velvet cake', rate:635, MoM:07, YoM:2021, expire:"best before 12 days",isAvailable:true})
 
-----------------------------------------------------------------------------------------------------------------------------------
- 
-{name:'amul' }      -> name: [ 'cheese', 'butter', 'milk', 'curd', 'nuts', 'milkshake', 'juice', 'biscuit ', 'red velvet cake', 'soft cake' ]
-{name:'bru' }       -> name: [ 'coffee', 'tea', 'juice', 'milkshake', 'cake', '', '', ' ', '', '' ]
-{name:'kwality' }   -> name: [ 'milk', 'peanut cake', 'chocolate cake', 'ice-cream', 'red velvet cake', '', '', ' ', '', '' ]
-{name:'haldiram' }  -> name: [ 'nuts', 'sandwiches', 'popcorn', 'bread', '', '', '', ' ', '', '' ]
-{name:'lijjat' }    -> name: [ 'papad', 'chikki', 'nuts', 'popcorn', 'cake', '', '', ' ', '', '' ]
-{name:'nestle' }    -> name: [ 'biscuit', 'nuts', 'chips', '', 'chocolate cake', 'suger-cubes', 'maggi', 'rice', 'wheat', 'soft cake' ]
-{name:'McDonalds' } -> name: [ 'hot dogs', 'chicken sauce', 'hot dogs sauce', 'pizza', 'pasta', 'burger', 'hamburgers', 'fries', 'bread', '' ]
-{name:'kissan' }    -> name: [ 'sauce', 'chicken sauce', 'hot dogs sauce', 'jam', '', '', '', ' ', '', '' ]
-{name:'venkys' }    -> name: [ 'chicken nuggets', 'chicken sauce', 'hot dogs sauce', 'fried chicken', 'hot dogs', 'burger', 'hamburgers', 'sandwiches', 'bread', '' ]
-{name:'Coca-Cola' } -> name: [ 'coke', 'fanta', 'fries', 'soft cake', 'red velvet cake' ]
-----------------------------------------------------------------------------------------------------------------------------------
-
-
 
 create(b1:brand{name:'amul', votes:[1,1,1,1,1,0,0,1,1,0,1,2,1,1,1,1,1,1] }),
       (b2:brand{name:'bru', votes:[1,0,1,1,1,0,0,1,1,0,1,0,1,1,1] }),
@@ -287,12 +272,60 @@ create(o1:customerorder{orderID:'order-1', customerName:'saleel', salesmanName:'
 	  (o26:customerorder{orderID:'order-26', customerName:'sharmin', salesmanName:'jassu', orderDate:date("2019-05-02"), city: "jaipur"})
 	  
 
-relations
-
+------------------------------------- relations ---------------------------------------------------------------------------------
 1. Brand and Items
+ 
+{name:'amul' }      -> name: [ 'cheese', 'butter', 'milk', 'curd', 'nuts', 'milkshake', 'juice', 'biscuit', 'red velvet cake', 'soft cake' ]
+{name:'bru' }       -> name: [ 'coffee', 'tea', 'juice', 'milkshake', 'cake' ]
+{name:'kwality' }   -> name: [ 'milk', 'peanut cake', 'chocolate cake', 'ice-cream', 'red velvet cake' ]
+{name:'haldiram' }  -> name: [ 'nuts', 'sandwiches', 'popcorn', 'bread' ]
+{name:'lijjat' }    -> name: [ 'papad', 'chikki', 'nuts', 'popcorn', 'cake' ]
+{name:'nestle' }    -> name: [ 'biscuit', 'nuts', 'chips', '', 'chocolate cake', 'suger-cubes', 'maggi', 'rice', 'wheat', 'soft cake' ]
+{name:'McDonalds' } -> name: [ 'hot dogs', 'chicken sauce', 'hot dogs sauce', 'pizza', 'pasta', 'burger', 'hamburgers', 'fries', 'bread' ]
+{name:'kissan' }    -> name: [ 'sauce', 'chicken sauce', 'hot dogs sauce', 'jam' ]
+{name:'venkys' }    -> name: [ 'chicken nuggets', 'chicken sauce', 'hot dogs sauce', 'fried chicken', 'hot dogs', 'burger', 'hamburgers', 'sandwiches', 'bread' ]
+{name:'Coca-Cola' } -> name: [ 'coke', 'fanta', 'fries', 'soft cake', 'red velvet cake' ]
+
+
+2. customerorder and orderitems 
+
+{customerName:'saleel' } -> 
+{customerName:'saleel' } ->
+{customerName:'sharmin' } ->
+{customerName:'nitish' } ->
+{customerName:'bandiah' } ->
+{customerName:'komal' } ->
+{customerName:'rajan' } ->
+{customerName:'boy' } ->
+{customerName:'ruhan' } ->
+{customerName:'neel' } ->
+{customerName:'sharmin' } -> 
+{customerName:'gau' } ->
+{customerName:'bhuru' } ->
+{customerName:'pankaj' } ->
+{customerName:'kaushal' } ->
+{customerName:'komal' } ->
+{customerName:'ruhan' } ->
+{customerName:'kaushal' } ->
+{customerName:'pankaj' } ->
+{customerName:'boy' } ->
+{customerName:'nitish' } -> 
+{customerName:'komal', } ->
+{customerName:'saleel' } ->
+{customerName:'bhuru' } ->
+{customerName:'neel' } ->
+{customerName:'sharmin' } -> 
 
 
 
+
+
+
+
+
+
+
+----------------------------------------------------------------------------------------------------------------------------------
 
 
 
