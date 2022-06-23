@@ -106,8 +106,6 @@ create(co1:cost{name:'INR', price:1200, discount:75}),
 		
 
 
-
-
 -------------------------------------- EMPLOYEE -------------------------------------------------------------------
 
 
@@ -165,7 +163,7 @@ create(s1:Person:Salesman{name:"amit", YoB:1996, MoB:"decamber", PoB:"pune"}),
 
 
 -------------------------------------- ITEM -----------------------------------------------------------------------
-
+match(n) detach delete n
 
 create(i1:item{name:'cake', rate:45, MoM:12, YoM:2021, expire:"best before 5 days",isAvailable:true}),
       (i2:item{name:'cheese', rate:145, MoM:04, YoM:2021, expire:"best before 6 months",isAvailable:true}),
@@ -199,7 +197,15 @@ create(i1:item{name:'cake', rate:45, MoM:12, YoM:2021, expire:"best before 5 day
       (i30:item{name:'hamburgers', rate:375, MoM:"09", YoM:2021, expire:"best before 3 days",isAvailable:true}),
       (i31:item{name:'fried chicken', rate:475, MoM:06, YoM:2021, expire:"best before 12 days",isAvailable:true}),
       (i32:item{name:'chicken nuggets', rate:550, MoM:07, YoM:2021, expire:"best before 3 months",isAvailable:true}),
-	  (i33:item{name:'hot dogs', rate:135, MoM:07, YoM:2021, expire:"best before 7 days",isAvailable:true})
+	  (i33:item{name:'hot dogs', rate:135, MoM:07, YoM:2021, expire:"best before 7 days",isAvailable:true}),
+	  (i34:item{name:'rice', rate:45, MoM:"09", YoM:2021, expire:"best before 3 days",isAvailable:true}),
+      (i35:item{name:'wheat', rate:175, MoM:06, YoM:2021, expire:"best before 12 days",isAvailable:true}),
+      (i36:item{name:'chicken sauce', rate:550, MoM:07, YoM:2021, expire:"best before 6 months",isAvailable:true}),
+	  (i37:item{name:'hot dogs sauce', rate:635, MoM:07, YoM:2021, expire:"best before 6 months",isAvailable:true}),
+	  (i38:item{name:'chocolate cake', rate:550, MoM:07, YoM:2021, expire:"best before 7 days",isAvailable:true}),
+	  (i39:item{name:'soft cake', rate:75, MoM:07, YoM:2021, expire:"best before 3 days",isAvailable:true}),
+	  (i40:item{name:'peanut cake', rate:287, MoM:07, YoM:2021, expire:"best before 7 days",isAvailable:true}),
+	  (i41:item{name:'red velvet cake', rate:635, MoM:07, YoM:2021, expire:"best before 12 days",isAvailable:true})
 
 create(b1:brand{name:'amul', votes:[1,1,1,1,1,0,0,1,1,0,1,2,1,1,1,1,1,1] }),
       (b2:brand{name:'bru', votes:[1,0,1,1,1,0,0,1,1,0,1,0,1,1,1] }),
@@ -216,17 +222,118 @@ create(c1:person:customer{name:'saleel', mob:9850884228, location:'pune', latitu
       (c4:person:customer{name:'neel', mob:9850884231, location:'nashik', latitude:'19.9975° N', longitude:'73.7898° E' }),
       (c5:person:customer{name:'nitish', mob:9850884232, location:'pune', latitude:'18.5204° N', longitude: '73.8567° E' }),
       (c6:person:customer{name:'deep', mob:9850884233, location:'nashik', latitude:'19.9975° N', longitude:'73.7898° E' }),
-      (c7:person:customer{name:'gau', mob:9850884234, location:'pune', latitude:'18.5204° N', longitude: '73.8567° E' })       
+      (c7:person:customer{name:'gau', mob:9850884234, location:'pune', latitude:'18.5204° N', longitude: '73.8567° E' }),
+      (c8:person:customer{name:'pankaj', mob:7057225637, location:'pune', latitude:'18.5204° N', longitude: '73.8567° E' }),
+      (c9:person:customer{name:'komal', mob:7057278922, location:'nashik', latitude:'19.9975° N', longitude:'73.7898° E' }),
+      (c10:person:customer{name:'bandiah', mob:7057248248, location:'pune', latitude:'18.5204° N', longitude: '73.8567° E' }), 
+      (c11:person:customer{name:'rajan', mob:7057848248, location:'pune', latitude:'18.5204° N', longitude: '73.8567° E' }),
+      (c12:person:customer{name:'boy', mob:7057248448, location:'nashik', latitude:'19.9975° N', longitude:'73.7898° E' }),
+      (c13:person:customer{name:'bhuru', mob:7057298248, location:'pune', latitude:'18.5204° N', longitude: '73.8567° E' }), 
+      (c14:person:customer{name:'kaushal', mob:7057200248, location:'pune', latitude:'18.5204° N', longitude: '73.8567° E' })  	  
 
-create(s1:person:person:salesman{name:"amit", YoB:1996, MoB:"decamber", PoB:"pune"}), 
+create(s1:person:salesman{name:"amit", YoB:1996, MoB:"decamber", PoB:"pune"}), 
       (s2:person:salesman{name:"sanjay", YoB:1970, MoB:"november",PoB:"rachi"}),
       (s3:person:salesman{name:"jassu", YoB:1970, MoB:"november",PoB:"pune"}),
       (s4:person:salesman{name:"sanjay", YoB:1996, MoB:"july", PoB:"beed"}), 
       (s5:person:salesman{name:"boy", YoB:1970, MoB:"november",PoB:"banglore"}),
-      (s6:person:salesman{name:"nilesh", YoB:1970, MoB:"november",PoB:"pune"}),
+      (s6:person:salesman{name:"nilesh", YoB:1970, MoB:"november",PoB:"pune"}),    
       (s7:person:salesman{name:"pankaj", YoB:1996, MoB:"decamber", PoB:"jaipur"}), 
       (s8:person:salesman{name:"dilu", YoB:1970, MoB:"october",PoB:"jaipur"}),
       (s9:person:salesman{name:"jay", YoB:1967, MoB:"november",PoB:"nagpur"})
+
+create(o1:customerorder{orderID:'order-1', customerName:'saleel', salesmanName:'amit', orderDate:date("2019-06-02"), city: "bharuch"}),
+	  (o2:customerorder{orderID:'order-2', customerName:'saleel', salesmanName:'sanjay', orderDate:date("2019-06-02"), city: "pune"}),
+	  (o3:customerorder{orderID:'order-3', customerName:'sharmin', salesmanName:'jassu', orderDate:date("2019-05-05"), city: "baroda"}),
+	  (o4:customerorder{orderID:'order-4', customerName:'nitish', salesmanName:'boy', orderDate:date("2019-03-23"), city: "surat"}),
+	  (o5:customerorder{orderID:'order-5', customerName:'bandiah', salesmanName:'nilesh', orderDate:date("2019-11-17"), city: "rachi"}),
+	  (o6:customerorder{orderID:'order-6', customerName:'komal', salesmanName:'pankaj', orderDate:date("2019-08-12"), city: "baroda"}),
+	  (o7:customerorder{orderID:'order-7', customerName:'rajan', salesmanName:'dilu', orderDate:date("2019-02-21"), city: "pune"}),
+	  (o8:customerorder{orderID:'order-8', customerName:'boy', salesmanName:'jay', orderDate:date("2019-03-24"), city: "banglore"}),
+	  (o9:customerorder{orderID:'order-9', customerName:'ruhan', salesmanName:'amit', orderDate:date("2019-05-18"), city: "pune"}),
+	  (o10:customerorder{orderID:'order-10', customerName:'neel', salesmanName:'sanjay', orderDate:date("2019-11-02"), city: "pune"}),
+	  (o11:customerorder{orderID:'order-11', customerName:'sharmin', salesmanName:'jassu', orderDate:date("2019-11-09"), city: "jaipur"}),
+	  (o12:customerorder{orderID:'order-12', customerName:'gau', salesmanName:'sanjay', orderDate:date("2019-02-02"), city: "banglore"}),
+	  (o13:customerorder{orderID:'order-13', customerName:'bhuru', salesmanName:'boy', orderDate:date("2019-05-02"), city: "bharuch"}),
+	  (o14:customerorder{orderID:'order-14', customerName:'pankaj', salesmanName:'nilesh',  orderDate:date("2019-06-02"), city: "pune"}),
+	  (o15:customerorder{orderID:'order-15', customerName:'kaushal', salesmanName:'pankaj', orderDate:date("2019-06-02"), city: "pune"}),
+	  (o16:customerorder{orderID:'order-16', customerName:'komal', salesmanName:'dilu', orderDate:date("2019-05-05"), city: "baroda"}),
+	  (o17:customerorder{orderID:'order-17', customerName:'ruhan', salesmanName:'dilu', orderDate:date("2019-03-23"), city: "surat"}),
+	  (o18:customerorder{orderID:'order-18', customerName:'kaushal', salesmanName:'amit', orderDate:date("2019-11-17"), city: "pune"}),
+	  (o19:customerorder{orderID:'order-19', customerName:'pankaj', salesmanName:'nilesh', orderDate:date("2019-08-12"), city: "baroda"}),
+	  (o20:customerorder{orderID:'order-20', customerName:'boy', salesmanName:'jassu', orderDate:date("2019-02-21"), city: "rachi"}),
+	  (o21:customerorder{orderID:'order-21', customerName:'nitish', salesmanName:'jay', orderDate:date("2019-03-24"), city: "banglore"}),
+	  (o22:customerorder{orderID:'order-22', customerName:'komal', salesmanName:'nilesh', orderDate:date("2019-05-18"), city: "vadodara"}),
+	  (o23:customerorder{orderID:'order-23', customerName:'saleel', salesmanName:'jay', orderDate:date("2019-11-02"), city: "pune"}),
+	  (o24:customerorder{orderID:'order-24', customerName:'bhuru', salesmanName:'jassu', orderDate:date("2019-11-09"), city: "jaipur"}),
+	  (o25:customerorder{orderID:'order-25', customerName:'neel', salesmanName:'jay', orderDate:date("2019-02-02"), city: "vadodara"}),
+	  (o26:customerorder{orderID:'order-26', customerName:'sharmin', salesmanName:'jassu', orderDate:date("2019-05-02"), city: "jaipur"})
+	  
+
+relations
+
+1. Brand and Items
+
+{brandID:1, name:'amul' } ->
+{brandID:2, name:'bru' } ->
+{brandID:3, name:'kwality' } ->
+{brandID:4, name:'haldiram' } ->
+{brandID:5, name:'lijjat' } ->
+{brandID:6, name:'nestle' } ->
+{brandID:7, name:'McDonalds' } ->
+{brandID:8, name:'kissan' } ->
+
+
+
+
+
+
+
+
+
+2. Order and OrderItems
+  
+  {orderID:1} -> 
+  {orderID:2} -> 
+  {orderID:3} -> 
+  {orderID:4} -> 
+  {orderID:5} -> 
+  {orderID:6} -> 
+  {orderID:7} -> 
+  {orderID:8} -> 
+  {orderID:9} -> 
+  {orderID:10} ->
+  {orderID:11} ->
+  {orderID:12} ->
+  {orderID:13} ->
+  {orderID:14} ->
+  {orderID:15} ->
+  {orderID:16} ->
+  {orderID:17} ->
+  {orderID:18} ->
+  {orderID:19} ->
+  {orderID:20} ->
+  {orderID:21} ->
+  {orderID:22} ->
+  {orderID:23} ->
+  {orderID:24} ->
+  {orderID:25} ->
+  {orderID:26} ->
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
