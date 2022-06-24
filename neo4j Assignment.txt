@@ -244,36 +244,37 @@ create(s1:person:salesman{name:"amit", YoB:1996, MoB:"decamber", PoB:"pune"}),
       (s8:person:salesman{name:"dilu", YoB:1970, MoB:"october",PoB:"jaipur"}),
       (s9:person:salesman{name:"jay", YoB:1967, MoB:"november",PoB:"nagpur"})
 
-create(o1:customerorder{orderID:'order-1', customerName:'saleel', salesmanName:'amit', orderDate:date("2019-06-02"), city: "bharuch"}),
-	  (o2:customerorder{orderID:'order-2', customerName:'saleel', salesmanName:'sanjay', orderDate:date("2019-06-02"), city: "pune"}),
-	  (o3:customerorder{orderID:'order-3', customerName:'sharmin', salesmanName:'jassu', orderDate:date("2019-05-05"), city: "baroda"}),
-	  (o4:customerorder{orderID:'order-4', customerName:'nitish', salesmanName:'boy', orderDate:date("2019-03-23"), city: "surat"}),
-	  (o5:customerorder{orderID:'order-5', customerName:'bandiah', salesmanName:'nilesh', orderDate:date("2019-11-17"), city: "rachi"}),
-	  (o6:customerorder{orderID:'order-6', customerName:'komal', salesmanName:'pankaj', orderDate:date("2019-08-12"), city: "baroda"}),
-	  (o7:customerorder{orderID:'order-7', customerName:'rajan', salesmanName:'dilu', orderDate:date("2019-02-21"), city: "pune"}),
-	  (o8:customerorder{orderID:'order-8', customerName:'boy', salesmanName:'jay', orderDate:date("2019-03-24"), city: "banglore"}),
-	  (o9:customerorder{orderID:'order-9', customerName:'ruhan', salesmanName:'amit', orderDate:date("2019-05-18"), city: "pune"}),
-	  (o10:customerorder{orderID:'order-10', customerName:'neel', salesmanName:'sanjay', orderDate:date("2019-11-02"), city: "pune"}),
-	  (o11:customerorder{orderID:'order-11', customerName:'sharmin', salesmanName:'jassu', orderDate:date("2019-11-09"), city: "jaipur"}),
-	  (o12:customerorder{orderID:'order-12', customerName:'gau', salesmanName:'sanjay', orderDate:date("2019-02-02"), city: "banglore"}),
-	  (o13:customerorder{orderID:'order-13', customerName:'bhuru', salesmanName:'boy', orderDate:date("2019-05-02"), city: "bharuch"}),
-	  (o14:customerorder{orderID:'order-14', customerName:'pankaj', salesmanName:'nilesh',  orderDate:date("2019-06-02"), city: "pune"}),
-	  (o15:customerorder{orderID:'order-15', customerName:'kaushal', salesmanName:'pankaj', orderDate:date("2019-06-02"), city: "pune"}),
-	  (o16:customerorder{orderID:'order-16', customerName:'komal', salesmanName:'dilu', orderDate:date("2019-05-05"), city: "baroda"}),
-	  (o17:customerorder{orderID:'order-17', customerName:'ruhan', salesmanName:'dilu', orderDate:date("2019-03-23"), city: "surat"}),
-	  (o18:customerorder{orderID:'order-18', customerName:'kaushal', salesmanName:'amit', orderDate:date("2019-11-17"), city: "pune"}),
-	  (o19:customerorder{orderID:'order-19', customerName:'pankaj', salesmanName:'nilesh', orderDate:date("2019-08-12"), city: "baroda"}),
-	  (o20:customerorder{orderID:'order-20', customerName:'boy', salesmanName:'jassu', orderDate:date("2019-02-21"), city: "rachi"}),
-	  (o21:customerorder{orderID:'order-21', customerName:'nitish', salesmanName:'jay', orderDate:date("2019-03-24"), city: "banglore"}),
-	  (o22:customerorder{orderID:'order-22', customerName:'komal', salesmanName:'nilesh', orderDate:date("2019-05-18"), city: "vadodara"}),
-	  (o23:customerorder{orderID:'order-23', customerName:'saleel', salesmanName:'jay', orderDate:date("2019-11-02"), city: "pune"}),
-	  (o24:customerorder{orderID:'order-24', customerName:'bhuru', salesmanName:'jassu', orderDate:date("2019-11-09"), city: "jaipur"}),
-	  (o25:customerorder{orderID:'order-25', customerName:'neel', salesmanName:'jay', orderDate:date("2019-02-02"), city: "vadodara"}),
-	  (o26:customerorder{orderID:'order-26', customerName:'sharmin', salesmanName:'jassu', orderDate:date("2019-05-02"), city: "jaipur"})
+create(o1:customer_order{name:'order-no-1', orderDate:date("2019-06-02"), city: "bharuch"}),
+	  (o2:customer_order{name:'order-no-2', orderDate:date("2019-06-02"), city: "pune"}),
+	  (o3:customer_order{name:'order-no-3', orderDate:date("2019-05-05"), city: "baroda"}),
+	  (o4:customer_order{name:'order-no-4',orderDate:date("2019-03-23"), city: "surat"}),
+	  (o5:customer_order{name:'order-no-5', orderDate:date("2019-11-17"), city: "rachi"}),
+	  (o6:customer_order{name:'order-no-6', orderDate:date("2019-08-12"), city: "baroda"}),
+	  (o7:customer_order{name:'order-no-7', orderDate:date("2019-02-21"), city: "pune"}),
+	  (o8:customer_order{name:'order-no-8', orderDate:date("2019-03-24"), city: "banglore"}),
+	  (o9:customer_order{name:'order-no-9', orderDate:date("2019-05-18"), city: "pune"}),
+	  (o10:customer_order{name:'order-no-10', orderDate:date("2019-11-02"), city: "pune"}),
+	  (o11:customer_order{name:'order-no-11', orderDate:date("2019-11-09"), city: "jaipur"}),
+	  (o12:customer_order{name:'order-no-12',  orderDate:date("2019-02-02"), city: "banglore"}),
+	  (o13:customer_order{name:'order-no-13', orderDate:date("2019-05-02"), city: "bharuch"}),
+	  (o14:customer_order{name:'order-no-14', orderDate:date("2019-06-02"), city: "pune"}),
+	  (o15:customer_order{name:'order-no-15', orderDate:date("2019-06-02"), city: "pune"}),
+	  (o16:customer_order{name:'order-no-16', orderDate:date("2019-05-05"), city: "baroda"}),
+	  (o17:customer_order{name:'order-no-17', orderDate:date("2019-03-23"), city: "surat"}),
+	  (o18:customer_order{name:'order-no-18', orderDate:date("2019-11-17"), city: "pune"}),
+	  (o19:customer_order{name:'order-no-19', orderDate:date("2019-08-12"), city: "baroda"}),
+	  (o20:customer_order{name:'order-no-20', orderDate:date("2019-02-21"), city: "rachi"}),
+	  (o21:customer_order{name:'order-no-21', orderDate:date("2019-03-24"), city: "banglore"}),
+	  (o22:customer_order{name:'order-no-22', orderDate:date("2019-05-18"), city: "vadodara"}),
+	  (o23:customer_order{name:'order-no-23', orderDate:date("2019-11-02"), city: "pune"}),
+	  (o24:customer_order{name:'order-no-24', orderDate:date("2019-11-09"), city: "jaipur"}),
+	  (o25:customer_order{name:'order-no-25', orderDate:date("2019-02-02"), city: "vadodara"}),
+	  (o26:customer_order{name:'order-no-26', orderDate:date("2019-05-02"), city: "jaipur"})
 	  
 
-------------------------------------- relations ---------------------------------------------------------------------------------
 1. brand and item
+
+------------------------------------- Brand and Item relations -------------------------------------------------------------
  
 {name:'amul' } -> name: [ 'cheese', 'butter', 'milk', 'curd', 'nuts', 'milkshake', 'juice', 'biscuit', 'red velvet cake', 'soft cake' ]
 {name:'bru' } -> name: [ 'coffee', 'tea', 'juice', 'milkshake', 'cake' ]
@@ -289,103 +290,161 @@ create(o1:customerorder{orderID:'order-1', customerName:'saleel', salesmanName:'
 
 match(n:item) where n.name in ['cheese', 'butter', 'milk', 'curd', 'nuts', 'milkshake', 'juice', 'biscuit', 'red velvet cake', 'soft cake']
 match(m:brand{name:'amul'})
-create (n) - [r1:itemOfBrand] -> (m)
-
+create (n) - [r1:productOF] -> (m)
 
 match(n:item) where n.name in ['coffee', 'tea', 'juice', 'milkshake', 'cake']
 match(m:brand{name:'bru'})
-create (n) - [r1:itemOfBrand] -> (m)
-
+create (n) - [r1:productOF] -> (m)
 
 match(n:item) where n.name in ['milk', 'peanut cake', 'chocolate cake', 'ice-cream', 'red velvet cake']
 match(m:brand{name:'kwality'})
-create (n) - [r1:itemOfBrand] -> (m)
-
+create (n) - [r1:productOF] -> (m)
 
 match(n:item) where n.name in ['nuts', 'sandwiches', 'popcorn', 'bread']
 match(m:brand{name:'haldiram'})
-create (n) - [r1:itemOfBrand] -> (m)
-
+create (n) - [r1:productOF] -> (m)
 
 match(n:item) where n.name in ['papad', 'chikki', 'nuts', 'popcorn', 'cake']
 match(m:brand{name:'lijjat'})
-create (n) - [r1:itemOfBrand] -> (m)
-
+create (n) - [r1:productOF] -> (m)
 
 match(n:item) where n.name in ['biscuit', 'nuts', 'chips', 'chocolate', 'chocolate cake', 'suger-cubes', 'maggi', 'rice', 'wheat', 'soft cake']
 match(m:brand{name:'nestle'})
-create (n) - [r1:itemOfBrand] -> (m)
-
+create (n) - [r1:productOF] -> (m)
 
 match(n:item) where n.name in ['hot dogs', 'chicken sauce', 'hot dogs sauce', 'pizza', 'pasta', 'burger', 'hamburgers', 'fries', 'bread' ]
 match(m:brand{name:'McDonalds'})
-create (n) - [r1:itemOfBrand] -> (m)
-
+create (n) - [r1:productOF] -> (m)
 
 match(n:item) where n.name in ['sauce', 'chicken sauce', 'hot dogs sauce', 'jam']
 match(m:brand{name:'kissan'})
-create (n) - [r1:itemOfBrand] -> (m)
-
+create (n) - [r1:productOF] -> (m)
 
 match(n:item) where n.name in [ 'chicken nuggets', 'chicken sauce', 'hot dogs sauce', 'fried chicken', 'hot dogs', 'burger', 'hamburgers', 'sandwiches', 'bread']
 match(m:brand{name:'venkys'})
-create (n) - [r1:itemOfBrand] -> (m)
-
-
+create (n) - [r1:productOF] -> (m)
 
 match(n:item) where n.name in [ 'coke', 'fanta', 'fries', 'soft cake', 'red velvet cake']
 match(m:brand{name:'Coca-Cola'})
-create (n) - [r1:itemOfBrand] -> (m)
+create (n) - [r1:productOF] -> (m)
+
+-------------------------------------- end of Brand and Item relations --------------------------------------------------
 
 
 
 
-------------------------------------- end of relations ---------------------------------------------------------------------------------
+2. order_header and customer
+------------------------------------- customer_order and customer relations --------------------------------------
+
+
+customer{name:'saleel'} -> {name:'order-no-1'}  
+customer{name:'sharmin'} -> {name:'order-no-2'}
+customer{name:'ruhan'} -> {name:'order-no-3'}
+customer{name:'neel'} -> {name:'order-no-4'}
+customer{name:'nitish'} -> {name:'order-no-5'}
+customer{name:'deep'} -> {name:'order-no-6'}
+customer{name:'gau'} -> {name:'order-no-7'}
+customer{name:'pankaj'} -> {name:'order-no-8'}
+customer{name:'komal'} -> {name:'order-no-9'}
+ customer{name:'bandish'} -> {name:'order-no-10'}
+ customer{name:'rajan'} -> {name:'order-no-11'}
+ customer{name:'boy'} -> {name:'order-no-12'}
+ customer{name:'bhuru'} -> {name:'order-no-13'}
+ customer{name:'kaushal'} -> {name:'order-no-14'}
+ customer{name:'sharmin'} -> {name:'order-no-15'}
+ customer{name:'pankaj'} -> {name:'order-no-16'}
+ customer{name:'komal'} -> {name:'order-no-17'}
+ customer{name:'rajan'} -> {name:'order-no-18'}
+ customer{name:'bandish'} -> {name:'order-no-19'}
+ customer{name:'komal'} -> {name:'order-no-20'}
+ customer{name:'gau'} -> {name:'order-no-21'}
+ customer{name:'rajan'} -> {name:'order-no-22'}
+ customer{name:'sharmin'} -> {name:'order-no-23'}
+ customer{name:'ruhan'} -> {name:'order-no-24'}
+ customer{name:'ruhan'} -> {name:'order-no-25'}
+ customer{name:'sharmin'} -> {name:'order-no-26'}
+
+match(n:customer{name:'saleel'}), (m:customer_order{name:'order-no-1'})
+create (n) - [:placeOrder] -> (m)
+
+match(n:customer{name:'sharmin'}), (m:customer_order{name:'order-no-2'})
+create (n) - [:placeOrder] -> (m)
+
+match(n:customer{name:'ruhan'}), (m:customer_order{name:'order-no-3'})
+create (n) - [:placeOrder] -> (m)
+
+match(n:customer{name:'neel'}), (m:customer_order{name:'order-no-4'})
+create (n) - [:placeOrder] -> (m)
+
+match(n:customer{name:'nitish'}), (m:customer_order{name:'order-no-5'})
+create (n) - [:placeOrder] -> (m)
+
+match(n:customer{name:'deep'}), (m:customer_order{name:'order-no-6'})
+create (n) - [:placeOrder] -> (m)
+
+match(n:customer{name:'gau'}), (m:customer_order{name:'order-no-7'})
+create (n) - [:placeOrder] -> (m)
+
+match(n:customer{name:'pankaj'}), (m:customer_order{name:'order-no-8'})
+create (n) - [:placeOrder] -> (m)
+
+match(n:customer{name:'komal'}), (m:customer_order{name:'order-no-9'})
+create (n) - [:placeOrder] -> (m)
+
+match(n:customer{name:'bandish'}), (m:customer_order{name:'order-no-10'})
+create (n) - [:placeOrder] -> (m)
+
+match(n:customer{name:'rajan'}), (m:customer_order{name:'order-no-11'})
+create (n) - [:placeOrder] -> (m)
+
+match(n:customer{name:'boy'}), (m:customer_order{name:'order-no-12'})
+create (n) - [:placeOrder] -> (m)
+
+match(n:customer{name:'bhuru'}), (m:customer_order{name:'order-no-13'})
+create (n) - [:placeOrder] -> (m)
+
+match(n:customer{name:'kaushal'}), (m:customer_order{name:'order-no-14'})
+create (n) - [:placeOrder] -> (m)
+
+match(n:customer{name:'sharmin'}), (m:customer_order{name:'order-no-15'})
+create (n) - [:placeOrder] -> (m)
+
+match(n:customer{name:'pankaj'}), (m:customer_order{name:'order-no-16'})
+create (n) - [:placeOrder] -> (m)
+
+match(n:customer{name:'komal'}), (m:customer_order{name:'order-no-17'})
+create (n) - [:placeOrder] -> (m)
+
+match(n:customer{name:'rajan'}), (m:customer_order{name:'order-no-18'})
+create (n) - [:placeOrder] -> (m)
+
+match(n:customer{name:'bandish'}), (m:customer_order{name:'order-no-19'})
+create (n) - [:placeOrder] -> (m)
+
+match(n:customer{name:'komal'}), (m:customer_order{name:'order-no-20'})
+create (n) - [:placeOrder] -> (m)
+
+match(n:customer{name:'gau'}), (m:customer_order{name:'order-no-21'})
+create (n) - [:placeOrder] -> (m)
+
+match(n:customer{name:'rajan'}), (m:customer_order{name:'order-no-22'})
+create (n) - [:placeOrder] -> (m)
+
+match(n:customer{name:'sharmin'}), (m:customer_order{name:'order-no-23'})
+create (n) - [:placeOrder] -> (m)
+
+match(n:customer{name:'ruhan'}), (m:customer_order{name:'order-no-24'})
+create (n) - [:placeOrder] -> (m)
+
+match(n:customer{name:'ruhan'}), (m:customer_order{name:'order-no-25'})
+create (n) - [:placeOrder] -> (m)
+
+match(n:customer{name:'sharmin'}), (m:customer_order{name:'order-no-26'})
+create (n) - [:placeOrder] -> (m)
 
 
 
-
-2. customerorder and orderitems 
-
-{customerName:'saleel' } -> [ '','','','','','','','' ]
-{customerName:'saleel' } -> [ '','','','','','','','' ]
-{customerName:'sharmin' } -> [ '','','','','','','','' ]
-{customerName:'nitish' } -> [ '','','','','','','','' ]
-{customerName:'bandiah' } -> [ '','','','','','','','' ]
-{customerName:'komal' } -> [ '','','','','','','','' ]
-{customerName:'rajan' } -> [ '','','','','','','','' ]
-{customerName:'boy' } -> [ '','','','','','','','' ]
-{customerName:'ruhan' } -> [ '','','','','','','','' ]
-{customerName:'neel' } -> [ '','','','','','','','' ]
-{customerName:'sharmin' } -> [ '','','','','','','','' ]
-{customerName:'gau' } -> [ '','','','','','','','' ]
-{customerName:'bhuru' } -> [ '','','','','','','','' ]
-{customerName:'pankaj' } -> [ '','','','','','','','' ]
-{customerName:'kaushal' } -> [ '','','','','','','','' ]
-{customerName:'komal' } -> [ '','','','','','','','' ]
-{customerName:'ruhan' } -> [ '','','','','','','','' ]
-{customerName:'kaushal' } -> [ '','','','','','','','' ]
-{customerName:'pankaj' } -> [ '','','','','','','','' ]
-{customerName:'boy' } -> [ '','','','','','','','' ]
-{customerName:'nitish' } -> [ '','','','','','','','' ]
-{customerName:'komal', } -> [ '','','','','','','','' ]
-{customerName:'saleel' } -> [ '','','','','','','','' ]
-{customerName:'bhuru' } -> [ '','','','','','','','' ]
-{customerName:'neel' } -> [ '','','','','','','','' ]
-{customerName:'sharmin' } -> [ '','','','','','','','' ]
-
-
-
-
-
-
-
-
-
-
-----------------------------------------------------------------------------------------------------------------------------------
-
-
+------------------------------------- end of customer_order and customer relations --------------------------------
 
 
 
