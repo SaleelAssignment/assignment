@@ -208,16 +208,16 @@ create(i1:item{name:'cake', rate:45, MoM:12, YoM:2021, expire:"best before 5 day
 	  (i41:item{name:'red velvet cake', rate:635, MoM:07, YoM:2021, expire:"best before 12 days",isAvailable:true})
 
 
-create(b1:brand{name:'amul', votes:[1,1,1,1,1,0,0,1,1,0,1,2,1,1,1,1,1,1] }),
+create(b1:brand{name:'amul', votes:[1,1,1,1,1,0,0,1,1,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1] }),
       (b2:brand{name:'bru', votes:[1,0,1,1,1,0,0,1,1,0,1,0,1,1,1] }),
       (b3:brand{name:'kwality', votes:[1,0,1,0,0,0,0,1,0,1,1,1] }),
-      (b4:brand{name:'haldiram', votes:[1,0,1,1,1,0,0,1,1,0,1,0,1,1,1] }),
-      (b5:brand{name:'lijjat', votes:[1,0,1,1,1,0,0,1,1,0,1,0,1,1,1] }),
+      (b4:brand{name:'haldiram', votes:[1,0,1,1,1,0,1,1,1,0,1,1,1,1,1,1,1,0,1] }),
+      (b5:brand{name:'lijjat', votes:[1,0,1,1,1,0,0,1,1,0,1,0,1,1,1,1,1,1,0,1,0,1] }),
       (b6:brand{name:'nestle', votes:[1,0,1,1,1,0,0,1,1,0,1,0,0,1,0] }),
       (b7:brand{name:'McDonalds', votes:[1,0,1,1,1,0,0,1,1,0,1,0,1,1,1,1,1,1,0,1] }),
       (b8:brand{name:'kissan', votes:[1,0,1,1,1,0,0,1,1,0,1,0,1,1,1,0,1,1,0,1] }),
 	  (b9:brand{name:'venkys', votes:[1,0,1,1,1,0,0,1,1,1,1,0,1,1,1,1,1,1,1,1] }),
-	  (b10:brand{name:'Coca-Cola', votes:[1,0,1,1,1,0,0,1,1,1,1,0,1,1,1,1,1,1,1,1] })
+	  (b10:brand{name:'Coca-Cola', votes:[0,0,1,1,1,0,1,1,1,1,1,0,1,1,1,1,1,1,1,1] })
 
 create(c1:person:customer{name:'saleel', mob:9850884228, location:'pune', latitude:'18.5204° N', longitude: '73.8567° E' }),
       (c2:person:customer{name:'sharmin', mob:9850884229, location:'goa', latitude:'15.2993° N', longitude:'74.1240° E' }),
@@ -273,48 +273,106 @@ create(o1:customerorder{orderID:'order-1', customerName:'saleel', salesmanName:'
 	  
 
 ------------------------------------- relations ---------------------------------------------------------------------------------
-1. Brand and Items
+1. brand and item
  
-{name:'amul' }      -> name: [ 'cheese', 'butter', 'milk', 'curd', 'nuts', 'milkshake', 'juice', 'biscuit', 'red velvet cake', 'soft cake' ]
-{name:'bru' }       -> name: [ 'coffee', 'tea', 'juice', 'milkshake', 'cake' ]
-{name:'kwality' }   -> name: [ 'milk', 'peanut cake', 'chocolate cake', 'ice-cream', 'red velvet cake' ]
-{name:'haldiram' }  -> name: [ 'nuts', 'sandwiches', 'popcorn', 'bread' ]
-{name:'lijjat' }    -> name: [ 'papad', 'chikki', 'nuts', 'popcorn', 'cake' ]
-{name:'nestle' }    -> name: [ 'biscuit', 'nuts', 'chips', '', 'chocolate cake', 'suger-cubes', 'maggi', 'rice', 'wheat', 'soft cake' ]
+{name:'amul' } -> name: [ 'cheese', 'butter', 'milk', 'curd', 'nuts', 'milkshake', 'juice', 'biscuit', 'red velvet cake', 'soft cake' ]
+{name:'bru' } -> name: [ 'coffee', 'tea', 'juice', 'milkshake', 'cake' ]
+{name:'kwality' } -> name: [ 'milk', 'peanut cake', 'chocolate cake', 'ice-cream', 'red velvet cake' ]
+{name:'haldiram' } -> name: [ 'nuts', 'sandwiches', 'popcorn', 'bread' ]
+{name:'lijjat' } -> name: [ 'papad', 'chikki', 'nuts', 'popcorn', 'cake' ]
+{name:'nestle' } -> name: [ 'biscuit', 'nuts', 'chips', '', 'chocolate cake', 'suger-cubes', 'maggi', 'rice', 'wheat', 'soft cake' ]
 {name:'McDonalds' } -> name: [ 'hot dogs', 'chicken sauce', 'hot dogs sauce', 'pizza', 'pasta', 'burger', 'hamburgers', 'fries', 'bread' ]
-{name:'kissan' }    -> name: [ 'sauce', 'chicken sauce', 'hot dogs sauce', 'jam' ]
-{name:'venkys' }    -> name: [ 'chicken nuggets', 'chicken sauce', 'hot dogs sauce', 'fried chicken', 'hot dogs', 'burger', 'hamburgers', 'sandwiches', 'bread' ]
+{name:'kissan' } -> name: [ 'sauce', 'chicken sauce', 'hot dogs sauce', 'jam' ]
+{name:'venkys' } -> name: [ 'chicken nuggets', 'chicken sauce', 'hot dogs sauce', 'fried chicken', 'hot dogs', 'burger', 'hamburgers', 'sandwiches', 'bread' ]
 {name:'Coca-Cola' } -> name: [ 'coke', 'fanta', 'fries', 'soft cake', 'red velvet cake' ]
+
+
+match(n:item) where n.name in ['cheese', 'butter', 'milk', 'curd', 'nuts', 'milkshake', 'juice', 'biscuit', 'red velvet cake', 'soft cake']
+match(m:brand{name:'amul'})
+create (n) - [r1:itemOfBrand] -> (m)
+
+
+match(n:item) where n.name in ['coffee', 'tea', 'juice', 'milkshake', 'cake']
+match(m:brand{name:'bru'})
+create (n) - [r1:itemOfBrand] -> (m)
+
+
+match(n:item) where n.name in ['milk', 'peanut cake', 'chocolate cake', 'ice-cream', 'red velvet cake']
+match(m:brand{name:'kwality'})
+create (n) - [r1:itemOfBrand] -> (m)
+
+
+match(n:item) where n.name in ['nuts', 'sandwiches', 'popcorn', 'bread']
+match(m:brand{name:'haldiram'})
+create (n) - [r1:itemOfBrand] -> (m)
+
+
+match(n:item) where n.name in ['papad', 'chikki', 'nuts', 'popcorn', 'cake']
+match(m:brand{name:'lijjat'})
+create (n) - [r1:itemOfBrand] -> (m)
+
+
+match(n:item) where n.name in ['biscuit', 'nuts', 'chips', 'chocolate', 'chocolate cake', 'suger-cubes', 'maggi', 'rice', 'wheat', 'soft cake']
+match(m:brand{name:'nestle'})
+create (n) - [r1:itemOfBrand] -> (m)
+
+
+match(n:item) where n.name in ['hot dogs', 'chicken sauce', 'hot dogs sauce', 'pizza', 'pasta', 'burger', 'hamburgers', 'fries', 'bread' ]
+match(m:brand{name:'McDonalds'})
+create (n) - [r1:itemOfBrand] -> (m)
+
+
+match(n:item) where n.name in ['sauce', 'chicken sauce', 'hot dogs sauce', 'jam']
+match(m:brand{name:'kissan'})
+create (n) - [r1:itemOfBrand] -> (m)
+
+
+match(n:item) where n.name in [ 'chicken nuggets', 'chicken sauce', 'hot dogs sauce', 'fried chicken', 'hot dogs', 'burger', 'hamburgers', 'sandwiches', 'bread']
+match(m:brand{name:'venkys'})
+create (n) - [r1:itemOfBrand] -> (m)
+
+
+
+match(n:item) where n.name in [ 'coke', 'fanta', 'fries', 'soft cake', 'red velvet cake']
+match(m:brand{name:'Coca-Cola'})
+create (n) - [r1:itemOfBrand] -> (m)
+
+
+
+
+------------------------------------- end of relations ---------------------------------------------------------------------------------
+
+
 
 
 2. customerorder and orderitems 
 
-{customerName:'saleel' } -> 
-{customerName:'saleel' } ->
-{customerName:'sharmin' } ->
-{customerName:'nitish' } ->
-{customerName:'bandiah' } ->
-{customerName:'komal' } ->
-{customerName:'rajan' } ->
-{customerName:'boy' } ->
-{customerName:'ruhan' } ->
-{customerName:'neel' } ->
-{customerName:'sharmin' } -> 
-{customerName:'gau' } ->
-{customerName:'bhuru' } ->
-{customerName:'pankaj' } ->
-{customerName:'kaushal' } ->
-{customerName:'komal' } ->
-{customerName:'ruhan' } ->
-{customerName:'kaushal' } ->
-{customerName:'pankaj' } ->
-{customerName:'boy' } ->
-{customerName:'nitish' } -> 
-{customerName:'komal', } ->
-{customerName:'saleel' } ->
-{customerName:'bhuru' } ->
-{customerName:'neel' } ->
-{customerName:'sharmin' } -> 
+{customerName:'saleel' } -> [ '','','','','','','','' ]
+{customerName:'saleel' } -> [ '','','','','','','','' ]
+{customerName:'sharmin' } -> [ '','','','','','','','' ]
+{customerName:'nitish' } -> [ '','','','','','','','' ]
+{customerName:'bandiah' } -> [ '','','','','','','','' ]
+{customerName:'komal' } -> [ '','','','','','','','' ]
+{customerName:'rajan' } -> [ '','','','','','','','' ]
+{customerName:'boy' } -> [ '','','','','','','','' ]
+{customerName:'ruhan' } -> [ '','','','','','','','' ]
+{customerName:'neel' } -> [ '','','','','','','','' ]
+{customerName:'sharmin' } -> [ '','','','','','','','' ]
+{customerName:'gau' } -> [ '','','','','','','','' ]
+{customerName:'bhuru' } -> [ '','','','','','','','' ]
+{customerName:'pankaj' } -> [ '','','','','','','','' ]
+{customerName:'kaushal' } -> [ '','','','','','','','' ]
+{customerName:'komal' } -> [ '','','','','','','','' ]
+{customerName:'ruhan' } -> [ '','','','','','','','' ]
+{customerName:'kaushal' } -> [ '','','','','','','','' ]
+{customerName:'pankaj' } -> [ '','','','','','','','' ]
+{customerName:'boy' } -> [ '','','','','','','','' ]
+{customerName:'nitish' } -> [ '','','','','','','','' ]
+{customerName:'komal', } -> [ '','','','','','','','' ]
+{customerName:'saleel' } -> [ '','','','','','','','' ]
+{customerName:'bhuru' } -> [ '','','','','','','','' ]
+{customerName:'neel' } -> [ '','','','','','','','' ]
+{customerName:'sharmin' } -> [ '','','','','','','','' ]
 
 
 
