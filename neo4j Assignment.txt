@@ -377,6 +377,21 @@ customer{name:'komal'} -> {name:'order-no-9'}
  customer{name:'ruhan'} -> {name:'order-no-24'}
  customer{name:'ruhan'} -> {name:'order-no-25'}
  customer{name:'sharmin'} -> {name:'order-no-26'}
+ 
+ customer{name:'boy'} -> {name:'order-no-27'}
+ customer{name:'sharmin'} -> {name:'order-no-28'}
+ customer{name:'gau'} -> {name:'order-no-29'}
+ customer{name:'sharmin'} -> {name:'order-no-30'}
+ customer{name:'boy'} -> {name:'order-no-31'}
+ customer{name:'kaushal'} -> {name:'order-no-32'}
+ customer{name:'komal'} -> {name:'order-no-33'}
+ customer{name:'deep'} -> {name:'order-no-34'}
+ customer{name:'gau'} -> {name:'order-no-35'}
+ customer{name:'sharmin'} -> {name:'order-no-36'}
+ customer{name:'rajan'} -> {name:'order-no-37'}
+ customer{name:'kaushal'} -> {name:'order-no-38'}
+ customer{name:'deep'} -> {name:'order-no-39'}
+  customer{name:'rajan'} -> {name:'order-no-40'}
 
 match(n:customer{name:'saleel'}), (m:customer_order{name:'order-no-1'})
 create (n) - [:placeOrder] -> (m)
@@ -455,6 +470,78 @@ create (n) - [:placeOrder] -> (m)
 
 match(n:customer{name:'sharmin'}), (m:customer_order{name:'order-no-26'})
 create (n) - [:placeOrder] -> (m)
+
+
+
+match(n:customer{name:'sharmin'}), (m:customer_order{name:'order-no-27'})
+create (n) - [:placeOrder] -> (m)
+
+
+match(n:customer{name:'sharmin'}), (m:customer_order{name:'order-no-28'})
+create (n) - [:placeOrder] -> (m)
+
+
+match(n:customer{name:'sharmin'}), (m:customer_order{name:'order-no-29'})
+create (n) - [:placeOrder] -> (m)
+
+
+
+match(n:customer{name:'sharmin'}), (m:customer_order{name:'order-no-30'})
+create (n) - [:placeOrder] -> (m)
+
+
+match(n:customer{name:'sharmin'}), (m:customer_order{name:'order-no-31'})
+create (n) - [:placeOrder] -> (m)
+
+
+match(n:customer{name:'sharmin'}), (m:customer_order{name:'order-no-32'})
+create (n) - [:placeOrder] -> (m)
+
+match(n:customer{name:'sharmin'}), (m:customer_order{name:'order-no-33'})
+create (n) - [:placeOrder] -> (m)
+
+
+
+match(n:customer{name:'sharmin'}), (m:customer_order{name:'order-no-34'})
+create (n) - [:placeOrder] -> (m)
+
+
+
+match(n:customer{name:'sharmin'}), (m:customer_order{name:'order-no-35'})
+create (n) - [:placeOrder] -> (m)
+
+match(n:customer{name:'sharmin'}), (m:customer_order{name:'order-no-36'})
+create (n) - [:placeOrder] -> (m)
+
+
+
+match(n:customer{name:'sharmin'}), (m:customer_order{name:'order-no-37'})
+create (n) - [:placeOrder] -> (m)
+
+
+match(n:customer{name:'sharmin'}), (m:customer_order{name:'order-no-38'})
+create (n) - [:placeOrder] -> (m)
+
+match(n:customer{name:'sharmin'}), (m:customer_order{name:'order-no-39'})
+create (n) - [:placeOrder] -> (m)
+
+
+
+match(n:customer{name:'sharmin'}), (m:customer_order{name:'order-no-40'})
+create (n) - [:placeOrder] -> (m)
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
