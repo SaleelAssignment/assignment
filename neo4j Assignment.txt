@@ -186,6 +186,10 @@ create(s1:Person:Salesman{name:"amit", YoB:1996, MoB:"decamber", PoB:"pune"}),
 
 
 -------------------------------------------- ITEM ----------------------------------------------------------------
+
+
+
+
 match(n) detach delete n
 
 create(i1:item{name:'cake', rate:45, MoM:12, YoM:2021, expire:"best before 5 days",isAvailable:true}),
@@ -241,8 +245,47 @@ create(i1:item{name:'cake', rate:45, MoM:12, YoM:2021, expire:"best before 5 day
 	  (i51:item{name:'banana', rate:18, MoM:4, YoM:2021, expire:"best before 3 days",isAvailable:true}),
 	  (i52:item{name:'apple', rate:235, MoM:1, YoM:2021, expire:"best before 3 days",isAvailable:true}),
 	  (i53:item{name:'grapes', rate:174, MoM:10, YoM:2021, expire:"best before 3 days",isAvailable:true}),
-	  (i54:item{name:'mango', rate:675, MoM:11, YoM:2021, expire:"best before 3 days",isAvailable:true})
+	  (i54:item{name:'mango', rate:675, MoM:11, YoM:2021, expire:"best before 3 days",isAvailable:true}),
+      
+	  (i55:item{name:'soaps ', rate:35, MoM:6, YoM:2021, expire:"best before 3 days",isAvailable:true}),
+	  (i56:item{name:'shampoo', rate:125, MoM:4, YoM:2021, expire:"best before 3 days",isAvailable:true}),
+	  (i57:item{name:'hair oil', rate:35, MoM:8, YoM:2021, expire:"best before 3 days",isAvailable:true}),
+	  (i58:item{name:'tooth paste', rate:110, MoM:12, YoM:2021, expire:"best before 3 days",isAvailable:true}),
+	  (i59:item{name:'shaving cream', rate:95, MoM:8, YoM:2021, expire:"best before 3 days",isAvailable:true}),
+	  (i60:item{name:'detergent soap', rate:25, MoM:9, YoM:2021, expire:"best before 3 days",isAvailable:true}),
+	  (i61:item{name:'detergent powder', rate:134, MoM:1, YoM:2021, expire:"best before 3 days",isAvailable:true}),
+	  (i62:item{name:'dish wash soap', rate:140, MoM:11, YoM:2021, expire:"best before 3 days",isAvailable:true}),
+	  (i63:item{name:'dish wash liquid', rate:157, MoM:12, YoM:2021, expire:"best before 3 days",isAvailable:true}),
+	  (i64:item{name:'floor cleaner', rate:95, MoM:10, YoM:2021, expire:"best before 3 days",isAvailable:true}),
+	  (i65:item{name:'toilet cleaner', rate:110, MoM:3, YoM:2021, expire:"best before 3 days",isAvailable:true}),
+	  (i66:item{name:'toilet roll', rate:100, MoM:7, YoM:2021, expire:"best before 3 days",isAvailable:true}),
+	  (i67:item{name:'tissue papers', rate:100, MoM:4, YoM:2021, expire:"best before 3 days",isAvailable:true}),
+	  (i68:item{name:'paneer', rate:75, MoM:8, YoM:2021, expire:"best before 3 days",isAvailable:true}),
+	  (i69:item{name:'honey', rate:60, MoM:9, YoM:2021, expire:"best before 3 days",isAvailable:true}),
+	  (i70:item{name:'garbage bags', rate:20, MoM:4, YoM:2021, expire:"best before 3 days",isAvailable:true}),
+	  (i71:item{name:'eggs', rate:7, MoM:11, YoM:2021, expire:"best before 3 days",isAvailable:true}),
+	  (i72:item{name:'rajma', rate:12, MoM:10, YoM:2021, expire:"best before 3 days",isAvailable:true}),
+	  (i73:item{name:'mung dal', rate:45, MoM:10, YoM:2021, expire:"best before 3 days",isAvailable:true}),
+	  (i74:item{name:'chana dal', rate:32, MoM:12, YoM:2021, expire:"best before 3 days",isAvailable:true}),
+	  (i75:item{name:'toor dal', rate:42, MoM:5, YoM:2021, expire:"best before 3 days",isAvailable:true}),
+	  (i76:item{name:'udad dal', rate:55, MoM:7, YoM:2021, expire:"best before 3 days",isAvailable:true}),
+	  (i77:item{name:'soybean', rate:18, MoM:8, YoM:2021, expire:"best before 3 days",isAvailable:true}),
+	  (i78:item{name:'jaljeera', rate:12, MoM:9, YoM:2021, expire:"best before 3 days",isAvailable:true}),
+	  (i79:item{name:'chat masala', rate:62, MoM:3, YoM:2021, expire:"best before 3 days",isAvailable:true}),
+	  (i80:item{name:'sambahr masala', rate:62, MoM:2, YoM:2021, expire:"best before 3 days",isAvailable:true}),
+	  (i81:item{name:'jeera', rate:22, MoM:1, YoM:2021, expire:"best before 3 days",isAvailable:true}),
+	  (i82:item{name:'haldi', rate:32, MoM:6, YoM:2021, expire:"best before 3 days",isAvailable:true}),
+	  (i83:item{name:'kokum', rate:100, MoM:7, YoM:2021, expire:"best before 3 days",isAvailable:true}),
+	  (i84:item{name:'tooth brush', rate:25, MoM:6, YoM:2021, expire:"best before 3 days",isAvailable:true}),
+	  (i85:item{name:'tooth powder', rate:42, MoM:4, YoM:2021, expire:"best before 3 days",isAvailable:true}),
+	  (i86:item{name:'powder', rate:75, MoM:2, YoM:2021, expire:"best before 3 days",isAvailable:true}),
+	  (i87:item{name:'pickle', rate:68, MoM:1, YoM:2021, expire:"best before 3 days",isAvailable:true}),
+	  (i88:item{name:'vinegar', rate:36, MoM:7, YoM:2021, expire:"best before 3 days",isAvailable:true}),
+	  (i89:item{name:'sffron', rate:1000, MoM:6, YoM:2021, expire:"best before 3 days",isAvailable:true}),
+	  (i90:item{name:'noodles', rate:47, MoM:5, YoM:2021, expire:"best before 3 days",isAvailable:true}),
+	  (i91:item{name:'pasta', rate:80, MoM:9, YoM:2021, expire:"best before 3 days",isAvailable:true})
 
+	
 
 create(b1:brand{name:'amul', votes:[1,1,1,1,1,0,0,1,1,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1] }),
       (b2:brand{name:'bru', votes:[1,0,1,1,1,0,0,1,1,0,1,0,1,1,1] }),
@@ -254,8 +297,21 @@ create(b1:brand{name:'amul', votes:[1,1,1,1,1,0,0,1,1,0,1,1,1,1,1,1,1,1,1,1,1,1,
       (b8:brand{name:'kissan', votes:[1,0,1,1,1,0,0,1,1,0,1,0,1,1,1,0,1,1,0,1] }),
 	  (b9:brand{name:'venkys', votes:[1,0,1,1,1,0,0,1,1,1,1,0,1,1,1,1,1,1,1,1] }),
 	  (b10:brand{name:'Coca-Cola', votes:[0,0,1,1,1,0,1,1,1,1,1,0,1,1,1,1,1,1,1,1] }),
-	  (b11:brand{name:'natraj', votes:[0,0,1,1,1,0,1,1,1,1,1,0,1,1,1,1,1,1,1,1] })
-
+	  (b11:brand{name:'natraj', votes:[0,0,1,1,1,0,1,1,1,1,1,0,1,1,1,1,1,1,1,1] }),
+      (b12:brand{name:'colgate', votes:[1,0,0,1,1,1,0,1,1,1,1,1,0,1,1,1,1,1,1,1,1] }),
+      (b13:brand{name:'sunfeast', votes:[0,0,1,1,1,0,1,1,1,1,1,0,1,1,1,1,1,1,1,1] }),
+      (b14:brand{name:'yippie', votes:[0,1,1, 0,1,1,1,0,1,1,1,1,1,0,1,1,1,1,1,1,1,1] }),
+      (b15:brand{name:'britannia', votes:[0,0,1,1,1,0,1,1,1,1,1,0,1,1,1,1,1,1,1,1] }),
+      (b16:brand{name:'parle', votes:[1,1,1,0,0,1,1,1,0,1,1,1,1,1,0,1,1,1,1,1,1,1,1] }),
+	  (b17:brand{name:'tata', votes:[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1] }),
+	  (b18:brand{name:'godrej', votes:[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1] }),
+	  (b19:brand{name:'tide', votes:[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1] }),
+	  (b20:brand{name:'mdh', votes:[1,0,1,1,1,1,0,1,1,1,1,1,0,1,1,1,1,1,1,1,1,1,0] }),
+	  (b21:brand{name:'everest', votes:[1,0,1,1,1,1,0,1,1,1,1,0,1,1,1,1,1,0,1,1,1,1,1] }),
+	  (b22:brand{name:'badshah', votes:[1,1,1,1,1,1,1,1,0,1,1,1,1,1,0,1,1,0,1,1,1,1,1] })
+      
+	   
+	  
 create(c1:person:customer{name:'saleel', mob:9850884228, location:'pune', latitude:'18.5204° N', longitude: '73.8567° E' }),
       (c2:person:customer{name:'sharmin', mob:9850884229, location:'goa', latitude:'15.2993° N', longitude:'74.1240° E' }),
       (c3:person:customer{name:'ruhan', mob:9850884230, location:'pune', latitude:'18.5204° N', longitude: '73.8567° E' }),
@@ -271,6 +327,7 @@ create(c1:person:customer{name:'saleel', mob:9850884228, location:'pune', latitu
       (c13:person:customer{name:'bhuru', mob:7057298248, location:'pune', latitude:'18.5204° N', longitude: '73.8567° E' }), 
       (c14:person:customer{name:'kaushal', mob:7057200248, location:'pune', latitude:'18.5204° N', longitude: '73.8567° E' })  	  
 
+
 create(s1:person:salesman{name:"amit", YoB:1996, MoB:"decamber", PoB:"pune"}), 
       (s2:person:salesman{name:"sanjay", YoB:1970, MoB:"november",PoB:"rachi"}),
       (s3:person:salesman{name:"jassu", YoB:1970, MoB:"november",PoB:"pune"}),
@@ -280,6 +337,7 @@ create(s1:person:salesman{name:"amit", YoB:1996, MoB:"decamber", PoB:"pune"}),
       (s7:person:salesman{name:"pankaj", YoB:1996, MoB:"decamber", PoB:"jaipur"}), 
       (s8:person:salesman{name:"dilu", YoB:1970, MoB:"october",PoB:"jaipur"}),
       (s9:person:salesman{name:"jay", YoB:1967, MoB:"november",PoB:"nagpur"})
+
 
 create(o1:customer_order{name:'order-1', orderDate:date("2019-06-02"), city: "bharuch"}),
 	  (o2:customer_order{name:'order-2', orderDate:date("2019-06-02"), city: "pune"}),
@@ -356,6 +414,34 @@ brand{name:'natraj' }       ------> item{name: [ 'sugar', 'dal', 'oil', 'salt', 
 
 
 
+brand{name:'colgate' }      ------> item{name: [ 'tooth paste', 'shaving cream', '', '' ] }
+
+brand{name:'sunfeast' }     ------> item{name: [ 'hair oil', 'paneer', 'honey', '' ] }
+
+brand{name:'yippie' }       ------> item{name: [ '', '', '', '' ] }
+
+brand{name:'britannia' }    ------> item{name: [ '', '', '', '' ] }
+
+brand{name:'parle' }        ------> item{name: [ 'honey', '', '', '' ] }
+
+brand{name:'tata' }         ------> item{name: [ 'soaps', 'shampoo', 'hair oil', 'tooth paste', 'shaving cream' ] }
+
+brand{name:'godrej' }       ------> item{name: [ 'shampoo', 'soaps', 'tooth paste', 'shaving cream', 'honey', 'garbage bags' ] }
+
+brand{name:'tide' }         ------> item{name: [ 'detergent soap', 'soaps', 'detergent powder', 'dish wash soap', 'dish wash liquid', 
+                                                 'floor cleaner', 'toilet cleaner', 'toilet roll', 'tissue papers' ] }
+
+brand{name:'mdh' }          ------> item{name: [ 'chat masala', 'sambahr masala', 'jeera', 'haldi', '', '', '', '' ] }
+
+brand{name:'everest' }		------> item{name: [ 'chat masala', 'sambahr masala', 'jeera', 'haldi', '', '', '', '' ] }
+
+brand{name:'badshah' }		------> item{name: [ 'chat masala', 'sambahr masala', 'jeera', 'haldi', '', '', '', '' ] }
+
+
+
+
+
+
 
 match(n:item) where n.name in ['cheese', 'butter', 'milk', 'curd', 'nuts', 'milkshake', 'juice', 'biscuit', 'red velvet cake', 'soft cake']
 match(m:brand{name:'amul'})
@@ -400,6 +486,48 @@ create (n) - [r1:productOF] -> (m)
 match(n:item) where n.name in [ 'sugar', 'dal', 'oil', 'salt', 'red chili', 'beans', 'poha', 'onion', 'potato', 'banana', 'apple', 'grapes', 'mango']
 match(m:brand{name:'natraj'})
 create (n) - [r1:productOF] -> (m)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 -------------------------------------- end of Brand and Item relations --------------------------------------------------
 
