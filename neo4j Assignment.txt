@@ -281,9 +281,8 @@ create(i1:item{name:'cake', rate:45, MoM:12, YoM:2021, expire:"best before 5 day
 	  (i86:item{name:'powder', rate:75, MoM:2, YoM:2021, expire:"best before 3 days",isAvailable:true}),
 	  (i87:item{name:'pickle', rate:68, MoM:1, YoM:2021, expire:"best before 3 days",isAvailable:true}),
 	  (i88:item{name:'vinegar', rate:36, MoM:7, YoM:2021, expire:"best before 3 days",isAvailable:true}),
-	  (i89:item{name:'sffron', rate:1000, MoM:6, YoM:2021, expire:"best before 3 days",isAvailable:true}),
-	  (i90:item{name:'noodles', rate:47, MoM:5, YoM:2021, expire:"best before 3 days",isAvailable:true}),
-	  (i91:item{name:'pasta', rate:80, MoM:9, YoM:2021, expire:"best before 3 days",isAvailable:true})
+	  (i89:item{name:'saffron', rate:1000, MoM:6, YoM:2021, expire:"best before 3 days",isAvailable:true}),
+	  (i90:item{name:'noodles', rate:47, MoM:5, YoM:2021, expire:"best before 3 days",isAvailable:true})
 
 	
 
@@ -414,33 +413,29 @@ brand{name:'natraj' }       ------> item{name: [ 'sugar', 'dal', 'oil', 'salt', 
 
 
 
-brand{name:'colgate' }      ------> item{name: [ 'tooth paste', 'shaving cream', '', '' ] }
+brand{name:'colgate' }      ------> item{name: [ 'tooth paste', 'shaving cream', 'tooth brush', 'tooth powder', 'powder' ] }
 
-brand{name:'sunfeast' }     ------> item{name: [ 'hair oil', 'paneer', 'honey', '' ] }
+brand{name:'sunfeast' }     ------> item{name: [ 'hair oil', 'paneer', 'honey', 'saffron', 'noodles', 'pasta' ] }
 
-brand{name:'yippie' }       ------> item{name: [ '', '', '', '' ] }
+brand{name:'yippie' }       ------> item{name: [ 'pickle', 'vinegar', 'saffron', 'noodles', 'pasta' ] }
 
-brand{name:'britannia' }    ------> item{name: [ '', '', '', '' ] }
+brand{name:'britannia' }    ------> item{name: [ 'pickle', 'vinegar', 'noodles', 'pasta' ] }
 
-brand{name:'parle' }        ------> item{name: [ 'honey', '', '', '' ] }
+brand{name:'parle' }        ------> item{name: [ 'honey', 'vinegar', 'pasta' ] }
 
-brand{name:'tata' }         ------> item{name: [ 'soaps', 'shampoo', 'hair oil', 'tooth paste', 'shaving cream' ] }
+brand{name:'tata' }         ------> item{name: [ 'soaps', 'shampoo', 'hair oil', 'tooth paste', 'shaving cream', 'tooth brush', 'powder' ] }
 
-brand{name:'godrej' }       ------> item{name: [ 'shampoo', 'soaps', 'tooth paste', 'shaving cream', 'honey', 'garbage bags' ] }
+brand{name:'godrej' }       ------> item{name: [ 'shampoo', 'soaps', 'tooth paste', 'shaving cream', 'honey', 'garbage bags', 'tooth brush', 
+                                                 'tooth powder', 'powder' ] }
 
 brand{name:'tide' }         ------> item{name: [ 'detergent soap', 'soaps', 'detergent powder', 'dish wash soap', 'dish wash liquid', 
                                                  'floor cleaner', 'toilet cleaner', 'toilet roll', 'tissue papers' ] }
 
-brand{name:'mdh' }          ------> item{name: [ 'chat masala', 'sambahr masala', 'jeera', 'haldi', '', '', '', '' ] }
+brand{name:'mdh' }          ------> item{name: [ 'chat masala', 'sambahr masala', 'jeera', 'haldi', 'pickle', 'vinegar' ] }
 
-brand{name:'everest' }		------> item{name: [ 'chat masala', 'sambahr masala', 'jeera', 'haldi', '', '', '', '' ] }
+brand{name:'everest' }		------> item{name: [ 'chat masala', 'sambahr masala', 'jeera', 'haldi', 'pickle', 'vinegar' ] }
 
-brand{name:'badshah' }		------> item{name: [ 'chat masala', 'sambahr masala', 'jeera', 'haldi', '', '', '', '' ] }
-
-
-
-
-
+brand{name:'badshah' }		------> item{name: [ 'chat masala', 'sambahr masala', 'jeera', 'haldi', 'pickle', 'vinegar' ] }
 
 
 match(n:item) where n.name in ['cheese', 'butter', 'milk', 'curd', 'nuts', 'milkshake', 'juice', 'biscuit', 'red velvet cake', 'soft cake']
@@ -488,6 +483,51 @@ match(m:brand{name:'natraj'})
 create (n) - [r1:productOF] -> (m)
 
 
+
+
+match(n:item) where n.name in [ 'tooth paste', 'shaving cream', 'tooth brush', 'tooth powder', 'powder' ]
+match(m:brand{name:'colgate'})
+create (n) - [r1:productOF] -> (m)
+
+match(n:item) where n.name in [ 'hair oil', 'paneer', 'honey', 'saffron', 'noodles', 'pasta' ]
+match(m:brand{name:'sunfeast'})
+create (n) - [r1:productOF] -> (m)
+
+match(n:item) where n.name in [ 'pickle', 'vinegar', 'saffron', 'noodles', 'pasta' ]
+match(m:brand{name:'yippie'})
+create (n) - [r1:productOF] -> (m)
+
+match(n:item) where n.name in [ 'pickle', 'vinegar', 'noodles', 'pasta' ]
+match(m:brand{name:'britannia'})
+create (n) - [r1:productOF] -> (m)
+
+match(n:item) where n.name in [ 'honey', 'vinegar', 'pasta' ]
+match(m:brand{name:'parle'})
+create (n) - [r1:productOF] -> (m)
+
+match(n:item) where n.name in [ 'soaps', 'shampoo', 'hair oil', 'tooth paste', 'shaving cream', 'tooth brush', 'powder' ]
+match(m:brand{name:'tata'})
+create (n) - [r1:productOF] -> (m)
+
+match(n:item) where n.name in [ 'shampoo', 'soaps', 'tooth paste', 'shaving cream', 'honey', 'garbage bags', 'tooth brush', 'tooth powder', 'powder' ]
+match(m:brand{name:'godrej'})
+create (n) - [r1:productOF] -> (m)
+
+match(n:item) where n.name in [ 'detergent soap', 'soaps', 'detergent powder', 'dish wash soap', 'dish wash liquid', 'floor cleaner', 'toilet cleaner', 'toilet roll', 'tissue papers'  ]
+match(m:brand{name:'tide'})
+create (n) - [r1:productOF] -> (m)
+
+match(n:item) where n.name in [ 'chat masala', 'sambahr masala', 'jeera', 'haldi', 'pickle', 'vinegar'  ]
+match(m:brand{name:'mdh'})
+create (n) - [r1:productOF] -> (m)
+
+match(n:item) where n.name in [ 'chat masala', 'sambahr masala', 'jeera', 'haldi', 'pickle', 'vinegar'  ]
+match(m:brand{name:'everest'})
+create (n) - [r1:productOF] -> (m)
+
+match(n:item) where n.name in [ 'chat masala', 'sambahr masala', 'jeera', 'haldi', 'pickle', 'vinegar'  ]
+match(m:brand{name:'badshah'})
+create (n) - [r1:productOF] -> (m)
 
 
 
