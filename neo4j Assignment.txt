@@ -530,45 +530,6 @@ match(m:brand{name:'badshah'})
 create (n) - [r1:productOF] -> (m)
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 -------------------------------------- end of Brand and Item relations --------------------------------------------------
 
 
@@ -789,29 +750,6 @@ customer_order{name:'order-no-40'}   ------> item{name: ['', '', '' ]
 
 
 
-------> item{name: [ 'cheese', 'butter', 'milk', 'curd', 'nuts', 'milkshake', 'juice', 'biscuit', 
-                     'red velvet cake', 'soft cake' ] }
-
-------> item{name: [ 'coffee', 'tea', 'juice', 'milkshake', 'cake' ] }
-
-------> item{name: [ 'milk', 'peanut cake', 'chocolate cake', 'ice-cream', 'red velvet cake' ] }
-
-------> item{name: [ 'nuts', 'sandwiches', 'popcorn', 'bread' ] }
-
-------> item{name: [ 'papad', 'chikki', 'nuts', 'popcorn', 'cake' ] }
-
-------> item{name: [ 'biscuit', 'nuts', 'chips', '', 'chocolate cake', 'suger-cubes', 'maggi', 
-                     'rice', 'wheat', 'soft cake' ] }
-
-------> item{name: [ 'hot dogs', 'chicken sauce', 'hot dogs sauce', 'pizza', 'pasta', 'burger', 
-                     'hamburgers', 'fries', 'bread' ] }
-
-------> item{name: [ 'sauce', 'chicken sauce', 'hot dogs sauce', 'jam' ] }
-
-------> item{name: [ 'chicken nuggets', 'chicken sauce', 'hot dogs sauce', 'fried chicken', 
-                     'hot dogs', 'burger', 'hamburgers', 'sandwiches', 'bread' ] }
-
-------> item{name: [ 'coke', 'fanta', 'fries', 'soft cake', 'red velvet cake' ] }
 
 
 
