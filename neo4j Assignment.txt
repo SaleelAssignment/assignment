@@ -1,63 +1,64 @@
-     author(name,location,emailid): ------> saleel,sharmin,ruhan,vrushali,nitish,sangita,suraj,supriya
+           author(name,location,emailid): ------> saleel,sharmin,ruhan,vrushali,nitish,sangita,suraj,supriya
  
- authorAddress(cityname,state,country): ------>  
+   authorAddress(cityname,state,country): ------>  
 		
-               category(name,type): ------> object oriented programming
-                                  : ------> data science
-			         			  : ------> relational database
-			         			  : ------> no-sql
-			         			  : ------> script
-		
+                     category(name,type): ------> object oriented programming
+                                        : ------> data science
+			               			    : ------> relational database
+			               			    : ------> no-sql
+			               			    : ------> script
+									   
 books(isbn,name,cover,pages,isAvailable): ------> redis,mongodb,hbase,neo4j,hive,c++,java
                                         : ------> python,R,oracle,mysql,big table,javascript,react,pig
 								
-                   *(r)author_book: ------> saleel(redis,mongodb,pig)
-                                  : ------> sharmin(redis,neo4j)
-                                  : ------> ruhan(hive,c++,mongodb)
-                                  : ------> vrushali(hbase,neo4j,redis)
-                                  : ------> nitish(python,R,hive)
-                                  : ------> sangita(oracle,mysql,big table)
-                                  : ------> suraj(javascript,react,neo4j)
-								  : ------> supriya(pig)
-					
-                 *(r)book_category: ------> object oriented programming(c++,java)
-                                  : ------> data science(python,R)
-                                  : ------> relational database(oracle,mysql)
-                                  : ------> no-sql(redis,mongodb,hbase,neo4j,hive,big table,pig)
-								  : ------>	script(javascript)							  
+                         *(r)author_book: ------> saleel(redis,mongodb,pig)
+                                        : ------> sharmin(redis,neo4j)
+                                        : ------> ruhan(hive,c++,mongodb)
+                                        : ------> vrushali(hbase,neo4j,redis)
+                                        : ------> nitish(python,R,hive)
+                                        : ------> sangita(oracle,mysql,big table)
+                                        : ------> suraj(javascript,react,neo4j)
+				      				    : ------> supriya(pig)
+				      	
+                       *(r)book_category: ------> object oriented programming(c++,java)
+                                        : ------> data science(python,R)
+                                        : ------> relational database(oracle,mysql)
+                                        : ------> no-sql(redis,mongodb,hbase,neo4j,hive,big table,pig)
+				      				    : ------>	script(javascript)							  
 			 
-     cost(currency,price,discount): ------> "INR",1200,75
-                                  : ------> "INR",980,27
-                                  : ------> "INR",975,35
-                                  : ------> "INR",1600,115
-							      : ------> "INR",2200,175
-							      : ------> "INR",1260,130
-							  
-                     *(r)book_cost: ------> redis(1200)
-                                  : ------> mongodb(1260)
-                                  : ------> hbase(1600)
-                                  : ------> neo4j(1200)
-                                  : ------> node(975)
-                                  : ------> c++(975)
-                                  : ------> java(1200)
-                                  : ------> python(1600)
-                                  : ------> R(2200)
-                                  : ------> oracle(1260)
-                                  : ------> mysql(1260)
-                                  : ------> big table(2200)
-								  : ------> javascript(1400)
-								  : ------> react(1200)
-								  : ------> pig(1200)
-		   
-    publisher(name,location,phone): ------> golden print,techmedia publisher,raj publisher,red gate books,simple   
-	                                        talk,inTech publisher
- 
-                (r)publisher_books: ------> golden print (redis,hbase,node)
-                                  : ------> techmedia publisher (mongodb,neo4j,node,redis,hbase)
-                                  : ------> raj publisher (redis,c++,java,hbase)
-                                  : ------> red gate books (neo4j,python,hbase)
-                                  : ------> simple talk (python,R,oracle)
-                                  : ------> inTech (big table,hbase,neo4j,redis)
+           cost(currency,price,discount): ------> "INR",1200,75
+                                        : ------> "INR",980,27
+                                        : ------> "INR",975,35
+                                        : ------> "INR",1600,115
+	      						        : ------> "INR",2200,175
+	      						        : ------> "INR",1260,130
+	      						  
+                           *(r)book_cost: ------> redis(1200)
+                                        : ------> mongodb(1260)
+                                        : ------> hbase(1600)
+                                        : ------> neo4j(1200)
+                                        : ------> node(975)
+                                        : ------> c++(975)
+                                        : ------> java(1200)
+                                        : ------> python(1600)
+                                        : ------> R(2200)
+                                        : ------> oracle(1260)
+                                        : ------> mysql(1260)
+                                        : ------> big table(2200)
+	      							    : ------> javascript(1400)
+	      							    : ------> react(1200)
+	      							    : ------> pig(1200)
+	      	   
+          publisher(name,location,phone): ------> golden print,techmedia publisher,raj publisher,red gate books,simple   
+	                                              talk,inTech publisher
+	      
+                      (r)publisher_books: ------> golden print (redis,hbase,node)
+                                        : ------> techmedia publisher (mongodb,neo4j,node,redis,hbase)
+                                        : ------> raj publisher (redis,c++,java,hbase)
+                                        : ------> red gate books (neo4j,python,hbase)
+                                        : ------> simple talk (python,R,oracle)
+                                        : ------> inTech (big table,hbase,neo4j,redis)
+
 ---------------------------------------------------------------------------------------------------------------	
 	
 create(author1:author{name:'saleel', location:'baroda', emailid:'saleel@gmail.com'}), 
@@ -162,50 +163,85 @@ create(s1:Person:Salesman{name:"amit", YoB:1996, MoB:"decamber", PoB:"pune"}),
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 -------------------------------------------- ITEM ----------------------------------------------------------------
 match(n) detach delete n
 
 create(i1:item{name:'cake', rate:45, MoM:12, YoM:2021, expire:"best before 5 days",isAvailable:true}),
-      (i2:item{name:'cheese', rate:145, MoM:04, YoM:2021, expire:"best before 6 months",isAvailable:true}),
-      (i3:item{name:'butter', rate:75, MoM:05, YoM:2021, expire:"best before 6 months",isAvailable:true}),
-      (i4:item{name:'biscuit', rate:35.50, MoM:"09", YoM:2021, expire:"best before 25 days",isAvailable:true}),
-      (i5:item{name:'jam', rate:125, MoM:"08", YoM:2021, expire:"best before 1 year",isAvailable:true}),
-      (i6:item{name:'bread', rate:35.12, MoM:05, YoM:2021, expire:"best before 3 days",isAvailable:true}),
-      (i7:item{name:'coffee', rate:75, MoM:07, YoM:2021, expire:"best before 1 year",isAvailable:true}),
+      (i2:item{name:'cheese', rate:145, MoM:4, YoM:2021, expire:"best before 6 months",isAvailable:true}),
+      (i3:item{name:'butter', rate:75, MoM:5, YoM:2021, expire:"best before 6 months",isAvailable:true}),
+      (i4:item{name:'biscuit', rate:35.50, MoM:"9", YoM:2021, expire:"best before 25 days",isAvailable:true}),
+      (i5:item{name:'jam', rate:125, MoM:8, YoM:2021, expire:"best before 1 year",isAvailable:true}),
+      (i6:item{name:'bread', rate:35.12, MoM:5, YoM:2021, expire:"best before 3 days",isAvailable:true}),
+      (i7:item{name:'coffee', rate:75, MoM:7, YoM:2021, expire:"best before 1 year",isAvailable:true}),
       (i8:item{name:'tea', rate:125, MoM:11, YoM:2021, expire:"best before 3 months",isAvailable:true}),
       (i9:item{name:'coke', rate:25, MoM:10, YoM:2021, expire:"best before 7 days",isAvailable:true}),
       (i10:item{name:'fanta', rate:25, MoM:11, YoM:2021, expire:"best before 7 days",isAvailable:true}),
-      (i11:item{name:'ice-cream', rate:100, MoM:02, YoM:2021, expire:"best before 3 days",isAvailable:true}),
-      (i12:item{name:'maggi', rate:40.45, MoM:04, YoM:2021, expire:"best before 7 months",isAvailable:true}),
-      (i13:item{name:'milk', rate:39, MoM:04, YoM:2021, expire:"best before 2 days",isAvailable:true}),
-      (i14:item{name:'pizza', rate:545, MoM:06, YoM:2021, expire:"best before 14 days",isAvailable:true}),
+      (i11:item{name:'ice-cream', rate:100, MoM:2, YoM:2021, expire:"best before 3 days",isAvailable:true}),
+      (i12:item{name:'maggi', rate:40.45, MoM:4, YoM:2021, expire:"best before 7 months",isAvailable:true}),
+      (i13:item{name:'milk', rate:39, MoM:4, YoM:2021, expire:"best before 2 days",isAvailable:true}),
+      (i14:item{name:'pizza', rate:545, MoM:6, YoM:2021, expire:"best before 14 days",isAvailable:true}),
       (i15:item{name:'pasta', rate:115, MoM:11, YoM:2021, expire:"best before 12 days",isAvailable:true}),
       (i16:item{name:'burger', rate:122, MoM:10, YoM:2021, expire:"best before 2 days",isAvailable:true}),
-      (i17:item{name:'suger-cubes', rate:15.75, MoM:06, YoM:2021, expire:"best before 11 months",isAvailable:true}),
-      (i18:item{name:'curd', rate:50, MoM:07, YoM:2021, expire:"best before 4 days",isAvailable:true}),
-      (i19:item{name:'juice', rate:65, MoM:"08", YoM:2021, expire:"best before 3 days",isAvailable:true}),
-      (i20:item{name:'milkshake', rate:87, MoM:06, YoM:2021, expire:"best before 2 days",isAvailable:true}),
-      (i21:item{name:'fries', rate:78, MoM:05, YoM:2021, expire:"best before 2 days",isAvailable:true}),
-      (i22:item{name:'chocolate', rate:15, MoM:07, YoM:2021, expire:"best before 12 days",isAvailable:true}),
-      (i23:item{name:'chips', rate:10, MoM:04, YoM:2021, expire:"best before 14 days",isAvailable:true}),
-      (i24:item{name:'popcorn', rate:55.65, MoM:04, YoM:2021, expire:"best before 1 days",isAvailable:true}),
-      (i25:item{name:'nuts', rate:45, MoM:"08", YoM:2021, expire:"best before 12 days",isAvailable:true}),
-      (i26:item{name:'chikki', rate:225, MoM:"09", YoM:2021, expire:"best before 15 days",isAvailable:true}),
-      (i27:item{name:'papad', rate:65.80, MoM:06, YoM:2021, expire:"best before 3 months",isAvailable:true}),
-      (i28:item{name:'sauce', rate:135, MoM:07, YoM:2021, expire:"best before 6 months",isAvailable:true}),
-      (i29:item{name:'sandwiches', rate:75, MoM:"08", YoM:2021, expire:"best before 2 days",isAvailable:true}),
-      (i30:item{name:'hamburgers', rate:375, MoM:"09", YoM:2021, expire:"best before 3 days",isAvailable:true}),
-      (i31:item{name:'fried chicken', rate:475, MoM:06, YoM:2021, expire:"best before 12 days",isAvailable:true}),
-      (i32:item{name:'chicken nuggets', rate:550, MoM:07, YoM:2021, expire:"best before 3 months",isAvailable:true}),
-	  (i33:item{name:'hot dogs', rate:135, MoM:07, YoM:2021, expire:"best before 7 days",isAvailable:true}),
-	  (i34:item{name:'rice', rate:45, MoM:"09", YoM:2021, expire:"best before 3 days",isAvailable:true}),
-      (i35:item{name:'wheat', rate:175, MoM:06, YoM:2021, expire:"best before 12 days",isAvailable:true}),
-      (i36:item{name:'chicken sauce', rate:550, MoM:07, YoM:2021, expire:"best before 6 months",isAvailable:true}),
-	  (i37:item{name:'hot dogs sauce', rate:635, MoM:07, YoM:2021, expire:"best before 6 months",isAvailable:true}),
-	  (i38:item{name:'chocolate cake', rate:550, MoM:07, YoM:2021, expire:"best before 7 days",isAvailable:true}),
-	  (i39:item{name:'soft cake', rate:75, MoM:07, YoM:2021, expire:"best before 3 days",isAvailable:true}),
-	  (i40:item{name:'peanut cake', rate:287, MoM:07, YoM:2021, expire:"best before 7 days",isAvailable:true}),
-	  (i41:item{name:'red velvet cake', rate:635, MoM:07, YoM:2021, expire:"best before 12 days",isAvailable:true})
+      (i17:item{name:'suger-cubes', rate:15.75, MoM:6, YoM:2021, expire:"best before 11 months",isAvailable:true}),
+      (i18:item{name:'curd', rate:50, MoM:7, YoM:2021, expire:"best before 4 days",isAvailable:true}),
+      (i19:item{name:'juice', rate:65, MoM:8, YoM:2021, expire:"best before 3 days",isAvailable:true}),
+      (i20:item{name:'milkshake', rate:87, MoM:6, YoM:2021, expire:"best before 2 days",isAvailable:true}),
+      (i21:item{name:'fries', rate:78, MoM:5, YoM:2021, expire:"best before 2 days",isAvailable:true}),
+      (i22:item{name:'chocolate', rate:15, MoM:7, YoM:2021, expire:"best before 12 days",isAvailable:true}),
+      (i23:item{name:'chips', rate:10, MoM:4, YoM:2021, expire:"best before 14 days",isAvailable:true}),
+      (i24:item{name:'popcorn', rate:55.65, MoM:4, YoM:2021, expire:"best before 1 days",isAvailable:true}),
+      (i25:item{name:'nuts', rate:45, MoM:8, YoM:2021, expire:"best before 12 days",isAvailable:true}),
+      (i26:item{name:'chikki', rate:225, MoM:9, YoM:2021, expire:"best before 15 days",isAvailable:true}),
+      (i27:item{name:'papad', rate:65.80, MoM:6, YoM:2021, expire:"best before 3 months",isAvailable:true}),
+      (i28:item{name:'sauce', rate:135, MoM:7, YoM:2021, expire:"best before 6 months",isAvailable:true}),
+      (i29:item{name:'sandwiches', rate:75, MoM:8, YoM:2021, expire:"best before 2 days",isAvailable:true}),
+      (i30:item{name:'hamburgers', rate:375, MoM:9, YoM:2021, expire:"best before 3 days",isAvailable:true}),
+      (i31:item{name:'fried chicken', rate:475, MoM:6, YoM:2021, expire:"best before 12 days",isAvailable:true}),
+      (i32:item{name:'chicken nuggets', rate:550, MoM:7, YoM:2021, expire:"best before 3 months",isAvailable:true}),
+	  (i33:item{name:'hot dogs', rate:135, MoM:7, YoM:2021, expire:"best before 7 days",isAvailable:true}),
+	  (i34:item{name:'rice', rate:45, MoM:9, YoM:2021, expire:"best before 3 days",isAvailable:true}),
+      (i35:item{name:'wheat', rate:175, MoM:6, YoM:2021, expire:"best before 12 days",isAvailable:true}),
+      (i36:item{name:'chicken sauce', rate:550, MoM:7, YoM:2021, expire:"best before 6 months",isAvailable:true}),
+	  (i37:item{name:'hot dogs sauce', rate:635, MoM:7, YoM:2021, expire:"best before 6 months",isAvailable:true}),
+	  (i38:item{name:'chocolate cake', rate:550, MoM:7, YoM:2021, expire:"best before 7 days",isAvailable:true}),
+	  (i39:item{name:'soft cake', rate:75, MoM:7, YoM:2021, expire:"best before 3 days",isAvailable:true}),
+	  (i40:item{name:'peanut cake', rate:287, MoM:7, YoM:2021, expire:"best before 7 days",isAvailable:true}),
+	  (i41:item{name:'red velvet cake', rate:635, MoM:7, YoM:2021, expire:"best before 12 days",isAvailable:true}),
+	  (i42:item{name:'sugar', rate:82, MoM:7, YoM:2021, expire:"best before 3 months",isAvailable:true}),
+	  (i43:item{name:'dal', rate:32, MoM:10, YoM:2021, expire:"best before 24 months",isAvailable:true}),
+	  (i44:item{name:'oil', rate:1057, MoM:12, YoM:2021, expire:"best before 24 months",isAvailable:true}),
+	  (i45:item{name:'salt', rate:55, MoM:12, YoM:2021, expire:"best before 24 months",isAvailable:true}),
+	  (i46:item{name:'red chili', rate:635, MoM:4, YoM:2021, expire:"best before 24 months",isAvailable:true}),
+	  (i47:item{name:'beans', rate:35, MoM:10, YoM:2021, expire:"best before 24 months",isAvailable:true}),
+	  (i48:item{name:'poha', rate:37, MoM:11, YoM:2021, expire:"best before 2 months",isAvailable:true}),
+	  (i49:item{name:'onion', rate:50, MoM:1, YoM:2021, expire:"best before 1 months",isAvailable:true}),
+	  (i50:item{name:'potato', rate:40, MoM:8, YoM:2021, expire:"best before 1 months",isAvailable:true}),
+	  (i51:item{name:'banana', rate:18, MoM:4, YoM:2021, expire:"best before 3 days",isAvailable:true}),
+	  (i52:item{name:'apple', rate:235, MoM:1, YoM:2021, expire:"best before 3 days",isAvailable:true}),
+	  (i53:item{name:'grapes', rate:174, MoM:10, YoM:2021, expire:"best before 3 days",isAvailable:true}),
+	  (i54:item{name:'mango', rate:675, MoM:11, YoM:2021, expire:"best before 3 days",isAvailable:true})
 
 
 create(b1:brand{name:'amul', votes:[1,1,1,1,1,0,0,1,1,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1] }),
@@ -217,7 +253,8 @@ create(b1:brand{name:'amul', votes:[1,1,1,1,1,0,0,1,1,0,1,1,1,1,1,1,1,1,1,1,1,1,
       (b7:brand{name:'McDonalds', votes:[1,0,1,1,1,0,0,1,1,0,1,0,1,1,1,1,1,1,0,1] }),
       (b8:brand{name:'kissan', votes:[1,0,1,1,1,0,0,1,1,0,1,0,1,1,1,0,1,1,0,1] }),
 	  (b9:brand{name:'venkys', votes:[1,0,1,1,1,0,0,1,1,1,1,0,1,1,1,1,1,1,1,1] }),
-	  (b10:brand{name:'Coca-Cola', votes:[0,0,1,1,1,0,1,1,1,1,1,0,1,1,1,1,1,1,1,1] })
+	  (b10:brand{name:'Coca-Cola', votes:[0,0,1,1,1,0,1,1,1,1,1,0,1,1,1,1,1,1,1,1] }),
+	  (b11:brand{name:'natraj', votes:[0,0,1,1,1,0,1,1,1,1,1,0,1,1,1,1,1,1,1,1] })
 
 create(c1:person:customer{name:'saleel', mob:9850884228, location:'pune', latitude:'18.5204° N', longitude: '73.8567° E' }),
       (c2:person:customer{name:'sharmin', mob:9850884229, location:'goa', latitude:'15.2993° N', longitude:'74.1240° E' }),
@@ -286,7 +323,7 @@ create(o1:customer_order{name:'order-1', orderDate:date("2019-06-02"), city: "bh
 	  (o40:customer_order{name:'order-40', orderDate:date("2019-11-02"), city: "bhopal"})
 	  
 
-1. brand and item
+1. item product of brand 
 
 ------------------------------------- Brand and Item relations -------------------------------------------------------------
  
@@ -313,6 +350,10 @@ brand{name:'venkys' }       ------> item{name: [ 'chicken nuggets', 'chicken sau
                                                  'hot dogs', 'burger', 'hamburgers', 'sandwiches', 'bread' ] }
 
 brand{name:'Coca-Cola' }    ------> item{name: [ 'coke', 'fanta', 'fries', 'soft cake', 'red velvet cake' ] }
+
+brand{name:'natraj' }       ------> item{name: [ 'sugar', 'dal', 'oil', 'salt', 'red chili', 'beans', 'poha', 'onion', 'potato, 'banana', 
+                                                 'apple', 'grapes', 'mango' ] }
+
 
 
 
@@ -356,12 +397,16 @@ match(n:item) where n.name in [ 'coke', 'fanta', 'fries', 'soft cake', 'red velv
 match(m:brand{name:'Coca-Cola'})
 create (n) - [r1:productOF] -> (m)
 
+match(n:item) where n.name in [ 'sugar', 'dal', 'oil', 'salt', 'red chili', 'beans', 'poha', 'onion', 'potato', 'banana', 'apple', 'grapes', 'mango']
+match(m:brand{name:'natraj'})
+create (n) - [r1:productOF] -> (m)
+
 -------------------------------------- end of Brand and Item relations --------------------------------------------------
 
 
 
 
-2. customer_order and customer
+2. customer places an customer_order  
 ------------------------------------- customer_order and customer relations --------------------------------------
 
 
@@ -528,19 +573,19 @@ create (n) - [:placeOrder] -> (m)
 
 
 
-3. customer_order and item
-------------------------------------- customer_order and item relations --------------------------------------
+3. customer_order with item
+------------------------------------- customer_order with item relations --------------------------------------
 
 
 
-customer_order{name:'order-no-1'}    ------> item{name: ['', '', '' ]
-customer_order{name:'order-no-2'}    ------> item{name: ['', '', '' ]
-customer_order{name:'order-no-3'}    ------> item{name: ['', '', '' ]
-customer_order{name:'order-no-4'}    ------> item{name: ['', '', '' ]
-customer_order{name:'order-no-5'}    ------> item{name: ['', '', '' ]
-customer_order{name:'order-no-6'}    ------> item{name: ['', '', '' ]
-customer_order{name:'order-no-7'}    ------> item{name: ['', '', '' ]
-customer_order{name:'order-no-8'}    ------> item{name: ['', '', '' ]
+customer_order{name:'order-no-1'}    ------> item{name: ['cheese', 'butter', 'nuts' ]
+customer_order{name:'order-no-2'}    ------> item{name: ['milkshake', 'soft cake', 'fries', 'coke' ]
+customer_order{name:'order-no-3'}    ------> item{name: ['coke', 'fanta', 'chips' ]
+customer_order{name:'order-no-4'}    ------> item{name: ['chips', 'cheese' ]
+customer_order{name:'order-no-5'}    ------> item{name: ['biscuit', 'hot dogs sauce', 'chikki', 'juice' ]
+customer_order{name:'order-no-6'}    ------> item{name: ['popcorn', 'tea' ]
+customer_order{name:'order-no-7'}    ------> item{name: ['coffee' ]
+customer_order{name:'order-no-8'}    ------> item{name: ['papad', 'coffee', 'wheat', '' ]
 customer_order{name:'order-no-9'}    ------> item{name: ['', '', '' ]
 customer_order{name:'order-no-10'}   ------> item{name: ['', '', '' ] 
 customer_order{name:'order-no-11'}   ------> item{name: ['', '', '' ]
