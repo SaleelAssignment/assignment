@@ -467,9 +467,6 @@ match(n:item) where n.name in [ 'sugar', 'dal', 'oil', 'salt', 'red chili', 'bea
 match(m:brand{name:'natraj'})
 create (n) - [r1:productOF] -> (m)
 
-
-
-
 match(n:item) where n.name in [ 'tooth paste', 'shaving cream', 'tooth brush', 'tooth powder', 'powder' ]
 match(m:brand{name:'colgate'})
 create (n) - [r1:productOF] -> (m)
@@ -524,46 +521,46 @@ create (n) - [r1:productOF] -> (m)
 ------------------------------------- customer_order and customer relations --------------------------------------
 
 
-customer{name:'saleel'}      ------> customer_order{name:'order-no-1'}  
-customer{name:'sharmin'}     ------> customer_order{name:'order-no-2'}
-customer{name:'ruhan'}       ------> customer_order{name:'order-no-3'}
-customer{name:'neel'}        ------> customer_order{name:'order-no-4'}
-customer{name:'nitish'}      ------> customer_order{name:'order-no-5'}
-customer{name:'deep'}        ------> customer_order{name:'order-no-6'}
-customer{name:'gau'}         ------> customer_order{name:'order-no-7'}
-customer{name:'pankaj'}      ------> customer_order{name:'order-no-8'}
-customer{name:'komal'}       ------> customer_order{name:'order-no-9'}
-customer{name:'bandish'}     ------> customer_order{name:'order-no-10'}
-customer{name:'rajan'}       ------> customer_order{name:'order-no-11'}
-customer{name:'boy'}         ------> customer_order{name:'order-no-12'}
-customer{name:'bhuru'}       ------> customer_order{name:'order-no-13'}
-customer{name:'kaushal'}     ------> customer_order{name:'order-no-14'}
-customer{name:'sharmin'}     ------> customer_order{name:'order-no-15'}
-customer{name:'pankaj'}      ------> customer_order{name:'order-no-16'}
-customer{name:'komal'}       ------> customer_order{name:'order-no-17'}
-customer{name:'rajan'}       ------> customer_order{name:'order-no-18'}
-customer{name:'bandish'}     ------> customer_order{name:'order-no-19'}
-customer{name:'komal'}       ------> customer_order{name:'order-no-20'}
-customer{name:'gau'}         ------> customer_order{name:'order-no-21'}
-customer{name:'rajan'}       ------> customer_order{name:'order-no-22'}
-customer{name:'sharmin'}     ------> customer_order{name:'order-no-23'}
-customer{name:'ruhan'}       ------> customer_order{name:'order-no-24'}
-customer{name:'ruhan'}       ------> customer_order{name:'order-no-25'}
-customer{name:'sharmin'}     ------> customer_order{name:'order-no-26'}
- customer{name:'boy'}        ------> customer_order{name:'order-no-27'}
-customer{name:'sharmin'}     ------> customer_order{name:'order-no-28'}
-customer{name:'gau'}         ------> customer_order{name:'order-no-29'}
-customer{name:'sharmin'}     ------> customer_order{name:'order-no-30'}
-customer{name:'boy'}         ------> customer_order{name:'order-no-31'}
-customer{name:'kaushal'}     ------> customer_order{name:'order-no-32'}
-customer{name:'komal'}       ------> customer_order{name:'order-no-33'}
-customer{name:'deep'}        ------> customer_order{name:'order-no-34'}
-customer{name:'gau'}         ------> customer_order{name:'order-no-35'}
-customer{name:'sharmin'}     ------> customer_order{name:'order-no-36'}
-customer{name:'rajan'}       ------> customer_order{name:'order-no-37'}
-customer{name:'kaushal'}     ------> customer_order{name:'order-no-38'}
-customer{name:'deep'}        ------> customer_order{name:'order-no-39'}
-customer{name:'rajan'}       ------> customer_order{name:'order-no-40'}
+customer{name:'saleel'}      ------> customer_order{name:'order-1'}  
+customer{name:'sharmin'}     ------> customer_order{name:'order-2'}
+customer{name:'ruhan'}       ------> customer_order{name:'order-3'}
+customer{name:'neel'}        ------> customer_order{name:'order-4'}
+customer{name:'nitish'}      ------> customer_order{name:'order-5'}
+customer{name:'deep'}        ------> customer_order{name:'order-6'}
+customer{name:'gau'}         ------> customer_order{name:'order-7'}
+customer{name:'pankaj'}      ------> customer_order{name:'order-8'}
+customer{name:'komal'}       ------> customer_order{name:'order-9'}
+customer{name:'bandish'}     ------> customer_order{name:'order-10'}
+customer{name:'rajan'}       ------> customer_order{name:'order-11'}
+customer{name:'boy'}         ------> customer_order{name:'order-12'}
+customer{name:'bhuru'}       ------> customer_order{name:'order-13'}
+customer{name:'kaushal'}     ------> customer_order{name:'order-14'}
+customer{name:'sharmin'}     ------> customer_order{name:'order-15'}
+customer{name:'pankaj'}      ------> customer_order{name:'order-16'}
+customer{name:'komal'}       ------> customer_order{name:'order-17'}
+customer{name:'rajan'}       ------> customer_order{name:'order-18'}
+customer{name:'bandish'}     ------> customer_order{name:'order-19'}
+customer{name:'komal'}       ------> customer_order{name:'order-20'}
+customer{name:'gau'}         ------> customer_order{name:'order-21'}
+customer{name:'rajan'}       ------> customer_order{name:'order-22'}
+customer{name:'sharmin'}     ------> customer_order{name:'order-23'}
+customer{name:'ruhan'}       ------> customer_order{name:'order-24'}
+customer{name:'ruhan'}       ------> customer_order{name:'order-25'}
+customer{name:'sharmin'}     ------> customer_order{name:'order-26'}
+ customer{name:'boy'}        ------> customer_order{name:'order-27'}
+customer{name:'sharmin'}     ------> customer_order{name:'order-28'}
+customer{name:'gau'}         ------> customer_order{name:'order-29'}
+customer{name:'sharmin'}     ------> customer_order{name:'order-30'}
+customer{name:'boy'}         ------> customer_order{name:'order-31'}
+customer{name:'kaushal'}     ------> customer_order{name:'order-32'}
+customer{name:'komal'}       ------> customer_order{name:'order-33'}
+customer{name:'deep'}        ------> customer_order{name:'order-34'}
+customer{name:'gau'}         ------> customer_order{name:'order-35'}
+customer{name:'sharmin'}     ------> customer_order{name:'order-36'}
+customer{name:'rajan'}       ------> customer_order{name:'order-37'}
+customer{name:'kaushal'}     ------> customer_order{name:'order-38'}
+customer{name:'deep'}        ------> customer_order{name:'order-39'}
+customer{name:'rajan'}       ------> customer_order{name:'order-40'}
 
 match(n:customer{name:'saleel'}), (m:customer_order{name:'order-1'})
 create (n) - [:placeOrder] -> (m)
@@ -687,53 +684,54 @@ create (n) - [:placeOrder] -> (m)
 
 
 
-3. customer_order with item
-------------------------------------- customer_order with item relations --------------------------------------
+3. items of customer_order
+------------------------------------- Items of customer_order --------------------------------------
 
 
 
-customer_order{name:'order-no-1'}    ------> item{name: ['cheese', 'butter', 'nuts' ]
-customer_order{name:'order-no-2'}    ------> item{name: ['milkshake', 'soft cake', 'fries', 'coke' ]
-customer_order{name:'order-no-3'}    ------> item{name: ['coke', 'fanta', 'chips' ]
-customer_order{name:'order-no-4'}    ------> item{name: ['chips', 'cheese' ]
-customer_order{name:'order-no-5'}    ------> item{name: ['biscuit', 'hot dogs sauce', 'chikki', 'juice' ]
-customer_order{name:'order-no-6'}    ------> item{name: ['popcorn', 'tea' ]
-customer_order{name:'order-no-7'}    ------> item{name: ['coffee' ]
-customer_order{name:'order-no-8'}    ------> item{name: ['papad', 'coffee', 'wheat', '' ]
-customer_order{name:'order-no-9'}    ------> item{name: ['', '', '' ]
-customer_order{name:'order-no-10'}   ------> item{name: ['', '', '' ] 
-customer_order{name:'order-no-11'}   ------> item{name: ['', '', '' ]
-customer_order{name:'order-no-12'}   ------> item{name: ['', '', '' ]
-customer_order{name:'order-no-13'}   ------> item{name: ['', '', '' ]
-customer_order{name:'order-no-14'}   ------> item{name: ['', '', '' ]
-customer_order{name:'order-no-15'}   ------> item{name: ['', '', '' ]
-customer_order{name:'order-no-16'}   ------> item{name: ['', '', '' ]
-customer_order{name:'order-no-17'}   ------> item{name: ['', '', '' ]
-customer_order{name:'order-no-18'}   ------> item{name: ['', '', '' ]
-customer_order{name:'order-no-19'}   ------> item{name: ['', '', '' ]
-customer_order{name:'order-no-20'}   ------> item{name: ['', '', '' ]
-customer_order{name:'order-no-21'}   ------> item{name: ['', '', '' ]
-customer_order{name:'order-no-22'}   ------> item{name: ['', '', '' ]
-customer_order{name:'order-no-23'}   ------> item{name: ['', '', '' ]
-customer_order{name:'order-no-24'}   ------> item{name: ['', '', '' ]
-customer_order{name:'order-no-25'}   ------> item{name: ['', '', '' ]
-customer_order{name:'order-no-26'}   ------> item{name: ['', '', '' ]
-customer_order{name:'order-no-27'}   ------> item{name: ['', '', '' ]
-customer_order{name:'order-no-28'}   ------> item{name: ['', '', '' ]
-customer_order{name:'order-no-29'}   ------> item{name: ['', '', '' ]
-customer_order{name:'order-no-30'}   ------> item{name: ['', '', '' ]
-customer_order{name:'order-no-31'}   ------> item{name: ['', '', '' ]
-customer_order{name:'order-no-32'}   ------> item{name: ['', '', '' ]
-customer_order{name:'order-no-33'}   ------> item{name: ['', '', '' ]
-customer_order{name:'order-no-34'}   ------> item{name: ['', '', '' ]
-customer_order{name:'order-no-35'}   ------> item{name: ['', '', '' ]
-customer_order{name:'order-no-36'}   ------> item{name: ['', '', '' ]
-customer_order{name:'order-no-37'}   ------> item{name: ['', '', '' ]
-customer_order{name:'order-no-38'}   ------> item{name: ['', '', '' ]
-customer_order{name:'order-no-39'}   ------> item{name: ['', '', '' ]
-customer_order{name:'order-no-40'}   ------> item{name: ['', '', '' ]
+customer_order{name:'order-1'}    ------> item{name: ['cheese', 'butter', 'nuts' ]
+customer_order{name:'order-2'}    ------> item{name: ['milkshake', 'soft cake', 'fries', 'coke' ]
+customer_order{name:'order-3'}    ------> item{name: ['coke', 'fanta', 'chips' ]
+customer_order{name:'order-4'}    ------> item{name: ['chips', 'cheese' ]
+customer_order{name:'order-5'}    ------> item{name: ['biscuit', 'hot dogs sauce', 'chikki', 'juice' ]
+customer_order{name:'order-6'}    ------> item{name: ['popcorn', 'tea' ]
+customer_order{name:'order-7'}    ------> item{name: ['coffee' ]
+customer_order{name:'order-8'}    ------> item{name: ['papad', 'coffee', 'wheat', 'tooth brush' ]
+customer_order{name:'order-9'}    ------> item{name: ['rajma', 'tooth brush', 'haldi' ]
+customer_order{name:'order-10'}   ------> item{name: ['hair oil', 'floor cleaner', 'eggs',  'udad dal' ] 
+customer_order{name:'order-11'}   ------> item{name: ['udad dal', 'mung dal' ]
+customer_order{name:'order-12'}   ------> item{name: ['chikki', 'hot dogs' ]
+customer_order{name:'order-13'}   ------> item{name: ['wheat', 'rice' ]
+customer_order{name:'order-14'}   ------> item{name: ['hamburgers' ]
+customer_order{name:'order-15'}   ------> item{name: ['chicken nuggets' ]
+customer_order{name:'order-16'}   ------> item{name: ['banana', 'grapes', 'apple' ]
+customer_order{name:'order-17'}   ------> item{name: ['saffron' ]
+customer_order{name:'order-18'}   ------> item{name: ['noodles' ]
+customer_order{name:'order-19'}   ------> item{name: ['jeera', 'coffee', 'bread', 'cheese' ]
+customer_order{name:'order-20'}   ------> item{name: ['bread', 'cheese', 'jam', 'butter' ]
+customer_order{name:'order-21'}   ------> item{name: ['maggi', 'honey' ]
+customer_order{name:'order-22'}   ------> item{name: ['noodles', 'vinegar' ]
+customer_order{name:'order-23'}   ------> item{name: ['udad dal', 'soybean', 'curd','coke', 'fanta' ]
+customer_order{name:'order-24'}   ------> item{name: ['chips', 'chikki' ]
+customer_order{name:'order-25'}   ------> item{name: ['maggi' ]
+customer_order{name:'order-26'}   ------> item{name: ['burger', 'fanta' ]
+customer_order{name:'order-27'}   ------> item{name: ['popcorn', 'nuts', 'chips' ,'fanta', 'hot dogs']
+customer_order{name:'order-28'}   ------> item{name: ['', '', '' ]
+customer_order{name:'order-29'}   ------> item{name: ['', '', '' ]
+customer_order{name:'order-30'}   ------> item{name: ['', '', '' ]
+customer_order{name:'order-31'}   ------> item{name: ['', '', '' ]
+customer_order{name:'order-32'}   ------> item{name: ['', '', '' ]
+customer_order{name:'order-33'}   ------> item{name: ['', '', '' ]
+customer_order{name:'order-34'}   ------> item{name: ['', '', '' ]
+customer_order{name:'order-35'}   ------> item{name: ['', '', '' ]
+customer_order{name:'order-36'}   ------> item{name: ['', '', '' ]
+customer_order{name:'order-37'}   ------> item{name: ['', '', '' ]
+customer_order{name:'order-38'}   ------> item{name: ['', '', '' ]
+customer_order{name:'order-39'}   ------> item{name: ['', '', '' ]
+customer_order{name:'order-40'}   ------> item{name: ['', '', '' ]
 
-
+match (n:customer_order{name:'order-1'}), (m:item) where m.name in  ['cheese', 'butter', 'nuts' ] 
+create(n) - [:orderItems] -> (m) return n, m
 
 
 
@@ -752,52 +750,6 @@ customer_order{name:'order-no-40'}   ------> item{name: ['', '', '' ]
 
 
 ------------------------------------- end of customer_order and customer relations --------------------------------
-
-
-
-
-
-
-2. Order and OrderItems
-  
-  {orderID:1} -> 
-  {orderID:2} -> 
-  {orderID:3} -> 
-  {orderID:4} -> 
-  {orderID:5} -> 
-  {orderID:6} -> 
-  {orderID:7} -> 
-  {orderID:8} -> 
-  {orderID:9} -> 
-  {orderID:10} ->
-  {orderID:11} ->
-  {orderID:12} ->
-  {orderID:13} ->
-  {orderID:14} ->
-  {orderID:15} ->
-  {orderID:16} ->
-  {orderID:17} ->
-  {orderID:18} ->
-  {orderID:19} ->
-  {orderID:20} ->
-  {orderID:21} ->
-  {orderID:22} ->
-  {orderID:23} ->
-  {orderID:24} ->
-  {orderID:25} ->
-  {orderID:26} ->
-  
-
-
-
-
-
-
-
-
-
-
-
 
 
 
