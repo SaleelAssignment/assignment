@@ -225,8 +225,7 @@ create(i1:item{name:'cake', rate:45, MoM:12, YoM:2021, expire:"best before 5 day
 	  (i52:item{name:'apple', rate:235, MoM:1, YoM:2021, expire:"best before 3 days",isAvailable:true}),
 	  (i53:item{name:'grapes', rate:174, MoM:10, YoM:2021, expire:"best before 3 days",isAvailable:true}),
 	  (i54:item{name:'mango', rate:675, MoM:11, YoM:2021, expire:"best before 3 days",isAvailable:true}),
-      
-	  (i55:item{name:'soaps ', rate:35, MoM:6, YoM:2021, expire:"best before 3 days",isAvailable:true}),
+      (i55:item{name:'soaps ', rate:35, MoM:6, YoM:2021, expire:"best before 3 days",isAvailable:true}),
 	  (i56:item{name:'shampoo', rate:125, MoM:4, YoM:2021, expire:"best before 3 days",isAvailable:true}),
 	  (i57:item{name:'hair oil', rate:35, MoM:8, YoM:2021, expire:"best before 3 days",isAvailable:true}),
 	  (i58:item{name:'tooth paste', rate:110, MoM:12, YoM:2021, expire:"best before 3 days",isAvailable:true}),
@@ -286,7 +285,8 @@ create(b1:brand{name:'amul', votes:[1,1,1,1,1,0,0,1,1,0,1,1,1,1,1,1,1,1,1,1,1,1,
 	  (b19:brand{name:'tide', votes:[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1] }),
 	  (b20:brand{name:'mdh', votes:[1,0,1,1,1,1,0,1,1,1,1,1,0,1,1,1,1,1,1,1,1,1,0] }),
 	  (b21:brand{name:'everest', votes:[1,0,1,1,1,1,0,1,1,1,1,0,1,1,1,1,1,0,1,1,1,1,1] }),
-	  (b22:brand{name:'badshah', votes:[1,1,1,1,1,1,1,1,0,1,1,1,1,1,0,1,1,0,1,1,1,1,1] })
+	  (b22:brand{name:'badshah', votes:[1,1,1,1,1,1,1,1,0,1,1,1,1,1,0,1,1,0,1,1,1,1,1] }),
+	  (b23:brand{name:'rajdhani', votes:[0,1,1,1,1,1,1,1,0,1,0,1,1,1,0,1,1,0,0,1,1,0,0] })
       
 	   
 	  
@@ -363,59 +363,65 @@ create(o1:customer_order{name:'order-1', orderDate:date("2019-06-02"), city: "bh
 
 ------------------------------------- Brand and Item relations -------------------------------------------------------------
  
-brand{name:'amul' }         ------> item{name: [ 'cheese', 'butter', 'milk', 'curd', 'nuts', 'milkshake', 'juice', 'biscuit', 
-                                                 'red velvet cake', 'soft cake' ] }
+brand{name:'amul' }      ------> item{name: [ 'cheese', 'butter', 'milk', 'curd', 'nuts', 'milkshake', 'juice', 'biscuit', 
+                                              'red velvet cake', 'soft cake' ] }
+						 
+brand{name:'bru' }       ------> item{name: [ 'coffee', 'tea', 'juice', 'milkshake', 'cake' ] }
+						 
+brand{name:'kwality' }   ------> item{name: [ 'milk', 'peanut cake', 'chocolate cake', 'ice-cream', 'red velvet cake' ] }
+						 
+brand{name:'haldiram' }  ------> item{name: [ 'nuts', 'sandwiches', 'popcorn', 'bread' ] }
+						 
+brand{name:'lijjat' }    ------> item{name: [ 'papad', 'chikki', 'nuts', 'popcorn', 'cake' ] }
+						 
+brand{name:'nestle' }    ------> item{name: [ 'biscuit', 'nuts', 'chips', '', 'chocolate cake', 'suger-cubes', 'maggi', 
+                                              'rice', 'wheat', 'soft cake' ] }
+						 
+brand{name:'McDonalds' } ------> item{name: [ 'hot dogs', 'chicken sauce', 'hot dogs sauce', 'pizza', 'pasta', 'burger', 
+                                              'hamburgers', 'fries', 'bread' ] }
+						 
+brand{name:'kissan' }    ------> item{name: [ 'sauce', 'chicken sauce', 'hot dogs sauce', 'jam' ] }
+						 
+brand{name:'venkys' }    ------> item{name: [ 'chicken nuggets', 'chicken sauce', 'hot dogs sauce', 'fried chicken', 
+                                              'hot dogs', 'burger', 'hamburgers', 'sandwiches', 'bread' ] }
 
-brand{name:'bru' }          ------> item{name: [ 'coffee', 'tea', 'juice', 'milkshake', 'cake' ] }
+brand{name:'Coca-Cola' } ------> item{name: [ 'coke', 'fanta', 'fries', 'soft cake', 'red velvet cake' ] }
 
-brand{name:'kwality' }      ------> item{name: [ 'milk', 'peanut cake', 'chocolate cake', 'ice-cream', 'red velvet cake' ] }
+brand{name:'natraj' }    ------> item{name: [ 'sugar', 'dal', 'oil', 'salt', 'red chili', 'beans', 'poha', 'onion', 'potato, 
+                                              'banana', 'apple', 'grapes', 'mango' ] }
 
-brand{name:'haldiram' }     ------> item{name: [ 'nuts', 'sandwiches', 'popcorn', 'bread' ] }
+brand{name:'colgate' }   ------> item{name: [ 'tooth paste', 'shaving cream', 'tooth brush', 'tooth powder', 'powder' ] }
 
-brand{name:'lijjat' }       ------> item{name: [ 'papad', 'chikki', 'nuts', 'popcorn', 'cake' ] }
+brand{name:'sunfeast' }  ------> item{name: [ 'hair oil', 'paneer', 'honey', 'saffron', 'noodles', 'pasta' ] }
 
-brand{name:'nestle' }       ------> item{name: [ 'biscuit', 'nuts', 'chips', '', 'chocolate cake', 'suger-cubes', 'maggi', 
-                                                 'rice', 'wheat', 'soft cake' ] }
+brand{name:'yippie' }    ------> item{name: [ 'pickle', 'vinegar', 'saffron', 'noodles', 'pasta' ] }
 
-brand{name:'McDonalds' }    ------> item{name: [ 'hot dogs', 'chicken sauce', 'hot dogs sauce', 'pizza', 'pasta', 'burger', 
-                                                 'hamburgers', 'fries', 'bread' ] }
+brand{name:'britannia' } ------> item{name: [ 'pickle', 'vinegar', 'noodles', 'pasta' ] }
 
-brand{name:'kissan' }       ------> item{name: [ 'sauce', 'chicken sauce', 'hot dogs sauce', 'jam' ] }
+brand{name:'parle' }     ------> item{name: [ 'honey', 'vinegar', 'pasta', 'kokum' ] }
 
-brand{name:'venkys' }       ------> item{name: [ 'chicken nuggets', 'chicken sauce', 'hot dogs sauce', 'fried chicken', 
-                                                 'hot dogs', 'burger', 'hamburgers', 'sandwiches', 'bread' ] }
+brand{name:'tata' }      ------> item{name: [ 'soaps', 'shampoo', 'hair oil', 'tooth paste', 'shaving cream', 'tooth brush', 
+                                              'powder' ,'kokum' ] }
 
-brand{name:'Coca-Cola' }    ------> item{name: [ 'coke', 'fanta', 'fries', 'soft cake', 'red velvet cake' ] }
+brand{name:'godrej' }    ------> item{name: [ 'shampoo', 'soaps', 'tooth paste', 'shaving cream', 'honey', 'garbage bags',
+                                              'tooth brush', 'tooth powder', 'powder' ] }
 
-brand{name:'natraj' }       ------> item{name: [ 'sugar', 'dal', 'oil', 'salt', 'red chili', 'beans', 'poha', 'onion', 'potato, 'banana', 
-                                                 'apple', 'grapes', 'mango' ] }
+brand{name:'tide' }      ------> item{name: [ 'detergent soap', 'soaps', 'detergent powder', 'dish wash soap',
+                                              'dish wash liquid', 'floor cleaner', 'toilet cleaner', 'toilet roll', 'tissue papers' ] }
+
+brand{name:'mdh' }       ------> item{name: [ 'chat masala', 'sambahr masala', 'jeera', 'haldi', 'pickle', 'vinegar','kokum' ] }
+
+brand{name:'everest' }	 ------> item{name: [ 'chat masala', 'sambahr masala', 'jeera', 'haldi', 'pickle', 'vinegar' ] }
+
+brand{name:'badshah' }	 ------> item{name: [ 'chat masala', 'sambahr masala', 'jeera', 'haldi', 'pickle', 'vinegar' ] }
+
+brand{name:'rajdhani' }	 ------> item{name: [ 'eggs', 'rajma', 'mung dal', 'chana dal', 'toor dal', 'udad dal', 'soybean', 
+                                              'jaljeera', 'chat masala','sambahr masala', 'kokum' ]
 
 
-
-brand{name:'colgate' }      ------> item{name: [ 'tooth paste', 'shaving cream', 'tooth brush', 'tooth powder', 'powder' ] }
-
-brand{name:'sunfeast' }     ------> item{name: [ 'hair oil', 'paneer', 'honey', 'saffron', 'noodles', 'pasta' ] }
-
-brand{name:'yippie' }       ------> item{name: [ 'pickle', 'vinegar', 'saffron', 'noodles', 'pasta' ] }
-
-brand{name:'britannia' }    ------> item{name: [ 'pickle', 'vinegar', 'noodles', 'pasta' ] }
-
-brand{name:'parle' }        ------> item{name: [ 'honey', 'vinegar', 'pasta' ] }
-
-brand{name:'tata' }         ------> item{name: [ 'soaps', 'shampoo', 'hair oil', 'tooth paste', 'shaving cream', 'tooth brush', 'powder' ] }
-
-brand{name:'godrej' }       ------> item{name: [ 'shampoo', 'soaps', 'tooth paste', 'shaving cream', 'honey', 'garbage bags', 'tooth brush', 
-                                                 'tooth powder', 'powder' ] }
-
-brand{name:'tide' }         ------> item{name: [ 'detergent soap', 'soaps', 'detergent powder', 'dish wash soap', 'dish wash liquid', 
-                                                 'floor cleaner', 'toilet cleaner', 'toilet roll', 'tissue papers' ] }
-
-brand{name:'mdh' }          ------> item{name: [ 'chat masala', 'sambahr masala', 'jeera', 'haldi', 'pickle', 'vinegar' ] }
-
-brand{name:'everest' }		------> item{name: [ 'chat masala', 'sambahr masala', 'jeera', 'haldi', 'pickle', 'vinegar' ] }
-
-brand{name:'badshah' }		------> item{name: [ 'chat masala', 'sambahr masala', 'jeera', 'haldi', 'pickle', 'vinegar' ] }
-
+match(n:item) where n.name in ['eggs', 'rajma', 'mung dal', 'chana dal', 'toor dal', 'udad dal', 'soybean', 'jaljeera', 'chat masala','sambahr masala', 'kokum']
+match(m:brand{name:'rajdhani'})
+create (n) - [r1:productOF] -> (m)
 
 match(n:item) where n.name in ['cheese', 'butter', 'milk', 'curd', 'nuts', 'milkshake', 'juice', 'biscuit', 'red velvet cake', 'soft cake']
 match(m:brand{name:'amul'})
@@ -480,11 +486,11 @@ match(n:item) where n.name in [ 'pickle', 'vinegar', 'noodles', 'pasta' ]
 match(m:brand{name:'britannia'})
 create (n) - [r1:productOF] -> (m)
 
-match(n:item) where n.name in [ 'honey', 'vinegar', 'pasta' ]
+match(n:item) where n.name in [ 'honey', 'vinegar', 'pasta', 'kokum' ]
 match(m:brand{name:'parle'})
 create (n) - [r1:productOF] -> (m)
 
-match(n:item) where n.name in [ 'soaps', 'shampoo', 'hair oil', 'tooth paste', 'shaving cream', 'tooth brush', 'powder' ]
+match(n:item) where n.name in [ 'soaps', 'shampoo', 'hair oil', 'tooth paste', 'shaving cream', 'tooth brush', 'powder', 'kokum' ]
 match(m:brand{name:'tata'})
 create (n) - [r1:productOF] -> (m)
 
@@ -492,11 +498,11 @@ match(n:item) where n.name in [ 'shampoo', 'soaps', 'tooth paste', 'shaving crea
 match(m:brand{name:'godrej'})
 create (n) - [r1:productOF] -> (m)
 
-match(n:item) where n.name in [ 'detergent soap', 'soaps', 'detergent powder', 'dish wash soap', 'dish wash liquid', 'floor cleaner', 'toilet cleaner', 'toilet roll', 'tissue papers'  ]
+match(n:item) where n.name in [ 'detergent soap', 'soaps', 'detergent powder', 'dish wash soap', 'dish wash liquid', 'floor cleaner', 'toilet cleaner', ', 'toilet roll' 'tissue papers'  ]
 match(m:brand{name:'tide'})
 create (n) - [r1:productOF] -> (m)
 
-match(n:item) where n.name in [ 'chat masala', 'sambahr masala', 'jeera', 'haldi', 'pickle', 'vinegar'  ]
+match(n:item) where n.name in [ 'chat masala', 'sambahr masala', 'jeera', 'haldi', 'pickle', 'vinegar', 'kokum'  ]
 match(m:brand{name:'mdh'})
 create (n) - [r1:productOF] -> (m)
 
@@ -971,3 +977,8 @@ CREATE
 (anthony)-[:PLAYED_AGAINST {minutes: 32, points: 22, assists: 7, rebounds: 12, turnovers: 2}]-> (sixers),
 (joel)-[:PLAYED_AGAINST {minutes: 36, points: 36, assists: 7, rebounds: 12, turnovers: 0}]-> (lakers),
 (tobias)-[:PLAYED_AGAINST {minutes: 32, points: 22, assists: 1, rebounds: 7, turnovers: 0}]-> (lakers);
+
+
+
+------------------------------ AIRLINE RESERVATIN ----------------------------------------------------------
+
