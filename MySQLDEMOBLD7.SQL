@@ -86,12 +86,25 @@ drop table if EXISTS quarter_revenue;
 drop table if EXISTS numberString;
 drop table if EXISTS stringNumber;
 
+drop table if EXISTS server;
+drop table if EXISTS runningServer;
+
 drop table if EXISTS plumber;
 drop table if EXISTS service;
 drop table if EXISTS plumber_service_map;
 drop table if EXISTS r;
 
 DROP VIEW IF EXISTS SALES;
+
+create table server(id number primary key, serverName varchar2(20));
+
+
+insert into server values(1,'server-1'), (2, 'server-2'), (3,'server-3'), (4, 'server-4'), (5,'server-5'), (6, 'server-6'), (7,'server-7'), (8, 'server-8'), (9,'server-9'), (10, 'server-10'), (11,'server-11'), (12, 'server-12');
+
+create table runningServer(id number primary key, serverName varchar2(20));
+
+insert into runningServer values(1,'server-1'), (6,'server-6'), (9,'server-9'), (3,'server-3');
+
 
 
 create table r(c1 int); 
