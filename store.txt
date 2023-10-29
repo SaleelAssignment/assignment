@@ -1,0 +1,93 @@
+db.store.insertMany([
+  {
+    _id: 1,
+    name: 'The Fashion Fusion',
+    area: 'kothrue',
+    city: 'pune',
+    state: 'MH'
+  },
+  {
+    _id: 2,
+    name: 'The Fashion Fusion',
+    area: 'MG Road',
+    city: 'pune',
+    state: 'MH'
+  },
+  {
+    _id: 3,
+    name: 'The Fashion Fusion',
+    area: 'lalbag',
+    city: 'baroda',
+    state: 'GJ'
+  },
+  {
+    _id: 4,
+    name: 'The Fashion Fusion',
+    area: 'tarabaug',
+    city: 'baroda',
+    state: 'GJ'
+  }
+])
+
+--------------------------------------------
+db.products.insertMany([{
+    _id: 1,
+    storeId: 1,
+    type: 'jacket',
+    color: ['denim', 'black', 'brown', 'white', 'gray'],
+    size: ['s', 'm', 'l', 'xl'],
+    price: [1200, 1700, 2500, 3000]
+}, {
+    _id: 2,
+    storeId: 1,
+    type: 'jeans',
+    color: ['denim', 'black', 'brown', 'white', 'gray'],
+    size: ['s', 'm', 'l', 'xl'],
+    price: [1800, 2600, 3999, 4500]
+}, {
+    _id: 3,
+    storeId: 1,
+    type: 't-shirt',
+    color: ['yellow', 'blue', 'brown', 'white', 'orange', 'pink', 'cyan', 'red'],
+    size: ['s', 'm', 'l', 'xl'],
+    price: [800, 1000, 1200, 1450]
+}, {
+    _id: 4,
+    storeId: 1,
+    type: 'plain shirt',
+    color: ['pink', 'blue', 'black', 'white', 'orange', 'lime', 'purple'],
+    size: ['s', 'm', 'l', 'xl'],
+    price: [1250, 1450, 1700, 2000]
+}, {
+    _id: 5,
+    storeId: 1,
+    type: 'weave shirt',
+    color: ['purple', 'lavender', 'ivory', 'white'],
+    size: ['s', 'm', 'l', 'xl'],
+    price: [800, 1000, 1300, 1500]
+}, {
+    _id: 6,
+    storeId: 1,
+    type: 'Light shirt',
+    color: ['cherry', 'tan', 'sand', 'fire', 'blue', 'pink', 'white'],
+    size: ['s', 'm', 'l', 'xl'],
+    price: [1300, 1400, 1450, 1500]
+}, {
+    _id: 7,
+    storeId: 1,
+    type: 'striped shirt',
+    color: ['yellow', 'blue', 'brown', 'white', 'orange', 'pink', 'red'],
+    size: ['s', 'm', 'l', 'xl'],
+    price: [800, 1200, 1750, 1850]
+}, {
+    _id: 8,
+    storeId: 1,
+    type: 'checked shirt',
+    color: ['yellow', 'blue', 'brown', 'white', 'orange', 'pink', 'violet', 'royal blue'],
+    size: ['s', 'm', 'l', 'xl'],
+    price: [1000, 1100, 1300, 1450]
+}]);
+
+
+ S, M, L, XL, XXL, XXXL Shirts
+ 
