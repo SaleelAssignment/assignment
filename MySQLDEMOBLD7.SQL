@@ -82,7 +82,8 @@ DROP TABLE IF EXISTS transactions;
 DROP TABLE IF EXISTS empj;
 drop table if EXISTS emp_attendance;
 drop table if EXISTS vote_response;
-drop table if EXISTS quarter_revenue;
+drop table if EXISTS quarterly_revenue;
+drop table if EXISTS yearly_revenue;
 drop table if EXISTS numberString;
 drop table if EXISTS stringNumber;
 
@@ -93,8 +94,60 @@ drop table if EXISTS plumber;
 drop table if EXISTS service;
 drop table if EXISTS plumber_service_map;
 drop table if EXISTS r;
+drop table if EXISTS product_sales;
 
 DROP VIEW IF EXISTS SALES;
+
+CREATE TABLE product_sales (
+  product_name VARCHAR(20),
+  store_location VARCHAR(20),
+  num_sales INT
+);
+
+INSERT INTO product_sales (product_name, store_location, num_sales) VALUES
+('Chair', 'North', 55),
+('Desk', 'Central', 120),
+('Couch', 'Central', 78),
+('Chair', 'South', 23),
+('Chair', 'South', 10),
+('Chair', 'North', 98),
+('Desk', 'West', 61),
+('Couch', 'North', 180),
+('Chair', 'South', 14),
+('Desk', 'North', 45),
+('Chair', 'North', 87),
+('Chair', 'Central', 34),
+('Desk', 'South', 42),
+('Couch', 'West', 58),
+('Couch', 'Central', 27),
+('Chair', 'South', 91),
+('Chair', 'West', 82),
+('Chair', 'North', 37),
+('Desk', 'North', 68),
+('Couch', 'Central', 54),
+('Chair', 'South', 81),
+('Desk', 'North', 25),
+('Chair', 'North', 46),
+('Chair', 'Central', 121),
+('Desk', 'South', 85),
+('Couch', 'North', 43),
+('Desk', 'West', 10),
+('Chair', 'North', 5),
+('Chair', 'Central', 16),
+('Desk', 'South', 9),
+('Couch', 'West', 22),
+('Couch', 'Central', 59),
+('Chair', 'South', 76),
+('Chair', 'West', 48),
+('Chair', 'North', 19),
+('Desk', 'North', 3),
+('Couch', 'West', 63),
+('Chair', 'South', 81),
+('Desk', 'North', 85),
+('Chair', 'North', 90),
+('Chair', 'Central', 47),
+('Desk', 'West', 63),
+('Couch', 'North', 28);
 
 create table server(id int primary key, serverName varchar(20));
 
@@ -214,22 +267,37 @@ insert into plumber_service_map values(19,7);
 insert into plumber_service_map values(19,9);
 insert into plumber_service_map values(19,19);
 
-create table quarter_revenue(id int, year year, quarter varchar(10), amount float(8,2));
+create table quarterly_revenue(id int primary key AUTO_INCREMENT, year year, quarter varchar(10), amount float(8,2));
 
-insert into quarter_revenue values(1, 2020, 'Q1', 45000.57);
-insert into quarter_revenue values(2, 2020, 'Q2', 55000.00);
-insert into quarter_revenue values(3, 2020, 'Q3', 23000.13);
-insert into quarter_revenue values(4, 2020, 'Q4', 66000.00);
+insert into quarterly_revenue values(1, 2020, 'Q1', 45000.57);
+insert into quarterly_revenue values(2, 2020, 'Q2', 55000.00);
+insert into quarterly_revenue values(3, 2020, 'Q3', 23000.13);
+insert into quarterly_revenue values(4, 2020, 'Q4', 66000.00);
 
-insert into quarter_revenue values(5, 2021, 'Q1', 12500.35);
-insert into quarter_revenue values(6, 2021, 'Q2', 15000.55);
-insert into quarter_revenue values(7, 2021, 'Q3', 17000.27);
-insert into quarter_revenue values(8, 2021, 'Q4', 27000.35);
+insert into quarterly_revenue values(5, 2021, 'Q1', 12500.35);
+insert into quarterly_revenue values(6, 2021, 'Q2', 15000.55);
+insert into quarterly_revenue values(7, 2021, 'Q3', 17000.27);
+insert into quarterly_revenue values(8, 2021, 'Q4', 27000.35);
 
-insert into quarter_revenue values(9, 2022, 'Q1', 15000.45);
-insert into quarter_revenue values(10, 2022, 'Q2', 25000.64);
-insert into quarter_revenue values(11, 2022, 'Q3', 33000.73);
-insert into quarter_revenue values(12, 2022, 'Q4', 46000.75);
+insert into quarterly_revenue values(9, 2022, 'Q1', 15000.45);
+insert into quarterly_revenue values(10, 2022, 'Q2', 25000.64);
+insert into quarterly_revenue values(11, 2022, 'Q3', 33000.73);
+insert into quarterly_revenue values(12, 2022, 'Q4', 46000.75);
+
+insert into quarterly_revenue values(13, 2023, 'Q1', 56483.65);
+insert into quarterly_revenue values(14, 2023, 'Q2', 53783.78);
+insert into quarterly_revenue values(15, 2023, 'Q3', 87345.67);
+insert into quarterly_revenue values(16, 2023, 'Q4', 98357.00);
+
+create table yearly_revenue(id int primary key AUTO_INCREMENT, year year,  amount float(8,2));
+
+insert into yearly_revenue values(1, 2018, 54070);
+insert into yearly_revenue values(2, 2019, 67800);
+insert into yearly_revenue values(3, 2020, 78600);
+insert into yearly_revenue values(4, 2021, 77000);
+insert into yearly_revenue values(5, 2022, 54800);
+insert into yearly_revenue values(6, 2023, 48500);
+
 
 create table vote_response(candidateID int, response varchar(180));
 
