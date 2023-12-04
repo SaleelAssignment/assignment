@@ -95,8 +95,33 @@ drop table if EXISTS service;
 drop table if EXISTS plumber_service_map;
 drop table if EXISTS r;
 drop table if EXISTS product_sales;
+drop table if exists leadtable;
+drop table if exists traintimetable;
 
 DROP VIEW IF EXISTS SALES;
+
+create table leadtable(c1 int primary key auto_increment, c2 int);
+
+insert into leadtable values(default, 7),(default, 5),(default, 9),(default, 14),(default, 12),(default, 12),(default, 15),(default, 18),(default, 32),(default, 30),(default, 25);
+ 
+create table traintimetable(id int auto_increment primary key, trainID int, stationname varchar(20), timing time);
+
+insert into traintimetable values(default, 22863, 'mumbai central', '08:30:00');
+insert into traintimetable values(default, 22863, 'surat', '12:40:13');
+insert into traintimetable values(default, 22863, 'baroda', '14:42:00');
+insert into traintimetable values(default, 22863, 'ahmedabad JN', '17:10:00');
+insert into traintimetable values(default, 22863, 'surendranagar', '20:00:00');
+insert into traintimetable values(default, 22863, 'rajkot JN', '23:40:00');
+insert into traintimetable values(default, 22863, 'hapa', '24:45:00');
+insert into traintimetable values(default, 22868, 'pune JN', '17:20:00');
+insert into traintimetable values(default, 22868, 'uruli', '17:47:13');
+insert into traintimetable values(default, 22868, 'daund chord line', '18:27:00');
+insert into traintimetable values(default, 22868, 'ahmadnagar', '20:10:00');
+insert into traintimetable values(default, 22868, 'belapur', '21:15:00');
+insert into traintimetable values(default, 22868, 'kopargaon', '21:57:00');
+insert into traintimetable values(default, 22868, 'manmad JN', '23:25:13');
+insert into traintimetable values(default, 22868, 'daund chord line', '18:27:00');
+insert into traintimetable values(default, 22868, 'bhopal', '08:55:00');
 
 CREATE TABLE product_sales (
   product_name VARCHAR(20),
