@@ -151,7 +151,10 @@ INSERT INTO pivot_table (id, product_name, store_location, num_sales) VALUES
 (default, 'Chair', 'North', 90),
 (default, 'Chair', 'Central', 47),
 (default, 'Desk', 'West', 63),
-(default, 'Couch', 'North', 28);
+(default, 'Couch', 'North', 28),
+(default, 'Chair', 'East',89),
+(default, 'Chair', 'East',11),
+(default, 'Desk', 'East',110);
 
 create table leadtable(c1 int primary key auto_increment, c2 int);
 
