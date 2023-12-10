@@ -97,8 +97,61 @@ drop table if EXISTS r;
 drop table if EXISTS product_sales;
 drop table if exists leadtable;
 drop table if exists traintimetable;
+drop table if exists pivot_table;
 
 DROP VIEW IF EXISTS SALES;
+
+CREATE TABLE pivot_table (
+  id int primary key auto_increment,
+  product_name VARCHAR(100),
+  store_location VARCHAR(50),
+  num_sales INT
+);
+
+INSERT INTO pivot_table (id, product_name, store_location, num_sales) VALUES
+(default, 'Chair', 'North', 55),
+(default, 'Desk', 'Central', 120),
+(default, 'Couch', 'Central', 78),
+(default, 'Chair', 'South', 23),
+(default, 'Chair', 'South', 10),
+(default, 'Chair', 'North', 98),
+(default, 'Desk', 'West', 61),
+(default, 'Couch', 'North', 180),
+(default, 'Chair', 'South', 14),
+(default, 'Desk', 'North', 45),
+(default, 'Chair', 'North', 87),
+(default, 'Chair', 'Central', 34),
+(default, 'Desk', 'South', 42),
+(default, 'Couch', 'West', 58),
+(default, 'Couch', 'Central', 27),
+(default, 'Chair', 'South', 91),
+(default, 'Chair', 'West', 82),
+(default, 'Chair', 'North', 37),
+(default, 'Desk', 'North', 68),
+(default, 'Couch', 'Central', 54),
+(default, 'Chair', 'South', 81),
+(default, 'Desk', 'North', 25),
+(default, 'Chair', 'North', 46),
+(default, 'Chair', 'Central', 121),
+(default, 'Desk', 'South', 85),
+(default, 'Couch', 'North', 43),
+(default, 'Desk', 'West', 10),
+(default, 'Chair', 'North', 5),
+(default, 'Chair', 'Central', 16),
+(default, 'Desk', 'South', 9),
+(default, 'Couch', 'West', 22),
+(default, 'Couch', 'Central', 59),
+(default, 'Chair', 'South', 76),
+(default, 'Chair', 'West', 48),
+(default, 'Chair', 'North', 19),
+(default, 'Desk', 'North', 3),
+(default, 'Couch', 'West', 63),
+(default, 'Chair', 'South', 81),
+(default, 'Desk', 'North', 85),
+(default, 'Chair', 'North', 90),
+(default, 'Chair', 'Central', 47),
+(default, 'Desk', 'West', 63),
+(default, 'Couch', 'North', 28);
 
 create table leadtable(c1 int primary key auto_increment, c2 int);
 
