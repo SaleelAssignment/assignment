@@ -156,6 +156,10 @@ INSERT INTO pivot_table (id, product_name, store_location, num_sales) VALUES
 (default, 'Chair', 'East',11),
 (default, 'Desk', 'East',110);
 
+alter table pivot_table rename column product_name to productName;
+alter table pivot_table rename column store_location to storeLocation;
+alter table pivot_table rename column num_sales to totalSales;
+
 create table leadtable(c1 int primary key auto_increment, c2 int);
 
 insert into leadtable values(default, 7),(default, 5),(default, 9),(default, 14),(default, 12),(default, 12),(default, 15),(default, 18),(default, 32),(default, 30),(default, 25);
@@ -229,6 +233,8 @@ INSERT INTO product_sales (product_name, store_location, num_sales) VALUES
 ('Chair', 'Central', 47),
 ('Desk', 'West', 63),
 ('Couch', 'North', 28);
+
+
 
 create table server(id int primary key, serverName varchar(20));
 
