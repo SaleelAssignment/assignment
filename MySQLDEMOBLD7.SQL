@@ -37,7 +37,7 @@ DROP TABLE IF EXISTS DEMODEPT2;
 DROP TABLE IF EXISTS COALESCE;
 DROP TABLE IF EXISTS DUPLICATE;
 DROP TABLE IF EXISTS NULLIF;
-DROP TABLE IF EXISTS STATUS;
+DROP TABLE IF EXISTS ;
 DROP TABLE IF EXISTS SALESPERSON;
 DROP TABLE IF EXISTS MENUCARD;
 DROP TABLE IF EXISTS SOFTDRINK;
@@ -983,6 +983,12 @@ INSERT into STATUS values(2,'Draft');
 INSERT into STATUS values(4,'Approved');
 INSERT into STATUS values(8,'Rejected');
 INSERT into STATUS values(16,'Cancle');
+insert into STATUS values(32,'In Process');
+insert into STATUS values(64,'Send');
+insert into STATUS values(128,'Hold');
+insert into STATUS values(256,'Selected');
+insert into STATUS values(512,'Received');
+insert into STATUS values(1024,'More');
 
 CREATE TABLE NULLIF
 (
