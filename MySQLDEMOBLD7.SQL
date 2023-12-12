@@ -976,19 +976,19 @@ RATE INT);
 INSERT INTO SOFTDRINK VALUES (1, 'Coca-Cola' , 45 ), (2, 'Mello Yello' , 75 ), (3, 'Diet Coke' , 60), (4, 'Frozen Fanta Cherry ' , 65 ), (5, 'Iced Tea' , 35 );
 
 
-CREATE TABLE STATUS (id INT, status varchar(12));
+CREATE TABLE STATUS (id int primary key auto_increment, statusid INT, status varchar(12));
 
-INSERT into STATUS values(1,'New');
-INSERT into STATUS values(2,'Draft');
-INSERT into STATUS values(4,'Approved');
-INSERT into STATUS values(8,'Rejected');
-INSERT into STATUS values(16,'Cancle');
-insert into STATUS values(32,'In Process');
-insert into STATUS values(64,'Send');
-insert into STATUS values(128,'Hold');
-insert into STATUS values(256,'Selected');
-insert into STATUS values(512,'Received');
-insert into STATUS values(1024,'More');
+INSERT into STATUS values(default, 1,'New');
+INSERT into STATUS values(default, 2,'Draft');
+INSERT into STATUS values(default, 4,'Approved');
+INSERT into STATUS values(default, 8,'Rejected');
+INSERT into STATUS values(default, 16,'Cancle');
+insert into STATUS values(default, 32,'In Process');
+insert into STATUS values(default, 64,'Send');
+insert into STATUS values(default, 128,'Hold');
+insert into STATUS values(default, 256,'Selected');
+insert into STATUS values(default, 512,'Received');
+insert into STATUS values(default, 1024,'More');
 
 CREATE TABLE NULLIF
 (
@@ -1444,7 +1444,7 @@ INSERT INTO ORD (TOTAL, SHIPDATE, STATUSDATE, ORDID, ORDERDATE, CUSTID, COMMPLAN
  VALUES ('56', '1986-06-20','1986-07-09', '602', '1986-06-05', '102', 'B');
 
 INSERT INTO ORD (TOTAL, SHIPDATE, STATUSDATE, ORDID, ORDERDATE, CUSTID, COMMPLAN)
- VALUES ('698', '1986-06-30', '1986-07-04', '604', '1986-06-15', '106', 'A');
+ VALUES ('698', '1986-05-30', '1986-07-04', '604', '1986-06-15', '106', 'A');
 
 INSERT INTO ORD (TOTAL, SHIPDATE, STATUSDATE, ORDID, ORDERDATE, CUSTID, COMMPLAN)
  VALUES ('8324', '1986-07-30', '1986-08-02', '605', '1986-07-14', '106', 'A');
@@ -1490,8 +1490,6 @@ INSERT INTO ORD (TOTAL, SHIPDATE, STATUSDATE, ORDID, ORDERDATE, CUSTID, COMMPLAN
 
 INSERT INTO ORD (TOTAL, SHIPDATE, STATUSDATE, ORDID, ORDERDATE, CUSTID, COMMPLAN)
  VALUES ('730', '1987-01-01',NULL, '621', '1987-03-15', '100', 'A');
-
-
 
 
 
