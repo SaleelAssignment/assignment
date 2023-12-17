@@ -111,13 +111,25 @@ insert into orderDetails values(default, 1, 2002, '2022-04-12','bread', 3, 35);
 insert into orderDetails values(default, 1, 2002, '2022-04-12','rice', 1, 57);
 insert into orderDetails values(default, 1, 2003, '2022-04-13','jam', 1, 30);
 insert into orderDetails values(default, 1, 2003, '2022-04-13','suger', 3, 45);
+insert into orderDetails values(default, 1, 2004, '2022-04-15','coffee', 2, 65);
+insert into orderDetails values(default, 1, 2004, '2022-04-15','bread', 2, 35);
+insert into orderDetails values(default, 1, 2004, '2022-04-15','rice', 2, 57);
+insert into orderDetails values(default, 1, 2004, '2022-04-15','cheese', 2, 25);
+insert into orderDetails values(default, 1, 2004, '2022-04-15','jam', 1, 30);
+insert into orderDetails values(default, 1, 2005, '2022-04-14','wheat', 1, 60);
+insert into orderDetails values(default, 1, 2005, '2022-04-14','rice', 1, 57);
 insert into orderDetails values(default, 2, 2001, '2022-04-13','cheese', 2, 25);
 insert into orderDetails values(default, 2, 2002, '2022-04-13','coffee', 2, 65);
 insert into orderDetails values(default, 2, 2002, '2022-04-13','wheat', 1, 60);
 insert into orderDetails values(default, 2, 2003, '2022-04-14','wheat', 1, 60);
+insert into orderDetails values(default, 2, 2005, '2022-04-16','wheat', 1, 60);
+insert into orderDetails values(default, 2, 2005, '2022-04-16','suger', 3, 45);
+insert into orderDetails values(default, 2, 2005, '2022-04-16','rice', 2, 57);
 insert into orderDetails values(default, 3, 2001, '2022-04-14','coffee', 2, 65);
 insert into orderDetails values(default, 3, 2001, '2022-04-14','bread', 2, 35);
 insert into orderDetails values(default, 3, 2003, '2022-04-15','rice', 2, 57);
+insert into orderDetails values(default, 3, 2002, '2022-04-18','coffee', 2, 65);
+insert into orderDetails values(default, 3, 2002, '2022-04-18','wheat', 1, 60);
 insert into orderDetails values(default, 4, 2001, '2022-04-16','cheese', 2, 25);
 insert into orderDetails values(default, 4, 2003, '2022-04-16','jam', 1, 30);
 insert into orderDetails values(default, 4, 2003, '2022-04-16','wheat', 1, 60);
@@ -125,6 +137,7 @@ insert into orderDetails values(default, 5, 2001, '2022-04-17','rice', 1, 57);
 insert into orderDetails values(default, 5, 2001, '2022-04-17','wheat', 1, 60);
 insert into orderDetails values(default, 5, 2003, '2022-04-17','suger', 3, 45);
 insert into orderDetails values(default, 5, 2003, '2022-04-17','rice', 2, 57);
+insert into orderDetails values(default, 6, 2003, '2022-04-18','wheat', 1, 60);
 
 CREATE TABLE pivot_table (
   id int primary key auto_increment,
