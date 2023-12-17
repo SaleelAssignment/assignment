@@ -139,6 +139,8 @@ insert into orderDetails values(default, 5, 2003, '2022-04-17','suger', 3, 45);
 insert into orderDetails values(default, 5, 2003, '2022-04-17','rice', 2, 57);
 insert into orderDetails values(default, 6, 2003, '2022-04-18','wheat', 1, 60);
 
+alter table orderDetails add total int generated always as (qty*unitCost);
+
 CREATE TABLE pivot_table (
   id int primary key auto_increment,
   product_name VARCHAR(100),
