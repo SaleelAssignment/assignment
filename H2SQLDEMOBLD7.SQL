@@ -1,4 +1,4 @@
-﻿DROP TABLE IF EXISTS PRODUCTS CASCADE;
+DROP TABLE IF EXISTS PRODUCTS CASCADE;
 DROP TABLE IF EXISTS A CASCADE;
 DROP TABLE IF EXISTS B CASCADE;
 DROP TABLE IF EXISTS EMP CASCADE;
@@ -91,8 +91,133 @@ drop table if EXISTS plumber_service_map CASCADE;
 drop table if EXISTS r CASCADE;
 drop table if EXISTS quarterly_revenue CASCADE;
 drop table if EXISTS yearly_revenue CASCADE;
+drop table if exists leadtable CASCADE;
+drop table if exists traintimetable CASCADE;
+drop table if exists pivot_table CASCADE;
+drop table if exists orderDetails CASCADE;
 
 DROP VIEW IF EXISTS SALES;
+
+create table orderDetails (id int GENERATED ALWAYS AS IDENTITY primary key , orderID int, customerID int , orderDate date, productName varchar(20), qty int, unitCost int);
+
+insert into orderDetails values(default, 1, 2001, '2022-04-10','butter', 2, 65);
+insert into orderDetails values(default, 1, 2001, '2022-04-10','bread', 2, 35);
+insert into orderDetails values(default, 1, 2002, '2022-04-12','tea', 1, 125);
+insert into orderDetails values(default, 1, 2002, '2022-04-12','bread', 3, 35);
+insert into orderDetails values(default, 1, 2002, '2022-04-12','rice', 1, 57);
+insert into orderDetails values(default, 1, 2003, '2022-04-13','jam', 1, 30);
+insert into orderDetails values(default, 1, 2003, '2022-04-13','suger', 3, 45);
+insert into orderDetails values(default, 1, 2004, '2022-04-15','coffee', 2, 65);
+insert into orderDetails values(default, 1, 2004, '2022-04-15','bread', 2, 35);
+insert into orderDetails values(default, 1, 2004, '2022-04-15','rice', 2, 57);
+insert into orderDetails values(default, 1, 2004, '2022-04-15','cheese', 2, 25);
+insert into orderDetails values(default, 1, 2004, '2022-04-15','jam', 1, 30);
+insert into orderDetails values(default, 1, 2005, '2022-04-14','wheat', 1, 60);
+insert into orderDetails values(default, 1, 2005, '2022-04-14','rice', 1, 57);
+insert into orderDetails values(default, 2, 2001, '2022-04-13','cheese', 2, 25);
+insert into orderDetails values(default, 2, 2002, '2022-04-13','coffee', 2, 65);
+insert into orderDetails values(default, 2, 2002, '2022-04-13','wheat', 1, 60);
+insert into orderDetails values(default, 2, 2003, '2022-04-14','wheat', 1, 60);
+insert into orderDetails values(default, 2, 2005, '2022-04-16','wheat', 1, 60);
+insert into orderDetails values(default, 2, 2005, '2022-04-16','suger', 3, 45);
+insert into orderDetails values(default, 2, 2005, '2022-04-16','rice', 2, 57);
+insert into orderDetails values(default, 3, 2001, '2022-04-14','coffee', 2, 65);
+insert into orderDetails values(default, 3, 2001, '2022-04-14','bread', 2, 35);
+insert into orderDetails values(default, 3, 2003, '2022-04-15','rice', 2, 57);
+insert into orderDetails values(default, 3, 2002, '2022-04-18','coffee', 2, 65);
+insert into orderDetails values(default, 3, 2002, '2022-04-18','wheat', 1, 60);
+insert into orderDetails values(default, 4, 2001, '2022-04-16','cheese', 2, 25);
+insert into orderDetails values(default, 4, 2003, '2022-04-16','jam', 1, 30);
+insert into orderDetails values(default, 4, 2003, '2022-04-16','wheat', 1, 60);
+insert into orderDetails values(default, 5, 2001, '2022-04-17','rice', 1, 57);
+insert into orderDetails values(default, 5, 2001, '2022-04-17','wheat', 1, 60);
+insert into orderDetails values(default, 5, 2003, '2022-04-17','suger', 3, 45);
+insert into orderDetails values(default, 5, 2003, '2022-04-17','rice', 2, 57);
+insert into orderDetails values(default, 6, 2003, '2022-04-18','wheat', 1, 60);
+
+alter table orderDetails add total int generated always as (qty*unitCost);
+
+CREATE TABLE pivot_table (
+  id int  GENERATED ALWAYS AS IDENTITY primary key,
+  product_name VARCHAR(100),
+  store_location VARCHAR(50),
+  num_sales INT
+);
+
+INSERT INTO pivot_table (id, product_name, store_location, num_sales) VALUES
+(default, 'Chair', 'North', 55),
+(default, 'Desk', 'Central', 120),
+(default, 'Couch', 'Central', 78),
+(default, 'Chair', 'South', 23),
+(default, 'Chair', 'South', 10),
+(default, 'Chair', 'North', 98),
+(default, 'Desk', 'West', 61),
+(default, 'Couch', 'North', 180),
+(default, 'Chair', 'South', 14),
+(default, 'Desk', 'North', 45),
+(default, 'Chair', 'North', 87),
+(default, 'Chair', 'Central', 34),
+(default, 'Desk', 'South', 42),
+(default, 'Couch', 'West', 58),
+(default, 'Couch', 'Central', 27),
+(default, 'Chair', 'South', 91),
+(default, 'Chair', 'West', 82),
+(default, 'Chair', 'North', 37),
+(default, 'Desk', 'North', 68),
+(default, 'Couch', 'Central', 54),
+(default, 'Chair', 'South', 81),
+(default, 'Desk', 'North', 25),
+(default, 'Chair', 'North', 46),
+(default, 'Chair', 'Central', 121),
+(default, 'Desk', 'South', 85),
+(default, 'Couch', 'North', 43),
+(default, 'Desk', 'West', 10),
+(default, 'Chair', 'North', 5),
+(default, 'Chair', 'Central', 16),
+(default, 'Desk', 'South', 9),
+(default, 'Couch', 'West', 22),
+(default, 'Couch', 'Central', 59),
+(default, 'Chair', 'South', 76),
+(default, 'Chair', 'West', 48),
+(default, 'Chair', 'North', 19),
+(default, 'Desk', 'North', 3),
+(default, 'Couch', 'West', 63),
+(default, 'Chair', 'South', 81),
+(default, 'Desk', 'North', 85),
+(default, 'Chair', 'North', 90),
+(default, 'Chair', 'Central', 47),
+(default, 'Desk', 'West', 63),
+(default, 'Couch', 'North', 28),
+(default, 'Chair', 'East',89),
+(default, 'Chair', 'East',11),
+(default, 'Desk', 'East',110);
+
+alter table pivot_table rename column product_name to productName;
+alter table pivot_table rename column store_location to storeLocation;
+alter table pivot_table rename column num_sales to totalSales;
+
+create table leadtable(c1 int primary key auto_increment, c2 int);
+
+insert into leadtable values(default, 7),(default, 5),(default, 9),(default, 14),(default, 12),(default, 12),(default, 15),(default, 18),(default, 32),(default, 30),(default, 25);
+ 
+create table traintimetable(id int auto_increment primary key, trainID int, stationname varchar(20), timing time);
+
+insert into traintimetable values(default, 22863, 'mumbai central', '08:30:00');
+insert into traintimetable values(default, 22863, 'surat', '12:40:13');
+insert into traintimetable values(default, 22863, 'baroda', '14:42:00');
+insert into traintimetable values(default, 22863, 'ahmedabad JN', '17:10:00');
+insert into traintimetable values(default, 22863, 'surendranagar', '20:00:00');
+insert into traintimetable values(default, 22863, 'rajkot JN', '23:40:00');
+insert into traintimetable values(default, 22863, 'hapa', '00:20:00');
+insert into traintimetable values(default, 22868, 'pune JN', '17:20:00');
+insert into traintimetable values(default, 22868, 'uruli', '17:47:13');
+insert into traintimetable values(default, 22868, 'daund chord line', '18:27:00');
+insert into traintimetable values(default, 22868, 'ahmadnagar', '20:10:00');
+insert into traintimetable values(default, 22868, 'belapur', '21:15:00');
+insert into traintimetable values(default, 22868, 'kopargaon', '21:57:00');
+insert into traintimetable values(default, 22868, 'manmad JN', '23:25:13');
+insert into traintimetable values(default, 22868, 'daund chord line', '18:27:00');
+insert into traintimetable values(default, 22868, 'bhopal', '08:55:00');
 
 create table quarterly_revenue(id INTEGER GENERATED ALWAYS AS IDENTITY, quarterly_YEAR INTEGER, quarter varchar(10), amount NUMERIC(8,2));
 
