@@ -99,8 +99,13 @@ drop table if exists leadtable;
 drop table if exists traintimetable;
 drop table if exists pivot_table;
 drop table if exists orderDetails;
+drop table if EXISTS rocket;
 
 DROP VIEW IF EXISTS SALES;
+
+CREATE TABLE rockets (origin CHAR(20), destination CHAR(20), trip_time INT);
+
+INSERT INTO rockets VALUES ('Earth', 'Venus', 3),('Venus', 'Earth', 3),('Earth', 'Mercury', 1),('Mercury', 'Venus', 3), ('Earth', 'Mars', 2), ('Mars', 'Earth', 2), ('Mars', 'Jupiter', 3), ('Jupiter', 'Saturn', 4), ('Saturn', 'Jupiter', 4), ('Saturn', 'Earth', 9);
 
 create table orderDetails (id int primary key auto_increment, orderID int, customerID int , orderDate date, productName varchar(20), qty int, unitCost int);
 
