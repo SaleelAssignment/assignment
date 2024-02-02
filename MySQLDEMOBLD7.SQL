@@ -261,6 +261,16 @@ insert into traintimetable values(default, 12307, 'MAKRANA JN', '02:03:00');
 insert into traintimetable values(default, 12307, 'DEGANA JN', '02:37:00');
 insert into traintimetable values(default, 12307, 'MERTA ROAD JN', '03:15:00');
 insert into traintimetable values(default, 12307, 'JODHPUR JN', '04:20:00');
+insert into traintimetable values(default, 12308, 'JAIPUR', '00:05:00');
+insert into traintimetable values(default, 12308, 'NAWA CITY', '01:38:00');
+insert into traintimetable values(default, 12308, 'KUCHAMAN CITY', '01:55:00');
+insert into traintimetable values(default, 12308, 'MAKRANA JN', '02:03:00');
+insert into traintimetable values(default, 12308, 'DEGANA JN', '02:37:00');
+insert into traintimetable values(default, 12308, 'MERTA ROAD JN', '03:15:00');
+insert into traintimetable values(default, 12308, 'JODHPUR JN', '04:20:00');
+
+
+
 
 CREATE TABLE product_sales (
   product_name VARCHAR(20),
