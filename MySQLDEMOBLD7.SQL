@@ -290,7 +290,7 @@ update traintimetable set distance=534 where id=18;
 update traintimetable set distance=131 where id=19;
 update traintimetable set distance=106 where id=20;
 update traintimetable set distance=191 where id=21;
-update traintimetable set distance=2271  where id=22;
+update traintimetable set distance=2271 where id=22;
 update traintimetable set distance=99.6 where id=23;
 update traintimetable set distance=107 where id=24;
 update traintimetable set distance=65.0 where id=25;
@@ -306,20 +306,24 @@ update traintimetable set distance=155.5 where id=34;
 update traintimetable set distance=99 where id=35;
 update traintimetable set distance=155 where id=36;
 update traintimetable set distance=75 where id=37;
-update traintimetable set distance=47  where id=38;
-update traintimetable set distance=54  where id=39;
+update traintimetable set distance=47 where id=38;
+update traintimetable set distance=54 where id=39;
 update traintimetable set distance=21 where id=40;
 update traintimetable set distance=227 where id=41;
 update traintimetable set distance=746 where id=42;
-update traintimetable set distance=  where id=43;
-update traintimetable set distance=  where id=44;
-update traintimetable set distance=  where id=45;
-update traintimetable set distance=  where id=46;
-update traintimetable set distance=  where id=47;
-update traintimetable set distance= where id=48;
+update traintimetable set distance=90 where id=43;
+update traintimetable set distance=33 where id=44;
+update traintimetable set distance=14 where id=45;
+update traintimetable set distance=44 where id=46;
+update traintimetable set distance=59 where id=47;
+update traintimetable set distance=104 where id=48;
 update traintimetable set distance=0 where id=49;
-update traintimetable set distance= where id=50;
-
+update traintimetable set distance=89 where id=50;
+update traintimetable set distance=21 where id=51;
+update traintimetable set distance=14 where id=52;
+update traintimetable set distance=44 where id=53;
+update traintimetable set distance=46 where id=54;
+update traintimetable set distance=103 where id=55;
 
 CREATE TABLE product_sales (
   product_name VARCHAR(20),
