@@ -311,6 +311,14 @@ update traintimetable set distance=54  where id=39;
 update traintimetable set distance=21 where id=40;
 update traintimetable set distance=227 where id=41;
 update traintimetable set distance=746 where id=42;
+update traintimetable set distance=  where id=43;
+update traintimetable set distance=  where id=44;
+update traintimetable set distance=  where id=45;
+update traintimetable set distance=  where id=46;
+update traintimetable set distance=  where id=47;
+update traintimetable set distance= where id=48;
+update traintimetable set distance=0 where id=49;
+update traintimetable set distance= where id=50;
 
 
 CREATE TABLE product_sales (
