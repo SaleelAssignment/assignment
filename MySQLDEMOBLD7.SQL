@@ -213,6 +213,8 @@ insert into doctorvisits(doctorID, patientID, visitDate) values(1, 13, '2019-07-
 insert into doctorvisits(doctorID, patientID, visitDate) values(21, 9, '2019-02-17');
 insert into doctorvisits(doctorID, patientID, visitDate) values(21, 9, '2019-02-22');
 
+alter table doctor add id int unique key auto_increment first;
+alter table patient add id int unique key auto_increment first;
 
 CREATE TABLE rockets (origin CHAR(20), destination CHAR(20), trip_time INT);
 
