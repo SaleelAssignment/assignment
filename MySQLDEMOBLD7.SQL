@@ -99,9 +99,18 @@ drop table if exists leadtable;
 drop table if exists traintimetable;
 drop table if exists pivot_table;
 drop table if exists orderDetails;
+
+drop table if exists patient;
+drop table if exists doctor;
+
 drop table if EXISTS rocket;
 
 DROP VIEW IF EXISTS SALES;
+
+create table patient(patientID int primary key,patientName varchar(40),age int,gender char,place varchar(40),phoneNumber bigint);
+	
+create table doctor(doctorID int primary key,doctorName varchar(40),place varchar(40),phoneNumber bigint);
+
 
 CREATE TABLE rockets (origin CHAR(20), destination CHAR(20), trip_time INT);
 
