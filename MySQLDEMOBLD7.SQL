@@ -113,7 +113,20 @@ create table doctor(doctorID int primary key,doctorName varchar(40),place varcha
 create table doctorVisits(doctorID int ,patientID int, visitDate date, constraint fk_doctorID foreign key (doctorID) references doctor(doctorID), constraint fk_patientID foreign key(patientID) references patient(patientID));
 
 insert into doctor(doctorID, doctorName, place, phoneNumber) values(1,'sharmin','pune',7050446610), (2,'ruhan','pune',6075991628), (7,'vrushali','mumbai',9922050696), (9,'neel','nashik',99098769)
-
+insert into patient(patientID, patientName, age, gender, place, phoneNumber) values(1,'saleel',32,'m','baroda', 9850884228);
+insert into patient(patientID, patientName, age, gender, place, phoneNumber) values(2,'sangita',45,'f','surat', 9922047878);
+insert into patient(patientID, patientName, age, gender, place, phoneNumber) values(3,'gita',45,'f','surat', 9850881223);
+insert into patient(patientID, patientName, age, gender, place, phoneNumber) values(4,'rajan',27,'m','surat', 9850884003);
+insert into patient(patientID, patientName, age, gender, place, phoneNumber) values(5,'karishma',45,'f','surat', null);
+insert into patient(patientID, patientName, age, gender, place, phoneNumber) values(6,'suraj',54,'m','pune', 9922060503);
+insert into patient(patientID, patientName, age, gender, place, phoneNumber) values(7,'vasant',72,'m','baroda', 9922947389);
+insert into patient(patientID, patientName, age, gender, place, phoneNumber) values(8,'pankaj',53,'m','anand', 9850773992);
+insert into patient(patientID, patientName, age, gender, place, phoneNumber) values(9,'bandish',45,'f','surat', 7075334434);
+insert into patient(patientID, patientName, age, gender, place, phoneNumber) values(10,'supriya',45,'f','surat', 7075878912);
+insert into patient(patientID, patientName, age, gender, place, phoneNumber) values(11,'monika',45,'f','surat', 9922987878);
+insert into patient(patientID, patientName, age, gender, place, phoneNumber) values(12,'ramesh',56,'m','baroda', 9850667668);
+insert into patient(patientID, patientName, age, gender, place, phoneNumber) values(13,'vina',45,'f','surat', null);
+insert into patient(patientID, patientName, age, gender, place, phoneNumber) values(14,'vishal',45,'m','surat', 8800550550);
 
 CREATE TABLE rockets (origin CHAR(20), destination CHAR(20), trip_time INT);
 
