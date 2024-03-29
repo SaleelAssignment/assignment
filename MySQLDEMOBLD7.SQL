@@ -109,9 +109,7 @@ drop table if EXISTS rocket;
 DROP VIEW IF EXISTS SALES;
 
 create table patient(patientID int primary key,patientName varchar(40),age int,gender char,place varchar(40),phoneNumber bigint);
-	
 create table doctor(doctorID int primary key,doctorName varchar(40),place varchar(40),phoneNumber bigint);
-
 create table doctorVisits(doctorID int ,patientID int, visitDate date, constraint fk_doctorID foreign key (doctorID) references doctor(doctorID), constraint fk_patientID foreign key(patientID) references patient(patientID));
 
 CREATE TABLE rockets (origin CHAR(20), destination CHAR(20), trip_time INT);
