@@ -105,6 +105,7 @@ drop table if exists doctorVisits;
 drop table if exists patient;
 drop table if exists doctor;
 drop table if exists labTestList;
+drop table if exists medicineList;
 
 drop table if EXISTS rocket;
 
@@ -112,13 +113,15 @@ DROP VIEW IF EXISTS SALES;
 
 create table labTestList(id int primary key auto_increment, name varchar(60), rate int);
 
+create table medicineList(medicineID int primary key, name varchar(60), rate float(8,2));
+
 create table patient(id int unique key auto_increment, patientID int primary key,patientName varchar(40),age int,gender char,place varchar(40),phoneNumber bigint);
 
 create table doctor(id int unique key auto_increment, doctorID int primary key,doctorName varchar(40),place varchar(40),phoneNumber bigint);
 
 create table doctorVisits(doctorID int ,patientID int, visitDate date, constraint fk_doctorID foreign key (doctorID) references doctor(doctorID), constraint fk_patientID foreign key(patientID) references patient(patientID));
 
-create table prescription(id int primary key auto_increment, patientID int, medicineName varchar(40), prescriptionDate date, prescriptionTime time, constraint fk_prescription_patientID foreign key(patientID) references patient(patientID));
+
 
 
 insert into doctor(doctorID, doctorName, place, phoneNumber) values(1,'sharmin','pune',7050446610);
