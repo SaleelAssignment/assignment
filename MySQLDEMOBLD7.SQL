@@ -212,6 +212,17 @@ insert into doctorvisits(doctorID, patientID, visitDate) values(4, 9, '2019-02-1
 insert into doctorvisits(doctorID, patientID, visitDate) values(1, 13, '2019-07-18');
 insert into doctorvisits(doctorID, patientID, visitDate) values(21, 9, '2019-02-17');
 insert into doctorvisits(doctorID, patientID, visitDate) values(21, 9, '2019-02-22');
+insert into doctorvisits(doctorID, patientID, visitDate) values(9, 10, '2019-02-19');
+insert into doctorvisits(doctorID, patientID, visitDate) values(7, 14, '2019-03-11');
+insert into doctorvisits(doctorID, patientID, visitDate) values(7, 14, '2019-03-18');
+insert into doctorvisits(doctorID, patientID, visitDate) values(9, 12, '2019-07-30');
+insert into doctorvisits(doctorID, patientID, visitDate) values(9, 10, '2019-07-21');
+insert into doctorvisits(doctorID, patientID, visitDate) values(9, 11, '2019-07-21');
+insert into doctorvisits(doctorID, patientID, visitDate) values(4, 10, '2019-02-24');
+insert into doctorvisits(doctorID, patientID, visitDate) values(1, 12, '2019-08-08');
+insert into doctorvisits(doctorID, patientID, visitDate) values(21, 14, '2019-03-25');
+insert into doctorvisits(doctorID, patientID, visitDate) values(21,13, '2019-07-23');
+insert into doctorvisits(doctorID, patientID, visitDate) values(4, 10, '2019-08-24');
 
 alter table doctor add id int unique key auto_increment first;
 alter table patient add id int unique key auto_increment first;
