@@ -112,7 +112,7 @@ create table patient(patientID int primary key,patientName varchar(40),age int,g
 create table doctor(doctorID int primary key,doctorName varchar(40),place varchar(40),phoneNumber bigint);
 create table doctorVisits(doctorID int ,patientID int, visitDate date, constraint fk_doctorID foreign key (doctorID) references doctor(doctorID), constraint fk_patientID foreign key(patientID) references patient(patientID));
 
-insert into doctor(doctorID, doctorName, place, phoneNumber) values(1,'sharmin','pune',7050446610), (2,'ruhan','pune',6075991628), (7,'vrushali','mumbai',9922050696), (9,'neel','nashik',99098769)
+insert into doctor(doctorID, doctorName, place, phoneNumber) values(1,'sharmin','pune',7050446610), (2,'ruhan','pune',6075991628), (7,'vrushali','mumbai',9922050696), (9,'neel','nashik',9900876931)
 insert into doctor values(4,'omkar','baroda',9922878789);
 insert into doctor values(21,'omkar','surat',9905606022);
 insert into doctor values(22,'ramesh','surat',9890560655);
