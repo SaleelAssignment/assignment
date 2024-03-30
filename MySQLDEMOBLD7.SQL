@@ -104,14 +104,20 @@ drop table if exists prescription;
 drop table if exists doctorVisits;
 drop table if exists patient;
 drop table if exists doctor;
+drop table if exists labTestList;
 
 drop table if EXISTS rocket;
 
 DROP VIEW IF EXISTS SALES;
 
+create table labTestList(id int primary key auto_increment, name varchar(60), rate int);
+
 create table patient(id int unique key auto_increment, patientID int primary key,patientName varchar(40),age int,gender char,place varchar(40),phoneNumber bigint);
+
 create table doctor(id int unique key auto_increment, doctorID int primary key,doctorName varchar(40),place varchar(40),phoneNumber bigint);
+
 create table doctorVisits(doctorID int ,patientID int, visitDate date, constraint fk_doctorID foreign key (doctorID) references doctor(doctorID), constraint fk_patientID foreign key(patientID) references patient(patientID));
+
 create table prescription(id int primary key auto_increment, patientID int, medicineName varchar(40), prescriptionDate date, prescriptionTime time, constraint fk_prescription_patientID foreign key(patientID) references patient(patientID));
 
 
@@ -229,6 +235,40 @@ insert into doctorvisits(doctorID, patientID, visitDate) values(1, 12, '2019-08-
 insert into doctorvisits(doctorID, patientID, visitDate) values(21, 14, '2019-03-25');
 insert into doctorvisits(doctorID, patientID, visitDate) values(21,13, '2019-07-23');
 insert into doctorvisits(doctorID, patientID, visitDate) values(4, 10, '2019-08-24');
+
+insert into labtestlist(name, rate) values('Urine Glucose', 150);
+insert into labtestlist(name, rate) values('MDMA Screen Urine', 210);
+insert into labtestlist(name, rate) values('Semen Analysis', 350);
+insert into labtestlist(name, rate) values('Mantoux', 645);
+insert into labtestlist(name, rate) values('Urine Cotinine', 120);
+insert into labtestlist(name, rate) values('UPCR', 750);
+insert into labtestlist(name, rate) values('Arterial Blood Gas', 125);
+insert into labtestlist(name, rate) values('Triple Marker', 155);
+insert into labtestlist(name, rate) values('Double Marker', 240);
+insert into labtestlist(name, rate) values('Stool Elastase', 140);
+insert into labtestlist(name, rate) values('Sweat Chloride', 120);
+insert into labtestlist(name, rate) values('Colonoscopy with Polypectomy Biopsy', 1020);
+insert into labtestlist(name, rate) values('Prostate Biopsy',1200);
+insert into labtestlist(name, rate) values('Liver Biopsy', 1250);
+insert into labtestlist(name, rate) values('Cervix Biopsy',1100);
+insert into labtestlist(name, rate) values('Skin Biopsy', 950);
+insert into labtestlist(name, rate) values('Hair Follicle Drug', 275);
+insert into labtestlist(name, rate) values('Urine Drug', 345);
+insert into labtestlist(name, rate) values('Fetal Fibronectin', 500);
+insert into labtestlist(name, rate) values('First Trimester Screening', 370);
+insert into labtestlist(name, rate) values('Opioid', 220);
+insert into labtestlist(name, rate) values('Stool DNA', 775);
+insert into labtestlist(name, rate) values('Pubic Lice', 480);
+insert into labtestlist(name, rate) values('Synovial Fluid Analysis', 320);
+insert into labtestlist(name, rate) values('10-Panel Drug', 129);
+insert into labtestlist(name, rate) values('Amniocentesis', 645);
+insert into labtestlist(name, rate) values('Bone Marrow Aspiration and Biopsy', 1200);
+insert into labtestlist(name, rate) values('Cerebrospinal Fluid Analysis', 1500);
+insert into labtestlist(name, rate) values('Oral Food Challenge',475);
+insert into labtestlist(name, rate) values('Ova and Parasite', 950);
+insert into labtestlist(name, rate) values('Pericardial Fluid Analysis',1300);
+insert into labtestlist(name, rate) values('Peritoneal Fluid Analysis',1300);
+insert into labtestlist(name, rate) values('Pleural Fluid Analysis',1300);
 
 
 CREATE TABLE rockets (origin CHAR(20), destination CHAR(20), trip_time INT);
