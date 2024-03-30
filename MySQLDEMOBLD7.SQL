@@ -150,8 +150,8 @@ insert into doctorvisits(doctorID, patientID, visitDate) values(9, 3, '2019-04-2
 insert into doctorvisits(doctorID, patientID, visitDate) values(1, 4, '2019-01-27');
 insert into doctorvisits(doctorID, patientID, visitDate) values(7, 2, '2019-05-12');
 insert into doctorvisits(doctorID, patientID, visitDate) values(9, 5, '2019-01-27');
-insert into doctorvisits(doctorID, patientID, visitDate) values(9, 5, '2019-01-30');
-insert into doctorvisits(doctorID, patientID, visitDate) values(9, 2, '2019-05-16');
+insert into doctorvisits(doctorID, patientID, visitDate) values(13, 5, '2019-01-30');
+insert into doctorvisits(doctorID, patientID, visitDate) values(15, 2, '2019-05-16');
 insert into doctorvisits(doctorID, patientID, visitDate) values(7, 3, '2019-04-28');
 insert into doctorvisits(doctorID, patientID, visitDate) values(1, 1, '2019-05-24');
 insert into doctorvisits(doctorID, patientID, visitDate) values(2, 3, '2019-05-05');
@@ -187,8 +187,8 @@ insert into doctorvisits(doctorID, patientID, visitDate) values(7, 3, '2019-07-0
 insert into doctorvisits(doctorID, patientID, visitDate) values(17, 5, '2019-02-15');
 insert into doctorvisits(doctorID, patientID, visitDate) values(7, 1, '2019-07-18');
 insert into doctorvisits(doctorID, patientID, visitDate) values(7, 4, '2019-02-26');
-insert into doctorvisits(doctorID, patientID, visitDate) values(9, 2, '2019-07-21');
-insert into doctorvisits(doctorID, patientID, visitDate) values(9, 3, '2019-07-12');
+insert into doctorvisits(doctorID, patientID, visitDate) values(13, 2, '2019-07-21');
+insert into doctorvisits(doctorID, patientID, visitDate) values(15, 3, '2019-07-12');
 insert into doctorvisits(doctorID, patientID, visitDate) values(9, 1, '2019-07-21');
 insert into doctorvisits(doctorID, patientID, visitDate) values(15, 5, '2019-02-16');
 insert into doctorvisits(doctorID, patientID, visitDate) values(1, 3, '2019-07-18');
@@ -206,7 +206,7 @@ insert into doctorvisits(doctorID, patientID, visitDate) values(9, 7, '2019-02-1
 insert into doctorvisits(doctorID, patientID, visitDate) values(7, 13, '2019-07-18');
 insert into doctorvisits(doctorID, patientID, visitDate) values(7, 14, '2019-02-27');
 insert into doctorvisits(doctorID, patientID, visitDate) values(9, 12, '2019-07-21');
-insert into doctorvisits(doctorID, patientID, visitDate) values(9, 13, '2019-07-12');
+insert into doctorvisits(doctorID, patientID, visitDate) values(13, 13, '2019-07-12');
 insert into doctorvisits(doctorID, patientID, visitDate) values(9, 11, '2019-07-21');
 insert into doctorvisits(doctorID, patientID, visitDate) values(4, 9, '2019-02-16');
 insert into doctorvisits(doctorID, patientID, visitDate) values(1, 13, '2019-07-18');
@@ -216,7 +216,7 @@ insert into doctorvisits(doctorID, patientID, visitDate) values(9, 10, '2019-02-
 insert into doctorvisits(doctorID, patientID, visitDate) values(7, 14, '2019-03-11');
 insert into doctorvisits(doctorID, patientID, visitDate) values(7, 14, '2019-03-18');
 insert into doctorvisits(doctorID, patientID, visitDate) values(9, 12, '2019-07-30');
-insert into doctorvisits(doctorID, patientID, visitDate) values(9, 10, '2019-07-21');
+insert into doctorvisits(doctorID, patientID, visitDate) values(15, 10, '2019-07-21');
 insert into doctorvisits(doctorID, patientID, visitDate) values(9, 11, '2019-07-21');
 insert into doctorvisits(doctorID, patientID, visitDate) values(4, 10, '2019-02-24');
 insert into doctorvisits(doctorID, patientID, visitDate) values(1, 12, '2019-08-08');
