@@ -111,6 +111,33 @@ drop table if EXISTS rocket;
 
 DROP VIEW IF EXISTS SALES;
 
+drop table if exists job_list;
+drop table if exists overtime;
+
+create table job_list(id int primary key auto_increment, jobRole varchar(20), skills varchar(20));
+
+insert into job_list values(default, 'Data Engineer', 'SQL');
+insert into job_list values(default, null, 'redis');
+insert into job_list values(default, null, 'mongoDB');
+insert into job_list values(default, null, 'hBase');
+insert into job_list values(default, null, 'Pig');
+insert into job_list values(default, 'Web Developer', 'HTML');
+insert into job_list values(default, null, 'CSS');
+insert into job_list values(default, null, 'nodeJS');
+insert into job_list values(default, null, 'React');
+insert into job_list values(default, null, 'Javascript');
+insert into job_list values(default, null, 'Angular');
+insert into job_list values(default, null, 'Express');
+insert into job_list values(default, 'Data Scientsst', 'Python');
+insert into job_list values(default, null, 'ML');
+insert into job_list values(default, null, 'AI');
+insert into job_list values(default, null, 'Ruby');
+insert into job_list values(default, null, 'Power BI');
+insert into job_list values(default, null, 'Excel');
+
+CREATE TABLE overtime (employee_name VARCHAR(50) NOT NULL, department VARCHAR(50) NOT NULL, hours INT NOT NULL, PRIMARY KEY (employee_name , department));
+INSERT INTO overtime(employee_name, department, hours) VALUES('Diane Murphy','Accounting',37), ('Mary Patterson','Accounting',74), ('Jeff Firrelli','Accounting',40), ('William Patterson','Finance',58), ('Gerard Bondur','Finance',47), ('Anthony Bow','Finance',66), ('Leslie Jennings','IT',90), ('Leslie Thompson','IT',88), ('Julie Firrelli','Sales',81), ('Steve Patterson','Sales',29), ('Foon Yue Tseng','Sales',65), ('George Vanauf','Marketing',89), ('Loui Bondur','Marketing',49), ('Gerard Hernandez','Marketing',66), ('Pamela Castillo','SCM',96), ('Larry Bott','SCM',100), ('Barry Jones','SCM',65);
+
 create table labTestList(id int primary key auto_increment, name varchar(60), rate int);
 
 create table medicineList(medicineID int primary key, name varchar(60), rate float(8,2));
