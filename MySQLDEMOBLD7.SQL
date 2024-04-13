@@ -114,6 +114,23 @@ DROP VIEW IF EXISTS SALES;
 drop table if exists job_list;
 drop table if exists overtime;
 
+drop table if exists sourceNames;
+drop table if exists targetNames;
+
+create table sourceNames(id int primary key auto_increment, ename varchar(10));
+
+insert into sourceNames values(1, 'A');
+insert into sourceNames values(2, 'B');
+insert into sourceNames values(3, 'C');
+insert into sourceNames values(4, 'D');
+
+create table targetNames(id int primary key auto_increment, ename varchar(10));
+
+insert into targetNames values(1, 'A');
+insert into targetNames values(2, 'B');
+insert into targetNames values(3, 'X');
+insert into targetNames values(5, 'D');
+
 create table job_list(id int primary key auto_increment, jobRole varchar(20), skills varchar(20));
 
 insert into job_list values(default, 'Data Engineer', 'SQL');
@@ -148,9 +165,6 @@ create table doctor(id int unique key auto_increment, doctorID int primary key,d
 
 create table doctorVisits(doctorID int ,patientID int, visitDate date, constraint fk_doctorID foreign key (doctorID) references doctor(doctorID), constraint fk_patientID foreign key(patientID) references patient(patientID));
 
-
-
-
 insert into doctor(doctorID, doctorName, place, phoneNumber) values(1,'sharmin','pune',7050446610);
 insert into doctor(doctorID, doctorName, place, phoneNumber) values(2,'ruhan','pune',6075991628);
 insert into doctor(doctorID, doctorName, place, phoneNumber) values(7,'vrushali','mumbai',9922050696);
@@ -176,7 +190,6 @@ insert into patient(patientID, patientName, age, gender, place, phoneNumber) val
 insert into patient(patientID, patientName, age, gender, place, phoneNumber) values(12,'ramesh',56,'m','baroda', 9850667668);
 insert into patient(patientID, patientName, age, gender, place, phoneNumber) values(13,'vina',45,'f','surat', null);
 insert into patient(patientID, patientName, age, gender, place, phoneNumber) values(14,'vishal',45,'m','surat', 8800550550);
-
 
 insert into doctorvisits(doctorID, patientID, visitDate) values(1, 1, '2019-04-07');
 insert into doctorvisits(doctorID, patientID, visitDate) values(2, 4, '2019-01-23');
