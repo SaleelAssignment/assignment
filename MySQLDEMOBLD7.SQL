@@ -129,7 +129,7 @@ create table targetNames(id int primary key auto_increment, ename varchar(10));
 insert into targetNames values(1, 'A');
 insert into targetNames values(2, 'B');
 insert into targetNames values(3, 'X');
-insert into targetNames values(5, 'D');
+insert into targetNames values(5, 'Z');
 
 create table job_list(id int primary key auto_increment, jobRole varchar(20), skills varchar(20));
 
