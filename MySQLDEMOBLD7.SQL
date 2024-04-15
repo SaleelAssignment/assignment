@@ -969,6 +969,8 @@ INSERT INTO books VALUES(default, 'DS', 'Hardcover', '950');
 INSERT INTO books VALUES (default, 'JavaScript', 'Paperback', '700');
 INSERT INTO books VALUES (default, 'JavaScript', 'Paperback', '700');
 INSERT INTO books VALUES(default, 'Hbase','Paperback',760);
+INSERT INTO books VALUES(default, 'Python','Hardcover',980);
+INSERT INTO books VALUES(8, 'SQL','Hardcover',980);
 
 CREATE TABLE newbooks (ID int primary key auto_increment, 
 bookName varchar(45), 
@@ -980,7 +982,8 @@ INSERT INTO newbooks VALUES (default, 'Redis', 'Paperback', '850');
 INSERT INTO newbooks VALUES (default, 'JavaScript', 'Paperback', '700');
 INSERT INTO newbooks VALUES (default, 'JavaScript', 'Paperback', '700');
 INSERT INTO newbooks VALUES(default,'Hbase','Paperback',760);
-
+INSERT INTO newbooks VALUES(7,'HTML','Paperback',900);
+INSERT INTO newbooks VALUES(9,'CSS','Paperback',740);
 
 
 CREATE TABLE runners (id int, name varchar(20));
