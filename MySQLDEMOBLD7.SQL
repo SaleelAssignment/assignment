@@ -959,27 +959,27 @@ create table key_parts(c1 int, c2 int);
 
 insert into key_parts values row(2,3), row(7,5), row(5,7), row(3,8), row(9,4), row(10,19), row(20,16), row(6,14), row(7,12), row(12,5), row(9,17), row(17,9), row(10,10), row(20,3), row(17,15), row(19,16), row(3,8), row(9,9), row(10,19), row(20,16), row(6,14), row(7,12), row(12,5), row(9,17), row(17,9), row(10,10);
 
-CREATE TABLE books (bookID int, 
+CREATE TABLE books (ID int primary key auto_increment, 
 bookName varchar(45), 
 Type varchar(45), 
 Cost int);
 
-INSERT INTO books VALUES(1, 'DS', 'Hardcover', '950');
-INSERT INTO books VALUES(1, 'DS', 'Hardcover', '950');
-INSERT INTO books VALUES (2, 'JavaScript', 'Paperback', '700');
-INSERT INTO books VALUES (2, 'JavaScript', 'Paperback', '700');
-INSERT INTO books VALUES(3, 'Hbase','Paperback',760);
+INSERT INTO books VALUES(default, 'DS', 'Hardcover', '950');
+INSERT INTO books VALUES(default, 'DS', 'Hardcover', '950');
+INSERT INTO books VALUES (default, 'JavaScript', 'Paperback', '700');
+INSERT INTO books VALUES (default, 'JavaScript', 'Paperback', '700');
+INSERT INTO books VALUES(default, 'Hbase','Paperback',760);
 
-CREATE TABLE newbooks (bookID int, 
+CREATE TABLE newbooks (ID int primary key auto_increment, 
 bookName varchar(45), 
 Type varchar(45), 
 Cost int);
 
-INSERT INTO newbooks VALUES (1, 'Redis', 'Paperback', '850');
-INSERT INTO newbooks VALUES (1, 'Redis', 'Paperback', '850');
-INSERT INTO newbooks VALUES (2, 'JavaScript', 'Paperback', '700');
-INSERT INTO newbooks VALUES (2, 'JavaScript', 'Paperback', '700');
-INSERT INTO newbooks VALUES(4,'Hbase','Paperback',760);
+INSERT INTO newbooks VALUES (default, 'Redis', 'Paperback', '850');
+INSERT INTO newbooks VALUES (default, 'Redis', 'Paperback', '850');
+INSERT INTO newbooks VALUES (default, 'JavaScript', 'Paperback', '700');
+INSERT INTO newbooks VALUES (default, 'JavaScript', 'Paperback', '700');
+INSERT INTO newbooks VALUES(default,'Hbase','Paperback',760);
 
 
 
