@@ -133,6 +133,13 @@ insert into phonecall(fromphone, tophone, calldate, fromtime, totime) values(985
 insert into phonecall(fromphone, tophone, calldate, fromtime, totime) values(9850884228, 9922050696,  '2020-01-10', '11:07:00' , '11:14:05');
 insert into phonecall(fromphone, tophone, calldate, fromtime, totime) values(9665814327, 9850884228,  '2020-01-11', '11:07:00' , '11:14:05');
 insert into phonecall(fromphone, tophone, calldate, fromtime, totime) values(9850884228, 9665814327,  '2020-01-11', '15:29:31' , '15:32:05');
+insert into phonecall(fromphone, tophone, calldate, fromtime, totime) values(9850884228, 9850778812,  '2020-01-02', '15:29:31' , '15:32:05');
+insert into phonecall(fromphone, tophone, calldate, fromtime, totime) values(7555284570, 9665814327,  '2020-01-02', '08:02:31' , '08:07:05');
+insert into phonecall(fromphone, tophone, calldate, fromtime, totime) values(7555337795, 8555599169,  '2020-01-02', '08:02:31' , '08:07:05');
+insert into phonecall(fromphone, tophone, calldate, fromtime, totime) values(8555599169, 9665814327,  '2020-01-02', '08:02:31' , '08:07:05');
+insert into phonecall(fromphone, tophone, calldate, fromtime, totime) values(9850884228, 8555384318,  '2020-01-02', '15:29:31' , '15:32:05');
+insert into phonecall(fromphone, tophone, calldate, fromtime, totime) values(8555384318, 8555599169,  '2020-01-02', '15:29:31' , '15:32:05');
+insert into phonecall(fromphone, tophone, calldate, fromtime, totime) values(9850778812, 9850884228, '2020-01-02', '19:34:09' , '19:39:05');
 
 create table sourceNames(id int primary key auto_increment, ename varchar(10));
 
