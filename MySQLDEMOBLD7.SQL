@@ -120,8 +120,8 @@ drop table if exists phonecall;
 
 create table phonecall(id int primary key auto_increment, fromphone bigint, tophone bigint, calldate date, fromtime time, totime time, duration int);
 
-insert into phonecall(fromphone, tophone, calldate, fromtime, totime) values(9850884330, 9933898994, '2020-04-19', '04:30:00', '04:39:00');
-insert into phonecall(fromphone, tophone, calldate, fromtime, totime) values(9850884330, 9933898994, '2020-04-20', '16:30:10', '17:39:27');
+insert into phonecall(fromphone, tophone, calldate, fromtime, totime) values(9850884330, 9933898994, '2020-01-19', '04:30:00', '04:39:00');
+insert into phonecall(fromphone, tophone, calldate, fromtime, totime) values(9850884330, 9933898994, '2020-01-20', '16:30:10', '17:39:27');
 insert into phonecall(fromphone, tophone, calldate, fromtime, totime) values(9922050696, 9850884330, '2020-01-12', '14:12:00', '14:24:27');
 insert into phonecall(fromphone, tophone, calldate, fromtime, totime) values(9922050696, 9922987810, '2020-01-12', '12:03:06', '12:06:19');
 insert into phonecall(fromphone, tophone, calldate, fromtime, totime) values(9850272629, 7570815432, '2020-01-07', '11:00:06', '11:09:19');
