@@ -116,6 +116,7 @@ drop table if exists overtime;
 
 drop table if exists sourceNames;
 drop table if exists targetNames;
+drop table if exists phonecall;
 
 create table sourceNames(id int primary key auto_increment, ename varchar(10));
 
