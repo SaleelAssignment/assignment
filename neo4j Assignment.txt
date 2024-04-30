@@ -260,9 +260,12 @@ create(i1:item{name:'cake', rate:45, MoM:12, YoM:2021, expire:"best before 5 day
 	  (i87:item{name:'pickle', rate:68, MoM:1, YoM:2021, expire:"best before 3 days",isAvailable:true}),
 	  (i88:item{name:'vinegar', rate:36, MoM:7, YoM:2021, expire:"best before 3 days",isAvailable:true}),
 	  (i89:item{name:'saffron', rate:1000, MoM:6, YoM:2021, expire:"best before 3 days",isAvailable:true}),
-	  (i90:item{name:'noodles', rate:47, MoM:5, YoM:2021, expire:"best before 3 days",isAvailable:true})
+	  (i90:item{name:'noodles', rate:47, MoM:5, YoM:2021, expire:"best before 3 days",isAvailable:true}),
+	  (i91:item{name:'limca', rate:35, MoM:5, YoM:2021, expire:"best before 1 month",isAvailable:true}),
+	  (i92:item{name:'coca cola', rate:35, MoM:5, YoM:2021, expire:"best before 1 month",isAvailable:true}),
+	  (i93:item{name:'thums up', rate:35, MoM:5, YoM:2021, expire:"best before 1 month",isAvailable:true}),
+	  (i94:item{name:pepsi, rate:35, MoM:5, YoM:2021, expire:"best before 1 month",isAvailable:true})
 
-	
 
 create(b1:brand{name:'amul', votes:[1,1,1,1,1,0,0,1,1,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1] }),
       (b2:brand{name:'bru', votes:[1,0,1,1,1,0,0,1,1,0,1,0,1,1,1] }),
@@ -286,7 +289,9 @@ create(b1:brand{name:'amul', votes:[1,1,1,1,1,0,0,1,1,0,1,1,1,1,1,1,1,1,1,1,1,1,
 	  (b20:brand{name:'mdh', votes:[1,0,1,1,1,1,0,1,1,1,1,1,0,1,1,1,1,1,1,1,1,1,0] }),
 	  (b21:brand{name:'everest', votes:[1,0,1,1,1,1,0,1,1,1,1,0,1,1,1,1,1,0,1,1,1,1,1] }),
 	  (b22:brand{name:'badshah', votes:[1,1,1,1,1,1,1,1,0,1,1,1,1,1,0,1,1,0,1,1,1,1,1] }),
-	  (b23:brand{name:'rajdhani', votes:[0,1,1,1,1,1,1,1,0,1,0,1,1,1,0,1,1,0,0,1,1,0,0] })
+	  (b23:brand{name:'rajdhani', votes:[0,1,1,1,1,1,1,1,0,1,0,1,1,1,0,1,1,0,0,1,1,0,0] }),
+	  (b24:brand{name:'PepsiCo', votes:[1,1,1,1,1,1,1,1,0,1,1,1,1,1,0,1,1,0,1,1,1,1,1] })
+	 
       
 	   
 	  
@@ -431,95 +436,95 @@ brand{name:'rajdhani' }	 ------> item{name: [ 'eggs', 'rajma', 'mung dal', 'chan
 
 match(n:item) where n.name in ['eggs', 'rajma', 'mung dal', 'chana dal', 'toor dal', 'udad dal', 'soybean', 'jaljeera', 'chat masala','sambahr masala', 'kokum'] 
 match(m:brand{name:'rajdhani'})
-create (n) - [r1:productOF] -> (m)
+create (n) - [r1:productOfBrand] -> (m)
 
 match(n:item) where n.name in ['cheese', 'butter', 'milk', 'curd', 'nuts', 'milkshake', 'juice', 'biscuit', 'red velvet cake', 'soft cake']
 match(m:brand{name:'amul'})
-create (n) - [r1:productOF] -> (m)
+create (n) - [r1:productOfBrand] -> (m)
 
 match(n:item) where n.name in ['coffee', 'tea', 'juice', 'milkshake', 'cake']
 match(m:brand{name:'bru'})
-create (n) - [r1:productOF] -> (m)
+create (n) - [r1:productOfBrand] -> (m)
 
 match(n:item) where n.name in ['milk', 'peanut cake', 'chocolate cake', 'ice-cream', 'red velvet cake']
 match(m:brand{name:'kwality'})
-create (n) - [r1:productOF] -> (m)
+create (n) - [r1:productOfBrand] -> (m)
 
 match(n:item) where n.name in ['nuts', 'sandwiches', 'popcorn', 'bread']
 match(m:brand{name:'haldiram'})
-create (n) - [r1:productOF] -> (m)
+create (n) - [r1:productOfBrand] -> (m)
 
 match(n:item) where n.name in ['papad', 'chikki', 'nuts', 'popcorn', 'cake']
 match(m:brand{name:'lijjat'})
-create (n) - [r1:productOF] -> (m)
+create (n) - [r1:productOfBrand] -> (m)
 
 match(n:item) where n.name in ['biscuit', 'nuts', 'chips', 'chocolate', 'chocolate cake', 'suger-cubes', 'maggi', 'rice', 'wheat', 'soft cake']
 match(m:brand{name:'nestle'})
-create (n) - [r1:productOF] -> (m)
+create (n) - [r1:productOfBrand] -> (m)
 
 match(n:item) where n.name in ['hot dogs', 'chicken sauce', 'hot dogs sauce', 'pizza', 'pasta', 'burger', 'hamburgers', 'fries', 'bread' ]
 match(m:brand{name:'McDonalds'})
-create (n) - [r1:productOF] -> (m)
+create (n) - [r1:productOfBrand] -> (m)
 
 match(n:item) where n.name in ['sauce', 'chicken sauce', 'hot dogs sauce', 'jam']
 match(m:brand{name:'kissan'})
-create (n) - [r1:productOF] -> (m)
+create (n) - [r1:productOfBrand] -> (m)
 
 match(n:item) where n.name in [ 'chicken nuggets', 'chicken sauce', 'hot dogs sauce', 'fried chicken', 'hot dogs', 'burger', 'hamburgers', 'sandwiches', 'bread']
 match(m:brand{name:'venkys'})
-create (n) - [r1:productOF] -> (m)
+create (n) - [r1:productOfBrand] -> (m)
 
 match(n:item) where n.name in [ 'coke', 'fanta', 'fries', 'soft cake', 'red velvet cake']
 match(m:brand{name:'Coca-Cola'})
-create (n) - [r1:productOF] -> (m)
+create (n) - [r1:productOfBrand] -> (m)
 
 match(n:item) where n.name in [ 'sugar', 'dal', 'oil', 'salt', 'red chili', 'beans', 'poha', 'onion', 'potato', 'banana', 'apple', 'grapes', 'mango']
 match(m:brand{name:'natraj'})
-create (n) - [r1:productOF] -> (m)
+create (n) - [r1:productOfBrand] -> (m)
 
 match(n:item) where n.name in [ 'tooth paste', 'shaving cream', 'tooth brush', 'tooth powder', 'powder' ]
 match(m:brand{name:'colgate'})
-create (n) - [r1:productOF] -> (m)
+create (n) - [r1:productOfBrand] -> (m)
 
 match(n:item) where n.name in [ 'hair oil', 'paneer', 'honey', 'saffron', 'noodles', 'pasta' ]
 match(m:brand{name:'sunfeast'})
-create (n) - [r1:productOF] -> (m)
+create (n) - [r1:productOfBrand] -> (m)
 
 match(n:item) where n.name in [ 'pickle', 'vinegar', 'saffron', 'noodles', 'pasta' ]
 match(m:brand{name:'yippie'})
-create (n) - [r1:productOF] -> (m)
+create (n) - [r1:productOfBrand] -> (m)
 
 match(n:item) where n.name in [ 'pickle', 'vinegar', 'noodles', 'pasta' ]
 match(m:brand{name:'britannia'})
-create (n) - [r1:productOF] -> (m)
+create (n) - [r1:productOfBrand] -> (m)
 
 match(n:item) where n.name in [ 'honey', 'vinegar', 'pasta', 'kokum' ]
 match(m:brand{name:'parle'})
-create (n) - [r1:productOF] -> (m)
+create (n) - [r1:productOfBrand] -> (m)
 
 match(n:item) where n.name in [ 'soaps', 'shampoo', 'hair oil', 'tooth paste', 'shaving cream', 'tooth brush', 'powder', 'kokum' ]
 match(m:brand{name:'tata'})
-create (n) - [r1:productOF] -> (m)
+create (n) - [r1:productOfBrand] -> (m)
 
 match(n:item) where n.name in [ 'shampoo', 'soaps', 'tooth paste', 'shaving cream', 'honey', 'garbage bags', 'tooth brush', 'tooth powder', 'powder' ]
 match(m:brand{name:'godrej'})
-create (n) - [r1:productOF] -> (m)
+create (n) - [r1:productOfBrand] -> (m)
 
 match(n:item) where n.name in [ 'detergent soap', 'soaps', 'detergent powder', 'dish wash soap', 'dish wash liquid', 'floor cleaner', 'toilet cleaner',  'toilet roll' 'tissue papers'  ]
 match(m:brand{name:'tide'})
-create (n) - [r1:productOF] -> (m)
+create (n) - [r1:productOfBrand] -> (m)
 
 match(n:item) where n.name in [ 'chat masala', 'sambahr masala', 'jeera', 'haldi', 'pickle', 'vinegar', 'kokum'  ]
 match(m:brand{name:'mdh'})
-create (n) - [r1:productOF] -> (m)
+create (n) - [r1:productOfBrand] -> (m)
 
 match(n:item) where n.name in [ 'chat masala', 'sambahr masala', 'jeera', 'haldi', 'pickle', 'vinegar'  ]
 match(m:brand{name:'everest'})
-create (n) - [r1:productOF] -> (m)
+create (n) - [r1:productOfBrand] -> (m)
 
 match(n:item) where n.name in [ 'chat masala', 'sambahr masala', 'jeera', 'haldi', 'pickle', 'vinegar'  ]
 match(m:brand{name:'badshah'})
-create (n) - [r1:productOF] -> (m)
+create (n) - [r1:productOfBrand] -> (m)
 
 
 -------------------------------------- end of Brand and Item relations --------------------------------------------------
@@ -583,154 +588,154 @@ customer{name:'deep'})         ------> customer_order{name:'order-49'})
 customer{name:'rajan'})         ------> customer_order{name:'order-50'})
 
 match(n:customer{name:'saleel'}), (m:order{name:'order-1'})
-create (n) - [:'customer places an order'{ source:'flipkart'} ] -> (m)
+create (n) - [:`customer places an order`{ source:'flipkart'} ] -> (m)
 
 match(n:customer{name:'sharmin'}), (m:order{name:'order-2'})
-create (n) - [:'customer places an order'{ source:'amazon'}  -> (m)
+create (n) - [:`customer places an order`{ source:'amazon'}  -> (m)
 
 match(n:customer{name:'ruhan'}), (m:order{name:'order-3'})
-create (n) - [:'customer places an order'{ source:'blinkit'} ] -> (m)
+create (n) - [:`customer places an order`{ source:'blinkit'} ] -> (m)
 
 match(n:customer{name:'neel'}), (m:order{name:'order-4'})
-create (n) - [:'customer places an order'{ source:'flipkart'} ] -> (m)
+create (n) - [:`customer places an order`{ source:'flipkart'} ] -> (m)
 
 match(n:customer{name:'nitish'}), (m:order{name:'order-5'})
-create (n) - [:'customer places an order'{ source:'amazon'} ] -> (m)
+create (n) - [:`customer places an order`{ source:'amazon'} ] -> (m)
 
 match(n:customer{name:'deep'}), (m:order{name:'order-6'})
-create (n) - [:'customer places an order'{ source:'blinkit'} ] -> (m)
+create (n) - [:`customer places an order`{ source:'blinkit'} ] -> (m)
 
 match(n:customer{name:'gau'}), (m:order{name:'order-7'})
-create (n) - [:'customer places an order'{ source:'indiamart'} ] -> (m)
+create (n) - [:`customer places an order`{ source:'indiamart'} ] -> (m)
 
 match(n:customer{name:'pankaj'}), (m:order{name:'order-8'})
-create (n) - [:'customer places an order'{ source:'blinkit'} ] -> (m)
+create (n) - [:`customer places an order`{ source:'blinkit'} ] -> (m)
 
 match(n:customer{name:'komal'}), (m:order{name:'order-9'})
-create (n) - [:'customer places an order'{ source:'jiomart'}  -> (m)
+create (n) - [:`customer places an order`{ source:'jiomart'}  -> (m)
 
 match(n:customer{name:'bandish'}), (m:order{name:'order-10'})
-create (n) - [:'customer places an order'{ source:'indiamart'} ] -> (m)
+create (n) - [:`customer places an order`{ source:'indiamart'} ] -> (m)
 
 match(n:customer{name:'rajan'}), (m:order{name:'order-11'})
-create (n) - [:'customer places an order'{ source:'flipkart'} ] -> (m)
+create (n) - [:`customer places an order`{ source:'flipkart'} ] -> (m)
 
 match(n:customer{name:'boy'}), (m:order{name:'order-12'})
-create (n) - [:'customer places an order'{ source:'blinkit'} ] -> (m)
+create (n) - [:`customer places an order`{ source:'blinkit'} ] -> (m)
 
 match(n:customer{name:'bhuru'}), (m:order{name:'order-13'})
-create (n) - [:'customer places an order'{ source:'vmart'} ] -> (m)
+create (n) - [:`customer places an order`{ source:'vmart'} ] -> (m)
 
 match(n:customer{name:'kaushal'}), (m:order{name:'order-14'})
-create (n) - [:'customer places an order'{ source:'jiomart'} ] -> (m)
+create (n) - [:`customer places an order`{ source:'jiomart'} ] -> (m)
 
 match(n:customer{name:'sharmin'}), (m:order{name:'order-15'})
-create (n) - [:'customer places an order'{ source:'flipkart'} ] -> (m)
+create (n) - [:`customer places an order`{ source:'flipkart'} ] -> (m)
 
 match(n:customer{name:'pankaj'}), (m:order{name:'order-16'})
-create (n) - [:'customer places an order'{ source:'amazon'} ] -> (m)
+create (n) - [:`customer places an order`{ source:'amazon'} ] -> (m)
 
 match(n:customer{name:'komal'}), (m:order{name:'order-17'})
-create (n) - [:'customer places an order'{ source:'vmart'} ] -> (m)
+create (n) - [:`customer places an order`{ source:'vmart'} ] -> (m)
 
 match(n:customer{name:'rajan'}), (m:order{name:'order-18'})
-create (n) - [:'customer places an order'{ source:'flipkart'} ] -> (m)
+create (n) - [:`customer places an order`{ source:'flipkart'} ] -> (m)
 
 match(n:customer{name:'bandish'}), (m:order{name:'order-19'})
-create (n) - [:'customer places an order'{ source:'blinkit'} ] -> (m)
+create (n) - [:`customer places an order`{ source:'blinkit'} ] -> (m)
 
 match(n:customer{name:'komal'}), (m:order{name:'order-20'})
-create (n) - [:'customer places an order'{ source:'ebay'} ] -> (m)
+create (n) - [:`customer places an order`{ source:'ebay'} ] -> (m)
 
 match(n:customer{name:'gau'}), (m:order{name:'order-21'})
-create (n) - [:'customer places an order'{ source:'flipkart'} ] -> (m)
+create (n) - [:`customer places an order`{ source:'flipkart'} ] -> (m)
 
 match(n:customer{name:'rajan'}), (m:order{name:'order-22'})
-create (n) - [:'customer places an order'{ source:'jiomart'} ] -> (m)
+create (n) - [:`customer places an order`{ source:'jiomart'} ] -> (m)
 
 match(n:customer{name:'sharmin'}), (m:order{name:'order-23'})
-create (n) - [:'customer places an order'{ source:'flipkart'} ] -> (m)
+create (n) - [:`customer places an order`{ source:'flipkart'} ] -> (m)
 
 match(n:customer{name:'ruhan'}), (m:order{name:'order-24'})
-create (n) - [:'customer places an order'{ source:'ebay'} ] -> (m)
+create (n) - [:`customer places an order`{ source:'ebay'} ] -> (m)
 
 match(n:customer{name:'ruhan'}), (m:order{name:'order-25'})
-create (n) - [:'customer places an order'{ source:'walmart'} ] -> (m)
+create (n) - [:`customer places an order`{ source:'walmart'} ] -> (m)
 
 match(n:customer{name:'sharmin'}), (m:order{name:'order-26'})
-create (n) - [:'customer places an order'{ source:'flipkart'} ] -> (m)
+create (n) - [:`customer places an order`{ source:'flipkart'} ] -> (m)
 
 match(n:customer{name:'boy'}), (m:order{name:'order-27'})
-create (n) - [:'customer places an order'{ source:'amazon'} ] -> (m)
+create (n) - [:`customer places an order`{ source:'amazon'} ] -> (m)
 
 match(n:customer{name:'sharmin'}), (m:order{name:'order-28'})
-create (n) - [:'customer places an order'{ source:'walmart'} ] -> (m)
+create (n) - [:`customer places an order`{ source:'walmart'} ] -> (m)
 
 match(n:customer{name:'gau'}), (m:order{name:'order-29'})
-create (n) - [:'customer places an order'{ source:'flipkart'} ] -> (m)
+create (n) - [:`customer places an order`{ source:'flipkart'} ] -> (m)
 
 match(n:customer{name:'sharmin'}), (m:order{name:'order-30'})
-create (n) - [:'customer places an order'{ source:'blinkit'} ] -> (m)
+create (n) - [:`customer places an order`{ source:'blinkit'} ] -> (m)
 
 match(n:customer{name:'boy'}), (m:order{name:'order-31'})
-create (n) - [:'customer places an order'{ source:'flipkart'} ] -> (m)
+create (n) - [:`customer places an order`{ source:'flipkart'} ] -> (m)
 
 match(n:customer{name:'sharmin'}), (m:order{name:'order-32'})
-create (n) - [:'customer places an order'{ source:'jiomart'} ] -> (m)
+create (n) - [:`customer places an order`{ source:'jiomart'} ] -> (m)
 
 match(n:customer{name:'sharmin'}), (m:order{name:'order-33'})
-create (n) - [:'customer places an order'{ source:'flipkart'} ] -> (m)
+create (n) - [:`customer places an order`{ source:'flipkart'} ] -> (m)
 
 match(n:customer{name:'kaushal'}), (m:order{name:'order-34'})
-create (n) - [:'customer places an order'{ source:'dmart'} ] -> (m)
+create (n) - [:`customer places an order`{ source:'dmart'} ] -> (m)
 
 match(n:customer{name:'komal'}), (m:order{name:'order-35'})
-create (n) - [:'customer places an order'{ source:'flipkart'} ] -> (m)
+create (n) - [:`customer places an order`{ source:'flipkart'} ] -> (m)
 
 match(n:customer{name:'sharmin'}), (m:order{name:'order-36'})
-create (n) - [:'customer places an order'{ source:'ebay'} ] -> (m)
+create (n) - [:`customer places an order`{ source:'ebay'} ] -> (m)
 
-match(n:customer{name:'rajan'}), (m:order{name:'order-37'})
-create (n) - [:'customer places an order'{ source:'dmart'} ] -> (m)
+match(n:customer{name:'saleel'}), (m:order{name:'order-37'})
+create (n) - [:`customer places an order`{ source:'dmart'} ] -> (m)
 
 match(n:customer{name:'kaushal'}), (m:order{name:'order-38'})
-create (n) - [:'customer places an order'{ source:'flipkart'} ] -> (m)
+create (n) - [:`customer places an order`{ source:'flipkart'} ] -> (m)
 
 match(n:customer{name:'deep'}), (m:order{name:'order-39'})
-create (n) - [:'customer places an order'{ source:'amazon'} ] -> (m)
+create (n) - [:`customer places an order`{ source:'amazon'} ] -> (m)
 
 match(n:customer{name:'rajan'}), (m:order{name:'order-40'})
-create (n) - [:'customer places an order'{ source:'flipkart'} ] -> (m)
+create (n) - [:`customer places an order`{ source:'flipkart'} ] -> (m)
 
 match(n:customer{name:'boy'}), (m:order{name:'order-41'})
-create (n) - [:'customer places an order'{ source:'walmart'} ] -> (m)
+create (n) - [:`customer places an order`{ source:'walmart'} ] -> (m)
 
 match(n:customer{name:'sharmin'}), (m:order{name:'order-42'})
-create (n) - [:'customer places an order'{ source:'flipkart'} ] -> (m)
+create (n) - [:`customer places an order`{ source:'flipkart'} ] -> (m)
 
 match(n:customer{name:'sharmin'}), (m:order{name:'order-43'})
-create (n) - [:'customer places an order'{ source:'dmart'} ] -> (m)
+create (n) - [:`customer places an order`{ source:'dmart'} ] -> (m)
 
 match(n:customer{name:'kaushal'}), (m:order{name:'order-44'})
-create (n) - [:'customer places an order'{ source:'amazon'} ] -> (m)
+create (n) - [:`customer places an order`{ source:'amazon'} ] -> (m)
 
 match(n:customer{name:'komal'}), (m:order{name:'order-45'})
-create (n) - [:'customer places an order'{ source:'blinkit'} ] -> (m)
+create (n) - [:`customer places an order`{ source:'blinkit'} ] -> (m)
 
 match(n:customer{name:'sharmin'}), (m:order{name:'order-46'})
-create (n) - [:'customer places an order'{ source:'vmart'} ] -> (m)
+create (n) - [:`customer places an order`{ source:'vmart'} ] -> (m)
 
 match(n:customer{name:'rajan'}), (m:order{name:'order-47'})
-create (n) - [:'customer places an order'{ source:'jiomart'} ] -> (m)
+create (n) - [:`customer places an order`{ source:'jiomart'} ] -> (m)
 
 match(n:customer{name:'kaushal'}), (m:order{name:'order-48'})
-create (n) - [:'customer places an order'{ source:'flipkart'} ] -> (m)
+create (n) - [:`customer places an order`{ source:'flipkart'} ] -> (m)
 
 match(n:customer{name:'deep'}), (m:order{name:'order-49'})
-create (n) - [:'customer places an order'{ source:'walmart'} ] -> (m)
+create (n) - [:`customer places an order`{ source:'walmart'} ] -> (m)
 
 match(n:customer{name:'rajan'}), (m:order{name:'order-50'})
-create (n) - [:'customer places an order'{ source:'jiomart'} ] -> (m)
+create (n) - [:`customer places an order`{ source:'jiomart'} ] -> (m)
 
 
 3. items of customer_order
@@ -738,51 +743,64 @@ create (n) - [:'customer places an order'{ source:'jiomart'} ] -> (m)
 
 
 
-customer_order{name:'order-1'}    ------> item{name: ['cheese', 'butter', 'nuts' ]
-customer_order{name:'order-2'}    ------> item{name: ['milkshake', 'soft cake', 'fries', 'coke' ]
-customer_order{name:'order-3'}    ------> item{name: ['coke', 'fanta', 'chips' ]
-customer_order{name:'order-4'}    ------> item{name: ['chips', 'cheese' ]
-customer_order{name:'order-5'}    ------> item{name: ['biscuit', 'hot dogs sauce', 'chikki', 'juice' ]
-customer_order{name:'order-6'}    ------> item{name: ['popcorn', 'tea' ]
-customer_order{name:'order-7'}    ------> item{name: ['coffee' ]
-customer_order{name:'order-8'}    ------> item{name: ['papad', 'coffee', 'wheat', 'tooth brush' ]
-customer_order{name:'order-9'}    ------> item{name: ['rajma', 'tooth brush', 'haldi' ]
-customer_order{name:'order-10'}   ------> item{name: ['hair oil', 'floor cleaner', 'eggs',  'udad dal' ] 
-customer_order{name:'order-11'}   ------> item{name: ['udad dal', 'mung dal' ]
-customer_order{name:'order-12'}   ------> item{name: ['chikki', 'hot dogs' ]
-customer_order{name:'order-13'}   ------> item{name: ['wheat', 'rice' ]
-customer_order{name:'order-14'}   ------> item{name: ['hamburgers' ]
-customer_order{name:'order-15'}   ------> item{name: ['chicken nuggets' ]
-customer_order{name:'order-16'}   ------> item{name: ['banana', 'grapes', 'apple' ]
-customer_order{name:'order-17'}   ------> item{name: ['saffron' ]
-customer_order{name:'order-18'}   ------> item{name: ['noodles' ]
-customer_order{name:'order-19'}   ------> item{name: ['jeera', 'coffee', 'bread', 'cheese' ]
-customer_order{name:'order-20'}   ------> item{name: ['bread', 'cheese', 'jam', 'butter' ]
-customer_order{name:'order-21'}   ------> item{name: ['maggi', 'honey' ]
-customer_order{name:'order-22'}   ------> item{name: ['noodles', 'vinegar' ]
-customer_order{name:'order-23'}   ------> item{name: ['udad dal', 'soybean', 'curd','coke', 'fanta' ]
-customer_order{name:'order-24'}   ------> item{name: ['chips', 'chikki' ]
-customer_order{name:'order-25'}   ------> item{name: ['maggi' ]
-customer_order{name:'order-26'}   ------> item{name: ['burger', 'fanta' ]
-customer_order{name:'order-27'}   ------> item{name: ['popcorn', 'nuts', 'chips' ,'fanta', 'hot dogs']
-customer_order{name:'order-28'}   ------> item{name: ['', '', '' ]
-customer_order{name:'order-29'}   ------> item{name: ['', '', '' ]
-customer_order{name:'order-30'}   ------> item{name: ['', '', '' ]
-customer_order{name:'order-31'}   ------> item{name: ['', '', '' ]
-customer_order{name:'order-32'}   ------> item{name: ['', '', '' ]
-customer_order{name:'order-33'}   ------> item{name: ['', '', '' ]
-customer_order{name:'order-34'}   ------> item{name: ['', '', '' ]
-customer_order{name:'order-35'}   ------> item{name: ['', '', '' ]
-customer_order{name:'order-36'}   ------> item{name: ['', '', '' ]
-customer_order{name:'order-37'}   ------> item{name: ['', '', '' ]
-customer_order{name:'order-38'}   ------> item{name: ['', '', '' ]
-customer_order{name:'order-39'}   ------> item{name: ['', '', '' ]
-customer_order{name:'order-40'}   ------> item{name: ['', '', '' ]
+order{name:'order-1'}    ------> item{name: ['cheese', 'butter', 'nuts' ]
+order{name:'order-2'}    ------> item{name: ['milkshake', 'soft cake', 'fries', 'coke' ]
+order{name:'order-3'}    ------> item{name: ['coke', 'fanta', 'chips' ]
+order{name:'order-4'}    ------> item{name: ['chips', 'cheese' ]
+order{name:'order-5'}    ------> item{name: ['biscuit', 'hot dogs sauce', 'chikki', 'juice' ]
+order{name:'order-6'}    ------> item{name: ['popcorn', 'tea' ]
+order{name:'order-7'}    ------> item{name: ['coffee' ]
+order{name:'order-8'}    ------> item{name: ['papad', 'coffee', 'wheat', 'tooth brush' ]
+order{name:'order-9'}    ------> item{name: ['rajma', 'tooth brush', 'haldi' ]
+order{name:'order-10'}   ------> item{name: ['hair oil', 'floor cleaner', 'eggs',  'udad dal' ] 
+order{name:'order-11'}   ------> item{name: ['udad dal', 'mung dal' ]
+order{name:'order-12'}   ------> item{name: ['chikki', 'hot dogs' ]
+order{name:'order-13'}   ------> item{name: ['wheat', 'rice' ]
+order{name:'order-14'}   ------> item{name: ['hamburgers' ]
+order{name:'order-15'}   ------> item{name: ['chicken nuggets' ]
+order{name:'order-16'}   ------> item{name: ['banana', 'grapes', 'apple' ]
+order{name:'order-17'}   ------> item{name: ['saffron' ]
+order{name:'order-18'}   ------> item{name: ['noodles' ]
+order{name:'order-19'}   ------> item{name: ['jeera', 'coffee', 'bread', 'cheese' ]
+order{name:'order-20'}   ------> item{name: ['bread', 'cheese', 'jam', 'butter' ]
+order{name:'order-21'}   ------> item{name: ['maggi', 'honey' ]
+order{name:'order-22'}   ------> item{name: ['noodles', 'vinegar' ]
+order{name:'order-23'}   ------> item{name: ['udad dal', 'soybean', 'curd','coke', 'fanta' ]
+order{name:'order-24'}   ------> item{name: ['chips', 'chikki' ]
+order{name:'order-25'}   ------> item{name: ['maggi' ]
+order{name:'order-26'}   ------> item{name: ['burger', 'fanta' ]
+order{name:'order-27'}   ------> item{name: ['popcorn', 'nuts', 'chips' ,'fanta', 'hot dogs']
+order{name:'order-28'}   ------> item{name: ['', '', '' ]
+order{name:'order-29'}   ------> item{name: ['', '', '' ]
+order{name:'order-30'}   ------> item{name: ['', '', '' ]
+order{name:'order-31'}   ------> item{name: ['', '', '' ]
+order{name:'order-32'}   ------> item{name: ['', '', '' ]
+order{name:'order-33'}   ------> item{name: ['', '', '' ]
+order{name:'order-34'}   ------> item{name: ['', '', '' ]
+order{name:'order-35'}   ------> item{name: ['', '', '' ]
+order{name:'order-36'}   ------> item{name: ['', '', '' ]
+order{name:'order-37'}   ------> item{name: ['', '', '' ]
+order{name:'order-38'}   ------> item{name: ['', '', '' ]
+order{name:'order-39'}   ------> item{name: ['', '', '' ]
+order{name:'order-40'}   ------> item{name: ['', '', '' ]
+order{name:'order-41'}   ------> item{name: ['', '', '' ]
+order{name:'order-42'}   ------> item{name: ['', '', '' ]
+order{name:'order-43'}   ------> item{name: ['', '', '' ]
+order{name:'order-44'}   ------> item{name: ['', '', '' ]
+order{name:'order-45'}   ------> item{name: ['', '', '' ]
+order{name:'order-46'}   ------> item{name: ['', '', '' ]
+order{name:'order-47'}   ------> item{name: ['', '', '' ]
+order{name:'order-48'}   ------> item{name: ['', '', '' ]
+order{name:'order-49'}   ------> item{name: ['', '', '' ]
+order{name:'order-50'}   ------> item{name: ['', '', '' ]
 
-match (n:customer_order{name:'order-1'}), (m:item) where m.name in  ['cheese', 'butter', 'nuts' ] 
-create(n) - [:orderItems] -> (m) return n, m
 
 
+match (n:order{name:'order-1'}), (m:item) where m.name in  ['cheese', 'butter'] 
+create(n) - [:orderdetails{r1:ofBrand{name:'amul'}}] -> (m) return n, m
+
+match (n:order{name:'order-1'}), (m:item) where m.name in  ['nuts'] 
+create(n) - [:orderdetails{r1:ofBrand{name:'haldiram'}}] -> (m) return n, m
 
 
 
