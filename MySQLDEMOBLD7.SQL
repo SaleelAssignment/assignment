@@ -117,6 +117,43 @@ drop table if exists overtime;
 drop table if exists sourceNames;
 drop table if exists targetNames;
 drop table if exists phonecall;
+drop table if exists fullname;
+drop table if exists numbers;
+
+
+create table numbers(id int);
+
+insert into numbers values(1);
+insert into numbers values(2);
+insert into numbers values(3);
+insert into numbers values(4);
+insert into numbers values(6);
+insert into numbers values(7);
+insert into numbers values(8);
+insert into numbers values(9);
+insert into numbers values(15);
+insert into numbers values(16);
+insert into numbers values(19);
+insert into numbers values(20);
+insert into numbers values(21);
+insert into numbers values(22);
+insert into numbers values(25);
+insert into numbers values(26);
+insert into numbers values(27);
+
+create table fullname(id int primary key auto_increment, ename varchar(100));
+
+insert into fullname values(default, 'saleel');
+insert into fullname values(default, 'saleel bagde');
+insert into fullname values(default, 'saleel sudheer bagde');
+insert into fullname values(default, 'sharmin bagde');
+insert into fullname values(default, 'vrushali bagde');
+insert into fullname values(default, 'vrushali saleel bagde');
+insert into fullname values(default, 'sharmin sudheer bagde');
+insert into fullname values(default, 'sharmin');
+insert into fullname values(default, 'kaushal sudheer bagde');
+insert into fullname values(default, 'ruhan bagde');
+insert into fullname values(default, 'natasha kaushal bagde');
 
 create table phonecall(id int primary key auto_increment, fromphone bigint, tophone bigint, calldate date, fromtime time, totime time, duration int);
 
