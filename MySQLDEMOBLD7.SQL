@@ -119,9 +119,60 @@ drop table if exists targetNames;
 drop table if exists phonecall;
 drop table if exists fullname;
 drop table if exists numbers;
-
+drop table if exists shop;
 
 create table numbers(id int);
+
+create table shop (itemName varchar(20), color varchar(20),size varchar(20), quantity int);
+
+insert into shop values("skirt", "dark", "small", 2);
+insert into shop values("skirt", "dark", "medium", 5);
+insert into shop values("skirt", "dark", "large", 1);
+insert into shop values("skirt", "pastel", "small", 11);
+insert into shop values("skirt", "pastel", "medium", 9);
+insert into shop values("skirt", "pastel", "large", 15);
+insert into shop values("skirt", "white", "small", 2);
+insert into shop values("skirt", "white", "medium", 5);
+insert into shop values("skirt", "white", "large", 3);
+insert into shop values("dress", "dark", "small", 2);
+insert into shop values("dress", "dark", "medium", 6);
+insert into shop values("dress", "dark", "large", 12);
+insert into shop values("dress", "pastel", "small", 4);
+insert into shop values("dress", "pastel", "medium", 3);
+insert into shop values("dress", "pastel", "large", 3);
+insert into shop values("dress", "white", "small", 2);
+insert into shop values("dress", "white", "medium", 3);
+insert into shop values("dress", "white", "large", 0);
+insert into shop values("shirt", "dark", "small", 2);
+insert into shop values("shirt", "dark", "medium", 6);
+insert into shop values("shirt", "dark", "large", 6);
+insert into shop values("shirt", "pastel", "small", 4);
+insert into shop values("shirt", "pastel", "medium", 1);
+insert into shop values("shirt", "pastel", "large", 2);
+insert into shop values("shirt", "white", "small", 17);
+insert into shop values("shirt", "white", "medium", 1);
+insert into shop values("shirt", "white", "large", 10);
+insert into shop values("pants", "dark", "small", 14);
+insert into shop values("pants", "dark", "medium", 6);
+insert into shop values("pants", "dark", "large", 0);
+insert into shop values("pants", "pastel", "small", 1);
+insert into shop values("pants", "pastel", "medium", 0);
+insert into shop values("pants", "pastel", "large", 1);
+insert into shop values("pants", "white", "small", 3);
+insert into shop values("pants", "white", "medium", 0);
+insert into shop values("pants", "white", "large", 2);
+insert into shop values("pants", "brown", "medium", 12);
+insert into shop values("pants", "brown", "large", 13);
+insert into shop values("Jeans", "blue", "medium", 7);
+insert into shop values("Jeans", "black", "medium", 4);
+insert into shop values("Jeans", "white", "medium", 6);
+insert into shop values("Jeans", "denim", "medium", 3);
+insert into shop values("Jeans", "blue", "small", 8);
+insert into shop values("Jeans", "black", "small", 9);
+insert into shop values("Jeans", "white", "small", 23);
+insert into shop values("Jeans", "grey", "small", 12);
+insert into shop values("Jeans", "grey", "medium", 7);
+
 
 insert into numbers values(1);
 insert into numbers values(2);
