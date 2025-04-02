@@ -2858,8 +2858,11 @@ INSERT into ORDERS(ONUM, AMT, ODATE, CNUM, SNUM, TYPE, paymentType) values (5020
 INSERT into ORDERS(ONUM, AMT, ODATE, CNUM, SNUM, TYPE, paymentType) values (5034,120.16,'1996-11-03 13:37',null,1003, 'Direct', 'COD');
 INSERT into ORDERS(ONUM, AMT, ODATE, CNUM, SNUM, TYPE, paymentType) values (5001,325.23,'1996-11-04 15:21',null,1002, 'Direct', 'GPay');
 
+update orders set type='Online';
+update orders set type='Cash' where paymentType='COD';
+
 update orders set registered=true where type='Online';
-update orders set registered=false where type='Direct';
+update orders set registered=false where type='Cash';
 
 UPDATE ord SET STATUS = 'In Process' WHERE (ORDID = '601');
 UPDATE ord SET STATUS = 'On Hold' WHERE (ORDID = '602');
