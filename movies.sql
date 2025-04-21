@@ -47,7 +47,8 @@ INSERT INTO `movies` (`MovieID`, `title`, `movie_year`, `movie_time`, `language`
 INSERT INTO `movies` (`MovieID`, `title`, `movie_year`, `movie_time`, `language`, `releaseCountry`) VALUES ('914', 'American Beauty', 1999, '122', 'English', 'UK');
 INSERT INTO `movies` (`MovieID`, `title`, `movie_year`, `movie_time`, `language`, `releaseCountry`) VALUES ('920', 'Donnie Darko', 2001, '113', 'English', 'UK');
 INSERT INTO `movies` (`MovieID`, `title`, `movie_year`, `movie_time`, `language`, `releaseCountry`) VALUES ('907', 'Eyes Wide Shut', 1999, '159', 'English', 'UK');
-
+insert into movies values(929, 'Sholay', 1975, 375, 'Hindi', '1975-08-15', 'IN');
+insert into movies values(930, 'Deewaar', 1975, 335, 'Hindi', '1975-08-15', 'IN');
 
 create table if not exists actor (
 actorID int primary key,
