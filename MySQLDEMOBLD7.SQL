@@ -123,6 +123,13 @@ drop table if exists numbers;
 drop table if exists shop;
 drop table if exists leading_zeroes;
 drop table if exists COALESCE2;
+drop table if exists order_items;
+
+
+CREATE TABLE order_items (orderdate DATE, item VARCHAR(255));
+INSERT INTO order_items (orderdate, item) VALUES ('2024-03-01', 'Apple'), ('2024-03-01', 'Banana'), ('2024-03-01', 'Apple'), ('2024-03-02', 'Orange'), ('2024-03-02', 'Orange'), ('2024-03-02', 'Mango'), ('2024-03-03', 'Banana'), ('2024-03-03', 'Banana'), ('2024-03-03', 'Mango'), ('2024-03-03', 'Mango'),('2024-03-01', 'Grapes'), ('2024-03-01', 'Grapes'), ('2024-03-01', 'Banana'), ('2024-03-02', 'Orange'), ('2024-03-02', 'Kiwi'), ('2024-03-02', 'Mango'), ('2024-03-03', 'Kiwi'), ('2024-03-03', 'Banana'), ('2024-03-03', 'Kiwi'), ('2024-03-03', 'Grapes');
+
+
 
 CREATE TABLE COALESCE2 (
     CenterID VARCHAR(10),
