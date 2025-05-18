@@ -122,32 +122,29 @@ drop table if exists fullname;
 drop table if exists numbers;
 drop table if exists shop;
 drop table if exists leading_zeroes;
-drop table if exists COALESCE2;
+drop table if exists stages;
 drop table if exists order_items;
+drop table if exists Teams;
+DROP TABLE IF EXISTS batch_schedule;
+
+create table batch_schedule(batchID int primary key auto_increment, batchName varchar(10), startDate date, endDate date);
+
+insert into batch_schedule values(default, 'Batch-1','2015-02-01', '2015-02-04'), (default, 'Batch-1','2015-02-02', '2015-02-05'),(default, 'Batch-1',  '2015-02-03', '2015-02-07'), (default, 'Batch-1','2015-02-04', '2015-02-06'), (default, 'Batch-1',  '2015-02-06', '2015-02-09'), (default, 'Batch-1','2015-02-08', '2015-02-10'), (default, 'Batch-1','2015-02-10', '2015-02-11');
+
+
+CREATE TABLE Teams (TeamID INT PRIMARY KEY, Members TEXT);
+
+INSERT INTO Teams (TeamID, Members) VALUES(1, 'Chris, Evan, Marty, Eva'),(2, 'Jake, Olivia'),(3, 'Sophia, Liam, Noah, Emma'),(4, 'Ava, Lucas, Mia, Ethan, Amelia'),(5, 'Benjamin, Charlotte'),(6, 'Harper, Henry, Evelyn, Daniel, Ella'),(7, 'Michael, Emily, Alexander'),(8, 'James, Abigail, William, Isabella, Jack, Grace'),(9, 'Sebastian, Chloe'),(10, 'David, Lily, Samuel, Madison');
 
 
 CREATE TABLE order_items (orderdate DATE, item VARCHAR(255));
+
 INSERT INTO order_items (orderdate, item) VALUES ('2024-03-01', 'Apple'), ('2024-03-01', 'Banana'), ('2024-03-01', 'Apple'), ('2024-03-02', 'Orange'), ('2024-03-02', 'Orange'), ('2024-03-02', 'Mango'), ('2024-03-03', 'Banana'), ('2024-03-03', 'Banana'), ('2024-03-03', 'Mango'), ('2024-03-03', 'Mango'),('2024-03-01', 'Grapes'), ('2024-03-01', 'Grapes'), ('2024-03-01', 'Banana'), ('2024-03-02', 'Orange'), ('2024-03-02', 'Kiwi'), ('2024-03-02', 'Mango'), ('2024-03-03', 'Kiwi'), ('2024-03-03', 'Banana'), ('2024-03-03', 'Kiwi'), ('2024-03-03', 'Grapes');
 
 
+CREATE TABLE stages(CenterID VARCHAR(10), Case_ID INT, Stage1 DATE, Stage2 DATE, Stage3 DATE, Stage4 DATE, Stage5 DATE);
 
-CREATE TABLE COALESCE2 (
-    CenterID VARCHAR(10),
-    Case_ID INT,
-    Stage1 DATE,
-    Stage2 DATE,
-    Stage3 DATE,
-    Stage4 DATE,
-    Stage5 DATE
-);
-
-INSERT INTO COALESCE2 (CenterID, Case_ID, Stage1, Stage2, Stage3, Stage4, Stage5) VALUES
-('C1', 1, '2024-01-01', NULL, NULL, '2024-01-13', NULL),
-('C1', 2, '2024-01-05', '2024-01-10', NULL, NULL, NULL),
-('C2', 3, NULL, '2024-01-10', NULL, NULL, '2024-01-20'),
-('C3', 4, '2024-01-05',  '2024-01-12', '2024-01-12', '2024-01-14', '2024-01-20'),
-('C3', 5, '2024-01-10', '2024-01-15', NULL, NULL, NULL),
-('C3', 6, NULL, NULL, NULL, '2024-01-15', NULL);
+INSERT INTO stages(CenterID, Case_ID, Stage1, Stage2, Stage3, Stage4, Stage5) VALUES ('C1', 1, '2024-01-01', NULL, NULL, '2024-01-13', NULL), ('C1', 2, '2024-01-05', '2024-01-10', NULL, NULL, NULL), ('C2', 3, NULL, '2024-01-10', NULL, NULL, '2024-01-20'), ('C3', 4, '2024-01-05',  '2024-01-12', '2024-01-12', '2024-01-14', '2024-01-20'), ('C3', 5, '2024-01-10', '2024-01-15', NULL, NULL, NULL), ('C3', 6, NULL, NULL, NULL, '2024-01-15', NULL);
 
 
 create table leading_zeroes(c1 int); 
@@ -881,8 +878,8 @@ insert into runningServer values(6,'server-6'), (9,'server-9'), (7,'server-7'), 
 
 
 
-create table r(c1 int); 
-insert into r values(-2), (1),(2),(-1),(3),(-2), (1), (2), (1);
+create table r(id int primary key auto_increment, c1 int); 
+insert into r(c1) values(-2), (null),(1),(2),(-1),(null),(3),(-2),(null), (1), (5), (2), (null), (1),(null);
 
 
 create table plumber(pid int, name varchar(20));
@@ -2146,6 +2143,11 @@ VALUES ('1675', '1987-02-01', '1987-02-06', '626', '1987-01-31', '107', null);
  
 INSERT INTO ord (TOTAL, SHIPDATE, STATUSDATE, ORDID, ORDERDATE, CUSTID, COMMPLAN)  
 VALUES ('250', '1987-02-14', '1987-02-22', '627', '1987-02-13', '100', null);
+
+INSERT INTO ord VALUES (628, '1987-03-13 00:00:00', 'A', 100, '1987-03-14 00:00:00','1987-03-15 00:00:00', 'Shipped', 473.93);
+INSERT INTO ord VALUES (629, '1987-03-14 00:00:00', 'A', 100, '1987-03-16 00:00:00','1987-03-17 00:00:00', 'Shipped', 289.99);
+INSERT INTO ord VALUES (630, '1987-02-21 00:00:00', 'D', 104, '1987-02-22 00:00:00','1987-02-23 00:00:00', 'Delivered', 362.12);
+INSERT INTO ord VALUES (631, '1987-02-23 00:00:00', 'F', 104, '1987-02-23 00:00:00','1987-02-24 00:00:00', 'Delivered', 232.87);
 
 
 INSERT INTO ITEM (QTY, PRODID, ORDID, ITEMTOT, ITEMID, ACTUALPRICE)
