@@ -126,6 +126,16 @@ drop table if exists stages;
 drop table if exists order_items;
 drop table if exists Teams;
 DROP TABLE IF EXISTS batch_schedule;
+DROP TABLE IF EXISTS city;
+DROP TABLE IF EXISTS cricket_Teams;
+
+CREATE TABLE cricket_Teams (Team_Names Varchar(100));
+
+INSERT INTO cricket_Teams VALUES ('India'),('Pakistan'),('Australia'),('Afghanistan');
+
+Create table city(id int, CityName varchar(100));
+
+insert into city(id ,CityName) values (1,'Baroda'), (2,'Surat'), (3,'Bharuch'), (4,'Rajkot'), (5,'Jamnagar');
 
 create table batch_schedule(batchID int primary key auto_increment, batchName varchar(10), startDate date, endDate date);
 
