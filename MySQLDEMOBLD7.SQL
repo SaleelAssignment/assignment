@@ -128,6 +128,11 @@ drop table if exists Teams;
 DROP TABLE IF EXISTS batch_schedule;
 DROP TABLE IF EXISTS city;
 DROP TABLE IF EXISTS cricket_Teams;
+DROP TABLE IF EXISTS order1;
+
+CREATE TABLE order1 (CustomerId INT, ItemId INT, ItemName VARCHAR(100), Quantity INT, Price INT);
+
+INSERT INTO order1 VALUES(1,1,'Butter',3,35), (1,2,'Bread',1,20), (1,3,'Soap',4,23), (1,4,'Biscuit',2,15), (2,10,'Chocolate',8,10), (2,11,'Ice-Cream',1,40), (2,12,'Almonds',2,110), (2,13,'Coke',5,25), (3,12,'Almonds',7,110), (3,13,'Coke',8,25);
 
 CREATE TABLE cricket_Teams (Team_Names Varchar(100));
 
