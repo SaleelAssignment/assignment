@@ -129,6 +129,31 @@ DROP TABLE IF EXISTS batch_schedule;
 DROP TABLE IF EXISTS city;
 DROP TABLE IF EXISTS cricket_Teams;
 DROP TABLE IF EXISTS order1;
+DROP TABLE IF EXISTS sales1;
+DROP TABLE IF EXISTS null1;
+DROP TABLE IF EXISTS null2;
+DROP TABLE IF EXISTS ClassAndSubjects;
+
+create table ClassAndSubjects (class char, subjects varchar(10));
+insert into ClassAndSubjects values('A','Maths'), ('B','English'), ('A','Science'), ('B','History'), ('A','Physics'), ('B','Maths'), ('A','Biology'), ('B','Social'), ('A','English'), ('B','Chemistry');
+
+create table null1(id int, productName varchar(10));
+create table null2(id int, price int);
+
+insert into null1 values(1, 'Bread'),(2, 'Cheese'), (3, 'Butter'), (null, 'Jam');
+insert into null2 values(1, 45),(2, 175), (3, 125), (null, 120), (null, 140);
+
+CREATE TABLE sales1 (salesID INT PRIMARY KEY, customerName VARCHAR(100), amount DECIMAL(10,2), status_flags INT);
+
+INSERT INTO sales1 VALUES (1, 'Saleel', 100.00, 3);
+INSERT INTO sales1 VALUES (2, 'Sharmin', 80.00, 5);
+INSERT INTO sales1 VALUES (3, 'Vrishali', 120.00, 19);
+INSERT INTO sales1 VALUES (4, 'Ruhan', 1134.00, 7);
+INSERT INTO sales1 VALUES (5, 'Bandish', 534.00, 9);
+INSERT INTO sales1 VALUES (6, 'Supriya', 153.00, 4);
+INSERT INTO sales1 VALUES (7, 'Nitish', 102.00, 2);
+INSERT INTO sales1 VALUES (8, 'Neel', 78.00, 4);
+INSERT INTO sales1 VALUES (9, 'KAushal', 38.00, 6);
 
 CREATE TABLE order1 (CustomerId INT, ItemId INT, ItemName VARCHAR(100), Quantity INT, Price INT);
 
