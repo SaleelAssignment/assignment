@@ -135,6 +135,14 @@ DROP TABLE IF EXISTS null2;
 DROP TABLE IF EXISTS ClassAndSubjects;
 DROP TABLE IF EXISTS swapCity;
 DROP TABLE IF EXISTS atm;
+DROP TABLE IF EXISTS sourceCity;
+DROP TABLE IF EXISTS targetCity;
+
+create table sourceCity(id int, cityName varchar(10));
+create table targetCity(id int, cityName varchar(10));
+
+insert into sourceCity values(1,'Baroda'),(2,'Surat'),(3,'Rajkot'),(4,'Anand');
+insert into targetCity values(1,'Baroda'),(2,'Surat'),(4,'Bharuch'),(5,'Bhuj');
 
 Create table atm (transactionID int, merchantID int, credit_card_id int, amount int);
 
