@@ -138,6 +138,7 @@ DROP TABLE IF EXISTS atm;
 DROP TABLE IF EXISTS sourceCity;
 DROP TABLE IF EXISTS targetCity;
 
+
 create table sourceCity(id int, cityName varchar(10));
 create table targetCity(id int, cityName varchar(10));
 
