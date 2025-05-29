@@ -138,7 +138,7 @@ DROP TABLE IF EXISTS atm;
 
 Create table atm (transactionID int, merchantID int, credit_card_id int, amount int);
 
-insert into atm values (1, 101, 1, 100), (2, 101, 1, 100), (3, 101, 1, 100), (4, 102, 2, 300), (5, 102, 2, 400), (6, 103, 1, 300), (7, 103, 2, 400);
+insert into atm values (1, 101, 1, 100), (2, 101, 1, 100), (3, 101, 1, 100), (4, 102, 2, 300), (5, 102, 2, 400), (6, 103, 1, 150), (7, 103, 2, 225), (8, 104, 1, 127), (9, 104, 3, 145);
 
 create table swapCity(id int, ename varchar(10), cityName varchar(10));
 
