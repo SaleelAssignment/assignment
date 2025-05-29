@@ -133,6 +133,11 @@ DROP TABLE IF EXISTS sales1;
 DROP TABLE IF EXISTS null1;
 DROP TABLE IF EXISTS null2;
 DROP TABLE IF EXISTS ClassAndSubjects;
+DROP TABLE IF EXISTS swapCity;
+
+create table swapCity(id int, ename varchar(10), cityName varchar(10));
+
+insert into swapCity values(1,'Saleel','Baroda'), (2,'Sharmin','Rajkot'), (3,'Vrushali','Surat'), (4,'Ruhan','Bharuch'), (5,'Nitish','Jamnagar'), (6,'Deep','Anand'), (7,'Neel','Bhuj');
 
 create table ClassAndSubjects (class char, subjects varchar(10));
 insert into ClassAndSubjects values('A','Maths'), ('B','English'), ('A','Science'), ('B','History'), ('A','Physics'), ('B','Maths'), ('A','Biology'), ('B','Social'), ('A','English'), ('B','Chemistry');
