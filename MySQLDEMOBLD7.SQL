@@ -137,7 +137,22 @@ DROP TABLE IF EXISTS swapCity;
 DROP TABLE IF EXISTS atm;
 DROP TABLE IF EXISTS sourceCity;
 DROP TABLE IF EXISTS targetCity;
+DROP TABLE IF EXISTS student;
+DROP TABLE IF EXISTS Facebook;
+DROP TABLE IF EXISTS LinkedIn;
 
+
+CREATE TABLE student(studentID INT PRIMARY KEY, name VARCHAR(45));
+
+CREATE TABLE Facebook(facebookID INT PRIMARY KEY, studentID INT, name VARCHAR(45), location VARBINARY(45));
+
+CREATE TABLE LinkedIn(linkedInID INT PRIMARY KEY, studentID INT, name VARCHAR(45), location VARBINARY(45));
+
+insert into student values(1001, 'Saleel'), (1002, 'Sharmin'), (1003, 'Vrushali'), (1005, 'Ruhan'), (1006, 'Neel'), (1007, 'Deep'), (1008, 'Nitish'), (1009, 'Gau'), (1010, 'Mai'), (1011, 'Bipin'), (1012, 'Natasha'), (1013, 'Bandish');
+
+insert into Facebook values(1, 1006, 'Gabbar Singh', 'Nasik'), (2, 1008, 'Shadow King', 'Pune'), (3, 1009, 'FB Star', 'Pune'), (4, 1010, 'ʛʜost Ʀiɗɘʀ', 'Pune'), (5, 1011, 'The Rockstar', 'Pune');
+
+insert into LinkedIn values(1, 1006, 'Neel Save', 'Nasik'), (2, 1008, 'Nitish Patil', 'Pune'), (3, 1009, 'Gaurav', 'Pune'), (4, 1001, 'Saleel', 'Baroda'), (5, 1002, 'Sharmin', 'Pune');
 
 create table sourceCity(id int, cityName varchar(10));
 create table targetCity(id int, cityName varchar(10));
@@ -405,7 +420,7 @@ insert into job_list values(default, null, 'React');
 insert into job_list values(default, null, 'Javascript');
 insert into job_list values(default, null, 'Angular');
 insert into job_list values(default, null, 'Express');
-insert into job_list values(default, 'Data Scientsst', 'Python');
+insert into job_list values(default, 'Data Scientists', 'Python');
 insert into job_list values(default, null, 'ML');
 insert into job_list values(default, null, 'AI');
 insert into job_list values(default, null, 'Ruby');
