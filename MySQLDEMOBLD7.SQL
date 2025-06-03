@@ -778,14 +778,14 @@ create table traintimetable(id int auto_increment primary key, trainID int, stat
 insert into traintimetable(id, trainID, stationname, timing) values(default, 22863, 'mumbai central', '08:30:00');
 insert into traintimetable(id, trainID, stationname, timing) values(default, 22863, 'surat', '12:40:13');
 insert into traintimetable(id, trainID, stationname, timing) values(default, 22863, 'baroda', '14:42:00');
-insert into traintimetable(id, trainID, stationname, timing) values(default, 22863, 'ahmedabad JN', '17:10:00');
+insert into traintimetable(id, trainID, stationname, timing) values(default, 22863, 'ahmednagar JN', '17:10:00');
 insert into traintimetable(id, trainID, stationname, timing) values(default, 22863, 'surendranagar', '20:00:00');
 insert into traintimetable(id, trainID, stationname, timing) values(default, 22863, 'rajkot JN', '23:40:00');
 insert into traintimetable(id, trainID, stationname, timing) values(default, 22863, 'hapa', '00:05:00');
 insert into traintimetable(id, trainID, stationname, timing) values(default, 22868, 'pune JN', '17:20:00');
 insert into traintimetable(id, trainID, stationname, timing) values(default, 22868, 'uruli', '17:47:13');
 insert into traintimetable(id, trainID, stationname, timing) values(default, 22868, 'daund chord line', '18:27:00');
-insert into traintimetable(id, trainID, stationname, timing) values(default, 22868, 'ahmadnagar', '20:10:00');
+insert into traintimetable(id, trainID, stationname, timing) values(default, 22868, 'ahmednagar', '20:10:00');
 insert into traintimetable(id, trainID, stationname, timing) values(default, 22868, 'belapur', '21:15:00');
 insert into traintimetable(id, trainID, stationname, timing) values(default, 22868, 'kopargaon', '21:57:00');
 insert into traintimetable(id, trainID, stationname, timing) values(default, 22868, 'manmad JN', '23:25:13');
