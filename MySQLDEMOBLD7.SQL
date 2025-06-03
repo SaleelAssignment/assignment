@@ -140,7 +140,15 @@ DROP TABLE IF EXISTS targetCity;
 DROP TABLE IF EXISTS student;
 DROP TABLE IF EXISTS Facebook;
 DROP TABLE IF EXISTS LinkedIn;
+DROP TABLE IF EXISTS cricketWinnerTeam;
 
+create table cricketWinnerTeam(Team1 varchar(20), Team2 varchar(20), winner varchar(20));
+
+INSERT INTO cricketWinnerTeam values('India','SL','India');
+INSERT INTO cricketWinnerTeam values('SL','Aus','Aus');
+INSERT INTO cricketWinnerTeam values('SA','Eng','Eng');
+INSERT INTO cricketWinnerTeam values('Eng','NZ','NZ');
+INSERT INTO cricketWinnerTeam values('Aus','India','India');
 
 CREATE TABLE student(studentID INT PRIMARY KEY, name VARCHAR(45));
 
