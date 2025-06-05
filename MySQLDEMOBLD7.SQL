@@ -122,6 +122,8 @@ drop table if exists fullname;
 drop table if exists numbers;
 drop table if exists shop;
 drop table if exists leading_zeroes;
+
+/* ------------------------------ */
 drop table if exists stages;
 drop table if exists order_items;
 drop table if exists Teams;
@@ -142,6 +144,47 @@ DROP TABLE IF EXISTS Facebook;
 DROP TABLE IF EXISTS LinkedIn;
 DROP TABLE IF EXISTS cricketWinnerTeam;
 DROP TABLE IF EXISTS brands;
+DROP TABLE IF EXISTS food_category_tags;
+DROP TABLE IF EXISTS food_items;
+
+create table food_category_tags(tag int, type varchar(20));
+
+insert into food_category_tags values(1,'Perishable'), (2,'Beverage'), (4,'Bakery'), (8,'Staple'), (16,'Dairy'), (32,'Packaged'), (64,'Frozen'), (128,'Spices'), (256,'Snacks'), (512,'Instant'), (1024,'Meat'), (2048,'Poultry');
+
+create table food_items(category varchar(20), tag int, type varchar(40));
+
+insert into food_items values('fresh fruits',1, '(Perishable)');
+insert into food_items values('vegetables', 1, '(Perishable)');
+insert into food_items values('meat', 1089, '(Perishable, Frozen, Meat)'); 
+insert into food_items values('fish', 65, '(Perishable, Frozen)'); 
+insert into food_items values('chicken', 2113,  '(Perishable, Frozen, Poultry)'); 
+insert into food_items values('juice', 2, '(Beverage)'); 
+insert into food_items values('tea', 2, '(Beverage)'); 
+insert into food_items values('coffee', 2, '(Beverage)'); 
+insert into food_items values('coke', 2, '(Beverage)'); 
+insert into food_items values('bread', 36, '(Bakery, Packaged)'); 
+insert into food_items values('cakes', 36,  '(Bakery, Packaged)'); 
+insert into food_items values('butter', 48 ,'(Dairy, Packaged)'); 
+insert into food_items values('cheese', 48, '(Dairy, Packaged)'); 
+insert into food_items values('cookies', 36, '(Bakery, Packaged)'); 
+insert into food_items values('milk', 17, '(Perishable, Dairy)'); 
+insert into food_items values('biscuits', 32, '(Packaged)'); 
+insert into food_items values('noodles', 32, '(Packaged)'); 
+insert into food_items values('frozen beans', 64, '(Frozen)'); 
+insert into food_items values('chicken nuggets', 64, '(Frozen)'); 
+insert into food_items values('ice cream', 64, '(Frozen)'); 
+insert into food_items values('instant noodles',  512, '(Instant)'); 
+insert into food_items values('ready rotis', 512, '(Instant)'); 
+insert into food_items values('frozen meals', 512, '(Instant)');
+insert into food_items values('namkeen', 256, '(Snacks)'); 
+insert into food_items values('ladoos', 257, '(Perishable, Snacks)'); 
+insert into food_items values('chips', 256, '(Snacks)'); 
+insert into food_items values('samosa', 256, '(Snacks)');
+insert into food_items values('bun', 4, '(Bakery)');
+insert into food_items values('pai', 4, '(Bakery)');
+insert into food_items values('rice', 8, '(Staple)');
+insert into food_items values('wheat', 8, '(Staple)');
+
 
 create table brands(category varchar(20), brandName varchar(20));
 
