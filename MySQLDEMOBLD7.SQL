@@ -146,8 +146,45 @@ DROP TABLE IF EXISTS cricketWinnerTeam;
 DROP TABLE IF EXISTS brands;
 DROP TABLE IF EXISTS food_category_tags;
 DROP TABLE IF EXISTS food_items;
+DROP TABLE IF EXISTS Activity;
+
+CREATE TABLE Activity (machine_id INT, process_id INT, activity_type VARCHAR(10), timestamp DECIMAL(10,3));
+
+INSERT INTO Activity (machine_id, process_id, activity_type, timestamp) VALUES (0, 0, 'start', 0.712), (0, 0, 'end', 1.520), (0, 1, 'start', 3.140), (0, 1, 'end', 4.120), (1, 0, 'start', 0.550), (1, 0, 'end', 1.550), (1, 1, 'start', 0.430), (1, 1, 'end', 1.420), (2, 0, 'start', 4.100), (2, 0, 'end', 4.512), (2, 1, 'start', 2.500), (2, 1, 'end', 5.000);
 
 create table food_category_tags(tag int, type varchar(20));
+
+/* 
+fresh fruits		1 		   			- 1				= 1		(Perishable)
+vegetables			1 	        		- 1 			= 1		(Perishable)
+meat				1 and 64 and 1024  	- 1 + 64 + 1024 = 1089  (Perishable, Frozen, Meat)
+fish				1 and 64		    - 1 + 64 		= 65    (Perishable, Frozen)
+chicken				1 and 64 and 2048  	- 1 + 64 + 2048 = 2113  (Perishable, Frozen, Poultry)
+juice				2 		    		- 2				= 2		(Beverage) 
+tea					2 		    		- 2				= 2		(Beverage)
+coffee          	2 		   			- 2				= 2		(Beverage)
+coke     			2 		    		- 2				= 2		(Beverage)
+bread				4 and 32    		- 4 + 32		= 36	(Bakery, Packaged)
+cakes				4 and 32		    - 4 + 32		= 36	(Bakery, Packaged)
+butter				16 and 32 			- 16 + 32		= 48	(Dairy, Packaged)
+cheese          	16 and 32   		- 16 + 32		= 48	(Dairy, Packaged)
+cookies         	4 and 32   		    - 4 + 32		= 36	(Bakery, Packaged)
+bun					4					- 4				= 4		(Bakery)
+milk				1 and 16   		    - 1 + 16		= 17	(Perishable, Dairy)
+biscuits	    	32		    		- 32			= 32	(Packaged)
+noodles				32		    		- 32			= 32	(Packaged)
+frozen beans		64				    - 64			= 64	(Frozen)
+chicken nuggets		64					- 64			= 64	(Frozen)
+ice cream           64					- 64			= 64	(Frozen)
+pie 				4					- 4				= 4		(Bakery)
+instant noodles		512					- 512			= 512	(Instant)
+ready rotis			512					- 512			= 512	(Instant)
+frozen meals        512					- 512			= 512	(Instant)
+namkeen				256					- 256 			= 256	(Snacks)
+ladoos				1 and 256			- 1 + 256		= 257	(Perishable, Snacks)
+chips				256					- 256			= 256	(Snacks)
+samosa				256					- 256			= 256	(Snacks)
+*/
 
 insert into food_category_tags values(1,'Perishable'), (2,'Beverage'), (4,'Bakery'), (8,'Staple'), (16,'Dairy'), (32,'Packaged'), (64,'Frozen'), (128,'Spices'), (256,'Snacks'), (512,'Instant'), (1024,'Meat'), (2048,'Poultry');
 
@@ -1747,7 +1784,7 @@ INSERT into STATUS values(default, 1,'New');
 INSERT into STATUS values(default, 2,'Draft');
 INSERT into STATUS values(default, 4,'Approved');
 INSERT into STATUS values(default, 8,'Rejected');
-INSERT into STATUS values(default, 16,'Cancle');
+INSERT into STATUS values(default, 16,'Cancel');
 insert into STATUS values(default, 32,'In Process');
 insert into STATUS values(default, 64,'Send');
 insert into STATUS values(default, 128,'Hold');
