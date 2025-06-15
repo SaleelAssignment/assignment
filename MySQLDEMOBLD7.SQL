@@ -147,6 +147,21 @@ DROP TABLE IF EXISTS brands;
 DROP TABLE IF EXISTS food_category_tags;
 DROP TABLE IF EXISTS food_items;
 DROP TABLE IF EXISTS Activity;
+DROP TABLE IF EXISTS bitwise;
+DROP TABLE IF EXISTS airline_seats;
+
+create table airline_seats(seat_id int, flight_id int, seat_number varchar(20), features int );
+
+INSERT INTO airline_seats (seat_id, flight_id, seat_number, features) VALUES (101, 456, '12A', 73);
+INSERT INTO airline_seats (seat_id, flight_id, seat_number, features) VALUES (102, 456, '12A', 73);
+INSERT INTO airline_seats (seat_id, flight_id, seat_number, features) VALUES (103, 456, '12A', 73);
+INSERT INTO airline_seats (seat_id, flight_id, seat_number, features) VALUES (104, 456, '12A', 73);
+INSERT INTO airline_seats (seat_id, flight_id, seat_number, features) VALUES (105, 456, '12A', 73);
+INSERT INTO airline_seats (seat_id, flight_id, seat_number, features) VALUES (106, 456, '12A', 73);
+
+create table bitwise(features varchar(30), bitvalue int);
+
+insert into bitwise values('Window seat',1), ('Aisle seat',2), ('Exit row',4), ('Extra legroom',8), ('Near restroom',16), ('Power outlet available',32), ('USB charging',64), ('Reclining seat',128), ('Frist class seat',256), ('Business class seat',512), ('Economy class seat',1024);
 
 CREATE TABLE Activity (machine_id INT, process_id INT, activity_type VARCHAR(10), timestamp DECIMAL(10,3));
 
