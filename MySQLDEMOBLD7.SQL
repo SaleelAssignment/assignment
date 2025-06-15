@@ -137,18 +137,46 @@ DROP TABLE IF EXISTS null2;
 DROP TABLE IF EXISTS ClassAndSubjects;
 DROP TABLE IF EXISTS swapCity;
 DROP TABLE IF EXISTS atm;
+
 DROP TABLE IF EXISTS sourceCity;
 DROP TABLE IF EXISTS targetCity;
-DROP TABLE IF EXISTS student;
-DROP TABLE IF EXISTS Facebook;
-DROP TABLE IF EXISTS LinkedIn;
+
 DROP TABLE IF EXISTS cricketWinnerTeam;
 DROP TABLE IF EXISTS brands;
+
 DROP TABLE IF EXISTS food_category_tags;
 DROP TABLE IF EXISTS food_items;
+
 DROP TABLE IF EXISTS Activity;
+
 DROP TABLE IF EXISTS bitwise;
 DROP TABLE IF EXISTS airline_seats;
+
+DROP TABLE IF EXISTS Facebook;
+DROP TABLE IF EXISTS LinkedIn;
+DROP TABLE IF EXISTS student;
+DROP TABLE IF EXISTS room_assigned;
+
+create table room_assigned(studentID int, roomNumber int, startDate date, endDate date);
+
+insert into room_assigned values(1001,1,'2025-02-19','2025-03-14'); 
+insert into room_assigned values(1002,2,'2025-04-13','2025-05-18'); 
+insert into room_assigned values(1003,3,'2025-03-23','2025-06-23'); 
+insert into room_assigned values(1005,4,'2025-06-14','2025-07-07'); 
+insert into room_assigned values(1006,1,'2025-04-09','2025-06-19');
+insert into room_assigned values(1007,2,'2025-03-08','2025-03-31'); 
+insert into room_assigned values(1008,3,'2025-06-28','2025-07-29'); 
+insert into room_assigned values(1009,5,'2025-07-21','2025-09-13'); 
+insert into room_assigned values(1010,6,'2025-05-16','2025-06-30'); 
+insert into room_assigned values(1011,5,'2025-11-05','2025-12-25'); 
+insert into room_assigned values(1012,4,'2025-06-05','2025-07-29');
+insert into room_assigned values(1013,9,'2025-08-03','2025-09-17');
+
+insert into room_assigned values(1005,4,'2024-06-14','2025-07-07'); 
+insert into room_assigned values(1006,1,'2024-04-09','2024-12-19');
+insert into room_assigned values(1007,2,'2024-03-08','2024-11-30'); 
+insert into room_assigned values(1008,3,'2024-06-28','2025-03-12'); 
+insert into room_assigned values(1009,5,'2024-01-21','2025-01-27'); 
 
 create table airline_seats(seat_id int, flight_id int, seat_number varchar(20), features int );
 
@@ -159,7 +187,24 @@ INSERT INTO airline_seats (seat_id, flight_id, seat_number, features) VALUES (10
 INSERT INTO airline_seats (seat_id, flight_id, seat_number, features) VALUES (105, 204, '09L', 336);
 INSERT INTO airline_seats (seat_id, flight_id, seat_number, features) VALUES (106, 876, '24J', 141);
 INSERT INTO airline_seats (seat_id, flight_id, seat_number, features) VALUES (107, 683, '34K', 1034);
-INSERT INTO airline_seats (seat_id, flight_id, seat_number, features) VALUES (108, 456, '13A', 73);
+INSERT INTO airline_seats (seat_id, flight_id, seat_number, features) VALUES (108, 386, '13A', 73);
+
+INSERT INTO airline_seats (seat_id, flight_id, seat_number, features) VALUES (109, 372, '10K', 87);
+INSERT INTO airline_seats (seat_id, flight_id, seat_number, features) VALUES (110, 372, '11K', 91);
+INSERT INTO airline_seats (seat_id, flight_id, seat_number, features) VALUES (111, 372, '12K', 102);
+INSERT INTO airline_seats (seat_id, flight_id, seat_number, features) VALUES (112, 372, '13K', 17);
+INSERT INTO airline_seats (seat_id, flight_id, seat_number, features) VALUES (113, 372, '14K', 259);
+INSERT INTO airline_seats (seat_id, flight_id, seat_number, features) VALUES (114, 372, '15K', 105);
+
+
+INSERT INTO airline_seats (seat_id, flight_id, seat_number, features) VALUES (115, 502, '12K', 1);
+INSERT INTO airline_seats (seat_id, flight_id, seat_number, features) VALUES (116, 502, '13K', 128);
+INSERT INTO airline_seats (seat_id, flight_id, seat_number, features) VALUES (117, 502, '14K', 1);
+INSERT INTO airline_seats (seat_id, flight_id, seat_number, features) VALUES (118, 502, '15K', 128);
+INSERT INTO airline_seats (seat_id, flight_id, seat_number, features) VALUES (119, 503, '12K', 1);
+INSERT INTO airline_seats (seat_id, flight_id, seat_number, features) VALUES (120, 503, '13K', 128);
+INSERT INTO airline_seats (seat_id, flight_id, seat_number, features) VALUES (121, 503, '14K', 1);
+INSERT INTO airline_seats (seat_id, flight_id, seat_number, features) VALUES (122, 503, '15K', 128);
 
 create table bitwise(features varchar(30), bitvalue int);
 
