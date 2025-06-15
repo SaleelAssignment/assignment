@@ -153,11 +153,13 @@ DROP TABLE IF EXISTS airline_seats;
 create table airline_seats(seat_id int, flight_id int, seat_number varchar(20), features int );
 
 INSERT INTO airline_seats (seat_id, flight_id, seat_number, features) VALUES (101, 456, '12A', 73);
-INSERT INTO airline_seats (seat_id, flight_id, seat_number, features) VALUES (102, 456, '12A', 73);
-INSERT INTO airline_seats (seat_id, flight_id, seat_number, features) VALUES (103, 456, '12A', 73);
-INSERT INTO airline_seats (seat_id, flight_id, seat_number, features) VALUES (104, 456, '12A', 73);
-INSERT INTO airline_seats (seat_id, flight_id, seat_number, features) VALUES (105, 456, '12A', 73);
-INSERT INTO airline_seats (seat_id, flight_id, seat_number, features) VALUES (106, 456, '12A', 73);
+INSERT INTO airline_seats (seat_id, flight_id, seat_number, features) VALUES (102, 456, '01F', 521);
+INSERT INTO airline_seats (seat_id, flight_id, seat_number, features) VALUES (103, 346, '17G', 50);
+INSERT INTO airline_seats (seat_id, flight_id, seat_number, features) VALUES (104, 101, '15H', 521);
+INSERT INTO airline_seats (seat_id, flight_id, seat_number, features) VALUES (105, 204, '09L', 336);
+INSERT INTO airline_seats (seat_id, flight_id, seat_number, features) VALUES (106, 876, '24J', 141);
+INSERT INTO airline_seats (seat_id, flight_id, seat_number, features) VALUES (107, 683, '34K', 1034);
+INSERT INTO airline_seats (seat_id, flight_id, seat_number, features) VALUES (108, 456, '13A', 73);
 
 create table bitwise(features varchar(30), bitvalue int);
 
