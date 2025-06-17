@@ -165,6 +165,13 @@ insert into overlapping_Dates values(default, '2025-01-18','2025-01-22');
 insert into overlapping_Dates values(default, '2025-01-07','2025-01-15');
 insert into overlapping_Dates values(default, '2025-01-23','2025-01-26');
 insert into overlapping_Dates values(default, '2025-01-26','2025-01-28');
+
+
+insert into overlapping_Dates values(default, '2025-01-30','2025-02-04');
+insert into overlapping_Dates values(default, '2025-02-07','2025-02-10');
+insert into overlapping_Dates values(default, '2025-02-09','2025-02-12');
+insert into overlapping_Dates values(default, '2025-02-11','2025-02-16');
+
 create table room_assigned(studentID int, roomNumber int, startDate date, endDate date);
 
 insert into room_assigned values(1001,1,'2025-02-19','2025-03-14'); 
