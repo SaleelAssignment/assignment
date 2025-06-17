@@ -156,7 +156,15 @@ DROP TABLE IF EXISTS Facebook;
 DROP TABLE IF EXISTS LinkedIn;
 DROP TABLE IF EXISTS student;
 DROP TABLE IF EXISTS room_assigned;
+DROP TABLE IF EXISTS overlapping_dates;
 
+create table overlapping_dates(id int primary key auto_increment ,start_Date date, end_Date date);
+
+insert into overlapping_Dates values(default, '2025-01-01','2025-01-12');
+insert into overlapping_Dates values(default, '2025-01-18','2025-01-22');
+insert into overlapping_Dates values(default, '2025-01-07','2025-01-15');
+insert into overlapping_Dates values(default, '2025-01-23','2025-01-26');
+insert into overlapping_Dates values(default, '2025-01-26','2025-01-28');
 create table room_assigned(studentID int, roomNumber int, startDate date, endDate date);
 
 insert into room_assigned values(1001,1,'2025-02-19','2025-03-14'); 
