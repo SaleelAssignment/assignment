@@ -157,6 +157,41 @@ DROP TABLE IF EXISTS LinkedIn;
 DROP TABLE IF EXISTS student;
 DROP TABLE IF EXISTS room_assigned;
 DROP TABLE IF EXISTS overlapping_dates;
+DROP TABLE IF EXISTS hall_ticket;
+
+CREATE TABLE hall_ticket(id int, status int);
+
+INSERT INTO  hall_ticket VALUES (1, 1);
+INSERT INTO  hall_ticket VALUES (2, 0);
+INSERT INTO  hall_ticket VALUES (3, 1);
+INSERT INTO  hall_ticket VALUES (4, 1);
+INSERT INTO  hall_ticket VALUES (5, 1);
+INSERT INTO  hall_ticket VALUES (6, 0);
+INSERT INTO  hall_ticket VALUES (7, 1);
+INSERT INTO  hall_ticket VALUES (8, 1);
+INSERT INTO  hall_ticket VALUES (9, 0);
+INSERT INTO  hall_ticket VALUES (10, 1);
+INSERT INTO  hall_ticket VALUES (11, 0);
+INSERT INTO  hall_ticket VALUES (12, 1);
+INSERT INTO  hall_ticket VALUES (13, 0);
+INSERT INTO  hall_ticket VALUES (14, 1);
+INSERT INTO  hall_ticket VALUES (15, 1);
+INSERT INTO  hall_ticket VALUES (16, 0);
+INSERT INTO  hall_ticket VALUES (17, 1);
+INSERT INTO  hall_ticket VALUES (18, 1);
+INSERT INTO  hall_ticket VALUES (19, 1);
+INSERT INTO  hall_ticket VALUES (20, 1);
+INSERT INTO  hall_ticket VALUES (21, 0);
+INSERT INTO  hall_ticket VALUES (22, 1);
+INSERT INTO  hall_ticket VALUES (23, 0);
+INSERT INTO  hall_ticket VALUES (24, 0);
+INSERT INTO  hall_ticket VALUES (25, 1);
+INSERT INTO  hall_ticket VALUES (26, 0);
+INSERT INTO  hall_ticket VALUES (27, 1);
+INSERT INTO  hall_ticket VALUES (28, 1);
+INSERT INTO  hall_ticket VALUES (29, 1);
+INSERT INTO  hall_ticket VALUES (30, 0);
+INSERT INTO  hall_ticket VALUES (31, 0);
 
 create table overlapping_dates(id int primary key auto_increment ,start_Date date, end_Date date);
 
