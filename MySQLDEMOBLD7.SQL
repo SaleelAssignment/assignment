@@ -158,6 +158,38 @@ DROP TABLE IF EXISTS student;
 DROP TABLE IF EXISTS room_assigned;
 DROP TABLE IF EXISTS overlapping_dates;
 DROP TABLE IF EXISTS hall_ticket;
+DROP TABLE IF EXISTS stocks; 
+
+create table stocks(day int primary key auto_increment, companyName varchar(40), stockPrice decimal(8,2));
+
+insert into stocks values(default, 'Reliance Industries Ltd',1429.70);
+insert into stocks values(default, 'Reliance Industries Ltd',1429.70);
+insert into stocks values(default, 'Reliance Industries Ltd',1449.12);
+insert into stocks values(default, 'Reliance Industries Ltd',1200.98);
+insert into stocks values(default, 'Reliance Industries Ltd',1557.97);
+insert into stocks values(default, 'Reliance Industries Ltd',1432.27);
+insert into stocks values(default, 'Reliance Industries Ltd',2642.43);
+
+insert into stocks values(default, 'Only Vimal',3494.93);
+insert into stocks values(default, 'Only Vimal',2833.22);
+insert into stocks values(default, 'Only Vimal',1904.43);
+insert into stocks values(default, 'Only Vimal',4303.98);
+insert into stocks values(default, 'Only Vimal',2357.97);
+insert into stocks values(default, 'Only Vimal',1432.34);
+insert into stocks values(default, 'Only Vimal',5400.43);
+insert into stocks values(default, 'Only Vimal',1402.77);
+insert into stocks values(default, 'Only Vimal',1402.78);
+
+
+insert into stocks values(default, 'Raymonds',1254.00);
+insert into stocks values(default, 'Raymonds',2833.22);
+insert into stocks values(default, 'Raymonds',1904.43);
+insert into stocks values(default, 'Raymonds',4303.98);
+insert into stocks values(default, 'Raymonds',2357.97);
+insert into stocks values(default, 'Raymonds',3423.34);
+insert into stocks values(default, 'Raymonds',5313.43);
+insert into stocks values(default, 'Raymonds',6543.77);
+insert into stocks values(default, 'Raymonds',1402.78);
 
 CREATE TABLE hall_ticket(id int, status int);
 
