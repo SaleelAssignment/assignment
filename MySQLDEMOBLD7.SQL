@@ -156,9 +156,18 @@ DROP TABLE IF EXISTS Facebook;
 DROP TABLE IF EXISTS LinkedIn;
 DROP TABLE IF EXISTS student;
 DROP TABLE IF EXISTS room_assigned;
+
 DROP TABLE IF EXISTS overlapping_dates;
+
 DROP TABLE IF EXISTS hall_ticket;
+
 DROP TABLE IF EXISTS stocks; 
+
+DROP TABLE IF EXISTS cafe;
+
+CREATE TABLE cafe(order_id INT PRIMARY KEY, item VARCHAR(255) NOT NULL);
+
+INSERT INTO cafe(order_id, item) VALUES (1, 'Chow Mein'), (2, 'Pizza'), (3, 'Veg Nuggets'), (4, 'Paneer Butter Masala'), (5, 'Spring Rolls'), (6, 'Veg Burger'), (7, 'Paneer Tikka'), (8, 'Paneer Cheese Masala'), (9, 'Onion Spring Rolls'), (10, 'Momos'), (11, 'Paneer Tikka Masala'), (12, 'Vada Pav'), (13, 'Masala Dosa');
 
 create table stocks(day int primary key auto_increment, companyName varchar(40), stockPrice decimal(8,2));
 
