@@ -71,8 +71,7 @@ DROP TABLE If EXISTS mass_table;
 DROP TABLE If EXISTS runners;
 DROP TABLE If EXISTS races;
 DROP TABLE If EXISTS revenue;
-DROP TABLE If EXISTS food;
-DROP TABLE If EXISTS company;
+
 DROP TABLE If EXISTS candidate;
 DROP TABLE If EXISTS votes;
 DROP TABLE If EXISTS points;
@@ -128,7 +127,9 @@ drop table if exists stages;
 drop table if exists order_items;
 drop table if exists Teams;
 DROP TABLE IF EXISTS batch_schedule;
+
 DROP TABLE IF EXISTS city;
+
 DROP TABLE IF EXISTS ipl;
 DROP TABLE IF EXISTS order1;
 DROP TABLE IF EXISTS sales1;
@@ -143,6 +144,9 @@ DROP TABLE IF EXISTS targetCity;
 
 DROP TABLE IF EXISTS cricketWinnerTeam;
 DROP TABLE IF EXISTS brands;
+
+DROP TABLE If EXISTS food;
+DROP TABLE If EXISTS company;
 
 DROP TABLE IF EXISTS food_category_tags;
 DROP TABLE IF EXISTS food_items;
@@ -165,41 +169,55 @@ DROP TABLE IF EXISTS stocks;
 
 DROP TABLE IF EXISTS cafe;
 
+DROP TABLE IF EXISTS rooms;
+DROP TABLE IF EXISTS room_staff;
+
+
+CREATE TABLE rooms(room_id INT PRIMARY KEY, room_number VARCHAR(10), room_type VARCHAR(20), floor INT, status VARCHAR(20));  /* e.g., Available, Occupied, Maintenance */
+
+CREATE TABLE room_staff(staff_id int, staff_name varchar(20));
+
+INSERT INTO room_staff VALUES(1,'Saleel'), (2,'Rajat'), (3,'Pankaj');
+
+
+INSERT INTO rooms (room_id, room_number, room_type, floor, status) VALUES (1, '101', 'Standard', 1, 'Available'), (2, '102', 'Deluxe', 1, 'Occupied'), (3, '103', 'Suite', 1, 'Maintenance'), (4, '104', 'Standard', 1, 'Available'), (5, '105', 'Deluxe', 1, 'Occupied'), (6, '106', 'Suite', 1, 'Maintenance'), (7, '107', 'Standard', 1, 'Available'), (8, '108', 'Deluxe', 1, 'Occupied'), (9, '109', 'Suite', 1, 'Maintenance'), (10, '110', 'Standard', 1, 'Available'), (11, '201', 'Deluxe', 2, 'Occupied'), (12, '202', 'Suite', 2, 'Maintenance'), (13, '203', 'Standard', 2, 'Available'), (14, '204', 'Deluxe', 2, 'Occupied'), (15, '205', 'Suite', 2, 'Maintenance'), (16, '206', 'Standard', 2, 'Available'), (17, '207', 'Deluxe', 2, 'Occupied'), (18, '208', 'Suite', 2, 'Maintenance'), (19, '209', 'Standard', 2, 'Available'), (20, '210', 'Deluxe', 2, 'Occupied'), (21, '301', 'Deluxe', 3, 'Occupied'), (22, '302', 'Suite', 3, 'Maintenance'), (23, '303', 'Standard', 3, 'Available'), (24, '304', 'Deluxe', 3, 'Occupied'), (25, '305', 'Suite', 3, 'Maintenance'), (26, '306', 'Standard', 3, 'Available'), (27, '307', 'Deluxe', 3, 'Occupied'), (28, '308', 'Suite', 3, 'Maintenance'), (29, '309', 'Standard', 3, 'Available'), (30, '310', 'Deluxe', 3, 'Occupied'), (31, '401', 'Deluxe', 4, 'Occupied'), (32, '402', 'Suite', 4, 'Maintenance'), (33, '403', 'Standard', 4, 'Available'), (34, '404', 'Deluxe', 4, 'Occupied'), (35, '405', 'Suite', 4, 'Maintenance'), (36, '406', 'Standard', 4, 'Available'), (37, '407', 'Deluxe', 4, 'Occupied'), (38, '408', 'Suite', 4, 'Maintenance'), (39, '409', 'Standard', 4, 'Available'), (40, '410', 'Deluxe', 4, 'Occupied');
+
+
 CREATE TABLE cafe(order_id INT PRIMARY KEY, item VARCHAR(255) NOT NULL);
 
 INSERT INTO cafe(order_id, item) VALUES (1, 'Chow Mein'), (2, 'Pizza'), (3, 'Veg Nuggets'), (4, 'Paneer Butter Masala'), (5, 'Spring Rolls'), (6, 'Veg Burger'), (7, 'Paneer Tikka'), (8, 'Paneer Cheese Masala'), (9, 'Onion Spring Rolls'), (10, 'Momos'), (11, 'Paneer Tikka Masala'), (12, 'Vada Pav'), (13, 'Masala Dosa');
 
-create table stocks(day int primary key auto_increment, companyName varchar(40), stockPrice decimal(8,2));
+create table stocks(day int primary key auto_increment, companyName varchar(40), stockPrice decimal(8,2), since year);
 
-insert into stocks values(default, 'Reliance Industries Ltd',1429.70);
-insert into stocks values(default, 'Reliance Industries Ltd',1429.70);
-insert into stocks values(default, 'Reliance Industries Ltd',1449.12);
-insert into stocks values(default, 'Reliance Industries Ltd',1200.98);
-insert into stocks values(default, 'Reliance Industries Ltd',1557.97);
-insert into stocks values(default, 'Reliance Industries Ltd',1432.27);
-insert into stocks values(default, 'Reliance Industries Ltd',2642.43);
+insert into stocks values(default, 'Reliance Industries Ltd', 1429.70, 1966);
+insert into stocks values(default, 'Reliance Industries Ltd', 1429.70, NULL);
+insert into stocks values(default, 'Reliance Industries Ltd', 1449.12, NULL);
+insert into stocks values(default, 'Reliance Industries Ltd', 1200.98, NULL);
+insert into stocks values(default, 'Reliance Industries Ltd', 1557.97, NULL);
+insert into stocks values(default, 'Reliance Industries Ltd', 1432.27, NULL);
+insert into stocks values(default, 'Reliance Industries Ltd', 2642.43, NULL);
 
-insert into stocks values(default, 'Only Vimal',3494.93);
-insert into stocks values(default, 'Only Vimal',2833.22);
-insert into stocks values(default, 'Only Vimal',1904.43);
-insert into stocks values(default, 'Only Vimal',4303.98);
-insert into stocks values(default, 'Only Vimal',2357.97);
-insert into stocks values(default, 'Only Vimal',1432.34);
-insert into stocks values(default, 'Only Vimal',5400.43);
-insert into stocks values(default, 'Only Vimal',1402.77);
-insert into stocks values(default, 'Only Vimal',1402.78);
+insert into stocks values(default, 'Only Vimal', 3494.93, 1975);
+insert into stocks values(default, 'Only Vimal', 2833.22, NULL);
+insert into stocks values(default, 'Only Vimal', 1904.43, NULL);
+insert into stocks values(default, 'Only Vimal', 4303.98, NULL);
+insert into stocks values(default, 'Only Vimal', 2357.97, NULL);
+insert into stocks values(default, 'Only Vimal', 1432.34, NULL);
+insert into stocks values(default, 'Only Vimal', 5400.43, NULL);
+insert into stocks values(default, 'Only Vimal', 1402.77, NULL);
+insert into stocks values(default, 'Only Vimal', 1402.78, NULL);
 
 
-insert into stocks values(default, 'Raymonds',1254.00);
-insert into stocks values(default, 'Raymonds',2833.22);
-insert into stocks values(default, 'Raymonds',1904.43);
-insert into stocks values(default, 'Raymonds',4303.98);
-insert into stocks values(default, 'Raymonds',2357.97);
-insert into stocks values(default, 'Raymonds',3423.34);
-insert into stocks values(default, 'Raymonds',5313.43);
-insert into stocks values(default, 'Raymonds',6543.77);
-insert into stocks values(default, 'Raymonds',1402.78);
-
+insert into stocks values(default, 'Raymonds', 1254.00, 1925);
+insert into stocks values(default, 'Raymonds', 2833.22, NULL);
+insert into stocks values(default, 'Raymonds', 1904.43, NULL);
+insert into stocks values(default, 'Raymonds', 4303.98, NULL);
+insert into stocks values(default, 'Raymonds', 2357.97, NULL);
+insert into stocks values(default, 'Raymonds', 3423.34, NULL);
+insert into stocks values(default, 'Raymonds', 5313.43, NULL);
+insert into stocks values(default, 'Raymonds', 6543.77, NULL);
+insert into stocks values(default, 'Raymonds', 1402.78, NULL);
+										 
 CREATE TABLE hall_ticket(id int, status int);
 
 INSERT INTO  hall_ticket VALUES (1, 1);
@@ -1592,11 +1610,15 @@ INSERT INTO runners values(3, 'Alice Jones');
 INSERT INTO runners values(4, 'Bobby Louis');
 INSERT INTO runners values(5, 'Lisa Romero');
 
-CREATE TABLE races(id int, event varchar(45), winner_id int);
-insert INTO races values(1, '100 meter dash', 2);
-insert INTO races values(2, '500 meter dash', 3);
-insert INTO races values(3, 'cross-country', 2);
-insert INTO races values(4, 'triathalon', NULL);
+CREATE TABLE races(id int, event varchar(45), year year, winner_id int);
+insert INTO races values(1, '100 meter dash', 2001, 2);
+insert INTO races values(2, '500 meter dash', 2001, 3);
+insert INTO races values(3, 'cross-country', 2001, 2);
+insert INTO races values(4, '100 meter dash', 2000, 1);
+insert INTO races values(5, '500 meter dash', 2000, 5);
+insert INTO races values(6, 'cross-country', 2000, 4);
+insert INTO races values(7, 'triathalon', null, NULL);
+
 
 CREATE TABLE mass_table (weight float(4,2));
 
