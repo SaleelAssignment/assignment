@@ -472,7 +472,7 @@ insert into batch_schedule values(default, 'Batch-1','2015-02-01', '2015-02-04')
 
 CREATE TABLE Teams (TeamID INT PRIMARY KEY, Members TEXT);
 
-INSERT INTO Teams (TeamID, Members) VALUES(1, 'Chris, Evan, Marty, Eva'),(2, 'Jake, Olivia'),(3, 'Sophia, Liam, Noah, Emma'),(4, 'Ava, Lucas, Mia, Ethan, Amelia'),(5, 'Benjamin, Charlotte'),(6, 'Harper, Henry, Evelyn, Daniel, Ella'),(7, 'Michael, Emily, Alexander'),(8, 'James, Abigail, William, Isabella, Jack, Grace'),(9, 'Sebastian, Chloe'),(10, 'David, Lily, Samuel, Madison');
+INSERT INTO Teams (TeamID, Members) VALUES(1, 'Chris, Evan, Marty, Eva'),(2, 'Jake, Olivia, Brooke'),(3, 'Sophia, Brooke, Liam, Noah, Emma'),(4, 'Ava, Lucas, Mia, Ethan, Amelia'),(5, 'Benjamin, Charlotte'),(6, 'Harper, Henry, Evelyn, Daniel, Ella'),(7, 'Michael, Emily, Alexander'),(8, 'James, Abigail, William, Isabella, Jack, Grace'),(9, 'Sebastian, Chloe'),(10, 'David, Lily, Samuel, Madison');
 
 
 CREATE TABLE order_items (orderdate DATE, item VARCHAR(255));
