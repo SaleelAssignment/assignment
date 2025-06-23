@@ -172,6 +172,21 @@ DROP TABLE IF EXISTS cafe;
 DROP TABLE IF EXISTS rooms;
 DROP TABLE IF EXISTS room_staff;
 
+DROP TABLE IF EXISTS fruits;
+
+CREATE TABLE fruits(product varchar(15), amount int, country varchar(10)); 
+
+INSERT into fruits VALUES ('banana', 1000, 'usa');
+INSERT into fruits VALUES ('carrots', 1500, 'usa');
+INSERT into fruits VALUES ('beans', 1600, 'usa');
+INSERT into fruits VALUES ('orange', 2000, 'usa');
+INSERT into fruits VALUES ('banana', 400, 'india');
+INSERT into fruits VALUES ('carrots', 1200, 'india');
+INSERT into fruits VALUES ('beans', 1500, 'india');
+INSERT into fruits VALUES ('orange', 4000, 'india');
+INSERT into fruits VALUES ('banana', 2000, 'canada');
+INSERT into fruits VALUES ('carrots', 2000, 'canada');
+INSERT into fruits VALUES ('beans', 2000, 'mexico');
 
 CREATE TABLE rooms(room_id INT PRIMARY KEY, room_number VARCHAR(10), room_type VARCHAR(20), floor INT, status VARCHAR(20));  /* e.g., Available, Occupied, Maintenance */
 
