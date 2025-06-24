@@ -174,6 +174,12 @@ DROP TABLE IF EXISTS room_staff;
 
 DROP TABLE IF EXISTS fruits;
 
+DROP TABLE IF EXISTS years;
+
+CREATE TABLE years (c1 year);
+
+insert into years with recursive cte as(select 2000 n union select n + 1 from cte where n <  year(curdate())) select * from cte;
+
 CREATE TABLE fruits(product varchar(15), amount int, country varchar(10)); 
 
 INSERT into fruits VALUES ('banana', 1000, 'usa');
