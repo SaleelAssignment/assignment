@@ -182,7 +182,11 @@ DROP TABLE IF EXISTS category;
 DROP TABLE IF EXISTS cashPayments;
 DROP TABLE IF EXISTS cardPayments;
 
+DROP TABLE IF EXISTS repeatingNumbers;
 
+CREATE TABLE repeatingNumbers(num int);
+
+INSERT into repeatingNumbers values(1),(2),(3),(4);
 
 CREATE TABLE cashPayments(student_id int, student_name varchar(10), amount int);
 
