@@ -122,7 +122,9 @@ drop table if exists missingNumbers;
 drop table if exists shop;
 drop table if exists leading_zeroes;
 drop table if exists x;
+
 /* ------------------------------ */
+
 drop table if exists stages;
 drop table if exists order_items;
 drop table if exists Teams;
@@ -133,10 +135,14 @@ DROP TABLE IF EXISTS city;
 DROP TABLE IF EXISTS ipl;
 DROP TABLE IF EXISTS order1;
 DROP TABLE IF EXISTS sales1;
+
 DROP TABLE IF EXISTS null1;
 DROP TABLE IF EXISTS null2;
+
 DROP TABLE IF EXISTS ClassAndSubjects;
+
 DROP TABLE IF EXISTS swapCity;
+
 DROP TABLE IF EXISTS atm;
 
 DROP TABLE IF EXISTS sourceCity;
@@ -184,11 +190,18 @@ DROP TABLE IF EXISTS cardPayments;
 
 DROP TABLE IF EXISTS repeatingNumbers;
 
+DROP TABLE IF EXISTS countNumbers;
+
 DROP TABLE IF EXISTS cNumbers;
 
 DROP TABLE IF EXISTS fedex;
 DROP TABLE IF EXISTS ups;
 DROP TABLE IF EXISTS dhl;
+
+
+Create table countNumbers(id int primary key auto_increment, c1 int);
+
+insert into countNumbers(c1) values(1), (NULL), (NULL),(NULL),(NULL), (2), (NULL), (NULL),(NULL), (3), (NULL), (4), (5), (NULL), (NULL),(NULL), (NULL), (NULL),(NULL), (6);
 
 create table fedex(tracking_id varchar(20), carrier varchar(20), status varchar(20), delivery_date date);
 
@@ -196,7 +209,7 @@ create table dhl(tracking_id varchar(20), carrier varchar(20), status varchar(20
 
 create table ups(tracking_id varchar(20), carrier varchar(20), status varchar(20), delivery_date date);
 
-INSERT INTO FEDEX(tracking_id, carrier, status, delivery_date) VALUES ('FEDEX100001', 'FEDEX', 'Dispatched', '2025-07-04'), ('FEDEX100002', 'FEDEX', 'In Transit', '2025-07-05'), ('FEDEX100003 ', 'FEDEX', 'Delivered', '2025-07-03'), ('FEDEX100004', 'FEDEX', 'Out for Delivery', '2025-07-07'), ('FEDEX100005', 'FEDEX', 'Delayed', '2025-07-08');
+INSERT INTO FEDEX(tracking_id, carrier, status, delivery_date) VALUES ('FEDEX100001', 'FedEx', 'Dispatched', '2025-07-04'), ('FEDEX100002', 'FedEx', 'In Transit', '2025-07-05'), ('FEDEX100003 ', 'FedEx', 'Delivered', '2025-07-03'), ('FEDEX100004', 'FedEx', 'Out for Delivery', '2025-07-07'), ('FEDEX100005', 'FedEx', 'Delayed', '2025-07-08');
 
 
 INSERT INTO dhl(tracking_id, carrier, status, delivery_date) VALUES ('DHL100021', 'DHL', 'Delivered', '2025-07-04'), ('DHL100022', 'DHL', 'In Transit', '2025-07-05'), ('DHL100023', 'DHL', 'Dispatched', '2025-07-06'), ('DHL100024', 'DHL', 'Out for Delivery', '2025-07-07'), ('DHL100025', 'DHL', 'Delayed', '2025-07-08'), ('DHL100026', 'DHL', 'In Transit', '2025-07-03');
