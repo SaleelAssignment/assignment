@@ -1,17 +1,16 @@
 drop table if exists Payment;
-drop table if exists Booking;
-drop table if exists Room;
+drop table if exists Bookings;
+drop table if exists Rooms;
 drop table if exists RoomType;
 drop table if exists Customer_Service;
 drop table if exists Role_Service;
 drop table if exists Service;
 drop table if exists Staff;
 drop table if exists Role;
-drop table if exists Customer;
+drop table if exists Customers;
 
 
--- Customer Table
-CREATE TABLE Customer (
+CREATE TABLE Customers (
     customer_id INT AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(100) NOT NULL,
     email VARCHAR(100) UNIQUE NOT NULL,
@@ -19,14 +18,12 @@ CREATE TABLE Customer (
     address VARCHAR(255)
 );
 
--- Role Table
 CREATE TABLE Role (
     RoleID INT AUTO_INCREMENT PRIMARY KEY,
     RoleName VARCHAR(50) NOT NULL,
     Description VARCHAR(255)
 );
 
--- Staff Table
 CREATE TABLE Staff (
     staff_id INT AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(100) NOT NULL,
@@ -37,14 +34,12 @@ CREATE TABLE Staff (
     FOREIGN KEY (RoleID) REFERENCES Role(RoleID)
 );
 
--- Service Table
 CREATE TABLE Service (
     serviceTypeID INT AUTO_INCREMENT PRIMARY KEY,
     ServiceName VARCHAR(100) NOT NULL,
     Description VARCHAR(255)
 );
 
--- Role_Service Table (Many-to-Many between Role and Service)
 CREATE TABLE Role_Service (
     RoleID INT,
     serviceTypeID INT,
@@ -54,62 +49,54 @@ CREATE TABLE Role_Service (
     FOREIGN KEY (serviceTypeID) REFERENCES Service(serviceTypeID)
 );
 
--- Customer_Service Table (Many-to-Many between Customer and Service)
 CREATE TABLE Customer_Service (
     customer_id INT,
     serviceTypeID INT,
     request_date DATETIME DEFAULT CURRENT_TIMESTAMP,
     remarks VARCHAR(255),
     PRIMARY KEY (customer_id, serviceTypeID, request_date),
-    FOREIGN KEY (customer_id) REFERENCES Customer(customer_id),
+    FOREIGN KEY (customer_id) REFERENCES Customers(customer_id),
     FOREIGN KEY (serviceTypeID) REFERENCES Service(serviceTypeID)
 );
 
--- RoomType Table
 CREATE TABLE RoomType (
     room_type_id INT AUTO_INCREMENT PRIMARY KEY,
     type_name VARCHAR(50) NOT NULL,
     price_per_night DECIMAL(10,2) NOT NULL
 );
 
--- Room Table
-CREATE TABLE Room (
+CREATE TABLE Rooms (
     room_id INT AUTO_INCREMENT PRIMARY KEY,
     room_number VARCHAR(10) UNIQUE NOT NULL,
     room_type_id INT NOT NULL,
     floor INT,
-    status ENUM('Available', 'Occupied', 'Maintenance') DEFAULT 'Available',
+    status ENUM('Available', 'Occupied', 'Maintenance', 'Cleaning') DEFAULT 'Available',
     FOREIGN KEY (room_type_id) REFERENCES RoomType(room_type_id)
 );
 
--- Booking Table
-CREATE TABLE Booking (
+CREATE TABLE Bookings (
     booking_id INT AUTO_INCREMENT PRIMARY KEY,
     customer_id INT NOT NULL,
     room_id INT NOT NULL,
     staff_id INT,
     check_in_date DATE NOT NULL,
     check_out_date DATE,
-    booking_status ENUM('Confirmed', 'Cancelled', 'Completed') DEFAULT 'Confirmed',
-    FOREIGN KEY (customer_id) REFERENCES Customer(customer_id),
-    FOREIGN KEY (room_id) REFERENCES Room(room_id),
+    booking_status ENUM('Checked-Out', 'Checked-In','Booked', 'Cancelled', 'Completed') DEFAULT 'Booked',
+    FOREIGN KEY (customer_id) REFERENCES Customers(customer_id),
+    FOREIGN KEY (room_id) REFERENCES Rooms(room_id),
     FOREIGN KEY (staff_id) REFERENCES Staff(staff_id)
 );
 
--- Payment Table
 CREATE TABLE Payment (
     payment_id INT AUTO_INCREMENT PRIMARY KEY,
     booking_id INT NOT NULL,
     amount DECIMAL(10,2) NOT NULL,
     payment_date DATETIME DEFAULT CURRENT_TIMESTAMP,
     payment_method ENUM('Card', 'UPI', 'Cash', 'Online') NOT NULL,
-    FOREIGN KEY (booking_id) REFERENCES Booking(booking_id)
+    FOREIGN KEY (booking_id) REFERENCES Bookings(booking_id)
 );
 
 
--- ----------------------
--- 1. Role
--- ----------------------
 INSERT INTO Role (RoleName, Description) VALUES
 ('Receptionist', 'Handles bookings and customer queries'),
 ('Housekeeping', 'Responsible for room cleaning and upkeep'),
@@ -117,9 +104,7 @@ INSERT INTO Role (RoleName, Description) VALUES
 ('Chef', 'Prepares meals and supervises kitchen'),
 ('Security', 'Ensures guest safety');
 
--- ----------------------
--- 2. Staff
--- ----------------------
+
 INSERT INTO Staff (name, role, email, phone, RoleID) VALUES
 ('Alice Johnson', 'Receptionist', 'alice@hotel.com', '9876543210', 1),
 ('Bob Smith', 'Housekeeping', 'bob@hotel.com', '9876543211', 2),
@@ -132,10 +117,8 @@ INSERT INTO Staff (name, role, email, phone, RoleID) VALUES
 ('Ian Scott', 'Security', 'ian@hotel.com', '9876543218', 5),
 ('Julia Adams', 'Manager', 'julia@hotel.com', '9876543219', 3);
 
--- ----------------------
--- 3. Customer
--- ----------------------
-INSERT INTO Customer (name, email, phone, address) VALUES
+
+INSERT INTO Customers (name, email, phone, address) VALUES
 ('John Doe', 'john@example.com', '9998887770', 'Mumbai'),
 ('Jane Smith', 'jane@example.com', '9998887771', 'Delhi'),
 ('Michael Clark', 'mike@example.com', '9998887772', 'Bangalore'),
@@ -157,9 +140,7 @@ INSERT INTO Customer (name, email, phone, address) VALUES
 ('Henry Mitchell', 'henry@example.com', '9998887788', 'Rajkot'),
 ('Evelyn Perez', 'evelyn@example.com', '9998887789', 'Thane');
 
--- ----------------------
--- 4. Service
--- ----------------------
+
 INSERT INTO Service (ServiceName, Description) VALUES
 ('Room Cleaning', 'Daily cleaning service'),
 ('Room Booking', 'Reservation of rooms'),
@@ -167,9 +148,7 @@ INSERT INTO Service (ServiceName, Description) VALUES
 ('Laundry', 'Washing and ironing clothes'),
 ('Spa', 'Relaxation and wellness services');
 
--- ----------------------
--- 5. Role_Service
--- ----------------------
+
 INSERT INTO Role_Service (RoleID, serviceTypeID, Remarks) VALUES
 (1, 2, 'Receptionist handles bookings'),
 (2, 1, 'Housekeeping does room cleaning'),
@@ -177,47 +156,71 @@ INSERT INTO Role_Service (RoleID, serviceTypeID, Remarks) VALUES
 (2, 4, 'Housekeeping manages laundry'),
 (3, 5, 'Manager oversees spa services');
 
--- ----------------------
--- 6. RoomType
--- ----------------------
+
 INSERT INTO RoomType (type_name, price_per_night) VALUES
 ('Standard', 2000.00),
 ('Deluxe', 3500.00),
 ('Suite', 5000.00);
 
--- ----------------------
--- 7. Room
--- ----------------------
-INSERT INTO Room (room_number, room_type_id, floor, status) VALUES
-('101', 1, 1, 'Available'),
-('102', 2, 1, 'Occupied'),
-('103', 3, 1, 'Available'),
-('201', 1, 2, 'Available'),
-('202', 2, 2, 'Occupied'),
-('203', 3, 2, 'Maintenance'),
-('301', 1, 3, 'Available'),
-('302', 2, 3, 'Available'),
-('303', 3, 3, 'Occupied'),
-('304', 1, 3, 'Available');
 
--- ----------------------
--- 8. Booking
--- ----------------------
-INSERT INTO Booking (customer_id, room_id, staff_id, check_in_date, check_out_date, booking_status) VALUES
-(1, 1, 1, '2025-09-01', '2025-09-05', 'Completed'),
-(2, 2, 6, '2025-09-02', '2025-09-06', 'Completed'),
-(3, 3, NULL, '2025-09-03', '2025-09-04', 'Cancelled'),
-(4, 4, 1, '2025-09-04', '2025-09-07', 'Confirmed'),
-(5, 5, 6, '2025-09-05', '2025-09-08', 'Confirmed'),
-(6, 6, NULL, '2025-09-06', NULL, 'Cancelled'),
-(7, 7, 1, '2025-09-07', '2025-09-09', 'Confirmed'),
-(8, 8, 1, '2025-09-07', '2025-09-10', 'Confirmed'),
-(9, 9, 6, '2025-09-08', NULL, 'Confirmed'),
-(10, 10, NULL, '2025-09-08', '2025-09-11', 'Completed');
+INSERT INTO rooms (room_id, room_number, room_type_id, floor, status) VALUES
+(1, '101', 1, 1, 'Available'),
+(2, '102', 2, 1, 'Occupied'),
+(3, '103', 3, 1, 'Cleaning'),
+(4, '104', 1, 1, 'Available'),
+(5, '105', 2, 1, 'Maintenance'),
 
--- ----------------------
--- 9. Payment
--- ----------------------
+(6, '201', 1, 2, 'Available'),
+(7, '202', 2, 2, 'Occupied'),
+(8, '203', 3, 2, 'Available'),
+(9, '204', 1, 2, 'Cleaning'),
+(10,'205', 2, 2, 'Available'),
+
+(11,'301', 3, 3, 'Occupied'),
+(12,'302', 1, 3, 'Available'),
+(13,'303', 2, 3, 'Maintenance'),
+(14,'304', 1, 3, 'Available'),
+(15,'305', 3, 3, 'Occupied'),
+
+(16,'401', 2, 4, 'Available'),
+(17,'402', 1, 4, 'Cleaning'),
+(18,'403', 3, 4, 'Available'),
+(19,'404', 2, 4, 'Occupied'),
+(20,'405', 1, 4, 'Available');
+
+
+INSERT INTO bookings(booking_id, customer_id, room_id, staff_id, check_in_date, check_out_date, booking_status) VALUES
+(1, 1, 1, 1, '2025-01-05', '2025-01-08', 'Checked-Out'),
+(2, 2, 2, 2, '2025-01-10', '2025-01-15', 'Checked-Out'),
+(3, 3, 3, 3, '2025-01-12', '2025-01-14', 'Cancelled'),
+(4, 4, 4, 4, '2025-01-15', '2025-01-20', 'Checked-Out'),
+(5, 5, 5, 3, '2025-01-18', '2025-01-22', 'Checked-Out'),
+
+(6, 6, 6, 5, '2025-02-01', '2025-02-05', 'Checked-Out'),
+(7, 7, 7, 6, '2025-02-03', '2025-02-06', 'Cancelled'),
+(8, 8, 8, 4, '2025-02-05', '2025-02-08', 'Checked-Out'),
+(9, 9, 9, 1, '2025-02-07', '2025-02-10', 'Checked-Out'),
+(10,10, 10,2, '2025-02-10', '2025-02-14', 'Checked-In'),
+
+(11,11, 11,5, '2025-02-12', '2025-02-16', 'Booked'),
+(12,12, 12,6, '2025-02-15', '2025-02-20', 'Booked'),
+(13,13, 13,7, '2025-02-18', '2025-02-22', 'Checked-In'),
+(14,14, 14,5, '2025-02-20', '2025-02-24', 'Cancelled'),
+(15,15, 15,4, '2025-02-22', '2025-02-25', 'Checked-In'),
+
+(16,16, 16,5, '2025-03-01', '2025-03-05', 'Checked-In'),
+(17,17, 17,1, '2025-03-02', '2025-03-06', 'Booked'),
+(18,18, 18,2, '2025-03-03', '2025-03-07', 'Cancelled'),
+(19,19, 19,1, '2025-03-05', '2025-03-09', 'Booked'),
+(20,20, 20,2, '2025-03-07', '2025-03-12', 'Checked-In'),
+
+(21,1, 1, 3, '2025-03-10', '2025-03-15', 'Booked'),
+(22,12, 2, 5, '2025-03-12', '2025-03-18', 'Checked-In'),
+(23,14, 3, 7, '2025-03-15', '2025-03-19', 'Booked'),
+(24,17, 4, 8, '2025-03-16', '2025-03-20', 'Checked-Out'),
+(25,19, 5, 8, '2025-03-18', '2025-03-22', 'Booked');
+
+
 INSERT INTO Payment (booking_id, amount, payment_date, payment_method) VALUES
 (1, 8000, '2025-09-05 10:00:00', 'Card'),
 (2, 14000, '2025-09-06 12:00:00', 'UPI'),
@@ -227,9 +230,7 @@ INSERT INTO Payment (booking_id, amount, payment_date, payment_method) VALUES
 (8, 10500, '2025-09-10 14:00:00', 'Card'),
 (10, 6000, '2025-09-11 18:00:00', 'Cash');
 
--- ----------------------
--- 10. Customer_Service
--- ----------------------
+
 INSERT INTO Customer_Service (customer_id, serviceTypeID, request_date, remarks) VALUES
 (1, 1, '2025-09-01 09:00:00', 'Requested room cleaning'),
 (2, 3, '2025-09-02 13:00:00', 'Ordered lunch'),
@@ -241,176 +242,3 @@ INSERT INTO Customer_Service (customer_id, serviceTypeID, request_date, remarks)
 (8, 4, '2025-09-08 11:00:00', 'Laundry requested'),
 (9, 5, '2025-09-09 15:30:00', 'Spa relaxation session'),
 (10, 2, '2025-09-10 12:00:00', 'Asked about room availability');
-
-
-
-🔹 A. Basic Queries
-
-List all available rooms.
-
-Show all room numbers and types on the 3rd floor.
-
-Find the total number of rooms per type (Standard, Deluxe, Suite).
-
-Display the count of rooms that are currently Occupied.
-
-Show all Suite rooms which are under Maintenance.
-
-🔹 B. Joins (rooms + room_assigned)
-
-List all customers with their room number, type, and floor.
-
-Find customers who are staying in rooms that are Occupied.
-
-Show all Deluxe rooms with the student IDs assigned to them.
-
-List customers along with their room status (Available, Occupied, Maintenance).
-
-Display the student IDs who are staying on the 2nd floor.
-
-🔹 C. Subqueries
-
-Find customers who stayed in the same room more than once.
-
-List all rooms that have never been assigned to any student.
-
-Show student IDs of those who have stayed in both Standard and Deluxe rooms.
-
-Find the maximum duration (in days) of stay by any student.
-
-Display the rooms assigned most frequently.
-
-🔹 D. Advanced
-
-For each room type, find how many unique customers stayed in it.
-
-Find customers with overlapping stays (same room, overlapping dates).
-
-List all customers who are currently staying in the hotel (today between startDate and endDate).
-
-Show the average stay duration per room type.
-
-Find the student who changed rooms the most times.
-
-
-----------------
-
-
-🔹 E. Aggregates & Grouping
-
-Show the total number of rooms on each floor.
-
-Find the room type with the maximum number of Available rooms.
-
-Display the percentage of rooms that are Occupied, Available, and Maintenance.
-
-List the floor that has the most Suite rooms.
-
-Find the average stay duration per floor.
-
-🔹 F. Subqueries & Nested Logic
-
-Find customers who have always stayed in the same type of room.
-
-Show rooms where the latest endDate of assignment is before 2025-07-01 (rooms free after July).
-
-Find the student(s) with the longest continuous stay across all rooms.
-
-List customers who have stayed in rooms that are currently marked Available (past vs present check).
-
-Find customers who stayed in a room that was under Maintenance at some point.
-
-🔹 G. Date-Based Assignments
-
-Show customers who stayed in the hotel during March 2025.
-
-Find customers who checked in before April 2025 and checked out after June 2025.
-
-List rooms that were occupied for more than 6 months in total.
-
-Show all stays that overlap with studentID 1005’s stay.
-
-Find customers who have future bookings (endDate > CURRENT_DATE).
-
-🔹 H. Analytical Queries
-
-Rank rooms by the number of times they were assigned.
-
-Find the most popular room type based on total student stays.
-
-For each student, find the earliest assigned room and latest assigned room.
-
-Show customers who moved from a Standard room to a Suite room.
-
-List the rooms that have been continuously occupied without a gap between bookings.
-
-
-🔹 I. Room & Status Management
-
-List the rooms that changed status the most times (e.g., Available → Occupied → Maintenance).
-
-Show rooms that are currently Available but were Occupied in the past.
-
-Find the average number of Available rooms per floor.
-
-Identify the floor with the highest occupancy rate.
-
-Display the rooms that went directly from Occupied to Maintenance without becoming Available.
-
-🔹 J. Staff & Room Management
-
-Assign each staff member to equal number of rooms (if possible).
-
-Show the staff member who manages the maximum number of rooms.
-
-List all rooms and the staff assigned to them.
-
-Find staff members who manage only Suite rooms.
-
-Show staff who manage rooms that are under Maintenance.
-
-🔹 K. Student Stays & Bookings
-
-Find customers who have stayed in 3 or more different rooms.
-
-Show the total number of nights spent by each student.
-
-List customers who extended their stay (overlapping or continuous bookings).
-
-Show customers who checked out and checked in on the same day (room switchers).
-
-Find the student who had the shortest stay duration.
-
-🔹 L. Business Analytics
-
-Find the most frequently occupied room number.
-
-For each room type, calculate the average occupancy duration.
-
-Show the room type with the highest occupancy ratio.
-
-Find the peak months when most rooms were occupied.
-
-List the top 3 customers by total stay duration.
-
-🔹 M. Complex Real-World Scenarios
-
-Find all double-bookings (two customers assigned to the same room during overlapping dates).
-
-Show customers who stayed in a room on one floor and then moved to a different floor.
-
-Find the rooms that were never empty for more than 15 days between bookings.
-
-Show the average gap between two consecutive stays in each room.
-
-Find customers who always booked the same room number whenever they stayed.
-
-Show the room utilization percentage = (days occupied ÷ total days in the dataset) × 100.
-
-Find customers who moved from Standard → Deluxe → Suite (progressive upgrade).
-
-Show all customers currently staying with their expected checkout date.
-
-Find rooms that have been continuously in Maintenance since the beginning of 2025.
-
-Show the most loyal customers (highest total days stayed across bookings).
