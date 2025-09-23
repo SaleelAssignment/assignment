@@ -221,7 +221,9 @@ INSERT INTO bookings(booking_id, customer_id, room_id, staff_id, check_in_date, 
 (22,12, 2, 5, '2025-03-12', '2025-03-18', 'Checked-In'),
 (23,14, 3, 7, '2025-03-15', '2025-03-19', 'Booked'),
 (24,17, 4, 8, '2025-03-16', '2025-03-20', 'Checked-Out'),
-(25,19, 5, 8, '2025-03-18', '2025-03-22', 'Booked');
+(25,19, 5, 8, '2025-03-18', '2025-03-22', 'Booked'),
+(26, 6, 2, 6, '2025-03-25',	'2025-03-27', 'Checked-In'),
+(27, 7, 1, 7, '2025-03-25',	'2025-03-29', 'Checked-In');
 
 
 INSERT INTO Payment (booking_id, amount, payment_date, payment_method) VALUES
