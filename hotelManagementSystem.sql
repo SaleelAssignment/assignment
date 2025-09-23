@@ -186,7 +186,8 @@ INSERT INTO rooms (room_id, room_number, room_type_id, floor, status) VALUES
 (17,'402', 1, 4, 'Cleaning'),
 (18,'403', 3, 4, 'Available'),
 (19,'404', 2, 4, 'Occupied'),
-(20,'405', 1, 4, 'Available');
+(20,'405', 1, 4, 'Available'), 
+(21,'406', 3, 2, 'Maintenance');
 
 
 INSERT INTO bookings(booking_id, customer_id, room_id, staff_id, check_in_date, check_out_date, booking_status) VALUES
