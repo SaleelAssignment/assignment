@@ -269,8 +269,6 @@ insert into pune_metro_stations(stop_id, stop_name, route_no, city, next_stop_id
 
 insert into pune_metro_stations(stop_id, stop_name, route_no, city, next_stop_id, distance_to_next_km) values(18,'Ramwadi','Line-1', 'pune', NULL, 1.2 );
 
-
-
 insert into pune_metro_stations(stop_id, stop_name, route_no, city, next_stop_id, distance_to_next_km) values(19,'Bhakti Shakti','Line-2', 'pune', 20, 1.7);
 
 insert into pune_metro_stations(stop_id, stop_name, route_no, city, next_stop_id, distance_to_next_km) values(20,'Nigdi','Line-2', 'pune', 21, 0.89 );
@@ -3675,6 +3673,7 @@ CREATE TABLE CUSTOMERS (CNUM INT  PRIMARY KEY, CNAME VARCHAR (10), CITY VARCHAR 
 
 CREATE TABLE ORDERS (ONUM INT PRIMARY KEY, AMT FLOAT, ODATE DATETIME, CNUM INT , SNUM INT, type varchar(10), paymentType varchar(20), registered bool , CONSTRAINT FK_CNUM FOREIGN KEY(CNUM) REFERENCES CUSTOMERS(CNUM) , CONSTRAINT FK_ORDERS_SNUM FOREIGN KEY(SNUM) REFERENCES SALESPEOPLE(SNUM));
 
+
 INSERT into SALESPEOPLE(SNUM, SNAME, CITY, COMM) values (1001,'Rajan','London',.12);
 INSERT into SALESPEOPLE(SNUM, SNAME, CITY, COMM) values (1002,'Natasha','San Jose',.13);
 INSERT into SALESPEOPLE(SNUM, SNAME, CITY, COMM) values (1004,'Monika','London',.11);
@@ -3766,6 +3765,8 @@ update orders set type='Cash' where paymentType='COD';
 update orders set registered=true where type='Online';
 update orders set registered=false where type='Cash';
 update orders set registered=0 where cnum is null;
+
+alter table orders add column delivery_partner varchar(12);
 
 UPDATE ord SET STATUS = 'In Process' WHERE (ORDID = '601');
 UPDATE ord SET STATUS = 'On Hold' WHERE (ORDID = '602');
