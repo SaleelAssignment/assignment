@@ -228,6 +228,18 @@ DROP TABLE IF EXISTS categories;
 DROP TABLE IF EXISTS bus_stops;
 DROP TABLE IF EXISTS pune_metro_stations;
 
+drop table if exists security;
+drop table if exists bank;
+
+create table security(ID int primary key auto_increment, securityName varchar(10));
+
+insert into security(securityName) values('Gopal'),('Ramesh'),('Nitin'),('Ramlal'),('Ravi'),('Saleel');
+
+create table bank (ID int primary key auto_increment, bankName varchar(10));
+
+insert into bank(bankName) values('BoI'),('BoB'),('ICICI');
+
+
 CREATE TABLE cars(car VARCHAR(10), day VARCHAR(10),  cumulative_distance int);
 
 insert into cars values ('car1','day1',50), ('car2','day1',175), ('car1','day2',120), ('car3','day1',133), ('car1','day3',39), ('car2','day2',27), ('car1','day4',104), ('car3','day2',120), ('car2','day3',80), ('car2','day4',27), ('car1','day5',104), ('car3','day4',120), ('car2','day5',80);
