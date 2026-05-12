@@ -1,4 +1,3 @@
-
 DROP TABLE IF EXISTS A;
 DROP TABLE IF EXISTS B;
 DROP TABLE IF EXISTS EMP;
@@ -856,6 +855,7 @@ CREATE TABLE Facebook(facebookID INT PRIMARY KEY, studentID INT, name VARCHAR(45
 CREATE TABLE LinkedIn(linkedInID INT PRIMARY KEY, studentID INT, name VARCHAR(45), location VARBINARY(45));
 
 insert into student values(1001, 'Saleel', 1, 'saleel.songs@gmail.com', 'saleel.songs@gmail.com'), (1002, 'Sharmin', 1, 'sharmin@gmail.com', 'sharmin@gmail.com'), (1003, 'Vrushali', 2, 'vrusha@hotmail.com', 'vrushali@hotmail.com'), (1005, 'Ruhan', 3, 'ru@live.com', 'ruhan.live.com'), (1006, 'Neel', 2, 'nil@gmail.com', 'neel@gmail.com'), (1007, 'Deep', 1, 'deep@gmail.com', 'deep@gmail.com'), (1008, 'Nitish', 4, 'nity@live.com', 'nitish@live.com'), (1009, 'Gau', 5, 'gaurav@gmail.com', 'gau@gmail.com'), (1010, 'Mai', 4, 'mai@gmail.com', 'mai@gmail.com'), (1011, 'Bipin', 5, 'bipin@gmail.com', 'bipinpatil@gmail.com'), (1012, 'Natasha', 3, null, null), (1013, 'Bandish', 2, null, null);
+insert into student values(1017, 'sanchali', 1, null,'sanchaliJ@gmail.com');
 
 insert into Facebook values(1, 1006, 'Gabbar Singh', 'Nasik'), (2, 1008, 'Shadow King', 'Pune'), (3, 1009, 'FB Star', 'Bombay'), (4, 1010, 'Ghost Rider', 'Surat'), (5, 1011, 'The Rockstar', 'Pune'), (6, 1009, 'Star-Track', 'Pune'), (7, 1010, 'Rider-gate', 'Surat'), (8, 1006, 'self-hosted', 'Baroda');
 
@@ -3785,6 +3785,7 @@ update orders set registered=false where type='Cash';
 update orders set registered=0 where cnum is null;
 
 alter table orders add column delivery_partner varchar(12);
+ALTER TABLE orders ADD COLUMN discount_flag VARCHAR(20);
 
 UPDATE ord SET STATUS = 'In Process' WHERE (ORDID = '601');
 UPDATE ord SET STATUS = 'On Hold' WHERE (ORDID = '602');
