@@ -230,6 +230,10 @@ DROP TABLE IF EXISTS pune_metro_stations;
 drop table if exists security;
 drop table if exists bank;
 
+drop table if exists login_count;
+
+CREATE TABLE `login_count`(`userID` int NOT NULL, `loginCount` int DEFAULT NULL, `loginDate` datetime DEFAULT NULL, PRIMARY KEY (`userID`));
+
 create table security(ID int primary key auto_increment, securityName varchar(10));
 
 insert into security(securityName) values('Gopal'),('Ramesh'),('Nitin'),('Ramlal'),('Ravi'),('Saleel');
@@ -3784,10 +3788,13 @@ update orders set registered=true where type='Online';
 update orders set registered=false where type='Cash';
 update orders set registered=0 where cnum is null;
 
-alter table orders add column delivery_partner varchar(12);
+ALTER TABLE orders ADD COLUMN delivery_partner varchar(12);
 ALTER TABLE orders ADD COLUMN discount_flag VARCHAR(20);
 ALTER TABLE orders ADD COLUMN reward_points INT DEFAULT 0;
 ALTER TABLE orders ADD COLUMN customer_tag VARCHAR(20);
+ALTER TABLE orders ADD COLUMN cashback DECIMAL(10,2);
+ALTER TABLE orders ADD COLUMN fraud_risk VARCHAR(20);
+
 
 UPDATE ord SET STATUS = 'In Process' WHERE (ORDID = '601');
 UPDATE ord SET STATUS = 'On Hold' WHERE (ORDID = '602');
