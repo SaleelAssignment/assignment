@@ -3786,6 +3786,7 @@ update orders set registered=0 where cnum is null;
 
 alter table orders add column delivery_partner varchar(12);
 ALTER TABLE orders ADD COLUMN discount_flag VARCHAR(20);
+ALTER TABLE orders ADD COLUMN reward_points INT DEFAULT 0;
 
 UPDATE ord SET STATUS = 'In Process' WHERE (ORDID = '601');
 UPDATE ord SET STATUS = 'On Hold' WHERE (ORDID = '602');
