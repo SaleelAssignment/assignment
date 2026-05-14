@@ -232,6 +232,14 @@ drop table if exists bank;
 
 drop table if exists login_count;
 
+drop table if exists users;
+drop table if exists user_attempte
+
+
+create table users (user_id int, user_name varchar(10));
+
+create table user_attempte (user_id int primary key , attempte int default 1);
+
 CREATE TABLE `login_count`(`userID` int NOT NULL, `loginCount` int DEFAULT NULL, `loginDate` datetime DEFAULT NULL, PRIMARY KEY (`userID`));
 
 create table security(ID int primary key auto_increment, securityName varchar(10));
