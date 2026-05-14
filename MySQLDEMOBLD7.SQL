@@ -227,14 +227,19 @@ DROP TABLE IF EXISTS categories;
 DROP TABLE IF EXISTS bus_stops;
 DROP TABLE IF EXISTS pune_metro_stations;
 
-drop table if exists security;
-drop table if exists bank;
+DROP TABLE IF EXISTS security;
+DROP TABLE IF EXISTS bank;
 
-drop table if exists login_count;
+DROP TABLE IF EXISTS login_count;
 
-drop table if exists users;
-drop table if exists user_attempte
+DROP TABLE IF EXISTS users;
+DROP TABLE IF EXISTS user_attempte
+DROP TABLE IF EXISTS product_visit_log;
+DROP TABLE IF EXISTS product_views;
 
+CREATE TABLE product_visit_log(visit_id INT AUTO_INCREMENT PRIMARY KEY, product_id INT, user_id INT, visit_time DATETIME DEFAULT CURRENT_TIMESTAMP);
+
+CREATE TABLE product_views(product_id INT PRIMARY KEY, total_views INT DEFAULT 1);
 
 create table users (user_id int, user_name varchar(10));
 
