@@ -77,60 +77,60 @@ DROP TABLE If EXISTS andor;
 DROP TABLE If EXISTS stadium;
 DROP TABLE IF EXISTS transactions;
 DROP TABLE IF EXISTS empj;
-drop table if EXISTS emp_attendance;
-drop table if EXISTS vote_response;
-drop table if EXISTS quarterly_revenue;
-drop table if EXISTS yearly_revenue;
-drop table if EXISTS numberString;
-drop table if EXISTS stringNumber;
+DROP TABLE IF EXISTS emp_attendance;
+DROP TABLE IF EXISTS vote_response;
+DROP TABLE IF EXISTS quarterly_revenue;
+DROP TABLE IF EXISTS yearly_revenue;
+DROP TABLE IF EXISTS numberString;
+DROP TABLE IF EXISTS stringNumber;
 
-drop table if EXISTS server;
-drop table if EXISTS runningServer;
+DROP TABLE IF EXISTS server;
+DROP TABLE IF EXISTS runningServer;
 
-drop table if EXISTS plumber;
-drop table if EXISTS service;
-drop table if EXISTS plumber_service_map;
-drop table if EXISTS r;
-drop table if EXISTS product_sales;
-drop table if exists leadtable;
-drop table if exists traintimetable;
-drop table if exists pivot_table;
-drop table if exists unpivot_table;
+DROP TABLE IF EXISTS plumber;
+DROP TABLE IF EXISTS service;
+DROP TABLE IF EXISTS plumber_service_map;
+DROP TABLE IF EXISTS r;
+DROP TABLE IF EXISTS product_sales;
+DROP TABLE IF EXISTS leadtable;
+DROP TABLE IF EXISTS traintimetable;
+DROP TABLE IF EXISTS pivot_table;
+DROP TABLE IF EXISTS unpivot_table;
 
 DROP TABLE IF EXISTS PRODUCTS;
 DROP TABLE IF EXISTS ORD;
 DROP TABLE IF EXISTS CUSTOMER;
-drop table if exists orderDetails;
+DROP TABLE IF EXISTS orderDetails;
 
-drop table if exists prescription;
-drop table if exists doctorVisits;
-drop table if exists patient;
-drop table if exists doctor;
-drop table if exists labTestList;
-drop table if exists medicineList;
+DROP TABLE IF EXISTS prescription;
+DROP TABLE IF EXISTS doctorVisits;
+DROP TABLE IF EXISTS patient;
+DROP TABLE IF EXISTS doctor;
+DROP TABLE IF EXISTS labTestList;
+DROP TABLE IF EXISTS medicineList;
 
-drop table if EXISTS rocket;
+DROP TABLE IF EXISTS rocket;
 
 DROP VIEW IF EXISTS SALES;
 
-drop table if exists cars;
-drop table if exists job_list;
-drop table if exists overtime;
+DROP TABLE IF EXISTS cars;
+DROP TABLE IF EXISTS job_list;
+DROP TABLE IF EXISTS overtime;
 
-drop table if exists sourceNames;
-drop table if exists targetNames;
-drop table if exists phonecall;
-drop table if exists fullname;
-drop table if exists missingNumbers;
-drop table if exists shop;
-drop table if exists leading_zeroes;
-drop table if exists x;
+DROP TABLE IF EXISTS sourceNames;
+DROP TABLE IF EXISTS targetNames;
+DROP TABLE IF EXISTS phonecall;
+DROP TABLE IF EXISTS fullname;
+DROP TABLE IF EXISTS missingNumbers;
+DROP TABLE IF EXISTS shop;
+DROP TABLE IF EXISTS leading_zeroes;
+DROP TABLE IF EXISTS x;
 
 /* ------------------------------ */
 
-drop table if exists stages;
-drop table if exists order_items;
-drop table if exists Teams;
+DROP TABLE IF EXISTS stages;
+DROP TABLE IF EXISTS order_items;
+DROP TABLE IF EXISTS Teams;
 DROP TABLE IF EXISTS batch_schedule;
 
 DROP TABLE IF EXISTS city;
@@ -239,6 +239,55 @@ DROP TABLE IF EXISTS product_views;
 DROP TABLE IF EXISTS page_logs;
 DROP TABLE IF EXISTS page_counter;
 
+DROP TABLE IF EXISTS discountCoupens;
+
+CREATE TABLE discountCoupens(id INT PRIMARY KEY AUTO_INCREMENT,coupan VARCHAR(10), date DATE, status VARCHAR(10));
+
+
+INSERT INTO discountCoupens (coupan, date, status) VALUES
+('CPN001', '2026-06-01', 'Active'),
+('CPN002', '2026-06-01', NULL),
+('CPN003', '2026-06-02', 'Used'),
+('CPN004', '2026-06-02', NULL),
+('CPN005', '2026-06-03', 'Expired'),
+('CPN006', '2026-06-03', 'Active'),
+('CPN007', '2026-06-04', NULL),
+('CPN008', '2026-06-04', 'Used'),
+('CPN009', '2026-06-05', 'Active'),
+('CPN010', '2026-06-05', NULL),
+('CPN011', '2026-06-06', 'Expired'),
+('CPN012', '2026-06-06', NULL),
+('CPN013', '2026-06-07', 'Used'),
+('CPN014', '2026-06-07', 'Active'),
+('CPN015', '2026-06-08', NULL),
+('CPN016', '2026-06-08', 'Expired'),
+('CPN017', '2026-06-09', 'Active'),
+('CPN018', '2026-06-09', NULL),
+('CPN019', '2026-06-10', 'Used'),
+('CPN020', '2026-06-10', NULL);
+
+INSERT INTO discountCoupens (coupan, date, status) VALUES
+('SAVE10',  '2026-07-01', 'Active'),
+('NEW50',   '2026-07-01', NULL),
+('DISC25',  '2026-07-02', 'Used'),
+('MEGA20',  '2026-07-02', 'Expired'),
+('FEST15',  '2026-07-03', NULL),
+('SHOP30',  '2026-07-03', 'Active'),
+('DEAL40',  '2026-07-04', 'Used'),
+('OFFER5',  '2026-07-04', NULL),
+('SALE75',  '2026-07-05', 'Active'),
+('BONUS8',  '2026-07-05', 'Expired'),
+('LUCKY9',  '2026-07-06', NULL),
+('FLASH1',  '2026-07-06', 'Used'),
+('WINTER2', '2026-07-07', 'Active'),
+('SUMMER3', '2026-07-07', NULL),
+('EXTRA4',  '2026-07-08', 'Expired'),
+('VALUE6',  '2026-07-08', 'Active'),
+('SUPER7',  '2026-07-09', NULL),
+('PRIME8',  '2026-07-09', 'Used'),
+('SMART9',  '2026-07-10', 'Active'),
+('TOP100',  '2026-07-10', NULL);
+
 CREATE TABLE page_logs(log_id INT PRIMARY KEY AUTO_INCREMENT, user_id INT, page_url VARCHAR(255) NOT NULL, visit_time DATETIME DEFAULT CURRENT_TIMESTAMP,    ip_address VARCHAR(45), device_type VARCHAR(50), browser VARCHAR(50), stay_duration INT DEFAULT 0, status_code INT DEFAULT 200, referrer_url VARCHAR(255));
 
 CREATE TABLE page_counter(page_url VARCHAR(255) PRIMARY KEY, visits INT DEFAULT 1);
@@ -248,13 +297,13 @@ CREATE TABLE product_visit_log(visit_id INT AUTO_INCREMENT PRIMARY KEY, product_
 
 CREATE TABLE product_views(product_id INT PRIMARY KEY, total_views INT DEFAULT 1);
 
-create table users (user_id int, user_name varchar(10));
+CREATE TABLE users (user_id int, user_name varchar(10));
 
-create table user_attempte (user_id int primary key , attempte int default 1);
+CREATE TABLE user_attempte (user_id int primary key , attempte int default 1);
 
 CREATE TABLE `login_count`(`userID` int NOT NULL, `loginCount` int DEFAULT NULL, `loginDate` datetime DEFAULT NULL, PRIMARY KEY (`userID`));
 
-create table security(ID int primary key auto_increment, securityName varchar(10));
+CREATE TABLE security(ID int primary key auto_increment, securityName varchar(10));
 
 insert into security(securityName) values('Gopal'),('Ramesh'),('Nitin'),('Ramlal'),('Ravi'),('Saleel');
 
@@ -265,7 +314,7 @@ insert into bank(bankName) values('BoI'),('BoB'),('ICICI');
 
 CREATE TABLE cars(car VARCHAR(10), day VARCHAR(10),  cumulative_distance int);
 
-insert into cars values ('car1','day1',50), ('car2','day1',175), ('car1','day2',120), ('car3','day1',133), ('car1','day3',39), ('car2','day2',27), ('car1','day4',104), ('car3','day2',120), ('car2','day3',80), ('car2','day4',27), ('car1','day5',104), ('car3','day4',120), ('car2','day5',80);
+INSERT INTO cars VALUES ('car1','day1',50), ('car2','day1',175), ('car1','day2',120), ('car3','day1',133), ('car1','day3',39), ('car2','day2',27), ('car1','day4',104), ('car3','day2',120), ('car2','day3',80), ('car2','day4',27), ('car1','day5',104), ('car3','day4',120), ('car2','day5',80);
 
 
 CREATE TABLE bus_stops(stop_id INT PRIMARY KEY, stop_name VARCHAR(100), route_no VARCHAR(50), city VARCHAR(50), next_stop_id INT, distance_to_next_km DECIMAL(4,2));
@@ -274,37 +323,37 @@ INSERT INTO bus_stops (stop_id, stop_name, route_no, city, next_stop_id, distanc
 
 CREATE TABLE pune_metro_stations LIKE bus_stops;
 
-insert into pune_metro_stations(stop_id, stop_name, route_no, city, next_stop_id, distance_to_next_km) values(1,'Chandni Chowk','Line-1', 'pune', 2, 1.7);
+INSERT INTO pune_metro_stations(stop_id, stop_name, route_no, city, next_stop_id, distance_to_next_km) VALUES(1,'Chandni Chowk','Line-1', 'pune', 2, 1.7);
 
-insert into pune_metro_stations(stop_id, stop_name, route_no, city, next_stop_id, distance_to_next_km) values(2,'Kothrud Bus Depot','Line-1', 'pune', 3, 1.7);
+INSERT INTO pune_metro_stations(stop_id, stop_name, route_no, city, next_stop_id, distance_to_next_km) VALUES(2,'Kothrud Bus Depot','Line-1', 'pune', 3, 1.7);
 
-insert into pune_metro_stations(stop_id, stop_name, route_no, city, next_stop_id, distance_to_next_km) values(3,'Vanaz','Line-1', 'pune', 4, 1.7);
+INSERT INTO pune_metro_stations(stop_id, stop_name, route_no, city, next_stop_id, distance_to_next_km) values(3,'Vanaz','Line-1', 'pune', 4, 1.7);
 
-insert into pune_metro_stations(stop_id, stop_name, route_no, city, next_stop_id, distance_to_next_km) values(4,'Anand Nagar','Line-1', 'pune', 5, 0.89 );
+INSERT INTO pune_metro_stations(stop_id, stop_name, route_no, city, next_stop_id, distance_to_next_km) VALUES(4,'Anand Nagar','Line-1', 'pune', 5, 0.89 );
 
-insert into pune_metro_stations(stop_id, stop_name, route_no, city, next_stop_id, distance_to_next_km) values(5,'Ideal Colony','Line-1', 'pune', 6, 1.7 );
+INSERT INTO pune_metro_stations(stop_id, stop_name, route_no, city, next_stop_id, distance_to_next_km) VALUES(5,'Ideal Colony','Line-1', 'pune', 6, 1.7 );
 
-insert into pune_metro_stations(stop_id, stop_name, route_no, city, next_stop_id, distance_to_next_km) values(6,'Nal Stop','Line-1', 'pune', 7,1.1 );
+INSERT INTO pune_metro_stations(stop_id, stop_name, route_no, city, next_stop_id, distance_to_next_km) VALUES(6,'Nal Stop','Line-1', 'pune', 7,1.1 );
 
-insert into pune_metro_stations(stop_id, stop_name, route_no, city, next_stop_id, distance_to_next_km) values(7,'Garware College','Line-1', 'pune', 8, 1.8 );
+INSERT INTO pune_metro_stations(stop_id, stop_name, route_no, city, next_stop_id, distance_to_next_km) VALUES(7,'Garware College','Line-1', 'pune', 8, 1.8 );
 
-insert into pune_metro_stations(stop_id, stop_name, route_no, city, next_stop_id, distance_to_next_km) values(8,'Deccan Gymkhana','Line-1', 'pune', 9, 1.5);
+INSERT INTO pune_metro_stations(stop_id, stop_name, route_no, city, next_stop_id, distance_to_next_km) VALUES(8,'Deccan Gymkhana','Line-1', 'pune', 9, 1.5);
 
-insert into pune_metro_stations(stop_id, stop_name, route_no, city, next_stop_id, distance_to_next_km) values(9,'Chhatrapati Sambhaji Udyan','Line-1', 'pune', 10, 1.8 );
+INSERT INTO pune_metro_stations(stop_id, stop_name, route_no, city, next_stop_id, distance_to_next_km) VALUES(9,'Chhatrapati Sambhaji Udyan','Line-1', 'pune', 10, 1.8 );
 
-insert into pune_metro_stations(stop_id, stop_name, route_no, city, next_stop_id, distance_to_next_km) values(10,'PMC Bhavan','Line-1', 'pune', 11, 1.2);
+INSERT INTO pune_metro_stations(stop_id, stop_name, route_no, city, next_stop_id, distance_to_next_km) VALUES(10,'PMC Bhavan','Line-1', 'pune', 11, 1.2);
 
-insert into pune_metro_stations(stop_id, stop_name, route_no, city, next_stop_id, distance_to_next_km) values(11,'Civil Court (interchange station with the Line-2)','Line-1', 'pune', 12, 1.7);
+INSERT INTO pune_metro_stations(stop_id, stop_name, route_no, city, next_stop_id, distance_to_next_km) VALUES(11,'Civil Court (interchange station with the Line-2)','Line-1', 'pune', 12, 1.7);
 
-insert into pune_metro_stations(stop_id, stop_name, route_no, city, next_stop_id, distance_to_next_km) values(12,'Mangalwar Peth','Line-1', 'pune', 13, 1.0 );
+INSERT INTO pune_metro_stations(stop_id, stop_name, route_no, city, next_stop_id, distance_to_next_km) VALUES(12,'Mangalwar Peth','Line-1', 'pune', 13, 1.0 );
 
-insert into pune_metro_stations(stop_id, stop_name, route_no, city, next_stop_id, distance_to_next_km) values(13,'Pune Railway Station','Line-1', 'pune', 14, 1.4);
+INSERT INTO PUNE_METRO_STATIONS(STOP_ID, STOP_NAME, ROUTE_NO, CITY, NEXT_STOP_Id, distance_to_next_km) VALUES(13,'Pune Railway Station','Line-1', 'pune', 14, 1.4);
 
-insert into pune_metro_stations(stop_id, stop_name, route_no, city, next_stop_id, distance_to_next_km) values(14,'Ruby Hall Clinic','Line-1', 'pune', 15, 1.34 );
+INSERT INTO pune_metro_stations(stop_id, stop_name, route_no, city, next_stop_id, distance_to_next_km) VALUES(14,'Ruby Hall Clinic','Line-1', 'pune', 15, 1.34 );
 
-insert into pune_metro_stations(stop_id, stop_name, route_no, city, next_stop_id, distance_to_next_km) values(15,'Bund Garden','Line-1', 'pune', 16, .89);
+INSERT INTO pune_metro_stations(stop_id, stop_name, route_no, city, next_stop_id, distance_to_next_km) VALUES(15,'Bund Garden','Line-1', 'pune', 16, .89);
 
-insert into pune_metro_stations(stop_id, stop_name, route_no, city, next_stop_id, distance_to_next_km) values(16,'Yerawada','Line-1', 'pune', 17, 1.56 );
+INSERT INTO pune_metro_stations(stop_id, stop_name, route_no, city, next_stop_id, distance_to_next_km) VALUES(16,'Yerawada','Line-1', 'pune', 17, 1.56 );
 
 insert into pune_metro_stations(stop_id, stop_name, route_no, city, next_stop_id, distance_to_next_km) values(17,'Kalyani Nagar','Line-1', 'pune', 18, .90);
 
