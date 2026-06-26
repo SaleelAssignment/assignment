@@ -241,10 +241,10 @@ DROP TABLE IF EXISTS page_counter;
 
 DROP TABLE IF EXISTS discountCoupens;
 
-CREATE TABLE discountCoupens(id INT PRIMARY KEY AUTO_INCREMENT,coupan VARCHAR(10), date DATE, status VARCHAR(10));
+CREATE TABLE discountCoupens(id INT PRIMARY KEY AUTO_INCREMENT,coupen VARCHAR(10), date DATE, status VARCHAR(10));
 
 
-INSERT INTO discountCoupens (coupan, date, status) VALUES
+INSERT INTO discountCoupens (coupen, date, status) VALUES
 ('CPN001', '2026-06-01', 'Active'),
 ('CPN002', '2026-06-01', NULL),
 ('CPN003', '2026-06-02', 'Used'),
@@ -266,7 +266,7 @@ INSERT INTO discountCoupens (coupan, date, status) VALUES
 ('CPN019', '2026-06-10', 'Used'),
 ('CPN020', '2026-06-10', NULL);
 
-INSERT INTO discountCoupens (coupan, date, status) VALUES
+INSERT INTO discountCoupens (coupen, date, status) VALUES
 ('SAVE10',  '2026-07-01', 'Active'),
 ('NEW50',   '2026-07-01', NULL),
 ('DISC25',  '2026-07-02', 'Used'),
@@ -355,103 +355,103 @@ INSERT INTO pune_metro_stations(stop_id, stop_name, route_no, city, next_stop_id
 
 INSERT INTO pune_metro_stations(stop_id, stop_name, route_no, city, next_stop_id, distance_to_next_km) VALUES(16,'Yerawada','Line-1', 'pune', 17, 1.56 );
 
-insert into pune_metro_stations(stop_id, stop_name, route_no, city, next_stop_id, distance_to_next_km) values(17,'Kalyani Nagar','Line-1', 'pune', 18, .90);
+INSERT INTO pune_metro_stations(stop_id, stop_name, route_no, city, next_stop_id, distance_to_next_km) VALUES(17,'Kalyani Nagar','Line-1', 'pune', 18, .90);
 
-insert into pune_metro_stations(stop_id, stop_name, route_no, city, next_stop_id, distance_to_next_km) values(18,'Ramwadi','Line-1', 'pune', NULL, 1.2 );
+INSERT INTO pune_metro_stations(stop_id, stop_name, route_no, city, next_stop_id, distance_to_next_km) VALUES(18,'Ramwadi','Line-1', 'pune', NULL, 1.2 );
 
-insert into pune_metro_stations(stop_id, stop_name, route_no, city, next_stop_id, distance_to_next_km) values(19,'Bhakti Shakti','Line-2', 'pune', 20, 1.7);
+INSERT INTO pune_metro_stations(stop_id, stop_name, route_no, city, next_stop_id, distance_to_next_km) VALUES(19,'Bhakti Shakti','Line-2', 'pune', 20, 1.7);
 
-insert into pune_metro_stations(stop_id, stop_name, route_no, city, next_stop_id, distance_to_next_km) values(20,'Nigdi','Line-2', 'pune', 21, 0.89 );
+INSERT INTO pune_metro_stations(stop_id, stop_name, route_no, city, next_stop_id, distance_to_next_km) VALUES(20,'Nigdi','Line-2', 'pune', 21, 0.89 );
 
-insert into pune_metro_stations(stop_id, stop_name, route_no, city, next_stop_id, distance_to_next_km) values(21,'Akurdi','Line-2', 'pune', 22, 1.7 );
+INSERT INTO pune_metro_stations(stop_id, stop_name, route_no, city, next_stop_id, distance_to_next_km) VALUES(21,'Akurdi','Line-2', 'pune', 22, 1.7 );
 
-insert into pune_metro_stations(stop_id, stop_name, route_no, city, next_stop_id, distance_to_next_km) values(22,'Chinchwad','Line-2', 'pune', 23, 1.1 );
+INSERT INTO pune_metro_stations(stop_id, stop_name, route_no, city, next_stop_id, distance_to_next_km) VALUES(22,'Chinchwad','Line-2', 'pune', 23, 1.1 );
 
-insert into pune_metro_stations(stop_id, stop_name, route_no, city, next_stop_id, distance_to_next_km) values(23,'PCMC Bhavan','Line-2', 'pune', 24, 1.8 );
+INSERT INTO pune_metro_stations(stop_id, stop_name, route_no, city, next_stop_id, distance_to_next_km) VALUES(23,'PCMC Bhavan','Line-2', 'pune', 24, 1.8 );
 
-insert into pune_metro_stations(stop_id, stop_name, route_no, city, next_stop_id, distance_to_next_km) values(24,'Sant Tukaram Nagar','Line-2', 'pune', 25, 1.5);
+INSERT INTO pune_metro_stations(stop_id, stop_name, route_no, city, next_stop_id, distance_to_next_km) VALUES(24,'Sant Tukaram Nagar','Line-2', 'pune', 25, 1.5);
 
-insert into pune_metro_stations(stop_id, stop_name, route_no, city, next_stop_id, distance_to_next_km) values(25,'Nashik Phata','Line-2', 'pune', 26, 1.8 );
+INSERT INTO pune_metro_stations(stop_id, stop_name, route_no, city, next_stop_id, distance_to_next_km) VALUES(25,'Nashik Phata','Line-2', 'pune', 26, 1.8 );
 
-insert into pune_metro_stations(stop_id, stop_name, route_no, city, next_stop_id, distance_to_next_km) values(26,'Kasarwadi','Line-2', 'pune', 27, 1.2);
+INSERT INTO pune_metro_stations(stop_id, stop_name, route_no, city, next_stop_id, distance_to_next_km) VALUES(26,'Kasarwadi','Line-2', 'pune', 27, 1.2);
 
-insert into pune_metro_stations(stop_id, stop_name, route_no, city, next_stop_id, distance_to_next_km) values(27,'Phugewadi','Line-2', 'pune', 28, 1.7);
+INSERT INTO pune_metro_stations(stop_id, stop_name, route_no, city, next_stop_id, distance_to_next_km) VALUES(27,'Phugewadi','Line-2', 'pune', 28, 1.7);
 
-insert into pune_metro_stations(stop_id, stop_name, route_no, city, next_stop_id, distance_to_next_km) values(28,'Dapodi','Line-2', 'pune', 29, 1.0 );
+INSERT INTO pune_metro_stations(stop_id, stop_name, route_no, city, next_stop_id, distance_to_next_km) VALUES(28,'Dapodi','Line-2', 'pune', 29, 1.0 );
 
-insert into pune_metro_stations(stop_id, stop_name, route_no, city, next_stop_id, distance_to_next_km) values(29,'Bopodi','Line-2', 'pune', 30, 1.4);
+INSERT INTO pune_metro_stations(stop_id, stop_name, route_no, city, next_stop_id, distance_to_next_km) VALUES(29,'Bopodi','Line-2', 'pune', 30, 1.4);
 
-insert into pune_metro_stations(stop_id, stop_name, route_no, city, next_stop_id, distance_to_next_km) values(30,'Khadki','Line-2', 'pune', 31, 1.34 );
+INSERT INTO pune_metro_stations(stop_id, stop_name, route_no, city, next_stop_id, distance_to_next_km) VALUES(30,'Khadki','Line-2', 'pune', 31, 1.34 );
 
-insert into pune_metro_stations(stop_id, stop_name, route_no, city, next_stop_id, distance_to_next_km) values(31,'Range Hills','Line-2', 'pune', 32, .89);
+INSERT INTO pune_metro_stations(stop_id, stop_name, route_no, city, next_stop_id, distance_to_next_km) VALUES(31,'Range Hills','Line-2', 'pune', 32, .89);
 
-insert into pune_metro_stations(stop_id, stop_name, route_no, city, next_stop_id, distance_to_next_km) values(32,'Shivaji Nagar','Line-2', 'pune', 33, 1.56 );
+INSERT INTO pune_metro_stations(stop_id, stop_name, route_no, city, next_stop_id, distance_to_next_km) VALUES(32,'Shivaji Nagar','Line-2', 'pune', 33, 1.56 );
 
-insert into pune_metro_stations(stop_id, stop_name, route_no, city, next_stop_id, distance_to_next_km) values(33,'Chinchwad','Line-2', 'pune', 34, .90);
+INSERT INTO pune_metro_stations(stop_id, stop_name, route_no, city, next_stop_id, distance_to_next_km) VALUES(33,'Chinchwad','Line-2', 'pune', 34, .90);
 
-insert into pune_metro_stations(stop_id, stop_name, route_no, city, next_stop_id, distance_to_next_km) values(34,'Kasba Peth','Line-2', 'pune', 35, 2.45 );
+INSERT INTO pune_metro_stations(stop_id, stop_name, route_no, city, next_stop_id, distance_to_next_km) VALUES(34,'Kasba Peth','Line-2', 'pune', 35, 2.45 );
 
-insert into pune_metro_stations(stop_id, stop_name, route_no, city, next_stop_id, distance_to_next_km) values(35,'Mandai','Line-2', 'pune', 36, 2.28);
+INSERT INTO pune_metro_stations(stop_id, stop_name, route_no, city, next_stop_id, distance_to_next_km) VALUES(35,'Mandai','Line-2', 'pune', 36, 2.28);
 
-insert into pune_metro_stations(stop_id, stop_name, route_no, city, next_stop_id, distance_to_next_km) values(36,'Swargate','Line-2', 'pune', NULL, 1.98 );
+INSERT INTO pune_metro_stations(stop_id, stop_name, route_no, city, next_stop_id, distance_to_next_km) VALUES(36,'Swargate','Line-2', 'pune', NULL, 1.98 );
 
-insert into pune_metro_stations(stop_id, stop_name, route_no, city, next_stop_id, distance_to_next_km) values(37,'Market Yard','Line-2', 'pune', 38, 1.98 );
+INSERT INTO pune_metro_stations(stop_id, stop_name, route_no, city, next_stop_id, distance_to_next_km) VALUES(37,'Market Yard','Line-2', 'pune', 38, 1.98 );
 
-insert into pune_metro_stations(stop_id, stop_name, route_no, city, next_stop_id, distance_to_next_km) values(38,'Bibwewadi','Line-2', 'pune', 39, 1.98 );
+INSERT INTO pune_metro_stations(stop_id, stop_name, route_no, city, next_stop_id, distance_to_next_km) VALUES(38,'Bibwewadi','Line-2', 'pune', 39, 1.98 );
 
-insert into pune_metro_stations(stop_id, stop_name, route_no, city, next_stop_id, distance_to_next_km) values(39,'Padmavati','Line-2', 'pune', 40, 1.98 );
+INSERT INTO pune_metro_stations(stop_id, stop_name, route_no, city, next_stop_id, distance_to_next_km) VALUES(39,'Padmavati','Line-2', 'pune', 40, 1.98 );
 
-insert into pune_metro_stations(stop_id, stop_name, route_no, city, next_stop_id, distance_to_next_km) values(40,'Balaji Nagar','Line-2', 'pune', 41, 1.98 );
+INSERT INTO pune_metro_stations(stop_id, stop_name, route_no, city, next_stop_id, distance_to_next_km) VALUES(40,'Balaji Nagar','Line-2', 'pune', 41, 1.98 );
 
-insert into pune_metro_stations(stop_id, stop_name, route_no, city, next_stop_id, distance_to_next_km) values(41,'Katraj','Line-2', 'pune', 42, 1.98 );
+INSERT INTO pune_metro_stations(stop_id, stop_name, route_no, city, next_stop_id, distance_to_next_km) VALUES(41,'Katraj','Line-2', 'pune', 42, 1.98 );
 
-insert into pune_metro_stations(stop_id, stop_name, route_no, city, next_stop_id, distance_to_next_km) values(42,'Civil Court','Line-3', 'pune', 43, 1.7);
+INSERT INTO pune_metro_stations(stop_id, stop_name, route_no, city, next_stop_id, distance_to_next_km) VALUES(42,'Civil Court','Line-3', 'pune', 43, 1.7);
 
-insert into pune_metro_stations(stop_id, stop_name, route_no, city, next_stop_id, distance_to_next_km) values(43,'Shivaji Nagar','Line-3', 'pune', 44, 0.89 );
+INSERT INTO pune_metro_stations(stop_id, stop_name, route_no, city, next_stop_id, distance_to_next_km) VALUES(43,'Shivaji Nagar','Line-3', 'pune', 44, 0.89 );
 
-insert into pune_metro_stations(stop_id, stop_name, route_no, city, next_stop_id, distance_to_next_km) values(44,'Agriculture College','Line-3', 'pune', 45, 1.7 );
+INSERT INTO pune_metro_stations(stop_id, stop_name, route_no, city, next_stop_id, distance_to_next_km) VALUES(44,'Agriculture College','Line-3', 'pune', 45, 1.7 );
 
-insert into pune_metro_stations(stop_id, stop_name, route_no, city, next_stop_id, distance_to_next_km) values(45,'R.B.I.','Line-3', 'pune', 46, 1.1 );
+INSERT INTO pune_metro_stations(stop_id, stop_name, route_no, city, next_stop_id, distance_to_next_km) VALUES(45,'R.B.I.','Line-3', 'pune', 46, 1.1 );
 
-insert into pune_metro_stations(stop_id, stop_name, route_no, city, next_stop_id, distance_to_next_km) values(46,'University','Line-3', 'pune', 47, 1.8 );
+INSERT INTO pune_metro_stations(stop_id, stop_name, route_no, city, next_stop_id, distance_to_next_km) VALUES(46,'University','Line-3', 'pune', 47, 1.8 );
 
-insert into pune_metro_stations(stop_id, stop_name, route_no, city, next_stop_id, distance_to_next_km) values(47,'Sakal Nagar','Line-3', 'pune', 48, 1.5);
+INSERT INTO pune_metro_stations(stop_id, stop_name, route_no, city, next_stop_id, distance_to_next_km) VALUES(47,'Sakal Nagar','Line-3', 'pune', 48, 1.5);
 
-insert into pune_metro_stations(stop_id, stop_name, route_no, city, next_stop_id, distance_to_next_km) values(48,'Krushi Anusadhan','Line-3', 'pune', 49, 1.8 );
+INSERT INTO pune_metro_stations(stop_id, stop_name, route_no, city, next_stop_id, distance_to_next_km) VALUES(48,'Krushi Anusadhan','Line-3', 'pune', 49, 1.8 );
 
-insert into pune_metro_stations(stop_id, stop_name, route_no, city, next_stop_id, distance_to_next_km) values(49,'Baner','Line-3', 'pune', 50, 1.2);
+INSERT INTO pune_metro_stations(stop_id, stop_name, route_no, city, next_stop_id, distance_to_next_km) VALUES(49,'Baner','Line-3', 'pune', 50, 1.2);
 
-insert into pune_metro_stations(stop_id, stop_name, route_no, city, next_stop_id, distance_to_next_km) values(50,'Baner Gaon','Line-3', 'pune', 51, 1.7);
+INSERT INTO pune_metro_stations(stop_id, stop_name, route_no, city, next_stop_id, distance_to_next_km) VALUES(50,'Baner Gaon','Line-3', 'pune', 51, 1.7);
 
-insert into pune_metro_stations(stop_id, stop_name, route_no, city, next_stop_id, distance_to_next_km) values(51,'Balewadi Phata','Line-3', 'pune', 52, 1.0 );
+INSERT INTO pune_metro_stations(stop_id, stop_name, route_no, city, next_stop_id, distance_to_next_km) VALUES(51,'Balewadi Phata','Line-3', 'pune', 52, 1.0 );
 
-insert into pune_metro_stations(stop_id, stop_name, route_no, city, next_stop_id, distance_to_next_km) values(52,'Laxmi Nagar','Line-3', 'pune', 53, 1.4);
+INSERT INTO pune_metro_stations(stop_id, stop_name, route_no, city, next_stop_id, distance_to_next_km) VALUES(52,'Laxmi Nagar','Line-3', 'pune', 53, 1.4);
 
-insert into pune_metro_stations(stop_id, stop_name, route_no, city, next_stop_id, distance_to_next_km) values(53,'Ram Nagar (Nashik Phata)','Line-3', 'pune', 54, 1.34 );
+INSERT INTO pune_metro_stations(stop_id, stop_name, route_no, city, next_stop_id, distance_to_next_km) VALUES(53,'Ram Nagar (Nashik Phata)','Line-3', 'pune', 54, 1.34 );
 
-insert into pune_metro_stations(stop_id, stop_name, route_no, city, next_stop_id, distance_to_next_km) values(54,'NICMAR','Line-3', 'pune', 55, .89);
+INSERT INTO pune_metro_stations(stop_id, stop_name, route_no, city, next_stop_id, distance_to_next_km) VALUES(54,'NICMAR','Line-3', 'pune', 55, .89);
 
-insert into pune_metro_stations(stop_id, stop_name, route_no, city, next_stop_id, distance_to_next_km) values(55,'Balewadi Stadium','Line-3', 'pune', 56, 1.56 );
+INSERT INTO pune_metro_stations(stop_id, stop_name, route_no, city, next_stop_id, distance_to_next_km) VALUES(55,'Balewadi Stadium','Line-3', 'pune', 56, 1.56 );
 
-insert into pune_metro_stations(stop_id, stop_name, route_no, city, next_stop_id, distance_to_next_km) values(56,'Wakad Chowk','Line-3', 'pune', 57, .90);
+INSERT INTO pune_metro_stations(stop_id, stop_name, route_no, city, next_stop_id, distance_to_next_km) VALUES(56,'Wakad Chowk','Line-3', 'pune', 57, .90);
 
-insert into pune_metro_stations(stop_id, stop_name, route_no, city, next_stop_id, distance_to_next_km) values(57,'Hinjewadi','Line-3', 'pune', 58, 2.45 );
+INSERT INTO pune_metro_stations(stop_id, stop_name, route_no, city, next_stop_id, distance_to_next_km) VALUES(57,'Hinjewadi','Line-3', 'pune', 58, 2.45 );
 
-insert into pune_metro_stations(stop_id, stop_name, route_no, city, next_stop_id, distance_to_next_km) values(58,'Shivaji Chowk','Line-3', 'pune', 59, 2.28);
+INSERT INTO pune_metro_stations(stop_id, stop_name, route_no, city, next_stop_id, distance_to_next_km) VALUES(58,'Shivaji Chowk','Line-3', 'pune', 59, 2.28);
 
-insert into pune_metro_stations(stop_id, stop_name, route_no, city, next_stop_id, distance_to_next_km) values(59,'Pall India','Line-3', 'pune', 60, 1.98 );
+INSERT INTO pune_metro_stations(stop_id, stop_name, route_no, city, next_stop_id, distance_to_next_km) VALUES(59,'Pall India','Line-3', 'pune', 60, 1.98 );
 
-insert into pune_metro_stations(stop_id, stop_name, route_no, city, next_stop_id, distance_to_next_km) values(60,'Wipro Phase II','Line-3', 'pune', 61, 1.98 );
+INSERT INTO pune_metro_stations(stop_id, stop_name, route_no, city, next_stop_id, distance_to_next_km) VALUES(60,'Wipro Phase II','Line-3', 'pune', 61, 1.98 );
 
-insert into pune_metro_stations(stop_id, stop_name, route_no, city, next_stop_id, distance_to_next_km) values(61,'Infosys Phase II','Line-3', 'pune', 62, 1.98 );
+INSERT INTO pune_metro_stations(stop_id, stop_name, route_no, city, next_stop_id, distance_to_next_km) VALUES(61,'Infosys Phase II','Line-3', 'pune', 62, 1.98 );
 
-insert into pune_metro_stations(stop_id, stop_name, route_no, city, next_stop_id, distance_to_next_km) values(62,'Dohler','Line-3', 'pune', 63, 1.98 );
+INSERT INTO pune_metro_stations(stop_id, stop_name, route_no, city, next_stop_id, distance_to_next_km) VALUES(62,'Dohler','Line-3', 'pune', 63, 1.98 );
 
-insert into pune_metro_stations(stop_id, stop_name, route_no, city, next_stop_id, distance_to_next_km) values(63,'Embassy Quadron Business Park','Line-3', 'pune', 64, 1.98 );
+INSERT INTO pune_metro_stations(stop_id, stop_name, route_no, city, next_stop_id, distance_to_next_km) VALUES(63,'Embassy Quadron Business Park','Line-3', 'pune', 64, 1.98 );
 
-insert into pune_metro_stations(stop_id, stop_name, route_no, city, next_stop_id, distance_to_next_km) values(64,'Megapolis Circle','Line-3', 'pune', NULL, 1.98 );
+INSERT INTO pune_metro_stations(stop_id, stop_name, route_no, city, next_stop_id, distance_to_next_km) VALUES(64,'Megapolis Circle','Line-3', 'pune', NULL, 1.98 );
 
-with recursive cte as (select 1 n union select n + 1 from cte where n<=64) update pune_metro_stations set distance_to_next_km = round(2 * rand() + 1 , 2);
+WITH RECURSIVE cte AS (SELECT 1 n UNION SELECT n + 1 FROM cte WHERE n<=64) UPDATE pune_metro_stations set distance_to_next_km = ROUND(2 * RAND() + 1 , 2);
 
 CREATE TABLE categories (category_id INT PRIMARY KEY, category_name VARCHAR(50),parent_id INT);
 
@@ -499,11 +499,11 @@ INSERT INTO categories (category_id, category_name, parent_id) VALUES
 (35, 'Camping Equipment', 30);
 
 
-create table betweenSalary (id int, sal int);
+CREATE TABLE betweenSalary (id int, sal int);
 INSERT INTO betweenSalary VALUES(1, 2000);
 
-create table Managers(emp_id int, name varchar(10));
-insert into Managers VALUES(1,'saleel'), (2, 'sharmin'), (3, 'vrushali'), (null,'neel');
+CREATE TABLE Managers(emp_id int, name varchar(10));
+INSERT INTO Managers VALUES(1,'saleel'), (2, 'sharmin'), (3, 'vrushali'), (null,'neel');
 
 CREATE TABLE Trainers(emp_id int, name varchar(10));
 INSERT INTO Trainers VALUES(1,'ruhan'), (2, 'sharmin'),(3, 'saleel');
@@ -579,24 +579,24 @@ INSERT INTO trains(trainID, trainName, source, destination) VALUES (1, 'Rajdhani
 
 INSERT INTO reservations(reservationID, trainID, passengerName, status) VALUES (201, 1, 'Saleel', 'Confirmed'),(202, 8, 'Sharmin', 'Cancelled'),(203, 9, 'Vrushali', 'Confirmed'), (204, 5, 'Ruhan', 'Confirmed'), (205, 5, 'Nitish', 'Confirmed'), (206, 8, 'Gau', 'Confirmed'),(207, 1, 'Boy', 'Cancelled');
 
-create table countNulls(id int primary key AUTO_INCREMENT, ename varchar(10), city varchar(20), phone int);
+CREATE TABLE countNulls(id int PRIMARY KEY AUTO_INCREMENT, ename varchar(10), city varchar(20), phone int);
 
-insert into countNulls(ename, city, phone) values('saleel','baroda',null);
-insert into countNulls(ename, city, phone) values('sharmin','pune',null);
-insert into countNulls(ename, city, phone) values('ruhan',null,1111);
-insert into countNulls(ename, city, phone) values('vrushali', null, 2222);
-insert into countNulls(ename, city, phone) values('neel',null,3333);
+INSERT INTO countNulls(ename, city, phone) VALUES('saleel','baroda',null);
+INSERT INTO countNulls(ename, city, phone) VALUES('sharmin','pune',null);
+INSERT INTO countNulls(ename, city, phone) VALUES('ruhan',null,1111);
+INSERT INTO countNulls(ename, city, phone) VALUES('vrushali', null, 2222);
+INSERT INTO countNulls(ename, city, phone) VALUES('neel',null,3333);
 
 
-Create table countNumbers(id int primary key auto_increment, c1 int);
+CREATE TABLE countNumbers(id int PRIMARY KEY auto_increment, c1 int);
 
-insert into countNumbers(c1) values(1), (NULL), (NULL),(NULL),(NULL), (2), (NULL), (NULL),(NULL), (3), (NULL), (4), (5), (NULL), (NULL),(NULL), (NULL), (NULL),(NULL), (6);
+INSERT INTO countNumbers(c1) VALUES(1), (NULL), (NULL),(NULL),(NULL), (2), (NULL), (NULL),(NULL), (3), (NULL), (4), (5), (NULL), (NULL),(NULL), (NULL), (NULL),(NULL), (6);
 
-create table fedex(tracking_id varchar(20), carrier varchar(20), status varchar(20), delivery_date date);
+CREATE TABLE fedex(tracking_id varchar(20), carrier varchar(20), status varchar(20), delivery_date date);
 
-create table dhl(tracking_id varchar(20), carrier varchar(20), status varchar(20), delivery_date date);
+CREATE TABLE dhl(tracking_id varchar(20), carrier varchar(20), status varchar(20), delivery_date date);
 
-create table ups(tracking_id varchar(20), carrier varchar(20), status varchar(20), delivery_date date);
+CREATE TABLE ups(tracking_id varchar(20), carrier varchar(20), status varchar(20), delivery_date date);
 
 INSERT INTO FEDEX(tracking_id, carrier, status, delivery_date) VALUES ('FEDEX100001', 'FedEx', 'Dispatched', '2025-07-04'), ('FEDEX100002', 'FedEx', 'In Transit', '2025-07-05'), ('FEDEX100006', 'FedEx', 'Pending', '2025-06-29'), ('FEDEX100003 ', 'FedEx', 'Delivered', '2025-07-03'), ('FEDEX100004', 'FedEx', 'Out for Delivery', '2025-07-07') , ('FEDEX100007', 'FedEx', 'Pending', '2025-01-09'), ('FEDEX100005', 'FedEx', 'Delayed', '2025-07-08');
 
@@ -608,7 +608,7 @@ INSERT INTO ups(tracking_id, carrier, status, delivery_date) VALUES  ('UPS100032
 
 CREATE TABLE cNumbers(id INT PRIMARY KEY auto_increment,num INT);
   
-insert into cNumbers values (default, 1),(default, 1),(default, 1),(default, 2),(default, 1),(default, 2),(default, 2),(default, 7),(default, 7),(default, 7),(default, 5),(default, 5),(default, 2),(default, 4),(default, 4),(default, 4);
+INSERT INTO cNumbers values (default, 1),(default, 1),(default, 1),(default, 2),(default, 1),(default, 2),(default, 2),(default, 7),(default, 7),(default, 7),(default, 5),(default, 5),(default, 2),(default, 4),(default, 4),(default, 4);
 
 
 CREATE TABLE repeatingNumbers(num int);
