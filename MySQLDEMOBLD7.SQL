@@ -241,10 +241,10 @@ DROP TABLE IF EXISTS page_counter;
 
 DROP TABLE IF EXISTS discountCoupens;
 
-CREATE TABLE discountCoupens(id INT PRIMARY KEY AUTO_INCREMENT,coupen VARCHAR(10), date DATE, status VARCHAR(10));
+CREATE TABLE discountCoupens(id INT PRIMARY KEY AUTO_INCREMENT,coupen VARCHAR(10), startDate DATE, endDate DATE, status VARCHAR(10));
 
 
-INSERT INTO discountCoupens (coupen, date, status) VALUES
+INSERT INTO discountCoupens (coupen, startDate, status) VALUES
 ('CPN001', '2026-06-01', 'Active'),
 ('CPN002', '2026-06-01', NULL),
 ('CPN003', '2026-06-02', 'Used'),
@@ -266,7 +266,7 @@ INSERT INTO discountCoupens (coupen, date, status) VALUES
 ('CPN019', '2026-06-10', 'Used'),
 ('CPN020', '2026-06-10', NULL);
 
-INSERT INTO discountCoupens (coupen, date, status) VALUES
+INSERT INTO discountCoupens (coupen, startDate, status) VALUES
 ('SAVE10',  '2026-07-01', 'Active'),
 ('NEW50',   '2026-07-01', NULL),
 ('DISC25',  '2026-07-02', 'Used'),
@@ -287,6 +287,8 @@ INSERT INTO discountCoupens (coupen, date, status) VALUES
 ('PRIME8',  '2026-07-09', 'Used'),
 ('SMART9',  '2026-07-10', 'Active'),
 ('TOP100',  '2026-07-10', NULL);
+
+UPDATE discountcoupens SET endDate = startDate + interval 3 day;
 
 CREATE TABLE page_logs(log_id INT PRIMARY KEY AUTO_INCREMENT, user_id INT, page_url VARCHAR(255) NOT NULL, visit_time DATETIME DEFAULT CURRENT_TIMESTAMP,    ip_address VARCHAR(45), device_type VARCHAR(50), browser VARCHAR(50), stay_duration INT DEFAULT 0, status_code INT DEFAULT 200, referrer_url VARCHAR(255));
 
