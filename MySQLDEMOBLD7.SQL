@@ -241,56 +241,207 @@ DROP TABLE IF EXISTS page_counter;
 
 DROP TABLE IF EXISTS discountCoupens;
 
-CREATE TABLE discountCoupens(id INT PRIMARY KEY AUTO_INCREMENT,coupen VARCHAR(10), startDate DATE, endDate DATE, status VARCHAR(10));
+DROP TABLE IF EXISTS otp;
+DROP TABLE IF EXISTS appointment;
+DROP TABLE IF EXISTS stock;
+/* 
+1. quantity_on_hand:- The actual physical 
+   quantity currently available in the warehouse.
+
+2. quantity_reserved:- Quantity that has 
+   already been reserved for customer orders but has not yet been shipped.
+
+3. reorder_level:- The minimum stock level 
+   before new inventory should be ordered. When quantity_on_hand becomes less than or equal to this value.
+*/
+DROP TABLE IF EXISTS ccatStudents;
+DROP TABLE IF EXISTS ccatStudents_log;
+
+CREATE TABLE ccatStudents(id INT PRIMARY KEY AUTO_INCREMENT, formNumber VARCHAR(20), studentName VARCHAR(40), status VARCHAR(30) DEFAULT 'Pending', processed CHAR(1) DEFAULT 'N');
+
+CREATE TABLE ccatStudents_log(id INT PRIMARY KEY AUTO_INCREMENT, formNumber VARCHAR(20), studentName VARCHAR(40), status VARCHAR(30) DEFAULT 'Pending', processed CHAR(1));
 
 
-INSERT INTO discountCoupens (coupen, startDate, status) VALUES
-('CPN001', '2026-06-01', 'Active'),
-('CPN002', '2026-06-01', NULL),
-('CPN003', '2026-06-02', 'Used'),
-('CPN004', '2026-06-02', NULL),
-('CPN005', '2026-06-03', 'Expired'),
-('CPN006', '2026-06-03', 'Active'),
-('CPN007', '2026-06-04', NULL),
-('CPN008', '2026-06-04', 'Used'),
-('CPN009', '2026-06-05', 'Active'),
-('CPN010', '2026-06-05', NULL),
-('CPN011', '2026-06-06', 'Expired'),
-('CPN012', '2026-06-06', NULL),
-('CPN013', '2026-06-07', 'Used'),
-('CPN014', '2026-06-07', 'Active'),
-('CPN015', '2026-06-08', NULL),
-('CPN016', '2026-06-08', 'Expired'),
-('CPN017', '2026-06-09', 'Active'),
-('CPN018', '2026-06-09', NULL),
-('CPN019', '2026-06-10', 'Used'),
-('CPN020', '2026-06-10', NULL);
+CREATE TABLE stock (stock_id BIGINT AUTO_INCREMENT PRIMARY KEY, product_id BIGINT NOT NULL, sku VARCHAR(50) NOT NULL, warehouse_id BIGINT NOT NULL, quantity_on_hand INT NOT NULL DEFAULT 0, quantity_reserved INT NOT NULL DEFAULT 0, reorder_level INT NOT NULL DEFAULT 0, cost_price DECIMAL(10,2) NOT NULL, updated_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP, CONSTRAINT uq_stock_product_wh UNIQUE (product_id, warehouse_id));
 
-INSERT INTO discountCoupens (coupen, startDate, status) VALUES
-('SAVE10',  '2026-07-01', 'Active'),
-('NEW50',   '2026-07-01', NULL),
-('DISC25',  '2026-07-02', 'Used'),
-('MEGA20',  '2026-07-02', 'Expired'),
-('FEST15',  '2026-07-03', NULL),
-('SHOP30',  '2026-07-03', 'Active'),
-('DEAL40',  '2026-07-04', 'Used'),
-('OFFER5',  '2026-07-04', NULL),
-('SALE75',  '2026-07-05', 'Active'),
-('BONUS8',  '2026-07-05', 'Expired'),
-('LUCKY9',  '2026-07-06', NULL),
-('FLASH1',  '2026-07-06', 'Used'),
-('WINTER2', '2026-07-07', 'Active'),
-('SUMMER3', '2026-07-07', NULL),
-('EXTRA4',  '2026-07-08', 'Expired'),
-('VALUE6',  '2026-07-08', 'Active'),
-('SUPER7',  '2026-07-09', NULL),
-('PRIME8',  '2026-07-09', 'Used'),
-('SMART9',  '2026-07-10', 'Active'),
-('TOP100',  '2026-07-10', NULL);
+INSERT INTO stock
+(product_id, sku, warehouse_id, quantity_on_hand, quantity_reserved, reorder_level, cost_price)
+VALUES
+(101,'LAP-DELL-001',1,50,5,20,45000.00),
+(102,'LAP-HP-002',1,35,3,15,42000.00),
+(103,'LAP-LEN-003',1,40,6,18,47000.00),
+(104,'MON-SAM-004',1,80,10,30,12000.00),
+(105,'MON-LG-005',1,70,8,25,11000.00),
+(106,'KEY-LOG-006',1,150,20,50,850.00),
+(107,'MOU-LOG-007',1,180,15,60,650.00),
+(108,'PRI-HP-008',1,25,2,10,14500.00),
+(109,'SSD-SAM-009',1,90,12,35,4200.00),
+(110,'RAM-COR-010',1,120,18,40,3100.00),
+(111,'CPU-INT-011',2,45,4,15,18500.00),
+(112,'CPU-AMD-012',2,50,6,18,17200.00),
+(113,'MBD-GIG-013',2,60,5,20,9200.00),
+(114,'MBD-ASU-014',2,55,4,18,9800.00),
+(115,'GPU-NVD-015',2,22,2,8,38500.00),
+(116,'GPU-AMD-016',2,20,1,8,35500.00),
+(117,'CAB-HDMI-017',2,250,25,100,180.00),
+(118,'CAB-USB-018',2,300,30,120,150.00),
+(119,'UPS-APC-019',2,35,3,12,5200.00),
+(120,'ROU-TP-020',2,75,5,25,1800.00),
+(121,'SWI-CIS-021',3,28,2,10,12500.00),
+(122,'SWI-DLK-022',3,40,5,15,6800.00),
+(123,'ACC-WEB-023',3,65,7,20,2200.00),
+(124,'MIC-USB-024',3,58,6,20,1300.00),
+(125,'SPK-SON-025',3,48,4,15,2900.00),
+(126,'HDD-WD-026',3,85,10,30,3900.00),
+(127,'HDD-SGT-027',3,78,9,28,4100.00),
+(128,'PEN-DRV-028',3,200,20,80,450.00),
+(129,'TAB-SAM-029',3,18,2,8,21500.00),
+(130,'MOB-ONE-030',3,25,3,10,28500.00),
+(131,'CAM-CAN-031',4,15,1,5,42000.00),
+(132,'CAM-NIK-032',4,18,2,6,39500.00),
+(133,'BAT-CAM-033',4,75,5,20,950.00),
+(134,'TRI-STD-034',4,30,2,10,1700.00),
+(135,'PRO-SCR-035',4,12,1,5,7600.00),
+(136,'CHA-LAP-036',4,90,8,30,1200.00),
+(137,'ADA-USB-037',4,140,10,50,350.00),
+(138,'FAN-CPU-038',4,65,6,25,800.00),
+(139,'SMPS-650-039',4,42,4,15,3200.00),
+(140,'CAS-ATX-040',4,36,3,12,2800.00),
+(141,'TON-HP-041',5,95,10,35,1450.00),
+(142,'TON-CAN-042',5,88,8,30,1550.00),
+(143,'INK-EPS-043',5,110,12,40,780.00),
+(144,'SCN-CAN-044',5,16,2,6,9800.00),
+(145,'PROJ-EP-045',5,10,1,4,32000.00),
+(146,'NAS-SYN-046',5,14,2,5,27500.00),
+(147,'FWR-SOP-047',5,26,3,10,18500.00);
 
-UPDATE discountcoupens SET endDate = startDate + interval 3 day;
+CREATE TABLE appointment(appointment_id INT PRIMARY KEY AUTO_INCREMENT, patient_name VARCHAR(50),     doctor_name VARCHAR(50), appointment_dateTime timestamp, status VARCHAR(20));
 
-CREATE TABLE page_logs(log_id INT PRIMARY KEY AUTO_INCREMENT, user_id INT, page_url VARCHAR(255) NOT NULL, visit_time DATETIME DEFAULT CURRENT_TIMESTAMP,    ip_address VARCHAR(45), device_type VARCHAR(50), browser VARCHAR(50), stay_duration INT DEFAULT 0, status_code INT DEFAULT 200, referrer_url VARCHAR(255));
+INSERT INTO appointment (patient_name, doctor_name, appointment_dateTime, status) VALUES
+('Amit Sharma', 'Dr. Mehta', '2026-07-01 09:00:00', 'Completed'),
+('Priya Patil', 'Dr. Kulkarni',  '2026-07-01 09:30:00', 'Completed'),
+('Rahul Verma', 'Dr. Joshi', '2026-07-01 10:00:00', 'Cancelled'),
+('Sneha Deshmukh', 'Dr. Shah', '2026-07-01 10:30:00', 'Completed'),
+('Rohan Gupta', 'Dr. Mehta', '2026-07-02 09:15:00', 'Scheduled'),
+('Neha Singh', 'Dr. Kulkarni',  '2026-07-02 09:45:00', 'Scheduled'),
+('Vikram Rao', 'Dr. Joshi', '2026-07-02 10:15:00', 'Pending'),
+('Pooja Nair', 'Dr. Shah', '2026-07-02 10:45:00', 'Scheduled'),
+('Anil Patil', 'Dr. Mehta', '2026-07-03 09:00:00', 'Completed'),
+('Kiran More', 'Dr. Kulkarni',  '2026-07-03 09:30:00', 'Cancelled'),
+('Sanjay Yadav', 'Dr. Joshi', '2026-07-03 10:00:00', 'Completed'),
+('Anita Sharma', 'Dr. Shah', '2026-07-03 10:30:00', 'Scheduled'),
+('Rajesh Kumar', 'Dr. Mehta', '2026-07-04 09:15:00', 'Pending'),
+('Komal Jain', 'Dr. Kulkarni',  '2026-07-04 09:45:00', 'Completed'),
+('Mohit Arora', 'Dr. Joshi', '2026-07-04 10:15:00', 'Scheduled'),
+('Asha Reddy', 'Dr. Shah', '2026-07-04 10:45:00', 'Completed'),
+('Nitin Chavan', 'Dr. Mehta', '2026-07-05 09:00:00', 'Scheduled'),
+('Deepa Kulkarni', 'Dr. Kulkarni',  '2026-07-05 09:30:00', 'Pending'),
+('Harish Naik', 'Dr. Joshi', '2026-07-05 10:00:00', 'Completed'),
+('Meena Iyer', 'Dr. Shah', '2026-07-05 10:30:00', 'Cancelled'),
+('Suresh Pawar', 'Dr. Mehta', '2026-07-06 09:15:00', 'Scheduled'),
+('Kavita Joshi', 'Dr. Kulkarni',  '2026-07-06 09:45:00', 'Completed'),
+('Ajay Mishra', 'Dr. Joshi', '2026-07-06 10:15:00', 'Pending'),
+('Shweta Gupta', 'Dr. Shah', '2026-07-06 10:45:00', 'Completed'),
+('Rakesh Das', 'Dr. Mehta', '2026-07-07 09:00:00', 'Scheduled'),
+('Preeti Sharma', 'Dr. Kulkarni',  '2026-07-07 09:30:00', 'Cancelled'),
+('Manoj Patil',      'Dr. Joshi',     '2026-07-07 10:00:00', 'Completed'),
+('Bhavna Shah',      'Dr. Shah',      '2026-07-07 10:30:00', 'Scheduled'),
+('Yash Thakur',      'Dr. Mehta',     '2026-07-08 09:15:00', 'Completed'),
+('Nisha Kapoor',     'Dr. Kulkarni',  '2026-07-08 09:45:00', 'Pending'),
+('Arjun Nair',       'Dr. Joshi',     '2026-07-08 10:15:00', 'Scheduled'),
+('Ritu Malhotra',    'Dr. Shah',      '2026-07-08 10:45:00', 'Completed'),
+('Prakash Salunke',  'Dr. Mehta',     '2026-07-09 09:00:00', 'Cancelled'),
+('Vaishali More',    'Dr. Kulkarni',  '2026-07-09 09:30:00', 'Scheduled'),
+('Sameer Khan',      'Dr. Joshi',     '2026-07-09 10:00:00', 'Completed'),
+('Sonali Patil',     'Dr. Shah',      '2026-07-09 10:30:00', 'Pending'),
+('Ganesh Jadhav',    'Dr. Mehta',     '2026-07-10 09:15:00', 'Scheduled'),
+('Pallavi Desai',    'Dr. Kulkarni',  '2026-07-10 09:45:00', 'Completed'),
+('Rohit Agrawal',    'Dr. Joshi',     '2026-07-10 10:15:00', 'Cancelled'),
+('Sheetal Patwardhan','Dr. Shah',     '2026-07-10 10:45:00', 'Scheduled'),
+('Vivek Kulkarni',   'Dr. Mehta',     '2026-07-11 09:00:00', 'Completed'),
+('Anjali Gupta',     'Dr. Kulkarni',  '2026-07-11 09:30:00', 'Pending'),
+('Kunal Sharma',     'Dr. Joshi',     '2026-07-11 10:00:00', 'Scheduled'),
+('Monika Verma',     'Dr. Shah',      '2026-07-11 10:30:00', 'Completed'),
+('Akash Patil',      'Dr. Mehta',     '2026-07-12 09:15:00', 'Cancelled'),
+('Priti Nair',       'Dr. Kulkarni',  '2026-07-12 09:45:00', 'Scheduled'),
+('Ramesh Choudhary', 'Dr. Joshi',     '2026-07-12 10:15:00', 'Completed');
+
+
+UPDATE appointment SET status = 'Pending';
+
+CREATE TABLE otp(id INT PRIMARY KEY AUTO_INCREMENT, generatedON timestamp, otp VARCHAR(12), status VARCHAR(10));
+
+CREATE TABLE discountCoupens(id INT PRIMARY KEY AUTO_INCREMENT,coupen VARCHAR(10), startDate TIMESTAMP, endDate TIMESTAMP, status VARCHAR(10));
+
+
+INSERT INTO discountCoupens (coupen, startDate, endDate, status) VALUES
+('DISC001','2026-06-01 09:00:00','2026-06-30 23:59:59','Expired'),
+('DISC002','2026-06-05 10:00:00','2026-07-05 23:59:59','Active'),
+('DISC003','2026-06-10 08:00:00','2026-06-20 23:59:59',NULL),
+('DISC004','2026-06-12 09:30:00','2026-07-12 23:59:59','Active'),
+('DISC005','2026-06-15 10:15:00','2026-06-25 23:59:59',NULL),
+('DISC006','2026-06-18 08:45:00','2026-07-18 23:59:59','Active'),
+('DISC007','2026-06-20 09:00:00','2026-06-29 23:59:59','Expired'),
+('DISC008','2026-06-20 09:00:00','2026-07-20 23:59:59','Active'),
+('DISC009','2026-06-22 10:00:00','2026-07-01 23:59:59',NULL),
+('DISC010','2026-06-25 11:00:00','2026-07-25 23:59:59','Active'),
+
+('DISC011','2026-06-26 09:00:00','2026-06-28 23:59:59','Expired'),
+('DISC012','2026-06-27 08:00:00','2026-07-15 23:59:59',NULL),
+('DISC013','2026-06-28 09:00:00','2026-07-10 23:59:59','Active'),
+('DISC014','2026-06-29 10:00:00','2026-07-05 23:59:59',NULL),
+('DISC015','2026-06-29 11:00:00','2026-07-29 23:59:59','Active'),
+('DISC016','2026-06-30 09:00:00','2026-07-30 23:59:59','Active'),
+('DISC017','2026-07-01 08:30:00','2026-07-31 23:59:59',NULL),
+('DISC018','2026-07-01 08:30:00','2026-07-15 23:59:59','Active'),
+('DISC019','2026-07-02 09:00:00','2026-08-02 23:59:59','Active'),
+('DISC020','2026-07-03 10:00:00','2026-08-03 23:59:59',NULL),
+
+('DISC021','2026-07-04 09:00:00','2026-07-20 23:59:59','Active'),
+('DISC022','2026-07-05 09:30:00','2026-07-25 23:59:59','Active'),
+('DISC023','2026-07-06 10:00:00','2026-08-06 23:59:59',NULL),
+('DISC024','2026-07-07 08:45:00','2026-08-07 23:59:59','Active'),
+('DISC025','2026-07-08 09:00:00','2026-08-08 23:59:59','Active'),
+('DISC026','2026-07-09 09:00:00','2026-07-30 23:59:59',NULL),
+('DISC027','2026-07-10 09:15:00','2026-08-10 23:59:59','Active'),
+('DISC028','2026-07-11 10:00:00','2026-08-11 23:59:59',NULL),
+('DISC029','2026-07-12 09:00:00','2026-08-12 23:59:59','Active'),
+('DISC030','2026-07-13 09:00:00','2026-08-13 23:59:59','Active'),
+
+('DISC031','2026-07-14 09:00:00','2026-07-24 23:59:59',NULL),
+('DISC032','2026-07-15 09:30:00','2026-08-15 23:59:59','Active'),
+('DISC033','2026-07-16 08:30:00','2026-08-16 23:59:59','Active'),
+('DISC034','2026-07-17 10:00:00','2026-08-17 23:59:59',NULL),
+('DISC035','2026-07-18 09:00:00','2026-08-18 23:59:59','Active'),
+('DISC036','2026-07-19 09:00:00','2026-08-19 23:59:59','Active'),
+('DISC037','2026-07-20 10:00:00','2026-08-20 23:59:59',NULL),
+('DISC038','2026-07-21 08:00:00','2026-08-21 23:59:59','Active'),
+('DISC039','2026-07-22 09:00:00','2026-08-22 23:59:59','Active'),
+('DISC040','2026-07-23 09:30:00','2026-08-23 23:59:59',NULL),
+
+('DISC041','2026-07-24 10:00:00','2026-08-24 23:59:59','Active'),
+('DISC042','2026-07-25 08:30:00','2026-08-25 23:59:59','Active'),
+('DISC043','2026-07-26 09:00:00','2026-08-26 23:59:59',NULL),
+('DISC044','2026-07-27 09:00:00','2026-08-27 23:59:59','Active'),
+('DISC045','2026-07-28 09:30:00','2026-08-28 23:59:59','Active'),
+('DISC046','2026-07-29 10:00:00','2026-08-29 23:59:59',NULL),
+('DISC047','2026-07-30 09:00:00','2026-08-30 23:59:59','Active');
+
+delete from discountcoupens where id >= 48;
+
+insert into discountcoupens select 48, 'DISC048', current_timestamp, current_timestamp + interval 4 minute, null;
+
+insert into discountcoupens select 49, 'DISC049', current_timestamp, current_timestamp + interval 6 minute, null;
+
+insert into discountcoupens select 50, 'DISC050', current_timestamp, current_timestamp + interval 6 minute, null;
+
+insert into discountcoupens select 51, 'DISC051', current_timestamp, current_timestamp + interval 8 minute, null;
+
+insert into discountcoupens select 52, 'DISC052', current_timestamp, current_timestamp + interval 8 minute, null;
+
+insert into discountcoupens select 53, 'DISC053', current_timestamp, current_timestamp + interval 4 minute, null;
+
+CREATE TABLE page_logs(log_id INT PRIMARY KEY AUTO_INCREMENT, user_id INT, page_url VARCHAR(255) NOT NULL, visit_time DATETIME DEFAULT CURRENT_TIMESTAMP, ip_address VARCHAR(45), device_type VARCHAR(50), browser VARCHAR(50), stay_duration INT DEFAULT 0, status_code INT DEFAULT 200, referrer_url VARCHAR(255));
 
 CREATE TABLE page_counter(page_url VARCHAR(255) PRIMARY KEY, visits INT DEFAULT 1);
 
