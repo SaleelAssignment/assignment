@@ -256,66 +256,196 @@ DROP TABLE IF EXISTS stock;
 */
 DROP TABLE IF EXISTS ccatStudents;
 DROP TABLE IF EXISTS ccatStudents_log;
+DROP TABLE IF EXISTS subscription;
+
+
+CREATE TABLE subscription (subscription_id BIGINT AUTO_INCREMENT PRIMARY KEY, customer_id BIGINT NOT NULL, plan_name VARCHAR(50) NOT NULL, subscription_type ENUM('Monthly', 'Quarterly', 'Yearly') NOT NULL, start_date DATE NOT NULL, expiration_date DATE NOT NULL, amount DECIMAL(10,2) NOT NULL, payment_status ENUM('Paid', 'Pending', 'Failed', 'Refunded') DEFAULT 'Pending', subscription_status ENUM('Active', 'Expired', 'Cancelled', 'Suspended', 'Trial') DEFAULT 'Trial', auto_renew BOOLEAN DEFAULT TRUE, renewal_date DATE NULL, last_payment_date DATE NULL, next_billing_date DATE NULL, grace_period_days INT DEFAULT 7, reminder_sent BOOLEAN DEFAULT FALSE,    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP);
+
+
+INSERT INTO subscription (customer_id, plan_name, subscription_type, start_date, expiration_date, amount, payment_status, subscription_status, auto_renew, renewal_date,  last_payment_date, next_billing_date, grace_period_days, reminder_sent) 
+ VALUES
+ 
+(1001,'Basic','Monthly','2026-01-01','2026-02-01',299.00,'Paid','Expired',TRUE,'2026-02-01','2026-01-01','2026-02-01',7,TRUE),
+
+(1002,'Standard','Monthly','2026-01-05','2026-02-05',499.00,'Paid','Expired',TRUE,'2026-02-05','2026-01-05','2026-02-05',7,TRUE),
+
+(1003,'Premium','Monthly','2026-01-10','2026-02-10',799.00,'Paid','Expired',FALSE,NULL,'2026-01-10',NULL,7,FALSE),
+
+(1004,'Basic','Quarterly','2026-01-15','2026-04-15',799.00,'Paid','Expired',TRUE,'2026-04-15','2026-01-15','2026-04-15',7,TRUE),
+
+(1005,'Standard','Quarterly','2026-01-20','2026-04-20',1299.00,'Paid','Expired',TRUE,'2026-04-20','2026-01-20','2026-04-20',7,TRUE),
+
+(1006,'Premium','Yearly','2026-01-25','2027-01-25',6999.00,'Paid','Active',TRUE,'2027-01-25','2026-01-25','2027-01-25',7,FALSE),
+
+(1007,'Business','Yearly','2026-02-01','2027-02-01',9999.00,'Paid','Active',TRUE,'2027-02-01','2026-02-01','2027-02-01',10,FALSE),
+
+(1008,'Basic','Monthly','2026-02-05','2026-03-05',299.00,'Pending','Suspended',TRUE,'2026-03-05','2026-02-05','2026-03-05',7,TRUE),
+
+(1009,'Standard','Monthly','2026-02-10','2026-03-10',499.00,'Paid','Expired',TRUE,'2026-03-10','2026-02-10','2026-03-10',7,TRUE),
+
+(1010,'Premium','Monthly','2026-02-15','2026-03-15',799.00,'Failed','Cancelled',FALSE,NULL,'2026-02-15',NULL,5,TRUE),
+
+(1011,'Basic','Quarterly','2026-02-20','2026-05-20',799.00,'Paid','Active',TRUE,'2026-05-20','2026-02-20','2026-05-20',7,FALSE),
+
+(1012,'Standard','Quarterly','2026-03-01','2026-06-01',1299.00,'Pending','Trial',TRUE,'2026-06-01',NULL,'2026-06-01',7,FALSE),
+
+(1013,'Premium','Yearly','2026-03-05','2027-03-05',6999.00,'Paid','Active',TRUE,'2027-03-05','2026-03-05','2027-03-05',10,FALSE),
+
+(1014,'Business','Yearly','2026-03-10','2027-03-10',9999.00,'Paid','Active',TRUE,'2027-03-10','2026-03-10','2027-03-10',15,FALSE),
+
+(1015,'Basic','Monthly','2026-03-15','2026-04-15',299.00,'Refunded','Cancelled',FALSE,NULL,'2026-03-15',NULL,7,TRUE),
+
+(1016,'Standard','Monthly','2026-03-20','2026-04-20',499.00,'Paid','Expired',TRUE,'2026-04-20','2026-03-20','2026-04-20',7,TRUE),
+
+(1017,'Premium','Monthly','2026-03-25','2026-04-25',799.00,'Paid','Expired',TRUE,'2026-04-25','2026-03-25','2026-04-25',7,FALSE),
+
+(1018,'Basic','Quarterly','2026-04-01','2026-07-01',799.00,'Paid','Active',TRUE,'2026-07-01','2026-04-01','2026-07-01',7,FALSE),
+
+(1019,'Standard','Quarterly','2026-04-05','2026-07-05',1299.00,'Paid','Active',TRUE,'2026-07-05','2026-04-05','2026-07-05',7,FALSE),
+
+(1020,'Premium','Yearly','2026-04-10','2027-04-10',6999.00,'Pending','Trial',TRUE,'2027-04-10',NULL,'2027-04-10',7,FALSE),
+
+(1021,'Business','Yearly','2026-04-15','2027-04-15',9999.00,'Paid','Active',TRUE,'2027-04-15','2026-04-15','2027-04-15',10,FALSE),
+
+(1022,'Basic','Monthly','2026-04-20','2026-05-20',299.00,'Paid','Expired',TRUE,'2026-05-20','2026-04-20','2026-05-20',7,TRUE),
+
+(1023,'Standard','Monthly','2026-04-25','2026-05-25',499.00,'Failed','Suspended',TRUE,'2026-05-25','2026-04-25','2026-05-25',5,TRUE),
+
+(1024,'Premium','Monthly','2026-05-01','2026-06-01',799.00,'Paid','Expired',TRUE,'2026-06-01','2026-05-01','2026-06-01',7,TRUE),
+
+(1025,'Basic','Quarterly','2026-05-05','2026-08-05',799.00,'Paid','Active',TRUE,'2026-08-05','2026-05-05','2026-08-05',7,FALSE),
+
+(1026,'Standard','Quarterly','2026-05-10','2026-08-10',1299.00,'Pending','Trial',TRUE,'2026-08-10',NULL,'2026-08-10',7,FALSE),
+
+(1027,'Premium','Yearly','2026-05-15','2027-05-15',6999.00,'Paid','Active',TRUE,'2027-05-15','2026-05-15','2027-05-15',10,FALSE),
+
+(1028,'Business','Yearly','2026-05-20','2027-05-20',9999.00,'Refunded','Cancelled',FALSE,NULL,'2026-05-20',NULL,7,TRUE),
+
+(1029,'Basic','Monthly','2026-05-25','2026-06-25',299.00,'Paid','Expired',TRUE,'2026-06-25','2026-05-25','2026-06-25',7,TRUE),
+
+(1030,'Standard','Monthly','2026-06-01','2026-07-01',499.00,'Paid','Active',TRUE,'2026-07-01','2026-06-01','2026-07-01',7,FALSE),
+
+(1031,'Premium','Monthly','2026-06-05','2026-07-05',799.00,'Pending','Trial',TRUE,'2026-07-05',NULL,'2026-07-05',7,FALSE),
+
+(1032,'Basic','Quarterly','2026-06-10','2026-09-10',799.00,'Paid','Active',TRUE,'2026-09-10','2026-06-10','2026-09-10',7,FALSE),
+
+(1033,'Standard','Quarterly','2026-06-15','2026-09-15',1299.00,'Paid','Active',TRUE,'2026-09-15','2026-06-15','2026-09-15',7,FALSE),
+
+(1034,'Premium','Yearly','2026-06-20','2027-06-20',6999.00,'Paid','Active',TRUE,'2027-06-20','2026-06-20','2027-06-20',10,FALSE),
+
+(1035,'Business','Yearly','2026-06-25','2027-06-25',9999.00,'Paid','Active',TRUE,'2027-06-25','2026-06-25','2027-06-25',10,FALSE),
+
+(1036,'Basic','Monthly','2026-07-01','2026-08-01',299.00,'Paid','Active',TRUE,'2026-08-01','2026-07-01','2026-08-01',7,FALSE),
+
+(1037,'Standard','Monthly','2026-07-05','2026-08-05',499.00,'Pending','Trial',TRUE,'2026-08-05',NULL,'2026-08-05',7,FALSE),
+
+(1038,'Premium','Monthly','2026-07-10','2026-08-10',799.00,'Paid','Active',TRUE,'2026-08-10','2026-07-10','2026-08-10',7,FALSE),
+
+(1039,'Basic','Quarterly','2026-07-15','2026-10-15',799.00,'Paid','Active',TRUE,'2026-10-15','2026-07-15','2026-10-15',7,FALSE),
+
+(1040,'Standard','Quarterly','2026-07-20','2026-10-20',1299.00,'Failed','Suspended',TRUE,'2026-10-20','2026-07-20','2026-10-20',7,TRUE),
+
+(1041,'Premium','Yearly','2026-07-25','2027-07-25',6999.00,'Paid','Active',TRUE,'2027-07-25','2026-07-25','2027-07-25',10,FALSE),
+
+(1042,'Business','Yearly','2026-08-01','2027-08-01',9999.00,'Paid','Trial',TRUE,'2027-08-01','2026-08-01','2027-08-01',7,FALSE),
+
+(1043,'Basic','Monthly','2026-08-05','2026-09-05',299.00,'Pending','Trial',TRUE,'2026-09-05',NULL,'2026-09-05',7,FALSE),
+
+(1044,'Standard','Monthly','2026-08-10','2026-09-10',499.00,'Paid','Active',TRUE,'2026-09-10','2026-08-10','2026-09-10',7,FALSE),
+
+(1045,'Premium','Quarterly','2026-08-15','2026-11-15',1899.00,'Paid','Active',TRUE,'2026-11-15','2026-08-15','2026-11-15',10,FALSE),
+
+(1046,'Business','Quarterly','2026-08-20','2026-11-20',2499.00,'Paid','Active',TRUE,'2026-11-20','2026-08-20','2026-11-20',10,FALSE),
+
+(1047,'Enterprise','Yearly','2026-08-25','2027-08-25',14999.00,'Paid','Active',TRUE,'2027-08-25','2026-08-25','2027-08-25',15,FALSE);
+
+
+UPDATE subscription SET  start_date = '2026-07-10' WHERE subscription_id=47;
+
+UPDATE subscription SET  expiration_date = '2026-06-10' WHERE subscription_id=47;
+
+
 
 CREATE TABLE ccatStudents(id INT PRIMARY KEY AUTO_INCREMENT, formNumber VARCHAR(20), studentName VARCHAR(40), status VARCHAR(30) DEFAULT 'Pending', processed CHAR(1) DEFAULT 'N');
 
-CREATE TABLE ccatStudents_log(id INT PRIMARY KEY AUTO_INCREMENT, formNumber VARCHAR(20), studentName VARCHAR(40), status VARCHAR(30) DEFAULT 'Pending', processed CHAR(1));
+CREATE TABLE ccatStudents_log(id INT PRIMARY KEY AUTO_INCREMENT, formNumber VARCHAR(20), studentName VARCHAR(40), status VARCHAR(30) DEFAULT 'Pending', processed CHAR(1), hallTicket VARCHAR(128));
 
 
 CREATE TABLE stock (stock_id BIGINT AUTO_INCREMENT PRIMARY KEY, product_id BIGINT NOT NULL, sku VARCHAR(50) NOT NULL, warehouse_id BIGINT NOT NULL, quantity_on_hand INT NOT NULL DEFAULT 0, quantity_reserved INT NOT NULL DEFAULT 0, reorder_level INT NOT NULL DEFAULT 0, cost_price DECIMAL(10,2) NOT NULL, updated_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP, CONSTRAINT uq_stock_product_wh UNIQUE (product_id, warehouse_id));
 
-INSERT INTO stock
-(product_id, sku, warehouse_id, quantity_on_hand, quantity_reserved, reorder_level, cost_price)
+
+ALTER TABLE stock ADD COLUMN status VARCHAR(45);
+
+
+INSERT INTO stock(product_id, sku, warehouse_id, quantity_on_hand, quantity_reserved, reorder_level, cost_price)
 VALUES
-(101,'LAP-DELL-001',1,50,5,20,45000.00),
-(102,'LAP-HP-002',1,35,3,15,42000.00),
-(103,'LAP-LEN-003',1,40,6,18,47000.00),
-(104,'MON-SAM-004',1,80,10,30,12000.00),
-(105,'MON-LG-005',1,70,8,25,11000.00),
-(106,'KEY-LOG-006',1,150,20,50,850.00),
-(107,'MOU-LOG-007',1,180,15,60,650.00),
-(108,'PRI-HP-008',1,25,2,10,14500.00),
-(109,'SSD-SAM-009',1,90,12,35,4200.00),
-(110,'RAM-COR-010',1,120,18,40,3100.00),
-(111,'CPU-INT-011',2,45,4,15,18500.00),
-(112,'CPU-AMD-012',2,50,6,18,17200.00),
-(113,'MBD-GIG-013',2,60,5,20,9200.00),
-(114,'MBD-ASU-014',2,55,4,18,9800.00),
-(115,'GPU-NVD-015',2,22,2,8,38500.00),
-(116,'GPU-AMD-016',2,20,1,8,35500.00),
-(117,'CAB-HDMI-017',2,250,25,100,180.00),
-(118,'CAB-USB-018',2,300,30,120,150.00),
-(119,'UPS-APC-019',2,35,3,12,5200.00),
-(120,'ROU-TP-020',2,75,5,25,1800.00),
-(121,'SWI-CIS-021',3,28,2,10,12500.00),
-(122,'SWI-DLK-022',3,40,5,15,6800.00),
-(123,'ACC-WEB-023',3,65,7,20,2200.00),
-(124,'MIC-USB-024',3,58,6,20,1300.00),
-(125,'SPK-SON-025',3,48,4,15,2900.00),
-(126,'HDD-WD-026',3,85,10,30,3900.00),
-(127,'HDD-SGT-027',3,78,9,28,4100.00),
-(128,'PEN-DRV-028',3,200,20,80,450.00),
-(129,'TAB-SAM-029',3,18,2,8,21500.00),
-(130,'MOB-ONE-030',3,25,3,10,28500.00),
-(131,'CAM-CAN-031',4,15,1,5,42000.00),
-(132,'CAM-NIK-032',4,18,2,6,39500.00),
-(133,'BAT-CAM-033',4,75,5,20,950.00),
-(134,'TRI-STD-034',4,30,2,10,1700.00),
-(135,'PRO-SCR-035',4,12,1,5,7600.00),
-(136,'CHA-LAP-036',4,90,8,30,1200.00),
-(137,'ADA-USB-037',4,140,10,50,350.00),
-(138,'FAN-CPU-038',4,65,6,25,800.00),
-(139,'SMPS-650-039',4,42,4,15,3200.00),
-(140,'CAS-ATX-040',4,36,3,12,2800.00),
-(141,'TON-HP-041',5,95,10,35,1450.00),
-(142,'TON-CAN-042',5,88,8,30,1550.00),
-(143,'INK-EPS-043',5,110,12,40,780.00),
-(144,'SCN-CAN-044',5,16,2,6,9800.00),
-(145,'PROJ-EP-045',5,10,1,4,32000.00),
-(146,'NAS-SYN-046',5,14,2,5,27500.00),
-(147,'FWR-SOP-047',5,26,3,10,18500.00);
+(1001,'SKU1001',1,150,10,50,120.50),
+(1002,'SKU1002',1,80,5,30,75.00),
+(1003,'SKU1003',2,20,2,25,45.50),
+(1004,'SKU1004',2,300,25,100,250.00),
+(1005,'SKU1005',1,10,1,20,90.75),
+(1006,'SKU1006',3,400,50,150,550.00),
+(1007,'SKU1007',1,35,5,35,110.00),
+(1008,'SKU1008',2,500,20,100,15.25),
+(1009,'SKU1009',3,60,10,75,32.00),
+(1010,'SKU1010',1,250,15,80,175.00),
+
+(1011,'SKU1011',2,18,3,20,64.25),
+(1012,'SKU1012',3,125,5,40,220.00),
+(1013,'SKU1013',1,70,8,70,310.00),
+(1014,'SKU1014',2,15,2,25,28.75),
+(1015,'SKU1015',3,450,35,120,510.50),
+(1016,'SKU1016',1,30,4,40,60.00),
+(1017,'SKU1017',2,95,10,50,87.30),
+(1018,'SKU1018',3,22,1,30,41.00),
+(1019,'SKU1019',1,140,18,75,199.99),
+(1020,'SKU1020',2,8,0,15,15.50),
+
+(1021,'SKU1021',3,350,20,120,450.00),
+(1022,'SKU1022',1,12,1,15,24.50),
+(1023,'SKU1023',2,55,5,60,78.00),
+(1024,'SKU1024',3,90,6,40,135.25),
+(1025,'SKU1025',1,40,2,40,95.00),
+(1026,'SKU1026',2,500,40,200,850.00),
+(1027,'SKU1027',3,65,7,80,48.25),
+(1028,'SKU1028',1,28,2,30,66.75),
+(1029,'SKU1029',2,170,10,70,275.00),
+(1030,'SKU1030',3,19,1,25,34.90),
+
+(1031,'SKU1031',1,200,12,100,150.00),
+(1032,'SKU1032',2,32,3,35,58.40),
+(1033,'SKU1033',3,14,1,20,22.75),
+(1034,'SKU1034',1,480,25,180,620.00),
+(1035,'SKU1035',2,75,6,80,112.80),
+(1036,'SKU1036',3,50,5,50,98.00),
+(1037,'SKU1037',1,15,2,20,49.95),
+(1038,'SKU1038',2,260,15,90,299.99),
+(1039,'SKU1039',3,33,3,35,59.00),
+(1040,'SKU1040',1,600,50,250,920.00),
+
+(1041,'SKU1041',2,11,1,15,19.95),
+(1042,'SKU1042',3,87,5,90,132.00),
+(1043,'SKU1043',1,45,3,45,84.60),
+(1044,'SKU1044',2,150,10,75,188.00),
+(1045,'SKU1045',3,24,2,30,43.80),
+(1046,'SKU1046',1,310,20,120,510.00),
+(1047,'SKU1047',2,16,2,20,37.25),
+(1048,'SKU1048',3,120,8,60,144.00),
+(1049,'SKU1049',1,9,0,10,18.75),
+(1050,'SKU1050',2,510,35,220,780.00),
+
+(1051,'SKU1051',3,41,2,45,67.20),
+(1052,'SKU1052',1,27,2,30,53.10),
+(1053,'SKU1053',2,13,1,20,31.75),
+(1054,'SKU1054',3,95,5,95,125.00),
+(1055,'SKU1055',1,155,12,80,215.00),
+(1056,'SKU1056',2,21,2,25,39.50),
+(1057,'SKU1057',3,300,18,100,410.00);
+
+
 
 CREATE TABLE appointment(appointment_id INT PRIMARY KEY AUTO_INCREMENT, patient_name VARCHAR(50),     doctor_name VARCHAR(50), appointment_dateTime timestamp, status VARCHAR(20));
+
 
 INSERT INTO appointment (patient_name, doctor_name, appointment_dateTime, status) VALUES
 ('Amit Sharma', 'Dr. Mehta', '2026-07-01 09:00:00', 'Completed'),
@@ -367,11 +497,14 @@ INSERT INTO appointment (patient_name, doctor_name, appointment_dateTime, status
 ('Ramesh Choudhary', 'Dr. Joshi',     '2026-07-12 10:15:00', 'Completed');
 
 
+
 UPDATE appointment SET status = 'Pending';
+
 
 CREATE TABLE otp(id INT PRIMARY KEY AUTO_INCREMENT, generatedON timestamp, otp VARCHAR(12), status VARCHAR(10));
 
 CREATE TABLE discountCoupens(id INT PRIMARY KEY AUTO_INCREMENT,coupen VARCHAR(10), startDate TIMESTAMP, endDate TIMESTAMP, status VARCHAR(10));
+
 
 
 INSERT INTO discountCoupens (coupen, startDate, endDate, status) VALUES
@@ -427,19 +560,19 @@ INSERT INTO discountCoupens (coupen, startDate, endDate, status) VALUES
 ('DISC046','2026-07-29 10:00:00','2026-08-29 23:59:59',NULL),
 ('DISC047','2026-07-30 09:00:00','2026-08-30 23:59:59','Active');
 
-delete from discountcoupens where id >= 48;
+DELETE FROM discountcoupens WHERE id >= 48;
 
-insert into discountcoupens select 48, 'DISC048', current_timestamp, current_timestamp + interval 4 minute, null;
+INSERT INTO discountcoupens SELECT 48, 'DISC048', current_timestamp, current_timestamp + interval 4 minute, null;
 
-insert into discountcoupens select 49, 'DISC049', current_timestamp, current_timestamp + interval 6 minute, null;
+INSERT INTO discountcoupens SELECT 49, 'DISC049', current_timestamp, current_timestamp + interval 6 minute, null;
 
-insert into discountcoupens select 50, 'DISC050', current_timestamp, current_timestamp + interval 6 minute, null;
+INSERT INTO discountcoupens SELECT 50, 'DISC050', current_timestamp, current_timestamp + interval 6 minute, null;
 
-insert into discountcoupens select 51, 'DISC051', current_timestamp, current_timestamp + interval 8 minute, null;
+INSERT INTO discountcoupens SELECT 51, 'DISC051', current_timestamp, current_timestamp + interval 8 minute, null;
 
-insert into discountcoupens select 52, 'DISC052', current_timestamp, current_timestamp + interval 8 minute, null;
+INSERT INTO discountcoupens SELECT 52, 'DISC052', current_timestamp, current_timestamp + interval 8 minute, null;
 
-insert into discountcoupens select 53, 'DISC053', current_timestamp, current_timestamp + interval 4 minute, null;
+INSERT INTO discountcoupens select 53, 'DISC053', current_timestamp, current_timestamp + interval 4 minute, null;
 
 CREATE TABLE page_logs(log_id INT PRIMARY KEY AUTO_INCREMENT, user_id INT, page_url VARCHAR(255) NOT NULL, visit_time DATETIME DEFAULT CURRENT_TIMESTAMP, ip_address VARCHAR(45), device_type VARCHAR(50), browser VARCHAR(50), stay_duration INT DEFAULT 0, status_code INT DEFAULT 200, referrer_url VARCHAR(255));
 
@@ -458,11 +591,11 @@ CREATE TABLE `login_count`(`userID` int NOT NULL, `loginCount` int DEFAULT NULL,
 
 CREATE TABLE security(ID int primary key auto_increment, securityName varchar(10));
 
-insert into security(securityName) values('Gopal'),('Ramesh'),('Nitin'),('Ramlal'),('Ravi'),('Saleel');
+INSERT INTO security(securityName) values('Gopal'),('Ramesh'),('Nitin'),('Ramlal'),('Ravi'),('Saleel');
 
-create table bank (ID int primary key auto_increment, bankName varchar(10));
+CREATE TABLE bank (ID int primary key auto_increment, bankName varchar(10));
 
-insert into bank(bankName) values('BoI'),('BoB'),('ICICI');
+INSERT INTO bank(bankName) values('BoI'),('BoB'),('ICICI');
 
 
 CREATE TABLE cars(car VARCHAR(10), day VARCHAR(10),  cumulative_distance int);
