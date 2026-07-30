@@ -360,9 +360,9 @@ INSERT INTO subscription (customer_id, plan_name, subscription_type, start_date,
 (1047,'Enterprise','Yearly','2026-08-25','2027-08-25',14999.00,'Paid','Active',TRUE,'2027-08-25','2026-08-25','2027-08-25',15,FALSE);
 
 
-UPDATE subscription SET  start_date = '2026-07-10' WHERE subscription_id=47;
+UPDATE subscription SET  start_date = '2026-06-10' WHERE subscription_id=44;
 
-UPDATE subscription SET  expiration_date = '2026-06-10' WHERE subscription_id=47;
+UPDATE subscription SET  expiration_date = '2026-07-10' WHERE subscription_id=44;
 
 
 
@@ -1657,6 +1657,7 @@ insert into labtestlist(name, rate) values('Pericardial Fluid Analysis',1300);
 insert into labtestlist(name, rate) values('Peritoneal Fluid Analysis',1300);
 insert into labtestlist(name, rate) values('Pleural Fluid Analysis',1300);
 
+DROP TABLE IF EXISTS rockets;
 
 CREATE TABLE rockets (origin CHAR(20), destination CHAR(20), trip_time INT);
 
