@@ -240,6 +240,8 @@ DROP TABLE IF EXISTS page_counter;
 
 DROP TABLE IF EXISTS discountCoupens;
 
+DROP TABLE IF EXISTS pwd;
+
 DROP TABLE IF EXISTS otp;
 DROP TABLE IF EXISTS appointment;
 DROP TABLE IF EXISTS stock;
@@ -257,6 +259,17 @@ DROP TABLE IF EXISTS ccatStudents;
 DROP TABLE IF EXISTS ccatStudents_log;
 DROP TABLE IF EXISTS subscription;
 
+
+CREATE TABLE pwd (
+   ID INT PRIMARY KEY,
+   user_name VARCHAR(45),
+   password_hash VARCHAR(45)
+);
+
+INSERT INTO pwd(ID, user_name, password_hash) VALUES (1, 'saleel', MD5('p1'));
+INSERT INTO pwd(ID, user_name, password_hash) VALUES (2, 'sharmin', MD5('p1'));
+INSERT INTO pwd(ID, user_name, password_hash) VALUES (3, 'ruhan', MD5('p2'));
+INSERT INTO pwd(ID, user_name, password_hash) VALUES (4, 'natasha', MD5('p2'));
 
 CREATE TABLE subscription (subscription_id BIGINT AUTO_INCREMENT PRIMARY KEY, customer_id BIGINT NOT NULL, plan_name VARCHAR(50) NOT NULL, subscription_type ENUM('Monthly', 'Quarterly', 'Yearly', 'Trial') NOT NULL, start_date DATE NOT NULL, expiration_date DATE NOT NULL, amount DECIMAL(10,2) NOT NULL, payment_status ENUM('Paid', 'Pending', 'Failed', 'Refunded') DEFAULT 'Pending', subscription_status ENUM('Active', 'Expired', 'Cancelled', 'Suspended', 'Trial','Ex') DEFAULT 'Trial', auto_renew BOOLEAN DEFAULT TRUE, renewal_date DATE NULL, last_payment_date DATE NULL, next_billing_date DATE NULL, grace_period_days INT DEFAULT 7, reminder_sent BOOLEAN DEFAULT FALSE, created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP, updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP);
 
@@ -583,17 +596,27 @@ CREATE TABLE product_visit_log(visit_id INT AUTO_INCREMENT PRIMARY KEY, product_
 
 CREATE TABLE product_views(product_id INT PRIMARY KEY, total_views INT DEFAULT 1);
 
-CREATE TABLE users (user_id int, user_name varchar(10));
+CREATE TABLE users(user_id INT PRIMARY KEY, user_name VARCHAR(10), password_hash VARCHAR(255) GENERATED ALWAYS AS (SHA2(CONCAT(user_id, user_name), 256)) STORED);
+
+INSERT INTO users(user_id, user_name)
+VALUES
+(1, 'saleel'),
+(2, 'sharmin'),
+(3, 'Ruhan'),
+(4, 'deep'),
+(5, 'neel'),
+(6, 'gau');
+
 
 CREATE TABLE user_attempte (user_id int primary key , attempte int default 1);
 
 CREATE TABLE `login_count`(`userID` int NOT NULL, `loginCount` int DEFAULT NULL, `loginDate` datetime DEFAULT NULL, PRIMARY KEY (`userID`));
 
-CREATE TABLE security(ID int primary key auto_increment, securityName varchar(10));
+CREATE TABLE security(ID int primary key auto_increment, securityName VARCHAR(10));
 
 INSERT INTO security(securityName) values('Gopal'),('Ramesh'),('Nitin'),('Ramlal'),('Ravi'),('Saleel');
 
-CREATE TABLE bank (ID int primary key auto_increment, bankName varchar(10));
+CREATE TABLE bank (ID int primary key auto_increment, bankName VARCHAR(10));
 
 INSERT INTO bank(bankName) values('BoI'),('BoB'),('ICICI');
 
